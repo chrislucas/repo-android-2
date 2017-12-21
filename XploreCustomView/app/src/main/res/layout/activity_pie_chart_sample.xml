@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xcustom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.com.telecom.xplore.xplorecustomview.activities.ActivityPieChartSample">
+    <br.com.telecom.xplore.xplorecustomview.customview.PieChart
+        android:id="@+id/Pie"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@android:color/white"
+        android:padding="10dp"
+        xcustom:autoCenterPointerInSlice="true"
+        xcustom:highlightStrength="1.12"
+        xcustom:labelColor="@android:color/black"
+        xcustom:labelHeight="20dp"
+        xcustom:labelPosition="right"
+        xcustom:labelWidth="110dp"
+        xcustom:labelY="85dp"
+        xcustom:pieRotation="0"
+        xcustom:pointerRadius="4dp"
+        xcustom:showText="true"
+        />
+    <Button
+        android:id="@+id/Reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/reset_button"
+        />
+</LinearLayout>
