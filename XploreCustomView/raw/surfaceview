@@ -1,0 +1,45 @@
+http://android-coding.blogspot.com.br/2011/05/handle-ontouchevent-in-surfaceview.html
+https://developer.android.com/reference/android/view/SurfaceView.html
+
+Camera
+https://stackoverflow.com/questions/31410118/camera2-with-a-surfaceview
+https://inducesmile.com/android/android-camera2-api-example-tutorial/
+https://developer.android.com/reference/android/hardware/camera2/CameraDevice.html
+https://developer.android.com/reference/android/hardware/camera2/CameraCaptureSession.html
+https://github.com/googlesamples/android-Camera2Basic
+https://github.com/googlesamples/android-Camera2Video
+
+
+SurfaceView
+http://android-coding.blogspot.com.br/2011/05/basic-implementation-of-surfaceview.html
+http://android-coding.blogspot.com.br/2011/05/drawing-on-surfaceview.html
+http://android-coding.blogspot.com.br/2011/05/detect-multi-touch-on-surfaceview.html
+http://android-coding.blogspot.com.br/2012/12/draw-path-on-surfaceviews-canvas.html
+
+double buffer of Android's SurfaceView
+*** http://android-coding.blogspot.com.br/2012/01/flickering-problems-due-to-double.html
+
+double buffer of Android's SurfaceView - Use double buffering SurfaceView
+http://www.phonesdevelopers.info/1768842/
+
+Custom Drawing
+https://developer.android.com/training/custom-views/custom-drawing.html
+
+
+http://android-coding.blogspot.com.br/2011/05/drawing-on-surfaceview.html
+http://www.independent-software.com/android-speeding-up-canvas-drawbitmap/
+
+
+Path
+http://android-coding.blogspot.com.br/2012/12/draw-path-on-surfaceviews-canvas.html
+
+Questions
+https://stackoverflow.com/questions/30832960/draw-objects-trails-on-a-surfaceview
+https://stackoverflow.com/questions/19594582/surfaceview-unnecessary-redrawings
+https://blog.ostebaronen.dk/2016/09/improving-layout-performance-on-android.html
+https://stackoverflow.com/questions/22192847/bad-performance-when-drawing-bitmap-to-canvas-on-surfaceview-with-rotated-matrix
+https://stackoverflow.com/questions/40741468/bad-performance-when-drawing-continuously-in-customview/45518428
+
+PathEffect
+https://stackoverflow.com/questions/6103713/how-do-i-make-a-dotted-dashed-line-in-android/6104138
+https://stackoverflow.com/questions/16528572/draw-dash-line-on-a-canvas

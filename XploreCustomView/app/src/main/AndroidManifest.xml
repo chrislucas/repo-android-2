@@ -8,22 +8,22 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".activities.ActivityPieChartSample">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".activities.ActivityPieChartSample" />
         <activity
             android:name=".activities.ActivityXploreCustomTextView"
             android:label="@string/title_activity_xplore_custom_text_view"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity
+            android:name=".activities.ActivityCustomScratch"
+            android:theme="@style/AppTheme.NoActionBar"
+            />
+        <activity android:name=".activities.ActivityDrawingDotsSurfaceView" />
+        <activity android:name=".activities.ActivityDrawingInSurfaceView">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

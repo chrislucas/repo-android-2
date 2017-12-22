@@ -650,7 +650,7 @@ public class PieChart extends ViewGroup {
         // filter won't work.
         setLayerToSW(this);
 
-        // Set up the paint for the label text
+        // Set up the paintStroke for the label text
         mTextPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mTextPaint.setColor(mTextColor);
         if (mTextHeight == 0) {
@@ -659,12 +659,12 @@ public class PieChart extends ViewGroup {
             mTextPaint.setTextSize(mTextHeight);
         }
 
-        // Set up the paint for the pie slices
+        // Set up the paintStroke for the pie slices
         mPiePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPiePaint.setStyle(Paint.Style.FILL);
         mPiePaint.setTextSize(mTextHeight);
 
-        // Set up the paint for the shadow
+        // Set up the paintStroke for the shadow
         mShadowPaint = new Paint(0);
         mShadowPaint.setColor(0xff101010);
         mShadowPaint.setMaskFilter(new BlurMaskFilter(8, BlurMaskFilter.Blur.NORMAL));

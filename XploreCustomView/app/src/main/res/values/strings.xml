@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">XploreCustomView</string>
+    <string name="app_name">StudyCustomView</string>
     <string name="reset_button">Reset</string>
     <string name="title_activity_xplore_custom_text_view">ActivityXploreCustomTextView</string>
     <string name="default_sample_text">Um texto qualquer para exemplificar algo nada importante</string>
