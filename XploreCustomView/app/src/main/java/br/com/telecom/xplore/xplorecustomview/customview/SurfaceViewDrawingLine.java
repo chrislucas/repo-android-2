@@ -111,7 +111,7 @@ public class SurfaceViewDrawingLine extends SurfaceView
     @Override
     public void update() {
         if(surfaceHolder.getSurface().isValid()) {
-            Canvas canvas = surfaceHolder.lockCanvas();
+            final Canvas canvas = surfaceHolder.lockCanvas();
             synchronized (surfaceHolder) {
                 if(canvas != null) {
                     if(isTouchXY[0] && isLastTouchXY[0]) {
