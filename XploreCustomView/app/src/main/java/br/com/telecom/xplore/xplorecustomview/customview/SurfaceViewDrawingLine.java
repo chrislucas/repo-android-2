@@ -8,6 +8,10 @@ import android.graphics.DashPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.PathEffect;
+import android.graphics.PixelFormat;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -30,7 +34,6 @@ public class SurfaceViewDrawingLine extends SurfaceView
 
     private InfiniteThreadUpdateSurfaceView thread;
     private SurfaceHolder surfaceHolder;
-    private boolean isTouched;
     private Paint paintStroke;
     private Bitmap bitmapTempCanvas;
     private Canvas tempCanvas;
@@ -79,6 +82,11 @@ public class SurfaceViewDrawingLine extends SurfaceView
                 return gd.onTouchEvent(event);
             }
         });
+        //setZOrderOnTop(true);
+        /**
+         *
+         * */
+        //surfaceHolder.setFormat(PixelFormat.TRANSLUCENT);
     }
 
     @Override
@@ -86,13 +94,22 @@ public class SurfaceViewDrawingLine extends SurfaceView
         Log.i("LISTENER_DOUBLE_TAP", "DOUBLE_TAP CLEAN CANVAS");
         final Canvas originalCanvas = surfaceHolder.lockCanvas();
         synchronized (originalCanvas) {
+            //Paint clearPaint = new Paint();
+            /**
+             * {@link android.graphics.PorterDuff}
+             * https://developer.android.com/reference/android/graphics/PorterDuff.html
+             * */
+            //clearPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+            //originalCanvas.drawColor(Color.BLACK, PorterDuff.Mode.CLEAR);
+            //originalCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.MULTIPLY);
+
             paintStroke.setStyle(Paint.Style.FILL);
             paintStroke.setColor(Color.BLACK);
-            tempCanvas.drawRect(0, 0, w*1.0f, h*1.0f, paintStroke);
-            originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, null);
+            tempCanvas.drawRect(new RectF(0.0f, 0.0f, w, h), paintStroke);
+            originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, paintStroke);
+
             surfaceHolder.unlockCanvasAndPost(originalCanvas);
         }
-
     }
 
     @Override
@@ -128,12 +145,13 @@ public class SurfaceViewDrawingLine extends SurfaceView
          * o ID continua válido até que o usuário retire o dedo da tela (ACTION_UP || ACTION_POINTER_UP)
          * */
         pointerId = event.getPointerId(pointerIndex);
+        /*
         xTouch = event.getX(event.findPointerIndex(pointerId));
         yTouch = event.getY(event.findPointerIndex(pointerId));
-        /*
+
         Log.i("SURFACE_DRAWING", String.format("Touched in (%f %f).\nPointCounter %d.\nPointerId: %d.\n"
                 , xTouch, yTouch, pointCounter, pointerId));
-                */
+        */
         MotionEvent.PointerProperties properties = new MotionEvent.PointerProperties();
         event.getPointerProperties(pointerIndex, properties);
         /**
@@ -167,18 +185,13 @@ public class SurfaceViewDrawingLine extends SurfaceView
                             strAction = "ACTION_POINTER_UP";
                             break;
                     }
-                    Log.i("SURFACE_DRAWING", String.format("MotionEvent - Action %s. ID %d, Last (%f, %f) Current(%f, %f) "
+                    Log.i("SURFACE_DRAWING", String.format("MotionEvent - Action %s. ID %d, Last (%f, %f) Current(%f, %f)"
                             , strAction, id, arrayLastX[id], arrayLastY[id], arrayX[id], arrayY[id]));
-                    boolean flag = isEnableToTouchXY[id];
-                    isLastEnableToTouchXY[id] = flag;
+                    isLastEnableToTouchXY[id] = isEnableToTouchXY[id];
                 }
             }
             switch (action) {
                 case MotionEvent.ACTION_DOWN:
-                    if(pointerId < Q_POINTS) {
-                        for (int i=0; i<=pointerId; i++)
-                            isEnableToTouchXY[i] = true;
-                    }
                     break;
                 case MotionEvent.ACTION_MOVE:
                     if(pointerId < Q_POINTS) {
@@ -186,15 +199,7 @@ public class SurfaceViewDrawingLine extends SurfaceView
                             isEnableToTouchXY[i] = true;
                     }
                     break;
-                    case MotionEvent.ACTION_UP:
-                        /*
-                        if(pointerId < Q_POINTS) {
-                            for (int i=0; i<=pointerId; i++) {
-                                isEnableToTouchXY[i]     = false;
-                                isLastEnableToTouchXY[i] = false;
-                            }
-                        }
-                        */
+                case MotionEvent.ACTION_UP:
                         break;
             }
         }
@@ -216,8 +221,7 @@ public class SurfaceViewDrawingLine extends SurfaceView
                 originalCanvas = surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
                     if(originalCanvas != null) {
-                        // draw(originalCanvas);
-                        for(int i=0; i<Q_POINTS; i++) {
+                        for(int i=0; pointCounter < Q_POINTS && i<pointCounter; i++) {
                             if(isEnableToTouchXY[i] && isLastEnableToTouchXY[i]) {
                                 paintStroke.setStyle(Paint.Style.STROKE);
                                 paintStroke.setStrokeWidth(10.0f);
@@ -234,7 +238,7 @@ public class SurfaceViewDrawingLine extends SurfaceView
                                 Log.i("SURFACE_DRAWING", String.format("DRAWING - ID %d. LAST POINT(%f, %f), CURRENT POINT(%f,%f).\n"
                                         , i, arrayLastX[i], arrayLastY[i], arrayX[i], arrayY[i]));
                                 tempCanvas.drawLine(arrayLastX[i], arrayLastY[i], arrayX[i], arrayY[i], paintStroke);
-                                originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, null);
+                                originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, paintStroke);
                                 isEnableToTouchXY[i] = false;
                                 isLastEnableToTouchXY[i] = false;
                             }
