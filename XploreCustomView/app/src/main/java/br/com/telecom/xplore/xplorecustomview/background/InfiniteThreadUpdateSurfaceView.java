@@ -9,7 +9,7 @@ import android.util.Log;
 public class InfiniteThreadUpdateSurfaceView extends Thread {
 
     private boolean isRunning;
-    private long sleepThread = 0;
+    private long sleepThread;
 
     public interface UpdateSurfaceView {
         void update();

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="5sp"
+    android:orientation="vertical"
     tools:context="br.com.telecom.xplore.xplorecustomview.activities.ActivityDrawingInSurfaceView">
 
     <br.com.telecom.xplore.xplorecustomview.customview.SurfaceViewDrawingLine
+        android:id="@+id/surface_view_drawing_line"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />
