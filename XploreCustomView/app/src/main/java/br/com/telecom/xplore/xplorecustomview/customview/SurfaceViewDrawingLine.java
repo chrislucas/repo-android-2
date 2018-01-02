@@ -165,8 +165,8 @@ public class SurfaceViewDrawingLine extends SurfaceView
                 if(id < pointCounter) {
                     arrayLastX[id]    = arrayX[id];
                     arrayLastY[id]    = arrayY[id];
-                    arrayX[id]        = event.getX(event.findPointerIndex(id));
-                    arrayY[id]        = event.getY(event.findPointerIndex(id));
+                    arrayX[id]        = event.getX(i);//event.getX(event.findPointerIndex(id));
+                    arrayY[id]        = event.getY(i);//event.getY(event.findPointerIndex(id));
                     String strAction = "UNDEFINED";
                     switch (action) {
                         case MotionEvent.ACTION_DOWN:
@@ -192,7 +192,7 @@ public class SurfaceViewDrawingLine extends SurfaceView
             }
             switch (action) {
                 case MotionEvent.ACTION_DOWN:
-                    break;
+                case MotionEvent.ACTION_POINTER_DOWN:
                 case MotionEvent.ACTION_MOVE:
                     if(pointerId < Q_POINTS) {
                         for (int i=0; i<=pointerId; i++)
