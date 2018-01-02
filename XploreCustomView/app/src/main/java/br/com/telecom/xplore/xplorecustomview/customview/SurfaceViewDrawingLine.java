@@ -10,20 +10,23 @@ import android.graphics.Paint;
 import android.graphics.PathEffect;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
 
 import java.util.Random;
 
 import br.com.telecom.xplore.xplorecustomview.background.InfiniteThreadUpdateSurfaceView;
+import br.com.telecom.xplore.xplorecustomview.gesture.DetectDoubleTap;
 
 /**
  * Created by r028367 on 22/12/2017.
  */
 
 public class SurfaceViewDrawingLine extends SurfaceView
-        implements InfiniteThreadUpdateSurfaceView.UpdateSurfaceView, SurfaceHolder.Callback2 {
+        implements InfiniteThreadUpdateSurfaceView.UpdateSurfaceView, SurfaceHolder.Callback2, DetectDoubleTap.OnDoubleTap {
 
     private InfiniteThreadUpdateSurfaceView thread;
     private SurfaceHolder surfaceHolder;
@@ -68,6 +71,28 @@ public class SurfaceViewDrawingLine extends SurfaceView
         surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
         random = new Random();
+
+        final GestureDetector gd = new GestureDetector(getContext(), new DetectDoubleTap(this));
+        setOnTouchListener(new OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return gd.onTouchEvent(event);
+            }
+        });
+    }
+
+    @Override
+    public void doSomeThing() {
+        Log.i("LISTENER_DOUBLE_TAP", "DOUBLE_TAP CLEAN CANVAS");
+        final Canvas originalCanvas = surfaceHolder.lockCanvas();
+        synchronized (originalCanvas) {
+            paintStroke.setStyle(Paint.Style.FILL);
+            paintStroke.setColor(Color.BLACK);
+            tempCanvas.drawRect(0, 0, w*1.0f, h*1.0f, paintStroke);
+            originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, null);
+            surfaceHolder.unlockCanvasAndPost(originalCanvas);
+        }
+
     }
 
     @Override
