@@ -16,15 +16,15 @@ import android.view.SurfaceView;
 import java.util.Random;
 
 import br.com.telecom.xplore.xplorecustomview.R;
-import br.com.telecom.xplore.xplorecustomview.background.InfiniteThreadUpdateSurfaceView;
+import br.com.telecom.xplore.xplorecustomview.background.UpdateSurfaceViewOnBackground;
 
 /**
  * Created by r028367 on 22/12/2017.
  */
 public class SurfaceViewRandomBackground extends SurfaceView implements
-        InfiniteThreadUpdateSurfaceView.UpdateSurfaceView, SurfaceHolder.Callback2 {
+        UpdateSurfaceViewOnBackground.UpdateSurfaceView, SurfaceHolder.Callback2 {
 
-    private InfiniteThreadUpdateSurfaceView thread;
+    private UpdateSurfaceViewOnBackground thread;
     private SurfaceHolder surfaceHolder;
     private boolean isTouched;
     private float xTouch, yTouch;
@@ -145,7 +145,7 @@ public class SurfaceViewRandomBackground extends SurfaceView implements
     }
 
     public void onResume() {
-        thread = new InfiniteThreadUpdateSurfaceView(this);
+        thread = new UpdateSurfaceViewOnBackground(this);
         thread.setRunning(true);
         thread.start();
     }

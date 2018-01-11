@@ -4,13 +4,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.DashPathEffect;
 import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.PathEffect;
-import android.graphics.PixelFormat;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
+import android.graphics.Path;
 import android.graphics.RectF;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -22,30 +18,33 @@ import android.view.View;
 
 import java.util.Random;
 
-import br.com.telecom.xplore.xplorecustomview.background.InfiniteThreadUpdateSurfaceView;
 import br.com.telecom.xplore.xplorecustomview.gesture.DetectDoubleTap;
 
 /**
  * Created by r028367 on 22/12/2017.
  */
 
-public class SurfaceViewDrawingLine extends SurfaceView
-        implements InfiniteThreadUpdateSurfaceView.UpdateSurfaceView, SurfaceHolder.Callback2, DetectDoubleTap.OnDoubleTap {
+public class SurfaceViewDrawingLine extends SurfaceView implements SurfaceHolder.Callback2
+        , DetectDoubleTap.OnDoubleTapListener {
 
-    private InfiniteThreadUpdateSurfaceView thread;
+    //private static final PathEffect dashed = new DashPathEffect(new float [] {10.0f,20f}, 0.0f);
+    private static final int MAX_POINTS_ON_SCREEN = 2;
     private SurfaceHolder surfaceHolder;
     private Paint paintStroke;
     private Bitmap bitmapTempCanvas;
     private Canvas tempCanvas;
     private Matrix identityMatrix;
-    private float xTouch, yTouch;
-    private int w, h, pointerId, pointCounter;
-    private static final PathEffect dashed = new DashPathEffect(new float [] {10.0f,20f}, 0.0f);
-    private static final int Q_POINTS = 2;
+    private int w;
+    private int h;
+    private int pointCounter;
     private float [] arrayX, arrayY, arrayLastX, arrayLastY;
-    //private float matrixXY [][];
     private boolean [] isEnableToTouchXY, isLastEnableToTouchXY;
     private Random random;
+
+    private Path path;
+
+    private static final int MAX_INT_RGB = 255;
+    private static final int MIN_INT_RGB = 127;
 
     public SurfaceViewDrawingLine(Context context) {
         super(context);
@@ -65,12 +64,12 @@ public class SurfaceViewDrawingLine extends SurfaceView
     private void init() {
         paintStroke = new Paint(Paint.ANTI_ALIAS_FLAG);
         tempCanvas  = new Canvas();
-        arrayX      = new float[Q_POINTS];
-        arrayY      = new float[Q_POINTS];
-        arrayLastX  = new float[Q_POINTS];
-        arrayLastY  = new float[Q_POINTS];
-        isEnableToTouchXY = new boolean[Q_POINTS];
-        isLastEnableToTouchXY = new boolean[Q_POINTS];
+        arrayX      = new float[MAX_POINTS_ON_SCREEN];
+        arrayY      = new float[MAX_POINTS_ON_SCREEN];
+        arrayLastX  = new float[MAX_POINTS_ON_SCREEN];
+        arrayLastY  = new float[MAX_POINTS_ON_SCREEN];
+        isEnableToTouchXY = new boolean[MAX_POINTS_ON_SCREEN];
+        isLastEnableToTouchXY = new boolean[MAX_POINTS_ON_SCREEN];
         surfaceHolder = getHolder();
         surfaceHolder.addCallback(this);
         random = new Random();
@@ -83,14 +82,11 @@ public class SurfaceViewDrawingLine extends SurfaceView
             }
         });
         //setZOrderOnTop(true);
-        /**
-         *
-         * */
         //surfaceHolder.setFormat(PixelFormat.TRANSLUCENT);
     }
 
     @Override
-    public void doSomeThing() {
+    public void onDoubleTap() {
         Log.i("LISTENER_DOUBLE_TAP", "DOUBLE_TAP CLEAN CANVAS");
         final Canvas originalCanvas = surfaceHolder.lockCanvas();
         synchronized (originalCanvas) {
@@ -102,12 +98,10 @@ public class SurfaceViewDrawingLine extends SurfaceView
             //clearPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
             //originalCanvas.drawColor(Color.BLACK, PorterDuff.Mode.CLEAR);
             //originalCanvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.MULTIPLY);
-
             paintStroke.setStyle(Paint.Style.FILL);
             paintStroke.setColor(Color.BLACK);
             tempCanvas.drawRect(new RectF(0.0f, 0.0f, w, h), paintStroke);
             originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, paintStroke);
-
             surfaceHolder.unlockCanvasAndPost(originalCanvas);
         }
     }
@@ -144,13 +138,12 @@ public class SurfaceViewDrawingLine extends SurfaceView
          * Cada ponto tocado na tela tem um ID unico que eh definido com a tela eh tocada (ACTION_DOWN || ACTION_POINTER_DOWN))
          * o ID continua válido até que o usuário retire o dedo da tela (ACTION_UP || ACTION_POINTER_UP)
          * */
-        pointerId = event.getPointerId(pointerIndex);
+        int pointerId = event.getPointerId(pointerIndex);
         /*
-        xTouch = event.getX(event.findPointerIndex(pointerId));
-        yTouch = event.getY(event.findPointerIndex(pointerId));
-
-        Log.i("SURFACE_DRAWING", String.format("Touched in (%f %f).\nPointCounter %d.\nPointerId: %d.\n"
-                , xTouch, yTouch, pointCounter, pointerId));
+            xTouch = event.getX(event.findPointerIndex(pointerId));
+            yTouch = event.getY(event.findPointerIndex(pointerId));
+            Log.i("SURFACE_DRAWING", String.format("Touched in (%f %f).\nPointCounter %d.\nPointerId: %d.\n"
+                    , xTouch, yTouch, pointCounter, pointerId));
         */
         MotionEvent.PointerProperties properties = new MotionEvent.PointerProperties();
         event.getPointerProperties(pointerIndex, properties);
@@ -159,90 +152,63 @@ public class SurfaceViewDrawingLine extends SurfaceView
          * */
         //Log.i("SURFACE_DRAWING", String.format("Propriedades:\nTootType: %d", properties.toolType));
         int action = event.getActionMasked();
-        if(pointCounter <= Q_POINTS && pointerIndex < Q_POINTS) {
+        if(pointCounter <= MAX_POINTS_ON_SCREEN && pointerIndex < MAX_POINTS_ON_SCREEN) {
             for (int i = 0; i < pointCounter; i++) {
                 int id = event.getPointerId(i);
                 if(id < pointCounter) {
-                    arrayLastX[id]    = arrayX[id];
-                    arrayLastY[id]    = arrayY[id];
-                    arrayX[id]        = event.getX(i);//event.getX(event.findPointerIndex(id));
-                    arrayY[id]        = event.getY(i);//event.getY(event.findPointerIndex(id));
-                    String strAction = "UNDEFINED";
                     switch (action) {
                         case MotionEvent.ACTION_DOWN:
-                            strAction = "ACTION_DOWN";
+                            arrayLastX[id] = event.getX(i);
+                            arrayLastY[id] = event.getY(i);
+                            isLastEnableToTouchXY[id] = isEnableToTouchXY[id] = true;
+                            path = new Path();
+                            path.moveTo(event.getX(i), event.getY(i));
                             break;
                         case MotionEvent.ACTION_UP:
-                            strAction = "ACTION_UP";
                             break;
                         case MotionEvent.ACTION_MOVE:
-                            strAction = "ACTION_MOVE";
+                            arrayLastX[id] = arrayX[id];
+                            arrayLastY[id] = arrayY[id];
+                            isLastEnableToTouchXY[id] = isEnableToTouchXY[id] = true;
+                            path.quadTo(arrayLastX[id], arrayLastY[id]
+                                    ,  (arrayLastX[id]+event.getX(i))/2, (arrayLastY[id]+event.getY(i))/2);
                             break;
                         case MotionEvent.ACTION_POINTER_DOWN:
-                            strAction = "ACTION_POINTER_DOWN";
                             break;
                         case MotionEvent.ACTION_POINTER_UP:
-                            strAction = "ACTION_POINTER_UP";
+                            path = new Path();
                             break;
                     }
-                    Log.i("SURFACE_DRAWING", String.format("MotionEvent - Action %s. ID %d, Last (%f, %f) Current(%f, %f)"
-                            , strAction, id, arrayLastX[id], arrayLastY[id], arrayX[id], arrayY[id]));
-                    isLastEnableToTouchXY[id] = isEnableToTouchXY[id];
+                    arrayX[id] = event.getX(i);
+                    arrayY[id] = event.getY(i);
                 }
             }
             switch (action) {
                 case MotionEvent.ACTION_DOWN:
-                case MotionEvent.ACTION_POINTER_DOWN:
                 case MotionEvent.ACTION_MOVE:
-                    if(pointerId < Q_POINTS) {
-                        for (int i=0; i<=pointerId; i++)
-                            isEnableToTouchXY[i] = true;
-                    }
+                    tryLockCanvas();
                     break;
-                case MotionEvent.ACTION_UP:
-                        break;
             }
         }
         return true;
     }
 
-    private final int getRandomColor() {
-        int r = random.nextInt(255);
-        int g = random.nextInt(255);
-        int b = random.nextInt(255);
+    private int getRandomColor() {
+        int r = random.nextInt(MAX_INT_RGB - MIN_INT_RGB) + MIN_INT_RGB;
+        int g = random.nextInt(MAX_INT_RGB - MIN_INT_RGB) + MIN_INT_RGB;
+        int b = random.nextInt(MAX_INT_RGB - MIN_INT_RGB) + MIN_INT_RGB;
         return 0xff000000 + (r << 16) + (g << 8) + b;
     }
 
-    @Override
-    public void update() {
+    private void tryLockCanvas() {
         if(surfaceHolder.getSurface().isValid()) {
             Canvas originalCanvas = null;
             try {
                 originalCanvas = surfaceHolder.lockCanvas();
                 synchronized (surfaceHolder) {
                     if(originalCanvas != null) {
-                        for(int i=0; pointCounter < Q_POINTS && i<pointCounter; i++) {
-                            if(isEnableToTouchXY[i] && isLastEnableToTouchXY[i]) {
-                                paintStroke.setStyle(Paint.Style.STROKE);
-                                paintStroke.setStrokeWidth(10.0f);
-                                /**
-                                 * https://developer.android.com/reference/android/graphics/Paint.Join.html
-                                 * */
-                                paintStroke.setStrokeJoin(Paint.Join.BEVEL);
-                                /**
-                                 * https://developer.android.com/reference/android/graphics/Paint.Cap.html
-                                 * */
-                                paintStroke.setStrokeCap(Paint.Cap.ROUND);
-                                //paintStroke.setPathEffect(dashed);
-                                paintStroke.setColor(getRandomColor());
-                                Log.i("SURFACE_DRAWING", String.format("DRAWING - ID %d. LAST POINT(%f, %f), CURRENT POINT(%f,%f).\n"
-                                        , i, arrayLastX[i], arrayLastY[i], arrayX[i], arrayY[i]));
-                                tempCanvas.drawLine(arrayLastX[i], arrayLastY[i], arrayX[i], arrayY[i], paintStroke);
-                                originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, paintStroke);
-                                isEnableToTouchXY[i] = false;
-                                isLastEnableToTouchXY[i] = false;
-                            }
-                        }
+                        //drawingColoredPath(originalCanvas);
+                        drawingColoredLine(originalCanvas);
                     }
                 }
             }
@@ -250,6 +216,58 @@ public class SurfaceViewDrawingLine extends SurfaceView
                 if(originalCanvas != null) {
                     surfaceHolder.unlockCanvasAndPost(originalCanvas);
                 }
+            }
+        }
+    }
+
+    private void drawingColoredLine(Canvas originalCanvas) {
+        for(int i = 0; pointCounter < MAX_POINTS_ON_SCREEN && i<pointCounter; i++) {
+            if(isEnableToTouchXY[i] && isLastEnableToTouchXY[i]) {
+                paintStroke.setStyle(Paint.Style.STROKE);
+                paintStroke.setStrokeWidth(10.0f);
+                paintStroke.setDither(true);
+                /**
+                 * https://developer.android.com/reference/android/graphics/Paint.Join.html
+                 * */
+                paintStroke.setStrokeJoin(Paint.Join.BEVEL);
+                /**
+                 * https://developer.android.com/reference/android/graphics/Paint.Cap.html
+                 * */
+                paintStroke.setStrokeCap(Paint.Cap.ROUND);
+                //paintStroke.setPathEffect(dashed);
+                paintStroke.setColor(getRandomColor());
+                Log.i("SURFACE_DRAWING"
+                        , String.format("DRAWING - ID %d. LAST POINT(%d, %d), CURRENT POINT(%d,%d).\n"
+                        , i, Math.round(arrayLastX[i]), Math.round(arrayLastY[i]), Math.round(arrayX[i]), Math.round(arrayY[i]))
+                );
+                tempCanvas.drawLine(Math.round(arrayLastX[i]), Math.round(arrayLastY[i]), Math.round(arrayX[i]), Math.round(arrayY[i]), paintStroke);
+                originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, paintStroke);
+                isEnableToTouchXY[i] = false;
+                isLastEnableToTouchXY[i] = false;
+            }
+        }
+    }
+
+    private void drawingColoredPath(Canvas originalCanvas) {
+        for(int i = 0; pointCounter < MAX_POINTS_ON_SCREEN && i<pointCounter; i++) {
+            if (isEnableToTouchXY[i] && isLastEnableToTouchXY[i]) {
+                paintStroke.setStyle(Paint.Style.STROKE);
+                paintStroke.setStrokeWidth(10.0f);
+                paintStroke.setDither(true);
+                /**
+                 * https://developer.android.com/reference/android/graphics/Paint.Join.html
+                 * */
+                paintStroke.setStrokeJoin(Paint.Join.BEVEL);
+                /**
+                 * https://developer.android.com/reference/android/graphics/Paint.Cap.html
+                 * */
+                paintStroke.setStrokeCap(Paint.Cap.ROUND);
+                //paintStroke.setPathEffect(dashed);
+                paintStroke.setColor(getRandomColor());
+                tempCanvas.drawPath(path, paintStroke);
+                originalCanvas.drawBitmap(bitmapTempCanvas, identityMatrix, paintStroke);
+                isEnableToTouchXY[i] = false;
+                isLastEnableToTouchXY[i] = false;
             }
         }
     }
@@ -288,27 +306,12 @@ public class SurfaceViewDrawingLine extends SurfaceView
         Log.i("SURFACE_HOLDER", "SURFACE_REDRAW_ASYNC");
     }
 
-    /**
-     * Inicia a Thread que eh responsavel por atualizar o SurfaceView
-     * */
     public void onResume() {
-        if(thread == null) {
-            thread = new InfiniteThreadUpdateSurfaceView(this);
-            thread.setRunning(true);
-            thread.start();
-        }
+
     }
 
     public void onPause() {
-        while(true) {
-            try {
-                thread.join();
-                thread.setRunning(false);
-                break;
-            } catch (InterruptedException e) {
-                Log.e("SURFACE_VIEW_RDN", e.getMessage());
-            }
-        }
+
     }
 
     @Override

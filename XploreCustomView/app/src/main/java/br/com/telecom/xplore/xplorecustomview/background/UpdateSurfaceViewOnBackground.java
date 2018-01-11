@@ -6,7 +6,7 @@ import android.util.Log;
  * Created by r028367 on 22/12/2017.
  */
 
-public class InfiniteThreadUpdateSurfaceView extends Thread {
+public class UpdateSurfaceViewOnBackground extends Thread {
 
     private boolean isRunning;
     private long sleepThread;
@@ -17,11 +17,11 @@ public class InfiniteThreadUpdateSurfaceView extends Thread {
 
     private UpdateSurfaceView updateSurfaceView;
 
-    public InfiniteThreadUpdateSurfaceView(UpdateSurfaceView updateSurfaceView) {
+    public UpdateSurfaceViewOnBackground(UpdateSurfaceView updateSurfaceView) {
         this.updateSurfaceView = updateSurfaceView;
     }
 
-    public InfiniteThreadUpdateSurfaceView(UpdateSurfaceView updateSurfaceView, long sleepThread) {
+    public UpdateSurfaceViewOnBackground(UpdateSurfaceView updateSurfaceView, long sleepThread) {
         this(updateSurfaceView);
         this.sleepThread = sleepThread;
     }

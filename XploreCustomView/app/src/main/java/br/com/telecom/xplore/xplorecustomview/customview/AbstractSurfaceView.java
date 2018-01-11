@@ -9,16 +9,16 @@ import android.util.AttributeSet;
 import android.view.SurfaceView;
 import android.view.SurfaceHolder;
 
-import br.com.telecom.xplore.xplorecustomview.background.InfiniteThreadUpdateSurfaceView;
+import br.com.telecom.xplore.xplorecustomview.background.UpdateSurfaceViewOnBackground;
 
 /**
  * Created by r028367 on 22/12/2017.
  */
 
 public class AbstractSurfaceView extends SurfaceView implements SurfaceHolder.Callback2
-        , InfiniteThreadUpdateSurfaceView.UpdateSurfaceView {
+        , UpdateSurfaceViewOnBackground.UpdateSurfaceView {
 
-    private InfiniteThreadUpdateSurfaceView thread;
+    private UpdateSurfaceViewOnBackground thread;
     private SurfaceHolder surfaceHolder;
     private boolean isTouched;
     private Paint paintStroke;

@@ -9,14 +9,14 @@ import android.view.MotionEvent;
 
 public class DetectDoubleTap extends GestureDetector.SimpleOnGestureListener {
 
-    public interface OnDoubleTap {
-        void doSomeThing();
+    public interface OnDoubleTapListener {
+        void onDoubleTap();
     }
 
-    private OnDoubleTap onDoubleTap;
+    private OnDoubleTapListener onDoubleTapListener;
 
-    public DetectDoubleTap(OnDoubleTap onDoubleTap) {
-        this.onDoubleTap = onDoubleTap;
+    public DetectDoubleTap(OnDoubleTapListener onDoubleTapListener) {
+        this.onDoubleTapListener = onDoubleTapListener;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class DetectDoubleTap extends GestureDetector.SimpleOnGestureListener {
 
     @Override
     public boolean onDoubleTap(MotionEvent e) {
-        onDoubleTap.doSomeThing();
+        onDoubleTapListener.onDoubleTap();
         return true;
     }
 
