@@ -1,0 +1,21 @@
+Configure variantes de compilação
+https://developer.android.com/studio/build/build-variants.html
+https://developer.android.com/studio/build/index.html?hl=pt-br
+
+Pesquisar por
+buildTypes android
+https://developer.android.com/studio/build/build-variants.html?hl=pt-br#build-types
+
+Art compiler
+https://source.android.com/devices/tech/dalvik/
+
+Variantes de compilação: É o produto(app) resultado de uma combinacao de uma 'variacao de produto' (productFlavors)
+e um 'tipo de compilacao' (buildType). Essa é a combinacao que o Gradle usa para compilar o aplicativo
+
+Cada variante de compilacao representa uma versao diferente do aplicativo. QUando criamos um modulo
+no projeto android, a IDE cria um tipo de compilação (buildTypes) chamado 'debug'. Apesar dele nao aparecer
+no arquivo de configuracao, ele eh configurado com o atributo 'debuggable'  com valor 'true', o que
+permite instalar o aplicativo em um dispositivo e depurar-mos o código-fonte
+
+'mesclar as configurações de manifesto.'
+https://developer.android.com/studio/build/manifest-merge.html?hl=pt-br

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App Versão Completa</string>
+    <string name="text_version">Versão Completa</string>
+    <string name="text_main_activity">Texto mainActivity. Versão Completa</string>
+</resources>

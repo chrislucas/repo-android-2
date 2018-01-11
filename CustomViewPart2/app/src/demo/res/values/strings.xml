@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App Versão de Demonstração</string>
+    <string name="text_version">Versão de Demonstração</string>
+    <string name="text_main_activity">Texto mainActivity. Versão de Demonstração</string>
+</resources>

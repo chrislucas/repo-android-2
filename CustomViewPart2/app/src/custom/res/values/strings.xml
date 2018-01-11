@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">App Versão Personalizada</string>
+    <string name="text_version">Versão Personalizada</string>
+    <string name="text_main_activity">Texto mainActivity. Versão Personalizada</string>
+</resources>
