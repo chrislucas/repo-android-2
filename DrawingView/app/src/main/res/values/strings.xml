@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DrawingView</string>
+    <string name="activity_single_touch_canvas_drawing">Desenho livre com toque único</string>
+    <string name="activity_multi_touch_canvas_drawing">Desenho livre multi touch</string>
+</resources>

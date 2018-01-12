@@ -40,9 +40,7 @@ public class SurfaceViewDrawingLine extends SurfaceView implements SurfaceHolder
     private float [] arrayX, arrayY, arrayLastX, arrayLastY;
     private boolean [] isEnableToTouchXY, isLastEnableToTouchXY;
     private Random random;
-
     private Path path;
-
     private static final int MAX_INT_RGB = 255;
     private static final int MIN_INT_RGB = 127;
 

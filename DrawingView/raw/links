@@ -1,0 +1,31 @@
+SurfaceView versus View para desenhar
+https://stackoverflow.com/questions/27225338/what-to-use-for-drawing-in-android-view-or-surfaceview?lq=1
+
+
+Doubling buffering
+https://www.thepolyglotdeveloper.com/2015/05/draw-a-graphic-to-a-surfaceview-using-native-android/
+
+https://www.codeday.top/2017/04/21/22227.html
+
+Canvas
+https://developer.android.com/guide/topics/graphics/2d-graphics.html
+https://developer.android.com/training/custom-views/custom-drawing.html
+
+
+Pesquisar sobre onde desenhar, View ou SurfaceView
+https://stackoverflow.com/questions/27225338/what-to-use-for-drawing-in-android-view-or-surfaceview?lq=1
+https://developer.android.com/guide/topics/graphics/hardware-accel.html
+
+Links
+https://stackoverflow.com/questions/6980906/android-color-picker
+
+Github topics
+https://github.com/topics/color-picker?l=java&o=desc&s=stars
+
+Color Picker
+https://github.com/skydoves/ColorPickerView
+https://github.com/danielnilsson9/color-picker-view
+https://github.com/LarsWerkman/HoloColorPicker
+https://github.com/QuadFlask/colorpicker/tree/master/library/src/main/java/com/flask/colorpicker/builder
+https://github.com/jaredrummler/ColorPicker
+https://github.com/jrummyapps/colorpicker

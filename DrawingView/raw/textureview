@@ -1,0 +1,13 @@
+https://stackoverflow.com/questions/27225338/what-to-use-for-drawing-in-android-view-or-surfaceview?lq=1
+https://developer.android.com/reference/android/view/TextureView.html
+https://www.tutorialspoint.com/android/android_textureview.htm
+https://stuff.mit.edu/afs/sipb/project/android/docs/reference/android/view/TextureView.html
+
+
+Android TextureView hardware acceleration with lockCanvas()
+https://stackoverflow.com/questions/9966228/android-textureview-hardware-acceleration-with-lockcanvas
+
+https://source.android.com/devices/graphics/arch-tv
+
+
+https://github.com/google/grafika
