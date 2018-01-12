@@ -1,0 +1,14 @@
+
+Tapjacking
+http://www.iwobanas.com/2015/07/android-tapjacking-fix/
+https://blog.devknox.io/tapjacking-android-prevent/
+http://blog.trendmicro.com/trendlabs-security-intelligence/tapjacking-an-untapped-threat-in-android/
+https://www.nowsecure.com/blog/2017/05/25/android-overlay-malware-system-alert-window-permission/
+
+
+https://developer.android.com/reference/android/view/View.html#Security
+
+https://github.com/0xroot/Tapjacking-Framework-for-Android/tree/master/src/com/tapjacking/payloads
+https://gist.github.com/bjoernQ/6975256
+
+https://stackoverflow.com/questions/4481226/creating-a-system-overlay-window-always-on-top

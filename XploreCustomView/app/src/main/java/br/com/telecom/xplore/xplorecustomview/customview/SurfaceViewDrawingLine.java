@@ -168,8 +168,11 @@ public class SurfaceViewDrawingLine extends SurfaceView implements SurfaceHolder
                             arrayLastX[id] = arrayX[id];
                             arrayLastY[id] = arrayY[id];
                             isLastEnableToTouchXY[id] = isEnableToTouchXY[id] = true;
-                            path.quadTo(arrayLastX[id], arrayLastY[id]
-                                    ,  (arrayLastX[id]+event.getX(i))/2, (arrayLastY[id]+event.getY(i))/2);
+                            path.quadTo(arrayLastX[id]
+                                , arrayLastY[id]
+                                , event.getX(i) //(arrayLastX[id]+event.getX(i))/2
+                                , event.getY(i) //(arrayLastY[id]+event.getY(i))/2
+                            );
                             break;
                         case MotionEvent.ACTION_POINTER_DOWN:
                             break;
