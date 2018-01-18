@@ -1,0 +1,16 @@
+WindowManager
+https://developer.android.com/reference/android/view/WindowManager.html
+
+
+https://www.nowsecure.com/blog/2017/05/25/android-overlay-malware-system-alert-window-permission/
+https://gist.github.com/bjoernQ/6975256
+https://stackoverflow.com/questions/32652533/android-system-overlay-window/32652625#32652625
+
+
+
+android.view.WindowManager$BadTokenException: Unable to add window android.view.ViewRootImpl$W@e91a88f -- permission denied for window type 2008
+https://stackoverflow.com/questions/32224452/android-unable-to-add-window-permission-denied-for-this-window-type
+
+
+Overlay like facebook
+https://www.androidhive.info/2016/11/android-floating-widget-like-facebook-chat-head/
