@@ -1,4 +1,4 @@
-package xplore.com.br.xplorerscreenoverlay;
+package xplore.com.br.xplorerscreenoverlay.activities;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -18,6 +18,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import xplore.com.br.xplorerscreenoverlay.R;
 import xplore.com.br.xplorerscreenoverlay.services.OverlayService;
 
 public class MainActivity extends AppCompatActivity {

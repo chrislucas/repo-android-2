@@ -7,16 +7,17 @@ import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.support.v4.content.ContextCompat;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Display;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 
 import xplore.com.br.xplorerscreenoverlay.R;
+import xplore.com.br.xplorerscreenoverlay.utils.DisplayMetricsUtils;
 
 public class OverlayService extends Service {
 
@@ -29,7 +30,7 @@ public class OverlayService extends Service {
 
     public OverlayService() {}
 
-    private final View.OnTouchListener onTouchListener = new View.OnTouchListener() {
+    private final View.OnTouchListener touchListenerOnButton = new View.OnTouchListener() {
         @Override
         public boolean onTouch(View v, MotionEvent event) {
             boolean answer = true;
@@ -43,14 +44,22 @@ public class OverlayService extends Service {
                     overlayedButton.getLocationOnScreen(location);
                     originX = location[0];
                     originY = location[1];
-                    offsetX = (int)(originX - x);
-                    offsetY = (int)(originY - y);
+                    /**
+                     *
+                     * */
+                    offsetX = (int)(originX-x);
+                    offsetY = (int)(originY-y);
+                    Log.i("MOTION_EVENT_DOWN", String.format("Toque no botao em: (%f,%f)", x, y));
                     Log.i("MOTION_EVENT_DOWN"
-                            , String.format("Posicao inicial: (%d %d)"
+                            , String.format("Origem do botao: (%d,%d)"
                                     , originX, originY));
+                    /*
+                    String fmt = "Tela tocada em: (%f, %f).\nDeslocamento da origem (%d, %d)." +
+                            "\nDiferença entre a posicao original do botao e a posicao tocada na tela.";
                     Log.i("MOTION_EVENT_DOWN"
-                            , String.format("Tela tocada em: (%f, %f).\nDeslocamento da posicao de origem (%d, %d)"
+                            , String.format(fmt
                                     , x, y, offsetX, offsetY));
+                                    */
                     break;
                 case MotionEvent.ACTION_MOVE:
                     int [] viewLocationOnScreen = new int[2];
@@ -59,16 +68,56 @@ public class OverlayService extends Service {
                     WindowManager.LayoutParams paramsButton = (WindowManager.LayoutParams) overlayedButton.getLayoutParams();
                     int newX  = (int) (offsetX + x);
                     int newY  = (int) (offsetY + y);
-                    int diffX = newX - originX < 0 ? -(newX - originX) : newX - originX;
-                    int diffY = newY - originY < 0 ? -(newY - originY) : newY - originY;
+                    int diffX = Math.abs(newX - originX);//newX - originX < 0 ? -(newX - originX) : newX - originX;
+                    int diffY = Math.abs(newY - originY);//newY - originY < 0 ? -(newY - originY) : newY - originY;
                     // se o sensor detectou movimento porem nao ha deslocamento nas coordenadas X ou Y, entao nao ocorreu movimento
                     moving = !(diffX < 1 && diffY < 1 && !moving);
+                    StringBuilder sb = new StringBuilder();
+                    /*
+                    sb.append("1) Toque no botao em: (%f, %f).\n");
+                    sb.append("Origem: (%d, %d).\n");
+                    sb.append("Deslocamento: (%d, %d).\n");
+                    sb.append("Deslocamento + Toque: (%d, %d).\n");
+                    sb.append("Deslocamento + Toque - origem: (%d %d).\n");
                     Log.i("MOTION_EVENT_MOVE"
-                            , String.format("Localizacao da viewOriginCoord :(%d, %d).\nDiferenca: (%d, %d).\nMovimentado ? %s"
-                                    , viewLocationOnScreen[0], viewLocationOnScreen[1], diffX, diffY, moving));
+                        , String.format(sb.toString()
+                                , x
+                                , y
+                                , originX
+                                , originY
+                                , offsetX
+                                , offsetY
+                                , newX
+                                , newY
+                                , newX - viewLocationOnScreen[0]
+                                , newY - viewLocationOnScreen[1])
+                    );
+                    */
+                    sb = new StringBuilder();
+                    sb.append("1) Toque no botao em: (%f, %f).\n");
+                    sb.append("Origem: (%d, %d).\n");
                     Log.i("MOTION_EVENT_MOVE"
-                            , String.format("Tela tocada em: (%f, %f).\nNova posicao: (%d, %d)"
-                                    , x, y, newX, newY));
+                        , String.format(sb.toString()
+                            , x
+                            , y
+                            , originX
+                            , originY
+                        )
+                    );
+                    /*
+                    sb = new StringBuilder();
+                    sb.append("2) ViewOriginCoord :(%d, %d).\n");
+                    sb.append("Diferenca: (%d, %d).\n");
+                    sb.append("Movimentou-se ? %s.\n");
+                    Log.i("MOTION_EVENT_MOVE"
+                        , String.format(sb.toString()
+                                , viewLocationOnScreen[0]
+                                , viewLocationOnScreen[1]
+                                , diffX
+                                , diffY
+                                , moving)
+                    );
+                    */
                     paramsButton.x = newX - viewLocationOnScreen[0];
                     paramsButton.y = newY - viewLocationOnScreen[1];
                     windowManager.updateViewLayout(overlayedButton, paramsButton);
@@ -84,7 +133,7 @@ public class OverlayService extends Service {
         }
     };
 
-    private final View.OnClickListener onClickListener = new View.OnClickListener() {
+    private final View.OnClickListener clickListenerOnButton = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             int [] pos = new int [2];
@@ -98,13 +147,21 @@ public class OverlayService extends Service {
     public void onCreate() {
         super.onCreate();
         overlayedButton = new Button(this);
-        overlayedButton.setOnClickListener(onClickListener);
-        overlayedButton.setOnTouchListener(onTouchListener);
+        overlayedButton.setOnClickListener(clickListenerOnButton);
+        overlayedButton.setOnTouchListener(touchListenerOnButton);
         overlayedButton.setPadding(20,20,20,20);
         overlayedButton.setText(getString(R.string.button_overlayed_screen));
         overlayedButton.setTextColor(ContextCompat.getColor(this, R.color.white));
         overlayedButton.setBackgroundColor(ContextCompat.getColor(this, R.color.viewOverlay));
         windowManager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
+
+        Display defaultDisplay = null;
+        if (windowManager != null) {
+            defaultDisplay = windowManager.getDefaultDisplay();
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            defaultDisplay.getMetrics(displayMetrics);
+            DisplayMetricsUtils.log(displayMetrics);
+        }
 
         /**
          * WindowManager.LayoutParams.TYPE_SYSTEM_DIALOG
@@ -143,10 +200,9 @@ public class OverlayService extends Service {
         /**
          * Definir parametros de layout para a view que indica qual a origem da coordenada
          * do dispositivo.
-         * */
-        WindowManager.LayoutParams paramsView = new WindowManager
-                .LayoutParams(
-                    WindowManager.LayoutParams.WRAP_CONTENT
+         **/
+        WindowManager.LayoutParams paramsView = new WindowManager.LayoutParams(
+                WindowManager.LayoutParams.WRAP_CONTENT
                 , WindowManager.LayoutParams.WRAP_CONTENT
                 , WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
                 , WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
@@ -158,8 +214,8 @@ public class OverlayService extends Service {
         paramsView.x        = 0;
         paramsView.y        = 0;
         // dimansao da view
-        paramsView.width    = 0;
-        paramsView.height   = 0;
+        paramsView.width    = 5;
+        paramsView.height   = 5;
         windowManager.addView(viewOriginCoord, paramsView);
     }
 

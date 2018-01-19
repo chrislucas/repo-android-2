@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Estudo sobre Overlay</string>
     <string name="button_overlayed_screen">Button Overlay</string>
+    <string name="draggable_button">Arraste-me</string>
 </resources>
