@@ -29,6 +29,6 @@ public class DraggableButton extends AppCompatButton {
 
     private void init(Context context, AttributeSet attributeSet) {
         implDefaultDraggableView = new ImplDefaultDraggableView(this, context, attributeSet);
-        setOnTouchListener(implDefaultDraggableView);
+
     }
 }

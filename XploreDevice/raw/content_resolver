@@ -1,0 +1,6 @@
+Nao usar ID do dispositivo como chave unica para identificacao
+https://developer.android.com/training/articles/user-data-ids.html
+
+
+https://developer.android.com/reference/android/content/ContentResolver.html
+https://developer.android.com/guide/topics/providers/content-provider-basics.html?hl=pt-br

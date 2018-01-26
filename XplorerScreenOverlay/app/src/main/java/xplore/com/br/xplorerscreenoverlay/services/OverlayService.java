@@ -11,12 +11,12 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
 import xplore.com.br.xplorerscreenoverlay.R;
+import xplore.com.br.xplorerscreenoverlay.listeners.ImplDefaultDraggable2;
 import xplore.com.br.xplorerscreenoverlay.utils.DisplayMetricsUtils;
 
 public class OverlayService extends Service {
@@ -25,113 +25,10 @@ public class OverlayService extends Service {
     private Button overlayedButton;
     private WindowManager windowManager;
 
-    private int offsetX, offsetY, originX, originY;
-    private boolean moving;
 
     public OverlayService() {}
 
-    private final View.OnTouchListener touchListenerOnButton = new View.OnTouchListener() {
-        @Override
-        public boolean onTouch(View v, MotionEvent event) {
-            boolean answer = true;
-            float x = event.getRawX();
-            float y = event.getRawY();
-            int eventActionMasked = event.getActionMasked();
-            switch (eventActionMasked) {
-                case MotionEvent.ACTION_DOWN:
-                    moving = false;
-                    int location [] = new int[2];
-                    overlayedButton.getLocationOnScreen(location);
-                    originX = location[0];
-                    originY = location[1];
-                    /**
-                     *
-                     * */
-                    offsetX = (int)(originX-x);
-                    offsetY = (int)(originY-y);
-                    Log.i("MOTION_EVENT_DOWN", String.format("Toque no botao em: (%f,%f)", x, y));
-                    Log.i("MOTION_EVENT_DOWN"
-                            , String.format("Origem do botao: (%d,%d)"
-                                    , originX, originY));
-                    /*
-                    String fmt = "Tela tocada em: (%f, %f).\nDeslocamento da origem (%d, %d)." +
-                            "\nDiferença entre a posicao original do botao e a posicao tocada na tela.";
-                    Log.i("MOTION_EVENT_DOWN"
-                            , String.format(fmt
-                                    , x, y, offsetX, offsetY));
-                                    */
-                    break;
-                case MotionEvent.ACTION_MOVE:
-                    int [] viewLocationOnScreen = new int[2];
-                    viewOriginCoord.getLocationOnScreen(viewLocationOnScreen);
-                    // Parametros do layout do Botao que esta sobreposto na tela
-                    WindowManager.LayoutParams paramsButton = (WindowManager.LayoutParams) overlayedButton.getLayoutParams();
-                    int newX  = (int) (offsetX + x);
-                    int newY  = (int) (offsetY + y);
-                    int diffX = Math.abs(newX - originX);//newX - originX < 0 ? -(newX - originX) : newX - originX;
-                    int diffY = Math.abs(newY - originY);//newY - originY < 0 ? -(newY - originY) : newY - originY;
-                    // se o sensor detectou movimento porem nao ha deslocamento nas coordenadas X ou Y, entao nao ocorreu movimento
-                    moving = !(diffX < 1 && diffY < 1 && !moving);
-                    StringBuilder sb = new StringBuilder();
-                    /*
-                    sb.append("1) Toque no botao em: (%f, %f).\n");
-                    sb.append("Origem: (%d, %d).\n");
-                    sb.append("Deslocamento: (%d, %d).\n");
-                    sb.append("Deslocamento + Toque: (%d, %d).\n");
-                    sb.append("Deslocamento + Toque - origem: (%d %d).\n");
-                    Log.i("MOTION_EVENT_MOVE"
-                        , String.format(sb.toString()
-                                , x
-                                , y
-                                , originX
-                                , originY
-                                , offsetX
-                                , offsetY
-                                , newX
-                                , newY
-                                , newX - viewLocationOnScreen[0]
-                                , newY - viewLocationOnScreen[1])
-                    );
-                    */
-                    sb = new StringBuilder();
-                    sb.append("1) Toque no botao em: (%f, %f).\n");
-                    sb.append("Origem: (%d, %d).\n");
-                    Log.i("MOTION_EVENT_MOVE"
-                        , String.format(sb.toString()
-                            , x
-                            , y
-                            , originX
-                            , originY
-                        )
-                    );
-                    /*
-                    sb = new StringBuilder();
-                    sb.append("2) ViewOriginCoord :(%d, %d).\n");
-                    sb.append("Diferenca: (%d, %d).\n");
-                    sb.append("Movimentou-se ? %s.\n");
-                    Log.i("MOTION_EVENT_MOVE"
-                        , String.format(sb.toString()
-                                , viewLocationOnScreen[0]
-                                , viewLocationOnScreen[1]
-                                , diffX
-                                , diffY
-                                , moving)
-                    );
-                    */
-                    paramsButton.x = newX - viewLocationOnScreen[0];
-                    paramsButton.y = newY - viewLocationOnScreen[1];
-                    windowManager.updateViewLayout(overlayedButton, paramsButton);
-                    break;
-                case MotionEvent.ACTION_UP:
-                    answer = moving;
-                    break;
-                case MotionEvent.ACTION_OUTSIDE:
-                    Log.i("TOUCH_OUTSIDE", v.toString());
-                    break;
-            }
-            return answer;
-        }
-    };
+    private View.OnTouchListener touchListenerOnButton;
 
     private final View.OnClickListener clickListenerOnButton = new View.OnClickListener() {
         @Override
@@ -147,8 +44,6 @@ public class OverlayService extends Service {
     public void onCreate() {
         super.onCreate();
         overlayedButton = new Button(this);
-        overlayedButton.setOnClickListener(clickListenerOnButton);
-        overlayedButton.setOnTouchListener(touchListenerOnButton);
         overlayedButton.setPadding(20,20,20,20);
         overlayedButton.setText(getString(R.string.button_overlayed_screen));
         overlayedButton.setTextColor(ContextCompat.getColor(this, R.color.white));
@@ -182,9 +77,10 @@ public class OverlayService extends Service {
                 WindowManager.LayoutParams.WRAP_CONTENT
                 , WindowManager.LayoutParams.WRAP_CONTENT
                 , WindowManager.LayoutParams.TYPE_SYSTEM_ALERT
-                , WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
+                , WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL | WindowManager.LayoutParams.FLAG_WATCH_OUTSIDE_TOUCH
                 , PixelFormat.TRANSLUCENT);
-/*
+/**
+ *
         WindowManager.LayoutParams paramsButton = new WindowManager.LayoutParams(
                 WindowManager.LayoutParams.MATCH_PARENT
                 , WindowManager.LayoutParams.MATCH_PARENT
@@ -217,6 +113,9 @@ public class OverlayService extends Service {
         paramsView.width    = 5;
         paramsView.height   = 5;
         windowManager.addView(viewOriginCoord, paramsView);
+        touchListenerOnButton = new ImplDefaultDraggable2(overlayedButton, viewOriginCoord, windowManager);
+        overlayedButton.setOnClickListener(clickListenerOnButton);
+        overlayedButton.setOnTouchListener(touchListenerOnButton);
     }
 
     @Override

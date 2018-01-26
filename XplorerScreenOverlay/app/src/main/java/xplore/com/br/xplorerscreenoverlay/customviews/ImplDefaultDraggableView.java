@@ -8,15 +8,19 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import xplore.com.br.xplorerscreenoverlay.R;
+import xplore.com.br.xplorerscreenoverlay.listeners.ImplDefaultDraggable;
 
 /**
  * Created by r028367 on 19/01/2018.
  */
 
-public class ImplDefaultDraggableView implements Draggable {
+public class ImplDefaultDraggableView {
     private final int [] position = new int[2];
     private boolean draggable;
     private View view;
+
+    private ImplDefaultDraggable implDefaultDraggable;
+
     public ImplDefaultDraggableView(View view, Context context, AttributeSet attributeSet) {
         @SuppressLint("Recycle")
         TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.DraggableView);
@@ -30,19 +34,7 @@ public class ImplDefaultDraggableView implements Draggable {
         }
     }
 
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if(draggable) {
-            int actionMasked = event.getActionMasked();
-            view.getLocationOnScreen(position);
-            float  x = event.getRawX();
-            float  y = event.getRawY();
-            switch (actionMasked) {
 
-            }
-        }
-        return false;
-    }
 
     private void toggleOnDraggable() {
         draggable = ! draggable;

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SlidingPanelLayout</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_info_a">Fragment Info A</string>
+    <string name="fragment_info_b">Fragment Info B</string>
+    <string name="slide_panel_fragments">Explorando SlidePanel com Fragments</string>
+</resources>
