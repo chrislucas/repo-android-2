@@ -4,3 +4,24 @@ https://developer.android.com/training/articles/user-data-ids.html
 
 https://developer.android.com/reference/android/content/ContentResolver.html
 https://developer.android.com/guide/topics/providers/content-provider-basics.html?hl=pt-br
+
+
+Content Provider
+https://developer.android.com/guide/topics/providers/content-provider-basics.html#ClientProvider
+https://developer.android.com/guide/topics/providers/content-providers.html
+https://www.androiddesignpatterns.com/2012/06/content-resolvers-and-content-providers.html
+
+Room e ContentProvider
+https://github.com/googlesamples/android-architecture-components/tree/master/PersistenceContentProviderSample/#readme
+
+
+Android Provider
+https://developer.android.com/reference/android/provider/package-summary.html
+
+
+Uri
+https://developer.android.com/reference/android/net/Uri.html
+Algo interessante para estudar uma aplicacao legal
+https://stackoverflow.com/questions/2709087/turning-a-string-into-a-uri-android
+https://blog.branch.io/pt/guia-tecnico-para-deep-linking-em-android-esquemas-de-uri/
+https://developer.android.com/guide/topics/providers/content-provider-creating.html?hl=pt-br
