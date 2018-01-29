@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="slidingpanellayout.xplore.com.br.xploredevice.MainActivity">
+    tools:context="slidingpanellayout.xplore.com.br.xploredevice.activities.SlidingPanelLayoutActivity">
 
     <TextView
         android:id="@+id/info"

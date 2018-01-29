@@ -1,4 +1,4 @@
-package slidingpanellayout.xplore.com.br.xploredevice.utils;
+package slidingpanellayout.xplore.com.br.xploredevice.utils.settings;
 
 import android.annotation.SuppressLint;
 import android.content.ContentResolver;

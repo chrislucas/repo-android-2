@@ -1,4 +1,4 @@
-package slidingpanellayout.xplore.com.br.xploredevice;
+package slidingpanellayout.xplore.com.br.xploredevice.activities;
 
 import android.content.DialogInterface;
 import android.content.IntentFilter;
@@ -10,12 +10,13 @@ import android.telephony.TelephonyManager;
 
 import java.util.Locale;
 
+import slidingpanellayout.xplore.com.br.xploredevice.R;
 import slidingpanellayout.xplore.com.br.xploredevice.broadcastreceivers.BroadcastReceiverPhoneStateChange;
 import slidingpanellayout.xplore.com.br.xploredevice.utils.SimpleImplPhoneStateListener;
-import slidingpanellayout.xplore.com.br.xploredevice.utils.SettingSecureUtils;
+import slidingpanellayout.xplore.com.br.xploredevice.utils.settings.SettingSecureUtils;
 import slidingpanellayout.xplore.com.br.xploredevice.utils.TelephonyUtils;
 
-public class MainActivity extends AppCompatActivity {
+public class SlidingPanelLayoutActivity extends AppCompatActivity {
 
 
     private StringBuilder message = new StringBuilder();;

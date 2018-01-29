@@ -1,1 +1,10 @@
 https://www.androiddesignpatterns.com/2012/07/loaders-and-loadermanager-background.html
+
+https://developer.android.com/reference/android/content/CursorLoader.html
+
+Loaders
+https://developer.android.com/guide/components/loaders.html
+https://developer.android.com/reference/android/content/CursorLoader.html
+
+Content Resolver
+https://developer.android.com/reference/android/content/ContentResolver.html#query(android.net.Uri, java.lang.String[], android.os.Bundle, android.os.CancellationSignal)

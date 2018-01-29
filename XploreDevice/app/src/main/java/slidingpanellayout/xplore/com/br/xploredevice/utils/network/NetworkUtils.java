@@ -1,4 +1,4 @@
-package slidingpanellayout.xplore.com.br.xploredevice.utils;
+package slidingpanellayout.xplore.com.br.xploredevice.utils.network;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
