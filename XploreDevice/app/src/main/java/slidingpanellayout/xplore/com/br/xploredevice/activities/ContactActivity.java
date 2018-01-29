@@ -50,6 +50,7 @@ public class ContactActivity extends AppCompatActivity {
     }
 
     private void getRawContacts() {
+        /*
         WrapperContactsContentProvider.executeSimpleQuery(
                 this
             , ContactsContract.RawContacts.CONTENT_URI
@@ -58,6 +59,19 @@ public class ContactActivity extends AppCompatActivity {
             , null
             , null
             , null
+        );
+        */
+
+        // ContactsContract.PhoneLookup.CONTENT_FILTER_URI
+
+        WrapperContactsContentProvider.executeSimpleQuery(
+                this
+                , ContactsContract.CommonDataKinds.Phone.CONTENT_URI
+                , new WrapperContactsContentProvider.CProviderPhone()
+                , WrapperContactsContentProvider.CProviderPhone.COLUMNS
+                , null
+                , null
+                , null
         );
     }
 }
