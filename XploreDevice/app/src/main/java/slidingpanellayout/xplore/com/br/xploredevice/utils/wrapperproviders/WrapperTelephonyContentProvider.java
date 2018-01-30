@@ -76,12 +76,24 @@ public class WrapperTelephonyContentProvider {
     public static class CProviderCarriers implements WrapperContentProvider.CProvider {
 
         public static final String [] COLUMNS = new String [] {
-
+             Telephony.Carriers.APN
+            ,Telephony.Carriers.NAME
+            ,Telephony.Carriers.PROXY
+            ,Telephony.Carriers.PROTOCOL
+            ,Telephony.Carriers.PORT
+            ,Telephony.Carriers.SERVER
+            ,Telephony.Carriers.USER
+            ,Telephony.Carriers.MCC // Mobile Country Code (MCC).
+            ,Telephony.Carriers.MNC // Mobile Network Code (MNC).
         };
 
         @Override
         public void process(Cursor cursor, String[] columns) {
+            if(cursor.moveToFirst()) {
+                while (cursor.moveToNext()) {
 
+                }
+            }
         }
     };
 

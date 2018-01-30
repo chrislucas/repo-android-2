@@ -22,7 +22,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.SlidingPanelLayoutActivity" />
+        <activity android:name=".activities.SlidingPanelLayoutActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <receiver
             android:name=".broadcastreceivers.BroadcastReceiverPhoneStateChange"
@@ -32,10 +37,6 @@
         <activity android:name=".activities.UserDictActivity" />
         <activity android:name=".activities.TelephonyActivity" />
         <activity android:name=".activities.ContactActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

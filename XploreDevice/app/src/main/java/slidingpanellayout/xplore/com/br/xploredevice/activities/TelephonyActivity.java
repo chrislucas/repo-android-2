@@ -19,6 +19,8 @@ import slidingpanellayout.xplore.com.br.xploredevice.utils.wrapperproviders.Wrap
 
 public class TelephonyActivity extends AppCompatActivity {
 
+    private static final int REQUEST_PERMISSION_READ_SMS = 0x0f;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +35,7 @@ public class TelephonyActivity extends AppCompatActivity {
                 , new String[] {
                     Manifest.permission.READ_SMS
                 }
-                , 0x0f
+                , REQUEST_PERMISSION_READ_SMS
             );
         }
 
@@ -43,11 +45,10 @@ public class TelephonyActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == 0x0f) {
+        if(requestCode == REQUEST_PERMISSION_READ_SMS) {
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 execute();
             }
@@ -55,57 +56,61 @@ public class TelephonyActivity extends AppCompatActivity {
     }
 
     private void execute() {
-        Uri uri = WrapperContentProvider.getUriWithAppendedId(Telephony.Sms.CONTENT_URI, 1);
-        Log.i("URI_SMS"
-                ,
-            String.format("Path: %s.\nUserInfo: %s.\nScheme: %s.\nQuery: %s.\nPackage: %s.\n"
-                , uri.getPath()
-                , uri.getUserInfo()
-                , uri.getScheme()
-                , uri.getQuery()
-                , Telephony.Sms.getDefaultSmsPackage(this)
-            )
-        );
-
-
-
+        logUri("URI_DATA_SMS", WrapperContentProvider.getUriWithAppendedId(Telephony.Sms.CONTENT_URI, 1));
+        logUri("URI_DATA_CARRIERS", WrapperContentProvider.getUriWithAppendedId(Telephony.Carriers.CONTENT_URI, 1));
         new Handler(Looper.getMainLooper()).post(new Runnable() {
-
-            private final Context context  =  TelephonyActivity.this.getApplicationContext();
-
             @Override
             public void run() {
-
-                WrapperTelephonyContentProvider.executeSimpleQuery(
-                      context
-                    , Telephony.Sms.CONTENT_URI
-                    , new WrapperTelephonyContentProvider.CProviderSms()
-                    , WrapperTelephonyContentProvider.CProviderSms.COLUMNS
-                    , null
-                    , null
-                    , null
-                );
-
-                WrapperTelephonyContentProvider.executeSimpleQuery(
-                      context
-                    , Telephony.Sms.Conversations.CONTENT_URI
-                    , new WrapperTelephonyContentProvider.CProviderConversation()
-                    , WrapperTelephonyContentProvider.CProviderConversation.COLUMNS
-                    , null
-                    , null
-                    , null
-                );
-
-                WrapperTelephonyContentProvider.executeSimpleQuery(
-                    context
-                    , Telephony.Carriers.CONTENT_URI
-                    , new WrapperTelephonyContentProvider.CProviderCarriers()
-                    , WrapperTelephonyContentProvider.CProviderCarriers.COLUMNS
-                    , null
-                    , null
-                    , null
-                );
+                getCarriers(TelephonyActivity.this.getApplicationContext());
             }
         });
+    }
+
+    private void logUri(String tag, Uri uri) {
+        Log.i(tag,
+                String.format("Path: %s.\nUserInfo: %s.\nScheme: %s.\nQuery: %s.\nPackage: %s.\n"
+                        , uri.getPath()
+                        , uri.getUserInfo()
+                        , uri.getScheme()
+                        , uri.getQuery()
+                        , Telephony.Sms.getDefaultSmsPackage(this)
+                )
+        );
+    }
+
+    private void getSmsContent(Context context) {
+        WrapperTelephonyContentProvider.executeSimpleQuery(
+            context
+            , Telephony.Sms.CONTENT_URI
+            , new WrapperTelephonyContentProvider.CProviderSms()
+            , WrapperTelephonyContentProvider.CProviderSms.COLUMNS
+            , null
+            , null
+            , null
+        );
+    }
+
+    private void getSmsConversation(Context context) {
+        WrapperTelephonyContentProvider.executeSimpleQuery(
+            context
+            , Telephony.Sms.Conversations.CONTENT_URI
+            , new WrapperTelephonyContentProvider.CProviderConversation()
+            , WrapperTelephonyContentProvider.CProviderConversation.COLUMNS
+            , null
+            , null
+            , null
+        );
+    }
+
+    private void getCarriers(Context context) {
+        WrapperTelephonyContentProvider.executeSimpleQuery(
+            context
+            , Telephony.Carriers.CONTENT_URI
+            , new WrapperTelephonyContentProvider.CProviderCarriers()
+            , WrapperTelephonyContentProvider.CProviderCarriers.COLUMNS
+            , null
+            , null
+            , null
+        );
     }
 }

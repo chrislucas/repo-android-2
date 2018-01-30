@@ -98,6 +98,7 @@ public class WrapperContactsContentProvider {
         @Override
         public void process(Cursor cursor, String[] columns) {
             if(cursor.moveToFirst()) {
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/YYYY hh:mm:ss", Locale.getDefault());
                 while (cursor.moveToNext()) {
                     int id = cursor.getInt(cursor.getColumnIndex(COLUMNS[0]));
                     String name = cursor.getString(cursor.getColumnIndex(COLUMNS[1]));
@@ -106,10 +107,24 @@ public class WrapperContactsContentProvider {
                     String primaryName = cursor.getString(cursor.getColumnIndex(COLUMNS[4]));
                     int hasNumber = cursor.getInt(cursor.getColumnIndex(COLUMNS[5]));
                     String number = cursor.getString(cursor.getColumnIndex(COLUMNS[6]));
+
+                    long contactLastUpdateTimeStamp = cursor.getLong(cursor.getColumnIndex(COLUMNS[7]));
+                    long lastTimeContacted = cursor.getLong(cursor.getColumnIndex(COLUMNS[9]));
+
                     String message = String.format(Locale.getDefault(),"_ID: %d.\nDISPLAY_NAME: %s.\n" +
                                     "DISPLAY_NAME_ALTERNATIVE: %s.\nDISPLAY_NAME_SOURCE: %s.\n" +
-                                    "DISPLAY_NAME_PRIMARY: %s.\nHAS_PHONE_NUMBER; %d.\nNUMBER: %s.\n"
-                            , id, name, alternativeName, sourceName, primaryName, hasNumber, number);
+                                    "DISPLAY_NAME_PRIMARY: %s.\nHAS_PHONE_NUMBER; %d.\nNUMBER: %s.\n" +
+                                    "CONTACT_LAST_UPDATED_TIMESTAMP: %s.\nLAST_TIME_CONTACTED: %s.\n"
+                            , id
+                            , name
+                            , alternativeName
+                            , sourceName
+                            , primaryName
+                            , hasNumber
+                            , number
+                            , simpleDateFormat.format(new Date(contactLastUpdateTimeStamp))
+                            , simpleDateFormat.format(new Date(lastTimeContacted))
+                    );
                     Log.i("RAW_CONTACTS_PHONE", message);
                 }
             }

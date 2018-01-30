@@ -171,14 +171,29 @@ public class TelephonyUtils {
 
     public static void m(Activity activity, DialogInterface.OnClickListener onClickListener) {
         TelephonyManager manager = getTelephonyManager(activity);
-
-
     }
 
+    public static void addPhoneStateListeners(Activity activity, PhoneStateListener phoneStateListener) {
 
-    public static void addPhoneStateListener(Context context, PhoneStateListener phoneStateListener) {
-        TelephonyManager manager = getTelephonyManager(context);
-        manager.listen(phoneStateListener, PhoneStateListener.LISTEN_SIGNAL_STRENGTHS);
+        if(ActivityCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity
+                    , new String[] {Manifest.permission.ACCESS_COARSE_LOCATION}
+                    , REQUEST_CODE_ACCESS_COARSE_LOCATION);
+        }
+
+        else {
+            getTelephonyManager(activity.getApplicationContext()).listen(phoneStateListener
+                    , PhoneStateListener.LISTEN_SIGNAL_STRENGTHS
+                            | PhoneStateListener.LISTEN_CALL_STATE
+                            | PhoneStateListener.LISTEN_CELL_INFO
+                            | PhoneStateListener.LISTEN_CELL_LOCATION
+                            | PhoneStateListener.LISTEN_SERVICE_STATE
+                            | PhoneStateListener.LISTEN_DATA_ACTIVITY
+                            | PhoneStateListener.LISTEN_CALL_FORWARDING_INDICATOR
+                            | PhoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR
+                            | PhoneStateListener.LISTEN_DATA_CONNECTION_STATE
+            );
+        }
     }
 
     private static void showAlertDialog(Activity activity
