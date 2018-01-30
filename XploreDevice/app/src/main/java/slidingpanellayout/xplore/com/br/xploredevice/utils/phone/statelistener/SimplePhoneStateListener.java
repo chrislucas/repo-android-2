@@ -1,4 +1,4 @@
-package slidingpanellayout.xplore.com.br.xploredevice.utils;
+package slidingpanellayout.xplore.com.br.xploredevice.utils.phone.statelistener;
 
 import android.content.Context;
 import android.telephony.CellInfo;
@@ -10,8 +10,9 @@ import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
 import android.util.Log;
-import android.widget.Toast;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 import java.util.List;
 import java.util.Locale;
 
@@ -19,7 +20,7 @@ import java.util.Locale;
  * Created by r028367 on 26/01/2018.
  */
 
-public class SimpleImplPhoneStateListener extends PhoneStateListener {
+public class SimplePhoneStateListener extends PhoneStateListener {
 
     private Context context;
     private CallbackListenerCellLocation callbackListenerCellLocation;
@@ -29,7 +30,7 @@ public class SimpleImplPhoneStateListener extends PhoneStateListener {
         void updateSignalStrengths(SignalStrength signalStrength);
     }
 
-    public SimpleImplPhoneStateListener(Context context, CallbackListenerCellLocation callbackListenerCellLocation) {
+    public SimplePhoneStateListener(Context context, CallbackListenerCellLocation callbackListenerCellLocation) {
         super();
         this.context = context;
         this.callbackListenerCellLocation = callbackListenerCellLocation;
@@ -53,7 +54,6 @@ public class SimpleImplPhoneStateListener extends PhoneStateListener {
                 message = "ServiceState.STATE_POWER_OFF";
                 break;
         }
-
         Log.i("TEL_SRV_STATE_CHANGED", message);
         Log.i("TEL_SRV_STATE_CHANGED",
             String.format(Locale.getDefault()
@@ -85,13 +85,12 @@ public class SimpleImplPhoneStateListener extends PhoneStateListener {
         super.onCellLocationChanged(location);
         CellLocation.requestLocationUpdate();
         if(location != null) {
-
             if(location instanceof  GsmCellLocation) {
                 GsmCellLocation gsmCellLocation = (GsmCellLocation) location;
                 int cid = gsmCellLocation.getCid();
                 int lac = gsmCellLocation.getLac();
                 int psc = gsmCellLocation.getPsc();
-                Log.i("GSM_CELL_LOCATION", String.format("CID: %d.\nLAC: %d.\nPSC: %d.\n", cid, lac, psc));
+                Log.i("GSM_CELL_LOCATION", String.format("CID (Cell Tower Id): %d.\nLAC (Location Area Code): %d.\nPSC: %d.\n", cid, lac, psc));
             }
             else if (location instanceof CdmaCellLocation) {
                 CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) location;
@@ -107,25 +106,36 @@ public class SimpleImplPhoneStateListener extends PhoneStateListener {
                 );
             }
         }
-
-
-
         callbackListenerCellLocation.updateCellLocation(location);
     }
 
     @Override
     public void onCallStateChanged(int state, String incomingNumber) {
         super.onCallStateChanged(state, incomingNumber);
+        String messageState = "";
+        switch (state) {
+            case TelephonyManager.CALL_STATE_IDLE:
+                messageState = "TelephonyManager.CALL_STATE_IDLE";
+                break;
+            case TelephonyManager.CALL_STATE_RINGING:
+                messageState = "TelephonyManager.CALL_STATE_RINGING";
+                break;
+            case TelephonyManager.CALL_STATE_OFFHOOK:
+                messageState = "TelephonyManager.CALL_STATE_OFFHOOK";
+                break;
+        }
+        Log.i("CALL_STATE_CHANGED", String.format("Call State: %s", messageState));
+        Log.i("CALL_STATE_CHANGED", String.format("Número ligando: %s", incomingNumber));
+
     }
 
     @Override
     public void onDataConnectionStateChanged(int state) {
         super.onDataConnectionStateChanged(state);
+        Log.i("STATE_TEL_DATA_STATE", getTelephonyDataState(state));
     }
 
-    @Override
-    public void onDataConnectionStateChanged(int state, int networkType) {
-        super.onDataConnectionStateChanged(state, networkType);
+    private String getTelephonyDataState(int state) {
         String message = "";
         switch (state) {
             case TelephonyManager.DATA_DISCONNECTED:
@@ -141,31 +151,62 @@ public class SimpleImplPhoneStateListener extends PhoneStateListener {
                 message = "TelephonyManager.DATA_SUSPENDED";
                 break;
         }
-        Log.i("TEL_CONN_STATE_CHANGED", message);
+        return message;
+    }
+
+    @Override
+    public void onDataConnectionStateChanged(int state, int networkType) {
+        super.onDataConnectionStateChanged(state, networkType);
+        Log.i("STATE_TEL_DATA_STATE", getTelephonyDataState(state));
+        String message = "";
+        Field [] fields =  TelephonyManager.class.getFields();
+        if(fields != null) {
+            for(Field field : fields) {
+                int modifiers = field.getModifiers();
+                if( Modifier.isFinal(modifiers) && Modifier.isPublic(modifiers) && field.getName().startsWith("NETWORK_TYPE") ) {
+                    try {
+                        if(field.getInt(null) == networkType) {
+                            message = field.getName();
+                            break;
+                        }
+                    }
+                    catch (IllegalAccessException e) {
+                       Log.e("ILLEGAL_ACCESS", e.getLocalizedMessage());
+                    }
+                }
+            }
+        }
+        Log.i("STATE_TEL_DATA_STATE", String.format("Tipo de Rede: %s", message));
     }
 
     @Override
     public void onDataActivity(int direction) {
         super.onDataActivity(direction);
+        String message = "???";
+        switch (direction) {
+            case TelephonyManager.DATA_ACTIVITY_DORMANT:
+                message = "TelephonyManager.DATA_ACTIVITY_DORMANT";
+                break;
+            case TelephonyManager.DATA_ACTIVITY_IN:
+                message = "TelephonyManager.DATA_ACTIVITY_IN";
+                break;
+            case TelephonyManager.DATA_ACTIVITY_INOUT:
+                message = "TelephonyManager.DATA_ACTIVITY_INOUT";
+                break;
+            case TelephonyManager.DATA_ACTIVITY_NONE:
+                message = "TelephonyManager.DATA_ACTIVITY_NONE";
+                break;
+            case TelephonyManager.DATA_ACTIVITY_OUT:
+                message = "TelephonyManager.DATA_ACTIVITY_OUT";
+                break;
+        }
+        Log.i("DATA_ACTIVITY", message);
     }
 
     @Override
     public void onSignalStrengthsChanged(SignalStrength signalStrength) {
         super.onSignalStrengthsChanged(signalStrength);
-
-        String sb = String.format(Locale.getDefault()
-                , "CdmaDbm: %d.\n", signalStrength.getCdmaDbm()) +
-                String.format(Locale.getDefault()
-                        , "GsmSignalStrength: %d\n", signalStrength.getGsmSignalStrength()) +
-                String.format(Locale.getDefault()
-                        , "GsmSignalStrength 1: %d\n"
-                        , signalStrength.getGsmSignalStrength() * 2 - signalStrength.getCdmaDbm()
-                ) +
-                String.format(Locale.getDefault(), "signal to noise ratio: %d\n", signalStrength.getEvdoSnr()) +
-                String.format(Locale.getDefault(), "GSM bit error rate: %d\n", signalStrength.getGsmBitErrorRate());
-
-        Log.i("SIGNAL_STRENGTHS", sb);
-
+        Log.i("SIGNAL_STRENGTHS", signalStrength.toString());
         callbackListenerCellLocation.updateSignalStrengths(signalStrength);
     }
 

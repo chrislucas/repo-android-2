@@ -1,27 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="slidingpanellayout.xplore.com.br.xploredevice.activities.SlidingPanelLayoutActivity">
-
-    <TextView
-        android:id="@+id/info_cell_location"
+    android:fillViewport="true">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:padding="15sp"
-        />
+        android:orientation="vertical"
+        tools:context="slidingpanellayout.xplore.com.br.xploredevice.activities.SlidingPanelLayoutActivity">
+        <TextView
+            android:id="@+id/info_cell_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="10sp"
+            />
+        <TextView
+            android:id="@+id/info_signal_strengths"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="10sp"
+            />
+    </LinearLayout>
+</ScrollView>
 
 
-    <TextView
-        android:id="@+id/info_signal_strengths"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:padding="15sp"
-        />
-
-</LinearLayout>

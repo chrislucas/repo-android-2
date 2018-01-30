@@ -1,24 +1,22 @@
-package slidingpanellayout.xplore.com.br.xploredevice.utils;
+package slidingpanellayout.xplore.com.br.xploredevice.utils.telephony;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
 import android.telephony.CellInfo;
-import android.telephony.CellLocation;
 import android.telephony.PhoneStateListener;
 import android.telephony.ServiceState;
-import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 
 import java.util.List;
+
+import slidingpanellayout.xplore.com.br.xploredevice.utils.telephony.callbacks.LogCellTowerInfo;
 
 /**
  * Created by r028367 on 26/01/2018.
@@ -174,14 +172,11 @@ public class TelephonyUtils {
     }
 
     public static void addPhoneStateListeners(Activity activity, PhoneStateListener phoneStateListener) {
-
-        if(ActivityCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity
-                    , new String[] {Manifest.permission.ACCESS_COARSE_LOCATION}
+                    , new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}
                     , REQUEST_CODE_ACCESS_COARSE_LOCATION);
-        }
-
-        else {
+        } else {
             getTelephonyManager(activity.getApplicationContext()).listen(phoneStateListener
                     , PhoneStateListener.LISTEN_SIGNAL_STRENGTHS
                             | PhoneStateListener.LISTEN_CALL_STATE
@@ -193,6 +188,49 @@ public class TelephonyUtils {
                             | PhoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR
                             | PhoneStateListener.LISTEN_DATA_CONNECTION_STATE
             );
+        }
+    }
+
+    public interface CallbackCellTowerInfo {
+        public void callback(List<CellInfo> cellInfos);
+    }
+
+    /**
+     * https://www.codeproject.com/Questions/1210021/Android-getallcellinfo-getneighboringcellinfo-dete
+     * */
+
+    public static void explorerCellTowerInfo(Activity activity) {
+        TelephonyManager telephonyManager = getTelephonyManager(activity.getApplicationContext());
+        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(activity
+                    , new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}
+                    , REQUEST_CODE_ACCESS_COARSE_LOCATION);
+            return;
+        }
+
+        else {
+            LogCellTowerInfo logCellTowerInfo = new LogCellTowerInfo();
+            logCellTowerInfo.callback(telephonyManager.getAllCellInfo());
+        }
+    }
+
+    public static void explorerCellTowerInfo(Activity activity, CallbackCellTowerInfo callbackCellTowerInfo) {
+        TelephonyManager telephonyManager = getTelephonyManager(activity.getApplicationContext());
+        if (ActivityCompat.checkSelfPermission(activity, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            ActivityCompat.requestPermissions(activity
+                    , new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}
+                    , REQUEST_CODE_ACCESS_COARSE_LOCATION);
+            return;
+        }
+        else {
+            callbackCellTowerInfo.callback(telephonyManager.getAllCellInfo());
         }
     }
 

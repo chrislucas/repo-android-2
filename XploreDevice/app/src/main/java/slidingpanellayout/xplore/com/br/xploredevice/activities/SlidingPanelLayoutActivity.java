@@ -3,6 +3,7 @@ package slidingpanellayout.xplore.com.br.xploredevice.activities;
 import android.content.DialogInterface;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,19 +12,20 @@ import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 import android.telephony.cdma.CdmaCellLocation;
 import android.telephony.gsm.GsmCellLocation;
+import android.util.Log;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Locale;
 
 import slidingpanellayout.xplore.com.br.xploredevice.R;
 import slidingpanellayout.xplore.com.br.xploredevice.broadcastreceivers.BroadcastReceiverPhoneStateChange;
-import slidingpanellayout.xplore.com.br.xploredevice.utils.SimpleImplPhoneStateListener;
+import slidingpanellayout.xplore.com.br.xploredevice.utils.phone.statelistener.SimplePhoneStateListener;
 import slidingpanellayout.xplore.com.br.xploredevice.utils.settings.SettingSecureUtils;
-import slidingpanellayout.xplore.com.br.xploredevice.utils.TelephonyUtils;
+import slidingpanellayout.xplore.com.br.xploredevice.utils.telephony.TelephonyUtils;
 
-public class SlidingPanelLayoutActivity extends AppCompatActivity  implements SimpleImplPhoneStateListener.CallbackListenerCellLocation {
+public class SlidingPanelLayoutActivity extends AppCompatActivity  implements SimplePhoneStateListener.CallbackListenerCellLocation {
 
 
     private StringBuilder message = new StringBuilder();;
@@ -80,7 +82,7 @@ public class SlidingPanelLayoutActivity extends AppCompatActivity  implements Si
 
     private void addPhoneStateListeners() {
         TelephonyUtils.addPhoneStateListeners(this
-                , new SimpleImplPhoneStateListener(getApplicationContext(), this));
+                , new SimplePhoneStateListener(getApplicationContext(), this));
     }
 
     @Override
@@ -92,7 +94,8 @@ public class SlidingPanelLayoutActivity extends AppCompatActivity  implements Si
                 int lac = gsmCellLocation.getLac();
                 int psc = gsmCellLocation.getPsc();
                 ((TextView) findViewById(R.id.info_cell_location)).setText(String.format(Locale.getDefault()
-                        , "GSM.\nCID: %d.\nLAC: %d.\nPSC: %d.\n", cid, lac, psc));
+                        , "GSM.\nCID (Cell Tower ID): %d.\nLAC (Localtion Area Code): %d.\n(Primary Scrambling Code) PSC: %d.\n"
+                        , cid, lac, psc));
             }
             else if(cellLocation instanceof CdmaCellLocation) {
                 CdmaCellLocation cdmaCellLocation = (CdmaCellLocation) cellLocation;
@@ -113,17 +116,63 @@ public class SlidingPanelLayoutActivity extends AppCompatActivity  implements Si
     @Override
     public void updateSignalStrengths(SignalStrength signalStrength) {
         if(signalStrength != null) {
-            String sb = String.format(Locale.getDefault()
-                    , "CdmaDbm: %d.\n", signalStrength.getCdmaDbm()) +
+            Method[] methods = SignalStrength.class.getMethods();
+            String lteSignalMessage = "";
+            for(Method method : methods) {
+                try {
+                    if( ( method.getName().equals("getLteSignalStrength")  )) {
+                        int lte = (int) method.invoke(signalStrength);
+                        lteSignalMessage += String.format(Locale.getDefault(), "LTE Signal Strength %d.\n", lte);
+                    }
+
+                    else if( ( method.getName().equals("getLteRsrp")  )) {
+                        int lte = (int) method.invoke(signalStrength);
+                        lteSignalMessage += String.format(Locale.getDefault(), "LTE Rsrp %d.\n", lte);
+                    }
+
+                    else if( ( method.getName().equals("getLteRsrq")  )) {
+                        int lte = (int) method.invoke(signalStrength);
+                        lteSignalMessage += String.format(Locale.getDefault(), "LTE Rsrq %d.\n", lte);
+                    }
+
+                    else if( ( method.getName().equals("getLteRssnr")  )) {
+                        int lte = (int) method.invoke(signalStrength);
+                        lteSignalMessage += String.format(Locale.getDefault(), "LTE Rssnr %d.\n", lte);
+                    }
+
+                    else if( ( method.getName().equals("getLteCqi")  )) {
+                        int lte = (int) method.invoke(signalStrength);
+                        lteSignalMessage += String.format(Locale.getDefault(), "LTE Cqi %d.\n", lte);
+                    }
+
+                    else if( ( method.getName().equals("getLteRsrpBoost")  )) {
+                        int lte = (int) method.invoke(signalStrength);
+                        lteSignalMessage += String.format(Locale.getDefault(), "LTE Rsrp Boost %d.\n", lte);
+                    }
+                }
+                catch (IllegalAccessException | InvocationTargetException e) {
+                    Log.e("EXCP_REFLECTION", e.getMessage());
+                }
+            }
+            String sb =
+                    String.format(Locale.getDefault(), "Signal LTE:\n%s\n", lteSignalMessage) +
                     String.format(Locale.getDefault()
-                            , "GsmSignalStrength 1: %d\n", signalStrength.getGsmSignalStrength()) +
+                    , "CdmaDbm (Decibel por Milliwatt): %d.\n", signalStrength.getCdmaDbm()) +
                     String.format(Locale.getDefault()
-                            , "Cdma Dbm - SignalStrength  * 2: %d\n"
+                            , "GsmSignalStrength: %d.\n", signalStrength.getGsmSignalStrength()) +
+                    String.format(Locale.getDefault()
+                            , "Cdma Dbm - SignalStrength  * 2: %d.\n"
                             , signalStrength.getGsmSignalStrength() * 2 - signalStrength.getCdmaDbm()
                     ) +
-                    String.format(Locale.getDefault(), "Signal to noise ratio: %d\n", signalStrength.getEvdoSnr()) +
-                    String.format(Locale.getDefault(), "GSM bit error rate: %d\n", signalStrength.getGsmBitErrorRate());
+                    String.format(Locale.getDefault(), "Signal to noise ratio: %d.\n", signalStrength.getEvdoSnr()) +
+                    String.format(Locale.getDefault(), "DBM: %d.\n", signalStrength.getEvdoDbm()) +
+                    String.format(Locale.getDefault(), "CdmaEcio: %d.\n", signalStrength.getCdmaEcio()) +
+                    String.format(Locale.getDefault(), "EvdoEcio: %d.\n", signalStrength.getEvdoEcio()) +
+                    String.format(Locale.getDefault(), "GSM bit error rate: %d.\n", signalStrength.getGsmBitErrorRate());
 
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+               sb +=  String.format(Locale.getDefault(), "Nivel: %d.\n", signalStrength.getLevel());
+            }
             ((TextView) findViewById(R.id.info_signal_strengths)).setText(sb);
         }
     }

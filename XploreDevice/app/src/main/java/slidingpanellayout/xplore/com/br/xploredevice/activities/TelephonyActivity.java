@@ -25,7 +25,6 @@ public class TelephonyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_telephony);
-
         if( ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS) != PackageManager.PERMISSION_GRANTED) {
             if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_SMS)) {
                 // Mostrar uma mensagem caso necessario
@@ -38,11 +37,9 @@ public class TelephonyActivity extends AppCompatActivity {
                 , REQUEST_PERMISSION_READ_SMS
             );
         }
-
         else {
             execute();
         }
-
     }
 
     @Override
