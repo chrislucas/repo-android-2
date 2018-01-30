@@ -23,23 +23,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activities.SlidingPanelLayoutActivity">
-
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <receiver
             android:name=".broadcastreceivers.BroadcastReceiverPhoneStateChange"
             android:enabled="true"
-            android:exported="true" />
+            android:exported="true"
+            />
 
         <activity android:name=".activities.UserDictActivity" />
         <activity android:name=".activities.TelephonyActivity">
         </activity>
         <activity android:name=".activities.ContactActivity" />
         <activity android:name=".activities.ExplorerInfoCellTowerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
     </application>
 

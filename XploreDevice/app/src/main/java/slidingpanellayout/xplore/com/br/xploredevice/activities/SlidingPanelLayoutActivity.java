@@ -154,22 +154,26 @@ public class SlidingPanelLayoutActivity extends AppCompatActivity  implements Si
                     Log.e("EXCP_REFLECTION", e.getMessage());
                 }
             }
+            int cdmaDbm = signalStrength.getCdmaDbm();
+            int gsmSignalStrength = signalStrength.getGsmSignalStrength();
             String sb =
                     String.format(Locale.getDefault(), "Signal LTE:\n%s\n", lteSignalMessage) +
-                    String.format(Locale.getDefault()
-                    , "CdmaDbm (Decibel por Milliwatt): %d.\n", signalStrength.getCdmaDbm()) +
-                    String.format(Locale.getDefault()
-                            , "GsmSignalStrength: %d.\n", signalStrength.getGsmSignalStrength()) +
-                    String.format(Locale.getDefault()
-                            , "Cdma Dbm - SignalStrength  * 2: %d.\n"
-                            , signalStrength.getGsmSignalStrength() * 2 - signalStrength.getCdmaDbm()
-                    ) +
-                    String.format(Locale.getDefault(), "Signal to noise ratio: %d.\n", signalStrength.getEvdoSnr()) +
-                    String.format(Locale.getDefault(), "DBM: %d.\n", signalStrength.getEvdoDbm()) +
-                    String.format(Locale.getDefault(), "CdmaEcio: %d.\n", signalStrength.getCdmaEcio()) +
-                    String.format(Locale.getDefault(), "EvdoEcio: %d.\n", signalStrength.getEvdoEcio()) +
-                    String.format(Locale.getDefault(), "GSM bit error rate: %d.\n", signalStrength.getGsmBitErrorRate());
 
+                    String.format(Locale.getDefault(), "CdmaDbm (Decibel por Milliwatt): %d.\n", cdmaDbm) +
+
+                    String.format(Locale.getDefault(), "GsmSignalStrength: %d.\n", gsmSignalStrength) +
+
+                    String.format(Locale.getDefault(), "Signal to noise ratio: %d.\n", signalStrength.getEvdoSnr()) +
+
+                    String.format(Locale.getDefault(), "DBM: %d.\n", signalStrength.getEvdoDbm()) +
+
+                    String.format(Locale.getDefault(), "CdmaEcio: %d.\n", signalStrength.getCdmaEcio()) +
+
+                    String.format(Locale.getDefault(), "EvdoEcio: %d.\n", signalStrength.getEvdoEcio()) +
+
+                    String.format(Locale.getDefault(), "GSM bit error rate: %d.\n", signalStrength.getGsmBitErrorRate()) +
+
+                    String.format(Locale.getDefault(), "GSM or CDMA: %s.\n", signalStrength.isGsm() ? "GSM|LTE" : "CDMA");
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                sb +=  String.format(Locale.getDefault(), "Nivel: %d.\n", signalStrength.getLevel());
             }
