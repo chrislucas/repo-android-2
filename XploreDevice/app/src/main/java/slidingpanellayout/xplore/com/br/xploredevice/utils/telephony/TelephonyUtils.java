@@ -169,8 +169,14 @@ public class TelephonyUtils {
 
     public static void m(Activity activity, DialogInterface.OnClickListener onClickListener) {
         TelephonyManager manager = getTelephonyManager(activity);
+
     }
 
+    /**
+     * Adicionando Um listener para capturar informacoes de eventos que podem ocorrer com o estado
+     * do telefone. Esses eventos podem ser conferidos na class {@link PhoneStateListener#LISTEN_NONE}
+     *
+     * */
     public static void addPhoneStateListeners(Activity activity, PhoneStateListener phoneStateListener) {
         if (ActivityCompat.checkSelfPermission(activity.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity
@@ -178,15 +184,15 @@ public class TelephonyUtils {
                     , REQUEST_CODE_ACCESS_COARSE_LOCATION);
         } else {
             getTelephonyManager(activity.getApplicationContext()).listen(phoneStateListener
-                    , PhoneStateListener.LISTEN_SIGNAL_STRENGTHS
-                            | PhoneStateListener.LISTEN_CALL_STATE
+                    ,PhoneStateListener.LISTEN_CALL_STATE
+                            | PhoneStateListener.LISTEN_CALL_FORWARDING_INDICATOR
                             | PhoneStateListener.LISTEN_CELL_INFO
                             | PhoneStateListener.LISTEN_CELL_LOCATION
-                            | PhoneStateListener.LISTEN_SERVICE_STATE
                             | PhoneStateListener.LISTEN_DATA_ACTIVITY
-                            | PhoneStateListener.LISTEN_CALL_FORWARDING_INDICATOR
-                            | PhoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR
                             | PhoneStateListener.LISTEN_DATA_CONNECTION_STATE
+                            | PhoneStateListener.LISTEN_MESSAGE_WAITING_INDICATOR
+                            | PhoneStateListener.LISTEN_SIGNAL_STRENGTHS
+                            | PhoneStateListener.LISTEN_SERVICE_STATE
             );
         }
     }

@@ -9,6 +9,18 @@ http://www.truiton.com/2014/08/android-onsignalstrengthschanged-lte-strength-mea
 http://www.truiton.com/2014/08/android-ondataconnectionstatechanged-detect-network-type/
 https://www.wilsonamplifiers.com/blog/best-smartphone-apps-to-find-your-mobile-signal-strength/
 
-
 Cell Broadcast
 https://en.wikipedia.org/wiki/Cell_Broadcast
+
+Mobile Phone Signal
+https://en.wikipedia.org/wiki/Mobile_phone_signal
+
+Apps google
+https://console.developers.google.com/apis/library?project=appaumoxarifadoicomon&authuser=1
+https://developers.google.com/maps/documentation/geolocation/intro#cell_tower_objectpackage slidingpanellayout.xplore.com.br.dynamicformandroid;
+
+Pesquisar como recuperar posicao de torres de celulares usando LAC ou CID das antenas
+
+https://stackoverflow.com/questions/19782791/how-does-android-network-provider-translate-cellid-and-lac-into-lat-long
+https://developers.google.com/maps/documentation/geolocation/intro#cell_tower_object
+https://developers.google.com/maps/documentation/android-api/start?authuser=1#etapa_3_criar_um_projeto_do_google_maps
