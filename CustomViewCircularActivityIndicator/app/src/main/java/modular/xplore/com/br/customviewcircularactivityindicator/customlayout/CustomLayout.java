@@ -79,10 +79,76 @@ public class CustomLayout extends ViewGroup {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int count = getChildCount();
+        int rowHeight = 0, maxWidth = 0, maxHeight = 0, left = 0, top = 0;
+
+        Log.i("DIMENSION_ON_MEASURE", String.format("Dimension(%d, %d)", getWidth(), getHeight()));
+        Log.i("DIMENSION_ON_MEASURE", String.format("Dimension SPEC(%d, %d)", widthMeasureSpec, heightMeasureSpec));
 
         for (int idx = 0; idx < count ; idx++) {
             View childView = getChildAt(idx);
+            measureChild(childView, widthMeasureSpec, heightMeasureSpec);
 
+            /**
+             * Largura bruta do componente, valor resultante de uma operacao de bit usando uma mascara
+             * {@link ViewGroup#MEASURED_SIZE_MASK
+             * */
+
+            int childWidth = childView.getMeasuredWidth();
+            /**
+             * Altura bruta do componente ...
+             * */
+            int childHeight = childView.getMeasuredHeight();
+
+            /**
+             * Se a View atual mais a largura do que ja foi ocupado
+             * for menor do que a largura total, adicione o elemento
+             * na linha e contabilize o espaco ocupado
+             * */
+            if(left + childWidth < getWidth()) {
+                left += childWidth;
+            }
+            /**
+             * Do contrario, ponha a view na linha abaixo
+             * */
+            else {
+                if(left > maxWidth)
+                    maxWidth = left;
+                // zere o contador de largura
+                left = 0;
+                top += rowHeight;
+                rowHeight = 0;
+            }
+            // pegando a altura do maior componente
+            if (childHeight > rowHeight)
+                rowHeight = childHeight;
+        }
+
+        if (left > maxWidth)
+            maxWidth = left;
+        maxHeight = top + rowHeight;
+        /**
+         *
+         * */
+        setMeasuredDimension(getMeasure(widthMeasureSpec, maxWidth), getMeasure(heightMeasureSpec, maxHeight));
+    }
+
+
+    private int getMeasure(int spec, int desired) {
+        /***
+         *
+         *
+         * */
+        int sizeSpec = MeasureSpec.getSize(spec);
+        switch (MeasureSpec.getMode(spec)) {
+            case MeasureSpec.EXACTLY:
+                return sizeSpec;
+
+            case MeasureSpec.AT_MOST:
+                return Math.min(sizeSpec, desired);
+
+            case MeasureSpec.UNSPECIFIED:
+            default:
+                    return desired;
         }
     }
 }
