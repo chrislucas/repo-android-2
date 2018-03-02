@@ -1,0 +1,43 @@
+https://android.jlelse.eu/android-performance-avoid-using-enum-on-android-326be0794dc3
+
+http://shubham.chaudhary.xyz/blog/typedef-annotation
+
+
+Enum RetentionPolicy
+https://docs.oracle.com/javase/7/docs/api/java/lang/annotation/RetentionPolicy.html
+
+As constantes desse enum descrevem as politicas para manter as anotacoes. Sao usadas juntas com
+a anotacao Retention meta-annotation para especificar quanto tempo as anotacoes devem ser mantidas
+
+
+Link sobre Typedef annotation em android e eles podem substituir o uso de Enums em android
+https://android.jlelse.eu/android-performance-avoid-using-enum-on-android-326be0794dc3
+
+http://shubham.chaudhary.xyz/blog/typedef-annotation
+
+http://johnpetitto.com/typedef-annotations
+
+http://androidjavapoint.blogspot.com.br/2017/03/android-performance-avoid-using-enum-on.html
+
+https://guides.codepath.com/android/Replacing-Enums-with-Enumerated-Annotations
+
+https://blog.reversebits.tech/miracle-stuff-in-android-intdef-and-stringdef-5aeab3c3f4f7
+
+https://developer.android.com/studio/write/annotations.html?hl=pt-br
+
+Replacing Enums with Enumerated Annotations
+https://guides.codepath.com/android/Replacing-Enums-with-Enumerated-Annotations
+
+
+** Ler isso
+Discussão sobre desempenho e consumo de memoria em aplicacoes android
+Magic constants in Android development
+https://infinum.co/the-capsized-eight/magic-constants-in-android-development
+
+
+Discussao sobre RetentionPolicy
+https://stackoverflow.com/questions/3107970/how-do-different-retention-policies-affect-my-annotations
+
+
+Improve Code Inspection with Annotations
+https://developer.android.com/studio/write/annotations.html?hl=en#enum-annotations
