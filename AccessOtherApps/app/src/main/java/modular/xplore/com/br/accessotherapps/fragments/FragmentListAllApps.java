@@ -4,6 +4,8 @@ import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
+
+import java.util.List;
 
 import modular.xplore.com.br.accessotherapps.R;
 import modular.xplore.com.br.accessotherapps.activities.MainActivity;
@@ -130,7 +134,20 @@ public class FragmentListAllApps extends Fragment implements View.OnClickListene
     }
 
 
+    // funciona se sabemos qual activity tem um intent-filter com action main
+    // mesmo se a category nao for LAUNCHER
+    //Intent intent = new Intent(Intent.ACTION_MAIN);
+    //intent.setClassName("com.example.yourapp", "com.example.yourapp.MainActivity");
+    //startActivity(intent);
+
     private void doSomething(Bundle bundle, String action, String category, String packageClass, String id) {
+
+        List<ResolveInfo> list =  getActivity().getPackageManager().queryIntentActivities(new Intent(action), PackageManager.MATCH_DEFAULT_ONLY);
+
+        getActivity().getPackageManager().resolveActivity(new Intent(action), 0);
+
+        if(list != null && list.size() > 0) {}
+
         Intent intent = getActivity().getPackageManager().getLaunchIntentForPackage(packageClass);
         if (intent != null) {
             intent.setAction(action);
