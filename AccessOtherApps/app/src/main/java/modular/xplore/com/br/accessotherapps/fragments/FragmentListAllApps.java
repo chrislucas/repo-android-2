@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import java.util.Iterator;
 import java.util.List;
 
 import modular.xplore.com.br.accessotherapps.R;
@@ -106,7 +107,6 @@ public class FragmentListAllApps extends Fragment implements View.OnClickListene
 
     @Override
     public void onClick(View v) {
-
         String category, action, packageClass, id;
         Bundle bundle = new Bundle();
         switch (v.getId()) {
@@ -120,6 +120,12 @@ public class FragmentListAllApps extends Fragment implements View.OnClickListene
                 break;
 
             case R.id.icon_app_materiais:
+                category = "app.r028367.appicomon.category.START_OTHER_APP";
+                action = "app.r028367.appicomon.action.START_OTHER_APP";
+                packageClass = "app.r028367.appicomon";
+                id = "app.r028367.appicomon";
+                bundle.putInt("BUNDLE", 2);
+                doSomething(bundle, action, category, packageClass, id);
                 break;
 
             case R.id.icon_app_abertura_horario:
@@ -127,7 +133,7 @@ public class FragmentListAllApps extends Fragment implements View.OnClickListene
                 action = "br.com.icomon.aberturadehorario.action.START_OTHER_APP";
                 packageClass = "br.com.icomon.aberturadehorario";
                 id = "br.com.icomon.aberturadehorario";
-                bundle.putInt("BUNDLE", 2);
+                bundle.putInt("BUNDLE", 3);
                 doSomething(bundle, action, category, packageClass, id);
                 break;
         }
@@ -141,10 +147,16 @@ public class FragmentListAllApps extends Fragment implements View.OnClickListene
     //startActivity(intent);
 
     private void doSomething(Bundle bundle, String action, String category, String packageClass, String id) {
-
         List<ResolveInfo> list =  getActivity().getPackageManager().queryIntentActivities(new Intent(action), PackageManager.MATCH_DEFAULT_ONLY);
-
-        getActivity().getPackageManager().resolveActivity(new Intent(action), 0);
+        ResolveInfo resolveInfo = getActivity().getPackageManager().resolveActivity(new Intent(action), 0);
+        if(resolveInfo.filter != null) {
+            Iterator<String> categories =  resolveInfo.filter.categoriesIterator();
+            if(categories != null) {
+                while (categories.hasNext()) {
+                    Log.i("CATEGORY_INTENT_FILTER", categories.next());
+                }
+            }
+        }
 
         if(list != null && list.size() > 0) {}
 
@@ -193,7 +205,6 @@ public class FragmentListAllApps extends Fragment implements View.OnClickListene
         String url = String.format("https://play.google.com/store/apps/details?id=%s&hl=pt", id);
         return BuildUtils.openGooglePlayWithBaseUrl(getActivity(), url);
     }
-
 
 
     private void test(String baseUrl) {
