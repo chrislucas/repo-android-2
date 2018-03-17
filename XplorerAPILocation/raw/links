@@ -1,0 +1,28 @@
+https://developer.android.com/training/location/index.html
+
+
+ResultReceiver
+https://developer.android.com/reference/android/os/ResultReceiver.html
+https://proandroiddev.com/intentservice-and-resultreceiver-70de71e5e40a
+http://lalit3686.blogspot.com.br/2012/06/how-to-update-activity-from-service.html
+http://ramdroid.github.io/androiddev/ResultReceiverDemo.html
+
+
+FusedLocationProviderClient
+https://github.com/googlesamples/android-play-location/blob/master
+/BasicLocationSample/java/app/src/main/java/com/google/android/gms/location/sample/basiclocationsample/MainActivity.java
+
+
+https://developers.google.com/android/reference/com/google/android/gms/location/package-summary
+
+Google apis Android
+https://developers.google.com/android/guides/setup
+
+Android device GPS on/off programatically
+https://stackoverflow.com/questions/22528984/android-device-gps-on-off-programatically
+
+
+https://developer.android.com/training/location/index.html
+
+FusedLocationProviderClient
+https://developers.google.com/android/reference/com/google/android/gms/location/FusedLocationProviderClient
