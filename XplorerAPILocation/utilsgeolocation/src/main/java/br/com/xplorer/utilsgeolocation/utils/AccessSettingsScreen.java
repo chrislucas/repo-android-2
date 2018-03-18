@@ -19,26 +19,28 @@ public class AccessSettingsScreen {
         intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
 
         /**
-         * https://developer.android.com/reference/android/net/Uri.html#fromParts(java.lang.String,%20java.lang.String,%20java.lang.String)
+         * https://developer.android.com/reference/android/net/Uri.html#fromParts(java.lang.String,%20java.lang.String,%20java.lan.String)
          * https://stackoverflow.com/questions/48485068/difference-between-uri-fromparts-and-uri-parse
          * */
-
-        Uri uri = Uri.fromParts("package", BuildConfig.APPLICATION_ID, null);
-        Log.i("OPEN_APP_D_SETTINGS", uri.getPath());
-
+        // BuildConfig.APPLICATION_ID
+        Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+        Log.i("OPEN_APP_D_SETTINGS", uri.toString());
         intent.setData(uri);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //Intent.FLAG_ACTIVITY_NEW_TASK, Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP
+        //intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
     }
 
-    public static void openApplicationDevelopmentSettings(ContextCompat activity) {
+    public static void openApplicationDevelopmentSettings(Context context) {
         Intent intent = new Intent();
         intent.setAction(Settings.ACTION_APPLICATION_DEVELOPMENT_SETTINGS);
+        context.startActivity(intent);
     }
 
-    public static void openLocationSourceSettings(Context activity) {
+    public static void openLocationSourceSettings(Context context) {
         Intent intent = new Intent();
         intent.setAction(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        context.startActivity(intent);
     }
 
 }

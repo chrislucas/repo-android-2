@@ -25,4 +25,20 @@ https://stackoverflow.com/questions/22528984/android-device-gps-on-off-programat
 https://developer.android.com/training/location/index.html
 
 FusedLocationProviderClient
+https://developers.google.com/location-context/fused-location-provider/
 https://developers.google.com/android/reference/com/google/android/gms/location/FusedLocationProviderClient
+
+EnableGPSAutoMatically
+https://stackoverflow.com/questions/29801368/how-to-show-enable-location-dialog-like-google-maps
+https://gist.github.com/irfaan008/f977c043ff7dfe3f71ce979a2ee52ebe
+
+FusedLocationProviderApi vs FusedLocationProviderClient
+https://stackoverflow.com/questions/46481789/android-locationservices-fusedlocationapi-deprecated
+
+samples Google android play  location
+https://github.com/googlesamples/android-play-location
+
+Tutorial
+https://javapapers.com/android/android-location-fused-provider/
+
+https://stackoverflow.com/questions/32822101/how-to-programmatically-open-the-permission-screen-for-a-specific-app-on-android
