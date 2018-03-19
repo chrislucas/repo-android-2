@@ -22,7 +22,7 @@ import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationCallback;
+
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
@@ -70,18 +70,16 @@ public class Geolocation {
     private GoogleApiClient googleApiClient;
 
     public Geolocation(Activity activity) {
-        this.activity = activity;
-        utilsAlertDialog = new UtilsAlertDialog(activity);
-        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
+        init(activity);
+        configureLocationSettingsRequest();
     }
 
     public Geolocation(Activity activity, GoogleApiClient.ConnectionCallbacks connectionCallbacks
             , GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
-        this.activity = activity;
+        init(activity);
         this.connectionCallbacks = connectionCallbacks;
         this.onConnectionFailedListener = onConnectionFailedListener;
     }
-
 
     public LocationRequest getLocationRequest() {
         return mLocationRequest;
@@ -91,24 +89,24 @@ public class Geolocation {
         return fusedLocationProviderClient;
     }
 
+    private void init(Activity activity) {
+        this.activity = activity;
+        utilsAlertDialog = new UtilsAlertDialog(activity);
+        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(activity);
+        configureLocationSettingsRequest();
+    }
+
     private void createNewGoogleApiClient() {
         googleApiClient = new GoogleApiClient.Builder(activity)
                 .addApi(LocationServices.API)
                 .addConnectionCallbacks(connectionCallbacks)
                 .addOnConnectionFailedListener(onConnectionFailedListener)
                 .build();
-
         googleApiClient.connect();
     }
 
-    public void enableGPSServiceLocation(GoogleApiClient.ConnectionCallbacks connectionCallbacks
-            , GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
 
-        /**
-         * Criando uma instancia da Api Client para capturar a localizacao via Google Service
-         * */
-        createNewGoogleApiClient();
-
+    private void configureLocationSettingsRequest() {
         /***
          * Configurando as condições para requisitar a última geo posição do aparelho.
          * Com essas configurações delegamos a api de Localizacao que escolha a melhor forma
@@ -135,6 +133,15 @@ public class Geolocation {
          * */
 
         mLocationSettingRequest = builder.build();
+    }
+
+    private void enableGPSServiceLocation(GoogleApiClient.ConnectionCallbacks connectionCallbacks
+            , GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
+        /**
+         * Criando uma instancia da Api Client para capturar a localizacao via Google Service
+         * */
+        createNewGoogleApiClient();
+        configureLocationSettingsRequest();
         setTask();
     }
 
@@ -381,8 +388,6 @@ public class Geolocation {
             }
         );
     }
-
-
 
     public void startServiceUpdateLocation(final DefaultLocationCallbackImpl defaultLocationCallback, final Looper looper) {
         OnSuccessListener<LocationSettingsResponse> onSuccessListener =  new OnSuccessListener<LocationSettingsResponse>() {
