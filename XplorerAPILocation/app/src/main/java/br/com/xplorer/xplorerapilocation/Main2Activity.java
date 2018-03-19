@@ -15,6 +15,8 @@ import android.widget.Toast;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 import br.com.xplorer.utilsgeolocation.callback.DefaultLocationCallbackImpl;
@@ -42,6 +44,12 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         textViewLastLocation = findViewById(R.id.text_view_last_location);
+        if(savedInstanceState != null) {
+            mLastKnowLocation = savedInstanceState.getParcelable(BUNDLE_SAVE_REQUESTING_LOCATION_UPDATES);
+            mRequestingLocationUpdates = savedInstanceState.getBoolean(BUNDLE_SAVE_LOCATION);
+            if (mLastKnowLocation != null)
+                updateTextViewLastLocation(mLastKnowLocation);
+        }
     }
 
     @Override
@@ -138,17 +146,23 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
     @Override
     public void callbackHasLocationResult(@NonNull LocationResult locationResult) {
         mLastKnowLocation = locationResult.getLastLocation();
+        for (Location location : locationResult.getLocations()) {
+            Log.i("LOCATIONS_CALLBACK", location.toString());
+        }
         updateTextViewLastLocation(mLastKnowLocation);
     }
 
     private void updateTextViewLastLocation(@NonNull Location location) {
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/YYYY as kk:mm:ss", Locale.getDefault());
         String log = String.format(Locale.getDefault()
-                , "Lat: %f\nLon: %f\nProvedor: %s\nAltitude: %f\nBearing: %f"
+                , "\nLat: %f\nLon: %f\nProvedor: %s\nAltitude: %f\nBearing: %f\n\nÚltima atualização: %s\n"
                 , location.getLatitude()
                 , location.getLongitude()
                 , location.getProvider()
                 , location.getAltitude()
                 , location.getBearing()
+                , simpleDateFormat.format(calendar.getTime())
         );
         String message = String.format(getString(R.string.format_last_location), log);
         textViewLastLocation.setText(message);
