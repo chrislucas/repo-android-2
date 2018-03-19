@@ -52,8 +52,10 @@ public class Geolocation {
 
     private static final long DEFAULT_INTERVAL_SET_LOCATION = 30 * 1000;
     private static final long DEFAULT_FAST_INTERVAL_SET_LOCATION = 30 * 1000;
-    private static final String PERMISSIONS_LOCATION[] = {Manifest.permission.ACCESS_FINE_LOCATION
-            , Manifest.permission.ACCESS_COARSE_LOCATION};
+    private static final String PERMISSIONS_LOCATION[] = {
+         Manifest.permission.ACCESS_FINE_LOCATION
+        , Manifest.permission.ACCESS_COARSE_LOCATION
+    };
 
     public static final int REQUEST_ENABLE_GPS = 0x13;
     public static final int REQUEST_PERMISSION_ACCESS_LOCATION = 0x14;

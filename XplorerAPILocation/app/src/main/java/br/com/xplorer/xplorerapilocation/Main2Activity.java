@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.os.Handler;
 import android.os.Looper;
+import android.os.ResultReceiver;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +14,6 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 
 import java.text.SimpleDateFormat;
@@ -23,6 +24,8 @@ import br.com.xplorer.utilsgeolocation.callback.DefaultLocationCallbackImpl;
 import br.com.xplorer.utilsgeolocation.callback.OnCompleteTaskGoogleApiFusedLocation;
 import br.com.xplorer.utilsgeolocation.callback.OnLocationResultListener;
 import br.com.xplorer.utilsgeolocation.callback.model.Message;
+import br.com.xplorer.utilsgeolocation.service.AddressResultReceiver;
+import br.com.xplorer.utilsgeolocation.service.GeocoderIntentService;
 import br.com.xplorer.utilsgeolocation.utils.Geolocation;
 
 public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGoogleApiFusedLocation, OnLocationResultListener {
@@ -32,12 +35,43 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
 
     public static final String BUNDLE_SAVE_LOCATION = "BUNDLE_SAVE_LOCATION";
     public static final String BUNDLE_SAVE_REQUESTING_LOCATION_UPDATES = "BUNDLE_SAVE_REQUESTING_LOCATION_UPDATES";
+    public static final String BUNDLE_SAVE_REQUESTING_ADDRESS_UPDATES = "BUNDLE_SAVE_REQUESTING_ADDRESS_UPDATES";
 
     private TextView textViewLastLocation;
 
     private DefaultLocationCallbackImpl defaultLocationCallback;
 
-    private boolean mRequestingLocationUpdates;
+    private boolean mRequestingLocationUpdates, mRequestinAddressUpdates;
+
+
+    private AddressResultReceiver addressResultReceiver;
+
+
+    private static class MyHandler extends Handler {
+        public MyHandler() {
+            super();
+        }
+
+        @Override
+        public void handleMessage(android.os.Message msg) {
+            super.handleMessage(msg);
+        }
+
+        @Override
+        public void dispatchMessage(android.os.Message msg) {
+            super.dispatchMessage(msg);
+        }
+
+        @Override
+        public String getMessageName(android.os.Message message) {
+            return super.getMessageName(message);
+        }
+
+        @Override
+        public boolean sendMessageAtTime(android.os.Message msg, long uptimeMillis) {
+            return super.sendMessageAtTime(msg, uptimeMillis);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +84,7 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
             if (mLastKnowLocation != null)
                 updateTextViewLastLocation(mLastKnowLocation);
         }
+        addressResultReceiver = new AddressResultReceiver(new MyHandler());
     }
 
     @Override
@@ -89,6 +124,7 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
         if(outState != null) {
             outState.putParcelable(BUNDLE_SAVE_LOCATION, mLastKnowLocation);
             outState.putBoolean(BUNDLE_SAVE_REQUESTING_LOCATION_UPDATES, mRequestingLocationUpdates);
+            outState.putBoolean(BUNDLE_SAVE_REQUESTING_ADDRESS_UPDATES, mRequestinAddressUpdates);
         }
     }
 
@@ -98,6 +134,7 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
         if (savedInstanceState != null) {
             mLastKnowLocation = savedInstanceState.getParcelable(BUNDLE_SAVE_LOCATION);
             mRequestingLocationUpdates = savedInstanceState.getBoolean(BUNDLE_SAVE_REQUESTING_LOCATION_UPDATES);
+            mRequestinAddressUpdates = savedInstanceState.getBoolean(BUNDLE_SAVE_REQUESTING_ADDRESS_UPDATES);
         }
     }
 
@@ -113,6 +150,15 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
             geolocation.removeLocationUpdates(defaultLocationCallback);
             mRequestingLocationUpdates = false;
         }
+    }
+
+
+    private void startServiceToUpdateAddress(Location location, ResultReceiver resultReceiver) {
+        Intent intentService = new Intent(this, GeocoderIntentService.class);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(GeocoderIntentService.BUNDLE_LOCATION, location);
+        bundle.putParcelable(GeocoderIntentService.BUNDLE_RESULT_RECEIVER, resultReceiver);
+        startService(intentService);
     }
 
 
@@ -133,6 +179,9 @@ public class Main2Activity extends AppCompatActivity implements OnCompleteTaskGo
             defaultLocationCallback = new DefaultLocationCallbackImpl(this);
             mRequestingLocationUpdates = true;
             geolocation.startServiceUpdateLocation(defaultLocationCallback, Looper.getMainLooper());
+
+
+            startServiceToUpdateAddress(location, addressResultReceiver);
         }
         else {}
     }
