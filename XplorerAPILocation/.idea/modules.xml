@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/XplorerAPILocation.iml" filepath="$PROJECT_DIR$/XplorerAPILocation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/packcustomviews/packcustomviews.iml" filepath="$PROJECT_DIR$/packcustomviews/packcustomviews.iml" />
       <module fileurl="file://$PROJECT_DIR$/utilsgeolocation/utilsgeolocation.iml" filepath="$PROJECT_DIR$/utilsgeolocation/utilsgeolocation.iml" />
     </modules>
   </component>

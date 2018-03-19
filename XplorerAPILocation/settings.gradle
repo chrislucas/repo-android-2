@@ -1,1 +1,1 @@
-include ':app', ':utilsgeolocation'
+include ':app', ':utilsgeolocation', ':packcustomviews'

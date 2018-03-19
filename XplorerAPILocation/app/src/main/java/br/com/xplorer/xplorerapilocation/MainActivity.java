@@ -20,14 +20,10 @@ import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsStates;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 
 import java.util.Locale;
 
-import br.com.xplorer.utilsgeolocation.impl.DefaultGACConnectionCallbacks;
-import br.com.xplorer.utilsgeolocation.impl.DefaultGACOnConnectionFailedListener;
-import br.com.xplorer.utilsgeolocation.utils.AccessSettingsScreen;
 import br.com.xplorer.utilsgeolocation.impl.LocationSourceImpl;
 import br.com.xplorer.utilsgeolocation.utils.Geolocation;
 
@@ -43,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private View rootLayout;
     private Snackbar snackBarAllWarning;
 
+    private Geolocation geolocation;
 
     private boolean checkPermissionAccessCoarseLocation() {
         return ActivityCompat.checkSelfPermission(this
@@ -56,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void requestPermission() {
-        boolean shouldIShowReq = shouldShowRequestPermissionRationale2(this
-                , PERMISSION_ACCESS_COARSE_LOCATION) ||
-                shouldShowRequestPermissionRationale2(this, PERMISSION_ACCESS_FINE_LOCATION);
+        boolean shouldIShowReq = ActivityCompat.shouldShowRequestPermissionRationale(this
+                , PERMISSION_ACCESS_COARSE_LOCATION) || ActivityCompat.shouldShowRequestPermissionRationale(this
+                , PERMISSION_ACCESS_FINE_LOCATION);
         if (shouldIShowReq) {
             showMessage("Precisamos acessar a sua localizacao"
                     , getString(android.R.string.ok), new View.OnClickListener() {
@@ -67,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
                             requestPermissionAccessCoarse();
                         }
                     });
-        } else {
+        }
+        else {
             requestPermissionAccessCoarse();
         }
     }
@@ -79,95 +77,90 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private boolean shouldShowRequestPermissionRationale2(Activity activity, String permission) {
-        return ActivityCompat.shouldShowRequestPermissionRationale(activity, permission);
-    }
-
     private boolean checkSelfPermission2(String permission) {
-        return  ActivityCompat.checkSelfPermission(this, permission)
-                == PackageManager.PERMISSION_GRANTED;
+        return  ActivityCompat.checkSelfPermission(this, permission) == PackageManager.PERMISSION_GRANTED;
     }
 
     @SuppressLint("MissingPermission")
     private void getLastLocation() {
-        boolean flag = checkSelfPermission2(Manifest.permission.ACCESS_FINE_LOCATION)
-                && checkSelfPermission2(Manifest.permission.ACCESS_COARSE_LOCATION);
+        boolean flag = checkSelfPermission2(Manifest.permission.ACCESS_FINE_LOCATION) && checkSelfPermission2(Manifest.permission.ACCESS_COARSE_LOCATION);
         if (flag) {
-            if(LocationSourceImpl.testGPSProviderIsEnabled(this)) {
-                Task<Location> task = fusedLocationProviderClient.getLastLocation();
-                task.addOnCompleteListener(this, new OnCompleteListener<Location>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Location> task) {
+            Log.i("TEST_GPS_PROVIDER"
+                    , String.valueOf(LocationSourceImpl.testGPSProviderIsEnabled(this)));
+ /*
+            Task<LocationAvailability> locationAvailabilityTask = fusedLocationProviderClient.getLocationAvailability();
+            locationAvailabilityTask.addOnCompleteListener(new OnCompleteListener<LocationAvailability>() {
+                @Override
+                public void onComplete(@NonNull Task<LocationAvailability> task) {
+                    // LocationAvailability locationAvailability  = task.getResult();
+                }
+            });
+   */
+            Task<Location> locationTask = fusedLocationProviderClient.getLastLocation();
+            locationTask.addOnCompleteListener(this, new OnCompleteListener<Location>() {
+                @Override
+                public void onComplete(@NonNull Task<Location> task) {
+                    if(task.isSuccessful()) {
                         Location location = task.getResult();
-                        if(task.isSuccessful() && location != null) {
+                        if(location != null)
                             setLocation(location);
-                        }
                         else {
-                            showMessage("1: Não foi possível recuperar sua geolocatizacao"
-                                    , getString(android.R.string.ok), new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            snackBarAllWarning.dismiss();
-                                        }
-                                    });
+                            showMessage("GPS está desabilitado"
+                            , getString(android.R.string.ok), new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    snackBarAllWarning.dismiss();
+                                    geolocation.enableGpsWithGoogleApiClient();
+                                }
+                            });
                         }
                     }
-                })
-
-                .addOnSuccessListener(this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                        if(location != null) {
-                            setLocation(location);
-                        }
-
-                        else {
-                            showMessage("2: Não foi possível recuperar sua geolocatizacao"
-                                    , getString(android.R.string.ok), new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            snackBarAllWarning.dismiss();
-                                        }
-                                    });
-                        }
+                    else {
+                        showMessage("1: Não foi possível recuperar sua geolocatizacao"
+                            , getString(android.R.string.ok), new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    snackBarAllWarning.dismiss();
+                                    geolocation.enableGpsWithGoogleApiClient();
+                                }
+                            });
                     }
-                })
-
-                .addOnFailureListener(this, new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        showMessage(e.getMessage()
-                                , getString(android.R.string.ok), new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        snackBarAllWarning.dismiss();
-                                    }
-                                });
+                }
+            })
+/*
+            .addOnSuccessListener(this, new OnSuccessListener<Location>() {
+                @Override
+                public void onSuccess(Location location) {
+                    if(location != null) {
+                        setLocation(location);
                     }
-                });
-            }
-
-            else {
-                showMessage("GPS está desabilitado"
-                        , getString(android.R.string.ok), new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        snackBarAllWarning.dismiss();
-                        //AccessSettingsScreen.openApplicationDetailsSettings(MainActivity.this);
-                        enableGpsWithGoogleApiClient();
+                    else {
+                        showMessage("2: Não foi possível recuperar sua geolocatizacao"
+                            , getStringMessage(android.R.string.ok), new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    snackBarAllWarning.dismiss();
+                                    geolocation.enableGpsWithGoogleApiClient();
+                                }
+                            });
                     }
-                });
-            }
+                }
+            })
+*/
+            .addOnFailureListener(this, new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    showMessage(e.getMessage()
+                            , getString(android.R.string.ok), new View.OnClickListener() {
+                                @Override
+                                public void onClick(View view) {
+                                    snackBarAllWarning.dismiss();
+                                }
+                            });
+                }
+            });
+
         }
-    }
-
-    private void enableGpsWithGoogleApiClient() {
-        DefaultGACConnectionCallbacks defaultGACConnectionCallbacks
-                = new DefaultGACConnectionCallbacks();
-        DefaultGACOnConnectionFailedListener defaultGACOnConnectionFailedListener
-                = new DefaultGACOnConnectionFailedListener();
-        Geolocation.enableGPS(this, defaultGACConnectionCallbacks
-                , defaultGACOnConnectionFailedListener);
     }
 
     private void setLocation(Location location) {
@@ -192,7 +185,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
+        geolocation = new Geolocation(this);
         if(!checkPermissionAccessCoarseLocation()) {
             requestPermission();
         }
@@ -215,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode) {
-            case Geolocation.REQUEST_LOCATION_SETTINGS:
+            case Geolocation.REQUEST_ENABLE_GPS:
                 LocationSettingsStates states = LocationSettingsStates.fromIntent(data);
                 if(states != null) {
                     String msg = String.format("GPS PRESENT? %s\n GPS Usable? %s\nLocation Present? %s"
@@ -264,8 +257,7 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View view) {
                                     snackBarAllWarning.dismiss();
-                                    //AccessSettingsScreen.openApplicationDetailsSettings(MainActivity.this);
-                                    enableGpsWithGoogleApiClient();
+                                    geolocation.enableGpsWithGoogleApiClient();
                                 }
                             }
                         );
