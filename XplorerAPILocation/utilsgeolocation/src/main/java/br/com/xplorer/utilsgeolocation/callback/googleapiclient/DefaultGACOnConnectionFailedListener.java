@@ -1,4 +1,4 @@
-package br.com.xplorer.utilsgeolocation.impl;
+package br.com.xplorer.utilsgeolocation.callback.googleapiclient;
 
 import android.support.annotation.NonNull;
 
@@ -11,7 +11,5 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class DefaultGACOnConnectionFailedListener implements GoogleApiClient.OnConnectionFailedListener {
     @Override
-    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
-    }
+    public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {}
 }

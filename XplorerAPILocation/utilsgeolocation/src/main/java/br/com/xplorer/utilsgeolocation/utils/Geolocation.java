@@ -40,8 +40,8 @@ import br.com.xplorer.packcustomviews.UtilsAlertDialog;
 import br.com.xplorer.utilsgeolocation.callback.DefaultLocationCallbackImpl;
 import br.com.xplorer.utilsgeolocation.callback.OnCompleteTaskGoogleApiFusedLocation;
 import br.com.xplorer.utilsgeolocation.callback.model.DefaultMessage;
-import br.com.xplorer.utilsgeolocation.impl.DefaultGACConnectionCallbacks;
-import br.com.xplorer.utilsgeolocation.impl.DefaultGACOnConnectionFailedListener;
+import br.com.xplorer.utilsgeolocation.callback.googleapiclient.DefaultGACConnectionCallbacks;
+import br.com.xplorer.utilsgeolocation.callback.googleapiclient.DefaultGACOnConnectionFailedListener;
 import br.com.xplorer.utilsgeolocation.impl.LocationSourceImpl;
 
 /**
@@ -52,7 +52,7 @@ public class Geolocation {
 
     private static final long DEFAULT_INTERVAL_SET_LOCATION = 30 * 1000;
     private static final long DEFAULT_FAST_INTERVAL_SET_LOCATION = 30 * 1000;
-    private static final String PERMISSIONS_LOCATION[] = {
+    private static final String PERMISSIONS_LOCATION [] = {
          Manifest.permission.ACCESS_FINE_LOCATION
         , Manifest.permission.ACCESS_COARSE_LOCATION
     };
@@ -137,11 +137,23 @@ public class Geolocation {
         mLocationSettingRequest = builder.build();
     }
 
+    private void enableGPSServiceLocation() {
+        /**
+         * Criando uma instancia da Api Client para capturar a localizacao via Google Service
+         * */
+        createNewGoogleApiClient();
+        configureLocationSettingsRequest();
+        setTask();
+    }
+
+
     private void enableGPSServiceLocation(GoogleApiClient.ConnectionCallbacks connectionCallbacks
             , GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
         /**
          * Criando uma instancia da Api Client para capturar a localizacao via Google Service
          * */
+        this.connectionCallbacks = connectionCallbacks;
+        this.onConnectionFailedListener = onConnectionFailedListener;
         createNewGoogleApiClient();
         configureLocationSettingsRequest();
         setTask();
@@ -260,10 +272,10 @@ public class Geolocation {
                 public void onComplete(@NonNull Task<Location> task) {
                     if (task.isSuccessful()) {
                         Location location = task.getResult();
-
                         if (location != null) {
                             onCompleteTaskGoogleApiFusedLocation.successGetLocation(location);
-                        } else {
+                        }
+                        else {
                             /**
                              * A instancia de Location pode ser nula em 2 situações
                              *
@@ -278,10 +290,11 @@ public class Geolocation {
                              * */
                             DefaultMessage defaultMessage = new DefaultMessage("Não temos em cache a sua última posição." +
                                     "\nAguarde enquanto fazemos uma nova requisição de atualização.");
+                            enableGpsWithGoogleApiClient();
                         }
 
-                    } else {
-                        enableGpsWithGoogleApiClient();
+                    }
+                    else {
                         DefaultMessage defaultMessage = new DefaultMessage("Não foi possível capturar a sua localização.");
                         onCompleteTaskGoogleApiFusedLocation.failureGetLocation(defaultMessage);
                         enableGpsWithGoogleApiClient();
@@ -350,9 +363,9 @@ public class Geolocation {
     }
 
     public void enableGpsWithGoogleApiClient() {
-        DefaultGACConnectionCallbacks defaultGACConnectionCallbacks = new DefaultGACConnectionCallbacks();
-        DefaultGACOnConnectionFailedListener defaultGACOnConnectionFailedListener = new DefaultGACOnConnectionFailedListener();
-        enableGPSServiceLocation(defaultGACConnectionCallbacks, defaultGACOnConnectionFailedListener);
+        connectionCallbacks = new DefaultGACConnectionCallbacks();
+        onConnectionFailedListener = new DefaultGACOnConnectionFailedListener();
+        enableGPSServiceLocation();
     }
 
     /**

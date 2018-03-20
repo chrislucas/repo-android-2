@@ -3,7 +3,6 @@ package br.com.xplorer.utilsgeolocation.impl;
 import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
-import android.location.Location;
 import android.util.Log;
 
 import java.io.IOException;
@@ -27,16 +26,14 @@ public class GeocoderImpl {
         geocoder = new Geocoder(context, locale);
     }
 
-    public List<Address> getListAddress(double latitude, double longitute, int limitResultAddress) {
+    public List<Address> getListAddress(double latitude, double longitude, int limitResultAddress) {
         List<Address> addressList = new ArrayList<>();
         try {
-            addressList = geocoder.getFromLocation(latitude, longitute, limitResultAddress);
-
+            addressList = geocoder.getFromLocation(latitude, longitude, limitResultAddress);
         } catch (IOException e) {
             String message = e.getMessage() == null ? "Não foi possível capturar o erro" : e.getMessage();
             Log.e("EXCP_LIST_ADDRESS", message);
         }
-
         return addressList;
     }
 
