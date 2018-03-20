@@ -1,4 +1,4 @@
-package br.com.xplorer.utilsgeolocation.service;
+package br.com.xplorer.utilsgeolocation.resultreceiver;
 
 import android.location.Address;
 import android.os.Bundle;
@@ -17,12 +17,7 @@ import java.util.List;
 
 public class AddressResultReceiver extends ResultReceiver {
 
-    private List<Address> addressList;
     public static final String BUNDLE_ADDRESSES = "BUNDLE_ADDRESSES";
-    public static final int RESULT_SUCCESS = 0x13;
-    public static final int RESULT_FAILURE = 0x12;
-    public static final int MESSAGE_WHAT = 0x255;
-
 
     private Handler handler;
 
@@ -37,11 +32,18 @@ public class AddressResultReceiver extends ResultReceiver {
     }
 
     @Override
-    protected void onReceiveResult(int resultCode, Bundle resultData) {
+    protected void onReceiveResult(@ResultReceiverCode int resultCode, Bundle resultData) {
         super.onReceiveResult(resultCode, resultData);
-        addressList = resultData.getParcelableArrayList(BUNDLE_ADDRESSES);
         Message message = new Message();
-        message.what = MESSAGE_WHAT;
+        message.what = resultCode;
+        List<Address> addressList;
+        if (resultCode == ResultReceiverCode.RESULT_SUCCESS) {
+            addressList = resultData.getParcelableArrayList(BUNDLE_ADDRESSES);
+        }
+        else {
+            addressList = new ArrayList<>();
+        }
+
         Bundle bundle = new Bundle();
         bundle.putParcelableArrayList(BUNDLE_ADDRESSES, (ArrayList<? extends Parcelable>) addressList);
         message.setData(bundle);

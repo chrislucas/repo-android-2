@@ -7,10 +7,10 @@ import android.util.Log;
 
 import java.util.List;
 import java.util.Locale;
-import java.util.StringTokenizer;
 
-import br.com.xplorer.utilsgeolocation.service.AddressResultReceiver;
+import br.com.xplorer.utilsgeolocation.resultreceiver.AddressResultReceiver;
 
+import br.com.xplorer.utilsgeolocation.resultreceiver.ResultReceiverCode;
 /**
  * Created by r028367 on 20/03/2018.
  */
@@ -33,7 +33,7 @@ public class HandlerResultReceiverAddress extends Handler {
     public void handleMessage(android.os.Message msg) {
         super.handleMessage(msg);
         switch (msg.what) {
-            case AddressResultReceiver.MESSAGE_WHAT:
+            case ResultReceiverCode.RESULT_SUCCESS:
                 Bundle bundle = msg.getData();
                 if(bundle != null) {
                     List<Address> addressList = bundle.getParcelableArrayList(AddressResultReceiver.BUNDLE_ADDRESSES);
@@ -63,8 +63,8 @@ public class HandlerResultReceiverAddress extends Handler {
                     callback.failureHandler();
                 }
                 break;
-                default:
-                    callback.failureHandler();
+            default:
+                callback.failureHandler();
         }
     }
 

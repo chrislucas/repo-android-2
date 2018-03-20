@@ -18,7 +18,6 @@ import com.google.android.gms.location.LocationResult;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.List;
 import java.util.Locale;
 import java.util.StringTokenizer;
 
@@ -26,7 +25,7 @@ import br.com.xplorer.utilsgeolocation.callback.DefaultLocationCallbackImpl;
 import br.com.xplorer.utilsgeolocation.callback.OnCompleteTaskGoogleApiFusedLocation;
 import br.com.xplorer.utilsgeolocation.callback.OnLocationResultListener;
 import br.com.xplorer.utilsgeolocation.callback.model.Message;
-import br.com.xplorer.utilsgeolocation.service.AddressResultReceiver;
+import br.com.xplorer.utilsgeolocation.resultreceiver.AddressResultReceiver;
 import br.com.xplorer.utilsgeolocation.service.GeocoderIntentService;
 import br.com.xplorer.utilsgeolocation.utils.Geolocation;
 

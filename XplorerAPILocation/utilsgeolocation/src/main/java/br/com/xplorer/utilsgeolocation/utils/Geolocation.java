@@ -50,8 +50,7 @@ import br.com.xplorer.utilsgeolocation.impl.LocationSourceImpl;
 
 public class Geolocation {
 
-    private static final long DEFAULT_INTERVAL_SET_LOCATION = 30 * 1000;
-    private static final long DEFAULT_FAST_INTERVAL_SET_LOCATION = 30 * 1000;
+
     private static final String PERMISSIONS_LOCATION [] = {
          Manifest.permission.ACCESS_FINE_LOCATION
         , Manifest.permission.ACCESS_COARSE_LOCATION
@@ -70,17 +69,21 @@ public class Geolocation {
     private LocationSettingsRequest mLocationSettingRequest;
 
     private GoogleApiClient googleApiClient;
+    private ConfigLocationRequest configLocationRequest;
 
     public Geolocation(Activity activity) {
         init(activity);
-        configureLocationSettingsRequest();
     }
 
-    public Geolocation(Activity activity, GoogleApiClient.ConnectionCallbacks connectionCallbacks
-            , GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
+    public Geolocation(Activity activity, ConfigLocationRequest configLocationRequest) {
         init(activity);
-        this.connectionCallbacks = connectionCallbacks;
-        this.onConnectionFailedListener = onConnectionFailedListener;
+        this.configLocationRequest = configLocationRequest;
+    }
+
+    public Geolocation(Activity activity, ConfigLocationRequest configLocationRequest
+            , GoogleApiClient.ConnectionCallbacks connectionCallbacks, GoogleApiClient.OnConnectionFailedListener onConnectionFailedListener) {
+        init(activity);
+        this.configLocationRequest = configLocationRequest;
     }
 
     public LocationRequest getLocationRequest() {
@@ -115,10 +118,19 @@ public class Geolocation {
          * de utlizar o sinal dos Satelites do GPS e a bateria do celular para pegar a ultima posicao
          * registrada do aparelho
          * */
+
         mLocationRequest = LocationRequest.create();
-        mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
-        mLocationRequest.setInterval(DEFAULT_INTERVAL_SET_LOCATION);
-        mLocationRequest.setFastestInterval(DEFAULT_FAST_INTERVAL_SET_LOCATION);
+        if (configLocationRequest == null) {
+            mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+            mLocationRequest.setInterval(ConfigLocationRequest.DEFAULT_INTERVAL_SET_LOCATION);
+            mLocationRequest.setFastestInterval(ConfigLocationRequest.DEFAULT_FAST_INTERVAL_SET_LOCATION);
+        }
+
+        else {
+            mLocationRequest.setPriority(configLocationRequest.getPriority());
+            mLocationRequest.setInterval(configLocationRequest.getInterval());
+            mLocationRequest.setFastestInterval(configLocationRequest.getFastInterval());
+        }
 
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
                 .addLocationRequest(mLocationRequest);

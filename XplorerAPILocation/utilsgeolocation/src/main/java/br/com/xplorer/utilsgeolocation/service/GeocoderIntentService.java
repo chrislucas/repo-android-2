@@ -2,7 +2,6 @@ package br.com.xplorer.utilsgeolocation.service;
 
 import android.app.IntentService;
 import android.content.Intent;
-import android.content.Context;
 import android.location.Address;
 import android.location.Location;
 import android.os.Bundle;
@@ -14,6 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.xplorer.utilsgeolocation.impl.GeocoderImpl;
+import br.com.xplorer.utilsgeolocation.resultreceiver.AddressResultReceiver;
+import br.com.xplorer.utilsgeolocation.resultreceiver.ResultReceiverCode;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -36,20 +37,22 @@ public class GeocoderIntentService extends IntentService {
     protected void onHandleIntent(Intent intent) {
         if (intent != null) {
             final String action = intent.getAction();
-            Bundle bundle = intent.getExtras();
-            if (bundle != null) {
-                Location location = bundle.getParcelable(BUNDLE_LOCATION);
-                ResultReceiver resultReceiver = bundle.getParcelable(BUNDLE_RESULT_RECEIVER);
-                int limitResult = bundle.getInt(BUNDLE_LIMIT_RESULT, 3);
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                Location location = extras.getParcelable(BUNDLE_LOCATION);
+                ResultReceiver resultReceiver = extras.getParcelable(BUNDLE_RESULT_RECEIVER);
+                int limitResult = extras.getInt(BUNDLE_LIMIT_RESULT, 3);
                 GeocoderImpl geocoderImpl = new GeocoderImpl(this);
                 List<Address> addresses = null;
                 if (location != null) {
                     addresses = geocoderImpl.getListAddress(location.getLatitude()
                             , location.getLongitude(), limitResult);
-                    Bundle b = new Bundle();
-                    b.putParcelableArrayList(AddressResultReceiver.BUNDLE_ADDRESSES, (ArrayList<? extends Parcelable>) addresses);
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelableArrayList(AddressResultReceiver.BUNDLE_ADDRESSES
+                            , (ArrayList<? extends Parcelable>) addresses);
                     if (resultReceiver != null) {
-                        resultReceiver.send(addresses.size() == 0 ? AddressResultReceiver.RESULT_FAILURE : AddressResultReceiver.RESULT_SUCCESS, b);
+                        resultReceiver.send(addresses.size() == 0
+                                ? ResultReceiverCode.RESULT_FAILURE : ResultReceiverCode.RESULT_SUCCESS, bundle);
                     }
                 }
                 else {

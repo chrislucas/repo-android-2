@@ -1,10 +1,13 @@
-package br.com.xplorer.utilsgeolocation.service;
+package br.com.xplorer.utilsgeolocation.handler;
 
 import android.location.Address;
 import android.os.Bundle;
 import android.os.Handler;
 
 import java.util.List;
+
+import br.com.xplorer.utilsgeolocation.resultreceiver.AddressResultReceiver;
+import br.com.xplorer.utilsgeolocation.resultreceiver.ResultReceiverCode;
 
 /**
  * Created by r028367 on 20/03/2018.
@@ -27,7 +30,7 @@ public class HandlerResultReceiver extends Handler {
     public void handleMessage(android.os.Message msg) {
         super.handleMessage(msg);
         switch (msg.what) {
-            case AddressResultReceiver.MESSAGE_WHAT:
+            case ResultReceiverCode.RESULT_SUCCESS:
                 Bundle bundle = msg.getData();
                 if(bundle != null) {
                     List<Address> addressList = bundle.getParcelableArrayList(AddressResultReceiver.BUNDLE_ADDRESSES);
