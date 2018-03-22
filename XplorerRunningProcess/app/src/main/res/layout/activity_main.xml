@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="5sp"
+    android:paddingEnd="5sp"
+    tools:context="br.com.icomon.xplorerrunningprocess.MainActivity">
+
+    <EditText
+        android:id="@+id/text_view_command"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/default_command"
+        android:textSize="22sp"
+        android:layout_marginTop="6sp"
+        android:layout_marginBottom="6sp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:maxLines="1"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2sp"
+        android:background="@color/black"
+        tools:ignore="SmallSp"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        />
+
+    <Button
+        android:id="@+id/button_exec_command"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/running_command"
+        android:padding="0sp"
+        android:onClick="executeCommand"
+        />
+
+    <Button
+        android:id="@+id/button_sample_tap"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/sample_tap"
+        android:padding="0sp"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/text_view_result_process"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginTop="6sp"
+            android:layout_marginBottom="6sp"
+            android:paddingTop="6sp"
+            android:paddingBottom="6sp"
+            android:textStyle="italic"
+            />
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+http://gimite.net/en/index.php?Run%20native%20executable%20in%20Android%20App
+
+
+https://www.learn2crack.com/2014/03/android-executing-shell-commands.html
+
+ProcessBuilder
+https://docs.oracle.com/javase/6/docs/api/java/lang/ProcessBuilder.html
+https://stackoverflow.com/questions/13381828/is-it-possible-to-execute-adb-commands-through-my-android-app
+
+
+https://stackoverflow.com/questions/14928197/how-to-simulate-touch-from-background-service-with-sendevent-or-other-way
+https://stackoverflow.com/questions/3598662/how-to-compile-android-application-with-system-permissions
+
+
+SimulateSwipeService.java
+https://gist.github.com/MiichaelD/cde0163a9839d0ff1bd11b9c3ce894d0
