@@ -14,3 +14,13 @@ https://stackoverflow.com/questions/3598662/how-to-compile-android-application-w
 
 SimulateSwipeService.java
 https://gist.github.com/MiichaelD/cde0163a9839d0ff1bd11b9c3ce894d0
+
+
+https://developer.android.com/reference/android/hardware/input/InputManager.InputDeviceListener.html
+https://developer.android.com/reference/android/hardware/input/InputManager.html
+
+http://thecodeartist.blogspot.com.br/2011/03/simulating-keyevents-on-android-device.html
+
+
+class Input 
+https://android.googlesource.com/platform/frameworks/base/+/android-7.1.1_r22/cmds/input/src/com/android/commands/input/Input.java
