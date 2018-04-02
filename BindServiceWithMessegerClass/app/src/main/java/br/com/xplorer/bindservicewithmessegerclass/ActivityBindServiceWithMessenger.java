@@ -7,7 +7,6 @@ import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
-import android.os.PersistableBundle;
 import android.os.RemoteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -35,9 +34,9 @@ public class ActivityBindServiceWithMessenger extends AppCompatActivity implemen
     private TextView textViewShowTime;
     private HandlerTask handlerTask;
     private Intent intentService;
-    private Messenger mMessenger, mReplyTo;
+    private Messenger mMessengerSender, mMessageReceiver;
 
-    private final SimpleDateFormat s = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
+    private final SimpleDateFormat SIMPLE_HOUR_FORMAT = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
 
     private static final String BUNDLE_INTENT = "BUNDLE_INTENT";
 
@@ -46,12 +45,9 @@ public class ActivityBindServiceWithMessenger extends AppCompatActivity implemen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bind_service_with_messenger);
         textViewShowTime = findViewById(R.id.text_view_showtime);
-        if (savedInstanceState != null) {
-            intentService = savedInstanceState.getParcelable(BUNDLE_INTENT);
-        }
-        else {
-            intentService = new Intent(this, StartTaskGetTimestampWithMessenger.class);
-        }
+        intentService = (savedInstanceState != null)
+                ? (Intent) savedInstanceState.getParcelable(BUNDLE_INTENT)
+                :  new Intent(this, StartTaskGetTimestampWithMessenger.class);
         startService(intentService);
     }
 
@@ -72,25 +68,23 @@ public class ActivityBindServiceWithMessenger extends AppCompatActivity implemen
     }
 
     public void onClickStopService(View view) {
+        // unbind serviço primario
         unbindService();
+        // para o serviço depois
         stopService();
     }
 
-
     private void stopService() {
-        if(intentService != null) {
-            if(stopService(intentService)) {
-                Toast.makeText(this, "Parando o serviçp", Toast.LENGTH_LONG).show();
-            }
-            else {
-                Toast.makeText(this, "Problemas ao tentar para o serviçp", Toast.LENGTH_LONG).show();
-            }
-        }
+        if(intentService != null)
+            Toast.makeText(this
+                    , stopService(intentService)
+                            ? "Parando o serviçp"
+                            : "Problemas ao tentar para o serviço", Toast.LENGTH_LONG).show();
     }
 
 
     private void updateTextView(long timestamp) {
-        textViewShowTime.setText(s.format(new Date(timestamp)));
+        textViewShowTime.setText(SIMPLE_HOUR_FORMAT.format(new Date(timestamp)));
     }
 
 
@@ -119,15 +113,23 @@ public class ActivityBindServiceWithMessenger extends AppCompatActivity implemen
          * Como foi configurado no arquivo AndroidManifest que o serviço {@link StartTaskGetTimestampWithMessenger}
          * vai rodar em um outro processo, o atribuo service vem como uma instanciaa de {@link android.os.BinderProxy}
          * */
-        mMessenger = new Messenger(service);
+        try {
+           Log.i("SV_INTERFACE_DESC",  service.getInterfaceDescriptor());
+        }
+        catch (RemoteException e) {
+            String msgException = e.getMessage() == null ? "Não foi possíve capturar o erro" : e.getMessage();
+            Log.e("EX_START_TASK_ACTIVITY", msgException);
+        }
+        mMessengerSender = new Messenger(service);
         Message message = Message.obtain(null
                 , StartTaskGetTimestampWithMessenger.FLAG_START_TASK, 0, 0);
         handlerTask = new HandlerTask(this);
-        mReplyTo = new Messenger(handlerTask);
-        message.replyTo = mReplyTo;
+        mMessageReceiver = new Messenger(handlerTask);
+        message.replyTo = mMessageReceiver;
         try {
-            mMessenger.send(message);
-        } catch (RemoteException e) {
+            mMessengerSender.send(message);
+        }
+        catch (RemoteException e) {
             String msgException = e.getMessage() == null ? "Não foi possíve capturar o erro" : e.getMessage();
             Log.e("EX_START_TASK_ACTIVITY", msgException);
         }

@@ -31,12 +31,12 @@
             android:exported="true"
             />
 
-        <!--  android:process=":process_bound_messenger_2" -->
+        <!--   -->
         <service
             android:name=".services.StartTaskGetTimestampWithMessenger"
             android:enabled="true"
             android:exported="true"
-
+            android:process=":process_bound_messenger_2"
             />
 
     </application>
