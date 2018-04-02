@@ -30,8 +30,11 @@ public class ExecuteLoopTask {
         this.runnable = new Runnable() {
             @Override
             public void run() {
-                callback.executeTask();
-                handler.postDelayed(this, interval);
+                try {
+                    callback.executeTask();
+                } finally {
+                    handler.postDelayed(this, interval);
+                }
             }
         };
     }

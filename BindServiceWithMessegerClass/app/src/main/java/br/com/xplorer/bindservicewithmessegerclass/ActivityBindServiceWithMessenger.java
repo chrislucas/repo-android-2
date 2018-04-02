@@ -4,7 +4,9 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Binder;
 import android.os.IBinder;
+import android.os.IInterface;
 import android.os.Message;
 import android.os.Messenger;
 import android.os.RemoteException;
@@ -115,6 +117,10 @@ public class ActivityBindServiceWithMessenger extends AppCompatActivity implemen
          * */
         try {
            Log.i("SV_INTERFACE_DESC",  service.getInterfaceDescriptor());
+           IInterface iInterface = service.queryLocalInterface(service.getInterfaceDescriptor());
+           if (iInterface != null) {
+               Binder binder = (Binder) iInterface.asBinder();
+           }
         }
         catch (RemoteException e) {
             String msgException = e.getMessage() == null ? "Não foi possíve capturar o erro" : e.getMessage();

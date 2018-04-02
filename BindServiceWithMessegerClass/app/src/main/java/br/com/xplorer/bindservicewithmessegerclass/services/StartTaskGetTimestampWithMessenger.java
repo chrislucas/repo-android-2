@@ -57,6 +57,11 @@ public class StartTaskGetTimestampWithMessenger extends Service implements Execu
         Log.i(TAG, "ON_REBIND");
     }
 
+    /**
+     * {@link ExecuteLoopTask.Callback#executeTask()}
+     * Metodo que e executado infinitamente dentro de um intervalo de tempo
+     * definido quandp a classe {@link ExecuteLoopTask} é instanciada
+     * */
     @Override
     public void executeTask() {
         long timestamp = System.currentTimeMillis();
@@ -72,6 +77,9 @@ public class StartTaskGetTimestampWithMessenger extends Service implements Execu
         }
     }
 
+    /**
+     * {@link HandlerTask.Callback#execute(Message)}
+     * */
     @Override
     public void execute(Message message) {
         switch (message.what) {
