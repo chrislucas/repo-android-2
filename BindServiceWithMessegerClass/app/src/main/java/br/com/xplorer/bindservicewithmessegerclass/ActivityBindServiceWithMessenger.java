@@ -79,7 +79,7 @@ public class ActivityBindServiceWithMessenger extends AppCompatActivity implemen
             Toast.makeText(this
                     , stopService(intentService)
                             ? "Parando o serviçp"
-                            : "Problemas ao tentar para o serviço", Toast.LENGTH_LONG).show();
+                            : "Problemas ao tentar parar o serviço de atualização do relógio", Toast.LENGTH_LONG).show();
     }
 
 
