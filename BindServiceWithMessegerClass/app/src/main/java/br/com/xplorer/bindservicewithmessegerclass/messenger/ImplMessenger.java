@@ -9,11 +9,11 @@ import android.os.RemoteException;
  * Created by r028367 on 29/03/2018.
  */
 
-public class MyMessenger  {
+public class ImplMessenger {
 
     private final Messenger messenger;
 
-    public MyMessenger(Messenger messenger) {
+    public ImplMessenger(Messenger messenger) {
         this.messenger = messenger;
     }
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">BindServiceWithMessegerClass</string>
+    <string name="stop_service">Parar o serviço</string>
 </resources>

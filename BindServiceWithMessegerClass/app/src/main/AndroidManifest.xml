@@ -10,18 +10,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".Main2Activity">
+        <activity android:name=".ActivityBindServiceWithIBinder">
+
+        </activity>
+        <activity android:name=".ActivityBindServiceWithMessenger">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
         <service
-            android:name=".services.MyService"
+            android:name=".services.JustCommunicateWithMessenger"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <service
+            android:name=".services.LocalService"
+            android:enabled="true"
+            android:exported="true"
+            />
+
+        <!--  android:process=":process_bound_messenger_2" -->
+        <service
+            android:name=".services.StartTaskGetTimestampWithMessenger"
+            android:enabled="true"
+            android:exported="true"
+
+            />
+
     </application>
 
 </manifest>

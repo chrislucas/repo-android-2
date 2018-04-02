@@ -9,11 +9,11 @@ import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
 
-public class MyService extends Service {
+public class JustCommunicateWithMessenger extends Service {
 
     public static final String BUNDLE_MESSENGER = "BUNDLE_MESSENGER";
 
-    public MyService() {
+    public JustCommunicateWithMessenger() {
     }
 
     @Override
@@ -32,7 +32,7 @@ public class MyService extends Service {
                         Message message = new Message();
                         messenger.send(message);
                     } catch (RemoteException e) {
-                        Log.e("E", e.getMessage());
+                        Log.e("EXCP", e.getMessage());
                     }
                 }
             }
