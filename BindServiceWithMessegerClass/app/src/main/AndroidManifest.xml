@@ -12,36 +12,34 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".ActivityBindServiceWithIBinder" />
         <activity android:name=".ActivityBindServiceWithMessenger" />
-        <activity android:name=".ActivityInterProcessCommunicationAIDL">
+        <activity android:name=".ActivityInterProcessCommunicationAIDL"></activity>
+
+        <activity android:name=".ActivityDemonstrative">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".services.JustCommunicateWithMessenger"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.LocalService"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".services.StartTaskGetTimestampWithMessenger"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":process_bound_messenger_2" />
+        <service
+            android:name=".services.RemoteServiceWithAIDLCommunication"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":process_bound_aidl" />
 
-
-         <service
-             android:name=".services.JustCommunicateWithMessenger"
-             android:enabled="true"
-             android:exported="true" />
-
-         <service
-             android:name=".services.LocalService"
-             android:enabled="true"
-             android:exported="true" />
-
-         <service
-             android:name=".services.StartTaskGetTimestampWithMessenger"
-             android:enabled="true"
-             android:exported="true"
-             android:process=":process_bound_messenger_2" />
-
-         <service
-             android:name=".services.RemoteService"
-             android:enabled="true"
-             android:exported="true"
-             android:process=":process_bound_aidl" />
 
     </application>
 

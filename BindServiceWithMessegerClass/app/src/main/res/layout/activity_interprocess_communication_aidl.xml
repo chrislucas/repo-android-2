@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LineartLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,4 +8,12 @@
     android:orientation="vertical"
     tools:context="br.com.xplorer.bindservicewithmessegerclass.ActivityInterProcessCommunicationAIDL">
 
-</LineartLayout>
+
+    <TextView
+        android:id="@+id/text_view_update_message_aidl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+
+</LinearLayout>

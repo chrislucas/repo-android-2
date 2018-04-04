@@ -99,18 +99,18 @@ public class ActivityBindServiceWithIBinder extends AppCompatActivity implements
     public void onServiceConnected(ComponentName name, IBinder service) {
         BindService bindService = (BindService) service;
         localService = (LocalService) bindService.getService();
-        showToast("Service Connected.");
+        showToast("RemoteServiceConnection Connected.");
     }
 
     @Override
     public void onServiceDisconnected(ComponentName name) {
         localService = null;
-        showToast("Service Disconnected.");
+        showToast("RemoteServiceConnection Disconnected.");
     }
 
     @Override
     public void onBindingDied(ComponentName name) {
-        showToast("Service Died.");
+        showToast("RemoteServiceConnection Died.");
     }
 
     private void showToast(String message) {

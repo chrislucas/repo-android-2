@@ -7,15 +7,15 @@ Tutorial sobre JobScheduler
 http://www.vogella.com/tutorials/AndroidTaskScheduling/article.html
 
 Android | Bind Service Using A Messenger
-http://www.truiton.com/2015/01/android-bind-mServiceCallback-using-messenger/
+http://www.truiton.com/2015/01/android-bind-mRemoteServiceConnectionCallback-using-messenger/
 
 Messeger class e Bind Service
-https://www.survivingwithandroid.com/2014/01/android-bound-mServiceCallback-ipc-with-messenger-2.html
+https://www.survivingwithandroid.com/2014/01/android-bound-mRemoteServiceConnectionCallback-ipc-with-messenger-2.html
 
 Example: Communication between Activity and Service using Messaging
-https://stackoverflow.com/questions/4300291/example-communication-between-activity-and-mServiceCallback-using-messaging
+https://stackoverflow.com/questions/4300291/example-communication-between-activity-and-mRemoteServiceConnectionCallback-using-messaging
 
-Outro tutorial sobre bind mServiceCallback
+Outro tutorial sobre bind mRemoteServiceConnectionCallback
 https://developer.android.com/guide/components/bound-services.html
 
 AIDL
@@ -25,4 +25,4 @@ Messenger class documentation
 https://developer.android.com/reference/android/os/Messenger.html
 
 
-http://www.truiton.com/2015/01/android-bind-mServiceCallback-using-messenger/
+http://www.truiton.com/2015/01/android-bind-mRemoteServiceConnectionCallback-using-messenger/

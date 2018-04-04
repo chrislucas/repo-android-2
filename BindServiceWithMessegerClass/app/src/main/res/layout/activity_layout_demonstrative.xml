@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/pattern_hypnotize"
+    android:padding="10sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/StyleVerticalGridLayoutBalanceSalary.Bordered">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:text="@string/company_name"
+                    style="@style/CellGridLayout.Text.Bold"
+                    />
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.7"
+                    android:text="@string/balance_date"
+                    style="@style/CellGridLayout.Text.Bold"
+                    android:textAlignment="textEnd"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/text_view_user_data"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/formatted_user_info"
+                    style="@style/CellGridLayout.Text.Bold"
+                    />
+                <TextView
+                    android:id="@+id/text_view_demonstrative_date"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/default_date"
+                    style="@style/CellGridLayout.Text.Bold"
+                    android:textAlignment="textEnd"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            style="@style/StyleHorizontalLineDivider"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:orientation="vertical">
+            <TextView
+                android:id="@+id/text_view_label_discounted_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_discounted_value"
+                style="@style/TextCell.Title"
+                />
+            <TextView
+                android:id="@+id/text_view_discounted_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/default_discounted_value"
+                style="@style/StyleBankBalance"
+                />
+        </LinearLayout>
+
+        <View
+            style="@style/StyleHorizontalLineDivider"
+            />
+
+        <!-- Conteúdo sobre os descontos do funcionpario-->
+
+        <!-- fim do conteúdo sobre os descontos -->
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_data_demonstrative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+        <View
+            style="@style/StyleHorizontalLineDivider"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout_accumulate_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/default_label_total_salaries"
+                    style="@style/TextCell.Title"
+                    android:textAlignment="textEnd"
+                    />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:text="@string/default_label_total_discounts"
+                    style="@style/TextCell.Title"
+                    android:textAlignment="textEnd"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_view_total_salaries"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textAlignment="textEnd"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_real_formatted_value"
+                    />
+
+                <TextView
+                    android:id="@+id/text_view_total_discounts"
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:textAlignment="textEnd"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_real_formatted_value"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/StyleHorizontalLineDivider"
+            />
+
+        <LinearLayout
+            android:id="@+id/layout_discount_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            style="@style/StyleVerticalGridLayoutBalanceSalary.Bordered">
+            <!--
+            <LinearLayout
+                android:id="@+id/header_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_title_code"
+                    />
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_title_description"
+                    />
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_title_reference"
+                    />
+
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_title_salaries"
+                    />
+                <TextView
+                    android:layout_width="0sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    style="@style/CellGridLayout.Title"
+                    android:text="@string/default_title_discounts"
+                    />
+
+            </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:id="@+id/footer_table"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/StyleVerticalGridLayoutBalanceSalary">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_title_salary_base"
+                        />
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_title_salary_inss"
+                        />
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_title_calc_fgts_base"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wrapper_info_demonstrative_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/salary_base"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_real_formatted_value"
+                        />
+                    <TextView
+                        android:id="@+id/salary_contrib_inss"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_real_formatted_value"
+                        />
+                    <TextView
+                        android:id="@+id/base_calc_fgts"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_real_formatted_value"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_title_fgts"
+                        />
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_title_base_calc_irff"
+                    />
+                    <TextView
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_title_irff_range"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/wrapper_info_demonstrative_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/fgts_tax_mouth"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_real_formatted_value"
+                        />
+                    <TextView
+                        android:id="@+id/calc_irff"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:layout_gravity="center"
+                        android:text="@string/default_real_formatted_value"
+                        />
+                    <TextView
+                        android:id="@+id/value_irff"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.3"
+                        style="@style/CellGridLayout.Title"
+                        android:text="@string/default_real_formatted_value"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

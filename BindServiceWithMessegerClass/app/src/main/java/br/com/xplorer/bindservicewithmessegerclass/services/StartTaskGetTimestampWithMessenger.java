@@ -13,7 +13,7 @@ import android.widget.Toast;
 import br.com.xplorer.bindservicewithmessegerclass.handler.ExecuteLoopTask;
 import br.com.xplorer.bindservicewithmessegerclass.handler.HandlerTask;
 
-public class StartTaskGetTimestampWithMessenger extends Service implements ExecuteLoopTask.Callback, HandlerTask.Callback{
+public class StartTaskGetTimestampWithMessenger extends Service implements ExecuteLoopTask.Callback, HandlerTask.Callback {
 
     public static final int FLAG_START_TASK = 0xff;
     public static final String BUNDLE_TIMESTAMP = "BUNDLE_TIMESTAMP";

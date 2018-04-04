@@ -1,4 +1,35 @@
 <resources>
     <string name="app_name">Estudo sobre Bind Service</string>
     <string name="stop_service">Parar o serviço</string>
+
+
+    <string name="label_discounted_value">Demonstrativo Líquido</string>
+    <string name="default_discounted_value">R$: %.2f</string>
+    <string name="default_real_formatted_value">%s</string>
+    <string name="default_title_demonstrative">Demonstrativo</string>
+    <string name="company_name">Icomon</string>
+    <string name="company_doc">CPNJ: 00.000.000/001–36</string>
+    <string name="balance_date">Demonstrativo de Pagamento:</string>
+    <string name="default_date">JANEIRO/2018</string>
+    <string name="default_title_code">Cód</string>
+    <string name="default_title_description">Descrição</string>
+    <string name="default_title_reference">Referência</string>
+    <string name="default_title_salaries">Vencimentos</string>
+    <string name="default_title_discounts">Descontos</string>
+    <string name="default_title_salary_base">Salário Base</string>
+    <string name="default_title_salary_inss">Contrib. INSS</string>
+    <string name="default_title_calc_fgts_base">Cálc. FGTS</string>
+    <string name="default_title_fgts">FGTS do Mês</string>
+    <string name="default_title_base_calc_irff">Cálc. IRFF</string>
+    <string name="default_title_irff_range">Faixa IRFF</string>
+    <string name="default_code_info">Cód: %d</string>
+    <string name="default_description_info">IRFF S. SALARIO</string>
+    <string name="default_reference_info">Ref: %f</string>
+    <string name="default_salaries_info">2.500,00</string>
+    <string name="default_discount_info">87,33</string>
+    <string name="formatted_user_info">%s, re: %s</string>
+    <string name="default_label_total_salaries">Total de vencimentos</string>
+    <string name="default_label_total_discounts">Total de descontos</string>
+
+
 </resources>

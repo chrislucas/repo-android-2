@@ -1,26 +1,26 @@
 package br.com.xplorer.bindservicewithmessegerclass.services;
 
 import android.app.Service;
-import android.content.Context;
 import android.content.Intent;
 import android.os.IBinder;
+import android.os.RemoteException;
 import android.util.Log;
 
-import br.com.xplorer.bindservicewithmessegerclass.services.iremote.ImplRemoteServiceAIDL;
+import br.com.xplorer.bindservicewithmessegerclass.IRemoteService;
+import br.com.xplorer.bindservicewithmessegerclass.services.iremote.ImplRemoteService;
 
-public class RemoteService extends Service {
+public class RemoteServiceWithAIDLCommunication extends Service {
 
-    private ImplRemoteServiceAIDL implRemoteServiceAIDL;
+    private ImplRemoteService implRemoteService;
 
-    private static final String TAG = RemoteService.class.getSimpleName().toUpperCase();
+    private static final String TAG = RemoteServiceWithAIDLCommunication.class.getSimpleName().toUpperCase();
 
-    public RemoteService() {
-    }
+    public RemoteServiceWithAIDLCommunication() {}
 
     @Override
     public void onCreate() {
         super.onCreate();
-        implRemoteServiceAIDL = new ImplRemoteServiceAIDL();
+        implRemoteService = new ImplRemoteService();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class RemoteService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         Log.i(TAG, "ON_BIND_REMOTE_SERVICE");
-        return implRemoteServiceAIDL;
+        return implRemoteService;
     }
 
     @Override
