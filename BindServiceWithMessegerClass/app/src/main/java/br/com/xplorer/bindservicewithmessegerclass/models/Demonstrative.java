@@ -26,7 +26,6 @@ public class Demonstrative implements Parcelable {
     private long dataDemonstrative;
     private List<DemonstrativeResult>  results;
 
-
     public static final DecimalFormat realDecimalFormat = new DecimalFormat("###,###.00");
 
     public Demonstrative() {

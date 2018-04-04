@@ -45,7 +45,8 @@ public class DemonstrativeResult implements Parcelable {
     }
 
     public String getFormattedResult() {
-        return Demonstrative.realDecimalFormat.format(result);
+        String f = Demonstrative.realDecimalFormat.format(result);
+        return result > 0 ? "+".concat(f) : f ;
     }
 
     public static final Parcelable.Creator<DemonstrativeResult> CREATOR = new Parcelable.Creator<DemonstrativeResult>() {

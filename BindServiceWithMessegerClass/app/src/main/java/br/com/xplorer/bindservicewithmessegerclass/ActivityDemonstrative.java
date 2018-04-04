@@ -33,19 +33,18 @@ public class ActivityDemonstrative extends AppCompatActivity {
 
         if(savedInstanceState == null) {
             fake();
-            fillLayout();
         }
         else {
             demonstrative = savedInstanceState.getParcelable(BUNDLE_DEMONSTRATIVE);
         }
-
+        fillLayout();
         recyclerView = findViewById(R.id.list_data_demonstrative);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setAutoMeasureEnabled(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         AdapterRecycleViewDataSalaries adapter = new AdapterRecycleViewDataSalaries(demonstrative.getResults());
         recyclerView.setAdapter(adapter);
-        recyclerView.setNestedScrollingEnabled(true);
+        recyclerView.setNestedScrollingEnabled(false);
     }
 
 
@@ -119,8 +118,6 @@ public class ActivityDemonstrative extends AppCompatActivity {
         demonstrativeResult.setReference(78.23);
         demonstrativeResult.setResult(-1955.75);
         list.add(demonstrativeResult);
-
-
 
 
         demonstrative.setDiscountedSalary(2130.78);

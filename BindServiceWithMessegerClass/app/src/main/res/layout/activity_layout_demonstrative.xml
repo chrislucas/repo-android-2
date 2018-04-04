@@ -5,11 +5,12 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pattern_hypnotize"
-    android:padding="10sp">
+    android:background="@color/background_screen_bank_balance"
+    android:padding="7sp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_wrapper_screen_bank_balance"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,7 +96,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/list_data_demonstrative"
             android:layout_width="match_parent"
-            android:layout_height="185sp"
+            android:layout_height="wrap_content"
             />
 
         <View
