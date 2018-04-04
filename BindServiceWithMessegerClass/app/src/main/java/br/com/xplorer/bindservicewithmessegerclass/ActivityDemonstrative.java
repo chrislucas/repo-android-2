@@ -23,20 +23,47 @@ public class ActivityDemonstrative extends AppCompatActivity {
     private User user = new User("Christoffer", "r028367");
     private RecyclerView recyclerView;
 
+
+    private static final String BUNDLE_DEMONSTRATIVE = "BUNDLE_DEMONSTRATIVE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout_demonstrative);
 
-        fake();
-        fillLayout();
+        if(savedInstanceState == null) {
+            fake();
+            fillLayout();
+        }
+        else {
+            demonstrative = savedInstanceState.getParcelable(BUNDLE_DEMONSTRATIVE);
+        }
 
         recyclerView = findViewById(R.id.list_data_demonstrative);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setAutoMeasureEnabled(true);
+        recyclerView.setLayoutManager(linearLayoutManager);
         AdapterRecycleViewDataSalaries adapter = new AdapterRecycleViewDataSalaries(demonstrative.getResults());
         recyclerView.setAdapter(adapter);
+        recyclerView.setNestedScrollingEnabled(true);
     }
 
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        if(outState != null) {
+            outState.putParcelable(BUNDLE_DEMONSTRATIVE, demonstrative);
+        }
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState != null) {
+            demonstrative = savedInstanceState.getParcelable(BUNDLE_DEMONSTRATIVE);
+        }
+    }
 
     private void fake() {
         demonstrative = new Demonstrative();
@@ -80,10 +107,19 @@ public class ActivityDemonstrative extends AppCompatActivity {
 
         demonstrativeResult = new DemonstrativeResult();
         demonstrativeResult.setCode("987");
-        demonstrativeResult.setDescription("IRFF3 S.SALARIO");
-        demonstrativeResult.setReference(7.5);
-        demonstrativeResult.setResult(-21.83);
+        demonstrativeResult.setDescription("IRFF4 S.SALARIO");
+        demonstrativeResult.setReference(13.33);
+        demonstrativeResult.setResult(-333.25);
         list.add(demonstrativeResult);
+
+
+        demonstrativeResult = new DemonstrativeResult();
+        demonstrativeResult.setCode("987");
+        demonstrativeResult.setDescription("IRFF5 S.SALARIO");
+        demonstrativeResult.setReference(78.23);
+        demonstrativeResult.setResult(-1955.75);
+        list.add(demonstrativeResult);
+
 
 
 
