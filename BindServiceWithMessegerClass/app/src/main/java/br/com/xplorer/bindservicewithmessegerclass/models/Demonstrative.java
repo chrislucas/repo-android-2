@@ -26,7 +26,7 @@ public class Demonstrative implements Parcelable {
     private long dataDemonstrative;
     private List<DemonstrativeResult>  results;
 
-    public static final DecimalFormat realDecimalFormat = new DecimalFormat("###,###.00");
+    public static final DecimalFormat realDecimalFormat = new DecimalFormat("###,##0.00");
 
     public Demonstrative() {
         this.results = new ArrayList<>();
@@ -93,7 +93,7 @@ public class Demonstrative implements Parcelable {
     }
 
     public String getFormattedBaseSalary() {
-        return realDecimalFormat.format(baseSalary);
+        return String.format("R$ %s", realDecimalFormat.format(baseSalary));
     }
 
     public void setBaseSalary(double baseSalary) {
@@ -101,7 +101,7 @@ public class Demonstrative implements Parcelable {
     }
 
     public String getFormattedContributionSalaryINSS() {
-        return realDecimalFormat.format(contributionSalaryINSS);
+        return String.format("R$ %s", realDecimalFormat.format(contributionSalaryINSS));
     }
 
     public void setContributionSalaryINSS(double contributionSalaryINSS) {
@@ -109,7 +109,7 @@ public class Demonstrative implements Parcelable {
     }
 
     public String getFormattedFgtsBaseCalc() {
-        return realDecimalFormat.format(fgtsBaseCalc);
+        return String.format("R$ %s", realDecimalFormat.format(fgtsBaseCalc));
     }
 
     public void setFgtsBaseCalc(double fgtsBaseCalc) {
@@ -117,7 +117,7 @@ public class Demonstrative implements Parcelable {
     }
 
     public String getFormattedIrffBaseCalc() {
-        return realDecimalFormat.format(irffBaseCalc);
+        return String.format("R$ %s", realDecimalFormat.format(irffBaseCalc));
     }
 
     public void setIrffBaseCalc(double irffBaseCalc) {
@@ -165,7 +165,7 @@ public class Demonstrative implements Parcelable {
     }
 
     public String getFormattedFgtsTaxMouth() {
-        return realDecimalFormat.format(fgtsTaxMouth);
+        return String.format("R$ %s", realDecimalFormat.format(fgtsTaxMouth));
     }
 
     public void setFgtsTaxMouth(double fgtsTaxMouth) {

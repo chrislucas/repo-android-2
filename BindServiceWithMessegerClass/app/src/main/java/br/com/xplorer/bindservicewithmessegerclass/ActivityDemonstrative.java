@@ -136,8 +136,11 @@ public class ActivityDemonstrative extends AppCompatActivity {
 
 
     private void fillLayout() {
-        ((TextView)findViewById(R.id.text_view_user_data))
-                .setText(String.format(getString(R.string.formatted_user_info), user.getName(), user.getRegister()));
+        ((TextView)findViewById(R.id.text_view_user_name))
+                .setText( user.getName());
+        ((TextView)findViewById(R.id.text_view_user_register))
+                .setText( user.getRegister());
+
 
         SimpleDateFormat sdf = new SimpleDateFormat("MMM/YYYY", Locale.getDefault());
         ((TextView)findViewById(R.id.text_view_demonstrative_date))
@@ -145,12 +148,12 @@ public class ActivityDemonstrative extends AppCompatActivity {
 
 
         ((TextView)findViewById(R.id.text_view_discounted_value))
-                .setText(demonstrative.getFormattedDiscountedSalary());
+                .setText(String.format("R$ %s", demonstrative.getFormattedDiscountedSalary()));
 
         ((TextView)findViewById(R.id.text_view_total_salaries))
-                .setText(demonstrative.getFormattedTotalSalary());
+                .setText(String.format("R$ %s", demonstrative.getFormattedTotalSalary()));
         ((TextView)findViewById(R.id.text_view_total_discounts))
-                .setText(demonstrative.getFormattedTotalDiscounts());
+                .setText(String.format("R$ %s", demonstrative.getFormattedTotalDiscounts()));
 
 
         ((TextView)findViewById(R.id.salary_base))

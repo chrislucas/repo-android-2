@@ -6,21 +6,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_screen_bank_balance"
-    android:padding="7sp">
+    android:paddingTop="5sp"
+    android:paddingBottom="5sp"
+    android:paddingStart="8sp"
+    android:paddingEnd="8sp"
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background_wrapper_screen_bank_balance"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            style="@style/StyleVerticalGridLayoutBalanceSalary.Bordered">
+            style="@style/StyleVerticalGridLayoutBalanceSalary.BGC">
+            <!--
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:visibility="gone">
                 <TextView
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
@@ -37,55 +44,99 @@
                     android:textAlignment="textEnd"
                     />
             </LinearLayout>
+            -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="vertical">
                 <TextView
-                    android:id="@+id/text_view_user_data"
-                    android:layout_width="0sp"
+                    android:id="@+id/text_view_user_name"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/formatted_user_info"
+                    android:text="@string/default_user_name"
                     style="@style/CellGridLayout.Text.Bold"
                     />
-                <TextView
-                    android:id="@+id/text_view_demonstrative_date"
-                    android:layout_width="0sp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:text="@string/default_date"
-                    style="@style/CellGridLayout.Text.Bold"
-                    android:textAlignment="textEnd"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/text_view_user_register"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/default_user_register"
+                        style="@style/CellGridLayout.Text.Bold"
+                        />
+                    <TextView
+                        android:id="@+id/text_view_demonstrative_date"
+                        android:layout_width="0sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="@string/default_date"
+                        style="@style/CellGridLayout.Text.Bold"
+                        android:textAlignment="textEnd"
+                        />
+                </LinearLayout>
+
             </LinearLayout>
         </LinearLayout>
 
-        <View
-            style="@style/StyleHorizontalLineDivider"
-            />
 
         <LinearLayout
+            android:id="@+id/layout_wrapper_warning_message"
+            style="@style/StyleVerticalGridLayoutBalanceSalary.BGC"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10sp"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="0sp"
+                android:layout_height="30sp"
+                android:layout_weight="0.2"
+                android:maxHeight="30sp"
+                android:maxWidth="10sp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/warning" />
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:text="@string/default_warning_message_salaries"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+        <View
+            style="@style/StyleHorizontalLineDivider.BGC"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15sp"
+            android:layout_marginBottom="15sp"
+            android:orientation="vertical">
             <TextView
                 android:id="@+id/text_view_label_discounted_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/label_discounted_value"
-                style="@style/TextCell.Title"
+                style="@style/TextCell.Label"
+                android:textSize="13sp"
                 />
             <TextView
                 android:id="@+id/text_view_discounted_value"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/default_discounted_value"
-                style="@style/StyleBankBalance"
+                style="@style/TextCell.ImportantValue"
                 />
         </LinearLayout>
 
         <View
-            style="@style/StyleHorizontalLineDivider"
+            style="@style/StyleHorizontalLineDivider.BGC"
             />
 
         <!-- Conteúdo sobre os descontos do funcionpario-->
@@ -100,7 +151,7 @@
             />
 
         <View
-            style="@style/StyleHorizontalLineDivider"
+            style="@style/StyleHorizontalLineDivider.BGC"
             />
 
         <LinearLayout
@@ -113,22 +164,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <TextView
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="@string/default_label_total_salaries"
-                    style="@style/TextCell.Title"
+                    style="@style/TextCell.Label"
                     android:textAlignment="textEnd"
                     />
-
                 <TextView
                     android:layout_width="0sp"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:text="@string/default_label_total_discounts"
-                    style="@style/TextCell.Title"
+                    style="@style/TextCell.Label"
                     android:textAlignment="textEnd"
                     />
 
@@ -145,7 +194,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:textAlignment="textEnd"
-                    style="@style/CellGridLayout.Title"
+                    style="@style/TextCell.ImportantValue"
                     android:text="@string/default_real_formatted_value"
                     />
 
@@ -155,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="0.5"
                     android:textAlignment="textEnd"
-                    style="@style/CellGridLayout.Title"
+                    style="@style/TextCell.ImportantValue"
                     android:text="@string/default_real_formatted_value"
                     />
 
@@ -164,7 +213,7 @@
         </LinearLayout>
 
         <View
-            style="@style/StyleHorizontalLineDivider"
+            style="@style/StyleHorizontalLineDivider.BGC"
             />
 
         <LinearLayout
@@ -172,7 +221,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            style="@style/StyleVerticalGridLayoutBalanceSalary.Bordered">
+            android:layout_marginTop="5sp"
+            android:layout_marginBottom="5sp"
+            >
             <!--
             <LinearLayout
                 android:id="@+id/header_table"
@@ -224,7 +275,8 @@
                 android:id="@+id/footer_table"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/StyleVerticalGridLayoutBalanceSalary">
+                android:orientation="vertical"
+                style="@style/StyleVerticalGridLayoutBalanceSalary.BGC">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -262,7 +314,7 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        style="@style/CellGridLayout.Title"
+                        style="@style/CellGridLayout.Text"
                         android:text="@string/default_real_formatted_value"
                         />
                     <TextView
@@ -270,7 +322,7 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        style="@style/CellGridLayout.Title"
+                        style="@style/CellGridLayout.Text"
                         android:text="@string/default_real_formatted_value"
                         />
                     <TextView
@@ -278,7 +330,7 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        style="@style/CellGridLayout.Title"
+                        style="@style/CellGridLayout.Text"
                         android:text="@string/default_real_formatted_value"
                         />
                 </LinearLayout>
@@ -320,7 +372,7 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        style="@style/CellGridLayout.Title"
+                        style="@style/CellGridLayout.Text"
                         android:text="@string/default_real_formatted_value"
                         />
                     <TextView
@@ -328,7 +380,7 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        style="@style/CellGridLayout.Title"
+                        style="@style/CellGridLayout.Text"
                         android:layout_gravity="center"
                         android:text="@string/default_real_formatted_value"
                         />
@@ -337,7 +389,7 @@
                         android:layout_width="0sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.3"
-                        style="@style/CellGridLayout.Title"
+                        style="@style/CellGridLayout.Text"
                         android:text="@string/default_real_formatted_value"
                         />
                 </LinearLayout>

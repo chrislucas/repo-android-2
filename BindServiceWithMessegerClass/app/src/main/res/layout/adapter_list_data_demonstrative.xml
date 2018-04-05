@@ -24,13 +24,6 @@
             android:columnCount="2"
             android:columnOrderPreserved="true">
             <TextView
-                android:id="@+id/code_info"
-                android:layout_row="0"
-                android:layout_column="0"
-                style="@style/StyleDemonstrativeInfo"
-                android:text="@string/default_code_info"
-                />
-            <TextView
                 android:id="@+id/salaries_info_or_discount_info"
                 android:layout_row="0"
                 android:layout_column="1"

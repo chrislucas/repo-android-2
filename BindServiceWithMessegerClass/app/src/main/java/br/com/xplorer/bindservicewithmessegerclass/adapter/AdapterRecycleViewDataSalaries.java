@@ -39,9 +39,9 @@ public class AdapterRecycleViewDataSalaries extends RecyclerView.Adapter<ViewHol
     @Override
     public void onBindViewHolder(ViewHolderListDataSalaries holder, int position) {
         DemonstrativeResult demonstrativeResult = list.get(position);
-        holder.getCodeInfo().setText(demonstrativeResult.getCode());
         holder.getDescription().setText(demonstrativeResult.getDescription());
-        holder.getReference().setText(demonstrativeResult.getFormattedReference());
+        holder.getReference().setText(String.format("R$ %s"
+                , demonstrativeResult.getFormattedReference()));
         holder.getResult().setText(demonstrativeResult.getFormattedResult());
         holder.getResult()
                 .setTextColor(ContextCompat.getColor(context

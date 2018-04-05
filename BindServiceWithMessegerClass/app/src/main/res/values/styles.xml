@@ -26,21 +26,26 @@
     </style>
 
 
+    <style name="CellGridLayout.Text">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
     <style name="TextCell" />
 
     <style name="TextCell.Title">
-        <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/color_title_dark</item>
     </style>
-
 
     <style name="TextCell.Label">
         <item name="android:textSize">13sp</item>
     </style>
 
-    <style name="TextCell.BankBalance">
-
+    <style name="TextCell.ImportantValue">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="StyleBankBalance">
@@ -66,6 +71,11 @@
         <item name="android:layout_marginBottom">5sp</item>
     </style>
 
+    <style name="StyleHorizontalLineDivider.BGC" parent="StyleHorizontalLineDivider">
+        <item name="android:background">@color/background_screen_bank_balance</item>
+    </style>
+
+
     <style name="StyleVerticalGridLayoutBalanceSalary">
         <item name="android:orientation">vertical</item>
         <item name="android:padding">5sp</item>
@@ -74,6 +84,12 @@
 
     <style name="StyleVerticalGridLayoutBalanceSalary.Bordered" parent="StyleVerticalGridLayoutBalanceSalary">
         <item name="android:background">@drawable/border_cell</item>
+    </style>
+
+
+    <style name="StyleVerticalGridLayoutBalanceSalary.BGC">
+        <item name="android:padding">5sp</item>
+        <item name="android:background">@drawable/background_wrapper_block_info_bank_balance</item>
     </style>
 
 </resources>
