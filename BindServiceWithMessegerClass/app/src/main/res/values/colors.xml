@@ -12,7 +12,7 @@
     <color name="positive_bank_balance">#95bc90</color>
     <color name="negative_bank_balance">#FFEC7274</color>
     <color name="white">#ffffff</color>
-    <color name="background_screen_bank_balance">#ededed</color>
+    <color name="background_screen_bank_balance">#cccccc</color>
     <color name="gray">#ededed</color>
 
 </resources>

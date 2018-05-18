@@ -29,8 +29,7 @@ public class ActivityDemonstrative extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_layout_demonstrative);
-
+        setContentView(R.layout.activity_demonstrative);
         if(savedInstanceState == null) {
             fake();
         }

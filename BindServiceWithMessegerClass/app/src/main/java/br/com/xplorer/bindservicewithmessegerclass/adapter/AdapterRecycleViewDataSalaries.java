@@ -32,7 +32,6 @@ public class AdapterRecycleViewDataSalaries extends RecyclerView.Adapter<ViewHol
         this.context = parent.getContext();
         View rootLayout = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.adapter_list_data_demonstrative, parent, false);
-
         return new ViewHolderListDataSalaries(rootLayout);
     }
 

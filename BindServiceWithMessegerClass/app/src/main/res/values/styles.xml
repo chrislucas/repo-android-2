@@ -1,4 +1,5 @@
-<resources>
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -24,7 +25,6 @@
         <item name="android:textAlignment">center</item>
         <item name="android:textSize">13sp</item>
     </style>
-
 
     <style name="CellGridLayout.Text">
         <item name="android:textAlignment">center</item>
@@ -71,6 +71,11 @@
         <item name="android:layout_marginBottom">5sp</item>
     </style>
 
+
+    <style name="StyleHorizontalLineDivider.SmoothColor" parent="StyleHorizontalLineDivider">
+        <item name="android:background">#cfcfcf</item>
+    </style>
+
     <style name="StyleHorizontalLineDivider.BGC" parent="StyleHorizontalLineDivider">
         <item name="android:background">@color/background_screen_bank_balance</item>
     </style>
@@ -92,4 +97,10 @@
         <item name="android:background">@drawable/background_wrapper_block_info_bank_balance</item>
     </style>
 
+
+    <style name="DefaultCardView">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:layout_marginTop">7sp</item>
+        <item name="android:layout_marginBottom">7sp</item>
+    </style>
 </resources>

@@ -34,5 +34,7 @@
     <string name="default_user_register">r028397</string>
     <string name="default_warning_message_salaries">Esse é um demonstrativo não oficial. Qualquer divergência com os valores entre em contato com o RH.</string>
 
+    <string name="default_text_month">Setembro/2018</string>
+
 
 </resources>
