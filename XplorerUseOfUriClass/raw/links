@@ -1,3 +1,7 @@
+* Finding out all about Android Uri class - use and purpose
+https://stackoverflow.com/questions/2427489/finding-out-all-about-android-uri-class-use-and-purpose
+https://developer.android.com/guide/topics/providers/content-providers.html
+
 https://developer.android.com/reference/android/net/Uri.html#fromParts(java.lang.String,%20java.lang.String,%20java.lan.String)
 
 https://stackoverflow.com/questions/19167954/use-uri-builder-in-android-or-create-url-with-variables
