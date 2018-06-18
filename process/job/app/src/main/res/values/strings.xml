@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XplorerJobService</string>
+    <string name="cancel">Cancela</string>
+    <string name="start_activity">Abrir Activity com Component Name</string>
+</resources>
