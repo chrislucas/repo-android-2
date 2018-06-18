@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Estudo sobre ResultReceiver</string>
+    <string name="permission_start_intent_service_sample_1">permission_granted</string>
+</resources>

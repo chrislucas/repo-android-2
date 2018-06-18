@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ec7274</color>
+
+
+    <color name="black">#000000</color>
+    <color name="translucent">#00000000</color>
+    <color name="color_label_dark">#666666</color>
+    <color name="color_title_dark">#3a3a3b</color>
+    <color name="positive_bank_balance">#95bc90</color>
+    <color name="negative_bank_balance">#FFEC7274</color>
+    <color name="white">#ffffff</color>
+    <color name="background_screen_bank_balance">#cccccc</color>
+    <color name="gray">#ededed</color>
+
+</resources>

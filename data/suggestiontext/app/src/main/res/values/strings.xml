@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">suggestiontext</string>
+    <string name="multi_auto_complete">Multi Auto Complete</string>
+    <string name="auto_complete">Auto Complete</string>
+
+
+    <array name="words">
+
+    </array>
+</resources>

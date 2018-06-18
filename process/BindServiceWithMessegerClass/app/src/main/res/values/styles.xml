@@ -1,0 +1,106 @@
+<resources
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+
+    <style name="CellGridLayout">
+        <item name="android:paddingTop">5sp</item>
+        <item name="android:paddingBottom">5sp</item>
+        <item name="android:layout_marginEnd">2sp</item>
+        <item name="android:layout_marginStart">2sp</item>
+    </style>
+
+    <style name="CellGridLayout.Text.Bold" parent="CellGridLayout">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CellGridLayout.Title" parent="CellGridLayout.Text.Bold">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="CellGridLayout.Text">
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextCell" />
+
+    <style name="TextCell.Title">
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/color_title_dark</item>
+    </style>
+
+    <style name="TextCell.Label">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextCell.ImportantValue">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StyleBankBalance">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="StyleDemonstrativeTitle">
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="StyleDemonstrativeInfo">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="StyleHorizontalLineDivider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1sp</item>
+        <item name="android:background">@color/black</item>
+        <item name="android:layout_marginTop">5sp</item>
+        <item name="android:layout_marginBottom">5sp</item>
+    </style>
+
+
+    <style name="StyleHorizontalLineDivider.SmoothColor" parent="StyleHorizontalLineDivider">
+        <item name="android:background">#cfcfcf</item>
+    </style>
+
+    <style name="StyleHorizontalLineDivider.BGC" parent="StyleHorizontalLineDivider">
+        <item name="android:background">@color/background_screen_bank_balance</item>
+    </style>
+
+
+    <style name="StyleVerticalGridLayoutBalanceSalary">
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">5sp</item>
+        <item name="android:columnOrderPreserved">true</item>
+    </style>
+
+    <style name="StyleVerticalGridLayoutBalanceSalary.Bordered" parent="StyleVerticalGridLayoutBalanceSalary">
+        <item name="android:background">@drawable/border_cell</item>
+    </style>
+
+
+    <style name="StyleVerticalGridLayoutBalanceSalary.BGC">
+        <item name="android:padding">5sp</item>
+        <item name="android:background">@drawable/background_wrapper_block_info_bank_balance</item>
+    </style>
+
+
+    <style name="DefaultCardView">
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:layout_marginTop">7sp</item>
+        <item name="android:layout_marginBottom">7sp</item>
+    </style>
+</resources>

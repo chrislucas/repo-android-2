@@ -1,0 +1,28 @@
+https://stackoverflow.com/questions/5740324/what-are-the-ipc-mechanisms-available-in-the-android-os
+
+
+anonymous shared memory.
+https://developer.android.com/reference/android/os/SharedMemory.html
+
+Documentação -- Essa doumentação ainda discute sobre a implementacao de seguranca do S.O
+https://developer.android.com/training/articles/security-tips.html#IPC
+
+
+Android Interface Definition Language (AIDL)
+https://developer.android.com/guide/components/aidl.html?hl=pt-br
+
+
+Difference between shared memory and parcel
+https://stackoverflow.com/questions/37165557/difference-between-shared-memory-and-parcel
+
+
+Apresentacao interessante
+http://www.dre.vanderbilt.edu/~schmidt/cs282/PDFs/android-binder-ipc.pdf
+
+MemoryFile
+Wrapper for ShareMemory class ...
+https://developer.android.com/reference/android/os/MemoryFile.html
+
+
+Pesquisar
+SharedMemory Android samples

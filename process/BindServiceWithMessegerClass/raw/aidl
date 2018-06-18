@@ -1,0 +1,19 @@
+Tutorial
+http://www.truiton.com/2014/12/android-service-interprocess-communication-aidl/
+
+https://developer.android.com/guide/components/aidl.html#ImplementTheInterface
+https://developer.android.com/guide/components/aidl.html#Calling
+
+
+RPC
+https://pt.wikipedia.org/wiki/Chamada_de_procedimento_remoto
+https://en.wikipedia.org/wiki/Remote_procedure_call
+https://www.geeksforgeeks.org/operating-system-remote-procedure-call-rpc/
+
+
+Estudar essa solucao para ver se é interessante
+https://gist.github.com/oasisfeng/71d09369fddaa742fabf2e4d3832abcf
+
+
+
+https://medium.com/@paulo_linhares/android-deeplink-aidl-441774a09345

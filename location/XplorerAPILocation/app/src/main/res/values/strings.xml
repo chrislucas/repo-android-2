@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">XplorerAPILocation</string>
+    <string name="format_last_location">ùltima localização %s</string>
+</resources>

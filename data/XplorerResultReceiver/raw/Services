@@ -1,0 +1,46 @@
+Documentacao Service
+https://developer.android.com/guide/components/services.html
+
+
+Ponto importante
+"A service runs in the main thread of its hosting process; the service does not create its own thread and does not run in a separate process unless you specify otherwise"
+
+
+
+https://stackoverflow.com/questions/4510974/using-resultreceiver-in-android
+
+https://developer.android.com/reference/android/os/ResultReceiver.html
+
+https://proandroiddev.com/intentservice-and-resultreceiver-70de71e5e40a
+
+http://lalit3686.blogspot.com.br/2012/06/how-to-update-activity-from-service.html
+
+
+Mais links sobre ResultReceiver
+http://sohailaziz05.blogspot.com.br/2012/05/intentservice-providing-data-back-to.html
+https://stackoverflow.com/questions/35067178/android-communication-between-applications-using-resultreceiver
+
+
+Tutorial sobre services ... Recordar e viver
+http://www.vogella.com/tutorials/AndroidServices/article.html
+
+Bind Service
+https://developer.android.com/guide/components/bound-services.html
+
+
+Aula
+https://www.dre.vanderbilt.edu/~schmidt/cs282/PDFs/8-Services-and-IPC-parts-14-15-and-16.pdf
+
+SharedMemory Attack CPP (Não entendo disso ainda.)
+https://googleprojectzero.blogspot.com.br/2016/12/bitunmap-attacking-android-ashmem.html
+http://devarea.com/android-creating-shared-memory-using-ashmem/
+https://stackoverflow.com/questions/9970858/what-special-powers-does-ashmem-have
+
+Link sobre seguranca e uso de permissao na declaracao de servicos no arquivo AndroidManifest.xml
+https://developer.android.com/training/articles/security-tips.html#IPC
+https://developer.android.com/guide/topics/manifest/service-element.html#prmsn
+
+
+IntentService e AsyncTask
+https://android.jlelse.eu/using-intentservice-vs-asynctask-in-android-2fec1b853ff4
+https://marsic.info/2016/03/01/android-service-intent-asynctask-thread/
