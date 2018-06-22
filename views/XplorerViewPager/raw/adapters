@@ -1,0 +1,15 @@
+FragmentStatePagerAdapter vs PagerAdapter
+https://medium.com/inloopx/adventures-with-fragmentstatepageradapter-4f56a643f8e0
+
+Difference between FragmentPagerAdapter and FragmentStatePagerAdapter
+https://stackoverflow.com/questions/18747975/difference-between-fragmentpageradapter-and-fragmentstatepageradapter
+
+
+FragmentPagerAdapter
+https://developer.android.com/reference/android/support/v4/app/FragmentPagerAdapter
+
+https://guides.codepath.com/android/viewpager-with-fragmentpageradapter
+
+
+FragmentStatePagerAdapter
+https://developer.android.com/reference/android/support/v4/app/FragmentStatePagerAdapter

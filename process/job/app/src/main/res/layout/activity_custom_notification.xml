@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    tools:context=".activities.CustomNotificationActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/simple_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/simple_notification"
+            />
+
+        <Button
+            android:id="@+id/ongoing_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ongoing_notification"
+            />
+
+        <Button
+            android:id="@+id/big_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/big_notification"
+            />
+
+        <Button
+            android:id="@+id/expandable_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/expandable_notification"
+            />
+
+        <Button
+            android:id="@+id/open_activity_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/open_activity_2"
+            />
+
+        <Button
+            android:id="@+id/custom_notification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/custom_notification"
+            />
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

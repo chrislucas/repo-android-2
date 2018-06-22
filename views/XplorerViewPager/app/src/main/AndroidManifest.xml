@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="jobservice.xplorer.com.br.xplorerjobservice">
+    package="viewpage.xplorer.com.xplorerviewpager">
 
     <application
         android:allowBackup="true"
@@ -9,22 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.Main2Activity" />
-
-        <service
-            android:name=".job.SampleJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity android:name=".activities.StartActivityWithComponenteName" />
-        <activity android:name=".activities.CustomNotificationActivity">
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TaskAndBackActivity"></activity>
     </application>
 
 </manifest>

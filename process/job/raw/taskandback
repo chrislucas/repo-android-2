@@ -1,0 +1,7 @@
+https://developer.android.com/guide/components/activities/tasks-and-back-stack
+https://developer.android.com/reference/android/support/v4/app/TaskStackBuilder
+https://developer.android.com/training/notify-user/build-notification
+
+
+Criar uma PendingIntent com back stack para iniciar uma activity e adiciona-la na pilha
+https://developer.android.com/training/notify-user/navigation

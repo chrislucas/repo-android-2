@@ -1,0 +1,20 @@
+ViewPager
+https://developer.android.com/reference/android/support/v4/view/ViewPager
+
+
+https://www.thiengo.com.br/viewpager-no-android-entendendo-e-utilizando
+
+https://developer.android.com/training/animation/screen-slide.html
+
+https://developer.android.com/reference/android/support/v4/view/ViewPager.html
+
+https://github.com/daimajia/AndroidImageSlider
+
+
+Efeitos interessantes
+https://github.com/ToxicBakery/ViewPagerTransforms/tree/master/library
+
+https://www.androidtutorialpoint.com/basics/android-image-slider-tutorial/
+
+Implementacao Interessante sobre FragmentStatePagerAdapter
+https://github.com/erg/caltrain-dating/blob/master/src/com/codepath/caltraindating/adapters/SmartFragmentStatePagerAdapter.java

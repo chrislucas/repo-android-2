@@ -5,11 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.Main2Activity">
-    <Button
-        android:id="@+id/cancel_job"
+    android:orientation="vertical"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/canvas_replace"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/cancel"
+        android:orientation="vertical"
         />
+
+
 </LinearLayout>

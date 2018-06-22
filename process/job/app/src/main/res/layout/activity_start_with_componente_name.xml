@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".StartActivityWithComponenteName">
+    tools:context=".activities.StartActivityWithComponenteName">
 
     <Button
         android:id="@+id/start_activity_cn"
