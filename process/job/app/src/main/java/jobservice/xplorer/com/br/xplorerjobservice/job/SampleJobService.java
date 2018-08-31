@@ -3,6 +3,7 @@ package jobservice.xplorer.com.br.xplorerjobservice.job;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.ComponentName;
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -30,37 +31,45 @@ import java.util.Locale;
  * */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class SampleJobService extends JobService {
+    public static final int JOB_ID_SAMPLE = 1;
+    private Thread thread;
 
     @Override
     public boolean onStartJob(final JobParameters params) {
-
-        Thread thread = new Thread(new Runnable() {
+        //final Context context = this;
+        thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 int jobId = params.getJobId();
-                Toast.makeText(
-                        getApplicationContext()
-                        , String.format(Locale.getDefault(), "LOG_JOB_PARAMS_START JobID: %d,", jobId)
-                        , Toast.LENGTH_LONG
-                ).show();
+                Log.i("ON_START_JOB"
+                        , String.format(Locale.getDefault()
+                                , "LOG_JOB_PARAMS_START JobID: %d,", jobId));
+                /**
+                 * A chamada ao metodo jobFinished() indica ao sistema que o serviço acabou
+                 * e a tarefa nao precisa mais ser reagendada
+                 * */
+                jobFinished(params, false);
             }
         });
-
         thread.start();
         return true;
     }
 
     @Override
     public boolean onStopJob(JobParameters params) {
-
         int jobId = params.getJobId();
-        Toast.makeText(
-                getApplicationContext()
-                , String.format(Locale.getDefault(), "LOG_JOB_PARAMS_STOP JobID: %d,", jobId)
-                , Toast.LENGTH_LONG
-        ).show();
+        Log.i("ON_STOP_JOB"
+                , String.format(Locale.getDefault()
+                        , "LOG_JOB_PARAMS_STOP JobID: %d,", jobId));
         jobFinished(params, false);
-
+        if (thread != null) {
+            try {
+                thread.join();
+            }
+            catch (InterruptedException e) {
+                Log.e("INTERRUPTED_EXCEPTION", e.getMessage());
+            }
+        }
         return true;
     }
 }

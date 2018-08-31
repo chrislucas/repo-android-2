@@ -4,11 +4,13 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import jobservice.xplorer.com.br.xplorerjobservice.R;
 
-public class StartActivityWithComponenteName extends AppCompatActivity {
+public class StartActivityWithComponentName extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,7 +20,9 @@ public class StartActivityWithComponenteName extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setComponent(new ComponentName(getPackageName(), Main2Activity.class.getName()));
+                ComponentName componentName = new ComponentName(getPackageName(), Main2Activity.class.getName());
+                Log.i("START_ACTIVITY", componentName.toString());
+                intent.setComponent(componentName);
                 startActivity(intent);
             }
         });

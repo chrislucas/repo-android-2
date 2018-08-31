@@ -1,0 +1,17 @@
+https://developer.android.com/reference/android/telecom/ConnectionService
+https://stackoverflow.com/questions/43027292/addincomingcall-in-android-telecommanager-not-doing-anything
+
+Fazer um app que faz ligacoes
+https://developer.android.com/guide/topics/connectivity/telecom/selfManaged
+
+https://stackoverflow.com/questions/42214785/intercepting-incoming-calls-on-android
+
+https://gist.github.com/ftvs/e61ccb039f511eb288ee
+https://stackoverflow.com/questions/15563921/how-to-detect-incoming-calls-in-an-android-device/15564021#15564021
+
+
+https://stackoverflow.com/questions/10544992/call-audio-stream-modification-in-android-4-0-ics
+
+https://developer.android.com/reference/android/provider/BlockedNumberContract
+
+https://www.programcreek.com/java-api-examples/index.php?api=android.telecom.PhoneAccountHandle

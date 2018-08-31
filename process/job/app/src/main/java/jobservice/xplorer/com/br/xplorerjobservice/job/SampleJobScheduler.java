@@ -19,7 +19,7 @@ import java.util.List;
 public class SampleJobScheduler extends JobScheduler {
 
     public static final String TAG = "SAMPLE_JOB_SCHEDULER";
-    public static final int JOB_INFO_SAMPLE = 0x0f;
+
 
     @Override
     public int schedule(@NonNull JobInfo jobInfo) {
@@ -31,6 +31,7 @@ public class SampleJobScheduler extends JobScheduler {
         int describeContents = work.describeContents();
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             int deliveryCount = work.getDeliveryCount();
+            Log.i("ENQUEUE", String.format("Delivery Count %d", deliveryCount));
         }
         Log.i("ENQUEUE_JOB", String.format("IsPeriodic: %s", jobInfo.isPeriodic()));
         return JobScheduler.RESULT_SUCCESS; // JobScheduler.RESULT_FAILURE

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">JobSchedulerIncommingMessage</string>
+    <string name="cancel_job_service">Cancelar Servico Agendado</string>
+</resources>

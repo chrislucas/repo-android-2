@@ -9,22 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity" />
-        <activity android:name=".activities.Main2Activity" />
-
-        <service
-            android:name=".job.SampleJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE" />
-
-        <activity android:name=".activities.StartActivityWithComponenteName" />
-        <activity android:name=".activities.CustomNotificationActivity">
+        <activity android:name=".activities.Main2Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TaskAndBackActivity"></activity>
+
+        <service
+            android:name=".job.SampleJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:exported="true"
+            />
+
+        <activity android:name=".activities.StartActivityWithComponentName"
+            />
+        <activity android:name=".activities.CustomNotificationActivity">
+
+        </activity>
+        <activity android:name=".activities.TaskAndBackActivity"
+            />
     </application>
 
 </manifest>

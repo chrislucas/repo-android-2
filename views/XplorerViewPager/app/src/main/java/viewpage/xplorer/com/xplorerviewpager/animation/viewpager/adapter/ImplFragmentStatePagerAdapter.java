@@ -1,6 +1,7 @@
 package viewpage.xplorer.com.xplorerviewpager.animation.viewpager.adapter;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -29,5 +30,12 @@ public class ImplFragmentStatePagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public int getCount() {
         return elements.size();
+    }
+
+    @Nullable
+    @Override
+    public CharSequence getPageTitle(int position) {
+        Bundle bundle = elements.get(position);
+        return super.getPageTitle(position);
     }
 }

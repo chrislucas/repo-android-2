@@ -100,6 +100,7 @@ public class FragmentWithViewPage extends Fragment {
         mViewPager.setPageTransformer(true, mPageTransformer);
         mPageChangeListener = new ImplOnPageListener(new ImplCallbackPageChange());
         mViewPager.addOnPageChangeListener(mPageChangeListener);
+
         return view;
     }
 

@@ -17,3 +17,7 @@ http://codetheory.in/android-interprocess-communication-ipc-with-aidl/
 
 
 https://stuff.mit.edu/afs/sipb/project/android/docs/guide/components/aidl.html
+
+
+
+https://stackoverflow.com/questions/3021054/how-to-read-cpu-frequency-on-android-device
