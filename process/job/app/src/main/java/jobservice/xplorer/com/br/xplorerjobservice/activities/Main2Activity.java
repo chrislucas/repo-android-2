@@ -45,7 +45,7 @@ public class Main2Activity extends AppCompatActivity {
 
             /**
              * https://developer.android.com/reference/android/content/ComponentName
-             * Identiticador de um componente de aplicacao especifico.
+             * Identificador de um componente de aplicacao especifico.
              *
              * Os componentes de aplicacao sao
              *
@@ -65,43 +65,45 @@ public class Main2Activity extends AppCompatActivity {
              *
              * intent.setComponent(new ComponentName("com.example", "com.example.MyExampleActivity"));
              * */
-            String packageName = getPackageName();
-            String className = SampleJobService.class.getName();
-            ComponentName componentJobService = new ComponentName(packageName, className);
+
+            ComponentName componentJobService = new ComponentName(getPackageName()
+                    , SampleJobService.class.getName());
             //ComponentName componentJobService = new ComponentName(this, SampleJobService.class);
             JobInfo.Builder builder = new JobInfo
                     .Builder(SampleJobService.JOB_ID_SAMPLE, componentJobService)
-                    // intervalo de repeticao
                     // O dispositivo nao precisa estar carregando
                     .setRequiresCharging(false)
                     //
                     .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
 
+
             /**
-             * Discussao sobre JobScheduler no android Nougat
-             * https://stackoverflow.com/questions/38344220/job-scheduler-not-running-on-android-n
+             *
              * */
-
-            long m = builder.build().getMinLatencyMillis();
-            Log.i("MIN_LATENCY_MILLIS", String.valueOf(m));
-
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                // nao eh possivel chamar o metodo abaixo para um Job periodico
                 //builder.setMinimumLatency(1500);
                 /**
                  * A partir do android Nougat
                  * */
-                //builder.setPeriodic(1500, 3000);
+                builder.setPeriodic(JobInfo.getMinPeriodMillis()/*, JobInfo.getMinFlexMillis()*/);
             }
             else {
-                builder.setPeriodic(3000);
+                builder.setPeriodic(90000);
             }
+
+            /**
+             * Discussao sobre JobScheduler no android Nougat
+             * https://stackoverflow.com/questions/38344220/job-scheduler-not-running-on-android-n
+             * */
+            JobInfo jobInfo = builder.build();
+            long minLatencyMillis = jobInfo.getMinLatencyMillis();
+            Log.i("TAG", String.valueOf(minLatencyMillis));
 
             //builder.setMinimumLatency(1);       // atrasa o inicio do Job no minimo por N milissegundos
             //builder.setOverrideDeadline(1);     // atrasa o fim do Job no minimo por N milissegundos
 
             if (jobScheduler != null) {
-                JobInfo jobInfo = builder.build();
                 int result = jobScheduler.schedule(jobInfo);
                 Log.i(SampleJobScheduler.TAG
                         , result == JobScheduler.RESULT_SUCCESS ? "SUCCESS" : "FAILURE");

@@ -5,3 +5,13 @@ https://github.com/googlesamples/android-JobScheduler
 Schedule tasks with WorkManager
 https://developer.android.com/topic/libraries/architecture/workmanager/
 https://developer.android.com/topic/libraries/architecture/workmanager/basics
+
+
+Restricoes uso de tarefas em background
+https://developer.android.com/about/versions/oreo/background?hl=pt-br
+
+Como criar um Job Scheduler que se repete em menos de 15min
+https://stackoverflow.com/questions/39641278/job-scheduler-in-android-n-with-less-then-15-minutes-interval
+
+Exe
+https://github.com/googlesamples/android-JobScheduler
