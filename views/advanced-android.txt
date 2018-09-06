@@ -1,0 +1,2 @@
+https://developers.google.com/training/courses/android-advanced
+https://google-developer-training.github.io/android-developer-advanced-course-practicals/

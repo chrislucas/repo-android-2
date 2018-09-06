@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CopyPastTextView</string>
+    <string name="paste">Cole aqui</string>
+    <string name="loren_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est metus, vulputate quis consequat quis, placerat at augue. Praesent id tristique turpis. Nam rhoncus erat et condimentum sollicitudin. Nullam feugiat dolor velit, vitae tristique urna pharetra eu. Donec gravida ligula vitae orci pharetra, sit amet tristique sapien dictum. Aliquam turpis ex, imperdiet non suscipit non, fermentum sed turpis. Nulla facilisi. Praesent risus metus, porttitor in rutrum et, sodales et enim. Morbi eu neque et orci volutpat consequat ut nec neque. Nulla facilisi. Vivamus a dolor eget mi auctor facilisis id sed diam. Vestibulum elementum sem nec odio blandit euismod. Aliquam purus nibh, interdum et velit ultricies, consectetur mollis justo. In hac habitasse platea dictumst. Aenean pharetra a nisl in aliquet. Aliquam sit amet nulla vestibulum, tincidunt urna a, vehicula nibh.</string>
+</resources>

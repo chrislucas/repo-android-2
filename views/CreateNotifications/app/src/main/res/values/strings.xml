@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CreateNotifications</string>
+    <string name="simple_notification">Notificação Simples</string>
+    <string name="ongoing_notification">Notificacao Com Progresso</string>
+    <string name="big_notification">Notificação Grande</string>
+    <string name="expandable_notification">Notificação Expandível</string>
+    <string name="open_activity_2">Abrir Activity 2</string>
+    <string name="custom_notification">Notificação com Layout Personalizado</string>
+    <string name="custom_layout_for_notication">Layout Personalizado para Notificacao Personalizada</string>
+    <string name="button_for_custom_notification_layout">Botão no layout personalizado</string>
+</resources>

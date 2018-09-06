@@ -3,6 +3,7 @@ package jobservice.xplorer.com.br.xplorerjobservice.activities;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
+import android.media.RingtoneManager;
 import android.os.Handler;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -61,8 +62,10 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
                 , "Aqui temos uma simples notificação maroto !!!"
                 , TAG);
 
-        builder.setSmallIcon(R.drawable.ic_notifications);
-        builder.setAutoCancel(true);
+        builder.setSmallIcon(R.drawable.ic_notifications)
+                .setAutoCancel(true)
+                .setVibrate(new long[] {100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         helperNotification.show(this, builder.build(), ID);
     }
 
@@ -76,10 +79,12 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
                 , "Aqui temos uma simples notificação maroto !!!"
                 , TAG);
 
-        builderOnGoing.setSmallIcon(R.drawable.ic_notifications);
-        builderOnGoing.setAutoCancel(false);
-        builderOnGoing.setOngoing(true);
-        builderOnGoing.setProgress(max, progress, false);
+        builderOnGoing.setSmallIcon(R.drawable.ic_notifications)
+                .setAutoCancel(false)
+                .setOngoing(true)
+                .setVibrate(new long[] {100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setProgress(max, progress, false);
         final Handler handler = new Handler();
         final long delay = 100;
         handler.postDelayed(new Runnable() {
@@ -108,10 +113,12 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
                 , "Notificação com Estilo"
                 , "Uma grande Nofiticação para vc :)"
                 , TAG);
-        builder.setSmallIcon(R.drawable.ic_notifications);
-        builder.setStyle(new NotificationCompat.BigTextStyle()
-                .setBigContentTitle("Texto Grande"));
-        builder.setAutoCancel(true);
+        builder.setSmallIcon(R.drawable.ic_notifications)
+                .setStyle(new NotificationCompat.BigTextStyle()
+                .setBigContentTitle("Texto Grande"))
+                .setVibrate(new long[] {100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setAutoCancel(true);
         helperNotification.show(this, builder.build(), ID);
     }
 
@@ -122,12 +129,13 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
                 .getNotificationCompatBuilder(this, "Notificação expandível"
                         , "Uma notificação expandível marota :)", TAG);
 
-        builder.setSmallIcon(R.drawable.ic_notifications);
-        builder.setStyle(new NotificationCompat.BigPictureStyle()
-                .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.bigpic))
-                        .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample))
-        );
-        builder.setAutoCancel(true);
+        builder.setSmallIcon(R.drawable.ic_notifications)
+                .setStyle(new NotificationCompat.BigPictureStyle()
+                    .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.bigpic))
+                            .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample)))
+                .setAutoCancel(true)
+                .setVibrate(new long[] {100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
         helperNotification.show(this, builder.build(), ID);
     }
 
@@ -147,12 +155,13 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
                 , PendingIntent.FLAG_ONE_SHOT
         );
         if (builder != null) {
-            builder.setSmallIcon(R.drawable.ic_notifications);
-            builder.setStyle(new NotificationCompat.BigPictureStyle()
+            builder.setSmallIcon(R.drawable.ic_notifications)
+                    .setStyle(new NotificationCompat.BigPictureStyle()
                     .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.bigpic))
-                    .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample))
-            );
-            builder.setAutoCancel(true);
+                    .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample)))
+                    .setVibrate(new long[] {100, 100, 100})
+                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                    .setAutoCancel(true);
             helperNotification.show(this, builder.build(), ID);
         }
     }
@@ -166,14 +175,15 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
 
         RemoteViews layout1 = new RemoteViews(getPackageName(), R.layout.custom_layout_notification);
         RemoteViews layout2 = new RemoteViews(getPackageName(), R.layout.custom_layout_notification2);
-        builder.setSmallIcon(R.drawable.ic_notifications);
-        builder.setStyle(new NotificationCompat.DecoratedCustomViewStyle())
+        builder.setSmallIcon(R.drawable.ic_notifications)
+                .setStyle(new NotificationCompat.DecoratedCustomViewStyle())
                 .setCustomContentView(layout1)
                 .setCustomBigContentView(layout2)
+                .setVibrate(new long[] {100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 // para dar suporte a versoes de S.O > 4.1
-                .setContent(layout1);
-
-        builder.setAutoCancel(true);
+                .setContent(layout1)
+                .setAutoCancel(true);
         helperNotification.show(this, builder.build(), ID);
     }
 }

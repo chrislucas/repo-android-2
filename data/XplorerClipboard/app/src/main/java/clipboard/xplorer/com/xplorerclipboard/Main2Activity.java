@@ -239,29 +239,31 @@ public class Main2Activity extends AppCompatActivity {
                         break;
                     case PASTE:
                         /**/
-                        if (mClipboardManager.hasPrimaryClip()) {
-                            ClipData clipData = mClipboardManager.getPrimaryClip();
-                            //ClipDescription clipDescription = clipData.getDescription();
-                            //if (clipDescription != null) { }
-                            if (clipData != null && clipData.getItemCount() > 0) {
-                                ClipData.Item itemClipData = clipData.getItemAt(0);
-                                if (itemClipData != null) {
-                                    Log.i("ITEM", itemClipData.getText().toString());
-                                    mEditText.setText(itemClipData.getText());
-                                    if (dataIsCut) {
-                                        //mClipboardManager.setPrimaryClip(null);
-                                        dataIsCut = false;
-                                    }
-                                }
-                            }
-                        }
-
-
+                        paste();
                         break;
                 }
             }
         }
         return true;
+    }
+
+    private void paste() {
+        if (mClipboardManager.hasPrimaryClip()) {
+            ClipData clipData = mClipboardManager.getPrimaryClip();
+            //ClipDescription clipDescription = clipData.getDescription();
+            //if (clipDescription != null) { }
+            if (clipData != null && clipData.getItemCount() > 0) {
+                ClipData.Item itemClipData = clipData.getItemAt(0);
+                if (itemClipData != null) {
+                    Log.i("ITEM", itemClipData.getText().toString());
+                    mEditText.setText(itemClipData.getText());
+                    if (dataIsCut) {
+                        //mClipboardManager.setPrimaryClip(null);
+                        dataIsCut = false;
+                    }
+                }
+            }
+        }
     }
 
     @Override

@@ -1,13 +1,7 @@
 package jobservice.xplorer.com.br.xplorerjobservice.activities;
 
-import android.app.Activity;
-import android.app.Service;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.ContentProvider;
-import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +12,6 @@ import android.view.View;
 import java.util.List;
 
 import jobservice.xplorer.com.br.xplorerjobservice.R;
-import jobservice.xplorer.com.br.xplorerjobservice.job.SampleJobScheduler;
 import jobservice.xplorer.com.br.xplorerjobservice.job.SampleJobService;
 
 public class Main2Activity extends AppCompatActivity {
@@ -37,76 +30,14 @@ public class Main2Activity extends AppCompatActivity {
         }
         // ou
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            final JobScheduler jobScheduler = (JobScheduler)
-                    getSystemService(Context.JOB_SCHEDULER_SERVICE);
+
             //final JobScheduler jobScheduler = (JobScheduler) getSystemService(JobScheduler.class);
             //final SampleJobScheduler jobScheduler = getSystemService(SampleJobScheduler.class);
 
-
-            /**
-             * https://developer.android.com/reference/android/content/ComponentName
-             * Identificador de um componente de aplicacao especifico.
-             *
-             * Os componentes de aplicacao sao
-             *
-             * {@link Activity}
-             * {@link Service}
-             * {@link BroadcastReceiver}
-             * {@link ContentProvider}
-             *
-             * Para identificar um componente precisamos de 2 informacoes
-             *
-             * Uma string que informe o pacote da aplicacao: com.example.qualquercoisa
-             * O nome da classe do componente: Classe.class.getName() que retornar o nome
-             * completo (com o pacote)
-             *
-             * Exemplos de uso
-             * https://www.codota.com/code/java/classes/android.content.ComponentName
-             *
-             * intent.setComponent(new ComponentName("com.example", "com.example.MyExampleActivity"));
-             * */
-
-            ComponentName componentJobService = new ComponentName(getPackageName()
-                    , SampleJobService.class.getName());
-            //ComponentName componentJobService = new ComponentName(this, SampleJobService.class);
-            JobInfo.Builder builder = new JobInfo
-                    .Builder(SampleJobService.JOB_ID_SAMPLE, componentJobService)
-                    // O dispositivo nao precisa estar carregando
-                    .setRequiresCharging(false)
-                    //
-                    .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
-
-
-            /**
-             *
-             * */
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                // nao eh possivel chamar o metodo abaixo para um Job periodico
-                //builder.setMinimumLatency(1500);
-                /**
-                 * A partir do android Nougat
-                 * */
-                builder.setPeriodic(JobInfo.getMinPeriodMillis()/*, JobInfo.getMinFlexMillis()*/);
-            }
-            else {
-                builder.setPeriodic(90000);
-            }
-
-            /**
-             * Discussao sobre JobScheduler no android Nougat
-             * https://stackoverflow.com/questions/38344220/job-scheduler-not-running-on-android-n
-             * */
-            JobInfo jobInfo = builder.build();
-            long minLatencyMillis = jobInfo.getMinLatencyMillis();
-            Log.i("TAG", String.valueOf(minLatencyMillis));
-
-            //builder.setMinimumLatency(1);       // atrasa o inicio do Job no minimo por N milissegundos
-            //builder.setOverrideDeadline(1);     // atrasa o fim do Job no minimo por N milissegundos
+            final JobScheduler jobScheduler = SampleJobService.schedulePeriodicJobDefault(this);
 
             if (jobScheduler != null) {
-                int result = jobScheduler.schedule(jobInfo);
-                Log.i(SampleJobScheduler.TAG
-                        , result == JobScheduler.RESULT_SUCCESS ? "SUCCESS" : "FAILURE");
+
                 findViewById(R.id.cancel_job).setOnClickListener(new View.OnClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
                     @Override
@@ -119,6 +50,7 @@ public class Main2Activity extends AppCompatActivity {
                     }
                 });
             }
+
         }
     }
 }

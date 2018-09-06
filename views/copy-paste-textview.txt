@@ -1,0 +1,2 @@
+https://developer.android.com/guide/topics/text/copy-paste
+https://www.tutorialspoint.com/android/android_clipboard.htm

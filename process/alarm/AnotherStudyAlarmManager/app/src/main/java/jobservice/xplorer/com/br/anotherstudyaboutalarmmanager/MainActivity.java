@@ -4,6 +4,8 @@ import android.app.AlarmManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models.alarms.AbstractAlarm;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -11,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Alarm alarm = Alarm.getInstance(this);
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             AlarmManager.OnAlarmListener onAlarmListener = new AlarmManager.OnAlarmListener() {
@@ -20,8 +21,6 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             };
-
         }
-
     }
 }

@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.anotherstudyaboutalarmmanager;
+package jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models.alarms;
 
 import android.app.AlarmManager;
 import android.support.annotation.IntDef;

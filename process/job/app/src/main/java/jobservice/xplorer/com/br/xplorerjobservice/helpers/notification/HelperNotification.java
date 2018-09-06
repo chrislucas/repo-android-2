@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
+import android.support.v4.media.MediaBrowserCompat;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -55,10 +56,12 @@ public class HelperNotification {
     public NotificationCompat.Builder getNotificationCompatBuilder(Context context
             , CharSequence title, CharSequence text, String channelId) {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId);
-        builder.setContentTitle(title);
-        builder.setContentText(text);
-        builder.setChannelId(channelId);
-        return builder;
+        return builder
+                .setContentTitle(title)
+                .setContentText(text)
+                .setChannelId(channelId)
+                // para a notificacao sumir quando o usuario tocar nela
+                .setContentIntent(PendingIntent.getActivity(context,  0, new Intent(), 0));
     }
 
 
