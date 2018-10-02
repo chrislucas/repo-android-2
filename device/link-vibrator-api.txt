@@ -1,0 +1,5 @@
+https://stackoverflow.com/questions/13950338/how-to-make-an-android-device-vibrate
+
+https://proandroiddev.com/using-vibrate-in-android-b0e3ef5d5e07
+
+https://www.immersion.com/our-technology/
