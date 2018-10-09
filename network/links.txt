@@ -1,0 +1,35 @@
+https://developer.android.com/topic/performance/power/network/action-any-traffic
+
+https://developers.google.com/protocol-buffers/
+
+
+FlatBuffers
+https://google.github.io/flatbuffers/
+https://blog.mindorks.com/why-consider-flatbuffer-over-json-2e4aa8d4ed07
+http://frogermcs.github.io/flatbuffers-in-android-introdution/
+
+
+Avoid redundant downloads
+https://developer.android.com/training/efficient-downloads/redundant_redundant#LocalCache
+https://www.quora.com/How-do-I-design-mobile-apps-to-handle-slow-network-speeds
+https://medium.com/@dharmin007/accessing-offline-data-in-apps-during-slow-network-a9027d825a90
+https://discourse.nativescript.org/t/check-for-slow-internet-connection-with-connectivitymanager/694
+https://developer.android.com/training/monitoring-device-state/connectivity-monitoring?hl=pt-br
+https://stackoverflow.com/questions/38141520/optimise-android-app-for-slow-network-connection
+https://stackoverflow.com/questions/11942643/how-to-handle-slow-network-connection-in-java-android
+https://medium.com/interactive-mind/designing-for-slow-cellular-connections-5fbbf4199928
+https://discourse.nativescript.org/t/check-for-slow-internet-connection-with-connectivitymanager/694
+https://www.mantralabsglobal.com/blogs/optimizing-apps-on-variable-network-speeds/
+
+Search: handle slow network apps android
+https://android.jlelse.eu/designing-android-apps-to-handle-slow-network-speed-dedc04119aac
+
+Search: optmizing slow network apps android
+https://android.jlelse.eu/designing-android-apps-to-handle-slow-network-speed-dedc04119aac
+
+https://developer.android.com/training/basics/network-ops/managing
+
+https://stackoverflow.com/questions/12821264/how-to-use-any-internet-connection-in-android-app-wifi-3g-4g-etc
+
+https://medium.freecodecamp.org/top-reasons-why-your-mobile-app-is-slow-and-how-to-fix-it-f0f7ce524934
+
