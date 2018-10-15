@@ -2,13 +2,9 @@ package xplorer.drawingpoints.activity.test;
 
 
 import android.os.Handler;
-import android.util.Log;
 
-
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
+import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
-
 
 import xplorer.drawingpoints.activity.views.Dot2DView;
 
@@ -21,29 +17,44 @@ public class AutomaticDrawPointsOnView {
     public  class DrawDots implements Runnable {
         private boolean isRunning;
 
-        DrawDots() { this.isRunning = true; }
+        private Handler handler;
+        private long interval;
 
-        void interrupt() { isRunning = false; }
+        DrawDots(long interval) {
+            this.handler    = new Handler();
+            this.interval   = interval;
+        }
+
+        void interrupt() {
+            this.isRunning = false;
+            this.handler.removeCallbacks(this);
+        }
+
+        private void start() {
+            this.isRunning  = true;
+        }
 
         @Override
         public void run() {
-            while (isRunning) {
-                mCanvas.drawDot();
+            if (isRunning) {
+                mCanvas.drawSquare();
+                handler.postDelayed(this, interval);
             }
         }
     }
 
-    private Handler handler;
 
-    public AutomaticDrawPointsOnView(Dot2DView mCanvas) {
+    public AutomaticDrawPointsOnView(Dot2DView mCanvas, long interval) {
         this.mCanvas = mCanvas;
+        this.drawDots = new DrawDots(interval);
     }
 
-    public void start(long interval, TimeUnit timeUnit) {
-        drawDots = new DrawDots();
-        new Handler().postDelayed(drawDots, interval);
+    public void start() {
+        drawDots.start();
+        new Handler().post(drawDots);
     }
 
     public void stop() {
+        this.drawDots.interrupt();
     }
 }

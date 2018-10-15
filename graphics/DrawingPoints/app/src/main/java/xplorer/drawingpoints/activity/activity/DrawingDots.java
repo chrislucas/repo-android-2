@@ -17,13 +17,13 @@ public class DrawingDots extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drawing_dots);
         Dot2DView dot2DView = findViewById(R.id.dot_view);
-        automaticDrawPointsOnView = new AutomaticDrawPointsOnView(dot2DView);
+        automaticDrawPointsOnView = new AutomaticDrawPointsOnView(dot2DView, 1);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        automaticDrawPointsOnView.start(5000, TimeUnit.MILLISECONDS);
+        automaticDrawPointsOnView.start();
     }
 
     @Override

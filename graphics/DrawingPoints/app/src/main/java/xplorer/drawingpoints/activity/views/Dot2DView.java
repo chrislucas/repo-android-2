@@ -33,7 +33,7 @@ public class Dot2DView extends View implements View.OnTouchListener {
 
     private GestureDetector gestureDetector;
 
-    private static final int OFFSET_DRAW_RECT_PX = 30;
+    private static final int OFFSET_DRAW_RECT_PX = 35;
 
     public Dot2DView(Context context) {
         super(context);
@@ -69,11 +69,11 @@ public class Dot2DView extends View implements View.OnTouchListener {
 
             @Override
             public boolean onDoubleTapEvent(MotionEvent e) {
-                Log.i("DOUBLE_TAP_EVENT", MapMotionEvents.EVENTS.get(e.getActionMasked()));
+                Log.i("DOUBLE_TAP_EVENT"
+                        , MapMotionEvents.EVENTS.get(e.getActionMasked()));
                 switch (e.getActionMasked()) {
                     case MotionEvent.ACTION_UP:
                         clearCanvas();
-
                         break;
                 }
                 return true;
@@ -101,7 +101,6 @@ public class Dot2DView extends View implements View.OnTouchListener {
 
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-
                 int actionMaskedEvent1 = e1.getActionMasked();
                 int actionMaskedEvent2 = e2.getActionMasked();
                 Log.i("ON_FLING"
@@ -115,7 +114,6 @@ public class Dot2DView extends View implements View.OnTouchListener {
                 return true;
             }
         });
-
 
         setOnTouchListener(this);
     }
@@ -133,46 +131,37 @@ public class Dot2DView extends View implements View.OnTouchListener {
     }
 
     // Desenha primeiro no canvas de cache para repassar para o canvas normal
-    private void drawDot(Canvas canvas, float left, float top, float right, float bottom) {
-        mPaint.setStyle(Paint.Style.FILL);
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(17.0f);
-        int color = ColorUtils.getRandomColorRGB255(127, 255);
-        mPaint.setColor(color);
+    private void drawSquare(Canvas canvas, float left, float top, float right, float bottom, int color) {
         RectF dot = new RectF(left, top, right, bottom);
-        Log.i("DRAW_DOT", String.format("%f, %f COR: %d", left, bottom, color));
         canvas.drawRect(dot, mPaint);
-
         // preparando a caneta
-        preparePencilToDrawPositionDot();
-        mPaint.setStrokeWidth(10.0f);
+        preparePencilToWritePositionOfSquare();
+        // mesma cor do quadrado
+        mPaint.setColor(color);
         // formatando o texto que colocara a posicao do ponto ao lado do ponto
-        String text = String.format(Locale.getDefault(), "P(%f, %f)", left, bottom);
+        String text = String.format(Locale.getDefault(), "P(%.2f, %.2f)", left, bottom);
+        Log.i("DRAW_DOT", String.format("%f, %f, %f, %f ON %s", left, top, right, bottom, text));
         // desenhando a posicao na View
-        writePositionDot(canvas, text, left + OFFSET_DRAW_RECT_PX, bottom + OFFSET_DRAW_RECT_PX);
-
+        writePositionDot(canvas, text, left + OFFSET_DRAW_RECT_PX * 2.0f, (bottom + top) / 2);
     }
 
-    public void drawDot() {
+    public void drawSquare() {
         if (implDoublingBufferDrawing != null) {
             // Preparar o atributo paint para desenhar um ponto no canvas
-            preparePencilToDrawDot();
+            int color = preparePencilToDrawSquare();
             // escolher uma posicao aleatoria
             Random random = new Random();
             float left  = random.nextInt(mWidth - 1);
             float top   = random.nextInt(mHeight - 1);
-            float right = left + OFFSET_DRAW_RECT_PX;
-            float bottom = top + OFFSET_DRAW_RECT_PX;
+            float right = left + OFFSET_DRAW_RECT_PX * 1.5f;
+            float bottom = top + OFFSET_DRAW_RECT_PX * 1.5f;
             // desenhar o ponto no Canvas
-            drawDot(implDoublingBufferDrawing.getCanvasCache(), left, top,right, bottom);
-
+            drawSquare(implDoublingBufferDrawing.getCanvasCache(), left, top, right, bottom, color);
+            invalidate();
         }
     }
 
     private void preparePencilDefault() {
-        mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setColor(Color.RED);
-        mPaint.setStrokeWidth(15.0f);
         /**
          * Paint.Join enum que indica como segmentos de linhas sao juntados
          * quando desenhamos um Path. Paint.Join.BEVEL indica que o tratamento
@@ -187,12 +176,18 @@ public class Dot2DView extends View implements View.OnTouchListener {
         mPaint.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    private void preparePencilToDrawDot() {
-        preparePencilDefault();
+    private int preparePencilToDrawSquare() {
+        this.mPaint.setStyle(Paint.Style.FILL);
+        this.mPaint.setStrokeWidth(17.0f);
+        int color = ColorUtils.getRandomColorRGB255(70, 150);
+        this.mPaint.setColor(color);
+        return color;
     }
 
-    private void preparePencilToDrawPositionDot() {
-        preparePencilDefault();
+    private void preparePencilToWritePositionOfSquare() {
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(5.0f);
+        mPaint.setTextSize(28.0f);
     }
 
     private void preparePencilToCleanCanvas() {
