@@ -1,0 +1,26 @@
+https://developer.android.com/about/versions/oreo/background#broadcasts
+
+
+https://developer.android.com/about/versions/oreo/background?hl=en
+
+https://medium.com/exploring-android/exploring-background-execution-limits-on-android-oreo-ab384762a66c
+
+
+https://stackoverflow.com/questions/49229496/oreo-broadcast-receivers-restrictions-and-changes
+
+
+https://developer.android.com/guide/components/broadcasts
+
+
+https://developer.android.com/guide/components/broadcasts#context-registered-recievers
+
+
+https://developer.android.com/guide/components/broadcasts
+
+
+match intent with broadcast receiver
+http://onemikro2nd.blogspot.com/2013/09/darker-corners-of-android.html
+https://www.techotopia.com/index.php/Android_Broadcast_Intents_and_Broadcast_Receivers
+
+
+

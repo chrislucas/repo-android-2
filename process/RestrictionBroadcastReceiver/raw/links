@@ -1,0 +1,37 @@
+https://developer.android.com/about/versions/oreo/background#broadcasts
+
+
+https://developer.android.com/about/versions/oreo/background?hl=en
+
+https://medium.com/exploring-android/exploring-background-execution-limits-on-android-oreo-ab384762a66c
+
+
+https://stackoverflow.com/questions/49229496/oreo-broadcast-receivers-restrictions-and-changes
+
+
+https://developer.android.com/guide/components/broadcasts
+
+
+https://developer.android.com/guide/components/broadcasts#context-registered-recievers
+
+
+https://developer.android.com/guide/components/broadcasts
+
+
+Texto aparentemente interessante sobre alguns recursos "obscuros" na API do android
+http://onemikro2nd.blogspot.com/2013/09/darker-corners-of-android.html
+
+
+Broadcast que ainda podem ser registrados de forma implicita
+https://developer.android.com/guide/components/broadcast-exceptions
+
+match intent with broadcast receiver
+http://onemikro2nd.blogspot.com/2013/09/darker-corners-of-android.html
+https://www.techotopia.com/index.php/Android_Broadcast_Intents_and_Broadcast_Receivers
+
+
+Sobre acao INPUT_METHOD_CHANGED e um projeto interessante de teclado android
+https://stackoverflow.com/questions/18486130/detect-if-input-method-has-been-selected
+https://github.com/AnySoftKeyboard/AnySoftKeyboard
+
+
