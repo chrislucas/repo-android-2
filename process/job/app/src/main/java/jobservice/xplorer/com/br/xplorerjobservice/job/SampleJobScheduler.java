@@ -3,9 +3,7 @@ package jobservice.xplorer.com.br.xplorerjobservice.job;
 import android.app.job.JobInfo;
 import android.app.job.JobScheduler;
 import android.app.job.JobWorkItem;
-import android.content.ComponentName;
 import android.os.Build;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
@@ -19,7 +17,6 @@ import java.util.List;
 public class SampleJobScheduler extends JobScheduler {
 
     public static final String TAG = "SAMPLE_JOB_SCHEDULER";
-
 
     @Override
     public int schedule(@NonNull JobInfo jobInfo) {

@@ -179,6 +179,14 @@ public class SampleJobService extends JobService {
                 .Builder(JOB_ID, componentJobService)
                 // O dispositivo nao precisa estar carregando
                 .setRequiresCharging(false)
+                // Set whether or not to persist this job across device reboots.
+                .setPersisted(true)
+                // Define um tempo de atraso para uma tarefa comecar
+                // se esse atributo for definido na podemos definir setPeriodic
+                .setMinimumLatency(1)
+                // Defini o prazo maximo para uma Job comecar, em ms
+                // se esse atributo for definido na podemos definir setPeriodic
+                .setOverrideDeadline(5000)
                 //
                 .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
 
@@ -191,16 +199,13 @@ public class SampleJobService extends JobService {
             /**
              * A partir do android Nougat
              * */
-            builder.setPeriodic(JobInfo.getMinPeriodMillis()/*, JobInfo.getMinFlexMillis()*/);
+            //builder.setPeriodic(JobInfo.getMinPeriodMillis()/*, JobInfo.getMinFlexMillis()*/);
         }
         else {
-            builder.setPeriodic(90000);
+            //builder.setPeriodic(90000);
         }
-
-
         // builder.setMinimumLatency(1);       // atrasa o inicio do Job no minimo por N milissegundos
         // builder.setOverrideDeadline(1);     // atrasa o fim do Job no minimo por N milissegundos
-
         /**
          * Discussao sobre JobScheduler no android Nougat
          * https://stackoverflow.com/questions/38344220/job-scheduler-not-running-on-android-n

@@ -1,5 +1,13 @@
+Tutoriais
+http://www.vogella.com/tutorials/AndroidTaskScheduling/article.html
+https://blog.teamtreehouse.com/scheduling-work-jobscheduler
+https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129
+https://code.tutsplus.com/tutorials/using-the-jobscheduler-api-on-android-lollipop--cms-23562
+
 https://github.com/googlesamples/android-JobScheduler
 
+// texto explicativo sobre os beneficios do uso de JobScheduler
+https://github.com/firebase/firebase-jobdispatcher-android#user-content-firebase-jobdispatcher-
 
 
 Schedule tasks with WorkManager
