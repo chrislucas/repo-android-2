@@ -28,11 +28,10 @@ public class Main2Activity extends AppCompatActivity {
          * API {@link JobScheduler}
          * api para agendar varios tipos de Jobs que serao executados no processo dapropria aplicacao
          * */
-
         // ou
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //
-            final JobScheduler jobScheduler = SampleJobService.schedulePeriodicJobDefault(this);
+            final JobScheduler jobScheduler = SampleJobService.schedulePeriodicJobDefault(this, 0xff);
             if (jobScheduler != null) {
                 findViewById(R.id.cancel_job).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -46,9 +45,9 @@ public class Main2Activity extends AppCompatActivity {
                 });
             }
         }
-
         else {
-            final SampleJobScheduler jobScheduler = ContextCompat.getSystemService(this, SampleJobScheduler.class);
+            final SampleJobScheduler jobScheduler = ContextCompat.getSystemService(this
+                    , SampleJobScheduler.class);
         }
     }
 }

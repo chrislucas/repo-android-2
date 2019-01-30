@@ -1,10 +1,27 @@
 Tutoriais
 http://www.vogella.com/tutorials/AndroidTaskScheduling/article.html
 https://blog.teamtreehouse.com/scheduling-work-jobscheduler
-https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129
+***** https://medium.com/google-developers/scheduling-jobs-like-a-pro-with-jobscheduler-286ef8510129
+
+Ler sobre Backoff criteria
+https://developer.android.com/reference/android/app/job/JobInfo.Builder?utm_campaign=adp_series_job_scheduler_092216&utm_source=medium&utm_medium=blog#setBackoffCriteria%28long,%20int%29
+
+Ler sobre jobFinished
+https://developer.android.com/reference/android/app/job/JobService#jobFinished(android.app.job.JobParameters,%20boolean)
+
+
+Curso
+https://google-developer-training.gitbooks.io/android-developer-fundamentals-course-practicals/content/en/Unit%203/83_p_job_scheduler.html
+
 https://code.tutsplus.com/tutorials/using-the-jobscheduler-api-on-android-lollipop--cms-23562
 
+https://www.bignerdranch.com/blog/choosing-the-right-background-scheduler-in-android/
+
+
+
 https://github.com/googlesamples/android-JobScheduler
+
+https://developer.android.com/topic/performance/scheduling
 
 // texto explicativo sobre os beneficios do uso de JobScheduler
 https://github.com/firebase/firebase-jobdispatcher-android#user-content-firebase-jobdispatcher-

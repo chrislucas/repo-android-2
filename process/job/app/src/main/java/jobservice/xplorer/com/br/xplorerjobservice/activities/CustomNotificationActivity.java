@@ -2,12 +2,19 @@ package jobservice.xplorer.com.br.xplorerjobservice.activities;
 
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.media.RingtoneManager;
+import android.os.Build;
 import android.os.Handler;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -59,7 +66,7 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
         HelperNotification helperNotification = HelperNotification.getInstance();
         NotificationCompat.Builder builder = helperNotification.getNotificationCompatBuilder(this
                 , "Notificacao Simples : )"
-                , "Aqui temos uma simples notificação maroto !!!"
+                , "Aqui temos uma simples notificação marota !!!"
                 , TAG);
 
         builder.setSmallIcon(R.drawable.ic_notifications)
@@ -76,7 +83,7 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
         final HelperNotification helperNotification = HelperNotification.getInstance();
         builderOnGoing = helperNotification.getNotificationCompatBuilder(this
                 , "Notificacao Simples : )"
-                , "Aqui temos uma simples notificação maroto !!!"
+                , "Aqui temos uma simples notificação marota !!!"
                 , TAG);
 
         builderOnGoing.setSmallIcon(R.drawable.ic_notifications)
@@ -125,18 +132,43 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
 
     private void expandableNotification() {
         HelperNotification helperNotification = HelperNotification.getInstance();
-        NotificationCompat.Builder builder = helperNotification
-                .getNotificationCompatBuilder(this, "Notificação expandível"
-                        , "Uma notificação expandível marota :)", TAG);
 
-        builder.setSmallIcon(R.drawable.ic_notifications)
-                .setStyle(new NotificationCompat.BigPictureStyle()
-                    .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.bigpic))
-                            .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample)))
-                .setAutoCancel(true)
-                .setVibrate(new long[] {100, 100, 100})
-                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
-        helperNotification.show(this, builder.build(), ID);
+        NotificationCompat.Builder builder = helperNotification
+                .getNotificationCompatBuilder(this
+                        , "Notificação expandível"
+                        , "Uma notificação expandível marota :)"
+                        , TAG);
+
+        // Carregando um vector
+        Drawable drawable = ContextCompat.getDrawable(this
+                , R.drawable.big_ic_notification_sample);
+
+        if (drawable != null) {
+            if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                drawable = DrawableCompat.wrap(drawable).mutate();
+            }
+
+            Bitmap largeIcon = Bitmap.createBitmap(drawable.getIntrinsicWidth()
+                    , drawable.getIntrinsicHeight()
+                    , Bitmap.Config.ARGB_8888
+            );
+
+            Bitmap picture = BitmapFactory.decodeResource(getResources(), R.drawable.bigpic);
+
+            builder.setSmallIcon(R.drawable.ic_notifications)
+                    .setStyle(new NotificationCompat.BigPictureStyle()
+                            .bigPicture(picture)
+                            .bigLargeIcon(largeIcon));
+
+            builder.setAutoCancel(true)
+                    .setVibrate(new long[] {100, 100, 100})
+                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION));
+
+            helperNotification.show(this, builder.build(), ID);
+        }
+        else {
+            Log.i("EXP_NOTIFICATION", "NULLABLE");
+        }
     }
 
     public static final int REQUEST_CODE_OPEN_ACTIVITY_2 = 0xfa;
@@ -155,14 +187,32 @@ public class CustomNotificationActivity extends AppCompatActivity implements Vie
                 , PendingIntent.FLAG_ONE_SHOT
         );
         if (builder != null) {
-            builder.setSmallIcon(R.drawable.ic_notifications)
-                    .setStyle(new NotificationCompat.BigPictureStyle()
-                    .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.bigpic))
-                    .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample)))
-                    .setVibrate(new long[] {100, 100, 100})
-                    .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                    .setAutoCancel(true);
-            helperNotification.show(this, builder.build(), ID);
+
+            // Carregando um vector
+            Drawable drawable = ContextCompat.getDrawable(this
+                    , R.drawable.big_ic_notification_sample);
+
+            if (drawable != null) {
+
+                Bitmap picture = BitmapFactory.decodeResource(getResources(), R.drawable.bigpic);
+                if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+                    drawable = DrawableCompat.wrap(drawable).mutate();
+                }
+
+                Bitmap largeIcon = Bitmap.createBitmap(drawable.getIntrinsicWidth()
+                        , drawable.getIntrinsicHeight()
+                        , Bitmap.Config.ARGB_8888
+                );
+
+                builder.setSmallIcon(R.drawable.ic_notifications)
+                        .setStyle(new NotificationCompat.BigPictureStyle()
+                                .bigPicture(picture)
+                                .bigLargeIcon(largeIcon))
+                        .setVibrate(new long[] {100, 100, 100})
+                        .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                        .setAutoCancel(true);
+                helperNotification.show(this, builder.build(), ID);
+            }
         }
     }
 

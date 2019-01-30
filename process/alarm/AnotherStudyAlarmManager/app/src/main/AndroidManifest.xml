@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="jobservice.xplorer.com.br.anotherstudyaboutalarmmanager">
+    package="jobservice.xplorer.com.br.alarmmanager">
 
     <application
         android:allowBackup="true"
@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <activity android:name="jobservice.xplorer.com.br.alarmmanager.MainActivity" />
 
         <receiver
-            android:name=".models.alarms.broadcast.BroadcastReceiverFilterAlarm"
+            android:name="jobservice.xplorer.com.br.alarmmanager.models.alarms.broadcast.BroadcastReceiverFilterAlarm"
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".SimpleExampleInexactlyAlarm">
+        <activity android:name="jobservice.xplorer.com.br.alarmmanager.SimpleExampleInexactlyAlarm">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,7 +25,7 @@
         </activity>
 
         <service
-            android:name=".services.ServiceFilterAlarm"
+            android:name="jobservice.xplorer.com.br.alarmmanager.services.ServiceFilterAlarm"
             android:exported="false"></service>
     </application>
 

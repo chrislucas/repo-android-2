@@ -2,6 +2,8 @@ package jobservice.xplorer.com.br.xplorerjobservice.job;
 
 import android.app.Activity;
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.Service;
 import android.app.job.JobInfo;
 import android.app.job.JobParameters;
@@ -13,8 +15,11 @@ import android.content.ContentProvider;
 import android.content.Context;
 import android.media.RingtoneManager;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -45,7 +50,6 @@ import jobservice.xplorer.com.br.xplorerjobservice.helpers.notification.HelperNo
  * */
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 public class SampleJobService extends JobService {
-    public static final int JOB_ID = 1;
 
     public static final String CHANNEL = "CHANNEL_SAMPLE_JOB_SERVICE";
     public static final int ID_NOTIFICATION = 0x33;
@@ -55,65 +59,88 @@ public class SampleJobService extends JobService {
     private static final SimpleDateFormat simpledateFormat =
             new SimpleDateFormat("kk:mm:ss", Locale.getDefault());
 
-    @Override
-    public boolean onStartJob(final JobParameters params) {
-        //final Context context = this;
-        thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                int jobId = params.getJobId();
-                Log.i("ON_START_JOB"
-                        , String.format(Locale.getDefault()
-                                , "LOG_JOB_PARAMS_START JobID: %d,", jobId));
-                Date now = new Date(Calendar.getInstance().getTimeInMillis());
-                HelperNotification helperNotification =  HelperNotification.getInstance();
-                NotificationCompat.Builder builder = helperNotification
-                        .getNotificationCompatBuilder(getApplicationContext()
-                            , "Exemplo de notificação"
-                            , String.format("Exemplo de JobScheduler %s"
-                                        , simpledateFormat.format(now))
-                            , CHANNEL
-                        );
+    private boolean running, canceled;
+
+    private void doStuff(JobParameters jobParameters) {
+        int jobId = jobParameters.getJobId();
+        Log.i("ON_START_JOB"
+                , String.format(Locale.getDefault()
+                        , "LOG_JOB_PARAMS_START JobID: %d,", jobId));
+        Date now = new Date(Calendar.getInstance().getTimeInMillis());
+
+        final HelperNotification helperNotification = HelperNotification.getInstance();
+
+        NotificationCompat.Builder builder = helperNotification
+                .getNotificationCompatBuilder(getApplicationContext()
+                        , "Exemplo de notificação"
+                        , String.format("Exemplo de JobScheduler %s"
+                                , simpledateFormat.format(now))
+                        , CHANNEL
+                );
 /*
                 NotificationCompat.BigPictureStyle bigPictureStyle = new NotificationCompat.BigPictureStyle()
                         .bigPicture(BitmapFactory.decodeResource(getResources(), R.drawable.bigpic))
                         .bigLargeIcon(BitmapFactory.decodeResource(getResources(), R.drawable.big_ic_notification_sample));
 */
-                Notification n = builder
-                        .setAutoCancel(true)
-                        //.setStyle(bigPictureStyle)
-                        .setSmallIcon(R.drawable.ic_notifications)
-                        .setVibrate(new long[] {100, 100, 100})
-                        .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
-                        .setDefaults(NotificationCompat.DEFAULT_LIGHTS | NotificationCompat.DEFAULT_SOUND)
-                        .build();
-                n.flags |= NotificationCompat.FLAG_AUTO_CANCEL | NotificationCompat.FLAG_SHOW_LIGHTS;
+        final Notification notification = builder
+                .setAutoCancel(true)
+                //.setStyle(bigPictureStyle)
+                .setSmallIcon(R.drawable.ic_notifications)
+                .setVibrate(new long[] {100, 100, 100})
+                .setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
+                .setDefaults(NotificationCompat.DEFAULT_LIGHTS | NotificationCompat.DEFAULT_SOUND)
+                .build();
 
-                helperNotification.show(getApplicationContext(), n, ID_NOTIFICATION);
+        //notification.flags |= NotificationCompat.FLAG_AUTO_CANCEL | NotificationCompat.FLAG_SHOW_LIGHTS;
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                    refreshJobScheduler();
-                }
-                /**
-                 * A chamada ao metodo jobFinished() indica ao sistema que o serviço acabou
-                 * e a tarefa nao precisa mais ser reagendada
-                 * */
-                //jobFinished(params, false);
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                helperNotification.show(SampleJobService.this, notification, ID_NOTIFICATION);
+            }
+        });
+        // acabou
+        running = false;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            //refreshJobScheduler(jobId);
+        }
+        /**
+         * A chamada ao metodo jobFinished() indica ao sistema que o serviço acabou
+         * e a tarefa nao precisa mais ser reagendada
+         * */
+        jobFinished(jobParameters, false);
+    }
+
+    @Override
+    public boolean onStartJob(final JobParameters params) {
+        running = true;
+        thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                if (!canceled)
+                    doStuff(params);
             }
         });
         thread.start();
-        return true;
+        return running;
     }
 
-    private void refreshJobScheduler() {
-        JobScheduler mJobScheduler = (JobScheduler) getApplicationContext().getSystemService(JOB_SCHEDULER_SERVICE);
+    private void refreshJobScheduler(int jobId) {
+        JobScheduler mJobScheduler = (JobScheduler) getApplicationContext()
+                .getSystemService(JOB_SCHEDULER_SERVICE);
+
         ComponentName mComponentName = new ComponentName(getPackageName(), getClass().getName());
-        JobInfo.Builder mBuilder = new JobInfo.Builder(JOB_ID, mComponentName);
-        mBuilder.setMinimumLatency(1000);
+
+        JobInfo.Builder mBuilder = new JobInfo.Builder(jobId, mComponentName);
+        mBuilder.setMinimumLatency(3000);
         if (mJobScheduler != null) {
             mJobScheduler.schedule(mBuilder.build());
         }
     }
+
+    /**
+     * Caso um Job for cancelado antes de ser finalizado o sistema chamara esse metodo
+     * */
 
     @Override
     public boolean onStopJob(JobParameters params) {
@@ -121,7 +148,11 @@ public class SampleJobService extends JobService {
         Log.i("ON_STOP_JOB"
                 , String.format(Locale.getDefault()
                         , "LOG_JOB_PARAMS_STOP JobID: %d,", jobId));
-        return false;
+        killThread(params);
+        canceled = true;
+
+        jobFinished(params, running);
+        return running;
     }
 
     private void killThread(JobParameters params) {
@@ -136,11 +167,16 @@ public class SampleJobService extends JobService {
         }
     }
 
-    public static JobScheduler schedulePeriodicJobDefault(Context context) {
+    public static JobScheduler schedulePeriodicJobDefault(Context context, int jobId) {
         final JobScheduler jobScheduler = (JobScheduler)
                 context.getSystemService(Context.JOB_SCHEDULER_SERVICE);
         if (jobScheduler != null) {
-            int result = jobScheduler.schedule(createPeriodicJobInfoDefault(context));
+            /**
+             * Agendando um Job
+             * */
+
+            int result = jobScheduler.schedule(createPeriodicJobInfoDefault(context, jobId));
+            // Imprimindo o resultado da tentativa de agendamento
             Log.i(SampleJobScheduler.TAG
                     , result == JobScheduler.RESULT_SUCCESS ? "SUCCESS" : "FAILURE");
         }
@@ -148,7 +184,7 @@ public class SampleJobService extends JobService {
     }
 
 
-    public static JobInfo createPeriodicJobInfoDefault(Context context) {
+    public static JobInfo createPeriodicJobInfoDefault(Context context, int jobId) {
         /**
          * https://developer.android.com/reference/android/content/ComponentName
          * Identificador de um componente de aplicacao especifico.
@@ -171,15 +207,14 @@ public class SampleJobService extends JobService {
          *
          * intent.setComponent(new ComponentName("com.example", "com.example.MyExampleActivity"));
          * */
-
         ComponentName componentJobService = new ComponentName(context
                 , SampleJobService.class.getName());
         //ComponentName componentJobService = new ComponentName(this, SampleJobService.class);
         JobInfo.Builder builder = new JobInfo
-                .Builder(JOB_ID, componentJobService)
+                .Builder(jobId, componentJobService)
                 // O dispositivo nao precisa estar carregando
                 .setRequiresCharging(false)
-                // Set whether or not to persist this job across device reboots.
+                // Caso o celular for reiniciado a sistema deve reiniciar esse servico ?
                 .setPersisted(true)
                 // Define um tempo de atraso para uma tarefa comecar
                 // se esse atributo for definido na podemos definir setPeriodic
@@ -187,8 +222,26 @@ public class SampleJobService extends JobService {
                 // Defini o prazo maximo para uma Job comecar, em ms
                 // se esse atributo for definido na podemos definir setPeriodic
                 .setOverrideDeadline(5000)
-                //
-                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
+                // Se definirmos DeviceIdle como TRUE o dispositivo deve estar ativo ou em uso
+                //.setRequiresDeviceIdle()
+                // Esse job requer qual tipo de conectiviade
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_NONE);
+        //
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            /**
+             * Definir esse atributo como TRUE indica que esse Job foi projetado
+             * para buscar com antencedência uma informacao que por exemplo pode melhorar
+             * a experiencia do usuario.
+             *
+             * O sistema usara esse sinal para relaxar as restricoes de rede, tais como
+             * permitir que um job que seria executado somente numa rede limitada funcione
+             * no tipo de rede {@link JobInfo.NETWORK_TYPE_UNMETERED} ilimitada.
+             *
+             * O sistema pode usar esse sinal junto a alguns padroes de uso do usuario final
+             * para garantir o pre carregamento de dados antes do usuario executar o app
+             * */
+            builder.setPrefetch(true);
+        }
 
         /**
          *
