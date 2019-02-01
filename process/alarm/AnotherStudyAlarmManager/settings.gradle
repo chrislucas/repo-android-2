@@ -1,1 +1,2 @@
-include ':app', ':helpernotification'
+include ':app', ':helpernotification', ':rybyalarmmanager'
+

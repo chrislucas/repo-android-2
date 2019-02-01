@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.alarmmanager;
+package jobservice.xplorer.com.br;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import java.util.Calendar;
 
+import jobservice.xplorer.com.br.alarmmanager.R;
 import jobservice.xplorer.com.br.alarmmanager.models.alarms.AlarmType;
 import jobservice.xplorer.com.br.alarmmanager.services.ServiceFilterAlarm;
 

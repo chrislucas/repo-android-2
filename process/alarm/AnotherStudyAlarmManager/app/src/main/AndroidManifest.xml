@@ -1,32 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="jobservice.xplorer.com.br.alarmmanager">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name="jobservice.xplorer.com.br.alarmmanager.MainActivity" />
 
-        <receiver
-            android:name="jobservice.xplorer.com.br.alarmmanager.models.alarms.broadcast.BroadcastReceiverFilterAlarm"
-            android:enabled="true"
-            android:exported="true" />
 
-        <activity android:name="jobservice.xplorer.com.br.alarmmanager.SimpleExampleInexactlyAlarm">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+  
+  <application
+    android:allowBackup="true"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/app_name"
+    android:roundIcon="@mipmap/ic_launcher_round"
+    android:supportsRtl="true"
+    android:theme="@style/AppTheme">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+    <activity android:name="jobservice.xplorer.com.br.TestRyLib" />
+
+
+    <activity android:name="jobservice.xplorer.com.br.MainActivity" />
+    
+    <activity android:name="jobservice.xplorer.com.br.SimpleExampleInexactlyAlarm">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <action android:name="android.intent.action.VIEW" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+      <receiver
+          android:name="jobservice.xplorer.com.br.alarmmanager.models.alarms.broadcast.BroadcastReceiverFilterAlarm"
+          android:enabled="true"
+          android:exported="true"
+          />
 
         <service
-            android:name="jobservice.xplorer.com.br.alarmmanager.services.ServiceFilterAlarm"
-            android:exported="false"></service>
-    </application>
+          android:name=".services.ServiceFilterAlarm"
+          android:exported="false"
+          />
+  </application>
+
 
 </manifest>

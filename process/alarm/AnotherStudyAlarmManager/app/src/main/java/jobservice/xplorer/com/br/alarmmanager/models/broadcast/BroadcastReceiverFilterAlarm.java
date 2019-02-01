@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.alarmmanager.models.alarms.broadcast;
+package jobservice.xplorer.com.br.alarmmanager.models.broadcast;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

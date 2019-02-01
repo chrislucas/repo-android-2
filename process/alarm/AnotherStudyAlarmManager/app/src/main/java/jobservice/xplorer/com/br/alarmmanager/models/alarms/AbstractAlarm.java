@@ -4,14 +4,12 @@ package jobservice.xplorer.com.br.alarmmanager.models.alarms;
 import android.app.AlarmManager;
 import android.content.Context;
 
-import jobservice.xplorer.com.br.alarmmanager.models.Task;
+
 
 public abstract class AbstractAlarm<Response, Params> {
 
     protected AlarmManager alarmManager;
     private boolean isRunning;
-    private Task<Response, Params> task;
-
 
     @AlarmType
     protected int alarmType;

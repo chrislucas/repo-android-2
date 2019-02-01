@@ -51,12 +51,11 @@ public class HelperNotification {
      *
      * @param channelId
      * */
-    public NotificationCompat.Builder getNotificationCompatBuilder(Context context
-            , CharSequence title, CharSequence text, String channelId) {
+    public NotificationCompat.Builder getNotificationCompatBuilder(Context context, CharSequence title, CharSequence text, String channelId) {
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId);
         return builder
                 .setContentTitle(title)
                 .setContentText(text)
-                .setChannelId(channelId)
                 // para a notificacao sumir quando o usuario tocar nela
                 .setContentIntent(PendingIntent.getActivity(context,  0, new Intent(), 0));
     }
