@@ -10,30 +10,28 @@
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
     <activity android:name=".TestRyLib">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
+
     </activity>
     <activity android:name=".MainActivity" />
     
     <receiver
-      android:name=".models.alarms.broadcast.BroadcastReceiverFilterAlarm"
+      android:name=".broadcast.BroadcastReceiverFilterAlarm"
       android:enabled="true"
-      android:exported="true" />
+      android:exported="true"
+      />
     
     <activity android:name=".SimpleExampleInexactlyAlarm">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-        
+        <action android:name="android.intent.action.VIEW" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
     
     <service
       android:name=".services.ServiceFilterAlarm"
-      android:exported="false" />
+      android:exported="false"
+      />
   </application>
 
 </manifest>
