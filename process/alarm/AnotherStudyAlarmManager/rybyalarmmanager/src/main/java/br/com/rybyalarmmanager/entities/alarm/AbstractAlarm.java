@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.alarmmanager.models.alarms;
+package br.com.rybyalarmmanager.entities.alarm;
 
 
 import android.app.AlarmManager;

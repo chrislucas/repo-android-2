@@ -9,7 +9,7 @@ import android.os.Bundle;
 import java.util.Calendar;
 
 import jobservice.xplorer.com.br.alarmmanager.R;
-import jobservice.xplorer.com.br.alarmmanager.models.alarms.AlarmType;
+import br.com.rybyalarmmanager.entities.alarm.AlarmType;
 import jobservice.xplorer.com.br.alarmmanager.services.ServiceFilterAlarm;
 
 public class SimpleExampleInexactlyAlarm extends AppCompatActivity {
@@ -36,20 +36,18 @@ public class SimpleExampleInexactlyAlarm extends AppCompatActivity {
             intentElapsedRealTime.putExtras(bundle);
             alarmManager.setInexactRepeating(AlarmType.ELAPSED_REAL_TIME, now, interval,
                     PendingIntent.getService(this
-                            , 0xff, intentElapsedRealTime, 0));
-
-
+                            , 0xf1, intentElapsedRealTime, 0));
             /**
              * Alarme baseado em {@link android.os.SystemClock#elapsedRealtime}
              *  O tempo eh contado a partir dos milissegundos a partir do BOOT do S.O
              *  Esse alarme desperta o aparelho
-             * */
+             **/
             Intent intentElapsedRealTimeWakeUp = new Intent(this, ServiceFilterAlarm.class);
             bundle = new Bundle();
             bundle.putString(ServiceFilterAlarm.KEY_STRING, "ELAPSED_REAL_TIME_WAKEUP");
             intentElapsedRealTimeWakeUp.putExtras(bundle);
             alarmManager.setInexactRepeating(AlarmType.ELAPSED_REAL_TIME_WAKEUP, now, interval * 3
-                    ,PendingIntent.getService(this, 0xff, intentElapsedRealTimeWakeUp, 0));
+                    ,PendingIntent.getService(this, 0xf2, intentElapsedRealTimeWakeUp, 0));
 
             /**
              * Tempo baseado no metodo {@link System#currentTimeMillis System.currentTimeMillis()}
@@ -63,7 +61,7 @@ public class SimpleExampleInexactlyAlarm extends AppCompatActivity {
             bundle.putString(ServiceFilterAlarm.KEY_STRING, "RTC");
             intentRTC.putExtras(bundle);
             alarmManager.setInexactRepeating(AlarmType.RTC, now, interval * 6
-                    , PendingIntent.getService(this, 0xff, intentRTC, 0));
+                    , PendingIntent.getService(this, 0xf3, intentRTC, 0));
 
 
             /**
@@ -75,7 +73,7 @@ public class SimpleExampleInexactlyAlarm extends AppCompatActivity {
             bundle.putString(ServiceFilterAlarm.KEY_STRING, "RTC_WAKEUP");
             intentRTCWakeUp.putExtras(bundle);
             alarmManager.setInexactRepeating(AlarmType.RTC_WAKEUP, now, interval * 9
-                    , PendingIntent.getService(this, 0xff, intentRTCWakeUp, 0));
+                    , PendingIntent.getService(this, 0xf4, intentRTCWakeUp, 0));
         }
     }
 }

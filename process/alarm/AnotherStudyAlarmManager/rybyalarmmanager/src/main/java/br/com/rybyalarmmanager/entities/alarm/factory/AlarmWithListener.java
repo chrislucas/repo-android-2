@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.alarmmanager.models.alarms.factory;
+package br.com.rybyalarmmanager.entities.alarm.factory;
 
 
 import android.app.AlarmManager;
@@ -7,8 +7,8 @@ import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.RequiresApi;
 
-import jobservice.xplorer.com.br.alarmmanager.models.alarms.AbstractAlarm;
-import jobservice.xplorer.com.br.alarmmanager.models.alarms.AlarmType;
+import br.com.rybyalarmmanager.entities.alarm.AbstractAlarm;
+import br.com.rybyalarmmanager.entities.alarm.AlarmType;
 
 @RequiresApi(api = Build.VERSION_CODES.N)
 public class AlarmWithListener extends AbstractAlarm {

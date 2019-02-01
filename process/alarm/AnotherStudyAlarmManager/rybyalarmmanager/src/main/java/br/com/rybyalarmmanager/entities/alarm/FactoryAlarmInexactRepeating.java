@@ -1,6 +1,6 @@
-package jobservice.xplorer.com.br.alarmmanager.models.alarms;
+package br.com.rybyalarmmanager.entities.alarm;
 
-import jobservice.xplorer.com.br.alarmmanager.models.alarms.factory.AbstractFactoryAlarm;
+import br.com.rybyalarmmanager.entities.alarm.factory.AbstractFactoryAlarm;
 
 public class FactoryAlarmInexactRepeating extends AbstractFactoryAlarm {
 

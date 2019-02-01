@@ -1,12 +1,12 @@
-package jobservice.xplorer.com.br.alarmmanager.models.alarms.factory;
+package br.com.rybyalarmmanager.entities.alarm.factory;
 
 
 import android.app.PendingIntent;
 import android.content.Context;
 
 
-import jobservice.xplorer.com.br.alarmmanager.models.alarms.AbstractAlarm;
-import jobservice.xplorer.com.br.alarmmanager.models.alarms.AlarmType;
+import br.com.rybyalarmmanager.entities.alarm.AbstractAlarm;
+import br.com.rybyalarmmanager.entities.alarm.AlarmType;
 
 
 public class AlarmInexactRepeating extends AbstractAlarm {

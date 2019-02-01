@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.alarmmanager.models.alarms.impl;
+package br.com.rybyalarmmanager.entities.alarm.impl;
 
 import android.os.AsyncTask;
 
