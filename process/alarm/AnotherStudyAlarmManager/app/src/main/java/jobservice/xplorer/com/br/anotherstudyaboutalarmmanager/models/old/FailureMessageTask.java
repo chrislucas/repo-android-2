@@ -1,4 +1,4 @@
-package jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models;
+package jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models.old;
 
 
 /**

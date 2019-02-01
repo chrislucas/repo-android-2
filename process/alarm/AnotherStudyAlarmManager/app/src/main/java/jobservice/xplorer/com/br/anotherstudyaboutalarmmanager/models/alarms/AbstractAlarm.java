@@ -2,10 +2,9 @@ package jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models.alarms;
 
 
 import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Context;
 
-import jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models.Task;
+import jobservice.xplorer.com.br.anotherstudyaboutalarmmanager.models.old.Task;
 
 public abstract class AbstractAlarm<Response, Params> {
 
