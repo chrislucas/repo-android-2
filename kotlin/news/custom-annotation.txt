@@ -1,0 +1,9 @@
+https://developer.android.com/studio/write/annotations
+
+https://medium.com/androidiots/writing-your-own-annotation-processors-in-android-1fa0cd96ef11
+
+
+https://medium.com/@iammert/annotation-processing-dont-repeat-yourself-generate-your-code-8425e60c6657
+
+
+https://engineering.wework.com/custom-annotations-in-android-af43514f2f1b
