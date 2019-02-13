@@ -2,7 +2,11 @@ package mobile.xplorer.studymultiprocess
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.os.HandlerThread
+import android.util.Log
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,5 +15,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val handlerThread = HandlerThread("Test")
+        handlerThread.start()
+
+        val handler = Handler(handlerThread.looper)
+        val calendar = Calendar.getInstance()
+        val formatDate = SimpleDateFormat("kk:mm:ss", Locale.getDefault())
+        val runnable = Runnable {
+            Log.i("TIMER", formatDate.format(calendar.timeInMillis))
+        }
+        handler.postDelayed(runnable
+            , 1000
+        )
     }
 }

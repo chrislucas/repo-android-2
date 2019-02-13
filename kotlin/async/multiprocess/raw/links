@@ -1,6 +1,26 @@
-https://developer.android.com/reference/android/os/HandlerThread
 
 
 https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a
 
+https://medium.com/mindorks/mastering-android-handler-4f710296bdc6
+
+https://www.raywenderlich.com/5466-threading-with-handlerthread-in-android
+
+https://medium.com/@ali.muzaffar/handlerthreads-and-why-you-should-be-using-them-in-your-android-apps-dc8bf1540341
+
+https://medium.com/@frank.tan/using-a-thread-pool-in-android-e3c88f59d07f
+
+https://developer.android.com/training/multiple-threads/create-threadpool
+-----------------------------------------------
+
+
+
+https://developer.android.com/reference/android/os/HandlerThread
+
 https://stackoverflow.com/questions/18694732/run-handler-messages-in-a-background-thread
+
+
+https://developer.android.com/reference/android/os/Message
+https://developer.android.com/reference/android/os/MessageQueue
+https://developer.android.com/reference/android/os/Handler#sendMessageAtTime(android.os.Message,%20long)
+https://developer.android.com/reference/android/os/Handler#sendMessageDelayed(android.os.Message,%20long)
