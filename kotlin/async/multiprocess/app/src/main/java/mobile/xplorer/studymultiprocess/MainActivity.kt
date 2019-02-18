@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
+import android.widget.TextClock
+import android.widget.TextView
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -17,14 +19,20 @@ class MainActivity : AppCompatActivity() {
         val handlerThread = HandlerThread("Test")
         handlerThread.start()
 
+
+
         val handler = Handler(handlerThread.looper)
         val calendar = Calendar.getInstance()
         val formatDate = SimpleDateFormat("kk:mm:ss", Locale.getDefault())
         val runnable = Runnable {
-            Log.i("TIMER", formatDate.format(calendar.timeInMillis))
+            val now = formatDate.format(calendar.timeInMillis)
+            Log.i("TIMER", now)
+
         }
         handler.postDelayed(runnable
             , 1000
         )
+
+
     }
 }
