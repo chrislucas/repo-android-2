@@ -1,0 +1,26 @@
+PorterDuff.Mode
+https://stackoverflow.com/questions/8280027/what-does-porterduff-mode-mean-in-android-graphics-what-does-it-do
+https://developer.android.com/reference/android/graphics/PorterDuff.Mode
+
+
+Alpha composition
+https://en.wikipedia.org/wiki/Alpha_compositing
+
+Pintar drawables
+https://stackoverflow.com/questions/9643603/modifying-the-color-of-an-android-drawable
+
+
+https://medium.com/over-engineering/manipulating-images-and-drawables-with-androids-colorfilter-25bf061843e7
+
+
+
+http://ssp.impulsetrain.com/porterduff.html
+
+
+ColorFilters
+http://tool.oschina.net/uploads/apidocs/android/resources/samples/ApiDemos/src/com/example/android/apis/graphics/ColorFilters.html
+
+
+
+Object expression
+https://www.programiz.com/kotlin-programming/object-singleton
