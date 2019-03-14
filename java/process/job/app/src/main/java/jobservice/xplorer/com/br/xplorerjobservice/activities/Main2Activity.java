@@ -48,6 +48,7 @@ public class Main2Activity extends AppCompatActivity {
         else {
             final SampleJobScheduler jobScheduler = ContextCompat.getSystemService(this
                     , SampleJobScheduler.class);
+
         }
     }
 }

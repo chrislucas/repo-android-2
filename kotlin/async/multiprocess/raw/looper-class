@@ -1,0 +1,74 @@
+https://developer.android.com/reference/android/os/Looper
+
+Looper
+
+Classe usada para criar um canal de envio de mensagens (permitir transmissao de
+informacao durante a execucao de um algoritmo) dentro de uma Thread. A classe Thread
+do Java nao possui esse tipo de recurso por padrao, para isso, usamos o metodo prepare()
+da classe Looper dentro da thread e entao o metodo loop() para ter um processamento de mensagens
+ate que processo executado pela Thread pare.
+
+
+Looper # uma outra definicao - fonte: https://stackoverflow.com/questions/7597742/what-is-the-purpose-of-looper-and-how-to-use-it
+"Looper e uma classe usada para executar Mensagens (Runnables) numa fila. A classe padrão Thread na possui uma estrutura
+de fila. A thread executa uma operacao (um metodo que faca qualqyuer 1 ou mais vezes) e ao termino dessa operacao
+ela nao executa mais nada;
+
+Como ja dito, a classe Thread por padrao nao tem uma estrutura que armazena processos para que sejam executados
+na ordem de chegada. A classe looper possui o mecanismo para adicionar essa caracteristica a Thread.
+O link acima tem uma boa explicacao, usando como exemplo a UIThread da API do android, que é responsável por
+construir a interface grafica dos aplicativos e depois "enfileirar Eventos" para que sejam executados
+1 a 1 na sua ordem de chegada (First in First Out - Queue). O local onde a a UI|Main Thread e transformada numa Thread que possui uma pilha
+de "Mensagens|Eventos|Processos|Whatever" e na classe ActivityThread (https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/app/ActivityThread.java)
+entre as chamadas Looper.prepareMainLooper(); e Looper.loop();
+
+A implementacao do metodo Looper#loop() possui um loop "infinito" que eh interrompido quando
+a fila de mensagens nao possui mais mensagens
+
+        for (;;) {
+            ...
+
+            Message msg = queue.next(); // might block
+            if (msg == null) {
+                // No message indicates that the message queue is quitting.
+                return;
+            }
+
+            ...
+        }
+
+
+Na necessidade de executar multiplas operacoes (messages/runnable) devemos usar
+a classe Looper que é responsavel por criar uma estrutura de fila na classe Thread.
+
+Existe o metodo prepare() que preapara o Loop. Entao podemos usar o metodo loop()
+para criar um loop de mensagens/operacoes na Thread que estamos criando, e assim
+a classe Looper esta preparada para executar as requisicoes que estao na fila
+ate que o programa saia do loop
+
+"
+
+
+https://developer.android.com/reference/android/os/Looper#prepare()
+
+Inicializa a thread em questao como um Looper. Isso nos permite criar "handlers" que referenciam
+esse Looper, antes de iniciar o loop. Para funcionar precisamos chamar o metodo loop() e
+ao final do processo o metodo quit
+
+https://developer.android.com/reference/android/os/Looper#loop()
+Executa a fila de mensagens (MessageQueue) na thread em questao. O programador deve lembra de chamar
+o metodo quit() ao final do loop
+
+
+https://stackoverflow.com/questions/7597742/what-is-the-purpose-of-looper-and-how-to-use-it
+https://smallbusiness.chron.com/android-looper-37719.html
+
+Tutorial
+http://androidsrc.net/android-loopers-and-handlers-code-tutorial/
+
+Pesquisa
+handler and lifecycle android
+https://medium.com/square-corner-blog/a-journey-on-the-android-main-thread-lifecycle-bits-d916bc1ee6b2
+https://medium.com/@jagsaund/android-handler-internals-b5d49eba6977
+
+http://www.vogella.com/tutorials/AndroidBackgroundProcessing/article.html
