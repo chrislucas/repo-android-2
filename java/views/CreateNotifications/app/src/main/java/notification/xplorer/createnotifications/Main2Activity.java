@@ -91,7 +91,6 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 , "Notificacao Simples : )"
                 , "Aqui temos uma simples notificação maroto !!!"
                 , TAG);
-
         builder.setSmallIcon(R.drawable.ic_notifications);
         builder.setAutoCancel(true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -137,11 +136,13 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
                 }
             }
         }, delay);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel channel = new NotificationChannel(
                     TAG, "Channel human readable title", NotificationManager.IMPORTANCE_DEFAULT);
             builderOnGoing.setChannelId(TAG);
             helperNotification.show(this, builderOnGoing.build(), channel, ID);
+
         }
         else {
             // mostra a notificacao
@@ -207,11 +208,10 @@ public class Main2Activity extends AppCompatActivity implements View.OnClickList
         helperNotification.show(this, builder.build(), id);
     }
 
-
     public static final int REQUEST_CODE_OPEN_ACTIVITY_2 = 0xfa;
 
     public void openActivityWithTap() {
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         HelperNotification helperNotification = HelperNotification.getInstance();
         NotificationCompat.Builder builder = helperNotification.getNotificationBuilderToOpenActivity(
