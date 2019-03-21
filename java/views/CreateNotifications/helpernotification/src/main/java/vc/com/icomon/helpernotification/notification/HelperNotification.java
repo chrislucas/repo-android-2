@@ -40,26 +40,21 @@ public class HelperNotification {
      * dele podemos modificar alguns atributos do elemento inflado
      *
      * https://developer.android.com/reference/android/widget/RemoteViews
-     *
-     * @param context
+     *  @param context
      *
      * O objeto context eh responsavel por inflar a View
      *
      * @param title
-     *
-     * @param text
-     *
-     * @param channelId
-     * */
+     *@param text
+     *@param channelId   */
     public NotificationCompat.Builder getNotificationCompatBuilder(Context context
             , CharSequence title, CharSequence text, String channelId) {
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId);
-        return builder
-                .setContentTitle(title)
-                .setContentText(text)
-                .setChannelId(channelId)
-                // para a notificacao sumir quando o usuario tocar nela
-                .setContentIntent(PendingIntent.getActivity(context,  0, new Intent(), 0));
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId);
+            return builder.setContentTitle(title)
+                    .setContentText(text)
+                    .setChannelId(channelId)
+                    // para a notificacao sumir quando o usuario tocar nela
+                    .setContentIntent(PendingIntent.getActivity(context,  0, new Intent(), 0));
     }
 
 
@@ -91,6 +86,15 @@ public class HelperNotification {
         manager.notify(id, notification);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public void show(Context context, Notification notification, NotificationChannel notificationChannel, int id) {
+        NotificationManager manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        if (manager != null) {
+            manager.createNotificationChannel(notificationChannel);
+            manager.notify(id, notification);
+        }
+    }
+
     public void cancel(Context context, int id) {
         NotificationManagerCompat manager = NotificationManagerCompat.from(context);
         manager.cancel(id);
@@ -106,6 +110,7 @@ public class HelperNotification {
             , NotificationManager.IMPORTANCE_NONE
             , NotificationManager.IMPORTANCE_UNSPECIFIED
         })
+
     public @interface Importance{}
 
     public NotificationChannel createNotificationChannel(Context context, CharSequence name
