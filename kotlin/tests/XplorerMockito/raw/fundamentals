@@ -1,8 +1,18 @@
+https://developer.android.com/training/testing/fundamentals
+
+Projeto com exemplos de frameworks de teste unitario e instrumental
+https://github.com/googlesamples/android-testing
+
+
+AndroidXTest
+https://developer.android.com/training/testing/set-up-project
+
 https://www.vogella.com/tutorials/AndroidTesting/article.html#androidtesting
 
 
 mockito
 https://www.vogella.com/tutorials/Mockito/article.html
+https://www.baeldung.com/kotlin-mockito
 
 JUnit
 https://www.vogella.com/tutorials/JUnit/article.html#testingterminology

@@ -1,0 +1,20 @@
+Definicao de instrumented unit tests
+https://developer.android.com/training/testing/unit-testing/instrumented-unit-tests
+'Sao testes que sao executados em dispositivos fisicos ou emuladores e que tomam vantagem das API do Framework android e
+possuem suporte a APIS como'
+
+ATSL = Android Tools Support Library
+https://developer.android.com/training/testing
+https://android-developers.googleblog.com/2017/07/android-testing-support-library-10-is.html
+
+Definicoes do SDK android -
+https://www.androidpro.com.br/blog/android-studio/android-sdk/
+
+https://developer.android.com/training/testing/junit-runner#kotlin
+
+Android Test Orchestrator: Como configurar essa feature
+https://developer.android.com/training/testing/junit-runner#accessing-instrumentation-info
+
+Repositorio da google com projetos exemplificando o uso da API de testes do Android
+https://github.com/googlesamples/android-testing
+
