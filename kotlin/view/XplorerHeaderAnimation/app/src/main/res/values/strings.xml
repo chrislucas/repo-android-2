@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Header-Animation</string>
+    <string name="title_activity_basic_samples">BasicActivitySamples</string>
+    <string name="title_app_on_collapsing_toolbar">Flexible Space Effect</string>
+</resources>
