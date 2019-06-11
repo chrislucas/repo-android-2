@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SampleAccessibility</string>
+    <string name="app_name_2">Estudo sobre Acessibilidade</string>
+    <string name="button_1">Botão 1</string>
+    <string name="option_1">Opção 1</string>
+    <string name="option_2">Opção 2</string>
+    <string name="option_3">Opção 3</string>
+    <string name="on">ligado</string>
+    <string name="off">desligado</string>
+    <string name="yes">sim</string>
+    <string name="no">não</string>
+    <string name="title_activity_contrast_ratio">Calculadora Razao de contraste</string>
+    <string name="description_of_calculator">A Google recomenda</string>
+    <string name="open_contrast_ratio_activity">Calculadora de Contraste</string>
+</resources>

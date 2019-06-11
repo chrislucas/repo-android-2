@@ -1,0 +1,12 @@
+https://developer.android.com/guide/topics/ui/accessibility/apps
+
+https://developer.android.com/guide/topics/ui/accessibility/service/
+
+Sobre contraste
+https://developer.android.com/guide/topics/ui/accessibility/apps#color-contrast
+
+A google aconselha que componentes clicaveis como imagebuttons tenha um tamanho minimo de 48dp de
+largura e altura (android:minWidth="48dp", android:minHeight="48dp")
+
+Sobre contrantes: https://support.google.com/accessibility/android/answer/7158390?hl=en
+
