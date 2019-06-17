@@ -17,7 +17,7 @@ class SampleListActivity : AppCompatActivity() {
         override fun onCreateViewHolder(parent: ViewGroup, p1: Int): SimpleViewHolder {
             val layout = LayoutInflater.from(parent.context)
                 .inflate(R.layout.rc_layout_sample_list, parent, false)
-            return SimpleViewHolder(parent)
+            return SimpleViewHolder(layout)
         }
 
         override fun getItemCount(): Int = list.size

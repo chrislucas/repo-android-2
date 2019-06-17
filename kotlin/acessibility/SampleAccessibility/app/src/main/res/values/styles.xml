@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="StyleSeekBar_Default">
+        <item name="android:splitTrack">false</item>
+    </style>
+
+    <style name="StyleThumb_1" parent="StyleSeekBar_Default">
+        <item name="android:progressDrawable">@drawable/drawable_progress_seek_bar_1</item>
+        <item name="android:thumb">@drawable/drawable_thumb_seek_bar_state_1</item>
+    </style>
+
+    <style name="StyleThumb_2" parent="StyleSeekBar_Default">
+        <item name="android:progressDrawable">@drawable/drawable_progress_seek_bar_2</item>
+        <item name="android:thumb">@drawable/drawable_thumb_seek_bar_state_2</item>
+    </style>
+
+    <style name="StyleThumb_3" parent="StyleSeekBar_Default">
+        <item name="android:progressDrawable">@drawable/drawable_progress_seek_bar_3</item>
+        <item name="android:thumb">@drawable/drawable_thumb_seek_bar_state_3</item>
+    </style>
+
 </resources>
