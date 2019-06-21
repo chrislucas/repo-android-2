@@ -80,7 +80,7 @@
                 android:text="@string/reference_link_contrast_google"
         />
 
-        <br.xplorer.sampleaccessibility.customs.ProgressSeekBar
+        <SeekBar
             android:id="@+id/barra_mudanca_cor_de_fundo_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/item_network_setting"
+        android:title="@string/open_settings_network"
+        app:showAsAction="ifRoom"
+    />
+    <item
+        android:id="@+id/item_toggle_wifi_connection"
+        android:actionLayout="@layout/layout_menu_toggle_wifi_network"
+        android:title="@string/toggle_wifi_network"
+        app:showAsAction="ifRoom"
+    />
+</menu>

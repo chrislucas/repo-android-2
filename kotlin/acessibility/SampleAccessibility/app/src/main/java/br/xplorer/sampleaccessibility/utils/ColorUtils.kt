@@ -48,7 +48,5 @@ object IntUtils {
     val hexaMap = mapOf<Int, String>( 10 to "A", 11 to "B"
         , 12 to "C", 13 to "E", 14 to "D", 15 to "F")
 
-    fun fromIntToStringHexa(value: Int) {
-
-    }
+    fun fromIntToStringHexa(value: Int) {}
 }
