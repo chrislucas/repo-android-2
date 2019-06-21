@@ -69,6 +69,8 @@ class MainActivity :  AppCompatActivity(), Observer {
             ,Manifest.permission.ACCESS_WIFI_STATE
             ,Manifest.permission.CHANGE_WIFI_STATE
             ,Manifest.permission.ACCESS_NETWORK_STATE
+            ,Manifest.permission.ACCESS_FINE_LOCATION
+            ,Manifest.permission.ACCESS_COARSE_LOCATION
             ,Manifest.permission.READ_PHONE_STATE).filter {
                 ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_DENIED
             }.toTypedArray()
@@ -90,22 +92,31 @@ class MainActivity :  AppCompatActivity(), Observer {
                     break
                 }
             }
+            startReceiverScan()
         }
     }
 
 
     override fun onResume() {
         super.onResume()
+        startReceiverScan()
+    }
+
+    private fun startReceiverScan() {
         if(flagStartScanNetwork) {
             this.registerReceiver(wifiBroadcastReceiver, IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION))
-            WifiManagerHelper.getWifiManager(this).startScan()
+            //WifiManagerHelper.getWifiManager(this).startScan()
+        }
+    }
+
+    private fun stopReceiverScan() {
+        if(flagStartScanNetwork) {
+            this.unregisterReceiver(wifiBroadcastReceiver)
         }
     }
 
     override fun onPause() {
         super.onPause()
-        if(flagStartScanNetwork) {
-            this.unregisterReceiver(wifiBroadcastReceiver)
-        }
+        stopReceiverScan()
     }
 }
