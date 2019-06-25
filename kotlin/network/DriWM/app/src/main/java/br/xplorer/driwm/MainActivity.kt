@@ -3,65 +3,74 @@ package br.xplorer.driwm
 import android.Manifest
 import android.content.IntentFilter
 import android.content.pm.PackageManager
-import android.net.wifi.ScanResult
 import android.net.wifi.WifiManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import br.xplorer.driwm.adapters.rc.OnItemLongClickListener
+import br.xplorer.driwm.adapters.rc.RcAdapterNearbyNetwork
 import br.xplorer.driwm.helpers.WifiManagerHelper
 import br.xplorer.driwm.receiver.WifiBroadcastReceiver
 import java.util.*
 
-class MainActivity :  AppCompatActivity(), Observer {
-
-    override fun update(observable: Observable?, data: Any?) {
-        if (data != null && data is Boolean && data) {
-
-            val wm = WifiManagerHelper.getWifiManager(this)
-            val scanResults = wm.scanResults
-            val configuredNetworks = wm.configuredNetworks
-            val connectionInfo = wm.connectionInfo
-
-            connectionInfo.apply {
-                Log.i("STATUS_CONNECTION_INFO","${this.bssid}, ${this.ssid}")
-            }
-
-            scanResults.forEach {
-                it.apply {
-                    val str =
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            "${this.SSID}, ${this.BSSID}, ${this.level}, ${this.operatorFriendlyName}"
-                        } else {
-                            "${this.level}"
-                        }
-                    Log.i("STATUS_SCAN_RESULT", str)
-                }
-            }
-
-            configuredNetworks.forEach {
-                it.apply {
-                    Log.i("STATUS_WIFI_CONFIG", "${this.BSSID}. ${this.SSID}, ${this.status}")
-                }
-            }
-        }
-    }
-
+class MainActivity :  BaseActivity(), Observer, OnItemLongClickListener<WifiManagerHelper.InfoScanNetwork> {
     companion object {
         const val REQUEST_PERMISSIONS = 0x0f
     }
 
-    lateinit var wifiBroadcastReceiver : WifiBroadcastReceiver
+    private lateinit var wifiBroadcastReceiver : WifiBroadcastReceiver
+    private lateinit var handler: Handler
+    private lateinit var runnable: Runnable
+
+
+    private lateinit var rcAdapter: RcAdapterNearbyNetwork
+    private val listWifi = mutableListOf<WifiManagerHelper.InfoScanNetwork>()
 
     private var flagStartScanNetwork = false
+    private var isRegisterWifiReceiver = false
+
+    override fun onLongClick(data: WifiManagerHelper.InfoScanNetwork) : Boolean {
+        Toast.makeText(this, "$data", Toast.LENGTH_LONG).show()
+        return true
+    }
+
+    override fun onItemClick(item: WifiManagerHelper.InfoScanNetwork) {
+        Toast.makeText(this, "$item", Toast.LENGTH_LONG).show()
+    }
+
+    override fun update(observable: Observable?, data: Any?) {
+        if (data != null && data is Boolean && data) {
+            val wm = WifiManagerHelper.getWifiManager(this)
+            val results = wm.scanResults
+            val it = listWifi.iterator()
+            while (it.hasNext()) {
+                it.remove()
+                it.next()
+            }
+            results.forEach {
+                scanResult -> listWifi.add(WifiManagerHelper.InfoScanNetwork(scanResult))
+            }
+            rcAdapter.notifyDataSetChanged()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         flagStartScanNetwork = requestPermissionNeeded()
-        wifiBroadcastReceiver = WifiBroadcastReceiver()
+
+        val rcListWifiInfo = findViewById<RecyclerView>(R.id.rc_list_of_network_wifi)
+        rcAdapter = RcAdapterNearbyNetwork(this, listWifi)
+        rcListWifiInfo.apply {
+            this.layoutManager = LinearLayoutManager(context)
+            this.adapter = rcAdapter
+        }
     }
 
     private fun requestPermissionNeeded() : Boolean {
@@ -100,23 +109,51 @@ class MainActivity :  AppCompatActivity(), Observer {
     override fun onResume() {
         super.onResume()
         startReceiverScan()
+        ObservableWifiReceiver.INSTANCE.addObserver(this)
     }
 
     private fun startReceiverScan() {
-        if(flagStartScanNetwork) {
-            this.registerReceiver(wifiBroadcastReceiver, IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION))
-            //WifiManagerHelper.getWifiManager(this).startScan()
+        if(flagStartScanNetwork && Build.VERSION.SDK_INT >= Build.VERSION_CODES.O && ! isRegisterWifiReceiver) {
+            wifiBroadcastReceiver = WifiBroadcastReceiver()
+            val filter = IntentFilter()
+            filter.addAction(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION)
+            filter.addAction(WifiManager.WIFI_STATE_CHANGED_ACTION)
+            filter.addAction(WifiManager.NETWORK_STATE_CHANGED_ACTION)
+            applicationContext.registerReceiver(wifiBroadcastReceiver, filter)
+            periodicScan()
+            isRegisterWifiReceiver = true
         }
     }
 
+
+    private fun periodicScan() {
+        handler = Handler()
+        val context = this
+        runnable = object : Runnable {
+            override fun run() {
+                Log.i("START_SCAN"
+                    , if (WifiManagerHelper.getWifiManager(context).startScan()) "OK" else "NOT OK")
+                handler.postDelayed(this, 1000 * 60 * 3)
+            }
+        }
+        handler.post(runnable)
+    }
+
     private fun stopReceiverScan() {
-        if(flagStartScanNetwork) {
+        if(flagStartScanNetwork && isRegisterWifiReceiver) {
             this.unregisterReceiver(wifiBroadcastReceiver)
+            isRegisterWifiReceiver = false
         }
     }
 
     override fun onPause() {
         super.onPause()
         stopReceiverScan()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ObservableWifiReceiver.INSTANCE.deleteObserver(this)
+        handler.removeCallbacks(runnable)
     }
 }

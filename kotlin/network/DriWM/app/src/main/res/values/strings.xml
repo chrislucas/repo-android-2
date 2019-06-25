@@ -2,4 +2,6 @@
     <string name="app_name">DriWM</string>
     <string name="open_settings_network">Configurações de Rede</string>
     <string name="toggle_wifi_network">Habilitar/Desabilitar Rede</string>
+
+    <string name="text_frequency">Frequência: %1$d</string>
 </resources>
