@@ -10,6 +10,7 @@ import android.os.Handler
 import android.util.Log
 import android.view.Menu
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,7 +19,10 @@ import br.xplorer.driwm.adapters.rc.OnItemLongClickListener
 import br.xplorer.driwm.adapters.rc.RcAdapterNearbyNetwork
 import br.xplorer.driwm.helpers.WifiManagerHelper
 import br.xplorer.driwm.receiver.WifiBroadcastReceiver
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import java.util.*
+import kotlin.math.abs
 
 class MainActivity :  BaseActivity()
     , Observer
@@ -38,6 +42,7 @@ class MainActivity :  BaseActivity()
 
     private var flagStartScanNetwork = false
     private var isRegisterWifiReceiver = false
+    private var appBarExpanded = false
 
     override fun onLongClick(data: WifiManagerHelper.InfoScanNetwork) : Boolean {
         Toast.makeText(this, "$data", Toast.LENGTH_LONG).show()
@@ -66,7 +71,7 @@ class MainActivity :  BaseActivity()
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.apply {
-            inflate(R.menu.main_menu)
+            inflate(R.menu.main_menu, menu)
         }
         return true
     }
@@ -76,8 +81,22 @@ class MainActivity :  BaseActivity()
         setContentView(R.layout.activity_main)
         flagStartScanNetwork = requestPermissionNeeded()
 
-        setSupportActionBar(findViewById(R.id.default_toolbar))
+        val toolbar = findViewById<Toolbar>(R.id.default_toolbar)
+        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        val collapsingToolbar = findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar)
+        collapsingToolbar.title = ""
+
+        findViewById<AppBarLayout>(R.id.app_bar_layout).addOnOffsetChangedListener(
+            AppBarLayout.OnOffsetChangedListener {
+                    _ , verticalOffSet ->
+                Log.i("OPTIONS_MENU", "Vertical Offset $verticalOffSet")
+                // verticalOffset == 0 appbarlayout esta expandido completamente
+                appBarExpanded = abs(verticalOffSet) > 200
+                invalidateOptionsMenu()
+            }
+        )
 
         val rcListWifiInfo = findViewById<RecyclerView>(R.id.rc_list_of_network_wifi)
         rcAdapter = RcAdapterNearbyNetwork(this, listWifi)
