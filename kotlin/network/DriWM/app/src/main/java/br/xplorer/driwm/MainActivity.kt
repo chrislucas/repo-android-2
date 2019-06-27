@@ -8,6 +8,7 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.Menu
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -19,7 +20,10 @@ import br.xplorer.driwm.helpers.WifiManagerHelper
 import br.xplorer.driwm.receiver.WifiBroadcastReceiver
 import java.util.*
 
-class MainActivity :  BaseActivity(), Observer, OnItemLongClickListener<WifiManagerHelper.InfoScanNetwork> {
+class MainActivity :  BaseActivity()
+    , Observer
+    , OnItemLongClickListener<WifiManagerHelper.InfoScanNetwork> {
+
     companion object {
         const val REQUEST_PERMISSIONS = 0x0f
     }
@@ -60,10 +64,20 @@ class MainActivity :  BaseActivity(), Observer, OnItemLongClickListener<WifiMana
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.apply {
+            inflate(R.menu.main_menu)
+        }
+        return true
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         flagStartScanNetwork = requestPermissionNeeded()
+
+        setSupportActionBar(findViewById(R.id.default_toolbar))
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val rcListWifiInfo = findViewById<RecyclerView>(R.id.rc_list_of_network_wifi)
         rcAdapter = RcAdapterNearbyNetwork(this, listWifi)
@@ -132,7 +146,7 @@ class MainActivity :  BaseActivity(), Observer, OnItemLongClickListener<WifiMana
         runnable = object : Runnable {
             override fun run() {
                 Log.i("START_SCAN"
-                    , if (WifiManagerHelper.getWifiManager(context).startScan()) "OK" else "NOT OK")
+                    , if (WifiManagerHelper.startScan(context)) "OK" else "NOT OK")
                 handler.postDelayed(this, 1000 * 60 * 3)
             }
         }

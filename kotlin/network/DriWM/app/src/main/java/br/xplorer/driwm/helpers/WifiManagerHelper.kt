@@ -1,12 +1,18 @@
 package br.xplorer.driwm.helpers
 
 import android.content.Context
+import android.content.Intent
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiInfo
 import android.net.wifi.WifiManager
 import android.os.Build
+import android.provider.Settings
 import android.util.Log
+import androidx.core.content.ContextCompat.getSystemService
+import android.net.wifi.SupplicantState
+
+
 
 object WifiManagerHelper  {
 
@@ -22,6 +28,38 @@ object WifiManagerHelper  {
         override fun toString(): String {
             return "BSSID: $scanResultWifi"
         }
+    }
+
+
+    @JvmStatic
+    fun openSettingWifi(context: Context) {
+        context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
+    }
+
+    @JvmStatic
+    fun openWirelessSetting(context: Context) {
+        context.startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS))
+    }
+
+    @JvmStatic
+    fun getWifiSupplicantState(context: Context) : SupplicantState  {
+        val wm = getWifiManager(context)
+        val wifiInfo = wm.connectionInfo
+        return wifiInfo.supplicantState
+    }
+
+    @JvmStatic
+    fun enableWifi(context: Context) {
+        getWifiManager(context)
+            .takeIf { ! it.isWifiEnabled }
+            .apply { this?.isWifiEnabled = true }
+    }
+
+
+
+    fun startScan(context: Context) : Boolean {
+        enableWifi(context)
+        return getWifiManager(context).startScan()
     }
 
     @JvmStatic

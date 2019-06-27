@@ -10,5 +10,10 @@
         android:actionLayout="@layout/layout_menu_toggle_wifi_network"
         android:title="@string/toggle_wifi_network"
         app:showAsAction="ifRoom"
+        app:actionViewClass="android.widget.Switch"/>
+    <item
+        android:id="@+id/item_wifi_info"
+        android:title="@string/wifi_info"
+        app:showAsAction="ifRoom"
     />
 </menu>
