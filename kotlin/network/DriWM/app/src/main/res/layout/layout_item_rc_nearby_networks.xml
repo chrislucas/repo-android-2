@@ -1,50 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:padding="8dp"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5sp"
+    app:cardElevation="7dp"
+    android:layout_margin="10dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5sp"
-        app:cardElevation="7dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
-        <LinearLayout
+        android:padding="10dp"
+        android:background="@color/white_eeeeef"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_ssid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="21sp"
+            tools:text="@string/app_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+        />
+        <ImageView
+            android:id="@+id/is_connected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wifi_connected_24"
+            app:layout_constraintTop_toTopOf="@+id/tv_ssid"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintStart_toEndOf="@+id/tv_ssid"
+            app:layout_constraintHorizontal_bias="0.95"
+                />
+        <ImageView
+            android:id="@+id/is_private"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/private_24"
+            app:layout_constraintTop_toBottomOf="@+id/is_connected"
+            app:layout_constraintEnd_toEndOf="@id/is_connected"
+        />
+        <ImageView
+            android:id="@+id/frequency_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/frequency_24"
+            android:minHeight="24dp"
+            android:minWidth="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ssid"
+            app:layout_constraintStart_toStartOf="parent"
+        />
+        <TextView
+            android:id="@+id/tv_frequency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            tools:text="@string/text_frequency"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ssid"
+            app:layout_constraintStart_toEndOf="@+id/frequency_image"
+            app:layout_constraintEnd_toStartOf="@+id/is_private"
+            android:layout_marginStart="10dp"
+        />
+        <TextView
+            android:id="@+id/tv_bssid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:id="@+id/tv_ssid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="25sp"
-                tools:text="@string/app_name"
-            />
-            <TextView
-                android:id="@+id/tv_bssid"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                tools:text="@string/app_name"
-            />
-            <TextView
-                android:id="@+id/tv_frequency"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                tools:text="@string/app_name"
-            />
-        </LinearLayout>
+            android:textSize="17sp"
+            tools:text="@string/sample_bssid"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_frequency"
+            app:layout_constraintEnd_toEndOf="parent"
+        />
 
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

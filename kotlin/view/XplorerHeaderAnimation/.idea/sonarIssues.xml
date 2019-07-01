@@ -8,6 +8,31 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/java/br/xplorer/driwm/adapters/rc/RcAdapterNearbyNetwork.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/java/br/xplorer/driwm/adapters/rc/RcViewHolderNearbyNetwork.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/java/br/xplorer/driwm/helpers/ViewHelper.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/anim/layout_animation_down_to_up.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/anim/layout_animation_right_to_left.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/layout/activity_main.xml">
           <value>
             <set />
@@ -18,7 +43,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/layout/layout_item_rc_nearby_networks.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/menu/menu.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/values/colors.xml">
           <value>
             <set />
           </value>
@@ -29,6 +64,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/values/strings.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../network/DriWM/app/src/main/res/values/styles.xml">
           <value>
             <set />
           </value>

@@ -30,23 +30,32 @@ object WifiManagerHelper  {
         }
     }
 
+    @JvmStatic
+    fun WifiInfo.logi(tag: String, context: Context) {
+        run {
+            Log.i(tag, "${this.supplicantState}")
+            Log.i(tag, "${this.networkId}")
+            Log.i(tag, "${this.linkSpeed}")
+            Log.i(tag, "${this.ipAddress}")
+        }
+    }
+
 
     @JvmStatic
-    fun openSettingWifi(context: Context) {
+    fun openWifiSettings(context: Context) {
         context.startActivity(Intent(Settings.ACTION_WIFI_SETTINGS))
     }
 
     @JvmStatic
-    fun openWirelessSetting(context: Context) {
+    fun openWirelessSettings(context: Context) {
         context.startActivity(Intent(Settings.ACTION_WIRELESS_SETTINGS))
     }
 
     @JvmStatic
-    fun getWifiSupplicantState(context: Context) : SupplicantState  {
-        val wm = getWifiManager(context)
-        val wifiInfo = wm.connectionInfo
-        return wifiInfo.supplicantState
-    }
+    fun getWifiSupplicantState(context: Context) : SupplicantState  = getWifiInfo(context).run { supplicantState }
+
+    @JvmStatic
+    fun getWifiInfo(context: Context) : WifiInfo  = getWifiManager(context).connectionInfo
 
     @JvmStatic
     fun enableWifi(context: Context) {
