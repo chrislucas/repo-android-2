@@ -11,20 +11,22 @@ ate que processo executado pela Thread pare.
 
 Looper # uma outra definicao - fonte: https://stackoverflow.com/questions/7597742/what-is-the-purpose-of-looper-and-how-to-use-it
 "Looper e uma classe usada para executar Mensagens (Runnables) numa fila. A classe padrão Thread na possui uma estrutura
-de fila. A thread executa uma operacao (um metodo que faca qualqyuer 1 ou mais vezes) e ao termino dessa operacao
+de fila. A thread executa uma operacao (um metodo que faca qualquer coisa 1 ou mais vezes) e ao termino dessa operacao
 ela nao executa mais nada;
 
 Como ja dito, a classe Thread por padrao nao tem uma estrutura que armazena processos para que sejam executados
 na ordem de chegada. A classe looper possui o mecanismo para adicionar essa caracteristica a Thread.
 O link acima tem uma boa explicacao, usando como exemplo a UIThread da API do android, que é responsável por
 construir a interface grafica dos aplicativos e depois "enfileirar Eventos" para que sejam executados
-1 a 1 na sua ordem de chegada (First in First Out - Queue). O local onde a a UI|Main Thread e transformada numa Thread que possui uma pilha
+1 a 1 na sua ordem de chegada (First in First Out - Queue). O local onde a  'UI Main Thread'
+e transformada numa Thread que possui uma fila
 de "Mensagens|Eventos|Processos|Whatever" e na classe ActivityThread (https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/app/ActivityThread.java)
 entre as chamadas Looper.prepareMainLooper(); e Looper.loop();
 
 A implementacao do metodo Looper#loop() possui um loop "infinito" que eh interrompido quando
 a fila de mensagens nao possui mais mensagens
 
+// Trecho do codigo do metodo Looper.loop()
         for (;;) {
             ...
 
@@ -47,7 +49,7 @@ a classe Looper esta preparada para executar as requisicoes que estao na fila
 ate que o programa saia do loop
 
 "
-
+https://developer.android.com/reference/android/os/Looper
 
 https://developer.android.com/reference/android/os/Looper#prepare()
 
@@ -72,3 +74,16 @@ https://medium.com/square-corner-blog/a-journey-on-the-android-main-thread-lifec
 https://medium.com/@jagsaund/android-handler-internals-b5d49eba6977
 
 http://www.vogella.com/tutorials/AndroidBackgroundProcessing/article.html
+
+Pergunta sobre MessageQueue.
+
+A MainThread possui uma instancia de Looper implicita atrealada a ela, e assim
+acesso a uma MessageQueue. Podemos atrelar uma MessageQueue a uma WorkerThead usando
+o Looper.prepare(). A questão é, a MessageQueue da MainThread e a mesma na WorkerThread
+
+https://stackoverflow.com/questions/27704513/android-messagequeue
+https://stackoverflow.com/questions/5193913/handlers-messagequeue-looper-do-they-all-run-on-the-ui-thread
+https://stackoverflow.com/questions/5193913/handlers-messagequeue-looper-do-they-all-run-on-the-ui-thread
+
+Tutoriais sobre handler, handlerThread, looper
+https://blog.mindorks.com/android-core-looper-handler-and-handlerthread-bd54d69fe91a

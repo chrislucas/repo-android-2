@@ -24,3 +24,13 @@ https://developer.android.com/reference/android/os/Message
 https://developer.android.com/reference/android/os/MessageQueue
 https://developer.android.com/reference/android/os/Handler#sendMessageAtTime(android.os.Message,%20long)
 https://developer.android.com/reference/android/os/Handler#sendMessageDelayed(android.os.Message,%20long)
+
+Bitmap
+https://www.i-programmer.info/programming/android/8797-android-adventures-beginning-bitmap-graphics.html
+
+UI message queue android
+https://stackoverflow.com/questions/21573159/android-views-post-method
+https://www.intertech.com/Blog/?s=Android+Non-UI+to+UI+Thread+Communications
+https://developer.android.com/training/multiple-threads/communicate-ui
+https://developer.android.com/training/multiple-threads/run-code
+https://github.com/kesenhoo/Android/tree/master/ThreadSample

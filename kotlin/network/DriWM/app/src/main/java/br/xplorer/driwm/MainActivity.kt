@@ -96,7 +96,10 @@ class MainActivity :  BaseActivity()
         return true
     }
 
-    override fun onItemClick(item: WifiManagerHelper.InfoScanNetwork) {}
+
+    override fun onItemClick(item: WifiManagerHelper.InfoScanNetwork) {
+        // Metodo nao implementaval
+    }
 
     override fun update(observable: Observable?, data: Any?) {
         dismissSafelyAlertDialog(alertDialog)

@@ -8,7 +8,7 @@
         android:orientation="vertical"
         android:padding="10sp"
         android:weightSum="1"
-        tools:context=".ActivitySampleRecursiveHandler">
+        tools:context=".activities.SampleRecursiveHandlerActivity">
 
     <TextClock
             android:id="@+id/text_clock_now"
