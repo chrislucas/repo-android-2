@@ -1,0 +1,28 @@
+Android https://developer.android.com/jetpack/docs/guide#overview
+
+                                    Views(Activity;Fragment)
+                                                |
+                                                |
+                                                |
+                                                |
+                                                |
+
+                            ViewModels(LiveData 1, ..., LiveData N)
+                                                |
+                                                |
+                                                |
+                                                |
+                                                |
+                                            Repository
+                                                |
+                                                |
+                                                |
+                                                |
+                                                |
+                    -------------------------------------------------------
+                    |                                                     |
+                    |                                                     |
+                    |                                                     |
+                    |                                                     |
+                    |                                                     |
+    (Local Repository - Banco de dados)                  (Remote Repository - WebSerivce)
