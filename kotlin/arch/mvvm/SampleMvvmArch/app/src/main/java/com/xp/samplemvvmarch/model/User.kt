@@ -3,7 +3,7 @@ package com.xp.samplemvvmarch.model
 import android.os.Parcel
 import android.os.Parcelable
 
-class User(private val id: Int, private val name: String) : Parcelable {
+data class User(val id: Int, val name: String) : Parcelable {
 
     constructor(parcel: Parcel) : this(parcel.readInt(), parcel.readString() ?: "")
 

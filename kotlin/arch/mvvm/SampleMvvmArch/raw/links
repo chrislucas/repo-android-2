@@ -1,4 +1,4 @@
-https://developer.android.com/jetpack/docs/guide
+**https://developer.android.com/jetpack/docs/guide
 https://codelabs.developers.google.com/codelabs/kotlin-android-training-view-model/#0
 https://codelabs.developers.google.com/codelabs/android-training-livedata-viewmodel/#0
 
@@ -20,3 +20,12 @@ https://en.wikipedia.org/wiki/Separation_of_concerns
 MVVM and state machine arch
 https://engineering.udacity.com/modeling-viewmodel-states-using-kotlins-sealed-classes-a5d415ed87a7
 https://thoughtbot.com/blog/finite-state-machines-android-kotlin-good-times
+
+Tutoriais
+https://medium.com/androiddevelopers/viewmodels-with-saved-state-jetpack-navigation-data-binding-and-coroutines-df476b78144e
+
+how android jetpack SavedStateViewModelFactory works?
+https://stackoverflow.com/questions/57838759/how-android-jetpack-savedstateviewmodelfactory-works
+
+Projetos interessantes para estudos
+https://github.com/android/architecture-components-samples/blob/master/GithubBrowserSample/app/src/main/java/com/android/example/github/viewmodel/GithubViewModelFactory.kt

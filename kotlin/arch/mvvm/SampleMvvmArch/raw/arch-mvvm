@@ -26,3 +26,22 @@ Android https://developer.android.com/jetpack/docs/guide#overview
                     |                                                     |
                     |                                                     |
     (Local Repository - Banco de dados)                  (Remote Repository - WebSerivce)
+
+
+ViewModel:
+https://developer.android.com/topic/libraries/architecture/viewmodel
+https://developer.android.com/jetpack/docs/guide
+
+" O componente ViewModel tem e uma interface entre a o modelo de dados e a camada de visualizacao da aplicacao
+. Esse componente recupera a informacao de um modelo e repassa para o componente visual quando necessario.
+No caso especifico de um aplicativo android, temos como componentes da camada de visualizacao Fragments e Activities
+e a ViewModel, um dos componentes do chamado architecture components como a interface entre um modelo e
+uma representacao grafica.
+Um objeto ViewModel contém a lógica de negõcio de manipulacao de dados para se comunicar com o modelo.
+
+'Por exemplo, ele pode chamar outros componentes para carregar os dados e pode encaminhar solicitacoes para
+modifica-los. Como o ViewModel nao conhece a UI ele nao eh afetado por eventuais mudancas nela.
+(https://developer.android.com/jetpack/docs/guide)'
+"
+
+LiveData
