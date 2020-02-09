@@ -15,6 +15,7 @@ class OutGoingCallReceiverTest {
     companion object {
         const val FIXED_PHONE_NUMBER = "46460412"
     }
+    
     @Mock
     lateinit var  outGoingReceiver: OutGoingCallReceiver
     @Mock
