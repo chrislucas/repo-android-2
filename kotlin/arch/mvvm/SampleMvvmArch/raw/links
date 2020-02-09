@@ -34,3 +34,8 @@ https://github.com/android/architecture-components-samples/blob/master/GithubBro
 MockingServer
 https://github.com/square/okhttp/tree/master/mockwebserver
 https://android.jlelse.eu/unit-test-api-calls-with-mockwebserver-d4fab11de847
+
+
+ViewModelProvider.Factory
+https://medium.com/koderlabs/viewmodel-with-viewmodelprovider-factory-the-creator-of-viewmodel-8fabfec1aa4f
+ViewModelProvider(this, savedStateViewModelFactory).get(UserProfileViewModel::class.java)
