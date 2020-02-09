@@ -3,7 +3,47 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleGenericAdapterForRecyclerView/app/src/main/java/com/xp/samplegenericadapterforrecyclerview/Binder.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleGenericAdapterForRecyclerView/app/src/main/java/com/xp/samplegenericadapterforrecyclerview/BuilderViewHolder.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleGenericAdapterForRecyclerView/app/src/main/java/com/xp/samplegenericadapterforrecyclerview/GenericAdapterForRecyclerView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleGenericAdapterForRecyclerView/app/src/main/java/com/xp/samplegenericadapterforrecyclerview/sample/viewholder/AbstractViewHolder.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleGenericAdapterForRecyclerView/app/src/main/java/com/xp/samplegenericadapterforrecyclerview/sample/viewholder/SimpleViewHolderWithCardView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleGenericAdapterForRecyclerView/app/src/main/java/com/xp/samplegenericadapterforrecyclerview/sample/viewholder/SimpleViewHolderWithTextView.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleLiveData/raw/links">
           <value>
             <set />
           </value>
@@ -14,6 +54,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/xp/samplemvvmarch/MainActivity.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/xp/samplemvvmarch/endpoint/EndpointUserData.kt">
           <value>
             <set />
           </value>
@@ -29,6 +74,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/com/xp/samplemvvmarch/model/User.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/xp/samplemvvmarch/repository/UserRepository.kt">
           <value>
             <set />
           </value>
@@ -53,6 +103,21 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/httprqmod/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/httprqmod/src/main/java/com/xp/httprqmod/ProviderRetrofitInstance.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/raw/arch-components">
           <value>
             <set />
@@ -63,7 +128,27 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/raw/gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/raw/links">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../sample-android-arch/Sample/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../sample-android-arch/Sample/httprq/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../../../../../sample-android-arch/Sample/httprq/src/main/java/com/xp/httprq/HttpRQ.kt">
           <value>
             <set />
           </value>

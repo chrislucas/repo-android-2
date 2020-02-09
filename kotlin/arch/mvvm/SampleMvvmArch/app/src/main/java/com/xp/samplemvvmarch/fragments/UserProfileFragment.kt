@@ -43,12 +43,12 @@ class UserProfileFragment : Fragment() {
 
         viewModel.run {
             val fn = { lifecycle }
-            /*
+
             user.observe(fn) { user ->
                 view.findViewById<TextView>(R.id.user_id).text = "${user.id}"
                 view.findViewById<TextView>(R.id.user_name).text = user.name
             }
-            */
+
         }
     }
 

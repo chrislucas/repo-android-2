@@ -45,3 +45,14 @@ modifica-los. Como o ViewModel nao conhece a UI ele nao eh afetado por eventuais
 "
 
 LiveData
+https://developer.android.com/topic/libraries/architecture/livedata
+
+"O LiveData é um armazenador de dados observaveis. Outros componentes de um app podem monitorar se há
+alteracoes nos objetos usando-o sem criar caminhos de dependencia entre eles. O LiveData também respeita
+o estado de ciclo de vida dos componentes do app (Activities, Fragments e Services) e inclui a lógica de limpeza
+para evitar vazamento de objetos e o consumo excessivo de memória"
+
+"Como dito, o componente LiveData tbm observa o ciclo de vida dos componentes android como o Fragment.
+Quando o Fragment for destruido (chamada do metodo onDestroy do ciclo de vida), o LiveData para de observar
+o modelo observavel. Nao eh necessario tbm observar mudancas de configuracao de tela como rotacao. Quando isso ocorre
+a ViewModel eh restaurada automaticamente"

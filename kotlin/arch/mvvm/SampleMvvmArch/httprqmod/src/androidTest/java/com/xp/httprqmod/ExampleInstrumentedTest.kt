@@ -1,4 +1,4 @@
-package com.xp.mockingapirequest
+package com.xp.httprqmod
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,8 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.xp.mockingapirequest", appContext.packageName)
+        assertEquals("com.xp.httprqmod.test", appContext.packageName)
     }
-
-
 }

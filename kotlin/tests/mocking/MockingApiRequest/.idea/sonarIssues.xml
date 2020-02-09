@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/SampleMvvmArch/raw/links">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../../../../../android-pre-github/UnitInstrumentedTest/app/build.gradle">
           <value>
             <set />
@@ -14,6 +19,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/xp/mockingapirequest/ExampleInstrumentedTest.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/androidTest/java/com/xp/mockingapirequest/SampleTest.kt">
           <value>
             <set />
           </value>
@@ -64,6 +79,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/raw/mockito">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/raw/test-junit5">
           <value>
             <set />
           </value>

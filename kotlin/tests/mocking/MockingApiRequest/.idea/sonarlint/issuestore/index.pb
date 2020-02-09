@@ -13,3 +13,9 @@ m
 =app/src/test/java/com/xp/mockingapirequest/ExampleUnitTest.kt,5\c\5c4e68ba327e280a80b62f31a29f94e86dd2110c
 ;
 raw/mockito,5\2\52bce4c5fca3fea7def0b7370f762cf93c571e71
+|
+Lapp/src/androidTest/java/com/xp/mockingapirequest/ExampleInstrumentedTest.kt,e\d\edeed66ece5227cfb8470b3e68db20cbc7ca3767
+o
+?app/src/androidTest/java/com/xp/mockingapirequest/SampleTest.kt,4\f\4fcf49a70ca9852bc92e2d873cf7f1fb150f295b
+?
+raw/test-junit5,e\5\e5d68650ab05f3bbb03f421a6efcae6bc63759ba
