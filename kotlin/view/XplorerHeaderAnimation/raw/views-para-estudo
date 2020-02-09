@@ -1,0 +1,25 @@
+CoordinatorLayout, CollapsingToolbarLayout, AppBarLayout
+
+Atributo: fitsSystemWindows
+// https://developer.android.com/reference/android/view/View#attr_android:fitsSystemWindows
+Atributo que permite ajustar a View baseada em 'system windows' tais como a Status Bar.
+Se for definada como 'true', ajusta o espacamento da view deixando um espaco para a 'system windows'.
+So tem efeito se a view nao for um activity 'injetada'
+
+embedded activity:
+https://stackoverflow.com/questions/25874412/what-is-a-non-embedded-activity-and-why-doesnt-androidfitssystemwindows-work-i
+ActivityGroup e obsoleta desde a criacao de fragments: https://developer.android.com/reference/android/app/ActivityGroup
+
+
+// https://medium.com/androiddevelopers/why-would-i-want-to-fitssystemwindows-4e26d9ce1eec
+'System windows': Partes da tela onde o sistem esta desenhando View 'nao interativas' como
+Status Bar ou interativas como Navigation Bar
+
+
+
+// Tutoriais
+https://github.com/arsan-official/collapsing-toolbar
+https://gist.github.com/Suleiman19
+https://github.com/Suleiman19
+https://github.com/jlhonora/MaterialDesignUdacity
+https://github.com/udacity/ud862-samples

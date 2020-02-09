@@ -1,0 +1,21 @@
+https://developer.android.com/guide/topics/ui/accessibility/apps
+
+https://developer.android.com/guide/topics/ui/accessibility/service/
+
+Sobre contraste
+https://developer.android.com/guide/topics/ui/accessibility/apps#color-contrast
+
+A google aconselha que componentes clicaveis como imagebuttons tenha um tamanho minimo de 48dp de
+largura e altura (android:minWidth="48dp", android:minHeight="48dp")
+
+Sobre contrantes: https://support.google.com/accessibility/android/answer/7158390?hl=en
+
+Formula interessante para converter um inteiro numa tripla RGB
+https://math.stackexchange.com/questions/1635999/algorithm-to-convert-integer-to-3-variables-rgb
+
+Sobre a tag <clip> ao criar drawables em xml
+https://www.quora.com/What-is-clip-clip-in-Android
+https://developer.android.com/reference/android/graphics/drawable/ClipDrawable
+
+Convert int To Color
+https://stackoverflow.com/questions/17183587/convert-integer-color-value-to-rgb

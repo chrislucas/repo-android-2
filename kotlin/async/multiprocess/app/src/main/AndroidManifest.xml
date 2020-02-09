@@ -9,17 +9,27 @@
             android:roundIcon="@drawable/bot_icon_sample_apps"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".ActivitySampleRecursiveHandler">
+        <activity android:name=".activities.TestLooperThreadActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <action android:name="android.intent.action.VIEW"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".CountDownTimerSample">
+        <activity android:name=".activities.TestMessageQueueActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
+        <activity android:name=".activities.SampleRecursiveHandlerActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.CountDownTimerSample">
+        </activity>
+        <activity android:name=".activities.MainActivity">
         </activity>
     </application>
 

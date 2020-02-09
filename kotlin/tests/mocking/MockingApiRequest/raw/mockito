@@ -1,0 +1,37 @@
+What is ongoingstubbing in mockito and where we use it?
+https://stackoverflow.com/questions/29281061/what-is-ongoingstubbing-in-mockito-and-where-we-use-it
+
+
+Uma forma de mockar classes cujos construtores possuem parametros
+https://stackoverflow.com/questions/13364406/mock-a-constructor-with-parameter
+https://stackoverflow.com/questions/55697545/how-to-create-mockito-mock-with-constructor-parameters-in-kotlin
+
+
+mockito - MockingObjectCreation.wiki
+https://code.google.com/archive/p/mockito/wikis/MockingObjectCreation.wiki
+
+O problema: Usando a lib mockito em kotlin náo conseguimos executar um construtor de uma classe, o que
+dificulta realizar testes de metodos que criam objetos ou de criar instancias para teste.
+
+Resumo: O artigo do link acima descreve 2 formas de testar codigo que cria instancias de objetos.
+A primeira forma eh criar uma classe com um metodo de uma linha que cria a instancia do objeto que
+se quer usar e entao usar o metodo "spy()"
+
+
+
+A segunda forma eh
+
+
+Mock final class with Mockito 2
+https://antonioleiva.com/mockito-2-kotlin/
+
+projeto para tornar o codigo escrito em kotlin para testes com mockito mais simples
+https://github.com/nhaarman/mockito-kotlin
+
+Texto que explica como testar final classes kotlin com mockito sem criar uma pasta
+resources na pasta de testes unitarios
+https://android.jlelse.eu/quickly-solve-mocking-with-kotlin-551372c285f4
+
+
+Annotations
+https://javadoc.io/doc/org.mockito/mockito-core/3.1.0/org/mockito/Mock.html

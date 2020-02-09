@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SampleAccessibility</string>
+    <string name="app_name_2">Estudo sobre Acessibilidade</string>
+    <string name="button_1">Botão 1</string>
+    <string name="option_1">Opção 1</string>
+    <string name="option_2">Opção 2</string>
+    <string name="option_3">Opção 3</string>
+    <string name="on">ligado</string>
+    <string name="off">desligado</string>
+    <string name="yes">sim</string>
+    <string name="no">não</string>
+    <string name="title_activity_contrast_ratio">Calculadora de Proposção de contraste</string>
+    <string name="description_of_calculator">
+        Um bom contraste (diferença que permite distinguir a cor de fundo da cor do conteúdo) entre a cor de fundo e a
+        cor do conteúdo
+        torna-o mais fácil a compreensão para todos. Por exemplo: quando um dispositivo é exposto a uma condição de
+        luminosidade alta
+        ou um dispositivo que não possua um bom recurso de brilho, precisamos de um bom contraste para fornecer um
+        conteúdo acessível ao usuário.
+        A razão de contraste é
+    </string>
+    <string name="reference_link_contrast_google">
+        https://support.google.com/accessibility/android/answer/7158390?hl=en
+    </string>
+    <string name="link_contrast_ratio_calculator">https://contrast-ratio.com/</string>
+    <string name="open_contrast_ratio_activity">Calculadora de Contraste</string>
+    <string name="open_activity_custom_layout_seek_bar">Activity Custom SeekBar</string>
+</resources>

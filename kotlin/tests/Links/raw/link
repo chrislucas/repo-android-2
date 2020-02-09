@@ -1,0 +1,9 @@
+https://developer.android.com/training/app-links/deep-linking
+https://medium.com/@muratcanbur/intro-to-deep-linking-on-android-1b9fe9e38abd
+https://developer.android.com/guide/navigation/navigation-deep-link
+https://developer.android.com/guide/navigation/navigation-deep-link
+https://developer.android.com/guide/navigation/navigation-add-new
+
+
+<data>
+<scheme>://<host>:<port>[<path>|<pathPrefix>|<pathPattern>]
