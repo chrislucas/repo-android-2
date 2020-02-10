@@ -11,7 +11,7 @@ import java.lang.IllegalArgumentException
 
 class UserProfileViewModel(private val repository: Repository<LiveData<User>>) : ViewModel() {
 
-    lateinit var  userLiveData: LiveData<User>
+    var userLiveData = MutableLiveData<User>()
 
     override fun onCleared() {
         super.onCleared()
@@ -20,6 +20,6 @@ class UserProfileViewModel(private val repository: Repository<LiveData<User>>) :
 
 
     fun get() {
-        userLiveData = repository.get()
+        userLiveData.value = repository.get().value
     }
 }

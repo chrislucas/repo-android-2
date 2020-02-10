@@ -2,6 +2,7 @@ package com.xp.samplemvvmarch.viewmodel
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 
 object HelperViewModelProvider {
@@ -11,7 +12,7 @@ object HelperViewModelProvider {
         ViewModelProviders.of(fragment).get(clazz)
 
     @JvmStatic
-    fun <V: ViewModel> of(fragment: Fragment, factoryViewModel: FactoryViewModel, clazz: Class<V>): V {
+    fun <V: ViewModel> of(fragment: Fragment, factoryViewModel: ViewModelProvider.Factory, clazz: Class<V>): V {
         return ViewModelProviders.of(fragment, factoryViewModel).get(clazz)
     }
 }

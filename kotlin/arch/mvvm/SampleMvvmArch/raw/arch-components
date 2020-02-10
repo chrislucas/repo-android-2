@@ -6,3 +6,6 @@ https://developer.android.com/reference/androidx/lifecycle/SavedStateViewModelFa
 
 ViewModel
 https://developer.android.com/topic/libraries/architecture/viewmodel
+
+Sealed class
+https://proandroiddev.com/the-power-of-sealed-classes-in-kotlin-b730fc51f366

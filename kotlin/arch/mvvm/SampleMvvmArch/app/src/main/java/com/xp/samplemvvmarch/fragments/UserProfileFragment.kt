@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 
 import com.xp.samplemvvmarch.R
 import com.xp.samplemvvmarch.repository.LocalUserRepository
+import com.xp.samplemvvmarch.viewmodel.FactoryUserProfileViewModel
 import com.xp.samplemvvmarch.viewmodel.FactoryViewModel
 import com.xp.samplemvvmarch.viewmodel.HelperViewModelProvider
 import com.xp.samplemvvmarch.viewmodel.UserProfileViewModel
@@ -34,12 +35,16 @@ class UserProfileFragment : Fragment() {
         savedStateViewModelFactory =
             SavedStateViewModelFactory(activity?.application!!, this)
 
+        val factory1 = FactoryViewModel(
+            arrayOf(Int::class.java),
+            arrayOf(1)
+        )
+
+        val factory2 = FactoryUserProfileViewModel(LocalUserRepository(1))
+
+
         viewModel =
-            HelperViewModelProvider.of(
-                this,
-                FactoryViewModel(LocalUserRepository(1)),
-                UserProfileViewModel::class.java
-            )
+            HelperViewModelProvider.of(this, factory2, UserProfileViewModel::class.java)
 
         return inflater.inflate(R.layout.user_profile_fragment, container, false)
     }
@@ -60,5 +65,11 @@ class UserProfileFragment : Fragment() {
     }
 
     fun getTagFragment(): String = javaClass.name
+
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.get()
+    }
 
 }

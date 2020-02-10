@@ -39,3 +39,18 @@ https://android.jlelse.eu/unit-test-api-calls-with-mockwebserver-d4fab11de847
 ViewModelProvider.Factory
 https://medium.com/koderlabs/viewmodel-with-viewmodelprovider-factory-the-creator-of-viewmodel-8fabfec1aa4f
 ViewModelProvider(this, savedStateViewModelFactory).get(UserProfileViewModel::class.java)
+
+
+https://proandroiddev.com/view-model-creation-in-android-android-architecture-components-kotlin-ce9f6b93a46b
+
+SavedStateHandle
+https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle
+https://android.jlelse.eu/android-viewmodels-saving-state-across-process-death-a3f447bf839a
+https://medium.com/@elye.project/architecture-savedstatehandle-the-viewmodels-compliment-c4d1d92550a5
+https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate
+
+Projeto
+https://github.com/android/architecture-components-samples/
+
+ViewModel
+https://developer.android.com/topic/libraries/architecture/viewmodel
