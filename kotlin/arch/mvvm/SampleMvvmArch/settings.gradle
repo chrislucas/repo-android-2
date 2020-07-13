@@ -1,2 +1,2 @@
-include ':app', ':httprqmod'
+include ':app', ':httprqmod', ':core-test'
 rootProject.name='SampleMvvmArch'

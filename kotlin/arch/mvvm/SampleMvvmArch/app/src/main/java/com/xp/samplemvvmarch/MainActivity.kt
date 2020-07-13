@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.wrapper_layout_fragment
                 , fragment
-                , "TAG")
-            .addToBackStack("TAG")
+                , fragment.getTagFragment())
+            .addToBackStack(fragment.getTagFragment())
             .commit()
 
     }
