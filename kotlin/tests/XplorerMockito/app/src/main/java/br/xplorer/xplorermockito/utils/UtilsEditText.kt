@@ -1,4 +1,4 @@
-package br.xplorer.xplorermockito
+package br.xplorer.xplorermockito.utils
 
 import android.widget.EditText
 
