@@ -40,11 +40,11 @@ class UserProfileFragment : Fragment() {
             arrayOf(1)
         )
 
-        val factory2 = FactoryUserProfileViewModel(LocalUserRepository(1))
+        val factoryUserProfileVM = FactoryUserProfileViewModel(LocalUserRepository(1))
 
 
         viewModel =
-            HelperViewModelProvider.of(this, factory2, UserProfileViewModel::class.java)
+            HelperViewModelProvider.of(this, factoryUserProfileVM, UserProfileViewModel::class.java)
 
         return inflater.inflate(R.layout.user_profile_fragment, container, false)
     }
