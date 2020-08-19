@@ -7,13 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.SavedStateViewModelFactory
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.ViewModelProviders
 
 import com.xp.samplemvvmarch.R
-import com.xp.samplemvvmarch.repository.LocalUserRepository
-import com.xp.samplemvvmarch.viewmodel.FactoryUserProfileViewModel
-import com.xp.samplemvvmarch.viewmodel.FactoryViewModel
+import com.xp.samplemvvmarch.repository.StaticUserRepository
+import com.xp.samplemvvmarch.viewmodel.UserProfileViewModelProviderFactory
 import com.xp.samplemvvmarch.viewmodel.HelperViewModelProvider
 import com.xp.samplemvvmarch.viewmodel.UserProfileViewModel
 
@@ -35,12 +32,9 @@ class UserProfileFragment : Fragment() {
         savedStateViewModelFactory =
             SavedStateViewModelFactory(activity?.application!!, this)
 
-        val factory1 = FactoryViewModel(
-            arrayOf(Int::class.java),
-            arrayOf(1)
-        )
 
-        val factoryUserProfileVM = FactoryUserProfileViewModel(LocalUserRepository(1))
+
+        val factoryUserProfileVM = UserProfileViewModelProviderFactory(StaticUserRepository(1))
 
 
         viewModel =

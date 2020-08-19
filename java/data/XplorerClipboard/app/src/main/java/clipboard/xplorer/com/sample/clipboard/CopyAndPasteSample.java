@@ -1,4 +1,4 @@
-package clipboard.xplorer.com.xplorerclipboard;
+package clipboard.xplorer.com.sample.phonestate;
 
 import android.Manifest;
 import android.content.ClipData;
@@ -7,9 +7,9 @@ import android.content.ComponentName;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.PersistableBundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.PhoneAccountHandle;
 import android.telephony.TelephonyManager;
@@ -24,6 +24,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import clipboard.xplorer.com.sample.clipboard.R;
 
 public class Main2Activity extends AppCompatActivity {
 

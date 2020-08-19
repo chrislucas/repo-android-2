@@ -1,12 +1,14 @@
 package clipboard.xplorer.com.xplorerclipboard
 
+import android.content.ClipboardManager
+import android.content.Context
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
+
 
 import org.junit.Test
 import org.junit.runner.RunWith
 
-import org.junit.Assert.*
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -14,11 +16,14 @@ import org.junit.Assert.*
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 @RunWith(AndroidJUnit4::class)
-class ExampleInstrumentedTest {
+class ClipBoardManagerTest {
     @Test
-    fun useAppContext() {
+    fun testIfContentTextIsKeptOnTheClipBoard() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("clipboard.xplorer.com.xplorerclipboard", appContext.packageName)
+
+        val clipBoardManager = appContext.getSystemService(Context.CLIPBOARD_SERVICE)
+                as ClipboardManager
+
     }
 }
