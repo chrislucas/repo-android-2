@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.fragments
+package com.xp.samplemvvmarch.feature1.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,10 +9,11 @@ import android.widget.TextView
 import androidx.lifecycle.SavedStateViewModelFactory
 
 import com.xp.samplemvvmarch.R
-import com.xp.samplemvvmarch.repository.StaticUserRepository
-import com.xp.samplemvvmarch.viewmodel.UserProfileViewModelProviderFactory
-import com.xp.samplemvvmarch.viewmodel.HelperViewModelProvider
-import com.xp.samplemvvmarch.viewmodel.UserProfileViewModel
+import com.xp.samplemvvmarch.feature1.repository.StaticUserRepository
+import com.xp.samplemvvmarch.feature1.viewmodel.UserProfileViewModelProviderFactory
+import com.xp.samplemvvmarch.feature1.viewmodel.HelperViewModelProvider
+import com.xp.samplemvvmarch.feature1.viewmodel.UserProfileViewModel
+import kotlin.random.Random
 
 class UserProfileFragment : Fragment() {
 
@@ -32,10 +33,8 @@ class UserProfileFragment : Fragment() {
         savedStateViewModelFactory =
             SavedStateViewModelFactory(activity?.application!!, this)
 
-
-
-        val factoryUserProfileVM = UserProfileViewModelProviderFactory(StaticUserRepository(1))
-
+        val id = Random(System.currentTimeMillis()).nextInt(StaticUserRepository.map.size)
+        val factoryUserProfileVM = UserProfileViewModelProviderFactory(StaticUserRepository(id))
 
         viewModel =
             HelperViewModelProvider.of(this, factoryUserProfileVM, UserProfileViewModel::class.java)
@@ -49,7 +48,9 @@ class UserProfileFragment : Fragment() {
         // teste
 
         viewModel.run {
-            val fn = { lifecycle }
+            val fn = {
+                lifecycle
+            }
 
             userLiveData.observe(fn) { user ->
                 view.findViewById<TextView>(R.id.user_id).text = "${user.id}"

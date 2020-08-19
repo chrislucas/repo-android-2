@@ -1,0 +1,7 @@
+PROCESS_OUTGOING_CALLS is deprecated
+https://stackoverflow.com/questions/55788743/alternatives-to-read-call-log-for-accessing-a-callers-number
+
+Ler
+https://developer.android.com/about/versions/pie/android-9.0-changes-all#restrict-access-call-logs
+
+https://developer.android.com/reference/android/Manifest.permission_group#CALL_LOG

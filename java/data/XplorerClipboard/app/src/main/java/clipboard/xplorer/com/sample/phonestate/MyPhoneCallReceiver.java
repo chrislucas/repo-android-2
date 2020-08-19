@@ -1,4 +1,4 @@
-package clipboard.xplorer.com.xplorerclipboard;
+package clipboard.xplorer.com.sample.phonestate;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

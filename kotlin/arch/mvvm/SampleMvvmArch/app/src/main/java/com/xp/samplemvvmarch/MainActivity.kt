@@ -2,8 +2,7 @@ package com.xp.samplemvvmarch
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.xp.samplemvvmarch.fragments.Simple
-import com.xp.samplemvvmarch.fragments.UserProfileFragment
+import com.xp.samplemvvmarch.feature1.fragments.UserProfileFragment
 
 class MainActivity : AppCompatActivity() {
 

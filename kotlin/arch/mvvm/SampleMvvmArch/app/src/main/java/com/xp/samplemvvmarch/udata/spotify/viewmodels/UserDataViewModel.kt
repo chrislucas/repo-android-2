@@ -1,7 +1,7 @@
-package com.xp.samplemvvmarch.feature2
+package com.xp.samplemvvmarch.udata.spotify.viewmodels
 
 import androidx.lifecycle.ViewModel
 
-class Feature2ViewModel : ViewModel() {
+class UserDataViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

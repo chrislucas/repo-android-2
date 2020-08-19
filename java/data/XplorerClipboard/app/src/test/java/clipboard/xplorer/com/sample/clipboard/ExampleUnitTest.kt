@@ -1,4 +1,4 @@
-package clipboard.xplorer.com.xplorerclipboard
+package clipboard.xplorer.com.sample.clipboard
 
 import org.junit.Test
 

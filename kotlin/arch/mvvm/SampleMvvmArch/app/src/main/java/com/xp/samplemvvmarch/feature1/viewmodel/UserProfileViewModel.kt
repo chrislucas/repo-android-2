@@ -1,13 +1,11 @@
-package com.xp.samplemvvmarch.viewmodel
+package com.xp.samplemvvmarch.feature1.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.xp.samplemvvmarch.model.User
-import com.xp.samplemvvmarch.repository.Repository
-import java.lang.IllegalArgumentException
+import com.xp.samplemvvmarch.feature1.model.User
+import com.xp.samplemvvmarch.feature1.repository.Repository
 
 class UserProfileViewModel(private val repository: Repository<LiveData<User>>) : ViewModel() {
 

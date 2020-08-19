@@ -1,4 +1,4 @@
-package clipboard.xplorer.com.xplorerclipboard;
+package clipboard.xplorer.com.sample.phonestate;
 
 import android.telephony.CellInfo;
 import android.telephony.CellLocation;

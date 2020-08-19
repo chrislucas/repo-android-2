@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.viewmodel
+package com.xp.samplemvvmarch.feature1.viewmodel
 
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel

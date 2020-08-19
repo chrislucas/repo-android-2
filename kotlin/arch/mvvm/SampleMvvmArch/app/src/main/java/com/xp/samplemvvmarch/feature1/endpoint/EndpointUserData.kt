@@ -1,6 +1,6 @@
-package com.xp.samplemvvmarch.endpoint
+package com.xp.samplemvvmarch.feature1.endpoint
 
-import com.xp.samplemvvmarch.model.User
+import com.xp.samplemvvmarch.feature1.model.User
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

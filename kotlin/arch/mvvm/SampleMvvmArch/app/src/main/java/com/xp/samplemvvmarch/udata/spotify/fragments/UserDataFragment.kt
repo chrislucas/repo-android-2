@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.feature2
+package com.xp.samplemvvmarch.udata.spotify.fragments
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -7,14 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.xp.samplemvvmarch.R
+import com.xp.samplemvvmarch.udata.spotify.viewmodels.UserDataViewModel
 
-class Feature2Fragment : Fragment() {
+class UserDataFragment : Fragment() {
 
     companion object {
-        fun newInstance() = Feature2Fragment()
+        fun newInstance() =
+            UserDataFragment()
     }
 
-    private lateinit var viewModel: Feature2ViewModel
+    private lateinit var viewModel: UserDataViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +27,7 @@ class Feature2Fragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(Feature2ViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(UserDataViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

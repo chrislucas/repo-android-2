@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.feature2.states
+package com.xp.samplemvvmarch.udata.spotify.states
 
 sealed class ViewState {
     object ShowLoading : ViewState()

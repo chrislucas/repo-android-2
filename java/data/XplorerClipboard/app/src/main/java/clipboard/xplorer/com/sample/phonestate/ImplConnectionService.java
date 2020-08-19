@@ -1,4 +1,4 @@
-package clipboard.xplorer.com.xplorerclipboard;
+package clipboard.xplorer.com.sample.phonestate;
 
 import android.annotation.TargetApi;
 import android.content.Intent;

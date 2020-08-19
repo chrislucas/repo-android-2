@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.fragments
+package com.xp.samplemvvmarch.feature1.fragments
 
 import android.content.Context
 import android.net.Uri

@@ -1,7 +1,6 @@
-package clipboard.xplorer.com.xplorerclipboard;
+package clipboard.xplorer.com.sample.phonestate;
 
 import android.util.ArrayMap;
-import android.view.ContextMenu;
 
 public enum ContextMenuItem {
     COPY(1), PASTE(2), CUT(3);

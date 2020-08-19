@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.model
+package com.xp.samplemvvmarch.feature1.model
 
 import android.os.Parcel
 import android.os.Parcelable

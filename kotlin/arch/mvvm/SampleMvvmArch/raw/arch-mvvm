@@ -45,6 +45,12 @@ Como o ViewModel nao conhece a UI ele nao eh afetado por eventuais mudancas nela
 (https://developer.android.com/jetpack/docs/guide)'
 "
 
+
+Sample Code ViewModelFactory
+        val factory1 = FactoryViewModel(arrayOf(Int::class.java),arrayOf(1))
+
+
+
 LiveData
 https://developer.android.com/topic/libraries/architecture/livedata
 
@@ -55,7 +61,41 @@ para evitar vazamento de objetos e o consumo excessivo de memória"
 
 "Como dito, o componente LiveData tbm observa o ciclo de vida dos componentes android como o Fragment.
 Quando o Fragment for destruido (chamada do metodo onDestroy do ciclo de vida), o LiveData para de observar
-o modelo observavel. Nao eh necessario tbm observar mudancas de configuracao de tela como rotacao. Quando isso ocorre
-a ViewModel eh restaurada automaticamente"
+o modelo observavel. Nao eh necessario tbm observar mudancas de configuracao de tela como rotacao.
+Quando isso ocorre a ViewModel eh restaurada automaticamente"
+
+Pontos importantes
+ - LiveData conta com reconhecimento de ciclo de vida
+ - respeita o ciclo de vida dos demais componentes do S.O
+ - Esse reconhecimento garante que ele atualize somente os observadores ativos
+
+
+O LiveData considera que o Observador esta ativo se seu estado eh
+    - STARTED ou RESUMED
+
+
+Esse observador eh representado pela implementacao da interface Observer
+(https://developer.android.com/reference/androidx/lifecycle/Observer?hl=pt-br), e sera notificado
+pelo livedata somente se estiver ativo.
+
+
+
+
+ -----------------------------
+
+
+Sobre Fragments e a abstract class Lifecycle:
+Fontes
+https://developer.android.com/jetpack/androidx/releases/fragment?hl=pt
+
+Sobre Activity e a Interface LifecycleOwner
+fontes
+https://developer.android.com/reference/androidx/lifecycle/LifecycleOwner
+
+----------------------------------------------------------------------------------------------------
+
+MutableLiveData
 
 SavedStateHandle
+
+LifecyclerOwner
