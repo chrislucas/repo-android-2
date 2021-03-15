@@ -1,0 +1,36 @@
+
+
+com.google.android.material.card.MaterialCardView
+https://material.io/components/cards/android#using-cards
+https://android--code.blogspot.com/2020/03/android-kotlin-materialcardview-shadow.html
+
+
+cards
+https://material.io/components/cards/android#using-cards
+
+
+
+CardView
+https://medium.com/android-news/android-card-view-edb905e67cd6
+https://developer.android.com/training/material/shadows-clipping
+
+com.google.android.material = MaterialCardView + MaterialButton
+
+https://blog.chirathr.com/android/2018/08/23/android-recycler-view/
+
+Comunicacao Fragment
+https://developer.android.com/guide/fragments/communicate
+
+
+SearchView
+https://developer.android.com/guide/topics/search/search-dialog
+https://developer.android.com/guide/topics/search
+
+Comunicacao de Fragments com Activity
+https://developer.android.com/training/basics/fragments/communicating.html
+
+Pesquisar por
+MaterialCardView style, border, shadow
+
+Como implementar fluxos adaptáveis de IU
+https://developer.android.com/training/multiscreen/adaptui
