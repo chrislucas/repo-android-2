@@ -2,7 +2,9 @@ package br.xplorer.xplorermockito;
 
 import android.content.Context;
 import android.util.Log;
+
 import br.xplorer.xplorermockito.utils.WriteConfigurationUtils;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -33,7 +35,7 @@ public class WriteConfigurationUtilsTestInJava {
         try {
             when(context.openFileOutput(anyString(), anyInt())).thenReturn(fileOutputStream);
             WriteConfigurationUtils.Companion.writeConfiguration(context
-                    , "raw/output/output_test_write_twice.txt", new String[] {"teste 1", "teste 2"});
+                    , "raw/output/output_test_write_twice.txt", new String[]{"teste 1", "teste 2"});
 
             verify(context, times(1)).openFileOutput(anyString(), anyInt());
             verify(fileOutputStream, atLeast(2)).write(any(byte[].class));

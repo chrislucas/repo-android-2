@@ -1,0 +1,5 @@
+task export_sample(type: Exec) {
+    workingDir "$rootDir"
+    commandLine 'bash', '-c', 'echo $PATH'
+    commandLine 'bash', '-c', './gradlew :samplelibtest:assembleRelease'
+}

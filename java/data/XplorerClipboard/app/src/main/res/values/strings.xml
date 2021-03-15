@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">XplorerClipboard</string>
-    <string name="impl_connection_service">impl_connection_service</string>
-    <string name="paste">colar</string>
+  <string name="app_name">XplorerClipboard</string>
+  <string name="impl_connection_service">impl_connection_service</string>
+  <string name="paste">colar</string>
 </resources>
