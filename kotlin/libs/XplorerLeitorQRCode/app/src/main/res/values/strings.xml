@@ -1,0 +1,4 @@
+<resources>
+  <string name="app_name">XplorerLeitorQRCode</string>
+    <string name="text_label_open_activity_choose_barcode_reader">Escolha o leitor de QRCode</string>
+</resources>
