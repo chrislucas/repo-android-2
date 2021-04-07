@@ -1,4 +1,4 @@
-package com.xp.samplemvvmarch.feature1.fragments
+ package com.xp.samplemvvmarch.feature1.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.SavedStateViewModelFactory
+import androidx.lifecycle.ViewModel
 
 import com.xp.samplemvvmarch.R
 import com.xp.samplemvvmarch.feature1.repository.StaticUserRepository
@@ -33,13 +34,25 @@ class UserProfileFragment : Fragment() {
         savedStateViewModelFactory =
             SavedStateViewModelFactory(activity?.application!!, this)
 
+        //initViewModel()
+        //anotherInitViewModel()
+        
+        return inflater.inflate(R.layout.user_profile_fragment, container, false)
+    }
+
+
+    private fun initViewModel() {
         val id = Random(System.currentTimeMillis()).nextInt(StaticUserRepository.map.size)
+
         val factoryUserProfileVM = UserProfileViewModelProviderFactory(StaticUserRepository(id))
 
-        viewModel =
-            HelperViewModelProvider.of(this, factoryUserProfileVM, UserProfileViewModel::class.java)
+        viewModel = HelperViewModelProvider.of(this, factoryUserProfileVM,
+                UserProfileViewModel::class.java)
+    }
 
-        return inflater.inflate(R.layout.user_profile_fragment, container, false)
+
+    private fun anotherInitViewModel() {
+        viewModel = savedStateViewModelFactory.create(UserProfileViewModel::class.java)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

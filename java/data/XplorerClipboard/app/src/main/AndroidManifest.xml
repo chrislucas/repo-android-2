@@ -3,9 +3,6 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="clipboard.xplorer.com.sample.clipboard">
   
-  <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
-    tools:ignore="ProtectedPermissions" />
-  
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -13,11 +10,12 @@
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
     android:theme="@style/AppTheme">
+    <activity android:name="clipboard.xplorer.com.sample.ime.IMESampleActivity"></activity>
     <activity android:name="clipboard.xplorer.com.sample.ForInstrumentedActivity" />
     <activity android:name=".SampleClipboardActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-    
+        
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
@@ -51,5 +49,8 @@
   <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
   <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
   
+  <uses-permission
+    android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+    tools:ignore="ProtectedPermissions" />
 
 </manifest>

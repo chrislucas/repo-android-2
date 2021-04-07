@@ -1,0 +1,6 @@
+// tutorial sobre MVI
+https://proandroiddev.com/architecture-design-exploring-mvi-from-mvvm-334b773f3921
+
+O codigo desse projeto tem como base o que foi escrito no tutorial. Conforme o estudo sobre
+mvi, mvp e rxjava avanca, pretende-se modificar o codigo com o objetivo de explorar mais recursos
+das bibliotecas de programacao reativa e a arquitetura MVI.
