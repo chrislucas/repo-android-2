@@ -7,7 +7,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.br.samples.api.ext.R
 
-import com.br.samples.api.rqpermission.registers.CallbacksOfContractsRequestPermission.getActivityResultCallbackSingleRequest
+import com.br.samples.api.rqpermission.permission.registers.CallbacksOfContractsRequestPermission.getActivityResultCallbackSingleRequest
 
 
 class ReadCallLogActivity : AppCompatActivity() {

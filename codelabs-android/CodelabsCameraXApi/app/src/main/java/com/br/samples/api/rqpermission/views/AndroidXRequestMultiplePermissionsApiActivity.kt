@@ -3,11 +3,9 @@ package com.br.samples.api.rqpermission.views
 import android.Manifest
 import android.os.Bundle
 import android.util.Log
-import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.br.samples.api.ext.R
-import com.br.samples.api.rqpermission.permission.contracts.multiplesContracts
+import com.br.samples.api.rqpermission.permission.contracts.multiplesPermissionsContract
 
 class AndroidXRequestMultiplePermissionsApiActivity : AppCompatActivity() {
 
@@ -31,7 +29,7 @@ class AndroidXRequestMultiplePermissionsApiActivity : AppCompatActivity() {
             )
 
         // abrindo o dialog para pedir permissao
-        multiplesContracts(permissions)
+        multiplesPermissionsContract(permissions)
         /**
          * implementacao de {@link ActivityResultCallback}
          * */

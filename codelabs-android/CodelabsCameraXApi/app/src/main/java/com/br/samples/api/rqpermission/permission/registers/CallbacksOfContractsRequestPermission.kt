@@ -1,8 +1,8 @@
-package com.br.samples.api.rqpermission.registers
+package com.br.samples.api.rqpermission.permission.registers
 
 import androidx.activity.result.ActivityResultCallback
-import com.br.samples.api.rqpermission.registers.CallbacksOfContractsRequestPermission.allPermissionWereGranted
-import com.br.samples.api.rqpermission.registers.CallbacksOfContractsRequestPermission.getActivityResultCallbackMultipleRequests
+import com.br.samples.api.rqpermission.permission.registers.CallbacksOfContractsRequestPermission.allPermissionWereGranted
+import com.br.samples.api.rqpermission.permission.registers.CallbacksOfContractsRequestPermission.getActivityResultCallbackMultipleRequests
 
 object CallbacksOfContractsRequestPermission {
 
