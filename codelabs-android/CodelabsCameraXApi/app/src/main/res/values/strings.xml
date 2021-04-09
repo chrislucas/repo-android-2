@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">CodelabsCameraXApi</string>
+    <string name="txt_label_btn_api_rq_perm_androidx">API Request Permission AndroidX</string>
+    <string name="txt_label_btn_api_rq_multiple_perm_androidx">API Request Multiple Permission AndroidX</string>
+</resources>

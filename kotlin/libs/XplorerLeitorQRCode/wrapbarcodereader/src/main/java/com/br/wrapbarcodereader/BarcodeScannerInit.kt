@@ -1,5 +1,5 @@
 package com.br.wrapbarcodereader
 
-interface BarcodeReaderInit {
+interface BarcodeScannerInit {
     fun init()
 }

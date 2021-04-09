@@ -16,10 +16,10 @@ class ChooseQrCodeReader : AppCompatActivity() {
 
     private val btcConfirmOptionChosen: Button by lazy { findViewById(R.id.btn_confirm_qrcode_reader) }
 
-    private val barcodeReadersInitializer: Array<BarcodeReaderInit> =
-        arrayOf(GoogleMLKitInit(), ZxingBarcodeReaderInit(this))
+    private val barcodeReadersInitializer: Array<BarcodeScannerInit> =
+        arrayOf(GoogleMLKitQRCodeScannerInit(), ZxingBarcodeScannerInit(this))
 
-    private var barcodeReaderInit: BarcodeReaderInit? = null
+    private var barcodeScannerInit: BarcodeScannerInit? = null
 
     companion object {
         const val RESULT_DATA = "RESULT_DATA"
@@ -44,7 +44,7 @@ class ChooseQrCodeReader : AppCompatActivity() {
                 id: Long
             ) {
                 // opcao 0 - selecione
-                barcodeReaderInit = if (position > 0) {
+                barcodeScannerInit = if (position > 0) {
                     barcodeReadersInitializer[position - 1]
                 } else {
                     null
@@ -74,7 +74,7 @@ class ChooseQrCodeReader : AppCompatActivity() {
 
     private fun initListenerOnConfirmButton() {
         btcConfirmOptionChosen.setOnClickListener {
-            barcodeReaderInit?.init() ?: askingForUserChooseABarcodeReader()
+            barcodeScannerInit?.init() ?: askingForUserChooseABarcodeReader()
         }
     }
 
