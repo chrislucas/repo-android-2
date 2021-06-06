@@ -40,6 +40,9 @@ fun <R> AppCompatActivity.singlePermissionContract(permission: String, fn: (Bool
      *      Para pedir permissao a algum recurso do dispositivo ja existe um contrato/implementacao
      *      definido na SDK do android ActivityResultContracts.RequestPermission()
      *
+     *
+     * 2)
+     *
      * */
 
     val result: ActivityResultLauncher<String> = registerForActivityResult(

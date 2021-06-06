@@ -1,0 +1,22 @@
+share data between fragments with viewmodel
+https://stackoverflow.com/questions/44272914/sharing-data-between-fragments-using-new-architecture-component-viewmodel
+https://stackoverflow.com/questions/53944321/how-to-show-loader-while-loading-data-from-new-room-persistence-library-and-have
+https://medium.com/@lucasnrb/advanced-viewmodels-part-iii-share-a-viewmodel-between-fragments-59c014a3646
+https://nabeelj.medium.com/android-how-to-share-data-between-fragments-using-viewmodel-and-livedata-android-mvvm-9fc463af5152
+
+
+Pontos de atencao
+https://developer.android.com/codelabs/android-room-with-a-view-kotlin#9
+
+Nao manter reference a instancia de Context numa viewmodel de um componente cujo ciclo de vida
+seja mais curto que o da ViewModel, como por exemplo acitivties, fragments views. Isso pode
+causar memory leak
+
+
+Viewmodels nao evitam que apps sejam interrompidos pelo S.O quando surge a necessidade de uso de mais
+recursos. Apps cujo o estado da UI precisa ser mantido quando o seu processo for interrompido podem
+usar o Saved State Module for Viewmodels
+
+    links:
+        - https://developer.android.com/topic/libraries/architecture/viewmodel-savedstate
+        - https://medium.com/androiddevelopers/viewmodels-persistence-onsaveinstancestate-restoring-ui-state-and-loaders-fc7cc4a6c090

@@ -1,0 +1,107 @@
+https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0
+
+Pontos interessantes
+
+Definicao de alguns componentes na arquitetura MVVM que fazem sentido descrever aqui para
+fim do estudo da API Room
+
+Entity: Classe que descreve uma tabela na base de dados. Ela é formada por Annotation para
+poder trabalhar junto com Room
+
+Room database: Seu objetivo eh simplificar o trabalho de implementar a funcionalidade de "manter"
+informações armazenadas localmente numa base de dados e serve como o ponto de acesso a ela, no
+caso do android SQLite, escondendo/encapsulando uma classe importante SQLiteOpenHelper.
+Room utiliza DAOs para fazer consultas para a base de dados em SQLite
+
+DAO: Data Access Object: A mapping os SQL queries to functions
+
+
+Arquitetura do sample
+
+Camada View:
+
+    MainActivity
+    NewWordActivity
+    Observer
+
+Camada ViewModel
+
+    WordViewModel
+        - LiveData<List<Word>>
+
+
+Camada Repository
+    - WordRepository
+
+    - LocalRepository - Room/SQlite Database
+        - Entitties - DAO
+            - SQLIte
+            Comunicacao bidirecional entre DAOs e SQLITE
+
+
+https://developer.android.com/codelabs/android-room-with-a-view-kotlin#9
+O que eh a viewmodel ?
+
+O papel da viewmodel eh
+    - Disparar para o componente correto (a depender da arquitetura de software escolhida
+    para implementar a solucao) uma acao que deu inicio na camada de visualizacao
+        - Repositories
+        - Usecases
+    - Manter o estado dos dados que sao apresentados na camada de visualizacao
+        - Dada a natureza do sistema android, mudancas de configuracao de tela podem
+            fazer com que dados sejam alterados
+    - Podemos usar uma viewmodel para compartilhar dados entre Fragment
+
+https://developer.android.com/codelabs/android-room-with-a-view-kotlin#9
+
+ViewModel
+    - Observable data holder
+    - Diferente do Flow, LiveData esta ciente do ciclo de vida do componente que ele está ligado,
+    activity, fragment por exemplo. Ele ira respeitar o ciclo de vida de seu componente. Automaticamente
+    ira parar ou retornar a sua funcao (Observador) dependendo do cicloe de vida do componente que
+    ele está ligado, sempre escutando as mudancas do cicloe de vida
+
+    - No sample implementado aqui, ViewModel sera capaz de transformar os dados de vindos numa
+    instancia de Flow para uma instancia de LiveData, expondo-o para camada de UI
+
+    - Usando o Flow podemos implementar um observador que a cada mudanca na tabela que esta sendo observada
+    refletira na UI
+
+
+viewModelScope
+
+    - Em kotlin toda coroutine eh executada dentro de uma CoroutineScope. Um escopo controla
+    o tempo de vida de uma coroutine atraves de uma instancia da classe Job.
+        - QUando cancelamos um job do Scope cancelamos todas as coroutines dentro deele
+
+
+    A biblioteca do AndroidX lifecycle-viewmodel-ktx adiciona um viewModelScope como uma extension
+    function da classe ViewModle, permitndo traballhar com escopos
+    https://medium.com/androiddevelopers/easy-coroutines-in-android-viewmodelscope-25bffb605471
+    https://developer.android.com/codelabs/kotlin-coroutines/index.html?index=..%2F..index#4
+
+Um exemplo mais bem elaborado do uso de Room com mais de um Repositorio
+https://github.com/android/architecture-components-samples/tree/master/BasicSample
+
+link para acompanhar as release
+https://developer.android.com/jetpack/androidx/releases/room
+
+Define relationships between objects
+https://developer.android.com/training/data-storage/room/relationships
+
+Accessing data using Room DAOs
+https://developer.android.com/training/data-storage/room/accessing-data
+
+Referencing complex data using Room
+https://developer.android.com/training/data-storage/room/referencing-data
+
+Write asynchronous DAO queries
+https://developer.android.com/training/data-storage/room/async-queries
+
+
+Estrategia de migracao de base de dados usando Room
+https://medium.com/androiddevelopers/understanding-migrations-with-room-f01e04b07929
+
+Ao mudar algo estrutural na base de dados deve-se implementar uma estrategia de migracao
+principalmente se o app ja tiver sendo utilizado para garantir o menor nummero de inconsistencias
+no comportamento do app

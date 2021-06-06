@@ -1,0 +1,3 @@
+include ':words'
+include ':app'
+rootProject.name = "AndroidRoom"
