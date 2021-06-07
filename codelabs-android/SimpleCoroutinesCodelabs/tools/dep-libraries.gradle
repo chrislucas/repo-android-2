@@ -1,0 +1,2 @@
+def versions = [:]
+versions.kotlin = "1.4.32"
