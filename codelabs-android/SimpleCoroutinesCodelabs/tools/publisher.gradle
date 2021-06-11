@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+
+def mGroupId = 'com.br.start'
+def mVersion = '0.3'
+def mArtifactId = 'start'
+
+task publisher() {
+    dependsOn publishToMavenLocal
+    group publisher
+}
+
+afterEvaluate {
+    publishing {
+        repositories {
+            maven {
+                url("~/.m2")
+            }
+        }
+        publications {
+            start(MavenPublication) {
+                groupId = mGroupId
+                artifactId = mArtifactId
+                version = mVersion
+                artifact("$buildDir/outputs/aar/$mArtifactId-publisher.aar")
+            }
+        }
+    }
+}
+
+
+android.libraryVariants.all {
+    variant ->
+        def applicationId = [variant.mergedFlavor.applicationId
+                             , variant.buildType.applicationIdSuffix
+                             , variant]
+        println "ID: $applicationId"
+}
+
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}

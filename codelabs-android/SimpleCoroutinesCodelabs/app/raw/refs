@@ -3,5 +3,15 @@ https://github.com/Kotlin/kotlinx.coroutines
 https://developer.android.com/codelabs/kotlin-coroutines#1
 
 
+
+
 Projeto codelabs
 https://github.com/googlecodelabs/kotlin-coroutines
+
+Publish aar locamente
+
+https://alessiobianchi.eu/blog/obfuscated-aar-local-maven/
+https://developer.android.com/studio/build/maven-publish-plugin
+https://docs.gradle.org/current/userguide/publishing_maven.html
+https://stackoverflow.com/questions/26874498/publish-an-android-library-to-maven-with-aar-and-source-jar
+https://www.flexlabs.org/2013/06/using-local-aar-android-library-packages-in-gradle-builds
