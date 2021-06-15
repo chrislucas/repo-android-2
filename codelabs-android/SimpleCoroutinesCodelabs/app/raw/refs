@@ -1,7 +1,98 @@
 https://developer.android.com/kotlin/coroutines
+
+Resumo do conteudo acima:
+Eh discutido um exemplo de codigo onde ocorre um request a uma api de autenticacao, onde
+eh passado como parametros $username e $token.
+
+    - A primeira versao do codigo faz com que a execucao do mesmo ocorra na mesma Thread que
+    eh usada para construir a interface gráfica, o q pode causar lentidao e baixa performance
+    do aplicativo
+
+    - Discute-se entao a seguinte modificacao
+        - Cria-se uma ViewModel cujo construtor recebe uma Repository para realizar o request
+        - Utiliza-se uma CoroutineScope predefinida na classe ViewModel da sdk do Android
+        para realizar o request atraves a repository numa outra Thread, resolvendo o problema
+        de bloqueio da UI-Thread
+
+        - viewModelScope: Predefined CoroutineScope that is included with the ViewModel KTX
+        extension
+
+        - launch: Is a function that creates a coroutine and dispatches the executiion of its function
+        body to the correspoding dispatcher
+
+        - Dispatchers.IO: Indicates that this coroutines
+
+     - Since the coroutine is statted with viewModelScope, it is executed in the scope of ViewModel
+        - if the ViewModel is destroyed, viewModelsScope it cancelled
+        - all running coroutines are canceled too
+
+    - Main-safety:
+        - A function is considered main-safe when it does not block UI updates on the main thread.
+
+        - No Exemplo da documentacao, a funcao responsavel por realizar a requisicao para api de
+        autenticacao nao era main-safety, forçando a funcao login da ViewModel a ser, sendo executaad
+        dentro do ViewModelScope num dispatcher.IO
+
+            - Essa funcao passou a ser suspend, forçando aquele que a chama criar um CoroutineScope
+
+            - E seu codigo foi colocado dentro de um withContext(Dispacther) e assim foi transformada
+            e main-safety
+
+            - A viewModel foi modificada para que nao precisasse criar um contexto/escopo
+            para coroutine com um dispatcher.IO
+
+
+    - Com as mudancas, o fluxo se comporta da seguinte forma
+        - O App chama a funcao login(), na camada de visualizacao, na main thread
+
+        - A viewmodel Recebe a chama e ainda na main-thread cria uma coroutine atraves da funcao launch
+            - A coroutine comeca a execucao
+
+        -Dentro da coroutine comeca a execucao do metodo que faz a reeuisicao da Repository
+            - essa funcao eh suspensa ate que o codigo dentro do bloco withContext termine sua execucao
+
+        - Assim que o bloco withContext termina, a coroutine iniciada pela funcao login() retorna a
+        execucao dentro da main-thread, recuperando o resultado da requisicao feita pela Repository
+
+
+Nota importante sobre comunicacao ViewModel -> View
+
+- faca utilizando LiveData
+ - "When following this pattern, the code in the ViewModel is executed on the main thread
+ , so you can call MutableLiveData's setValue() function directly."
+
+ Docs
+ - https://developer.android.com/kotlin/coroutines/coroutines-adv
+ - Flow
+    - https://developer.android.com/kotlin/coroutines/additional-resources
+
+
+------------------------------------------------------------------
+Advanced Coroutines
+https://developer.android.com/kotlin/coroutines/coroutines-adv
+------------------------------------------------------------------
 https://github.com/Kotlin/kotlinx.coroutines
+------------------------------------------------------------------
+
 https://developer.android.com/codelabs/kotlin-coroutines#1
 
+
+Anotacoes: https://developer.android.com/codelabs/kotlin-coroutines#2
+
+
+------------------------------------------------------------------
+Flow
+https://developer.android.com/kotlin/coroutines/additional-resources
+https://www.youtube.com/watch?v=emk9_tVVLcc
+https://developer.android.com/kotlin/flow
+Flow codelabs
+https://developer.android.com/codelabs/advanced-kotlin-coroutines?hl=de#0
+------------------------------------------------------------------
+
+
+
+Architecture samples
+https://github.com/android/architecture-samples
 
 
 

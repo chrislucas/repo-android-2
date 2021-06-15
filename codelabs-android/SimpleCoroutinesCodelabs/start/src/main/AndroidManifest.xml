@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.br.start">
+    package="com.br.start">
+
+    <application>
+        <activity android:name=".view.activities.ModuleStartMainActivity"></activity>
+    </application>
 
 </manifest>
