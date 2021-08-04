@@ -15,3 +15,7 @@
 /.idea/
 /.idea/misc.xml
 /.idea/sonarlint/
+app/libs/
+httprqmod/libs/
+httprqmod/src/main/res/drawable/
+**/.idea/
