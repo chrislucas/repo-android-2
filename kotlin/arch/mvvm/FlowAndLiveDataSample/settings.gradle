@@ -1,0 +1,2 @@
+rootProject.name = "FlowAndLiveDataSample"
+include ':app'
