@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="qrcode_reader">
+        <item>Selecione</item>
+        <item>ML Kit Google - QRCode Scanner</item>
+        <item>ZXING Barcode Scanner</item>
+        <item>ML Kit Google - Multiples Scanners</item>
+    </string-array>
+</resources>

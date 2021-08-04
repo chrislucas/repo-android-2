@@ -1,14 +1,91 @@
 SavedStateVMFactory
 https://developer.android.com/reference/androidx/lifecycle/SavedStateVMFactory
 
+--------------------------------------------------------------------------------------------------------
+
 SavedStateViewModelFactory
 https://developer.android.com/reference/androidx/lifecycle/SavedStateViewModelFactory
 
 
+public final class SavedStateViewModelFactory extends Object implements ViewModelProvider.Factory
 
+construtor:
+1)
+    public SavedStateViewModelFactory(@NonNull Application application,
+            @NonNull SavedStateRegistryOwner owner) {
+        this(application, owner, null);
+    }
+2)
+
+    public SavedStateViewModelFactory(@NonNull Application application
+    , @NonNull SavedStateRegistryOwner owner
+    , @Nullable Bundle defaultArgs) {
+
+        mSavedStateRegistry = owner.getSavedStateRegistry();
+        mLifecycle = owner.getLifecycle();
+        mDefaultArgs = defaultArgs;
+        mApplication = application;
+        mFactory = ViewModelProvider.AndroidViewModelFactory.getInstance(application);
+    }
+
+
+Essa classe tem como competencia criar ViewModels uma vez que ela implementa
+interface ViewModelProvider.Factory. Em seu construtor ela recebe um objeto capaz
+de Guardar o estado de uma Activity/Fragment (SavedStateRegistryOwner/SavedStateHandle) e
+possui um segundo construtor que recebe um Bundle que eh usado para definir os valores
+padroes desse estado (Bundle defaultArgs)
+
+
+SavedStateRegistryOwner:
+
+https://developer.android.com/reference/kotlin/androidx/savedstate/SavedStateRegistryOwner
+
+public interface SavedStateRegistryOwner extends LifecycleOwner {
+    /**
+     * Returns owned {@link SavedStateRegistry}
+     *
+     * @return a {@link SavedStateRegistry}
+     */
+    @NonNull
+    SavedStateRegistry getSavedStateRegistry();
+}
+
+Classes filhas de SavedStateRegistryOwner diretamente:
+
+ComponentActivity, *Fragment, NavBackStackEntry
+
+
+SavedStateHandle: https://developer.android.com/reference/androidx/lifecycle/SavedStateHandle
+
+public final class SavedStateHandle extends Object
+
+Classe capaz de manipular O estado de uma Activity/Fragment passado para um ViewMolde.
+
+Para ter acesso a uma instancia dessa classe eh preciso usar uma instancia
+ de SavedStateViewModelFactory
+
+
+
+
+ViewModelProvider.Factory (https://developer.android.com/reference/androidx/lifecycle/ViewModelProvider.Factory)
+
+uma abstracao (interface) responsavel por representar a criacao de ViewModels.
+
+
+--------------------------------------------------------------------------------------------------------
+
+ViewModelStore
+
+
+--------------------------------------------------------------------------------------------------------
 
 ViewModel
 https://developer.android.com/topic/libraries/architecture/viewmodel
 
+--------------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------------
 Sealed class
 https://proandroiddev.com/the-power-of-sealed-classes-in-kotlin-b730fc51f366
+
+--------------------------------------------------------------------------------------------------------

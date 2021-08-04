@@ -1,0 +1,4 @@
+<resources>
+    <string name="text_title_choose_qrcode_reader">Escolha o leitor de código de sua preferência</string>
+    <string name="txt_label_confirm_qrcode_reader">Confirmar</string>
+</resources>

@@ -1,0 +1,10 @@
+read call log android example
+
+https://gist.github.com/msomu/24f5a66bf98f26e0be02
+
+
+https://developer.android.com/reference/android/provider/CallLog
+https://developer.android.com/reference/android/provider/CallLog.Calls
+https://programmerworld.co/android/how-to-log-call-data-such-as-number-name-duration-typeincoming-or-outgoing-in-your-android-app/
+
+https://stackoverflow.com/questions/34383534/reading-call-logs-in-android

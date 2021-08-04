@@ -1,0 +1,40 @@
+https://developer.android.com/training/camerax
+
+https://codelabs.developers.google.com/codelabs/camerax-getting-started#0
+
+https://codelabs.developers.google.com/codelabs/mlkit-android-translate#0
+
+
+Request permissions
+https://developer.android.com/training/permissions/requesting
+
+Fixando conhecimento
+
+Workflow for requesting permissions
+
+Concluindo que o nosso app precisa declarar e solicitar permissoes em tempo de execucao
+siga os seguintes passos
+    1) Delcarar as permissoes necessarias no AndroidManifest.xml
+    2) Projetar a UX para que acoes espeificas do app estejam associadas a uma solicitacao
+    especifica de permissao de acesso em tempo de execucao
+        - Pedir a permissao somente quando a acao do usuario necessitar de acesso a algum recurso
+        sensivel que precise de sua permissao
+        - Usuarios devem saber que suas acoes irao manipular algum recurso sensivel, assim requerendo
+        sua permissao para continuar
+
+    3) Esperar o usuairo acionar o recurso que necessitara de alguma permissao especifica para pedi-la
+
+    4) Verificar se o usuario ja concedeu permissao de acesso ao recurso sensivel
+
+    5) Verificar se seu app precisa mostrar alguma justificativa para o usuario ao pedir alguma permissao
+    . Se o sistema identicar que sim, procure mostrar uma interface agradável que explique o motivo
+    de acessar tal recurso.
+
+    6) Solicitar a permissao em tempo de execucao. O sistema mostrara uma caixa de dialogo solicitando
+    as permissoes necessarias
+
+    7) Cheque as respostas do usuario
+
+    8) Se o usuario deu permissao, acesso o recurso solicitado do contrario de forma harmoniosa
+    diminua a experiencia do app nao provendo a funcionalidade que necessita do acesso que fora
+    negado

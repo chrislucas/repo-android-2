@@ -1,0 +1,5 @@
+<resources>
+  <string name="app_name">SimpleCoroutinesCodelabs</string>
+    <string name="bt_label_open_main_start_module">Abrir Modulo \'START\'</string>
+  <string name="bt_label_open_main_finished_module">Abrir Modulo \'FINISHED\'</string>
+</resources>

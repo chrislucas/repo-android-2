@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DeepLink.iml" filepath="$PROJECT_DIR$/DeepLink.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DeepLink-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DeepLink-app.iml" group="DeepLink/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data-DeepLink.iml" filepath="$PROJECT_DIR$/.idea/modules/data-DeepLink.iml" group="DeepLink" />
     </modules>
   </component>
 </project>

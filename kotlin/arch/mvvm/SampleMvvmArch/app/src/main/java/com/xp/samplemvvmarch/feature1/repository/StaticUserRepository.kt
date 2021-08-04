@@ -4,6 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.xp.samplemvvmarch.feature1.model.User
 
+
+/**
+ * Repositorio estatico de um modelo de dados com objetivo de estudar os componentes
+ * da arquitetura MVVM
+ *
+ *
+ *
+ *
+ * */
 class StaticUserRepository(private val id: Int) : Repository<LiveData<User?>> {
 
     companion object {

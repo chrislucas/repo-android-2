@@ -1,0 +1,34 @@
+import com.github.spotbugs.snom.SpotBugsTask
+
+sourceSets {
+    main {
+        java.srcDirs = ['src/main/java']
+    }
+}
+
+spotbugs {
+    ignoreFailures = false
+    showStackTraces = true
+    showProgress = true
+    effort = 'max'
+    reportLevel = 'high'
+    visitors = [ 'FindSqlInjection', 'SwitchFallthrough' ]
+    omitVisitors = [ 'FindNonShortCircuit' ]
+    reportsDir = file("$buildDir/reports/spotbugs")
+    includeFilter = file("include.xml")
+    excludeFilter = file("exclude.xml")
+    onlyAnalyze = [ 'clipboard.xplorer.com.sample.*']
+    maxHeapSize = '4g'
+    extraArgs = [ '-nested:false' ]
+    jvmArgs = [ '-Duser.language=ja' ]
+}
+
+tasks.withType(SpotBugsTask) {
+    dependsOn 'assemble'
+    classes = files("$projectDir.absolutePath/build/intermediates/classes/debug")
+    //source = fileTree('src/main/java')
+    reports = {
+        html.enabled = true
+        xml.enabled = false
+    }
+}

@@ -1,0 +1,25 @@
+Publish aar locamente
+
+https://alessiobianchi.eu/blog/obfuscated-aar-local-maven/
+
+------------------------------------------------------------------------------------
+https://developer.android.com/studio/build/maven-publish-plugin
+
+Resumo
+
+
+------------------------------------------------------------------------------------
+https://docs.gradle.org/current/userguide/publishing_setup.html#sec:basic_publishing
+
+------------------------------------------------------------------------------------
+
+https://docs.gradle.org/current/userguide/publishing_maven.html
+https://nglauber.medium.com/publicando-sua-biblioteca-android-no-github-packages-c9d234dbc7b6
+
+https://stackoverflow.com/questions/26874498/publish-an-android-library-to-maven-with-aar-and-source-jar
+https://www.flexlabs.org/2013/06/using-local-aar-android-library-packages-in-gradle-builds
+
+Where is the Maven Local Repository?
+https://www.baeldung.com/maven-local-repository
+
+https://medium.com/android-news/local-maven-repository-and-libraries-updated-story-7585f1563fb2

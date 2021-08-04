@@ -1,0 +1,65 @@
+https://developer.android.com/codelabs/kotlin-coroutines#3
+https://developer.android.com/kotlin/coroutines
+
+Feature
+
+- Lightweight: Run many coroutines on a single thread using support for suspending
+https://kotlinlang.org/docs/coroutines-basics.html
+
+Suspending saves memory over blocking while supporting many concurrent ops
+
+- Fewer memory leaks: Use Structured concurrency
+https://kotlinlang.org/docs/coroutines-basics.html#structured-concurrency
+
+- Builtin cancellation support:
+https://kotlinlang.org/docs/cancellation-and-timeouts.html
+Cancellatio is progragted automatically through the coroutine hierarchy
+
+- Jetpack integration:
+
+Many jetpack libraries that provide full coroutines support
+
+https://developer.android.com/kotlin/ktx
+
+jetpack coroutines
+https://developer.android.com/topic/libraries/architecture/coroutines
+https://developer.android.com/topic/libraries/architecture/coroutines#suspend
+
+Apresentacao
+https://es.slideshare.net/nglauber/aplicaes-assncronas-no-android-com-coroutines-e-jetpack
+
+https://medium.com/@mayojava/jetpack-libraries-and-coroutines-76a41ddb6d1a
+
+
+
+
+------------------------------------------------------------------
+Projetos de estudo
+https://github.com/googlecodelabs/kotlin-coroutines
+------------------------------------------------------------------
+
+Docs kotlin
+https://kotlinlang.org/docs/coroutines-basics.html
+https://kotlinlang.org/docs/coroutines-basics.html#extract-function-refactoring
+https://kotlinlang.org/docs/cancellation-and-timeouts.html
+https://github.com/Kotlin/kotlinx.coroutines
+RxKotlin
+https://github.com/ReactiveX/RxKotlin
+https://www.baeldung.com/kotlin/rxkotlin
+RxAndroid
+https://github.com/ReactiveX/RxAndroid
+https://stackoverflow.com/questions/26968674/use-rxandroid-or-rxkotlin-when-programming-in-kotlin-for-android
+------------------------------------------------------------------
+DataStore
+https://developer.android.com/topic/libraries/architecture/datastore
+https://github.com/googlecodelabs/android-datastore
+https://developer.android.com/codelabs/android-preferences-datastore#0
+https://developer.android.com/topic/libraries/architecture/workmanager/advanced/long-running#foreground-service-type
+https://developer.android.google.cn/codelabs/android-preferences-datastore?hl=pt-br#0
+------------------------------------------------------------------
+Arch
+https://developer.android.com/jetpack/guide
+------------------------------------------------------------------
+ViewModel
+https://developer.android.com/topic/libraries/architecture/viewmodel
+------------------------------------------------------------------

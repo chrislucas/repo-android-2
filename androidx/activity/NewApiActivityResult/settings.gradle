@@ -1,0 +1,4 @@
+include ':user-session'
+include ':intercept-lifecycle-app'
+include ':app'
+rootProject.name = "NewApiActivityResult"

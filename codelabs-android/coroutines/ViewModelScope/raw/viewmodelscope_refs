@@ -1,0 +1,4 @@
+   A biblioteca do AndroidX lifecycle-viewmodel-ktx adiciona um viewModelScope como uma extension
+    function da classe ViewModle, permitndo traballhar com escopos
+    https://medium.com/androiddevelopers/easy-coroutines-in-android-viewmodelscope-25bffb605471
+    https://developer.android.com/codelabs/kotlin-coroutines/index.html?index=..%2F..index#4

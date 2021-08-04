@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -20,11 +21,6 @@ import clipboard.xplorer.com.sample.phonestate.ContextMenuItem;
 public class CopyAndPasteSample extends AppCompatActivity {
 
 
-
-
-
-
-
     private ClipboardManager.OnPrimaryClipChangedListener onPrimaryClipChangedListener;
 
     private ClipboardManager mClipboardManager;
@@ -38,7 +34,8 @@ public class CopyAndPasteSample extends AppCompatActivity {
 
     private boolean dataIsCut = false;
 
-    private CopyAndPasteSample addItemMenu(ContextMenu menu, int groupId, int itemId, int order, CharSequence title) {
+    private CopyAndPasteSample addItemMenu(ContextMenu menu, int groupId
+            , int itemId, int order, CharSequence title) {
         menu.add(groupId, itemId, order, title);
         return this;
     }
@@ -48,62 +45,50 @@ public class CopyAndPasteSample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         mClipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
-        onPrimaryClipChangedListener = new ClipboardManager.OnPrimaryClipChangedListener() {
-            @Override
-            public void onPrimaryClipChanged() {}
+        onPrimaryClipChangedListener = () -> {
+
         };
 
-        findViewById(R.id.text).setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
-            @Override
-            public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-                addItemMenu(
-                        menu
-                    , ContextMenuItem.GROUP_ID
-                    , ContextMenuItem.COPY.getId()
-                    , 0
-                    , ContextMenuItem.COPY.getName()
-                ).addItemMenu(
-                      menu
-                    , ContextMenuItem.GROUP_ID
-                    , ContextMenuItem.CUT.getId()
-                    , 1
-                    , ContextMenuItem.CUT.getName()
-                );
-
-                mTextView = (TextView) v;
-            }
-        });
-
-        findViewById(R.id.image_view).setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
-            @Override
-            public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-                addItemMenu(
+        findViewById(R.id.text).setOnCreateContextMenuListener((menu, v, menuInfo) -> {
+            addItemMenu(
                     menu
-                    ,ContextMenuItem.GROUP_ID
+                    , ContextMenuItem.GROUP_ID
                     , ContextMenuItem.COPY.getId()
                     , 0
                     , ContextMenuItem.COPY.getName()
-                ).addItemMenu(
+            ).addItemMenu(
                     menu
                     , ContextMenuItem.GROUP_ID
                     , ContextMenuItem.CUT.getId()
                     , 1
                     , ContextMenuItem.CUT.getName()
-                );
-            }
+            );
+
+            mTextView = (TextView) v;
         });
+
+        findViewById(R.id.image_view).setOnCreateContextMenuListener((menu, v, menuInfo) -> addItemMenu(
+                menu
+                , ContextMenuItem.GROUP_ID
+                , ContextMenuItem.COPY.getId()
+                , 0
+                , ContextMenuItem.COPY.getName()
+        ).addItemMenu(
+                menu
+                , ContextMenuItem.GROUP_ID
+                , ContextMenuItem.CUT.getId()
+                , 1
+                , ContextMenuItem.CUT.getName()
+        ));
 
         mEditText = findViewById(R.id.edit_text);
-        mEditText.setOnCreateContextMenuListener(new View.OnCreateContextMenuListener() {
-            @Override
-            public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-                addItemMenu(
-                        menu
-                        , ContextMenuItem.GROUP_ID
-                        , ContextMenuItem.COPY.getId()
-                        , 0
-                        , ContextMenuItem.COPY.getName()
-                )
+        mEditText.setOnCreateContextMenuListener((menu, v, menuInfo) -> addItemMenu(
+                menu
+                , ContextMenuItem.GROUP_ID
+                , ContextMenuItem.COPY.getId()
+                , 0
+                , ContextMenuItem.COPY.getName()
+        )
                 .addItemMenu(
                         menu
                         , ContextMenuItem.GROUP_ID
@@ -112,14 +97,12 @@ public class CopyAndPasteSample extends AppCompatActivity {
                         , ContextMenuItem.CUT.getName()
                 )
                 .addItemMenu(
-                      menu
-                    , ContextMenuItem.GROUP_ID
-                    , ContextMenuItem.PASTE.getId()
-                    , 2
-                    , ContextMenuItem.PASTE.getName()
-                );
-            }
-        });
+                        menu
+                        , ContextMenuItem.GROUP_ID
+                        , ContextMenuItem.PASTE.getId()
+                        , 2
+                        , ContextMenuItem.PASTE.getName()
+                ));
     }
 
     private void t(MenuItem item) {
