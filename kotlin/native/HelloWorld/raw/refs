@@ -1,0 +1,12 @@
+https://developer.android.com/ndk/samples/walkthroughs?hl=pt-br
+https://developer.android.com/ndk/samples?hl=pt-br
+https://developer.android.com/ndk?hl=pt-br
+
+Rust
+https://source.android.com/setup/build/rust/building-rust-modules/hello-rust-example
+https://source.android.com/setup/build/rust/building-rust-modules/overview
+https://medium.com/visly/rust-on-android-19f34a2fb43
+https://mozilla.github.io/firefox-browser-architecture/experiments/2017-09-21-rust-on-android.html
+
+Samples
+https://android.googlesource.com/platform/build/soong/+/41461f36604948ef72855d56093d8b3e45f1d19c/rust/config/allowed_list.go

@@ -1,2 +1,18 @@
 https://medium.com/swlh/how-i-built-a-simple-currency-converter-app-using-recommended-android-pattern-and-architecture-204a3bbfc142
 https://proandroiddev.com/flow-livedata-what-are-they-best-use-case-lets-build-a-login-system-39315510666d
+
+codelabs
+https://stackoverflow.com/questions/68509935/kotlin-coroutines-kotlin-flow-and-shared-preferences-awaitclose-is-never-calle
+https://developer.android.com/codelabs/advanced-kotlin-coroutines#0
+https://developer.android.com/codelabs/basic-android-kotlin-training-intro-room-flow#0
+https://developer.android.google.cn/codelabs/advanced-kotlin-coroutines?hl=pt#0
+
+
+Flow api
+https://kotlinlang.org/docs/flow.html
+https://abhiappmobiledeveloper.medium.com/kotlin-flow-api-54994c60a9ae
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/
+
+
+Flow api android
+https://developer.android.com/kotlin/flow?hl=pt-br
