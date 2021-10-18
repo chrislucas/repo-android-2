@@ -1,0 +1,49 @@
+https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
+
+--------------------------------------------------------------------------------------------------------------
+
+bottom sheets
+https://material.io/components/sheets-bottom#usage
+
+side sheets dialog android
+https://stackoverflow.com/questions/58915396/how-to-implement-side-sheet-dialog-in-android
+https://teamtreehouse.com/community/material-design-modal-side-sheets-android-implemenation
+https://github.com/sonyraj/SideSheetDemo
+
+
+
+rounded bottom sheet android github
+https://stackoverflow.com/questions/43852562/round-corner-for-bottomsheetdialogfragment
+https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetDialogFragment
+https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetDialog
+
+
+https://material.io/develop/android/components/bottom-sheet-dialog-fragment
+
+
+Customizing your bottom sheet's corners
+https://bryanherbst.com/2020/05/04/bottom-sheet-corners/
+
+
+Part 1,2 e 3
+https://medium.com/@vidit135g/how-to-create-rounded-bottomsheet-dialog-menu-in-android-c30d6fb5fe00
+https://medium.com/@vidit135g/rounded-bottomsheet-dialog-in-android-part-2-12e8876f5438
+https://medium.com/@vidit135g/rounded-bottomsheet-dialog-in-android-part-3-2f71382ae4c2
+
+
+https://material.io/components/sheets-bottom
+
+
+Bottom Sheet Android Tutorial – Working with BottomSheet
+https://www.simplifiedcoding.net/bottom-sheet-android/
+
+Bottom navigation
+https://material.io/components/bottom-navigation/android
+
+Utilizando BottomSheet Material Design no Android
+https://www.thiengo.com.br/utilizando-bottomsheet-material-design-no-android
+
+
+ViewPager 2
+implementation "androidx.viewpager2:viewpager2:1.0.0"
+https://developer.android.com/jetpack/androidx/releases/viewpager2

@@ -1,0 +1,24 @@
+https://developer.android.com/guide/navigation/navigation-deep-link
+https://medium.com/incwell-innovations/deeplink-and-navigation-in-android-architecture-component-part-3-b882ed5d5b32
+
+
+Testar deeplink via adb
+
+ adb shell am start
+        -W -a android.intent.action.VIEW
+        -d <URI> <PACKAGE>
+
+adb shell am start
+        -W -a android.intent.action.VIEW
+        -d "example://gizmos" com.example.android
+
+
+
+NavDeepLinkBuilder
+https://developer.android.com/reference/androidx/navigation/NavDeepLinkBuilder
+https://developer.android.com/reference/kotlin/androidx/navigation/NavDeepLinkBuilder
+
+
+App Navigation
+https://developer.android.com/guide/navigation/navigation-principles
+https://developer.android.com/codelabs/android-navigation?index=..%2F..%2Findex#0

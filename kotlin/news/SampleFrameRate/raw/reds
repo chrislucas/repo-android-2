@@ -1,0 +1,59 @@
+https://developer.android.com/topic/performance/threads
+https://developer.android.com/training/testing/performance
+
+Particle system
+https://github.com/PacktPublishing/Android-Programming-for-Beginners-Third-Edition
+https://github.com/PacktPublishing/Android-Programming-for-Beginners-Third-Edition/tree/main/chapter%2022/java
+
+
+Frame Rate
+https://developer.android.com/guide/topics/media/frame-rate
+https://developer.android.com/games/sdk/frame-pacing?hl=pt-br
+https://proandroiddev.com/compose-animations-in-real-time-6068f10595ba
+
+https://stackoverflow.com/questions/30533511/doing-an-android-fps-counter
+https://stackoverflow.com/questions/53157053/low-frame-rate-when-drawing-full-screen-drawable-on-canvas
+
+https://android-developers.googleblog.com/2020/04/high-refresh-rate-rendering-on-android.html
+https://medium.com/rosberryapps/make-your-custom-view-60fps-in-android-4587bbffa557
+
+https://newbedev.com/how-to-measure-fps-on-android-during-app-development
+https://stackoverflow.com/questions/8907917/how-to-measure-fps-on-android-during-app-development
+
+https://www.reddit.com/r/AndroidGaming/comments/55kf0r/does_an_application_that_shows_the_fps_in_overlay/
+
+
+https://developer.android.com/reference/android/view/Choreographer.html
+https://developer.android.com/reference/android/view/Choreographer
+
+
+draw particles android canvas
+https://programmer.group/advanced-custom-view-of-android-canvas-to-implement-particle-explosion-effect.html
+https://yeti.co/blog/android-particle-system-creating-basic-effects-for-games/
+https://techiemanoj.wordpress.com/2011/10/11/17/
+https://stackoverflow.com/questions/13730908/libgdx-particle-system-on-android-canvas?rq=1
+https://awesomeopensource.com/projects/android-animation
+https://github.com/plattysoft/Leonids
+
+graph particle android animation
+Android Programming for Beginners - Second Edition
+https://github.com/ibrahimsn98/android-particles
+
+
+drawing in a 120 fps in flutter
+https://flutter.dev/docs/perf/rendering/ui-performance
+https://stackoverflow.com/questions/67625790/how-to-get-devices-maximum-refresh-rate-in-flutter
+https://medium.com/flutterdevs/improving-rendering-performance-in-flutter-app-7f08bc8f9eff
+
+
+https://examples.javacodegeeks.com/android/games/canvas/particle-explosion-example/
+https://www.javacodegeeks.com/2011/08/android-game-development-particle.html
+
+write fps meter to android
+
+
+
+github fps
+https://github.com/topics/fps
+https://fpsmeter.github.io/
+https://github.com/wasabeef/Takt

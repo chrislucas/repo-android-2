@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/spannable_align_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:textSize="13sp"
+        tools:text="Hello World!" />
+
+    <TextView
+        android:id="@+id/spannable_align_baseline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:textSize="13sp"
+        tools:text="Hello World!" />
+
+    <TextView
+        android:id="@+id/spannable_align_center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:textSize="13sp"
+        tools:text="Hello World!" />
+
+    <TextView
+        android:id="@+id/spannable_align_test_line_spacing_extra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:lineSpacingExtra="13sp"
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:text="Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+Use '--warning-mode all' to show the individual deprecation warnings"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/spannable_align_test_line_spacing_multiplier"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_marginBottom="15sp"
+        android:lineSpacingMultiplier="1.5"
+        android:textSize="20sp"
+        android:visibility="gone"
+        tools:text="Deprecated Gradle features were used in this build, making it incompatible with Gradle 8.0.
+Use '--warning-mode all' to show the individual deprecation warnings"
+
+        tools:visibility="visible" />
+
+
+</LinearLayout>
