@@ -1,0 +1,41 @@
+functionalinterface
+https://developer.android.com/reference/java/lang/FunctionalInterface.html
+
+IntDef
+https://developer.android.com/reference/android/support/annotation/IntDef.html
+https://developer.android.com/studio/write/annotations.html?hl=pt-br
+http://blog.shamanland.com/2016/02/int-string-enum.html
+
+IntDef vs Enums
+https://guides.codepath.com/android/Replacing-Enums-with-Enumerated-Annotations
+https://android.jlelse.eu/android-performance-avoid-using-enum-on-android-326be0794dc3
+https://blog.reversebits.tech/miracle-stuff-in-android-intdef-and-stringdef-5aeab3c3f4f7
+
+FunctionalInterface
+https://developer.android.com/reference/java/lang/FunctionalInterface.html
+https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html
+https://developer.android.com/reference/java/util/function/Function.html
+https://stackoverflow.com/questions/7762024/interface-what
+
+Outra coisa: java.util.function
+https://developer.android.com/reference/java/util/function/package-summary.html
+
+
+Memoria
+https://developer.android.com/topic/performance/memory.html#Abstractions
+
+/*
+enums often require more than twice as much memory as static constants. You should strictly avoid using enums on Android
+*/
+https://developer.android.com/topic/performance/memory.html
+
+@Retention
+https://developer.android.com/reference/java/lang/annotation/Retention.html
+http://www.guj.com.br/t/annotations-retention-retentionpolicy-runtime/136668
+
+RetentionPolicy
+https://developer.android.com/reference/java/lang/annotation/RetentionPolicy.html
+
+Post interessante
+http://www.guj.com.br/t/annotations-retention-retentionpolicy-runtime/136668/4
+http://tutorials.jenkov.com/java-reflection/annotations.html
