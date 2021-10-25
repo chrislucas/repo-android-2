@@ -45,6 +45,7 @@ dependencies {
 
     // dependencias de kotlin
     implementation deps.kotlin
+    implementation project(path: ':currencyconvert')
 
     // dependencia coroutines tests
     testImplementation deps.coroutines_tests
