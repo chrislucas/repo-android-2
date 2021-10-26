@@ -23,7 +23,7 @@ class LooperThread(val executor: Executor, name: String?) : Thread(name) {
             Looper.prepare()
         handler = @SuppressLint("HandlerLeak")
         object : Handler() {
-            override fun handleMessage(msg: Message?) {
+            override fun handleMessage(msg: Message) {
                 super.handleMessage(msg)
                 executor.execute(msg, this)
             }

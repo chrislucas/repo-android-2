@@ -20,7 +20,6 @@ class TestMessageQueueActivity : AppCompatActivity() {
                     isIdle
                 }
             }
-
         }
 
         Handler().post {

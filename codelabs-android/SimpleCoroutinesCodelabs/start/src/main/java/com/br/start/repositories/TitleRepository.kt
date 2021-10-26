@@ -16,7 +16,7 @@ class TitleRepository(private val endpoint: MainEndpoint, private val titleDao: 
      * */
 
     fun refreshTitle(titleRefreshCallback: TitleRefreshCallback) {
-        executorService.submit {
+        executorService(2).submit {
             try {
 
                 val result = endpoint.fetchNextTitle().execute()

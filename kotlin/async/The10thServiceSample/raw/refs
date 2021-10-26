@@ -1,0 +1,54 @@
+https://guides.codepath.com/android/starting-background-services
+
+Services
+https://developer.android.com/reference/android/app/Service
+https://developer.android.com/guide/components/services?hl=pt-br
+https://developer.android.com/reference/android/app/Service
+https://www.raywenderlich.com/20123726-android-services-getting-started
+
+Service na pratica
+https://android-developers.googleblog.com/2018/10/modern-background-execution-in-android.html
+https://javatutorial.net/android-service-example
+https://www.thiengo.com.br/service-android-entendendo-e-utilizando
+https://medium.com/mindorks/mastering-android-service-of-2018-a4a1df5ed5a6
+https://www.raywenderlich.com/20123726-android-services-getting-started
+https://androidwave.com/mastering-in-android-service/
+https://proandroiddev.com/deep-dive-into-android-services-4830b8c9a09
+https://proandroiddev.com/workout-your-tasks-with-workmanager-intro-db5aefe14d66
+
+Another application links
+https://medium.com/androiddevelopers/introducing-workmanager-2083bcfc4712
+https://www.youtube.com/watch?v=IrKoBFLwTN0
+https://medium.com/mindorks/lets-work-manager-do-background-processing-58356e1ab844
+https://medium.com/@Lakshya_Punhani/background-services-running-forever-in-android-part-2-6e3a667d36fd
+
+Services And Coroutines
+https://stackoverflow.com/questions/45945567/kotlin-coroutines-in-a-android-service
+https://developer.android.com/kotlin/coroutines?gclid=CjwKCAjw4qCKBhAVEiwAkTYsPGF-NZoHyirmuTX8nfEMmS7wx5QjaiFfXt7YX9KB6NQEwUQwVqndjxoCtbIQAvD_BwE&gclsrc=aw.ds
+https://gist.github.com/RohitSurwase/6a31ecdbcdc7e8712a6b517e305d7308
+https://stackoverflow.com/questions/54069173/android-workmanager-vs-kotlin-coroutines
+https://stackoverflow.com/questions/62527763/when-to-release-the-coroutine-resources-in-android-service
+
+Services + coroutines
+https://proandroiddev.com/kotlin-coroutines-and-threading-fundamentals-9fd0130437ae
+https://stackoverflow.com/questions/56237671/using-coroutines-in-intent-service
+https://stackoverflow.com/questions/63405673/how-to-call-suspend-function-from-service-android
+
+Coroutines
+https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html
+https://kotlinlang.org/docs/composing-suspending-functions.html
+https://www.baeldung.com/kotlin/threads-coroutines
+
+Android Coroutines
+https://medium.com/androiddevelopers/coroutines-on-android-part-i-getting-the-background-3e0e54d20bb
+https://developer.android.com/topic/libraries/architecture/coroutines?hl=pt-br
+https://developer.android.com/kotlin/coroutines/coroutines-adv?hl=pt-br
+https://kenkyee.medium.com/android-kotlin-coroutine-best-practices-bc033fed62e7
+https://medium.com/androiddevelopers/simplifying-apis-with-coroutines-and-flow-a6fb65338765
+
+
+AccountTransfer Service
+https://developer.android.com/guide/topics/data/account-transfer?hl=pt-br#add_the_account_transfer_api_to_your_project
+
+
+Services

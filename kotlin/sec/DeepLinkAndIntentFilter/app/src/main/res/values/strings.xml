@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DeepLinkAndIntentFilter</string>
+    <string name="text_simple_deeplink">Simple Text Sample Deeplink</string>
+    <string name="bt_check_deeplink">Check Deeplink</string>
+    <string name="bt_open_web_view_activity">Abrir WebView</string>
+    <string name="bt_open_check_deeplink">Abrir Checagem de Deeplink</string>
+</resources>

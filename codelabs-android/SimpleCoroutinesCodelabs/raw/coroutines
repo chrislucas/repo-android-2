@@ -1,5 +1,27 @@
 https://developer.android.com/codelabs/kotlin-coroutines#3
+
+
 https://developer.android.com/kotlin/coroutines
+
+
+fun doSomehtingHeave() {
+  CoroutineScope.launch {
+    anything()
+  }
+}
+
+
+
+suspend fun anything() = withContext(Dispatcher) {
+  TODO()
+}
+
+
+- O que vemos acima eh que a funcao launch cria uma coroutine, a funcao anything() ao ser chamada
+suspende a coroutine criada ate que o que foi executado no bloco withContext(Dispatcher) {}
+termine.
+
+- apos a sexecucao do block withContext, a coroutine que foi suspensa  retorna a execução
 
 Feature
 

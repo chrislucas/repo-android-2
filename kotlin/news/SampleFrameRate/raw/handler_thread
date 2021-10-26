@@ -1,0 +1,33 @@
+Handler
+https://developer.android.com/reference/android/os/Handler
+
+------------------------------------------------------------------------------------------------------------------------
+Looper
+https://developer.android.com/reference/android/os/Looper
+
+------------------------------------------------------------------------------------------------------------------------
+
+* Android Programming for Beginners - Third Edition
+https://subscription.packtpub.com/book/mobile/9781800563438/22
+
+
+https://medium.com/@ali.muzaffar/handlerthreads-and-why-you-should-be-using-them-in-your-android-apps-dc8bf1540341
+https://betterprogramming.pub/a-detailed-story-about-handler-thread-looper-message-queue-ac2cd9be0d78
+https://medium.com/android-dev-br/threads-handler-looper-e-message-queue-parte-1-thread-635364a0697d
+https://medium.com/android-dev-br/threads-handler-looper-e-message-queue-parte-2-3711ee9d1b4
+
+
+https://qastack.com.br/programming/12877944/what-is-the-relationship-between-looper-handler-and-messagequeue-in-android
+
+https://proandroiddev.com/where-do-loopers-handlers-and-message-queue-come-from-and-how-do-they-help-in-communication-with-6eee4557fe55
+
+------------------------------------------------------------------------------------------------------------------------
+
+Kotlin Suspending Computations — Parte I
+https://jeziellago.medium.com/kotlin-suspending-computations-parte-i-21d24a5ebfd9
+
+
+Kotlin Suspending Computations — Parte II
+https://jeziellago.medium.com/kotlin-suspending-computations-parte-ii-f15188b68dc9
+
+------------------------------------------------------------------------------------------------------------------------
