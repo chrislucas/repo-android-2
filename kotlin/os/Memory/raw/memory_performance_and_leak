@@ -1,0 +1,42 @@
+How do I discover memory usage of my application in Android?
+https://stackoverflow.com/questions/2298208/how-do-i-discover-memory-usage-of-my-application-in-android
+
+
+https://developer.android.com/topic/performance/memory
+https://developer.android.com/topic/performance/memory-management
+
+Memory Analysis for Android Applications
+https://android-developers.googleblog.com/2011/03/memory-analysis-for-android.html
+
+Tracing
+https://developer.android.com/topic/performance/tracing
+
+
+How to Get RAM Memory in Android Programmatically?
+https://www.geeksforgeeks.org/how-to-get-ram-memory-in-android-programmatically/
+
+Overview of memory management
+https://developer.android.com/topic/performance/memory-overview
+
+
+Leak
+https://dropbox.tech/mobile/detecting-memory-leaks-in-android-applications
+https://www.geeksforgeeks.org/memory-leaks-in-android/
+https://medium.com/android-news/memory-leak-patterns-in-android-4741a7fcb570
+https://medium.com/traveloka-engineering/identify-handle-android-builds-memory-issues-66bf9299549
+https://www.techaheadcorp.com/blog/android-memory-leak/
+
+
+Github projetos que rastream vazamento de memoria
+https://github.com/appmattus/leaktracker
+forked
+https://github.com/chrislucas/leakcanary
+https://github.com/square/leakcanary/blob/main/leakcanary-android-core/src/main/java/leakcanary/LeakCanary.kt
+
+
+*****
+Artigos kt-academy
+https://blog.kotlin-academy.com/secure-secrets-in-android-using-jetpack-security-in-depth-android-security-02-4026b8e012f4
+https://kt.academy/article/cc-constructing-scope
+https://kt.academy/article/cc-state
+https://kt.academy/article/ek-arrays
