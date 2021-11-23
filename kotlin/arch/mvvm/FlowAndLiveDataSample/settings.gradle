@@ -1,3 +1,4 @@
 rootProject.name = "FlowAndLiveDataSample"
 include ':app'
 include ':currencyconvert'
+include ':simplecurrencyconvert'
