@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 apply from:  "$rootDir/tools/dependencies-version.gradle"
@@ -20,16 +21,25 @@ android {
 
     buildTypes {
         release {
+            useProguard true
+            shrinkResources true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += ["-Xopt-in=kotlin.RequiresOptIn"]
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -38,6 +48,11 @@ dependencies {
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
+
+    implementation deps.glide
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    kapt 'com.github.bumptech.glide:compiler:4.4.0'
+
 
     //implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation deps.ktx.core
@@ -56,7 +71,6 @@ dependencies {
     implementation deps.activityKTX
     implementation deps.fragmentKTX
 
-    // LifeCycle
 
     // ViewModel
     implementation deps.androidXLifeCycleViewModel
@@ -72,6 +86,29 @@ dependencies {
 
     //ViewBinding
     implementation 'com.android.databinding:viewbinding:7.0.3'
+
+
+    //Get currency code
+    implementation 'com.neovisionaries:nv-i18n:1.27'
+
+    //Room
+    def room_version = "2.3.0-alpha02"
+    //noinspection GradleDependency
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    //noinspection GradleDependency
+    implementation "androidx.room:room-ktx:$room_version"
+
+    //Hilt for di
+    def hilt_version = "2.28-alpha"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+
+    // Hilt ViewModel extension
+    def hilt_jetpack_version = "1.0.0-alpha01"
+    //noinspection GradleDependency
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_jetpack_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_jetpack_version"
 
 
     testImplementation 'junit:junit:'

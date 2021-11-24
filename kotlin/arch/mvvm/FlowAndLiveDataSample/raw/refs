@@ -1,3 +1,15 @@
+Projeto usado como base de estudo
+https://github.com/ibrajix/DirectCurrencyConverter
+
+Artigo do dono do projeto
+https://medium.com/swlh/how-i-built-a-simple-currency-converter-app-using-recommended-android-pattern-and-architecture-204a3bbfc142
+
+
+Android (leitura obrigatoria)
+https://developer.android.com/kotlin/flow?hl=de
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/
+
+
 https://medium.com/swlh/how-i-built-a-simple-currency-converter-app-using-recommended-android-pattern-and-architecture-204a3bbfc142
 https://proandroiddev.com/flow-livedata-what-are-they-best-use-case-lets-build-a-login-system-39315510666d
 
