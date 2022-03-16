@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.experience.tutorial">
+<manifest package="com.experience.tutorial"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowAndLiveDataSample">
         <activity
-            android:name=".flowlivedata.sa.views.activities.LoginActivity"
+            android:name=".flowlivedata.sa.feature.withflow.views.activitiies.LoginWithFlowActivity"
             android:exported="false" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name="com.experience.tutorial.flowlivedata.sa.feature.withlivedata.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

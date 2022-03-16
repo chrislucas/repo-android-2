@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">FlowAndLiveDataSample</string>
+    <string name="tv_title_login_livedata_activity">LOGIN WITH LIVEDATA</string>
+    <string name="hint_edit_text_email">Email</string>
+    <string name="hint_edit_text_pwd">senha</string>
+    <string name="lbl_login">login</string>
+    <string name="lbl_advice_login_livedata_activity">Você deveria usar o Flow API</string>
+    <string name="lbl_advice_login_flow_activity">Use Livedata</string>
+    <string name="tv_title_login_flow_activity">Login With Coroutine Flow API</string>
 </resources>
