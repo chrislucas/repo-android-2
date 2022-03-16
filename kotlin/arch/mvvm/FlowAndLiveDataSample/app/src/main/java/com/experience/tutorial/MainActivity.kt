@@ -1,4 +1,4 @@
-package com.experience.flowandlivedatasample
+package com.experience.tutorial
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

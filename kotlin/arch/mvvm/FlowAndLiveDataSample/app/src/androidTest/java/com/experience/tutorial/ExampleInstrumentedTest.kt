@@ -1,4 +1,4 @@
-package com.experience.flowandlivedatasample
+package com.experience.tutorial
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -7,7 +7,7 @@ def versions = [:]
 versions.ktx = '1.3.2'
 versions.androidxJunit = '1.1.2'
 versions.junit = '4.13.2'
-versions.kotlin = '1.5.30'
+versions.kotlin = '1.6.0'
 versions.kotlinPlugin = '1.5.10'
 versions.ktlint = '0.41.0'
 
@@ -97,8 +97,6 @@ def fragmentKTX = "androidx.fragment:fragment-ktx:$activity_version"
 deps.activityKTX = activityKTX
 deps.fragmentKTX = fragmentKTX
 
-
-
 def libTest = [:]
 
 def compose = [:]
@@ -108,8 +106,8 @@ extensions.versionsLib = versions
 
 def ktLintDependency = "com.pinterest:ktlint:${versions.ktlint}"
 extensions.dependencyPath = [
-        ktLintDependency,
-        "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlinPlugin}"
+    ktLintDependency,
+    "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlinPlugin}"
 ]
 
 extensions.ktLintDependency = ktLintDependency
