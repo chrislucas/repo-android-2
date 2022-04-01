@@ -11,10 +11,12 @@ abstract class BaseDataSource {
             val response = call()
             if (response.isSuccessful) {
                 val body = response.body()
-                if (body != null)
+                if (body != null) {
                     Resource.success(body)
-                else
+                }
+                else {
                     Resource.failure("Null Response")
+                }
             } else {
                 val message: LoginResponse =
                     Gson().fromJson(response.errorBody()!!.charStream(), LoginResponse::class.java)

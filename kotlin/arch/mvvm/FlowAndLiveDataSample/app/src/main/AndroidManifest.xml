@@ -10,10 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowAndLiveDataSample">
         <activity
+            android:name=".flowlivedata.sa.feature.withlivedata.views.activities.OriginLoginLiveDataActivity"
+            android:exported="false" />
+        <activity
             android:name=".flowlivedata.sa.feature.withflow.views.activitiies.LoginWithFlowActivity"
             android:exported="false" />
         <activity
-            android:name="com.experience.tutorial.flowlivedata.sa.feature.withlivedata.activities.LoginActivity"
+            android:name=".flowlivedata.sa.feature.withlivedata.views.activities.LoginWithLiveDataActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
