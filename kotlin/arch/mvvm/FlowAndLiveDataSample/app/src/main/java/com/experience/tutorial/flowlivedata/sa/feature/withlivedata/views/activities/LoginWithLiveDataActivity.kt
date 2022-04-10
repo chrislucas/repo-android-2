@@ -5,17 +5,15 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.experience.tutorial.R
 import com.experience.tutorial.databinding.ActivityLoginWithLivedataBinding
 import com.experience.tutorial.flowlivedata.sa.ext.showSnackBar
 import com.experience.tutorial.flowlivedata.sa.feature.withflow.views.activitiies.LoginWithFlowActivity
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.repositories.LoginRepository
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.LoginWithLivedataViewModel
+import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.repositories.LoginLivedataRepository
+import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.LoginLivedataViewModel
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.MapperViewModelFactory
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.ProviderViewModel
 import com.experience.tutorial.flowlivedata.sa.models.User
 import com.experience.tutorial.flowlivedata.sa.network.LoginEndpoint
-import com.experience.tutorial.flowlivedata.sa.network.LoginEndpointHelper
 import com.experience.tutorial.flowlivedata.sa.network.ProviderEndpointClient
 import com.experience.tutorial.flowlivedata.sa.network.model.LoginResponse
 import com.experience.tutorial.flowlivedata.sa.utils.Status
@@ -27,37 +25,32 @@ import com.experience.tutorial.flowlivedata.sa.utils.Status
  * */
 class LoginWithLiveDataActivity : AppCompatActivity() {
 
-    private val bindView: ActivityLoginWithLivedataBinding by lazy { ActivityLoginWithLivedataBinding.inflate(layoutInflater) }
-
-    private val endpoint: LoginEndpoint by lazy { ProviderEndpointClient.provide() }
-
-    // private val repository: LoginRepository by lazy { LoginRepository(LoginEndpointHelper(endpoint)) }
-
-    private val factoryViewModel: MapperViewModelFactory by lazy {
-        MapperViewModelFactory(LoginRepository::class.java, LoginEndpointHelper(endpoint))
+    private val bindView: ActivityLoginWithLivedataBinding by lazy {
+        ActivityLoginWithLivedataBinding.inflate(layoutInflater)
     }
 
-    private val viewModel: LoginWithLivedataViewModel by lazy {
+    private val loginEndpoint: LoginEndpoint = ProviderEndpointClient.mockLoginEndpointSuccess()
+    private val factoryViewModel: MapperViewModelFactory by lazy {
+        MapperViewModelFactory(LoginLivedataRepository::class.java, loginEndpoint)
+    }
+
+    private val viewModel: LoginLivedataViewModel by lazy {
         ProviderViewModel.provide(
             viewModelStore,
             factoryViewModel,
-            LoginWithLivedataViewModel::class.java
+            LoginLivedataViewModel::class.java
         )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(bindView.root)
-        initViews()
+        addClickListener()
     }
 
     override fun onResume() {
         super.onResume()
         setupObservers()
-    }
-
-    private fun initViews() {
-        addClickListener()
     }
 
     private fun addClickListener() {
@@ -111,6 +104,9 @@ class LoginWithLiveDataActivity : AppCompatActivity() {
 
                 Status.Failure -> {
                     toggleLogin()
+                    resource.data?.let {
+                        bindView.root.showSnackBar(it.message)
+                    }
                 }
             }
         }

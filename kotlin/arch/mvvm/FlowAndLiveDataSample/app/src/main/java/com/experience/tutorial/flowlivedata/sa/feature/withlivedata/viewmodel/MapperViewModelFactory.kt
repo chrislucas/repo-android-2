@@ -10,13 +10,10 @@ class MapperViewModelFactory(private val argsAndValues: Map<Class<*>, Array<*>> 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         val keys = argsAndValues.keys.toTypedArray()
         val values = argsAndValues.values.toTypedArray()
-        /*
-            return if (values.size == 1) {
-                modelClass.getConstructor(*keys).newInstance(values[0])
-            } else {
-                modelClass.getConstructor(*keys).newInstance(*values)
-            }
-         */
-        return modelClass.getConstructor(*keys).newInstance(values)
+        return if (values.size == 1) {
+            modelClass.getConstructor(*keys).newInstance(values[0])
+        } else {
+            modelClass.getConstructor(*keys).newInstance(*values)
+        }
     }
 }

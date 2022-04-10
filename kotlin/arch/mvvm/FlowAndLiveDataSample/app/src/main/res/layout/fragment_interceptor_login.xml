@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout"
+    tools:context=".flowlivedata.sa.feature.fakeinterceptor.views.InterceptorLoginFragment">
+
+    <Spinner
+        android:id="@+id/spn_choose_request_response_interceptor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       />
+
+</merge>

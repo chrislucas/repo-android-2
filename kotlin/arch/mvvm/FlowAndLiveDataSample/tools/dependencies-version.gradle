@@ -7,7 +7,7 @@ def versions = [:]
 versions.ktx = '1.4.1'
 versions.androidxJunit = '1.1.2'
 versions.junit = '4.13.2'
-versions.kotlin = '1.6.0'
+versions.kotlin = '1.6.20'
 versions.kotlinPlugin = '1.5.10'
 versions.ktlint = '0.41.0'
 

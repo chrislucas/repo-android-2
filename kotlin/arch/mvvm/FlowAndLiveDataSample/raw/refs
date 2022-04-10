@@ -16,3 +16,15 @@ https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coro
 
 Flow api android
 https://developer.android.com/kotlin/flow?hl=pt-br
+
+
+
+Lifecycle-scope
+https://developer.android.com/topic/libraries/architecture/coroutines?hl=pt-br
+https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope
+https://stackoverflow.com/questions/56035176/how-to-get-lifecycle-coroutinescope-with-new-androidx-lifecycle2-2-0-alpha01
+https://medium.com/androiddevelopers/a-safer-way-to-collect-flows-from-android-uis-23080b1f8bda
+
+
+A safer way to collect flows from Android UIs
+https://medium.com/androiddevelopers/a-safer-way-to-collect-flows-from-android-uis-23080b1f8bda
