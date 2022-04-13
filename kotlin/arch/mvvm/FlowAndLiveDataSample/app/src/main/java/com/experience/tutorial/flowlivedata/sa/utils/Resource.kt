@@ -16,8 +16,16 @@ data class Resource<out T>(val status: Status, val data: T? = null, val message:
 }
 
 sealed class Status {
-    object Success : Status()
-    object Error : Status()
-    object Loading : Status()
-    object Failure : Status()
+    object Success : Status() {
+        override fun toString(): String = "Success"
+    }
+    object Error : Status() {
+        override fun toString(): String = "Error"
+    }
+    object Loading : Status() {
+        override fun toString(): String = "Loading"
+    }
+    object Failure : Status() {
+        override fun toString(): String = "Failure"
+    }
 }

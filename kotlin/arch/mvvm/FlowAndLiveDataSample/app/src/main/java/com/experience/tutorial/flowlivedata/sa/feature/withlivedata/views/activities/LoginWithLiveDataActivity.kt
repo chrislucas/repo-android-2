@@ -25,13 +25,13 @@ import com.experience.tutorial.flowlivedata.sa.utils.Status
  * */
 class LoginWithLiveDataActivity : AppCompatActivity() {
 
-    private val bindView: ActivityLoginWithLivedataBinding by lazy {
-        ActivityLoginWithLivedataBinding.inflate(layoutInflater)
-    }
-
+    private val bindView: ActivityLoginWithLivedataBinding by lazy { ActivityLoginWithLivedataBinding.inflate(layoutInflater) }
     private val loginEndpoint: LoginEndpoint = ProviderEndpointClient.mockLoginEndpointSuccess()
     private val factoryViewModel: MapperViewModelFactory by lazy {
-        MapperViewModelFactory(LoginLivedataRepository::class.java, loginEndpoint)
+        MapperViewModelFactory(
+            LoginLivedataRepository::class.java,
+            loginEndpoint
+        )
     }
 
     private val viewModel: LoginLivedataViewModel by lazy {

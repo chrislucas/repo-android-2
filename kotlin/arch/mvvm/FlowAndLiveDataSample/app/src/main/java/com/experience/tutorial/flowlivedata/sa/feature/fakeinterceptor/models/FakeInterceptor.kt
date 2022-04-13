@@ -12,18 +12,39 @@ interface DelegateResponseBuilder {
 }
 
 class SuccessResponseBuilderUserLoginRequest : DelegateResponseBuilder {
+
     override fun build(chain: Interceptor.Chain): Response {
-        val body = "{\"message\": \"usuario adicionado\", \"status\": \"success\" }"
+        val body = "{\"message\": \"usuario adicionado\", \"status\": \"success\"}"
             .toResponseBody("application/json".toMediaTypeOrNull())
         return Response.Builder()
             .code(200)
             .request(chain.request())
-            .protocol(Protocol.HTTP_1_0)
+            .protocol(Protocol.HTTP_2)
             .body(body)
+            .message("success")
             .addHeader("content-type", "application/json")
             .build()
     }
 }
+
+
+class SuccessResponseBuilderDoingUserLoginRequest : DelegateResponseBuilder {
+    override fun build(chain: Interceptor.Chain): Response {
+        val body = "{\"message\": \"usuario adicionado\", \"status\": \"success\"}"
+            .toResponseBody("application/json".toMediaTypeOrNull())
+        val response = chain.proceed(chain.request())
+        return response.newBuilder()
+            .code(200)
+            .request(chain.request())
+            .protocol(Protocol.HTTP_2)
+            .body(body)
+            .message("success")
+            .addHeader("content-type", "application/json")
+            .build()
+    }
+}
+
+
 
 class FailureResponseBuilderUserLoginRequest : DelegateResponseBuilder {
     override fun build(chain: Interceptor.Chain): Response {
@@ -34,6 +55,7 @@ class FailureResponseBuilderUserLoginRequest : DelegateResponseBuilder {
             .request(chain.request())
             .protocol(Protocol.HTTP_1_0)
             .body(body)
+            .message("failure")
             .addHeader("content-type", "application/json")
             .build()
     }
@@ -48,6 +70,7 @@ class ErrorResponseBuilderUserLoginRequest : DelegateResponseBuilder {
             .request(chain.request())
             .protocol(Protocol.HTTP_1_0)
             .body(body)
+            .message("error")
             .addHeader("content-type", "application/json")
             .build()
     }

@@ -2,20 +2,20 @@ package com.experience.tutorial.flowlivedata.sa.feature.withflow.views.activitii
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import com.experience.tutorial.databinding.ActivityLoginWithFlowBinding
 import com.experience.tutorial.flowlivedata.sa.ext.showSnackBar
-import com.experience.tutorial.flowlivedata.sa.feature.withflow.repositories.LoginFlowRepository
 import com.experience.tutorial.flowlivedata.sa.feature.withflow.viewmodel.LoginFlowViewModel
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.MapperViewModelFactory
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.ProviderViewModel
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.views.activities.LoginWithLiveDataActivity
 import com.experience.tutorial.flowlivedata.sa.models.User
-import com.experience.tutorial.flowlivedata.sa.network.LoginEndpoint
-import com.experience.tutorial.flowlivedata.sa.network.ProviderEndpointClient
 import com.experience.tutorial.flowlivedata.sa.network.model.LoginResponse
 import com.experience.tutorial.flowlivedata.sa.utils.Status
 import kotlinx.coroutines.flow.collect
@@ -27,10 +27,8 @@ class LoginWithFlowActivity : AppCompatActivity() {
         ActivityLoginWithFlowBinding.inflate(layoutInflater)
     }
 
-    private val loginEndpoint: LoginEndpoint = ProviderEndpointClient.mockLoginEndpointSuccess()
-
     private val factoryViewModel: MapperViewModelFactory by lazy {
-        MapperViewModelFactory(LoginFlowRepository::class.java, loginEndpoint)
+        MapperViewModelFactory()
     }
 
     private val viewModel: LoginFlowViewModel by lazy {
@@ -45,11 +43,17 @@ class LoginWithFlowActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(bindView.root)
         initViews()
+
+        lifecycleScope.launchWhenStarted {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                initViewModelObserver()
+            }
+        }
     }
 
     override fun onResume() {
         super.onResume()
-        setupObservers()
+        //setupObservers()
     }
 
     private fun initViews() {
@@ -57,6 +61,7 @@ class LoginWithFlowActivity : AppCompatActivity() {
             btnLoginWithFlow.setOnClickListener {
                 val email = bindView.etEmailLoginFlowActivity.text.toString()
                 val pwd = bindView.etPwdLoginFlowActivity.text.toString()
+                // TODO implementar criptografia para enviar esses dados
                 val user = User(email, pwd)
                 viewModel.login(user)
             }
@@ -86,26 +91,49 @@ class LoginWithFlowActivity : AppCompatActivity() {
     }
 
     private fun setupObservers() {
+
         /**
          * https://developer.android.com/topic/libraries/architecture/coroutines?hl=pt-br
          */
         lifecycleScope.launch {
-            viewModel.observerLoginUserFlow.collect { resource ->
-                toggleViews()
-                when (resource.status) {
-                    Status.Success -> {
-                        resource.data?.let {
-                            processResponse(it)
-                        }
+            initViewModelObserver()
+            /*
+                A class that has an Android lifecycle. These events can be used by custom components
+                to handle lifecycle changes without implementing any code inside the Activity or the Fragment
+
+
+                Wrong usage of repeatOnLifecycle from LoginWithFlowActivity.onResume.
+
+                repeatOnLifecycle(Lifecycle.State.STARTED) {
+                    initViewModelObserver()
+                }
+             */
+        }
+    }
+
+    private suspend fun initViewModelObserver() {
+        viewModel.observerLoginUserFlow.collect { resource ->
+            changeViewsPosLogin()
+            when (resource.status) {
+                Status.Success -> {
+                    restartViewsPreLogin()
+                    resource.data?.let {
+                        processResponse(it)
                     }
-                    Status.Failure -> {
-                        resource.data?.let {
-                            bindView.root.showSnackBar(it.message)
-                        }
+                }
+                Status.Failure -> {
+                    restartViewsPreLogin()
+                    resource.data?.let {
+                        bindView.root.showSnackBar(it.message)
                     }
-                    else -> {
-                        // DO NOTHING
-                    }
+                }
+                Status.Loading -> {
+                    changeViewsPosLogin()
+                }
+                else -> {
+                    restartViewsPreLogin()
+                    // DO NOTHING
+                    Toast.makeText(this, "STATUS INDEFINIDO", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -123,8 +151,15 @@ class LoginWithFlowActivity : AppCompatActivity() {
         }
     }
 
-    private fun toggleViews() {
-        toggleProgressBar()
-        toggleLoginButton()
+    private fun restartViewsPreLogin() {
+        bindView.btnLoginWithFlow.isEnabled = true
+        bindView.loading.visibility = View.GONE
     }
+
+    private fun changeViewsPosLogin() {
+        bindView.btnLoginWithFlow.isEnabled = false
+        bindView.loading.visibility = View.VISIBLE
+
+    }
+
 }
