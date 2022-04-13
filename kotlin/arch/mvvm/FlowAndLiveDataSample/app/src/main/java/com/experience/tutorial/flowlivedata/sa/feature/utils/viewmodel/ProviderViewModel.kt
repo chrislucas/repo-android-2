@@ -1,4 +1,4 @@
-package com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel
+package com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

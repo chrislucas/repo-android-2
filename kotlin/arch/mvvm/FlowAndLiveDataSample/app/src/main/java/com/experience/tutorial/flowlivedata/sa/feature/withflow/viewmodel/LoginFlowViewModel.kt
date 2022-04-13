@@ -2,7 +2,7 @@ package com.experience.tutorial.flowlivedata.sa.feature.withflow.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import com.experience.tutorial.flowlivedata.sa.feature.withflow.repositories.LoginFlowRepository
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.BaseViewModel
+import com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel.BaseViewModel
 import com.experience.tutorial.flowlivedata.sa.models.User
 import com.experience.tutorial.flowlivedata.sa.network.ProviderEndpointClient
 import com.experience.tutorial.flowlivedata.sa.network.model.LoginResponse

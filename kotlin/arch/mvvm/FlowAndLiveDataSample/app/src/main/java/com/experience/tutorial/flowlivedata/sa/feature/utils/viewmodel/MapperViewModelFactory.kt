@@ -1,4 +1,4 @@
-package com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel
+package com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -11,18 +11,18 @@ class MapperViewModelFactory(private val argsAndValues: Map<Class<*>, List<*>> =
         return if (argsAndValues.isEmpty()) {
             modelClass.getConstructor().newInstance()
         } else {
-            val keys : Array<Class<*>> = argsAndValues.keys.toTypedArray()
-            val values : List<List<*>> = argsAndValues.values.toList()
-            when (values.size) {
+            val arguments : Array<Class<*>> = argsAndValues.keys.toTypedArray()
+            val argumentsOfArgument : List<List<*>> = argsAndValues.values.toList()
+            when (argumentsOfArgument.size) {
                 1 -> {
-                    if (values[0].isEmpty()) {
+                    if (argumentsOfArgument[0].isEmpty()) {
                         modelClass.getConstructor().newInstance()
                     } else {
-                        modelClass.getConstructor(*keys).newInstance(values[0][0])
+                        modelClass.getConstructor(*arguments).newInstance(argumentsOfArgument[0][0])
                     }
                 }
                 else -> {
-                    modelClass.getConstructor(*keys).newInstance(values)
+                    modelClass.getConstructor(*arguments).newInstance(argumentsOfArgument)
                 }
             }
         }

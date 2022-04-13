@@ -7,13 +7,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.experience.tutorial.databinding.ActivityLoginWithLivedataBinding
 import com.experience.tutorial.flowlivedata.sa.ext.showSnackBar
+import com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel.MapperViewModelFactory
+import com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel.ProviderViewModel
 import com.experience.tutorial.flowlivedata.sa.feature.withflow.views.activitiies.LoginWithFlowActivity
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.repositories.LoginLivedataRepository
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.LoginLivedataViewModel
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.MapperViewModelFactory
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.ProviderViewModel
 import com.experience.tutorial.flowlivedata.sa.models.User
-import com.experience.tutorial.flowlivedata.sa.network.LoginEndpoint
 import com.experience.tutorial.flowlivedata.sa.network.ProviderEndpointClient
 import com.experience.tutorial.flowlivedata.sa.network.model.LoginResponse
 import com.experience.tutorial.flowlivedata.sa.utils.Status
@@ -25,13 +24,18 @@ import com.experience.tutorial.flowlivedata.sa.utils.Status
  * */
 class LoginWithLiveDataActivity : AppCompatActivity() {
 
-    private val bindView: ActivityLoginWithLivedataBinding by lazy { ActivityLoginWithLivedataBinding.inflate(layoutInflater) }
-    private val loginEndpoint: LoginEndpoint = ProviderEndpointClient.mockLoginEndpointSuccess()
+    private val bindView: ActivityLoginWithLivedataBinding by lazy {
+        ActivityLoginWithLivedataBinding.inflate(layoutInflater)
+    }
+
     private val factoryViewModel: MapperViewModelFactory by lazy {
+        MapperViewModelFactory()
+        /*
         MapperViewModelFactory(
             LoginLivedataRepository::class.java,
-            loginEndpoint
+            ProviderEndpointClient.mockLoginEndpointSuccess()
         )
+         */
     }
 
     private val viewModel: LoginLivedataViewModel by lazy {
@@ -127,6 +131,7 @@ class LoginWithLiveDataActivity : AppCompatActivity() {
     private fun onClickButtonLogin() {
         val email = bindView.etEmailLoginLdActivity.text.toString()
         val pwd = bindView.etPwdLoginLdActivity.text.toString()
+        // TODO aplicar criptografia nos atributos email e pwd
         val user = User(email, pwd)
         viewModel.login(user)
     }

@@ -2,7 +2,6 @@ package com.experience.tutorial.flowlivedata.sa.feature.withflow.views.activitii
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,8 +11,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.experience.tutorial.databinding.ActivityLoginWithFlowBinding
 import com.experience.tutorial.flowlivedata.sa.ext.showSnackBar
 import com.experience.tutorial.flowlivedata.sa.feature.withflow.viewmodel.LoginFlowViewModel
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.MapperViewModelFactory
-import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.viewmodel.ProviderViewModel
+import com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel.MapperViewModelFactory
+import com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel.ProviderViewModel
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.views.activities.LoginWithLiveDataActivity
 import com.experience.tutorial.flowlivedata.sa.models.User
 import com.experience.tutorial.flowlivedata.sa.network.model.LoginResponse
