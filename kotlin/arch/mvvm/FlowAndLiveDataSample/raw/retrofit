@@ -1,0 +1,15 @@
+retrofit interceptor
+https://medium.com/swlh/okhttp-interceptors-with-retrofit-2dcc322cc3f3
+https://square.github.io/okhttp/features/interceptors/
+
+Testando APIs do retrofit com MockWebServer
+https://medium.com/android-dev-br/testando-sua-aplica%C3%A7%C3%A3o-80bc80e543ce
+
+
+FakeInterceptor
+https://stackoverflow.com/questions/17544751/square-retrofit-server-mock-for-testing
+https://www.tabnine.com/code/java/methods/okhttp3.Response$Builder/build
+
+
+retrofit client
+https://gist.github.com/riggaroo/a33e1108cf6c2141e2f0

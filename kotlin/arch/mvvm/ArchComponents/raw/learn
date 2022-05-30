@@ -1,0 +1,15 @@
+codelabs
+https://developer.android.com/codelabs/android-lifecycles?index#0
+
+Samples github
+https://github.com/android/architecture-components-samples
+
+Lifecycle
+https://developer.android.com/jetpack/androidx/releases/lifecycle
+
+Handling Lifecycles with Lifecycle-Aware Components
+https://developer.android.com/topic/libraries/architecture/lifecycle
+
+
+classes e dependencias: androidx.lifecycle:lifecycle-extensions:2.2.0
+https://androidx.tech/artifacts/lifecycle/lifecycle-extensions/2.2.0

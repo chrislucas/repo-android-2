@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/chrsantos/Documents/repositories/personal/repo-android-2/codelabs-android/FlowApiCodelabs/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_feature_start_main.xml",
+        "source": "/Users/chrsantos/Documents/repositories/personal/repo-android-2/codelabs-android/FlowApiCodelabs/app/src/main/res/layout/activity_feature_start_main.xml"
+    },
+    {
+        "merged": "/Users/chrsantos/Documents/repositories/personal/repo-android-2/codelabs-android/FlowApiCodelabs/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_plants.xml",
+        "source": "/Users/chrsantos/Documents/repositories/personal/repo-android-2/codelabs-android/FlowApiCodelabs/app/src/main/res/layout/fragment_plants.xml"
+    },
+    {
+        "merged": "/Users/chrsantos/Documents/repositories/personal/repo-android-2/codelabs-android/FlowApiCodelabs/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/chrsantos/Documents/repositories/personal/repo-android-2/codelabs-android/FlowApiCodelabs/app/src/main/res/layout/activity_main.xml"
+    }
+]

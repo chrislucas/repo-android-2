@@ -1,0 +1,2 @@
+com/br/mylab/BuildConfig.java
+ com.br.mylab.BuildConfig

@@ -1,0 +1,8 @@
+com/br/flowapicodelabs/BuildConfig.java
+ com.br.flowapicodelabs.BuildConfig
+com/br/flowapicodelabs/databinding/FragmentPlantsBinding.java
+ com.br.flowapicodelabs.databinding.FragmentPlantsBinding
+com/br/flowapicodelabs/databinding/ActivityFeatureStartMainBinding.java
+ com.br.flowapicodelabs.databinding.ActivityFeatureStartMainBinding
+com/br/flowapicodelabs/databinding/ActivityMainBinding.java
+ com.br.flowapicodelabs.databinding.ActivityMainBinding

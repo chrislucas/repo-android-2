@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LockingOrientation</string>
+    <string name="open_control_rotation_activity">Activity Control Rotation</string>
+    <string name="label_angle">ângulo %1s</string>
+</resources>
