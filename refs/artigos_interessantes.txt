@@ -1,0 +1,7 @@
+https://proandroiddev.com/a-first-look-googles-privacy-sandbox-and-its-effect-on-sdks-93b781470df9
+
+The 2022 Android Developer Roadmap:
+https://github.com/skydoves/android-developer-roadmap
+https://skydoves.medium.com/the-2022-android-developer-roadmap-part1-69171a124bf9
+https://proandroiddev.com/the-2022-android-developer-roadmap-part-2-682ac1f08d97
+https://proandroiddev.com/the-2022-android-developer-roadmap-part-3-89ba329898d0

@@ -1,0 +1,19 @@
+https://medium.com/kayvan-kaseb/jetpack-datastore-in-modern-android-development-7e1566c46fa4
+https://proandroiddev.com/classic-snake-game-with-jetpack-compose-2b78f4892ca
+https://proandroiddev.com/parallax-effect-with-sensormanager-using-jetpack-compose-a735a2f5811b
+https://proandroiddev.com/animated-pixie-dust-cursor-and-more-3b6dc6f632a2
+https://proandroiddev.com/cleaner-way-to-interact-between-composable-and-viewmodel-in-jetpack-compose-14c8b3a74bbe
+
+jetpack compose codelabs
+https://developer.android.com/codelabs/jetpack-compose-basics#0
+https://github.com/googlecodelabs/android-compose-codelabs
+
+Google samples
+https://github.com/android/compose-samples
+
+
+https://proandroiddev.com/where-do-loopers-handlers-and-message-queue-come-from-and-how-do-they-help-in-communication-with-6eee4557fe55
+
+https://developer.android.com/kotlin/flow/stateflow-and-sharedflow
+
+https://proandroiddev.com/android-runtime-how-dalvik-and-art-work-6e57cf1c50e5
