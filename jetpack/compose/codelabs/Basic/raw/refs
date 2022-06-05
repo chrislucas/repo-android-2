@@ -1,9 +1,24 @@
+Thinking in Compose
+https://developer.android.com/jetpack/compose/mental-model#recomposition
+
+Tutorial
 https://developer.android.com/codelabs/jetpack-compose-basics#0
+
+Use Android Studio with Jetpack Compose
+https://developer.android.com/jetpack/compose/setup
+
+Kotlin for Jetpack Compose
+https://developer.android.com/jetpack/compose/kotlin
+
+
+Compose Material Catalog
+https://play.google.com/store/apps/details?id=androidx.compose.material.catalog
 
 
 Repo compose
 https://github.com/googlecodelabs/android-compose-codelabs
 git@github.com:googlecodelabs/android-compose-codelabs.git
+https://github.com/android/compose-samples
 
 Tutoriais
 https://developer.android.com/jetpack/compose?gclid=Cj0KCQjw1tGUBhDXARIsAIJx01lpZxqV1-QeSL9fsDVsTMZhqeRDP5DoS7N1zyU5JRwFsppquNqSXloaAho_EALw_wcB&gclsrc=aw.ds
@@ -13,3 +28,9 @@ https://developer.android.com/jetpack/compose/tutorial?hl=pt-br
 Artigo
 https://nglauber.medium.com/jetpack-compose-o-framework-de-ui-do-android-para-os-pr%C3%B3ximos-10-anos-e19adf28e57e
 https://proandroiddev.com/two-way-data-binding-in-jetpack-compose-1be55c402ec6
+https://jetc.dev/
+
+
+Android code Search
+https://cs.android.com/
+

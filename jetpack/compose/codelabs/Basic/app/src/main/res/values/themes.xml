@@ -11,6 +11,7 @@
     </style>
 
     <style name="Theme.Basic.AppBarOverlay" parent="android:ThemeOverlay.Material.Dark.ActionBar" />
+
     <style name="Theme.Basic.PopupOverlay" parent="android:ThemeOverlay.Material.Light" />
 
 </resources>
