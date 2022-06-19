@@ -158,7 +158,6 @@ class LoginWithFlowActivity : AppCompatActivity() {
     private fun changeViewsPosLogin() {
         bindView.btnLoginWithFlow.isEnabled = false
         bindView.loading.visibility = View.VISIBLE
-
     }
 
 }

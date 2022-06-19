@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">funmobdatascience</string>
+    <string name="brazilian_price_placeholder">"R$ %1$s"</string>
 </resources>

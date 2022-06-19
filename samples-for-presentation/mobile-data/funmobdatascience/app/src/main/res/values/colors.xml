@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <color name="purple_E7D4FF">#E7D4FF</color>
+
+    <!-- Tons de amarelo do Mercado Livre -->
+    <color name="yellow_fff159">#fff159</color>
+    <color name="yellow_FFFFEA33">#FFEA33</color>
+    <color name="yellow_F6C93E">#F6C93E</color>
+    <color name="yellow_F1D684">#F1D684</color>
+    <color name="yellow_F8EABE">#F8EABE</color>
+    <color name="yellow_FFF8BA">#FFF8BA</color>
 </resources>
