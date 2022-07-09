@@ -1,0 +1,9 @@
+
+https://stackoverflow.com/questions/51884238/using-android-extensionss-parcelize-annotation-on-objects-that-extends-parceabl
+
+Exemplos interessantes de como usar o Parcelize com sealed class e objects. Mas aparentemente nao funciona
+https://youtrack.jetbrains.com/issue/KT-22576
+
+https://youtrack.jetbrains.com/issue/KT-29589
+
+https://android-developers.googleblog.com/2020/11/the-future-of-kotlin-android-extensions.html

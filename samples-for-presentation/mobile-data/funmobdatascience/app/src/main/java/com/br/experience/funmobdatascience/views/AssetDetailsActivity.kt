@@ -4,11 +4,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.br.experience.funmobdatascience.R
 import com.br.experience.funmobdatascience.databinding.ActivityAssetDetailsBinding
-import com.br.experience.funmobdatascience.models.InvestmentAsset
+import com.br.experience.funmobdatascience.models.Share
 
 class AssetDetailsActivity : AppCompatActivity() {
 
-    private var asset: InvestmentAsset? = null
+    private var asset: Share? = null
     private val binding: ActivityAssetDetailsBinding by lazy { ActivityAssetDetailsBinding.inflate(layoutInflater) }
 
     companion object {

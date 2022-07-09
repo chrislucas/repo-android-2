@@ -7,8 +7,8 @@ def versions = [:]
 versions.ktx = '1.7.0'
 versions.androidxJunit = '1.1.2'
 versions.junit = '4.13.2'
-versions.kotlin = '1.6.21'
-versions.kotlinPlugin = '1.5.10'
+versions.kotlin = '1.7.0'
+versions.kotlinPlugin = '1.7.0'
 versions.ktlint = '0.41.0'
 
 versions.robolectric = '4.5.1'
@@ -19,7 +19,7 @@ versions.runtimeRxJava2Compose = '1.0.0-beta08'
 versions.junit4Compose = '1.0.0-beta08'
 versions.activityCompose = "1.3.0-beta01"
 versions.viewModelCompose = "1.0.0-alpha06"
-versions.coroutines_android_version = '1.5.2'
+versions.coroutines_android_version = '1.6.0'
 
 versions.retrofit2Version = '2.9.0'
 versions.okHttpLogInterceptor = '4.9.0'
@@ -111,3 +111,7 @@ extensions.dependencyPath = [
 
 extensions.ktLintDependency = ktLintDependency
 extensions.ktLintMain = "com.pinterest.ktlint.Main"
+
+extensions.dokka_version = "1.7.0"
+extensions.coroutines_android = "1.6.1"
+extensions.kotlin_coroutine_test = "1.6.1"

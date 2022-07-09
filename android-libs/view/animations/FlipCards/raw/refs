@@ -1,0 +1,27 @@
+https://medium.com/geekculture/how-to-add-card-flip-animation-in-the-android-app-3060afeadd45
+
+
+androidx.constraintlayout.widget.Guideline
+https://developer.android.com/reference/androidx/constraintlayout/widget/Guideline
+
+Classe utilitaria que representa uma guideline para o ConstraintLayout. Esse objeto nao eh mostrado
+no layout (ele eh marcado com View.Gone). Funciona somente dentro do ConstraintLayout
+
+
+------------------------------------------------------------------------------------------------------------
+https://constraintlayout.com/basics/guidelines.html
+
+- pair programming por 1h
+- code signal
+	- 5 min explicando
+	- 50 min para resolver
+	- 5 min de discussao
+	- Sera avvaliado como eu interajo com o interviewer
+	- cadastre-se no codesignal
+	- estrutura de dados
+		- Estudar maois sobre lista ligada
+	- soft skill
+		- Perguntar antes de escrever codigo, tire todas as duvidas possiveis
+
+
+------------------------------------------------------------------------------------------------------------

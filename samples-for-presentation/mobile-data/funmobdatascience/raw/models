@@ -1,0 +1,65 @@
+// Para lista de Ativos
+Ativo {
+	id, String - '#####.SA'
+	data, String
+	open, Double - preco da abertura
+	high, Double - Maior preco do dia (corrente)
+	low, Double - menor preco do dia (corrente)
+	closing, Double -  preco no final do dia
+	volume, Int - quantidade de transacoes com esse Ativo
+}
+
+// Para o detalhe do ativo
+EstadoFuturo {
+	ALTA, BAIXA
+}
+
+EstadoFuturoAtivo {
+	estadoFuturo, EstadoFuturo
+	diasProjecao, int
+}
+
+AtivoDetalhe {
+	ativo, Ativo
+	EstadoFuturoAtivo1Dia,
+	EstadoFuturoAtivo7Dia,
+	EstadoFuturoAtivo15Dia,
+	EstadoFuturoAtivo30Dia,
+}
+
+// Funcionalidade compra de ativos
+
+- Implementar a compra na tela de detalhe
+- Implementar uma api que receba a quantidade de compra e o ativo
+	- IdUsuario, IdAtivo, quantidadeDeCompra
+
+
+// Carteira
+
+AtivosAdquiridos {
+	// Ativo - usar o valor de closing como precoAtual
+	Ativo
+
+	// Quantos ativos comprei
+	volumeDeCompra, Int
+	// quanto que eu tenho do ativo - volumeDeCompra * precoAtual
+	valorAtual,
+
+	// CALCULO DE CUSTO DE PAPEL =
+       SOMA(CUSTO TOTAL DE CADA ORDEM/PEDIDO) / SOMA(VOLUMES)
+	custoMedio = valorGasto / volumeDeCompra
+
+	// Quanto estou lucrando ou perdendo
+	saldo = valorAtual - custoMedio * volumeDeCompra
+}
+
+Carteira {
+	ativos: List<AtivosAdquiridos>
+}
+
+1 enpoints para buscar a Carteira
+	- Vou passar o ID od usuário
+	- Espero receber um objeto Carteira
+	-
+
+// fim carteira

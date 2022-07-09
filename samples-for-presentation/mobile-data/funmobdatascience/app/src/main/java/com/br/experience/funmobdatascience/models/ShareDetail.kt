@@ -4,4 +4,7 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-class InvestmentAsset(val name: String, val price: Double): Parcelable
+class ShareDetail(
+    val share: Share,
+    val projections: List<PeriodProjectionFutureState>
+): Parcelable

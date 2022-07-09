@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">funmobdatascience</string>
     <string name="brazilian_price_placeholder">"R$ %1$s"</string>
+    <string name="default_text_empty_state">Ops. Ocorreu um erro</string>
 </resources>
