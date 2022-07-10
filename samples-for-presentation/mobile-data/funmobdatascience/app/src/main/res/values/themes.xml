@@ -28,6 +28,14 @@
 
     </style>
 
+    <style name="style_card_portfolio" parent="default_style_cardView_Item_layout">
+        <item name="android:layout_margin">8sp</item>
+        <item name="cardCornerRadius">15sp</item>
+        <item name="contentPadding">20sp</item>
+
+        <item name="cardBackgroundColor">@color/teal_700</item>
+    </style>
+
     <style name="default_style_textView_small_normal">
         <item name="android:textSize">18sp</item>
     </style>

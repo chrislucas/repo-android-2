@@ -2,4 +2,6 @@
     <string name="app_name">funmobdatascience</string>
     <string name="brazilian_price_placeholder">"R$ %1$s"</string>
     <string name="default_text_empty_state">Ops. Ocorreu um erro</string>
+    <string name="unit_price">Preço Un.</string>
+    <string name="label_my_portfolio">Meu Portfólio</string>
 </resources>

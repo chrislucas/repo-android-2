@@ -1,5 +1,6 @@
 package com.br.experience.funmobdatascience.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.br.experience.funmobdatascience.repositories.InvestmentAssetRepository
 import com.br.experience.funmobdatascience.utils.viewmodel.Operation
@@ -19,7 +20,7 @@ class ListAssetsViewModel(private val repository: InvestmentAssetRepository) : B
         viewModelScope.launch {
             repository.getAssets()
                 .catch { exception ->
-
+                   Log.e("", "$exception")
                 }.collect {
 
                 }

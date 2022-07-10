@@ -34,8 +34,8 @@ class InvestmentAssetBinderAdapter(private val action: ActionItemViewHolder<Shar
 
     override fun fillFieldsInViewHolder(viewHolder: RecyclerView.ViewHolder, data: Share) {
         if (viewHolder is CardInvestViewHolder) {
-            with(viewHolder.binding) {
-                tvLabelAssetName.text = data.name
+            with(viewHolder.binding.layoutItemInvestment) {
+                tvLabelAbbreviationNameAsset.text = data.name
                 tvLabelProductPrice.text = root.context.getString(
                     R.string.brazilian_price_placeholder,
                     decimalFormat.format(data.close)

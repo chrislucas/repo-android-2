@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/img_view_img_product"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:src="@mipmap/ic_launcher"
+        />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_label_abbreviation_name_asset"
+        style="@style/default_style_textView_small_normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4sp"
+        android:layout_marginTop="4sp"
+        android:layout_marginStart="4sp"
+        app:layout_constraintStart_toEndOf="@+id/img_view_img_product"
+        app:layout_constraintEnd_toStartOf="@+id/tv_label_title_unit_price"
+        app:layout_constraintTop_toTopOf="@+id/img_view_img_product"
+        tools:text="ABEV3" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_label_name_asset"
+        style="@style/default_style_textView_small_normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4sp"
+        android:layout_marginTop="4sp"
+        android:layout_marginStart="4sp"
+        app:layout_constraintStart_toEndOf="@+id/img_view_img_product"
+        app:layout_constraintEnd_toStartOf="@+id/tv_label_product_price"
+        app:layout_constraintTop_toBottomOf="@+id/tv_label_abbreviation_name_asset"
+        android:visibility="gone"
+        tools:visibility="visible"
+        tools:text="Ambev" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_label_title_unit_price"
+        style="@style/default_style_textView_small_normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4sp"
+        android:layout_marginTop="4sp"
+        android:layout_marginStart="4sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_label_abbreviation_name_asset"
+        app:layout_constraintTop_toTopOf="@+id/img_view_img_product"
+        android:textAlignment="textEnd"
+
+        android:text="@string/unit_price" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_label_product_price"
+        style="@style/default_style_textView_small_normal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4sp"
+        android:layout_marginTop="4sp"
+        android:layout_marginStart="4sp"
+        android:textAlignment="textEnd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_label_name_asset"
+        app:layout_constraintTop_toBottomOf="@+id/tv_label_title_unit_price"
+        tools:text="R$ 20,00" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
