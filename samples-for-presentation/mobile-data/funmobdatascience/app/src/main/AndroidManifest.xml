@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Funmobdatascience">
         <activity
-            android:name=".views.PortfolioActivity"
+            android:name=".features.portfolio.views.PortfolioActivity"
             android:exported="false" />
         <activity
-            android:name=".views.ShareDetailsActivity"
+            android:name=".features.sharedetails.views.ShareDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".views.SharesActivity"
+            android:name=".features.share.views.SharesActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

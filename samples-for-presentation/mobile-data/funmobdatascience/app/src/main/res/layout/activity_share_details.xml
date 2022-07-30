@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".views.ShareDetailsActivity">
+    tools:context=".features.sharedetails.views.ShareDetailsActivity">
 
     <include layout="@layout/layout_basic_info_asset" />
 

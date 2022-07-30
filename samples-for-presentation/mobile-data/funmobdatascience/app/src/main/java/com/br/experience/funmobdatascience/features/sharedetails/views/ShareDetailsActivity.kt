@@ -1,10 +1,10 @@
-package com.br.experience.funmobdatascience.views
+package com.br.experience.funmobdatascience.features.sharedetails.views
 
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.br.experience.funmobdatascience.databinding.ActivityShareDetailsBinding
-import com.br.experience.funmobdatascience.models.Share
+import com.br.experience.funmobdatascience.features.share.models.Share
 
 class ShareDetailsActivity : AppCompatActivity() {
 

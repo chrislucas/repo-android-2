@@ -1,6 +1,6 @@
 package com.br.experience.funmobdatascience.network.interceptor.user
 
-import com.br.experience.funmobdatascience.network.interceptor.DelegateResponseBuilder
+import com.br.experience.funmobdatascience.network.interceptor.samples.DelegateResponseBuilder
 import okhttp3.Interceptor
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.Protocol

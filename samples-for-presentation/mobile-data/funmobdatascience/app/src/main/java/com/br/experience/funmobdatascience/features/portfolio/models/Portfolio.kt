@@ -1,6 +1,7 @@
-package com.br.experience.funmobdatascience.models
+package com.br.experience.funmobdatascience.features.portfolio.models
 
 import android.os.Parcelable
+import com.br.experience.funmobdatascience.features.share.models.Share
 import kotlinx.parcelize.Parcelize
 
 @Parcelize

@@ -1,11 +1,13 @@
-package com.br.experience.funmobdatascience.views
+package com.br.experience.funmobdatascience.features.share.views
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.br.experience.funmobdatascience.databinding.ActivitySharesBinding
-import com.br.experience.funmobdatascience.models.Share
-import com.br.experience.funmobdatascience.views.list.InvestmentAssetBinderAdapter
+import com.br.experience.funmobdatascience.features.share.models.Share
+import com.br.experience.funmobdatascience.features.portfolio.views.PortfolioActivity
+import com.br.experience.funmobdatascience.features.sharedetails.views.ShareDetailsActivity
+import com.br.experience.funmobdatascience.features.share.views.list.adapter.InvestmentAssetBinderAdapter
 import com.br.experience.funmobdatascience.views.list.action.ActionItemViewHolder
 import com.br.experience.funmobdatascience.views.list.adapter.GeneralRecyclerViewAdapter
 

@@ -1,4 +1,4 @@
-package com.br.experience.funmobdatascience.network.interceptor
+package com.br.experience.funmobdatascience.network.interceptor.samples
 
 import com.br.experience.funmobdatascience.BuildConfig
 import okhttp3.Interceptor

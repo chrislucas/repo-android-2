@@ -1,12 +1,12 @@
-package com.br.experience.funmobdatascience.views.list
+package com.br.experience.funmobdatascience.features.share.views.list.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.br.experience.funmobdatascience.R
-import com.br.experience.funmobdatascience.models.Share
+import com.br.experience.funmobdatascience.features.share.models.Share
 import com.br.experience.funmobdatascience.views.list.action.ActionItemViewHolder
 import com.br.experience.funmobdatascience.views.list.action.BinderAdapterToViewHolder
-import com.br.experience.funmobdatascience.views.list.viewholder.CardInvestViewHolder
+import com.br.experience.funmobdatascience.features.share.views.list.viewholder.CardAssetViewHolder
 import com.br.experience.funmobdatascience.views.list.viewholder.builder.BuilderViewHolder
 import java.text.DecimalFormat
 
@@ -33,7 +33,7 @@ class InvestmentAssetBinderAdapter(private val action: ActionItemViewHolder<Shar
     }
 
     override fun fillFieldsInViewHolder(viewHolder: RecyclerView.ViewHolder, data: Share) {
-        if (viewHolder is CardInvestViewHolder) {
+        if (viewHolder is CardAssetViewHolder) {
             with(viewHolder.binding.layoutItemInvestment) {
                 tvLabelAbbreviationNameAsset.text = data.name
                 tvLabelProductPrice.text = root.context.getString(
@@ -45,5 +45,5 @@ class InvestmentAssetBinderAdapter(private val action: ActionItemViewHolder<Shar
     }
 
     override fun getViewHolder(viewType: Int, viewRoot: ViewGroup): RecyclerView.ViewHolder =
-        BuilderViewHolder.build(viewType, viewRoot) { CardInvestViewHolder(viewRoot) }
+        BuilderViewHolder.build(viewType, viewRoot) { CardAssetViewHolder(viewRoot) }
 }

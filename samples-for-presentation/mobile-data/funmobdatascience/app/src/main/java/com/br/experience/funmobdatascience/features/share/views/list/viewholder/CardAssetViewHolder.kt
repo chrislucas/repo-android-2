@@ -1,11 +1,11 @@
-package com.br.experience.funmobdatascience.views.list.viewholder
+package com.br.experience.funmobdatascience.features.share.views.list.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.br.experience.funmobdatascience.databinding.LayoutItemInvestmentAssetBinding
 
-class CardInvestViewHolder(private val root: ViewGroup) : RecyclerView.ViewHolder(root) {
+class CardAssetViewHolder(private val root: ViewGroup) : RecyclerView.ViewHolder(root) {
 
     val binding: LayoutItemInvestmentAssetBinding by lazy {
         LayoutItemInvestmentAssetBinding.inflate(

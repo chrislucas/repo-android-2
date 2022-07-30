@@ -1,13 +1,13 @@
-package com.br.experience.funmobdatascience.network.interceptor
+package com.br.experience.funmobdatascience.network.interceptor.samples
 
 import com.br.experience.funmobdatascience.BuildConfig
 import okhttp3.Interceptor
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.Protocol
 import okhttp3.Response
-import okhttp3.ResponseBody
-import okhttp3.ResponseBody.Companion.toResponseBody
 import okhttp3.logging.HttpLoggingInterceptor
+
+interface DelegateResponseBuilder {
+    fun build(chain: Interceptor.Chain): Response
+}
 
 /**
  * https://square.github.io/okhttp/features/interceptors/#application-interceptors
@@ -22,7 +22,7 @@ import okhttp3.logging.HttpLoggingInterceptor
  *
  */
 
-class FakeInterceptor(private val delegateResponseBuilder: DelegateResponseBuilder) : Interceptor {
+class InterceptorHttpRequest(private val delegateResponseBuilder: DelegateResponseBuilder) : Interceptor {
 
     private val logger = HttpLoggingInterceptor.Logger { println(it) }
 

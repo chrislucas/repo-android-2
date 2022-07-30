@@ -1,6 +1,6 @@
 package com.br.experience.funmobdatascience.network.interceptor.finassets
 
-import com.br.experience.funmobdatascience.network.interceptor.DelegateResponseBuilder
+import com.br.experience.funmobdatascience.network.interceptor.samples.DelegateResponseBuilder
 import okhttp3.Interceptor
 import okhttp3.Protocol
 import okhttp3.Response

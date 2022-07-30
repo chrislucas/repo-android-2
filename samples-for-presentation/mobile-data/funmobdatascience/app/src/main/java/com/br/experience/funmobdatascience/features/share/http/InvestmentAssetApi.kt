@@ -1,6 +1,6 @@
-package com.br.experience.funmobdatascience.network
+package com.br.experience.funmobdatascience.features.share.http
 
-import com.br.experience.funmobdatascience.models.Share
+import com.br.experience.funmobdatascience.features.share.models.Share
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
