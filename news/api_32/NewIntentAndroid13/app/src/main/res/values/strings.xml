@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NewIntentAndroid13</string>
+    <string name="btn_check_intent_behavior">Check Intent Behavior</string>
+    <string name="tv_title_activity_with_1_action_test">Intent-Filter somente com 1 Action</string>
+</resources>

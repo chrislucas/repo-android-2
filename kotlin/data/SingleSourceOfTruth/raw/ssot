@@ -1,0 +1,6 @@
+https://developer.android.com/topic/architecture
+https://www.ericthecoder.com/2020/01/20/android-single-source-of-truth-ssot-using-view-states-with-mvvm-and-livedata/
+
+
+Substituir o Rx por Flow/Coroutines
+https://medium.com/@sina.rahimi/single-source-of-truth-with-mvvm-retrofit2-livedata-rxjava-and-room-in-repository-pattern-f5304f39175
