@@ -1,4 +1,4 @@
-package com.br.experience.funmobdatascience.features.share.views.list.viewholder
+package com.br.experience.funmobdatascience.features.shares.views.list.viewholder
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

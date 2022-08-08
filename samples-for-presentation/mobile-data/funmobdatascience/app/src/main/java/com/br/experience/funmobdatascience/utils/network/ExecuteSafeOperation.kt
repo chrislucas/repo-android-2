@@ -5,7 +5,7 @@ import retrofit2.Response
 
 object ExecuteSafeOperation {
 
-    suspend fun <T> safeRequest(request: suspend () -> Response<T>, onError: (Response<T>) -> String): Operation<T?> {
+    suspend fun <T> safeRequest(request: suspend () -> Response<T>, onError: (Response<T>) -> String): Operation<T> {
         return try {
             val response = request()
             if (response.isSuccessful) {

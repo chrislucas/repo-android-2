@@ -1,0 +1,24 @@
+StateFlow e SharedFlow
+https://developer.android.com/kotlin/flow/stateflow-and-sharedflow?hl=pt-br
+
+-----------------------------------------------------------------------------------------------------------------------
+
+channel or mutablesharedflow , which one is a better replacement for deprecated localbroadcastmanager
+https://stackoverflow.com/questions/65454924/channel-or-mutablesharedflow-which-one-is-a-better-replacement-for-deprecated
+
+Saving StateFlow State in ViewModel
+https://medium.com/mobile-app-development-publication/saving-stateflow-state-in-viewmodel-2ee9ed9b1a83
+
+Shared mutable state and concurrency
+https://kotlinlang.org/docs/shared-mutable-state-and-concurrency.html
+
+Going deep on Flows & Channels — Part 5: StateFlows
+https://proandroiddev.com/going-deep-on-flows-channels-part-5-stateflow-44fee762b756
+
+
+MutableStateFlow
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-mutable-state-flow/
+
+StateFlow
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/
+

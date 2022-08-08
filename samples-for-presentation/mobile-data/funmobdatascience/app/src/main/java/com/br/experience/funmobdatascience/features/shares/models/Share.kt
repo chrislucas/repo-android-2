@@ -1,4 +1,4 @@
-package com.br.experience.funmobdatascience.features.share.models
+package com.br.experience.funmobdatascience.features.shares.models
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

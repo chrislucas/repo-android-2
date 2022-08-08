@@ -13,10 +13,10 @@
             android:name=".features.portfolio.views.PortfolioActivity"
             android:exported="false" />
         <activity
-            android:name=".features.sharedetails.views.ShareDetailsActivity"
+            android:name=".features.shareprojection.views.ShareDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".features.share.views.SharesActivity"
+            android:name=".features.shares.views.SharesActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

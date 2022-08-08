@@ -1,7 +1,7 @@
 package com.br.experience.funmobdatascience.network
 
 import com.br.experience.funmobdatascience.BuildConfig
-import com.br.experience.funmobdatascience.features.share.http.InvestmentAssetApi
+import com.br.experience.funmobdatascience.features.shares.http.InvestmentAssetApi
 import com.br.experience.funmobdatascience.network.interceptor.samples.HttpInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

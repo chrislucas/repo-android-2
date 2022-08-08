@@ -1,7 +1,7 @@
-package com.br.experience.funmobdatascience.features.share.repositories
+package com.br.experience.funmobdatascience.features.shares.repositories
 
-import com.br.experience.funmobdatascience.features.share.models.Share
-import com.br.experience.funmobdatascience.features.share.http.InvestmentAssetApi
+import com.br.experience.funmobdatascience.features.shares.models.Share
+import com.br.experience.funmobdatascience.features.shares.http.InvestmentAssetApi
 import com.br.experience.funmobdatascience.utils.network.ExecuteSafeOperation
 import com.br.experience.funmobdatascience.utils.viewmodel.Operation
 import kotlinx.coroutines.Dispatchers
