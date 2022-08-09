@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class ShareDetails(
+data class PortfolioAsset(
     @SerializedName("shared") val share: Share,
     @SerializedName("sharePurchaseVolume") val sharePurchaseVolume: Double,
     @SerializedName("currentValue") val currentValue: Double,

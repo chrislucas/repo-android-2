@@ -6,21 +6,27 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.br.experience.funmobdatascience.databinding.ActivityPortfolioBinding
-import com.br.experience.funmobdatascience.features.portfolio.models.ShareDetails
+import com.br.experience.funmobdatascience.features.portfolio.models.PortfolioAsset
 import com.br.experience.funmobdatascience.features.portfolio.viewmodel.PortfolioViewModel
-import com.br.experience.funmobdatascience.features.shares.views.list.adapter.PortfolioBinderAdapter
+import com.br.experience.funmobdatascience.features.portfolio.views.list.BuildPortfolioAssetViewHolder
+import com.br.experience.funmobdatascience.features.portfolio.views.list.ProvidePortfolioAssetViewType
 import com.br.experience.funmobdatascience.utils.viewmodel.MapperViewModelFactory
 import com.br.experience.funmobdatascience.utils.viewmodel.ProviderViewModel.createViewModel
 import com.br.experience.funmobdatascience.views.list.action.ActionItemViewHolder
+import com.br.experience.funmobdatascience.views.list.action.GenericBinderAdapterToViewHolder
 import com.br.experience.funmobdatascience.views.list.adapter.GeneralRecyclerViewAdapter
 
-class PortfolioActivity : AppCompatActivity(), ActionItemViewHolder<ShareDetails> {
+class PortfolioActivity : AppCompatActivity(), ActionItemViewHolder<PortfolioAsset> {
 
     private val binding: ActivityPortfolioBinding by lazy { ActivityPortfolioBinding.inflate(layoutInflater) }
-    private val portfolioAssets: MutableList<ShareDetails> = mutableListOf()
+    private val portfolioAssets: MutableList<PortfolioAsset> = mutableListOf()
 
-    private val binder = PortfolioBinderAdapter(this)
-    private val adapter: GeneralRecyclerViewAdapter<ShareDetails> = GeneralRecyclerViewAdapter(portfolioAssets, binder)
+    private val binder = GenericBinderAdapterToViewHolder(
+        this,
+        ProvidePortfolioAssetViewType(),
+        BuildPortfolioAssetViewHolder()
+    )
+    private val adapter: GeneralRecyclerViewAdapter<PortfolioAsset> = GeneralRecyclerViewAdapter(portfolioAssets, binder)
     private val factoryViewModel: MapperViewModelFactory by lazy { MapperViewModelFactory() }
 
     private val viewModel: PortfolioViewModel by lazy {
@@ -34,7 +40,7 @@ class PortfolioActivity : AppCompatActivity(), ActionItemViewHolder<ShareDetails
         initViewModel()
     }
 
-    override fun onInteract(data: ShareDetails) {
+    override fun onInteract(data: PortfolioAsset) {
     }
 
     private fun initViewModel() {

@@ -8,4 +8,4 @@ import kotlinx.parcelize.Parcelize
  * Carteira de portfolio de um usuário
  */
 @Parcelize
-class Portfolio(@SerializedName("shares") val shares: List<ShareDetails>): Parcelable
+class Portfolio(@SerializedName("shares") val shares: List<PortfolioAsset>): Parcelable

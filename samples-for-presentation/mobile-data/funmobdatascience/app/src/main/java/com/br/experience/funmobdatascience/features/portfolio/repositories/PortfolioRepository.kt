@@ -4,8 +4,10 @@ import com.br.experience.funmobdatascience.features.portfolio.models.Portfolio
 import com.br.experience.funmobdatascience.features.shares.http.InvestmentAssetApi
 import com.br.experience.funmobdatascience.utils.network.ExecuteSafeOperation
 import com.br.experience.funmobdatascience.utils.viewmodel.Operation
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.flowOn
 
 class PortfolioRepository(private val api: InvestmentAssetApi) {
 
@@ -18,5 +20,5 @@ class PortfolioRepository(private val api: InvestmentAssetApi) {
                 "${response.errorBody()}"
             }
             emit(result)
-        }
+        }.flowOn(Dispatchers.IO)
 }
