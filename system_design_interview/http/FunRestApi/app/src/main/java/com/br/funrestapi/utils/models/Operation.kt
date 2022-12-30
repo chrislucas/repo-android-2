@@ -1,4 +1,4 @@
-package com.br.experience.funmobdatascience.utils.viewmodel
+package com.br.funrestapi.utils.models
 
 data class Operation<out T>(val status: Status, val data: T? = null, val message: String? = null) {
     companion object {

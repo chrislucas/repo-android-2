@@ -1,0 +1,12 @@
+Armazenando chaves de api de forma segura
+https://medium.com/google-developer-experts/a-follow-up-on-how-to-store-tokens-securely-in-android-e84ac5f15f17
+https://guides.codepath.com/android/Storing-Secret-Keys-in-Android
+
+https://stackoverflow.com/questions/14570989/best-practice-for-storing-and-protecting-private-api-keys-in-applications
+
+
+Projeto
+https://github.com/klaxit/hidden-secrets-gradle-plugin
+
+MD5 hash
+https://www.delftstack.com/howto/java/generate-md5-hash-in-java/

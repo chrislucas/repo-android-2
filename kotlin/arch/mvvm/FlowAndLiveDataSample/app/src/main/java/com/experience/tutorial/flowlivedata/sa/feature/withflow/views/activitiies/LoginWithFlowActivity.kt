@@ -43,6 +43,9 @@ class LoginWithFlowActivity : AppCompatActivity() {
         setContentView(bindView.root)
         initViews()
 
+        /*
+            TODO Explicar o porque dessa implementacao quando passamos a usar a api Flow do Koltin
+         */
         lifecycleScope.launchWhenStarted {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 initViewModelObserver()

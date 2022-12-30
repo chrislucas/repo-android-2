@@ -37,27 +37,33 @@ class FailureResponseBuilderRequest : MockableResponseBuilder {
     }
 }
 
-class HttpInterceptor(private val delegate: MockableResponseBuilder, private val mockBody: () -> ResponseBody) : Interceptor {
+class HttpInterceptor(
+    private val delegate: MockableResponseBuilder? = null, private val mockBody: (() -> ResponseBody)? = null
+) : Interceptor {
 
     private val logger = HttpLoggingInterceptor.Logger { println(it) }
 
     override fun intercept(chain: Interceptor.Chain): Response {
         return if (BuildConfig.DEBUG) {
-            val request = chain.request()
-            logger.log(
-                String.format(
-                    "Request: %s\nConnection: %s\nHeaders: %s\n",
-                    request.url, chain.connection() ?: "null", request.headers.toMultimap()
+            if (delegate != null && mockBody != null) {
+                val request = chain.request()
+                logger.log(
+                    String.format(
+                        "Request: %s\nConnection: %s\nHeaders: %s\n",
+                        request.url, chain.connection() ?: "null", request.headers.toMultimap()
+                    )
                 )
-            )
-            val response = delegate.build(chain, mockBody)
-            logger.log(
-                String.format(
-                    "Response: %s\nBody: %s\nHeaders: %s", response.request.url,
-                    response.body, response.headers.toMultimap()
+                val response = delegate.build(chain, mockBody)
+                logger.log(
+                    String.format(
+                        "Response: %s\nBody: %s\nHeaders: %s", response.request.url,
+                        response.body, response.headers.toMultimap()
+                    )
                 )
-            )
-            response
+                response
+            } else {
+                chain.proceed(chain.request())
+            }
         } else {
             /**
              * https://square.github.io/okhttp/features/interceptors/

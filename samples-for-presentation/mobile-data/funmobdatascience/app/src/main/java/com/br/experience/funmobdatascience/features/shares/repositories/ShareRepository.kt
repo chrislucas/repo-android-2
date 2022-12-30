@@ -3,7 +3,7 @@ package com.br.experience.funmobdatascience.features.shares.repositories
 import com.br.experience.funmobdatascience.features.shares.models.Share
 import com.br.experience.funmobdatascience.features.shares.http.InvestmentAssetApi
 import com.br.experience.funmobdatascience.utils.network.ExecuteSafeOperation
-import com.br.experience.funmobdatascience.utils.viewmodel.Operation
+import com.br.experience.funmobdatascience.utils.models.Operation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.br.experience.funmobdatascience.BuildConfig
 import com.br.experience.funmobdatascience.features.shares.models.Share
 import com.br.experience.funmobdatascience.features.shares.repositories.ShareRepository
-import com.br.experience.funmobdatascience.utils.viewmodel.Operation
+import com.br.experience.funmobdatascience.utils.models.Operation
 import com.br.experience.funmobdatascience.viewmodel.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

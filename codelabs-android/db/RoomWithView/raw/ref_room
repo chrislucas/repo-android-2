@@ -1,0 +1,41 @@
+Google labs
+https://github.com/googlecodelabs/android-room-with-a-view/tree/kotlin
+
+------------------------------------------------------------------------------------------------------------------------
+
+Guide to app architecture
+https://developer.android.com/topic/architecture
+Drive UI from data models https://developer.android.com/topic/architecture#drive-ui-from-model
+
+A google sugere que a interface gráfica seja contruida mediante aos modelos de dados da aplicação, preferencialmente
+modelos PERSISTÍVEIS. Tais modelos estão relacionados ao dominio do problema que nosso app está resolvendo e independem
+de outros componentes no app
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Save data in a local database using Room
+https://developer.android.com/training/data-storage/room
+
+------------------------------------------------------------------------------------------------------------------------
+Room
+https://developer.android.com/jetpack/androidx/releases/room?hl=pt-br
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+https://developer.android.com/codelabs/android-room-with-a-view-kotlin#0
+
+Guide to app architecture
+https://developer.android.com/topic/architecture
+
+cache with room
+https://proandroiddev.com/enabling-cache-offline-support-on-android-using-room-4b82ae0c9c88
+
+
+clean arch + mvvm + room
+https://proandroiddev.com/news-android-app-607f9dc6a3d1
+
+
+Tutoriais
+https://medium.com/android-dev-br/utilizando-room-database-no-android-fd76c2e6ccee#:~:text=Room%20%C3%A9%20uma%20das%20bibliotecas,banco%20de%20dados%20(SQLite).

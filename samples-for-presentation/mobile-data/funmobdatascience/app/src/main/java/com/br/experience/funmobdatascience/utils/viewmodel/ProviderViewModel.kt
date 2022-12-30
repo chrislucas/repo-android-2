@@ -11,4 +11,10 @@ object ProviderViewModel {
     fun <V : ViewModel> ComponentActivity.createViewModel(factory: ViewModelProvider.Factory, clazz: Class<V>) =
         ViewModelProvider(viewModelStore, factory)[clazz]
 
+
+
+    @JvmStatic
+    fun <V : ViewModel> ComponentActivity.createViewModel(clazz: Class<V>) =
+        ViewModelProvider(viewModelStore, MapperViewModelFactory())[clazz]
+
 }

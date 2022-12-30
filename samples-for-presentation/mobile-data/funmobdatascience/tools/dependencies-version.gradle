@@ -113,5 +113,5 @@ extensions.ktLintDependency = ktLintDependency
 extensions.ktLintMain = "com.pinterest.ktlint.Main"
 
 extensions.dokka_version = "1.7.0"
-extensions.coroutines_android = "1.6.1"
+extensions.coroutines_android = "1.6.3"
 extensions.kotlin_coroutine_test = "1.6.1"

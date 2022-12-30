@@ -27,11 +27,8 @@ class PortfolioActivity : AppCompatActivity(), ActionItemViewHolder<PortfolioAss
         BuildPortfolioAssetViewHolder()
     )
     private val adapter: GeneralRecyclerViewAdapter<PortfolioAsset> = GeneralRecyclerViewAdapter(portfolioAssets, binder)
-    private val factoryViewModel: MapperViewModelFactory by lazy { MapperViewModelFactory() }
 
-    private val viewModel: PortfolioViewModel by lazy {
-        createViewModel(factoryViewModel, PortfolioViewModel::class.java)
-    }
+    private val viewModel: PortfolioViewModel by lazy { createViewModel(PortfolioViewModel::class.java) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -1,6 +1,6 @@
 package com.br.experience.funmobdatascience.utils.network
 
-import com.br.experience.funmobdatascience.utils.viewmodel.Operation
+import com.br.experience.funmobdatascience.utils.models.Operation
 import retrofit2.Response
 
 object ExecuteSafeOperation {
