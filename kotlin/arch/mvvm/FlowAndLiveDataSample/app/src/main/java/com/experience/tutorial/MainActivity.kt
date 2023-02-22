@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.experience.tutorial.databinding.ActivityMainBinding
 import com.experience.tutorial.flowlivedata.sa.feature.withflow.views.activitiies.LoginWithFlowActivity
 import com.experience.tutorial.flowlivedata.sa.feature.withlivedata.views.activities.LoginWithLiveDataActivity
+import com.experience.tutorial.rxandroid.FunWithRxActivity
+import com.experience.tutorial.rxandroid.FunWithRxJavaActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,11 +21,22 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+
         bindView.btnLoginWithLivedata.setOnClickListener {
             startActivity(Intent(this, LoginWithLiveDataActivity::class.java))
         }
-        bindView.btnLoginWithFlpw.setOnClickListener {
+
+        bindView.btnLoginWithFlow.setOnClickListener {
             startActivity(Intent(this, LoginWithFlowActivity::class.java))
         }
+
+        bindView.btnOpenFunWithRxKotlin.setOnClickListener {
+            startActivity(Intent(this, FunWithRxActivity::class.java))
+        }
+
+        bindView.btnOpenFunWithRxJava.setOnClickListener {
+            startActivity(Intent(this, FunWithRxJavaActivity::class.java))
+        }
+
     }
 }

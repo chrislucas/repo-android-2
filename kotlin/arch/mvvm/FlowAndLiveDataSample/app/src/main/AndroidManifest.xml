@@ -9,7 +9,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowAndLiveDataSample">
         <activity
-            android:name=".FunWithRxActivity"
+            android:name=".FunWithRxJavaActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".rxandroid.FunWithRxActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -33,7 +40,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".rxandroid.FunWithRxActivity" />
+        <activity android:name="com.experience.tutorial.rxandroid.FunWithRxJavaActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />
