@@ -3,6 +3,7 @@ package com.codelabs.advkotlin.canvas.drawing
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.codelabs.advkotlin.canvas.drawing.view.CanvasView
+import com.codelabs.advkotlin.canvas.drawing.view.startImmersiveMode
 import com.codelabs.advkotlin.creatingeffecswithshaders.R
 import com.codelabs.advkotlin.creatingeffecswithshaders.databinding.ActivityDrawingCanvasBinding
 
@@ -25,8 +26,9 @@ class DrawingCanvasActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawing_canvas)
-
-
-        binding.canvasView.contentDescription = getString(R.string.canvasContentDescription)
+        with(binding.canvasView) {
+            contentDescription = getString(R.string.canvasContentDescription)
+            window.startImmersiveMode(this)
+        }
     }
 }

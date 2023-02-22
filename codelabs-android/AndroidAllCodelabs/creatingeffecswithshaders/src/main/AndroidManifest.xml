@@ -12,18 +12,19 @@
             android:exported="false" />
         <activity
             android:name="com.codelabs.advkotlin.canvas.drawing.DrawingCanvasActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.codelabs.advkotlin.canvas.clipping.ClippingCanvasObjectActivity"
             android:exported="false" />
         <activity
             android:name=".EffectWithShadersActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
     </application>

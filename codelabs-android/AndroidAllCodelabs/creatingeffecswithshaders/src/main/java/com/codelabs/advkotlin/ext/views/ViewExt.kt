@@ -25,7 +25,7 @@ fun Window.toggleImmersiveMode(container: View, viewFireAction: View, immersiveM
         // checar a visibilidade da naviation bar e startus baer ao inves de checar a visibilidade da systembar
 
         windowInsetCompat.run {
-            if (isVisibleStatusBars() || isVisibleStatusBars()) {
+            if (isVisibleNavigationBars() || isVisibleStatusBars()) {
                 viewFireAction.setOnClickListener {
                     windowInsetsController.hide(WindowInsetsCompat.Type.systemBars())
                     immersiveModeCallback?.on()
@@ -41,12 +41,9 @@ fun Window.toggleImmersiveMode(container: View, viewFireAction: View, immersiveM
     }
 }
 
-private fun WindowInsetsCompat.isVisibleNavigationBars() =
-    isVisible(WindowInsetsCompat.Type.navigationBars())
+private fun WindowInsetsCompat.isVisibleNavigationBars() = isVisible(WindowInsetsCompat.Type.navigationBars())
 
-
-private fun WindowInsetsCompat.isVisibleStatusBars() =
-    isVisible(WindowInsetsCompat.Type.statusBars())
+private fun WindowInsetsCompat.isVisibleStatusBars() = isVisible(WindowInsetsCompat.Type.statusBars())
 
 /*
   https://stackoverflow.com/questions/62643517/immersive-fullscreen-on-android-11
