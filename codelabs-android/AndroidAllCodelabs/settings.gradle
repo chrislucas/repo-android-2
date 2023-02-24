@@ -16,3 +16,4 @@ rootProject.name = "AndroidAllCodelabs"
 include ':app'
 include ':propertyanimation'
 include ':creatingeffecswithshaders'
+include ':archtemplatetest'
