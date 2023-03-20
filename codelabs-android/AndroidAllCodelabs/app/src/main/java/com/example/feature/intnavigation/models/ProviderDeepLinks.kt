@@ -1,38 +1,29 @@
 package com.example.feature.intnavigation.models
 
-import androidx.fragment.app.FragmentActivity
+import android.content.Context
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderData
-import com.example.feature.intnavigation.view.model.DeepLinkDispatcher
-import com.example.feature.intnavigation.view.model.JustTextViewType
-import com.example.feature.intnavigation.view.model.TextAndImageViewType
-import com.example.feature.intnavigation.view.rc.action.BindDeepLinkDispatcherViewHolder
+import com.example.androidallcodelabs.R
+import com.example.feature.intnavigation.view.model.JustTextDeepLinkViewType
+import com.example.feature.intnavigation.view.model.ImageAndTextDeeplinkViewType
+import com.example.feature.intnavigation.view.rc.action.BindDeepLinkJustTextViewHolderLayout
 
-fun providerDeepLinks(activity: FragmentActivity) : List<ViewHolderData<DeepLinkDispatcher>> = listOf(
+fun providerDeepLinks(context: Context) : List<ViewHolderData<Deeplink>> = listOf(
 
    ViewHolderData(
-      DeepLinkDispatcher(
-         activity,
-         Deeplink("Test Flow and Jetpack Compose", "dpl://main_activity_about_kotlin_flow")
-      ),
-      BindDeepLinkDispatcherViewHolder(),
-      JustTextViewType()
+      Deeplink(context.getString(R.string.txt_title_deeplink_activity_about_kotlin_flow), "dpl://main_activity_about_kotlin_flow"),
+      BindDeepLinkJustTextViewHolderLayout(),
+      JustTextDeepLinkViewType()
    ),
 
    ViewHolderData(
-      DeepLinkDispatcher(
-         activity,
-         Deeplink("Test Block Store Android API", "dpl://main_activity_block_store_api")
-      ),
-      BindDeepLinkDispatcherViewHolder(),
-      TextAndImageViewType()
+      Deeplink(context.getString(R.string.txt_title_deeplink_activity_block_store_api), "dpl://main_activity_block_store_api"),
+      BindDeepLinkJustTextViewHolderLayout(),
+      ImageAndTextDeeplinkViewType()
    ),
 
    ViewHolderData(
-      DeepLinkDispatcher(
-         activity,
-         Deeplink("Test Android Property Animation", "dpl://main_property_animation")
-      ),
-      BindDeepLinkDispatcherViewHolder(),
-      TextAndImageViewType()
+      Deeplink(context.getString(R.string.txt_title_deeplink_activity_property_animation), "dpl://main_property_animation"),
+      BindDeepLinkJustTextViewHolderLayout(),
+      ImageAndTextDeeplinkViewType()
    )
 )

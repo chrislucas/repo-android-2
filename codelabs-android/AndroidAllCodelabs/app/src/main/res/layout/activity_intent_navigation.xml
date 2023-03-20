@@ -8,5 +8,5 @@
     android:layout_height="wrap_content"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.example.feature.intnavigation.view.IntentNavigationActivity"
-    tools:listitem="@layout/layout_item_deep_link"
+    tools:listitem="@layout/layout_text_item_deep_link"
     />

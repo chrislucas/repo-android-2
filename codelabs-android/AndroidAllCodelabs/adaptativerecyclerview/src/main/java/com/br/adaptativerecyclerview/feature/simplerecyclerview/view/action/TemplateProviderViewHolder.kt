@@ -3,15 +3,22 @@ package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.DefaultEmptyStateViewHolder
-import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderType
 
-class TemplateProviderViewHolder(private val viewHolderBuilder: ViewHolderBuilder,
-    private val customEmptyStateViewHolder: RecyclerView.ViewHolder? = null) : ProviderViewHolder {
+/**
+ * Uma immplementacao de provider de viewHolder que nos retorna um ViewHolder que representa um Estado Vazio
+ * caso o view type for de "EMPTY_STATE"
+ */
+abstract class TemplateProviderViewHolder(
+    private val emptyStateViewHolder: RecyclerView.ViewHolder? = null
+) : ProviderViewHolder {
 
-    override fun provide(viewRoot: ViewGroup, viewType: Int): RecyclerView.ViewHolder =
-        if (viewType == ViewHolderType.EMPTY_STATE) {
-            customEmptyStateViewHolder ?: DefaultEmptyStateViewHolder(viewRoot)
-        } else {
-            viewHolderBuilder.build(viewRoot, viewType)
-        }
+    abstract fun find(viewRoot: ViewGroup, viewType: Int): RecyclerView.ViewHolder?
+
+    override fun provide(viewRoot: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return find(viewRoot, viewType) ?: (emptyStateViewHolder ?: DefaultEmptyStateViewHolder(viewRoot))
+    }
 }
+
+
+
+

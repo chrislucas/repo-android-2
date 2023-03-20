@@ -3,11 +3,13 @@ package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action.ProviderViewHolder
+import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.EmptyStateType.Companion.EMPTY_STATE
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderData
-import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderType
 
-class GenericRecyclerViewAdapter<T>(private val data: List<ViewHolderData<T>>,
-    private val providerViewHolder: ProviderViewHolder): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class GenericRecyclerViewAdapter<T>(
+    private val data: List<ViewHolderData<T>>,
+    private val providerViewHolder: ProviderViewHolder
+) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return providerViewHolder.provide(parent, viewType)
@@ -16,7 +18,7 @@ class GenericRecyclerViewAdapter<T>(private val data: List<ViewHolderData<T>>,
     override fun onViewAttachedToWindow(holder: RecyclerView.ViewHolder) {
         if (holder.adapterPosition >= 0 && data.isNotEmpty()) {
             data[holder.adapterPosition].run {
-                bindDataViewHolder.onClick(holder, this.item)
+                bindViewHolderLayout.onClick(holder, this.item)
             }
         }
         super.onViewAttachedToWindow(holder)
@@ -24,19 +26,18 @@ class GenericRecyclerViewAdapter<T>(private val data: List<ViewHolderData<T>>,
 
     override fun getItemViewType(position: Int): Int {
         return if (data.isNotEmpty()) {
-            data[position].viewHolderType.type
+            data[position].viewTypeForViewHolder()
         } else {
-            ViewHolderType.EMPTY_STATE
+            EMPTY_STATE
         }
     }
 
-    override fun getItemCount(): Int =
-        if (data.isEmpty()) 1 else data.size
+    override fun getItemCount(): Int = if (data.isEmpty()) 1 else data.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         if (data.isNotEmpty()) {
             data[position].run {
-                bindDataViewHolder.setLayout(holder, this.item)
+                bindViewHolderLayout.setLayout(holder, this.item)
             }
         }
     }

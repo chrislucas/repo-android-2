@@ -5,8 +5,19 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
+import android.widget.Toast
 
-fun Context.redirectByDeeplink(deeplink: String, flags: Int, fn: (() -> Unit)? = null) {
+fun Context.startActivityByDeeplink(
+    deeplink: String,
+    flags: Int = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK,
+    fn: (() -> Unit) = {
+        Toast.makeText(
+            this,
+            this.getString(R.string.msg_error_try_open_activity_by_deeplink, deeplink),
+            Toast.LENGTH_LONG
+        ).show()
+    }
+) {
     with(this) {
         val resolveInfo = packageManager.resolveActivity(
             Intent.parseUri(deeplink, flags),
@@ -15,7 +26,7 @@ fun Context.redirectByDeeplink(deeplink: String, flags: Int, fn: (() -> Unit)? =
 
         resolveInfo?.let {
             this.redirect(it.activityInfo.createIntent())
-        } ?: fn?.invoke()
+        } ?: fn.invoke()
     }
 }
 

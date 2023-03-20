@@ -5,6 +5,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderType
 
 interface ViewHolderBuilder {
-    fun build(viewGroup: ViewGroup, viewType: Int): RecyclerView.ViewHolder
+    fun build(viewGroup: ViewGroup): RecyclerView.ViewHolder
     fun getViewHolderType(): ViewHolderType
 }

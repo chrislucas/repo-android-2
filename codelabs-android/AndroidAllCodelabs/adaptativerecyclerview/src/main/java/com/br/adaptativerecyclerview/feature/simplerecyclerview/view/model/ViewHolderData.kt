@@ -1,12 +1,13 @@
 package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model
 
-import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action.BindDataViewHolder
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action.BindViewHolderLayout
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action.ProviderViewHolderType
 
 class ViewHolderData<T>(
     val item: T,
-    val bindDataViewHolder: BindDataViewHolder<T>,
-    val viewHolderType: ViewHolderType
+    val bindViewHolderLayout: BindViewHolderLayout<out ViewHolder, T>,
+    private val viewHolderType: ViewHolderType
 ) : ProviderViewHolderType {
     override fun viewTypeForViewHolder(): Int = viewHolderType.type
 }
