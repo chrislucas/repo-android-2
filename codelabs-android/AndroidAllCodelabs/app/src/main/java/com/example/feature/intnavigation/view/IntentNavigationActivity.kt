@@ -2,6 +2,8 @@ package com.example.feature.intnavigation.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.adapter.GenericRecyclerViewAdapter
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderData
 import com.example.androidallcodelabs.databinding.ActivityIntentNavigationBinding
@@ -15,7 +17,7 @@ class IntentNavigationActivity : AppCompatActivity() {
         ActivityIntentNavigationBinding.inflate(layoutInflater)
     }
 
-    private val items: List<ViewHolderData<Deeplink>> by lazy {
+    private val items: List<ViewHolderData<ViewHolder, Deeplink>> by lazy {
         providerDeepLinks(this)
     }
 

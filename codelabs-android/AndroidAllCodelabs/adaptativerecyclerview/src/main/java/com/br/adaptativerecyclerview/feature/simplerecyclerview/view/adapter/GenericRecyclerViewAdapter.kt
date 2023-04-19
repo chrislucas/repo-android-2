@@ -12,6 +12,14 @@ class GenericRecyclerViewAdapter<T>(
     private val providerViewHolder: ProviderViewHolder
 ) : RecyclerView.Adapter<ViewHolder>() {
 
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        if (data.isNotEmpty()) {
+            data[position].run {
+                binderView.setLayout(holder, item)
+            }
+        }
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return providerViewHolder.provide(parent, viewType)
     }
@@ -19,7 +27,7 @@ class GenericRecyclerViewAdapter<T>(
     override fun onViewAttachedToWindow(holder: ViewHolder) {
         if (holder.adapterPosition >= 0 && data.isNotEmpty()) {
             data[holder.adapterPosition].run {
-                bindViewHolderLayout.onClick(holder, this.item)
+                binderView.onClick(holder, this.item)
             }
         }
         super.onViewAttachedToWindow(holder)
@@ -34,12 +42,4 @@ class GenericRecyclerViewAdapter<T>(
     }
 
     override fun getItemCount(): Int = if (data.isEmpty()) 1 else data.size
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (data.isNotEmpty()) {
-            data[position].run {
-                bindViewHolderLayout.setLayout(holder, this.item)
-            }
-        }
-    }
 }
