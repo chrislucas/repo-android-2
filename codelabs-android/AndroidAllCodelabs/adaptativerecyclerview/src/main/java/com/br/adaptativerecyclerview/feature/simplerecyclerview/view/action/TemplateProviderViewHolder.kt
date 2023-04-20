@@ -2,7 +2,7 @@ package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.DefaultEmptyStateViewHolder
+import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.DefaultEmptyStateViewHolder
 
 /**
  * Uma immplementacao de provider de viewHolder que nos retorna um ViewHolder que representa um Estado Vazio

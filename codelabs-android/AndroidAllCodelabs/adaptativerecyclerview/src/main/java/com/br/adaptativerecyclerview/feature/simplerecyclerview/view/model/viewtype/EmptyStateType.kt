@@ -1,4 +1,4 @@
-package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model
+package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.viewtype
 
 class EmptyStateType: ViewHolderType(EMPTY_STATE) {
     companion object {

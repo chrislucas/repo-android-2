@@ -4,17 +4,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action.ProviderViewHolder
-import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.EmptyStateType.Companion.EMPTY_STATE
-import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderData
+import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.viewtype.EmptyStateType.Companion.EMPTY_STATE
+import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.ViewHolderItem
 
 class GenericRecyclerViewAdapter<T>(
-    private val data: List<ViewHolderData<ViewHolder, T>>,
+    private val data: List<ViewHolderItem<ViewHolder, T>>,
     private val providerViewHolder: ProviderViewHolder
 ) : RecyclerView.Adapter<ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (data.isNotEmpty()) {
-            data[position].run {
+            with(data[position]) {
                 binderView.setLayout(holder, item)
             }
         }

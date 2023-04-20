@@ -5,7 +5,7 @@
     android:id="@+id/deep_link_list"
     android:name="com.example.feature.intnavigation.view.IntentNavigationActivity"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     app:layoutManager="LinearLayoutManager"
     tools:context="com.example.feature.intnavigation.view.IntentNavigationActivity"
     tools:listitem="@layout/layout_text_item_deep_link"

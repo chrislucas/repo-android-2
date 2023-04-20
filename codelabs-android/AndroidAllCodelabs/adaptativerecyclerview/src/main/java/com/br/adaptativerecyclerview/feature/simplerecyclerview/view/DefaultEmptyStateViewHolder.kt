@@ -1,4 +1,4 @@
-package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model
+package com.br.adaptativerecyclerview.feature.simplerecyclerview.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
