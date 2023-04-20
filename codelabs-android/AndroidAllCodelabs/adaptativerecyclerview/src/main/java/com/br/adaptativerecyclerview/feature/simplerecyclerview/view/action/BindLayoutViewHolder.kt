@@ -2,11 +2,11 @@ package com.br.adaptativerecyclerview.feature.simplerecyclerview.view.action
 
 import com.br.adaptativerecyclerview.feature.simplerecyclerview.view.model.viewtype.ViewHolderType
 
-interface BindLayoutViewHolder<out V, T> {
+interface BindLayoutViewHolder<out VH, T> {
 
-    fun onClick(viewHolder: @UnsafeVariance V, data: T)
+    fun onClick(viewHolder: @UnsafeVariance VH, data: T)
 
-    fun setLayout(viewHolder: @UnsafeVariance V, data: T)
+    fun setLayout(viewHolder: @UnsafeVariance VH, data: T)
 
     fun getViewType(): ViewHolderType
 }

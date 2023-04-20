@@ -7,7 +7,7 @@ import com.example.feature.intnavigation.view.model.viewtype.JustTextDeepLinkVie
 import com.example.feature.intnavigation.view.rc.viewholder.JustTextDeeplinkViewTypeViewHolder
 import com.example.openactivity.startActivityByDeeplink
 
-class BindDeepLinkJustTextLayoutViewHolder : BindLayoutViewHolder<JustTextDeeplinkViewTypeViewHolder, Deeplink> {
+class BindJustTextDeeplinkLayout : BindLayoutViewHolder<JustTextDeeplinkViewTypeViewHolder, Deeplink> {
 
     override fun onClick(viewHolder: JustTextDeeplinkViewTypeViewHolder, data: Deeplink) {
         viewHolder.itemView.setOnClickListener {

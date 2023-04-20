@@ -7,7 +7,7 @@ import com.example.feature.intnavigation.view.model.viewtype.ImageAndTextDeeplin
 import com.example.feature.intnavigation.view.rc.viewholder.ImageAndTextDeeplinkViewTypeViewHolder
 import com.example.openactivity.startActivityByDeeplink
 
-class BindDeeplinkImageAndTextLayoutViewHolder : BindLayoutViewHolder<ImageAndTextDeeplinkViewTypeViewHolder, Deeplink> {
+class BindImageAndTextDeeplinkLayout : BindLayoutViewHolder<ImageAndTextDeeplinkViewTypeViewHolder, Deeplink> {
 
     override fun onClick(viewHolder: ImageAndTextDeeplinkViewTypeViewHolder, data: Deeplink) {
         viewHolder.itemView.setOnClickListener {
