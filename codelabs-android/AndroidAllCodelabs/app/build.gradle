@@ -9,10 +9,13 @@ android {
 
     defaultConfig {
         applicationId "com.example.androidallcodelabs"
-        minSdk 24
+        minSdk 21
         targetSdk 33
         versionCode 1
         versionName "1.0"
+
+        // Required when setting minSdkVersion to 20 or lower
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -24,6 +27,13 @@ android {
         }
     }
     compileOptions {
+        /**
+         * https://developer.android.com/studio/write/java8-support?hl=pt-br#library-desugaring
+         */
+
+        // Flag to enable support for API desugaring.
+        coreLibraryDesugaringEnabled = true
+
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
@@ -44,14 +54,16 @@ android {
 
 dependencies {
 
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs_nio:2.0.3")
+
     implementation 'androidx.core:core-ktx:1.10.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.9.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation project(path:':reflibs')
     implementation project(path:':adaptativerecyclerview')
     // comoose
-    implementation "androidx.compose.runtime:runtime:1.4.1"
+    implementation "androidx.compose.runtime:runtime:1.4.3"
 
     implementation 'androidx.core:core-performance:1.0.0-alpha02'
 

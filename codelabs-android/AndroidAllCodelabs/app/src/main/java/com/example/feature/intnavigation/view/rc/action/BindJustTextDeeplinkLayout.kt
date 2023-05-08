@@ -10,8 +10,14 @@ import com.example.openactivity.startActivityByDeeplink
 class BindJustTextDeeplinkLayout : BindLayoutViewHolder<JustTextDeeplinkViewTypeViewHolder, Deeplink> {
 
     override fun onClick(viewHolder: JustTextDeeplinkViewTypeViewHolder, data: Deeplink) {
-        viewHolder.itemView.setOnClickListener {
-            it.context.startActivityByDeeplink(data.uri)
+        viewHolder.itemView.setOnClickListener { view ->
+            if (data.uri.isNotEmpty()) {
+                view.context.startActivityByDeeplink(data.uri)
+            } else {
+                data.intent?.let {
+                    view.context.startActivity(it)
+                }
+            }
         }
     }
 

@@ -3,4 +3,8 @@
     <string name="txt_title_deeplink_activity_about_kotlin_flow">Test Flow and Jetpack Compose</string>
     <string name="txt_title_deeplink_activity_block_store_api">Test Block Store Android API</string>
     <string name="txt_title_deeplink_activity_property_animation">Test Android Property Animation</string>
+    <string name="txt_title_activity_desugaring_api">Test Android Desugaring API</string>
+    <string name="txt_title_activity_agsl">Test Android Graphic Shading Language - AGSL</string>
+    <string name="txt_title_activity_open_gl_test_1">Test Open GL 1</string>
+    <string name="txt_title_activity_programming_shaders_android_13">Test Programming Shaders Android 13</string>
 </resources>

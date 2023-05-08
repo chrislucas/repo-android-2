@@ -1,0 +1,64 @@
+https://android-developers.googleblog.com/2022/08/android-13-is-in-aosp.html
+
+Novidades
+	- Themed app icons
+		android 13 herda de Material You dynamic color para todos os icones de app, permitindo
+		que o usuairo opte por escolher se as cores dos icones na home vao herdar das cores da
+		imagem de parede ou do tema de preferencia
+	- Per-app language preferences
+		Linguagem e localidade por app, suportando um celular com multiplas linguas
+	- Improved text support
+	- Notification permission
+		- em android 13 agora os apps precisam pedir autorizacao para exibir nofiticacoes
+		- https://developer.android.com/reference/android/Manifest.permission#POST_NOTIFICATIONS
+
+	Performance for apps
+
+	- Melhorias no garbage collection - Uma novo GC baseado numa feature do Kernel do lunux, userfaultfd
+	esta sendo inserido no ART dos dispositivos android 13, atraves de um updae no sistema Google Play
+
+	- O novo GC elimina a barreira de leityra e conserta o overhead por objeto carregado. É mais eficiente que
+	o GC-time, uma vez que as paginas sao liberadas a medida que a compactacao progride
+
+
+	Optimizations throughout ART
+
+	- No android 13, ART faz a troca entre codigo nativo mas rapido, com chamads a JNI 2.5x mais rapido
+	- Foram feitas alteracoes para fazer referencias de processo em tempo de execucao em sua maioria nao bloqueante
+		- Rererence Object
+		 - https://developer.android.com/reference/java/lang/ref/Reference#refersTo(T)
+		- app performance
+			- https://io.google/2022/program/2cf473b7-113e-4332-a469-8dfd815eb45b/
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+Usar recursos e APIs da linguagem Java 8
+https://developer.android.com/studio/write/java8-support?hl=pt-br#library-desugaring
+
+https://blog.mindorks.com/desugaring-in-android/
+
+https://www.geeksforgeeks.org/desugaring-in-android/
+
+------------------------------------------------------------------------------------------------------------------------
+
+https://android-developers.googleblog.com/2023/05/improving-consistency-of-background-work-on-android.html
+------------------------------------------------------------------------------------------------------------------------
+https://android-developers.googleblog.com/2023/04/com2us-brings-seamless-multi-platform-gameplay-experience-google-play-games-pc.html
+------------------------------------------------------------------------------------------------------------------------
+https://android-developers.googleblog.com/2023/05/media-transcoding-and-editing-transform-and-roll-out.html
+https://github.com/androidx/media/tree/release/demos/transformer
+
+------------------------------------------------------------------------------------------------------------------------
+https://android-developers.googleblog.com/2023/05/optimizing-your-android-app-for-large-screens.html
+------------------------------------------------------------------------------------------------------------------------
+Android Graphics Shading Language (AGSL)
+
+https://developer.android.com/develop/ui/views/graphics/agsl
+
+RuntimeShader
+https://developer.android.com/reference/android/graphics/RuntimeShader
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
