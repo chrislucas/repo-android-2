@@ -1,3 +1,11 @@
+------------------------------------------------------------------------------------------------------------------------
+Kotlin DSL is Now the Default for New Gradle Builds
+
+
+https://android-developers.googleblog.com/2023/04/kotlin-dsl-is-now-default-for-new-gradle-builds.html
+------------------------------------------------------------------------------------------------------------------------
+
+
 https://android-developers.googleblog.com/2022/08/android-13-is-in-aosp.html
 
 Novidades
@@ -61,4 +69,18 @@ https://developer.android.com/reference/android/graphics/RuntimeShader
 
 
 ------------------------------------------------------------------------------------------------------------------------
+
+What's new in multiplatform Jetpack libraries
+https://android-developers.googleblog.com/2023/04/whats-new-in-jetpack-multiplatform.html
+
+------------------------------------------------------------------------------------------------------------------------
+CameraX setup and permissions
+
+https://www.youtube.com/watch?v=XUN6mUQiDpg&list=PLWz5rJ2EKKc9BBA0LmvHEuGzeUUj4GanS
+------------------------------------------------------------------------------------------------------------------------
+Selecting Colors with the Palette API
+https://developer.android.com/reference/androidx/palette/graphics/Palette
+https://developer.android.com/develop/ui/views/graphics/palette-colors
+https://proandroiddev.com/how-to-use-palette-api-with-jetpack-compose-a7028143d3c2
+
 ------------------------------------------------------------------------------------------------------------------------
