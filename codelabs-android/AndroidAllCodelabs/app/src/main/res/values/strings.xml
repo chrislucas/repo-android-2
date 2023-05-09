@@ -7,4 +7,7 @@
     <string name="txt_title_activity_agsl">Test Android Graphic Shading Language - AGSL</string>
     <string name="txt_title_activity_open_gl_test_1">Test Open GL 1</string>
     <string name="txt_title_activity_programming_shaders_android_13">Test Programming Shaders Android 13</string>
+    <string name="bt_start_download">Iniciar Download</string>
+    <string name="txt_title_activity_okhttp_download_file">Download de arquivo com OkHttp lib</string>
+    <string name="txt_title_activity_download_file_with_download_mng">Download de arquivo com Download Manager</string>
 </resources>

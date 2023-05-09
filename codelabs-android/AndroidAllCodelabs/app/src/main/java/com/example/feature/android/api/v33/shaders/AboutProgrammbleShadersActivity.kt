@@ -7,8 +7,11 @@ import com.example.androidallcodelabs.R
 /**
  * https://android-developers.googleblog.com/2022/02/first-preview-android-13.html
  * Resumo
+ * @see com.example.feature.codelabs.advkotlin.shaders.ExploringShadersActivity
+ * Classe acima é de um codelabs que resume o que é a classe Shader
 
     Shaders em Android definem como o objeto Paint deve aplicar a textura
+
 
 
     - Video Android Graphics - https://www.youtube.com/watch?v=qlBxrvhk3tg

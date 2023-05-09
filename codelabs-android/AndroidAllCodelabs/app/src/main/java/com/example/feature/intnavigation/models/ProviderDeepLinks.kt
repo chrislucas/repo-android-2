@@ -11,6 +11,8 @@ import com.example.feature.android.api.v33.shaders.AndroidGraphicsShadingLanguag
 import com.example.feature.android.api.v33.shaders.OpenGLActivity
 import com.example.feature.intnavigation.view.rc.action.BindJustTextDeeplinkLayout
 import com.example.feature.intnavigation.view.rc.action.BindImageAndTextDeeplinkLayout
+import com.example.feature.network.downloadfile.downloadmanager.views.DownloadManagerActivity
+import com.example.feature.network.downloadfile.withokhttp.views.OkHttpDownloadFileActivity
 
 fun providerDeepLinks(context: Context): List<ViewHolderItem<ViewHolder, Deeplink>> = listOf(
 
@@ -57,6 +59,22 @@ fun providerDeepLinks(context: Context): List<ViewHolderItem<ViewHolder, Deeplin
         Deeplink(
             context.getString(R.string.txt_title_activity_open_gl_test_1),
             intent = Intent(context, OpenGLActivity::class.java)
+        ),
+        BindJustTextDeeplinkLayout()
+    ),
+
+    ViewHolderItem(
+        Deeplink(
+            context.getString(R.string.txt_title_activity_okhttp_download_file),
+            intent = Intent(context, OkHttpDownloadFileActivity::class.java)
+        ),
+        BindJustTextDeeplinkLayout()
+    ),
+
+    ViewHolderItem(
+        Deeplink(
+            context.getString(R.string.txt_title_activity_download_file_with_download_mng),
+            intent = Intent(context, DownloadManagerActivity::class.java)
         ),
         BindJustTextDeeplinkLayout()
     )
