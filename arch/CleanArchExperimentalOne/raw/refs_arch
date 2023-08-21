@@ -1,0 +1,53 @@
+MVP
+https://www.baeldung.com/mvc-vs-mvp-pattern
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter
+
+
+------------------------------------------------------------------------------------
+Android Architecture Patterns Part 1: Model-View-Controller
+https://medium.com/upday-devs/android-architecture-patterns-part-1-model-view-controller-3baecef5f2b6
+
+------------------------------------------------------------------------------------
+
+Android Architecture Patterns Part 2:
+Model-View-Presenter
+
+https://github.com/android/architecture-samples/
+------------------------------------------------------------------------------------
+MVVM & RxJava — The Perfect Mix
+https://medium.com/@florina.muntenescu/mvvm-rxjava-the-perfect-mix-2d7c3dc8b418
+
+TODO
+implementar exemplo baseado nesse projto
+https://github.com/florina-muntenescu/DroidconMVVM
+
+------------------------------------------------------------------------------------
+https://medium.com/upday-devs/android-architecture-patterns-part-3-model-view-viewmodel-e7eeee76b73b
+------------------------------------------------------------------------------------
+Google Android arch samples
+https://github.com/android/architecture-samples
+https://github.com/android/architecture-templates
+
+------------------------------------------------------------------------------------
+Compose Samples
+https://github.com/android/compose-samples
+------------------------------------------------------------------------------------
+
+
+https://www.geeksforgeeks.org/mvp-model-view-presenter-architecture-pattern-in-android-with-example/
+
+------------------------------------------------------------------------------------
+https://developer.android.com/jetpack/compose/setup#kotlin
+https://developer.android.com/jetpack/androidx/releases/compose
+
+------------------------------------------------------------------------------------
+Migrate from kapt to KSP
+https://developer.android.com/build/migrate-to-ksp
+------------------------------------------------------------------------------------
+Room
+https://developer.android.com/training/data-storage/room?hl=pt-br#kts
+------------------------------------------------------------------------------------
+ViewModel overview
+https://developer.android.com/topic/libraries/architecture/viewmodel
+------------------------------------------------------------------------------------
+

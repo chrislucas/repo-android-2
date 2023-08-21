@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FlowAndLiveDataSample">
         <activity
+            android:name=".mutlithreading.runnable.MultithreadingTutorialActivity"
+            android:exported="false" />
+        <activity
             android:name=".FunWithRxJavaActivity"
             android:exported="false">
             <meta-data
@@ -40,7 +43,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.experience.tutorial.rxandroid.FunWithRxJavaActivity" />
+        <activity android:name=".rxandroid.FunWithRxJavaActivity" />
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

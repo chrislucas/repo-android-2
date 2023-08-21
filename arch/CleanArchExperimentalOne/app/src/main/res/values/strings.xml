@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CleanArchExperimentalOne</string>
+    <string name="title_activity_error_handling_flow">ErrorHandlingFlowActivity</string>
+</resources>

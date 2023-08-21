@@ -3,12 +3,16 @@
 
     <application>
         <activity
+            android:name=".tutorial.particles.ParticleEffectActivity"
+            android:exported="false" />
+        <activity
             android:name=".tutorial.aboutflow.AboutFlowActivity"
             android:exported="true"
             android:label="@string/title_activity_about_flow"
             android:theme="@style/Theme.AndroidAllCodelabs">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
