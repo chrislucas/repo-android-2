@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FunWithEncriptSharedPreference</string>
+    <string name="name">Nome</string>
+    <string name="nickname">apelido</string>
+    <string name="login">login</string>
+    <string name="save_on_shared_preference">Salvar no shared preference</string>
+
+    <string name="raw_file_content">Raw file content</string>
+    <string name="save_header">Save text</string>
+    <string name="save">Save</string>
+    <string name="read_header">Read text</string>
+    <string name="read">Read</string>
+    <string name="timestamp">done in %1$dms</string>
+    <string name="initialize_header">Initialize/Open</string>
+    <string name="initialize_switch">Encrypted SharedPreferences</string>
+    <string name="menu_about">About</string>
+</resources>
