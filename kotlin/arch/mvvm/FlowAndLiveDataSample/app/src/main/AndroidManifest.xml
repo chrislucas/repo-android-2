@@ -1,26 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".todoapplist.withviewslivedata.app.TodoApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FlowAndLiveDataSample">
+        android:theme="@style/Theme.FlowAndLiveDataSample" >
+        <activity
+            android:name=".todoapplist.withlivedata.TodoListWithLiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".todoapplist.withviewslivedata.TodoListWithViewAndLiveDataActivity"
+            android:exported="false" />
+        <activity
+            android:name=".aboutsharedflow.starter.presenter.CoinCapSampleActivity"
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".mutlithreading.runnable.MultithreadingTutorialActivity"
             android:exported="false" />
         <activity
-            android:name=".FunWithRxJavaActivity"
-            android:exported="false">
+            android:name=".rxandroid.FunWithRxJavaActivity"
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".rxandroid.FunWithRxActivity"
-            android:exported="false">
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -36,16 +56,14 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".rxandroid.FunWithRxJavaActivity" />
-    </application>
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    </application>
 
 </manifest>

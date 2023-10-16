@@ -1,0 +1,181 @@
+------------------------------------------------------------------------------------------------------------------------
+https://en.wikipedia.org/wiki/Google_LLC_v._Oracle_America,_Inc.
+------------------------------------------------------------------------------------------------------------------------
+https://medium.com/programming-lite/android-core-jvm-dvm-art-jit-aot-855039a9a8fa
+
+O que é uma VM ?
+
+Uma abstracao de uma máquina sobre uma máquina nativa, apoiada por recursos da máquina nativa. Parte do seu
+trabalho é converter código de uma linguagem especifica em código que ela possa executar. Elas permitem que
+o mesmo código possa ser executado em multiplas plataformas, cada plataforma tendo a sua implementação de
+máquina virtual.
+
+Android faz uso de um VM para executar os arquivos de um APK.
+
+	- O codigo da aplicacao é isolado do core do S.O. Isso protege o sistema de executar codigo
+	malicioso diretamente, tornando-se um S.O mais estável e confiável
+
+	- Prove compatibilidade e independencia de plataformas. Um app compilado para PC pode rodar num smartphone se
+	executado sobre uma JVM
+
+
+Dalvik VM  (DVM)-> uma VM otimizada para dispositivos móveis
+	- Funcionamento similar a uma JVM
+	- Converter arquivos .class para um arquivo .dex
+
+JVM vs DVM
+	- JVSM é stack based enquanto DVM é register based que é projetado para executar em dispositivos
+	com menos memoria
+		- Existe um passo a mais na DVM que é transformar o Java ByteCode em Dalvik ByteCode
+
+	- JVM usa java bytecode, executa os .class usando o JIT, DVM usa o seu proprio bytecode e executa o .dex
+	- Uma unica instancia da JVM e compartilhada com multiplas aplicacoes, ao passo que a DVM foi projetada para que
+	o dispositivo possao executar multiplas instancias de VM de forma eficiente, os aplicativos recebem sua propria
+	instancia
+
+	- JVM suporta multiplos sistemas operacionais, enquanto DVM somente o Android OS
+	- Na JVM o executavel é o Jar, na DVM o apk
+
+Por que foi tornado obsoleto DVM para troca pelo ART (Android Runtime) ?
+
+- Na DVM um app é compilado toda a vez que é iniciado, causando custo de CPU, usado de memoria e
+consumo de bateria.
+	- A partir da versao kitkat foi introduzido o ART, e na versão Lollipop foi completamente trocado
+
+ART
+	- Durante a instalaaco do app, o AOT (Ahead of time) estaticamente transforma o DEX bytecode em
+	codigo de maquina e armazena-o no dispositivo. Um evento que ocorre uma unica vez na instalacao
+
+	- Isso leva a um melhor uso da bateria e melhora o desempenho. Assim não há necessidade da compilacao
+	do JIT, e o codigo executa mais rápido
+
+Maior diferenca do Dalvik para o ART ?
+	- Dalvik baseado na compilacao do JIT, enquanto ART é baseado na compilacao do AOT
+
+Beneficios do ART sobre DVM
+	- Apps executam mais rapido com DEx bytecode com a compilacao/translation sendo feito
+	somente na hora da instalacao
+
+	- Reducao de tempo de inicializacao (startup time) ja que é codigo nativo sendo executado
+
+	- Melhora o desempenho da bateria ja que a energia utilizado para interpretar cada linha de byte
+	code foi poupado
+
+	- Melhora o desempenho do GC
+
+	- Melhora as ferramentas de desenvolvimento
+
+Reintroducao do JIT
+
+	- Desvantagens do ART
+		- Instalacao de apps leva mais tempo por conta da conversao de DEX bytecode para codigo de matuina
+		- Mais espaco de armazenamento era exigido ja que o codigo de maquina é armazenado
+
+	- Para superar essas desvantagens desde o Android Nougat o JIT foi reintroduzido com o code profiling
+	junto ao AOT e um interpretador adicionado na ART criando uma solução hibrida
+
+	- Usando um Runtime Hibrido, nao ha uma compilacao durante a instalacao, a aplicacao
+	e executada diretamente e o bytecode
+
+------------------------------------------------------------------------------------------------------------------------
+Android Architecture Components
+
+------------------------------------------------------------------------------------------------------------------------
+Android N combina AOT, interpretação e JIT
+https://www.infoq.com/br/news/2016/05/android-n-aot-jit/
+
+
+
+https://github.com/SNGWN/Mobile-PT/blob/master/1.2%20--%20Architecture.md
+
+
+------------------------------------------------------------------------------------------------------------------------
+Android Internals: ART vs DVM deep dive
+https://hackernoon.com/android-internals-art-vs-dvm-deep-dive-gf2zl3zpo
+
+------------------------------------------------------------------------------------------------------------------------
+
+https://www.geeksforgeeks.org/difference-between-dalvik-and-art-in-android/
+------------------------------------------------------------------------------------------------------------------------
+Implementing ART just-In-time (JIT) Compiler
+https://source.android.com/docs/core/runtime/jit-compiler
+https://www.youtube.com/watch?v=Yi9-BqUxsno
+
+Android Internals: ART vs DVM deep dive
+https://medium.com/android-news/android-internals-art-vs-dvm-deep-dive-def34cf664d7
+
+
+------------------------------------------------------------------------------------------------------------------------
+JVM DEEP DIVE
+https://binarycoders.dev/2021/06/08/jvm-deep-dive/
+
+
+Deep Dive in Java Virtual Machine
+https://medium.com/@ayeshaperera9519/deep-dive-in-java-virtual-machine-3622025aecfa
+
+Java Virtual Machine(JVM) Architecture
+https://medium.com/nerd-for-tech/java-virtual-machine-jvm-architecture-87b5bdd47403
+
+JVM Tutorial - Java Virtual Machine Architecture Explained for Beginners
+https://www.freecodecamp.org/news/jvm-tutorial-java-virtual-machine-architecture-explained-for-beginners/
+
+HOW TO WRITE A (TOY) JVM
+https://zserge.com/posts/jvm/
+
+
+------------------------------------------------------------------------------------------------------------------------
+Pesquisa sobre Hybrid Runtime ART
+
+Understanding Android Runtime (ART) for faster apps (Google I/O'19)
+https://www.youtube.com/watch?v=1uLzSXWWfDg
+
+https://source.android.com/docs/core/runtime/improvements
+
+
+https://source.android.com/docs/core/runtime/configure
+ - Como ART funciona - https://source.android.com/docs/core/runtime/configure#how_art_works
+
+Android Runtime (ART) and Dalvik
+https://source.android.com/docs/core/runtime
+
+
+------------------------------------------------------------------------------------------------------------------------
+ART and Dalvik
+https://erpragatisingh.medium.com/art-and-dalvik-acc02ea7cff7
+
+------------------------------------------------------------------------------------------------------------------------
+Android Runtime Improvements
+
+https://medium.com/@gauravbansal_13551/android-runtime-improvements-e69bf7c1d10c
+------------------------------------------------------------------------------------------------------------------------
+ART: The New Android Runtime
+
+https://www.infoq.com/news/2014/07/art-runtime/
+
+------------------------------------------------------------------------------------------------------------------------
+Deep dive into ART(Android Runtime) for dynamic binary analysis | SungHyoun Song | Nullcon 2021
+https://github.com/harsh-bothra/learn365/blob/main/days/day150.md
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+Implementing ART just-In-time (JIT) Compiler
+https://source.android.com/docs/core/runtime/jit-compiler
+
+Android N combina AOT, interpretação e JIT
+https://www.infoq.com/br/news/2016/05/android-n-aot-jit/
+
+
+------------------------------------------------------------------------------------------------------------------------
+Git repositories on android
+https://android.googlesource.com/
+https://android.googlesource.com/platform/art/+/kitkat-release/dex2oat/dex2oat.cc
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------

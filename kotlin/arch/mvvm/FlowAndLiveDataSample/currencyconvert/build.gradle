@@ -53,11 +53,10 @@ dependencies {
     //implementation deps.kotlin
 
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.0"
-    implementation "org.jetbrains.kotlin:kotlin-reflect:1.8.22"
-    implementation "org.jetbrains.kotlin:kotlin-test:1.9.0"
-    implementation "org.jetbrains.kotlin:kotlin-test-junit:1.8.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib1.8.0"
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.10'
+    implementation 'org.jetbrains.kotlin:kotlin-reflect:1.9.10'
+    implementation 'org.jetbrains.kotlin:kotlin-test:1.9.10'
+    implementation 'org.jetbrains.kotlin:kotlin-test-junit:1.9.10'
 
     //implementation deps.retrofit2
 
@@ -72,7 +71,7 @@ dependencies {
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0"
 
     implementation "androidx.activity:activity-ktx:1.7.2"
-    implementation "androidx.fragment:fragment-ktx:1.7.2"
+    implementation "androidx.fragment:fragment-ktx:1.6.1"
 
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
