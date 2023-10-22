@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".tutorial.decrypt.EncryptedSharedPreferenceIActivity">
+
         <TextView
             android:id="@+id/fileHeader"
             android:layout_width="wrap_content"
@@ -35,9 +36,10 @@
 
         <View
             android:id="@+id/saveReadSpacer"
-            android:layout_width="8dp"
+            android:layout_width="12dp"
             android:layout_height="0dp"
             android:layout_marginTop="16dp"
+            android:background="@color/yellow"
             app:layout_constraintEnd_toStartOf="@id/saveCard"
             app:layout_constraintStart_toEndOf="@id/readCard"
             app:layout_constraintTop_toBottomOf="@id/initCard" />
@@ -71,7 +73,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:enabled="false"
-                    app:layout_constraintTop_toBottomOf="@id/readHeader" />
+                    app:layout_constraintTop_toBottomOf="@id/readHeader"
+                    android:inputType="text" />
 
                 <TextView
                     android:id="@+id/readHeader"
@@ -93,6 +96,7 @@
                     app:layout_constraintTop_toBottomOf="@id/readButton"
                     tools:text="@string/timestamp"
                     tools:visibility="visible" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -124,7 +128,8 @@
                     android:id="@+id/saveText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/saveHeader" />
+                    app:layout_constraintTop_toBottomOf="@id/saveHeader"
+                    android:inputType="text" />
 
                 <TextView
                     android:id="@+id/saveHeader"
@@ -140,12 +145,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="@color/black"
                     android:visibility="gone"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/saveButton"
                     tools:text="time taken"
                     tools:visibility="visible" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
@@ -154,7 +160,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/test">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -190,8 +196,34 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="@string/initialize_switch"
-                    app:layout_constraintTop_toBottomOf="@id/initHeader" />
+                    app:layout_constraintTop_toBottomOf="@id/initHeader"
+                    tools:layout_editor_absoluteX="0dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/test"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/initCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/performance_mode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textOn="@string/txt_enabled_performance_test"
+                android:textOff="@string/txt_disabled_performance_test"
+                android:text="@string/performance_mode"
+                app:switchPadding="0dp"
+                android:padding="10dp"
+                android:checked="true"
+                app:showText="true"
+                />
+
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

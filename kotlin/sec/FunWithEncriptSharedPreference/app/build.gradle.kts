@@ -47,6 +47,19 @@ dependencies {
 
     implementation ("androidx.security:security-crypto:1.1.0-alpha06")
 
+    // DataStore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
+    // optional - RxJava2 support
+    implementation("androidx.datastore:datastore-preferences-rxjava2:1.0.0")
+
+    // optional - RxJava3 support
+    implementation("androidx.datastore:datastore-preferences-rxjava3:1.0.0")
+
+    // Alternatively - use the following artifact without an Android dependency.
+    implementation("androidx.datastore:datastore-preferences-core:1.0.0")
+
+
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

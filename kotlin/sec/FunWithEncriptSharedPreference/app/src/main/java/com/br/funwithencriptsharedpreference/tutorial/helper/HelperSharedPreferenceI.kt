@@ -7,7 +7,6 @@ import androidx.security.crypto.MasterKey
 import androidx.security.crypto.MasterKey.DEFAULT_MASTER_KEY_ALIAS
 import androidx.security.crypto.MasterKey.KeyScheme
 import androidx.security.crypto.MasterKey.KeyScheme.AES256_GCM
-import com.br.funwithencriptsharedpreference.tutorial.decrypt.EncryptedSharedPreferenceIActivity
 import kotlin.reflect.KProperty
 
 /**
@@ -56,7 +55,40 @@ fun Context.providerEncryptedSharedPreferenceDefault(filename: String): SharedPr
     )
 }
 
-fun Context.providerEncryptedSharedPreference(filename: String, transform: (filename: String) -> SharedPreferences) = transform(filename)
+fun createEncryptedSharedPreferences(filename: String, ctx: Context): SharedPreferences {
+    /*
+        https://proandroiddev.com/encrypted-preferences-in-android-af57a89af7c8
+        Criar a masterke
+     */
+
+    val providerDefaultMasterKeyAlias = MasterKey
+        .Builder(ctx)
+        .setKeyScheme(KeyScheme.AES256_GCM)
+        .build()
+
+    // Deprecated
+    // MasterKeys.getOrCreate(MasterKeys.AES256_GCM_SPEC)
+
+    /*
+        https://proandroiddev.com/encrypted-preferences-in-android-af57a89af7c8
+
+        Inicializar o EncryptedSharedPreference
+     */
+
+    return EncryptedSharedPreferences.create(
+        ctx,
+        filename,
+        providerDefaultMasterKeyAlias,
+        EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+        EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
+    )
+}
+
+fun providerEncryptedSharedPreference(
+    filename: String,
+    ctx: Context,
+    transform: (filename: String, ctx: Context) -> SharedPreferences
+): SharedPreferences = transform(filename, ctx)
 
 class ProviderEncryptedSharedPreferences(
     private val filename: String,
@@ -64,11 +96,7 @@ class ProviderEncryptedSharedPreferences(
 ) {
     operator fun getValue(ref: Any?, property: KProperty<*>): SharedPreferences =
         create(filename)
-
-
-
 }
-
 
 
 
