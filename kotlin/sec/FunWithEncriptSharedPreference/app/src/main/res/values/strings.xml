@@ -21,4 +21,5 @@
     <string name="about_github">Sobre Github</string>
     <string name="about_medium">Sobre Medium</string>
     <string name="about_akaita">Sobre Akaita</string>
+    <string name="path_file">Path: %1$s</string>
 </resources>

@@ -1,26 +1,23 @@
 package com.br.funwithencriptsharedpreference.tutorial.decrypt
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
+import android.text.Editable
 import android.text.Html
 import android.text.Spanned
+import android.text.TextWatcher
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.widget.doAfterTextChanged
 import androidx.core.widget.doOnTextChanged
-import androidx.security.crypto.EncryptedSharedPreferences
-import androidx.security.crypto.MasterKey
 import com.br.funwithencriptsharedpreference.R
 import com.br.funwithencriptsharedpreference.databinding.ActivityEncryptedSharedPreferenceIactivityBinding
-import com.br.funwithencriptsharedpreference.tutorial.helper.ProviderEncryptedSharedPreferences
 import com.br.funwithencriptsharedpreference.tutorial.helper.createEncryptedSharedPreferences
 import com.br.funwithencriptsharedpreference.tutorial.helper.providerEncryptedSharedPreference
 import java.io.File
@@ -35,29 +32,37 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
 
     private fun String.highLighting(): Spanned =
         kotlin.run {
-            val highlighting = this.replace("<([^>/]*)/>".toRegex(), "&lt;~blue~\$1~/~/&gt;")
-                .also {
-                    it.replace("<([^>]*)>".toRegex(), "&lt;~blue~\$1~/~&gt;")
-                }.also {
-                    it.replace(
-                        "([\\\\w]+)=\"([^\"]*)\"".toRegex(),
-                        "~red~\$1~/~~black~=\\\"~/~~green~\$2~/~~black~\\\"~/~"
-                    )
-                }.also {
-                    it.replace("~([a-z]+)~".toRegex(), "<span style=\\\"color: \$1;\\\">")
-                }.also {
-                    it.replace("~/~".toRegex(), "</span>")
+            /**
+             * Estudar sobre backreference em regex
+             * https://www.regular-expressions.info/backref.html
+             */
+            val highlighted = this.replace("<([^>/]*)/>".toRegex(), "&lt;~green~\$1~/~&gt;")
+                .run {
+                    replace("<([^>]*)>".toRegex(), "&lt;~blue~\$1~/~&gt;")
+                }.run {
+                    replace("(\\w+)=\"([^\"]*)\"".toRegex(), "~red~\$1~/~~black~=\"~/~~green~$2~/~~black~\"~/~")
+                }
+                .run {
+                    replace("~([a-z]+)~".toRegex(), "<span style=\"color: \$1;\">")
+                }
+                .run {
+                    if (Log.isLoggable("HIGHLIGHTING", Log.INFO)) {
+                        Log.i("HIGHLIGHTING", this)
+                    }
+                    replace("~/~".toRegex(), "</span>")
                 }
 
+            Log.i("HIGHLIGHT_CONTENT", highlighted)
+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                Html.fromHtml(highlighting, Html.FROM_HTML_MODE_COMPACT)
+                Html.fromHtml(highlighted, Html.FROM_HTML_MODE_LEGACY)
             } else {
-                Html.fromHtml(highlighting)
+                Html.fromHtml(highlighted)
             }
         }
 
     companion object {
-        const val SHARED_FILE_NAME = "sample_shared_filename"
+        const val SHARED_FILE_NAME = "sample_encrypted_shared_preference"
         const val KEY_ENCRYPTED_STRING = "key_encrypted_string"
         const val KEY_IS_PERFORMANCE_TEST_ENABLED = "key_is_performance_test_enabled"
     }
@@ -115,18 +120,23 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
                 resetSharedPreference(checked)
             }
 
-            saveText.doOnTextChanged { text, _, _, _ ->
-                execute(saveTimestamp) {
-                    sharedPreference
-                        .edit()
-                        .putString(KEY_ENCRYPTED_STRING, text?.toString() ?: "")
-                        .apply()
-                }
+            saveText.doAfterTextChanged {
+                it?.let {
+                    if (Log.isLoggable("SAVE_STRING", Log.INFO)) {
+                        Log.i("SAVE_STRING", it.toString())
+                    }
+                    execute(saveTimestamp) {
+                        sharedPreference
+                            .edit()
+                            .putString(KEY_ENCRYPTED_STRING, it.toString())
+                            .apply()
+                    }
 
-                execute(bindView.readTimestamp) {
-                    bindView.readText.setText(
-                        sharedPreference.getString(KEY_ENCRYPTED_STRING, "-")
-                    )
+                    execute(bindView.readTimestamp) {
+                        bindView.readText.setText(
+                            sharedPreference.getString(KEY_ENCRYPTED_STRING, "*")
+                        )
+                    }
                 }
             }
 
@@ -179,10 +189,8 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
     }
 
     private fun setSpentTime(spentTime: Long, textView: TextView) {
-        with(bindView) {
-            textView.visibility = View.VISIBLE
-            textView.text = getString(R.string.timestamp).format(spentTime)
-        }
+        textView.visibility = View.VISIBLE
+        textView.text = getString(R.string.timestamp).format(spentTime)
     }
 
     private fun resetSharedPreferences() {
@@ -221,14 +229,12 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
         if (Log.isLoggable("SHARED_PREFERENCE", Log.INFO)) {
             Log.i("SHARED_PREFERENCE", "pathfile: $path")
         }
+
+        bindView.pathFile.text = getString(R.string.path_file, path)
         bindView.fileText.text =
             File(path)
                 .run {
-                    if (exists()) {
-                        readText().highLighting()
-                    } else {
-                        ""
-                    }
+                    if (exists()) readText().highLighting() else ""
                 }
     }
 }
