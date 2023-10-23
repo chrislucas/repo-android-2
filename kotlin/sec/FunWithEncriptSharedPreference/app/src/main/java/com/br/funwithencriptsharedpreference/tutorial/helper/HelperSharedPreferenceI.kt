@@ -98,6 +98,24 @@ class ProviderEncryptedSharedPreferences(
         create(filename)
 }
 
+private val Context.encryptedSharedPreferences: ProviderEncryptedSharedPreferences
+    get() {
+        return ProviderEncryptedSharedPreferences("") { filename ->
+            val providerDefaultMasterKeyAlias = MasterKey
+                .Builder(this)
+                .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
+                .build()
+
+            EncryptedSharedPreferences.create(
+                this,
+                filename,
+                providerDefaultMasterKeyAlias,
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
+            )
+        }
+    }
+
 
 
 

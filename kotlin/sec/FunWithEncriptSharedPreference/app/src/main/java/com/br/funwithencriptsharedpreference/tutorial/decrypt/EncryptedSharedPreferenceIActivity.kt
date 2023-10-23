@@ -2,6 +2,7 @@ package com.br.funwithencriptsharedpreference.tutorial.decrypt
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
@@ -55,11 +56,6 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
             }
         }
 
-    private fun AppCompatActivity.hideKeyboard() =
-        (getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager).let {
-            it.hideSoftInputFromWindow(findViewById<View>(android.R.id.content).windowToken, 0)
-        }
-
     companion object {
         const val SHARED_FILE_NAME = "sample_shared_filename"
         const val KEY_ENCRYPTED_STRING = "key_encrypted_string"
@@ -71,29 +67,6 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
     }
 
     private lateinit var sharedPreference: SharedPreferences
-
-    private val encryptedSharedPreferences: SharedPreferences
-            by ProviderEncryptedSharedPreferences("") { filename ->
-
-                val providerDefaultMasterKeyAlias = MasterKey
-                    .Builder(this)
-                    .setKeyScheme(MasterKey.KeyScheme.AES256_GCM)
-                    .build()
-
-                EncryptedSharedPreferences.create(
-                    this,
-                    filename,
-                    providerDefaultMasterKeyAlias,
-                    EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-                    EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM,
-                )
-            }
-
-    override fun onStart() {
-        super.onStart()
-        //initCleartextSharedPreferences()
-        Log.i("ON_START", "ON_START")
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
@@ -125,6 +98,12 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+        initCleartextSharedPreferences()
+        Log.i("ON_START", "ON_START")
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(bindView.root)
@@ -151,27 +130,6 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
                 }
             }
 
-            /*
-
-                        saveButton.setOnClickListener {
-                            execute(saveTimestamp) {
-                                sharedPreference
-                                    .edit()
-                                    .putString(KEY_ENCRYPTED_STRING, readText.text?.toString() ?: "")
-                                    .apply()
-                            }
-                        }
-
-                        readButton.setOnClickListener {
-                            execute(bindView.readTimestamp) {
-                                bindView.readText.setText(
-                                    sharedPreference.getString(KEY_ENCRYPTED_STRING, "-")
-                                )
-                            }
-                        }
-
-             */
-
             performanceMode.setOnCheckedChangeListener { _, checked ->
                 sharedPreference
                     .edit()
@@ -187,7 +145,6 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
         }.let {
             setSpentTime(it, textView)
         }
-        hideKeyboard()
         showRawFile()
     }
 
@@ -198,7 +155,6 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
         } else {
             initEncryptedSharedPreferences()
         }
-        hideKeyboard()
         showRawFile()
     }
 
