@@ -1,0 +1,68 @@
+https://developer.android.com/jetpack/androidx/releases/benchmark
+------------------------------------------------------------------------------------------------------------------------
+Error/Warning interessante durante os testes dessa lib
+
+java.lang.AssertionError: ERRORS (not suppressed): ACTIVITY-MISSING DEBUGGABLE
+(Suppressed errors: )
+
+WARNING: Debuggable Benchmark
+Benchmark is running with debuggable=true, which drastically reduces
+runtime performance in order to support debugging features. Run
+benchmarks with debuggable=false. Debuggable affects execution speed
+in ways that mean benchmark improvements might not carry over to a
+real user's experience (or even regress release performance).
+
+WARNING: Not using IsolationActivity via AndroidBenchmarkRunner
+AndroidBenchmarkRunner should be used to isolate benchmarks from interference
+from other visible apps. To fix this, add the following to your module-level
+build.gradle:
+android.defaultConfig.testInstrumentationRunner
+= "androidx.benchmark.junit4.AndroidBenchmarkRunner"
+
+While you can suppress these errors (turning them into warnings)
+PLEASE NOTE THAT EACH SUPPRESSED ERROR COMPROMISES ACCURACY
+
+// Sample suppression, in a benchmark module's build.gradle:
+android {
+defaultConfig {
+// Enable measuring on an emulator, or devices with low battery
+testInstrumentationRunnerArguments["androidx.benchmark.suppressErrors"] = "EMULATOR,LOW-BATTERY"
+}
+}
+
+Arigos sobre essse warning
+Don’t Run Benchmarks on a Debuggable Android App (Like I Did for Coroutines)
+https://medium.com/specto/dont-run-benchmarks-on-a-debuggable-android-app-like-i-did-34d95331cabb
+
+Add instrumentation arguments
+https://developer.android.com/topic/performance/benchmarking/macrobenchmark-instrumentation-args
+
+
+------------------------------------------------------------------------------------------------------------------------
+Benchmark your app
+https://developer.android.com/topic/performance/benchmarking/benchmarking-overview
+------------------------------------------------------------------------------------------------------------------------
+Write a Macrobenchmark
+https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview
+------------------------------------------------------------------------------------------------------------------------
+Microbenchmark
+https://developer.android.com/topic/performance/benchmarking/microbenchmark-overview
+------------------------------------------------------------------------------------------------------------------------
+Exploring Jetpack Benchmark
+https://medium.com/@iamanbansal/exploring-jetpack-benchmark-de107165bf43
+------------------------------------------------------------------------------------------------------------------------
+What’s new in Jetpack Benchmark 1.2.0
+https://medium.com/androiddevelopers/whats-new-in-jetpack-benchmark-1-2-0-82da5092fc43
+
+Baseline Profiles overview
+https://developer.android.com/topic/performance/baselineprofiles/overview
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------

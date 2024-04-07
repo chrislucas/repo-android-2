@@ -24,8 +24,8 @@ import java.io.File
 import kotlin.system.measureTimeMillis
 
 /**
- *  https://github.com/akaita/encryptedsharedpreferences-example/blob/master/app/src/main/java/com/akaita/encryptedsharedpreferences/MainActivity.kt
- *
+ * https://github.com/akaita/encryptedsharedpreferences-example/blob/master/app/src/main/java/com/akaita/encryptedsharedpreferences/MainActivity.kt
+ * https://github.com/akaita/encryptedsharedpreferences-example/tree/master
  *
  */
 class EncryptedSharedPreferenceIActivity : AppCompatActivity() {

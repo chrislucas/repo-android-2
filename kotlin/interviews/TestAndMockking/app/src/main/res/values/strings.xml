@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TestAndMockking</string>
+    <string name="title_activity_testing_coroutine_and_jetpack_integrations">
+        TestingCoroutineAndJetpackIntegrationsActivity
+    </string>
+    <string name="title_activity_hilt_diactivity">HiltDIActivity</string>
+    <string name="title_activity_from_dagger_to_hilt">FromDaggerToHiltActivity</string>
+</resources>

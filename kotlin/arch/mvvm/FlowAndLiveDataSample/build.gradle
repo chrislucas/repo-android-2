@@ -11,9 +11,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.1'
+        classpath 'com.android.tools.build:gradle:8.2.2'
         classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.0'
-
         classpath ktLintDependency
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -22,18 +21,18 @@ buildscript {
 
 plugins {
     id 'com.google.dagger.hilt.android' version '2.44' apply false
-    id 'com.google.devtools.ksp' version '1.8.10-1.0.9' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.10' apply false
+    id 'com.google.devtools.ksp' version '1.9.22-1.0.16' apply false
 }
 
 allprojects {
     repositories {
         google()
         mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
     }
 }
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 }
 
@@ -56,7 +55,7 @@ ext {
     cardVersion = '1.0.0'
     coroutinesVersion = '1.8.0'
     dexMakerVersion = '2.12.1'
-    espressoVersion = '3.6.0-alpha01'
+    espressoVersion = '3.6.0-alpha03'
     fragmentVersion = '1.6.1'
     fragmentKtxVersion = '1.4.1'
     hamcrestVersion = '1.3'

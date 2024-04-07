@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SnakeGameJetpackCompose</string>
+    <string name="title_activity_snake_game_sample_iactivity">SnakeGameSampleIActivity</string>
+    <string name="title_activity_snake_game_sample_iiactivity">SnakeGameSampleIIActivity</string>
+</resources>

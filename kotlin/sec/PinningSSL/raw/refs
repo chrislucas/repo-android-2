@@ -1,0 +1,34 @@
+https://www.netguru.com/blog/android-certificate-pinning
+---------------------------------------------------------------------------------------
+Segurança com HTTPS e SSL
+https://developer.android.com/training/articles/security-ssl?hl=pt-br
+
+---------------------------------------------------------------------------------------
+Security with network protocols
+https://developer.android.com/privacy-and-security/security-ssl
+
+---------------------------------------------------------------------------------------
+Frida Android SSL-Pinning.
+https://medium.com/@ataidejunior/basic%C3%A3o-frida-android-ssl-pinning-d7fe758a0a2b
+---------------------------------------------------------------------------------------
+DDOS
+https://www.cloudflare.com/pt-br/learning/ddos/ddos-attack-tools/how-to-ddos/
+https://github.com/topics/ddos-attack
+---------------------------------------------------------------------------------------
+<!--
+    arquivo baseado nesse tutorial
+    https://medium.com/@anandgaur22/ssl-pinning-in-android-14851dc41703
+-->
+    <!--
+    <domain-config>
+         <domain includeSubdomain="true">medium.com</domain>
+         <pin-set>
+             <pin digest="SHA-256">replace_with_a_pin</pin>
+         </pin-set>
+    </domain-config>
+    -->
+
+    <!--
+        https://developer.android.com/training/articles/security-config?hl=pt-br
+    -->
+---------------------------------------------------------------------------------------

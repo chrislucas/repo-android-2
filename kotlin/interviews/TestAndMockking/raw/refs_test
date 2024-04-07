@@ -1,0 +1,61 @@
+Testing Kotlin coroutines on Android
+https://developer.android.com/kotlin/coroutines/test#injecting-test-dispatchers
+----------------------------------------------------------------------------------------------------
+
+Injecting test dispatchers
+https://developer.android.com/kotlin/coroutines/test#injecting-test-dispatchers
+----------------------------------------------------------------------------------------------------
+TestDispatchers
+https://developer.android.com/kotlin/coroutines/test#testdispatchers
+
+- TestDispatchers sao CoroutineDispatcher
+	- https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-dispatcher/
+	- https://kotlinlang.org/docs/coroutine-context-and-dispatchers.html
+	- Coroutines sao executadas num contexto  representdo por um valor
+	de CoroutineContext
+		- CoroutineContext: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.coroutines/-coroutine-context/
+			- Contexto Persistente para a coroutine
+			- uma estrutura de dados indexidada (Set Indexed) de um objeto
+			denominado Elemento
+			- Um Indexed Set eh um mix entre Set e Map
+			- Cada 'Elemento'no set possui uma chave(representado por uma classe chamada Key) única
+			- Dispatcher:
+				- A coroutine context inclui uma coroutine dispatcher
+				- A coroutine dispatcher determina qual thre os threads a sua coroutine
+				usara para sua execucao
+				- A coroutine disptacher pode confinar a execucao da coroutine numa
+				thread especifica, despacha-la a um pool de threads ou deixa-la rodar
+				unconfined
+		- CoroutineScope
+			- https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/
+			- Define um escopo para uma nova coroutine
+
+----------------------------------------------------------------------------------------------------
+StandardTestDispatcher
+https://developer.android.com/kotlin/coroutines/test#standardtestdispatcher
+----------------------------------------------------------------------------------------------------
+UnconfinedTestDispatcher
+https://developer.android.com/kotlin/coroutines/test#unconfinedtestdispatcher
+----------------------------------------------------------------------------------------------------
+
+
+MockK capturing a suspend lambda / coroutine
+https://stackoverflow.com/questions/62130953/mockk-capturing-a-suspend-lambda-coroutine
+https://mockk.io/
+----------------------------------------------------------------------------------------------------
+
+Kotlin coroutines on Android
+https://developer.android.com/kotlin/coroutines
+----------------------------------------------------------------------------------------------------
+
+Testing Kotlin coroutines on Android
+https://developer.android.com/kotlin/coroutines/test
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------

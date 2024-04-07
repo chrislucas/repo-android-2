@@ -1,0 +1,78 @@
+Visão geral do protocolo de início de sessão
+https://developer.android.com/guide/topics/connectivity/sip?hl=pt-br
+------------------------------------------------------------------------------------------------------------------------
+Session initiation protocol overview
+
+bookmark_border
+Detect eSIMs and SIM cards
+Detecting cards
+https://developer.android.com/guide/topics/connectivity/sip
+https://developer.android.com/reference/android/net/sip/package-summary
+https://developer.android.com/reference/android/net/sip/SipManager
+------------------------------------------------------------------------------------------------------------------------
+Guias
+https://developer.android.com/develop#core-areas
+------------------------------------------------------------------------------------------------------------------------
+https://github.com/VoiSmart/pjsip-android
+------------------------------------------------------------------------------------------------------------------------
+
+real time protocol example android
+https://gaikwadchetan93.medium.com/android-real-time-communication-using-mqtt-9ea42551475d
+
+https://developer.android.com/reference/android/net/rtp/RtpStream
+
+https://getstream.io/blog/compose-meeting-room/
+
+Real-Time Database
+for Android Applications
+https://backendless.com/real-time-database-for-android-developers/
+
+
+https://stackoverflow.com/questions/13174484/how-to-send-rtp-video-packets-from-android-to-server-any-library-please-sugges
+
+
+Cache
+
+LRU
+https://developer.android.com/topic/performance/graphics/cache-bitmap?hl=pt-br
+https://developer.android.com/reference/android/util/LruCache
+https://developer.android.com/reference/androidx/collection/LruCache
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+RtpStream
+https://developer.android.com/reference/android/net/rtp/RtpStream
+
+------------------------------------------------------------------------------------------------------------------------
+SipManager
+https://developer.android.com/reference/android/net/sip/SipManager
+
+
+------------------------------------------------------------------------------------------------------------------
+Session initiation protocol overview
+
+bookmark_border
+Detect eSIMs and SIM cards
+https://developer.android.com/guide/topics/connectivity/sip
+
+------------------------------------------------------------------------------------------------------------------\
+https://voipstudio.com/blog/voip-sip-calls-on-android/
+------------------------------------------------------------------------------------------------------------------
+https://developer.android.com/reference/android/mtp/package-summary
+
+MtpDevice
+https://developer.android.com/reference/android/mtp/MtpDevice
+
+android.net.sip
+https://developer.android.com/reference/android/net/sip/package-summary
+
+SipManager
+https://developer.android.com/reference/android/net/sip/SipManager
+https://developer.android.com/guide/topics/connectivity/sip
+------------------------------------------------------------------------------------------------------------------
+
+Manage calls using the Telecom API
+https://developer.android.com/develop/connectivity/bluetooth/ble-audio/telecom-api-managed-calls
+
+------------------------------------------------------------------------------------------------------------------
