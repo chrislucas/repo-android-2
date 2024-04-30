@@ -2,9 +2,7 @@ package com.br.features.tutorials.google.flowtest.consumer
 
 import com.br.features.tutorials.google.flowtest.producer.ProducerString
 import io.mockk.coEvery
-import io.mockk.every
 import io.mockk.mockk
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 import kotlinx.coroutines.test.runTest
@@ -24,7 +22,7 @@ class ConsumerStringTest {
     @Test
     fun testConsumerWithMockedProducer() = runTest {
         val producer = mockk<ProducerString>()
-        coEvery { producer.producerString() }.coAnswers {
+        coEvery { producer.produceString() }.coAnswers {
             flow {
                 emit("Hello MothaFocka")
             }
