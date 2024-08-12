@@ -18,7 +18,7 @@ class ConsumerString(private val producerString: ProducerString) {
      */
 
     suspend fun consumer(callback: (String) -> Unit) {
-        producerString.producerString().collect {
+        producerString.produceString().collect {
             callback(it)
         }
     }
