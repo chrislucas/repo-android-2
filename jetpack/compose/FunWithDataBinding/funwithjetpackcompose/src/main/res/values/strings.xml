@@ -1,0 +1,7 @@
+<resources>
+    <string name="title_activity_tutorial_list_paging">TutorialListPagingActivity</string>
+    <string name="title_activity_tutorial_paging_with_clean_arch">
+        TutorialPagingWithCleanArchActivity
+    </string>
+    <string name="title_activity_tutorial_nav_with_compose">TutorialNavWithComposeActivity</string>
+</resources>

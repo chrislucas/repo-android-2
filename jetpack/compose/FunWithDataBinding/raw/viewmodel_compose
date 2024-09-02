@@ -1,0 +1,15 @@
+
+ViewModel APIs cheat sheet
+https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-cheatsheet
+-----------------------------------------------------------------------------------------------------------------------
+ViewModel e estado no Compose
+https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state?hl=pt-br#0
+
+-----------------------------------------------------------------------------------------------------------------------
+Estado e Jetpack Compose
+https://developer.android.com/jetpack/compose/state?hl=pt-br
+-----------------------------------------------------------------------------------------------------------------------
+ViewModel To View in Jetpack Compose
+https://betterprogramming.pub/viewmodel-to-view-in-jetpack-compose-7c7183b54fb5
+
+-----------------------------------------------------------------------------------------------------------------------

@@ -21,4 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "UsingComposeCompilerGradlePlugin"
 include(":app")
- 
+include(":bindinglibraries")
+include(":openactivity")
+include(":wrapperrestclient")

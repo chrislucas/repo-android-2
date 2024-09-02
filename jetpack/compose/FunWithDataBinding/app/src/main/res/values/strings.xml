@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FunWithDataBinding</string>
+    <string name="lbl_btn_fetch_next_dog_image">Fetch Next Dog Image</string>
+</resources>

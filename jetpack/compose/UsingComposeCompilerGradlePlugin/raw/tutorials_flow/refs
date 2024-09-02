@@ -1,0 +1,53 @@
+https://medium.com/swlh/how-i-built-a-simple-currency-converter-app-using-recommended-android-pattern-and-architecture-204a3bbfc142
+https://proandroiddev.com/flow-livedata-what-are-they-best-use-case-lets-build-a-login-system-39315510666d
+
+codelabs
+https://stackoverflow.com/questions/68509935/kotlin-coroutines-kotlin-flow-and-shared-preferences-awaitclose-is-never-calle
+https://developer.android.com/codelabs/advanced-kotlin-coroutines#0
+https://developer.android.com/codelabs/basic-android-kotlin-training-intro-room-flow#0
+https://developer.android.google.cn/codelabs/advanced-kotlin-coroutines?hl=pt#0
+
+
+Flow tutorial
+-------------------------------------------------------------------------------------------
+https://proandroiddev.com/flow-livedata-what-are-they-best-use-case-lets-build-a-login-system-39315510666d#fromHistory
+-------------------------------------------------------------------------------------------
+https://medium.com/swlh/how-i-built-a-simple-currency-converter-app-using-recommended-android-pattern-and-architecture-204a3bbfc142
+-------------------------------------------------------------------------------------------
+
+
+Flow api
+https://kotlinlang.org/docs/flow.html
+https://abhiappmobiledeveloper.medium.com/kotlin-flow-api-54994c60a9ae
+https://kotlin.github.io/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-flow/
+
+
+Flow api android
+https://developer.android.com/kotlin/flow?hl=pt-br
+
+
+
+Lifecycle-scope
+https://developer.android.com/topic/libraries/architecture/coroutines?hl=pt-br
+https://developer.android.com/reference/kotlin/androidx/lifecycle/LifecycleCoroutineScope
+https://stackoverflow.com/questions/56035176/how-to-get-lifecycle-coroutinescope-with-new-androidx-lifecycle2-2-0-alpha01
+https://medium.com/androiddevelopers/a-safer-way-to-collect-flows-from-android-uis-23080b1f8bda
+
+-------------------------------------------------------------------------------------------
+repeatOnLifecycle
+https://medium.com/androiddevelopers/repeatonlifecycle-api-design-story-8670d1a7d333
+
+-------------------------------------------------------------------------------------------
+
+
+A safer way to collect flows from Android UIs
+https://medium.com/androiddevelopers/a-safer-way-to-collect-flows-from-android-uis-23080b1f8bda
+
+-------------------------------------------------------------------------------------------
+Desugaring api
+https://github.com/chrisluccas/desugar_jdk_libs/blob/master/README.md
+https://developer.android.com/studio/write/java8-support#library-desugaring
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+

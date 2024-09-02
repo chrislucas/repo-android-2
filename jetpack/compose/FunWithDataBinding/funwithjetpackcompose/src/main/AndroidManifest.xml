@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.navwithcompose.TutorialNavWithComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial_nav_with_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.pagingwithcleanarch.TutorialPagingWithCleanArchActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial_paging_with_clean_arch"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.listpaging.TutorialListPagingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial_list_paging"
+            android:theme="@style/Theme.FunWithDataBinding" />
+    </application>
+
+</manifest>

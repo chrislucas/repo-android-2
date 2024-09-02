@@ -10,10 +10,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.UsingComposeCompilerGradlePlugin"
-        tools:targetApi="31">
+        android:theme="@style/Theme.UsingComposeCompilerGradlePlugin">
         <activity
-            android:name=".MainActivity"
+            android:name=".compose.features.tutorials.medium.statehoisting.FunWithStateHoistingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_state_hoisting"
+            android:theme="@style/Theme.UsingComposeCompilerGradlePlugin" />
+        <activity
+            android:name=".compose.features.customviewscomponents.customviewsinteractive.PointerInputActivity"
+            android:exported="false"
+            android:label="@string/title_activity_pointer_input"
+            android:theme="@style/Theme.UsingComposeCompilerGradlePlugin" />
+        <activity
+            android:name=".compose.features.customviewscomponents.customlayouts.CustomLayoutsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_custom_layouts"
+            android:theme="@style/Theme.UsingComposeCompilerGradlePlugin" />
+        <activity
+            android:name=".view.features.webview.webkit.FunWithWebKitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.concatadapters.FunWithConcatAdapterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".compose.features.allfeatures.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.UsingComposeCompilerGradlePlugin">

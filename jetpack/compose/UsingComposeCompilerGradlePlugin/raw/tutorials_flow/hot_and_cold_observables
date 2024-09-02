@@ -1,0 +1,53 @@
+https://stackoverflow.com/questions/2521277/what-are-the-hot-and-cold-observables
+
+The main difference is that a cold observable creates a data producer FOR EACH SUBSCRIBEr, whereas a hot
+observable creates a data producer first, and each subscriber gets data from one producer, starting from
+the MOMENT OF SUBCRIPTION
+
+------------------------------------------------------------------------------------------------
+StateFlow
+https://stackoverflow.com/questions/70289483/how-to-test-a-combined-stateflow-of-cold-and-hot-flow
+
+
+------------------------------------------------------------------------------------------------
+https://logidots.com/insights/live-data-flow-shared-flow-state-flow-2/
+https://www.raywenderlich.com/22030171-reactive-streams-on-kotlin-sharedflow-and-stateflow
+
+------------------------------------------------------------------------------------------------
+https://kt.academy/article/cc-hot-cold
+------------------------------------------------------------------------------------------------
+https://proandroiddev.com/going-deep-on-flows-channels-part-1-streams-5ae8b8491ac4
+https://proandroiddev.com/going-deep-on-flows-channels-part-2-flows-c30fee00c2a4
+https://proandroiddev.com/going-deep-on-flows-channels-part-3-channels-df150458693b
+------------------------------------------------------------------------------------------------
+https://developer.android.com/kotlin/flow/stateflow-and-sharedflow
+
+StateFlow, Flow e Livedata
+
+StateFlow e Livedata sao semelhantes, ambas sao classes que encapsulam dados observavais e ambas
+seguem um padrao similar quando usado com a arquitetura MVVM .
+
+Porem as 2 tem um comportamento diferente
+	- StateFlow requer que seja passado para o seu construtor um ESTADO INICIAL
+	- LiveData.observer() desregistra automaitcamente o consumer quando a view cai no estado
+	STOPPED.
+	Ao passo que a colleta a partir de um StateFlow ou Flow nao para automaticamente. Para obter o comportamento
+	igual ao LiveData, precisamos coletar dados do Flow dentro do metodo Lifecycle.repeatOnLifecycle()
+
+
+------------------------------------------------------------------------------------------------
+https://developer.android.com/kotlin/flow
+------------------------------------------------------------------------------------------------
+repeatOnLifecycle
+https://medium.com/androiddevelopers/repeatonlifecycle-api-design-story-8670d1a7d333
+https://segmentfault.com/a/1190000040587525/en
+https://medium.com/androiddevelopers/a-safer-way-to-collect-flows-from-android-uis-23080b1f8bda
+
+Livro interessante
+https://www.raywenderlich.com/books/kotlin-coroutines-by-tutorials/v3.0/chapters/15-coroutines-in-the-ui-layer
+
+------------------------------------------------------------------------------------------------
+https://luukgruijs.medium.com/understanding-hot-vs-cold-observables-62d04cf92e03
+------------------------------------------------------------------------------------------------
+https://christianfindlay.com/2020/10/25/rx-hot-vs-cold/
+------------------------------------------------------------------------------------------------

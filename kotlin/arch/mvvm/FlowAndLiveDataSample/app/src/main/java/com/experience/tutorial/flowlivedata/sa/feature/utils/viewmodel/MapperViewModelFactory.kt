@@ -3,16 +3,19 @@ package com.experience.tutorial.flowlivedata.sa.feature.utils.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class MapperViewModelFactory(private val argsAndValues: Map<Class<*>, List<*>> = emptyMap()) : ViewModelProvider.Factory{
+class MapperViewModelFactory(
+    private val argsAndValues: Map<Class<*>, List<*>> = emptyMap()
+) : ViewModelProvider.Factory {
 
-    constructor(arg: Class<*>, value: Any): this(mapOf(arg to listOf(value)))
+    constructor(arg: Class<*>, value: Any) : this(mapOf(arg to listOf(value)))
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return if (argsAndValues.isEmpty()) {
             modelClass.getConstructor().newInstance()
         } else {
-            val arguments : Array<Class<*>> = argsAndValues.keys.toTypedArray()
-            val argumentsOfArgument : List<List<*>> = argsAndValues.values.toList()
+            val arguments: Array<Class<*>> = argsAndValues.keys.toTypedArray()
+            val argumentsOfArgument: List<List<*>> = argsAndValues.values.toList()
+
             when (argumentsOfArgument.size) {
                 1 -> {
                     if (argumentsOfArgument[0].isEmpty()) {
@@ -21,6 +24,7 @@ class MapperViewModelFactory(private val argsAndValues: Map<Class<*>, List<*>> =
                         modelClass.getConstructor(*arguments).newInstance(argumentsOfArgument[0][0])
                     }
                 }
+
                 else -> {
                     modelClass.getConstructor(*arguments).newInstance(argumentsOfArgument)
                 }

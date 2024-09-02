@@ -1,0 +1,36 @@
+android simulate slow network
+https://stackoverflow.com/questions/7026251/simulate-low-network-connectivity-for-android
+https://stackoverflow.com/questions/16295196/how-to-simulate-low-battery-in-android-devices
+
+---------------------------------------------------------------------------------------------------
+android simulate low memory api
+https://stackoverflow.com/questions/3656594/simulate-low-battery-low-memory-in-android
+https://developer.android.com/topic/performance/memory?authuser=1
+https://medium.com/major-league/making-your-app-crash-9415d74e2843
+https://source.android.com/docs/core/perf/lmkd
+---------------------------------------------------------------------------------------------------
+android low baterry simulation
+https://developer.android.com/training/monitoring-device-state/battery-monitoring
+
+android battery api
+https://developer.android.com/reference/android/os/BatteryManager
+https://yggr.medium.com/exploring-androids-batterymanager-api-8f64951fd9f6
+https://stackoverflow.com/questions/38333354/get-battery-informations-from-android-device
+
+---------------------------------------------------------------------------------------------------
+android slow network api
+https://stackoverflow.com/questions/55159487/android-how-to-determine-network-speed-in-android-programmatically
+https://medium.com/@shiny.shubham/optimising-mobile-app-performance-in-low-internet-connectivity-73a7bbec9e92
+https://www.esper.io/blog/android-13-network-throttling-setting
+https://developer.android.com/develop/connectivity/network-ops/network-access-optimization
+https://medium.com/android-news/designing-android-apps-to-handle-slow-network-speed-dedc04119aac
+
+Monitor connectivity status and connection metering
+https://developer.android.com/training/monitoring-device-state/connectivity-status-type
+
+https://github.com/dart-lang/http/issues/836
+
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
