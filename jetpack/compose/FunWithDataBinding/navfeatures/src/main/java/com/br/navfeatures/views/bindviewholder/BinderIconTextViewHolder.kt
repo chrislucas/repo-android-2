@@ -6,7 +6,6 @@ import com.br.recyclerviewcomponent.model.viewholdertype.IconTextViewType
 import com.br.recyclerviewcomponent.model.viewholdertype.ViewHolderType
 import com.br.recyclerviewcomponent.view.viewholder.IconTextViewHolder
 
-
 class BinderIconTextViewHolder: BindViewHolder<Feature, IconTextViewHolder> {
     override fun onClick(content: Feature, viewHolder: IconTextViewHolder) {
         viewHolder.itemView.setOnClickListener {

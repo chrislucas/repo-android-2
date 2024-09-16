@@ -9,7 +9,6 @@ android {
 
     defaultConfig {
         minSdk = 21
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -40,7 +39,6 @@ dependencies {
 
     api(libs.kotlinx.coroutines.core)
     api(libs.kotlinx.coroutines.android)
-
 
     api(libs.retrofit)
     // https://github.com/square/retrofit/tree/trunk/retrofit-adapters/rxjava3

@@ -1,4 +1,4 @@
-package com.br.funwithdatabinding.view.features.allfeatures.view
+package com.br.navfeatures.views
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.br.funwithdatabinding.databinding.ActivityAllFeaturesBinding
-import com.br.funwithdatabinding.view.features.allfeatures.model.getFeatures
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.br.navfeatures.databinding.ActivityAllFeaturesBinding
+import com.br.navfeatures.model.Feature
 import com.br.recyclerviewcomponent.behavior.FactoryViewHolderDefault
+import com.br.recyclerviewcomponent.model.ViewElement
 import com.br.recyclerviewcomponent.view.adapter.RecyclerViewAdapter
 
 class AllFeaturesActivity : AppCompatActivity() {
@@ -16,6 +18,7 @@ class AllFeaturesActivity : AppCompatActivity() {
     private val viewBinder: ActivityAllFeaturesBinding by lazy {
         ActivityAllFeaturesBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -26,9 +29,9 @@ class AllFeaturesActivity : AppCompatActivity() {
             insets
         }
 
-        val allFeatures: RecyclerView = viewBinder.allFeatures
+        val allFeatures: RecyclerView = viewBinder.recyclerViewAllFeatures
         allFeatures.adapter = RecyclerViewAdapter(
-            getFeatures(this),
+            listOf<ViewElement<Feature, ViewHolder>>(),
             FactoryViewHolderDefault()
         )
     }
