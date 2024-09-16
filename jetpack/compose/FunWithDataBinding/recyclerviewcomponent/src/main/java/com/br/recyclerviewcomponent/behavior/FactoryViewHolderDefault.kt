@@ -8,17 +8,14 @@ import com.br.recyclerviewcomponent.view.viewholder.SimpleLinkViewHolder
 
 class FactoryViewHolderDefault(
     emptyStateViewHolder: ViewHolder? = null,
-    private val viewHolders: MutableList<MatcherViewType> = mutableListOf()
+    private val matcherViewTypes: MutableList<MatcherViewType> = mutableListOf()
 ) : TemplateFactoryViewHolder(emptyStateViewHolder) {
 
-    override fun findViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder? {
-        return with(viewHolders) {
-            this += listOf(
-                SimpleLinkViewHolder(viewGroup),
-                IconTextViewHolder(viewGroup),
-                DefaultEmptyViewHolder(viewGroup)
-            )
-            find { it.equalsTo(viewType) } as ViewHolder
-        }
+    override fun findViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
+        return listOf(
+            SimpleLinkViewHolder(viewGroup),
+            IconTextViewHolder(viewGroup),
+            DefaultEmptyViewHolder(viewGroup)
+        ).plus(matcherViewTypes).find { it.equalsTo(viewType) } as ViewHolder
     }
 }

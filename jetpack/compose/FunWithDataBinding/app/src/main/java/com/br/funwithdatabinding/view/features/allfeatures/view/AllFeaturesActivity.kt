@@ -14,10 +14,9 @@ import com.br.recyclerviewcomponent.view.adapter.RecyclerViewAdapter
 
 class AllFeaturesActivity : AppCompatActivity() {
 
-
-    private val viewBinder = ActivityAllFeaturesBinding.inflate(layoutInflater)
-    private val allFeatures: RecyclerView = viewBinder.allFeatures
-
+    private val viewBinder: ActivityAllFeaturesBinding by lazy {
+        ActivityAllFeaturesBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,6 +26,8 @@ class AllFeaturesActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val allFeatures: RecyclerView = viewBinder.allFeatures
         allFeatures.adapter = RecyclerViewAdapter(
             getFeatures(this),
             FactoryViewHolderDefault()

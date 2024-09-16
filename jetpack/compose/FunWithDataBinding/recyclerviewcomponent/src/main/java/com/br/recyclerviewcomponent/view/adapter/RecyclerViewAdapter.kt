@@ -21,6 +21,14 @@ class RecyclerViewAdapter<T>(
         elements.size
     }
 
+    override fun onViewAttachedToWindow(holder: ViewHolder) {
+        if (holder.adapterPosition >=0 && elements.isNotEmpty()) {
+            elements[holder.adapterPosition].run {
+                bindViewHolder.onClick(content, holder)
+            }
+        }
+        super.onViewAttachedToWindow(holder)
+    }
     override fun getItemViewType(position: Int): Int {
         return if (elements.isEmpty()) {
             EmptyStateViewType.EMPTY_STATE_VIEW_TYPE

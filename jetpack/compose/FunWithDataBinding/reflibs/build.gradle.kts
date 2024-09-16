@@ -34,6 +34,12 @@ android {
 
 dependencies {
 
+    api(project(":funwithcurrencyconversionapi"))
+    api(project(":navfeatures"))
+    api(project(":funwithprotodatastore"))
+    api(project(":mapsandroidktx"))
+    api(project(":navfeaturescompose"))
+    api(project(":funwithconcatadapter"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

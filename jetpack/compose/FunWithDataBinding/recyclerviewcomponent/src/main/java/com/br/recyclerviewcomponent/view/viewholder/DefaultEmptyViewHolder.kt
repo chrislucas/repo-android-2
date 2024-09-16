@@ -14,7 +14,7 @@ class DefaultEmptyViewHolder(viewRoot: ViewGroup) : ViewHolder(
         false
     ).root
 ), MatcherViewType {
+
     override fun equalsTo(viewType: Int): Boolean =
         EmptyStateViewType.EMPTY_STATE_VIEW_TYPE == viewType
-
 }

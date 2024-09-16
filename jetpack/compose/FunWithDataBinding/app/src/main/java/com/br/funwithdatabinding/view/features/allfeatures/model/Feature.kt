@@ -4,28 +4,11 @@ import android.content.Context
 import android.content.Intent
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.br.funwithdatabinding.R
-import com.br.funwithdatabinding.view.features.allfeatures.view.bindviewholder.BinderIconTextViewHolder
-import com.br.funwithdatabinding.view.features.allfeatures.view.bindviewholder.BinderSimpleLinkViewHolder
 import com.br.funwithdatabinding.view.features.funwithdatabinding.FunWithDataBindingActivity
-import com.br.navfeatures.utils.startActivityByDeeplink
+import com.br.navfeatures.model.Feature
+import com.br.navfeatures.views.bindviewholder.BinderIconTextViewHolder
+import com.br.navfeatures.views.bindviewholder.BinderSimpleLinkViewHolder
 import com.br.recyclerviewcomponent.model.ViewElement
-
-class Feature(
-    val description: String,
-    private val uri: String = "",
-    private val intent: Intent? = null
-) {
-    fun fireIntention(context: Context) {
-        if (uri.isNotEmpty()) {
-            context.startActivityByDeeplink(uri)
-        } else {
-            intent?.let {
-                context.startActivity(it)
-            }
-        }
-    }
-}
-
 
 fun getFeatures(context: Context): List<ViewElement<Feature, ViewHolder>> = listOf(
     ViewElement(

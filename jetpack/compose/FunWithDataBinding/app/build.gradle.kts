@@ -45,10 +45,9 @@ android {
 
 dependencies {
 
-    api(project(":reflibs"))
+    implementation(project(":reflibs"))
     implementation(project(":restclientlib"))
     implementation(project(":wrapperviewmodel"))
-    implementation(project(":navfeatures"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -60,7 +59,6 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.picasso)
-    implementation(project(":recyclerviewcomponent"))
     annotationProcessor(libs.androidx.databinding.compiler)
     kapt(libs.compiler)
 

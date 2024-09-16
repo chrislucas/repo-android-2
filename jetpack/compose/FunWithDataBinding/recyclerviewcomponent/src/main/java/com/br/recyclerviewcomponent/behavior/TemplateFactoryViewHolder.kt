@@ -10,6 +10,8 @@ abstract class TemplateFactoryViewHolder(
 
     abstract fun findViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder?
 
-     override fun getViewHolder(viewRoot: ViewGroup, viewType: Int): ViewHolder =
-        findViewHolder(viewRoot, viewType) ?: (emptyStateViewHolder ?: DefaultEmptyViewHolder(viewRoot))
+    override fun getViewHolder(viewRoot: ViewGroup, viewType: Int): ViewHolder =
+        findViewHolder(viewRoot, viewType) ?: (emptyStateViewHolder ?: DefaultEmptyViewHolder(
+            viewRoot
+        ))
 }
