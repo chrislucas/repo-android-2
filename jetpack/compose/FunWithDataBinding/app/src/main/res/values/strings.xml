@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">FunWithDataBinding</string>
     <string name="lbl_btn_fetch_next_dog_image">Fetch Next Dog Image</string>
+    <string name="txt_title_code_labs_android_databinding">Code Labs Android Databinding</string>
+    <string name="txt_title_rxjava2_fun_with_sp_trans_api">Test SpTransport API RxJava2</string>
+    <string name="txt_title_fun_with_databinding">Tutorial Sobre uso de Databinding</string>
+    <string name="txt_title_rxjava3_fun_with_sp_trans_api_authentication">Test Endpoint de Autenticação Api SpTrans RxJava3</string>
 </resources>

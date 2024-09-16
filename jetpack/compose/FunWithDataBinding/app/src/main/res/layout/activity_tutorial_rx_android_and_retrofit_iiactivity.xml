@@ -5,6 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.features.tutorials.medium.rxandretrofitii.view.TutorialRxAndroidAndRetrofitIIActivity">
+    tools:context=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.view.TutorialRxAndroidAndRetrofitIIActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

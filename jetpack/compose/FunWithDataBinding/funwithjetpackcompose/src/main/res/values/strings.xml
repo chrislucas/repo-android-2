@@ -4,4 +4,7 @@
         TutorialPagingWithCleanArchActivity
     </string>
     <string name="title_activity_tutorial_nav_with_compose">TutorialNavWithComposeActivity</string>
+    <string name="title_activity_fun_with_web_socket">FunWithWebSocketActivity</string>
+    <string name="title_activity_fun_with_constraint_layout">FunWithConstraintLayoutActivity
+    </string>
 </resources>

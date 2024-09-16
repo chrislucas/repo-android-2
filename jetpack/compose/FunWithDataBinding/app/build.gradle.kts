@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.gms.google-services")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -38,13 +39,16 @@ android {
     buildFeatures {
         dataBinding = true
         buildConfig = true
+        viewBinding = true
     }
 }
 
 dependencies {
 
-    api(project(":restclientlib"))
-    api(project(":wrapperviewmodel"))
+    api(project(":reflibs"))
+    implementation(project(":restclientlib"))
+    implementation(project(":wrapperviewmodel"))
+    implementation(project(":navfeatures"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,6 +60,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.picasso)
+    implementation(project(":recyclerviewcomponent"))
     annotationProcessor(libs.androidx.databinding.compiler)
     kapt(libs.compiler)
 
@@ -100,6 +105,23 @@ dependencies {
     implementation(libs.google.firebase.config)
     implementation(libs.google.firebase.analytics)
 
+    // Data store
+
+    implementation("androidx.datastore:datastore-preferences:1.1.1")
+
+    // optional - RxJava2 support
+    implementation("androidx.datastore:datastore-preferences-rxjava2:1.1.1")
+
+    // optional - RxJava3 support
+    implementation("androidx.datastore:datastore-preferences-rxjava3:1.1.1")
+
+    implementation("androidx.datastore:datastore:1.1.1")
+
+    // optional - RxJava2 support
+    implementation("androidx.datastore:datastore-rxjava2:1.1.1")
+
+    // optional - RxJava3 support
+    implementation("androidx.datastore:datastore-rxjava3:1.1.1")
 
     // optional - Test helpers for LiveData
     testImplementation(libs.androidx.core.testing)

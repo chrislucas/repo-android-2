@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
+    id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
 }
 
@@ -42,6 +43,8 @@ android {
 
 dependencies {
 
+    api(project(":restclientlib"))
+    api(project(":wrapperviewmodel"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -58,71 +61,98 @@ dependencies {
 
     // compose
 
-    val composeBom = platform("androidx.compose:compose-bom:2024.06.00")
-    implementation(composeBom)
+    implementation(platform(libs.androidx.compose.bom.v20240901))
 
     // Choose one of the following:
     // Material Design 3
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.material3)
     // or Material Design 2
-    implementation("androidx.compose.material:material")
+    implementation(libs.androidx.material)
     // or skip Material Design and build directly on top of foundational components
-    implementation("androidx.compose.foundation:foundation")
+    implementation(libs.androidx.foundation)
     // or only import the main APIs for the underlying toolkit systems,
     // such as input and measurement/layout
-    implementation("androidx.compose.ui:ui")
+    implementation(libs.ui)
 
     // Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    implementation(libs.ui.tooling.preview)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    debugImplementation(libs.ui.tooling)
 
     // UI Tests
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest)
 
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
     // custom design system based on Foundation)
-    implementation("androidx.compose.material:material-icons-core")
+    implementation(libs.androidx.material.icons.core)
     // Optional - Add full set of material icons
-    implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.androidx.material.icons.extended)
     // Optional - Add window size utils
-    implementation("androidx.compose.material3.adaptive:adaptive")
+    implementation(libs.androidx.adaptive)
 
     // Optional - Integration with activities
-    implementation("androidx.activity:activity-compose:1.9.0")
+    implementation(libs.androidx.activity.compose)
     // Optional - Integration with ViewModels
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Optional - Integration with LiveData
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation(libs.androidx.runtime.livedata)
     // Optional - Integration with RxJava
-    implementation("androidx.compose.runtime:runtime-rxjava2")
+    implementation(libs.androidx.runtime.rxjava2)
 
     // paging jetpack compose
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1
 
-    val paging_version = "3.3.2"
-    implementation("androidx.paging:paging-runtime:$paging_version")
+    implementation(libs.androidx.paging.runtime)
 
     // alternatively - without Android dependencies for tests
 
     // optional - RxJava2 support
-    implementation("androidx.paging:paging-rxjava2:$paging_version")
+    implementation(libs.androidx.paging.rxjava2)
 
     // optional - RxJava3 support
-    implementation("androidx.paging:paging-rxjava3:$paging_version")
+    implementation(libs.androidx.paging.rxjava3)
 
     // optional - Guava ListenableFuture support
-    implementation("androidx.paging:paging-guava:$paging_version")
+    implementation(libs.androidx.paging.guava)
 
     // optional - Jetpack Compose integration
-    implementation("androidx.paging:paging-compose:3.3.2")
+    implementation(libs.androidx.paging.compose)
 
 
-    testImplementation("androidx.paging:paging-common:$paging_version")
+    testImplementation(libs.androidx.paging.common)
+
+    val room_version = "2.6.1"
+
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
 
 
-    androidTestImplementation(composeBom)
+    // To use Kotlin Symbol Processing (KSP)
+    ksp(libs.androidx.room.compiler)
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation(libs.androidx.room.ktx)
+
+    // optional - RxJava2 support for Room
+    implementation(libs.androidx.room.rxjava2)
+
+    // optional - RxJava3 support for Room
+    implementation(libs.androidx.room.rxjava3)
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation(libs.androidx.room.guava)
+
+    // optional - Test helpers
+    testImplementation(libs.androidx.room.testing)
+
+    // optional - Paging 3 Integration
+    implementation(libs.androidx.room.paging)
+
+
+    androidTestImplementation(platform(libs.androidx.compose.bom.v20240901))
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

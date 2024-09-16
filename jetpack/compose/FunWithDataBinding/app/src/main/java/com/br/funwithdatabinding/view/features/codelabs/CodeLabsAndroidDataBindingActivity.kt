@@ -1,4 +1,4 @@
-package com.example.funwithdatabinding.view.features.codelabs
+package com.br.funwithdatabinding.view.features.codelabs
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

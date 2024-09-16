@@ -1,0 +1,11 @@
+https://medium.com/digigeek/why-does-using-livedata-is-buggy-in-some-cases-and-how-to-solve-the-problem-using-singleliveevent-ed24f439ee48
+
+
+PostValue vs SetValue MutableLiveData
+https://developer.android.com/reference/androidx/lifecycle/MutableLiveData#postValue(T)
+
+Difference between setValue() and postValue()
+https://stackoverflow.com/questions/51299641/difference-of-setvalue-postvalue-in-mutablelivedata
+
+Android LiveData’s setValue() vs postValue()
+https://medium.com/@pritik.jain/android-livedatas-setvalue-vs-postvalue-216df70b9868

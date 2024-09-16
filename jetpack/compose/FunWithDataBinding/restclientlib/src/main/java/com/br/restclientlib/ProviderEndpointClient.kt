@@ -25,7 +25,7 @@ object ProviderEndpointClient {
             .create(T::class.java)
     }
 
-    inline fun <reified T> createOldReactiveService(
+    inline fun <reified T> createCompatRxJava2Service(
         url: String,
         converterFactory: Converter.Factory = GsonConverterFactory.create(),
         createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient

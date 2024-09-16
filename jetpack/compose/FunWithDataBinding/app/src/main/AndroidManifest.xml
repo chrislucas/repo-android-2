@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Always include this permission -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include only if your app benefits from precise location access. -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,18 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
-            android:name=".view.features.tutorials.medium.rxandretrofitii.view.TutorialRxAndroidAndRetrofitIIActivity"
+            android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava3.features.authentication.view.AuthenticationSpTransApiActivity"
+            android:exported="false">
+            <intent-filter>
+                <data
+                    android:host="rxjava3_fun_with_sp_trans_api_authentication"
+                    android:scheme="dpl" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".view.features.allfeatures.view.AllFeaturesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,13 +36,60 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.searchbuslines.view.SearchBusLinesSpTransportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.datastore.workingwithdatastore.WorkingWithDataStoreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithcurrentlocation.FunWithCurrentLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithlastknowlocationii.FunWithLastKnowLocationIIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.funwithlastknowlocation.FunWithLastKnowLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithfirebaserealtimedatabase.FunWithRealtimeDatabaseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithlocationaware.FunWithLocationAwareActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithwebsocket.FunWithWebSocketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithlocationmanager.FunWithLocationManagerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.codelabs.CodeLabsAndroidDataBindingActivity"
+            android:exported="false">
+            <intent-filter>
+                <data
+                    android:host="code_labs_android_databinding"
+                    android:scheme="dpl" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.view.TutorialRxAndroidAndRetrofitIIActivity"
+            android:exported="false">
+            <intent-filter>
+                <data
+                    android:host="rxjava2_fun_with_sp_trans_api"
+                    android:scheme="dpl" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".MainActivity"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".view.features.funwithdatabinding.FunWithDataBindingActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
