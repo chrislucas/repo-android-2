@@ -5,6 +5,6 @@
     android:id="@+id/recycler_view_all_features"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.view.TutorialRxAndroidAndRetrofitIIActivity">
+    tools:context=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.view.AuthenticationSpTransApiRxJava2Activity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

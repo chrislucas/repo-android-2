@@ -52,9 +52,14 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    implementation(libs.androidx.graphics.core)
+    implementation(libs.androidx.graphics.path)
+    implementation(libs.androidx.graphics.shapes)
+
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
+    implementation(libs.okhttp.urlconnection)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 

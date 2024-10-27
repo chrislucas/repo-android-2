@@ -1,4 +1,4 @@
-package com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.commons.service.models
+package com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.commons.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -15,12 +15,12 @@ import kotlinx.parcelize.Parcelize
  *https://www.sptrans.com.br/desenvolvedores/api-do-olho-vivo-guia-de-referencia/documentacao-api/
  */
 
-const val SP_TRANS_OLHO_VIVO_API_BASE_URL = "http://api.olhovivo.sptrans.com.br/v2.1/"
+const val SP_TRANS_OLHO_VIVO_API_BASE_URL = "https://api.olhovivo.sptrans.com.br/v2.1/"
 
 /**
  * @property identifierLineCode Código identificador da linha. Este é um código identificador único de cada linha
  * do sistema (por sentido de operação).
- * @property circularLine  Indica se uma linha opera no modo circular (sem um terminal secundário)
+ * @property isCircularLine  Indica se uma linha opera no modo circular (sem um terminal secundário)
  * @property busSign  Informa a primeira parte do letreiro numérico da linha
  * @property operationMode Informa a segunda parte do letreiro numérico da linha, que indica se a linha opera nos modos:
  * BASE (10), ATENDIMENTO (21, 23, 32, 41)
@@ -35,7 +35,7 @@ const val SP_TRANS_OLHO_VIVO_API_BASE_URL = "http://api.olhovivo.sptrans.com.br/
 @Parcelize
 data class SpBusLine(
     @SerializedName("cl") val identifierLineCode: Int,
-    @SerializedName("lc") val circularLine: Boolean,
+    @SerializedName("lc") val isCircularLine: Boolean,
     @SerializedName("lt") val busSign: String,
     @SerializedName("tl") val operationMode: Int,
     @SerializedName("sl") val lineDirection: Int,

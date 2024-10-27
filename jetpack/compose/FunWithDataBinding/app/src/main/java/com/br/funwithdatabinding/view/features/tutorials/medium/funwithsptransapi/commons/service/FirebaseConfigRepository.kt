@@ -1,6 +1,7 @@
 package com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.commons.service
 
 import androidx.fragment.app.FragmentActivity
+import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.services.RxSpTransportAuthenticationService
 import com.br.funwithdatabinding.view.features.utils.FirebaseRemoteConfig
 
 
@@ -17,34 +18,31 @@ interface CallbackOnHttpRequest<T> {
     fun onFail()
 }
 
-object AuthenticationSpTransApiService {
+object FirebaseConfigRepository {
 
     fun fetchToken(
         context: FragmentActivity,
         callback: ((token: String?) -> Unit)? = null
-    ): String? {
+    ) {
         val firebaseRemoteConfig = FirebaseRemoteConfig()
-        var token: String? = null
         firebaseRemoteConfig.fetchAndActivate(context) { task ->
             if (task.isSuccessful) {
-                token = firebaseRemoteConfig.spTransToken
-                callback?.invoke(token)
+                callback?.invoke(firebaseRemoteConfig.spTransToken)
             }
         }
-        return token
     }
 
-    /*
-        Desse jeito nao passamos pelo ViewModel
 
-        fun authenticate(
-            context: FragmentActivity,
-            callbackAuthenticationSpTransApi: CallbackAuthenticationSpTransApi
-        ) {
-            fetchToken(context)?.let { token ->
-                val service = RxSpTransportAuthenticationService()
+    @Deprecated("")
+    fun fetchDeprecated(
+        context: FragmentActivity,
+        callbackAuthenticationSpTransApi: CallbackAuthenticationSpTransApi
+    ) {
+        fetchToken(context) { token ->
+            val service = RxSpTransportAuthenticationService()
+            token?.let {
                 service.authenticateInSpTransApi(
-                    token,
+                    it,
                     onError = callbackAuthenticationSpTransApi::onError,
                     onSuccess = callbackAuthenticationSpTransApi::onSuccess
                 )
@@ -52,6 +50,5 @@ object AuthenticationSpTransApiService {
                 callbackAuthenticationSpTransApi.onErrorFetchToken()
             }
         }
-
-     */
+    }
 }

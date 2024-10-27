@@ -1,7 +1,7 @@
 package com.br.restclientlib
 
-
 import com.squareup.leakcanary.core.BuildConfig
+import okhttp3.JavaNetCookieJar
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
@@ -9,6 +9,8 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.net.CookieManager
+import java.util.concurrent.TimeUnit
 
 object ProviderEndpointClient {
 
@@ -39,6 +41,7 @@ object ProviderEndpointClient {
             .create(T::class.java)
     }
 
+
     inline fun <reified T> createReactiveService(
         url: String,
         converterFactory: Converter.Factory = GsonConverterFactory.create(),
@@ -51,6 +54,23 @@ object ProviderEndpointClient {
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
             .create(T::class.java)
+    }
+
+    fun createClientHandlerCookie(): OkHttpClient {
+        return createOkHttpClientBuilderHandlerCookie().build()
+    }
+
+    fun createOkHttpClientBuilderHandlerCookie(): OkHttpClient.Builder {
+        val cookieHandler = CookieManager()
+        val builder = OkHttpClient.Builder()
+        builder.cookieJar(JavaNetCookieJar(cookieHandler))
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .writeTimeout(10, TimeUnit.SECONDS)
+            .readTimeout(30, TimeUnit.SECONDS)
+        val interceptor = HttpLoggingInterceptor()
+        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        builder.addInterceptor(interceptor)
+        return builder
     }
 
     fun createOkHttpClient(): OkHttpClient {

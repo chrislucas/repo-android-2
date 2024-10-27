@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.recyclerview.widget.RecyclerView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_tutorials_callback_flow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.features.tutorials.medium.callbackflow.AllTutorialsAboutCallbackFlowActivity"
+    tools:listitem="@layout/layout_simple_link_view_holder"
+    tools:itemCount="4"
+    />

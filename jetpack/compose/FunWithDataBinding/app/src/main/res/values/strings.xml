@@ -5,4 +5,14 @@
     <string name="txt_title_rxjava2_fun_with_sp_trans_api">Test SpTransport API RxJava2</string>
     <string name="txt_title_fun_with_databinding">Tutorial Sobre uso de Databinding</string>
     <string name="txt_title_rxjava3_fun_with_sp_trans_api_authentication">Test Endpoint de Autenticação Api SpTrans RxJava3</string>
+    <string name="txt_title_rxjava2_fun_with_sp_trans_api_bus_lines">Pesquisar por linhas de ônibus Api SpTrans</string>
+    <string name="txt_title_all_tutorials_callback_flow">Todos os tutoriais sobre callback Flow</string>
+    <string name="search_bus_lines">Linhas de ônibus</string>
+    <string name="txt_title_callback_flow_with_web_socket">Teste callbackFlow e websocket</string>
+    <string name="txt_title_callback_flow_with_firebase_database_realtime">Teste Callback Flow Com Firebase RealTime DB</string>
+    <string name="label_test_spannable_interval_inclusive_inclusive">Spannable Interval Inclusive_Inclusive</string>
+    <string name="label_test_spannable_interval_inclusive_exclusive">Spannable Interval Inclusive_Exclusive</string>
+    <string name="label_test_spannable_interval_exclusive_exclusive">Spannable Interval Exclusive_Exclusive</string>
+    <string name="label_test_spannable_interval_exclusive_inclusive">Spannable Interval Exclusive_Inclusive</string>
+    <string name="txt_dynamic_span_drawable">Dynamic Span Drawable</string>
 </resources>

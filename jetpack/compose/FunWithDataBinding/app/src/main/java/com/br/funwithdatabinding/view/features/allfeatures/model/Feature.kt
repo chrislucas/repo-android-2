@@ -43,6 +43,46 @@ fun getFeatures(context: Context): List<ViewElement<Feature, ViewHolder>> = list
         ),
         BinderIconTextViewHolder()
     ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_title_rxjava2_fun_with_sp_trans_api_bus_lines),
+            "dpl://rxjava2_fun_with_sp_trans_api_bus_lines"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_title_all_tutorials_callback_flow),
+            "dpl://all_tutorials_callback_flows"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_title_callback_flow_with_web_socket),
+            "dpl://callback_flow_with_web_socket"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_title_callback_flow_with_firebase_database_realtime),
+            "dpl://callback_flow_with_firebase_database_realtime"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_dynamic_span_drawable),
+            "dpl://dynamic_span_drawable"
+        ),
+        BinderIconTextViewHolder()
+    )
 )
 
 

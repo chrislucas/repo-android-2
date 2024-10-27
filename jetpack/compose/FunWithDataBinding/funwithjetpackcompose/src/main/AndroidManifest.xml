@@ -3,6 +3,31 @@
 
     <application>
         <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.cameraandcanvas.CameraAndCanvasActivity"
+            android:exported="false"
+            android:label="@string/title_activity_camera_and_canvas"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.customslider.CustomSliderActivity"
+            android:exported="false"
+            android:label="@string/title_activity_custom_slider"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.jetpackcomposeapp.optmizerecomposition.OptmizeRecompositionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_optmize_recomposition"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.funwithsplashscreenapi.FunWithSplashScreenApiActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_splash_screen_api"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.customdialogs.FunWithCustomDialogsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_custom_dialogs"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
             android:name="com.br.funwithjetpackcompose.tutorials.google.constraintlayout.FunWithConstraintLayoutActivity"
             android:exported="false"
             android:label="@string/title_activity_fun_with_constraint_layout"

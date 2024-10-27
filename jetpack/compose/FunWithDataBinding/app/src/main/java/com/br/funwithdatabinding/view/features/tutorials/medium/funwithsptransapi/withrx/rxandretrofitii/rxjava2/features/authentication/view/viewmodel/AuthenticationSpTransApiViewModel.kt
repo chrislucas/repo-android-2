@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.services.RxSpTransportAuthenticationService
 import io.reactivex.disposables.Disposable
 
-class RxSpTransViewModel : ViewModel() {
+class AuthenticationSpTransApiViewModel : ViewModel() {
 
     private var fetchDataDisposable: Disposable? = null
 

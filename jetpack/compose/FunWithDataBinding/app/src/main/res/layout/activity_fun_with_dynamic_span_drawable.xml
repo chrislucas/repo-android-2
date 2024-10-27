@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.features.tutorials.google.dynamicspandrawable.FunWithDynamicSpanDrawableActivity">
+
+
+    <TextView
+        android:id="@+id/test_spannable_interval_inclusive_inclusive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/label_test_spannable_interval_inclusive_inclusive"
+        android:textSize="23sp"
+        />
+
+
+    <TextView
+        android:id="@+id/test_spannable_interval_inclusive_exclusive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/test_spannable_interval_inclusive_inclusive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/label_test_spannable_interval_inclusive_exclusive"
+        android:textSize="23sp"
+        />
+
+
+    <TextView
+        android:id="@+id/test_spannable_interval_exclusive_exclusive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/test_spannable_interval_inclusive_exclusive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/label_test_spannable_interval_exclusive_exclusive"
+        android:textSize="23sp"
+        />
+
+
+    <TextView
+        android:id="@+id/test_spannable_interval_exclusive_inclusive"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/test_spannable_interval_exclusive_exclusive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/label_test_spannable_interval_exclusive_inclusive"
+        android:textSize="23sp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

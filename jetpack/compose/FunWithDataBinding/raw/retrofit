@@ -5,3 +5,13 @@ https://medium.com/swlh/okhttp-interceptors-with-retrofit-2dcc322cc3f3
 https://github.com/square/okhttp/tree/master/okhttp-logging-interceptor
 
 https://blog.stackademic.com/make-custom-retrofit-calladapter-and-understand-the-working-dbf4db8e80e9
+
+
+Interceptor
+https://gist.github.com/tsuharesu/cbfd8f02d46498b01f1b
+
+JavaNetCookieJar
+https://square.github.io/okhttp/3.x/okhttp-urlconnection/okhttp3/JavaNetCookieJar.html
+
+Accessing the SPtrans API, authorization failing on information requests
+https://stackoverflow.com/questions/23723478/accessing-the-sptrans-api-authorization-failing-on-information-requests

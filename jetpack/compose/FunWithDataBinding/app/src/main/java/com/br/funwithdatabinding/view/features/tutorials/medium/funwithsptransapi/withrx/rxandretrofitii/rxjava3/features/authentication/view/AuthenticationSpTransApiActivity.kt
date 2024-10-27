@@ -9,12 +9,12 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.BuildConfig
 import com.br.funwithdatabinding.R
-import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.commons.service.AuthenticationSpTransApiService
-import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava3.features.authentication.view.viewmodel.RxSpTransViewModel
+import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.commons.service.FirebaseConfigRepository
+import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava3.features.authentication.view.viewmodel.AuthenticationSpTransApiViewModel
 
 class AuthenticationSpTransApiActivity : AppCompatActivity() {
 
-    private val viewModel by viewModels<RxSpTransViewModel>()
+    private val viewModel by viewModels<AuthenticationSpTransApiViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +26,7 @@ class AuthenticationSpTransApiActivity : AppCompatActivity() {
             insets
         }
 
-        AuthenticationSpTransApiService.fetchToken(this) { token ->
+        FirebaseConfigRepository.fetchToken(this) { token ->
             val message = token?.let {
                 viewModel.checkAuthentication(it)
                 /*
@@ -46,6 +46,4 @@ class AuthenticationSpTransApiActivity : AppCompatActivity() {
             }
         }
     }
-
-
 }

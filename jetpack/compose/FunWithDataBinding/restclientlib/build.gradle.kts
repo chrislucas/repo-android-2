@@ -47,6 +47,7 @@ dependencies {
 
     api(libs.converter.gson)
     api(libs.logging.interceptor)
+    api(libs.okhttp.urlconnection)
 
 
     // optional - RxJava2 support

@@ -1,7 +1,9 @@
 package com.br.funwithdatabinding.view.features.utils
 
 
+import android.util.Log
 import androidx.fragment.app.FragmentActivity
+import com.br.funwithdatabinding.BuildConfig
 import com.google.android.gms.tasks.Task
 import com.google.firebase.Firebase
 import com.google.firebase.remoteconfig.ConfigUpdate
@@ -44,26 +46,23 @@ class FirebaseRemoteConfig(
     init {
         remoteConfig.setConfigSettingsAsync(configSettings)
         remoteConfig.addOnConfigUpdateListener(configUpdateListener)
-        // TODO adicionar num DataStore criptografado para nao ter que chamar o remote
-        spTransToken = remoteConfig.getString(SP_TRANSP_TOKEN_KEY)
+        /*
+            TODO adicionar num DataStore criptografado para nao ter que chamar o remote/
+         */
+        spTransToken = remoteConfig.getString(SP_TRANSPORT_TOKEN_KEY)
     }
 
     companion object {
         private val configSettings = remoteConfigSettings { minimumFetchIntervalInSeconds = 120 }
-        val SP_TRANSP_TOKEN_KEY = "sptranstoken"
+        const val SP_TRANSPORT_TOKEN_KEY = "sptranstoken"
     }
 
 
     /*
         https://firebase.google.com/docs/remote-config/get-started?authuser=1&platform=android#fetch-values
      */
-    fun fetchAndActivate(
-        activity: FragmentActivity,
-        callback: (Task<Boolean>) -> Unit
-    ) = remoteConfig.fetchAndActivate()
-        .addOnCompleteListener(activity) { task ->
-            callback(task)
-        }
+    fun fetchAndActivate(activity: FragmentActivity, callback: (Task<Boolean>) -> Unit) =
+        remoteConfig.fetchAndActivate().addOnCompleteListener(activity, callback)
 }
 
 
@@ -75,5 +74,8 @@ class ConfigUpdateListenerDefault : ConfigUpdateListener {
     }
 
     override fun onError(error: FirebaseRemoteConfigException) {
+        if(BuildConfig.DEBUG) {
+            Log.e("FB_REMOTE_CONFIG", "$error")
+        }
     }
 }

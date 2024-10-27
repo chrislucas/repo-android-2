@@ -7,4 +7,9 @@
     <string name="title_activity_fun_with_web_socket">FunWithWebSocketActivity</string>
     <string name="title_activity_fun_with_constraint_layout">FunWithConstraintLayoutActivity
     </string>
+    <string name="title_activity_fun_with_custom_dialogs">FunWithCustomDialogsActivity</string>
+    <string name="title_activity_fun_with_splash_screen_api">FunWithSplashScreenApiActivity</string>
+    <string name="title_activity_optmize_recomposition">OptmizeRecompositionActivity</string>
+    <string name="title_activity_custom_slider">CustomSliderActivity</string>
+    <string name="title_activity_camera_and_canvas">CameraAndCanvasActivity</string>
 </resources>

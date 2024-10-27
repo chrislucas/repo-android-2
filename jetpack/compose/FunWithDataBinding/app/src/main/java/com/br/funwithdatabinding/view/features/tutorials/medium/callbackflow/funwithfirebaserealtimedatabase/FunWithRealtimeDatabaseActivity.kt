@@ -13,7 +13,15 @@ import com.br.funwithdatabinding.R
  * Firebase Realtime Database
  * https://firebase.google.com/docs/database
  *
+ * Callback Flow
+ * https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/callback-flow.html#fromHistory
+ *
  * https://www.droidcon.com/2023/05/01/callbackflow-with-firebase-converting-realtimedatabase-callbacks-into-callbackflow/
+
+Kotlin callbackFlow: A lightweight architecture for location-aware Android apps
+
+https://barbeau.medium.com/kotlin-callbackflow-a-lightweight-architecture-for-location-aware-android-apps-f97b5e66aaa2#fromHistory
+
  */
 class FunWithRealtimeDatabaseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -51,6 +51,10 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.ui.graphics)
 
+    implementation("androidx.graphics:graphics-core:1.0.1")
+    implementation("androidx.graphics:graphics-path:1.0.1")
+    implementation("androidx.graphics:graphics-shapes:1.0.1")
+
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom.v3320))
 

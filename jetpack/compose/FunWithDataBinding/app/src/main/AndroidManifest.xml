@@ -17,29 +17,91 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
+            android:name=".view.features.allfeatures.view.GroupingFeaturesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.funreplacementspan.DrawingRoundedCornerBackgroundTextActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.dynamicspandrawable.FunWithDynamicSpanDrawableActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="dynamic_span_drawable"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.android2dgraphics.chp8.DrawingCubeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.androidxgraphics.ShapeOfThingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.AllTutorialsAboutCallbackFlowActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="all_tutorials_callback_flows"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.callbackflow.funwithlocationandcallbackfunction.FunWithLocationAndCallbackFlowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.android2dgraphics.chp8.CoordinateTransformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.funwithviewmodelfactory.FunWithViewModelFactoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava3.features.authentication.view.AuthenticationSpTransApiActivity"
             android:exported="true">
             <intent-filter>
                 <data
                     android:host="rxjava3_fun_with_sp_trans_api_authentication"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".view.features.allfeatures.view.AllFeaturesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.searchbuslines.view.SearchBusLinesSpTransportActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="rxjava2_fun_with_sp_trans_api_bus_lines"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.tutorials.medium.datastore.workingwithdatastore.WorkingWithDataStoreActivity"
             android:exported="false" />
@@ -54,13 +116,35 @@
             android:exported="false" />
         <activity
             android:name=".view.features.tutorials.medium.callbackflow.funwithfirebaserealtimedatabase.FunWithRealtimeDatabaseActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="callback_flow_with_firebase_database_realtime"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.tutorials.medium.callbackflow.funwithlocationaware.FunWithLocationAwareActivity"
             android:exported="false" />
         <activity
             android:name=".view.features.tutorials.medium.callbackflow.funwithwebsocket.FunWithWebSocketActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="callback_flow_with_web_socket"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.tutorials.medium.callbackflow.funwithlocationmanager.FunWithLocationManagerActivity"
             android:exported="false" />
@@ -71,19 +155,23 @@
                 <data
                     android:host="code_labs_android_databinding"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.view.TutorialRxAndroidAndRetrofitIIActivity"
+            android:name=".view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.view.AuthenticationSpTransApiRxJava2Activity"
             android:exported="true">
             <intent-filter>
                 <data
                     android:host="rxjava2_fun_with_sp_trans_api"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -96,6 +184,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
