@@ -82,6 +82,22 @@ fun getFeatures(context: Context): List<ViewElement<Feature, ViewHolder>> = list
             "dpl://dynamic_span_drawable"
         ),
         BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_drawing_cube_on_canvas),
+            "dpl://drawing_cube_canvas"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_drawing_line_shape_canvas_book),
+            "dpl://drawing_line_shape_canvas_book"
+        ),
+        BinderIconTextViewHolder()
     )
 )
 

@@ -15,4 +15,6 @@
     <string name="label_test_spannable_interval_exclusive_exclusive">Spannable Interval Exclusive_Exclusive</string>
     <string name="label_test_spannable_interval_exclusive_inclusive">Spannable Interval Exclusive_Inclusive</string>
     <string name="txt_dynamic_span_drawable">Dynamic Span Drawable</string>
+    <string name="txt_drawing_cube_on_canvas">Desenhando um Cubo com Canvas</string>
+    <string name="txt_drawing_line_shape_canvas_book">[Canvas Book]Desenha uma linha</string>
 </resources>

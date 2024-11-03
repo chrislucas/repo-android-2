@@ -3,25 +3,93 @@
 
     <application>
         <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.book.canvas2d.chp3.priimitives.DrawingLineShapeActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="drawing_line_shape_canvas_book"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.book.canvas2d.samples.drawingcube.DrawingCubeActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="drawing_cube_canvas"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.br.funwithjetpackcompose.tutorials.medium.cameraandcanvas.CameraAndCanvasActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_camera_and_canvas"
-            android:theme="@style/Theme.FunWithDataBinding" />
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="a"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.medium.customslider.CustomSliderActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_custom_slider"
-            android:theme="@style/Theme.FunWithDataBinding" />
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="b"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.jetpackcomposeapp.optmizerecomposition.OptmizeRecompositionActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_optmize_recomposition"
-            android:theme="@style/Theme.FunWithDataBinding" />
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="c"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.medium.funwithsplashscreenapi.FunWithSplashScreenApiActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_fun_with_splash_screen_api"
-            android:theme="@style/Theme.FunWithDataBinding" />
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="d"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.medium.customdialogs.FunWithCustomDialogsActivity"
             android:exported="false"

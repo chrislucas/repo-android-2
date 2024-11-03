@@ -21,7 +21,16 @@
             android:exported="false" />
         <activity
             android:name=".view.features.tutorials.medium.funreplacementspan.DrawingRoundedCornerBackgroundTextActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="e"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.tutorials.google.dynamicspandrawable.FunWithDynamicSpanDrawableActivity"
             android:exported="true">
@@ -29,16 +38,23 @@
                 <data
                     android:host="dynamic_span_drawable"
                     android:scheme="dpl" />
-
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
         <activity
             android:name=".view.features.android2dgraphics.chp8.DrawingCubeActivity"
-            android:exported="false" />
+            android:exported="true" >
+            <intent-filter>
+                <data
+                    android:host="drawing_cube_canvas_book"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.androidxgraphics.ShapeOfThingsActivity"
             android:exported="false" />
