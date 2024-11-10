@@ -1,4 +1,4 @@
-package com.br.funwithdatabinding.view.features.tutorials.medium.funreplacementspan
+package com.br.funwithdatabinding.view.features.tutorials.medium.windowinsets
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,17 +8,17 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.R
 
 /*
-    https://medium.com/androiddevelopers/drawing-a-rounded-corner-background-on-text-5a610a95af5
+    View.OnApplyWindowInsetsListener
+    https://developer.android.com/reference/android/view/View.OnApplyWindowInsetsListener
 
-    TODO
-    - verificar a possibilidade de adicionar um  RangeSlider para controlar o intervalo
-        usado para criar o spannable que vai adicionar o background
+    WindowInsets — listeners to layouts
+    https://medium.com/androiddevelopers/windowinsets-listeners-to-layouts-8f9ccc8fa4d1
  */
-class DrawingRoundedCornerBackgroundTextActivity : AppCompatActivity() {
+class AboutWindowInsetsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_drawing_rounded_corner_background_text)
+        setContentView(R.layout.activity_about_window_insets)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)

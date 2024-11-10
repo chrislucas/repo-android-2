@@ -14,7 +14,18 @@
     <string name="label_test_spannable_interval_inclusive_exclusive">Spannable Interval Inclusive_Exclusive</string>
     <string name="label_test_spannable_interval_exclusive_exclusive">Spannable Interval Exclusive_Exclusive</string>
     <string name="label_test_spannable_interval_exclusive_inclusive">Spannable Interval Exclusive_Inclusive</string>
+    <string name="label_test_spannable_interval">Spannable Range Test</string>
     <string name="txt_dynamic_span_drawable">Dynamic Span Drawable</string>
     <string name="txt_drawing_cube_on_canvas">Desenhando um Cubo com Canvas</string>
     <string name="txt_drawing_line_shape_canvas_book">[Canvas Book]Desenha uma linha</string>
+    <string name="txt_spannable_category">Spannable Category</string>
+    <string name="txt_security_category">Spannable Category</string>
+    <string name="txt_grouping_category_features">Agrupador de estudos por categoria.</string>
+    <string name="txt_window_insets_listeners_to_layout">Tutorial: window_insets_listeners_to_layout</string>
+    <string name="label_tutorial">Tutorial</string>
+    <string name="label_tutorials">Tutoriais</string>
+    <string name="txt_drawing_rounded_corner_text_background">Drawing a rounded corner background on text.</string>
+    <string name="label_test_dynamic_drawable_span">CustomDynamicDrawableSpan [ ]</string>
+    <string name="label_test_centered_image_span">CenteredImageSpan [ ]</string>
+    <string name="label_test_image_span">ImageSpan [ ]</string>
 </resources>

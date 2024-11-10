@@ -17,16 +17,46 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
-            android:name=".view.features.allfeatures.view.GroupingFeaturesActivity"
+            android:name=".view.features.tutorials.funwithspannablestringbuilder.FunWithSpannableStringBuiliderAndRangeSliderActivity"
             android:exported="false" />
         <activity
-            android:name=".view.features.tutorials.medium.funreplacementspan.DrawingRoundedCornerBackgroundTextActivity"
+            android:name=".view.features.tutorials.medium.windowinsets.AboutWindowInsetsActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="window_insets_listeners_to_layout"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.allfeatures.view.GroupingFeaturesActivity"
             android:exported="true">
             <intent-filter>
                 <data
                     android:host="e"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.funreplacementspan.DrawingRoundedCornerBackgroundTextActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="drawing_rounded_corner_text_background"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -45,12 +75,14 @@
         </activity>
         <activity
             android:name=".view.features.android2dgraphics.chp8.DrawingCubeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <data
                     android:host="drawing_cube_canvas_book"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>

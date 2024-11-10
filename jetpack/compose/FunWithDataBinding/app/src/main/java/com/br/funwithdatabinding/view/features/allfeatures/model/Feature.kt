@@ -11,6 +11,23 @@ import com.br.navfeatures.views.bindviewholder.BinderSimpleLinkViewHolder
 import com.br.recyclerviewcomponent.model.ViewElement
 
 fun getFeatures(context: Context): List<ViewElement<Feature, ViewHolder>> = listOf(
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_grouping_category_features),
+            "dpl://grouping_category_features"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_drawing_rounded_corner_text_background),
+            "dpl://drawing_rounded_corner_text_background"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
     ViewElement(
         Feature(
             context.getString(R.string.txt_title_code_labs_android_databinding),
@@ -96,6 +113,14 @@ fun getFeatures(context: Context): List<ViewElement<Feature, ViewHolder>> = list
         Feature(
             context.getString(R.string.txt_drawing_line_shape_canvas_book),
             "dpl://drawing_line_shape_canvas_book"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_window_insets_listeners_to_layout),
+            "dpl://window_insets_listeners_to_layout"
         ),
         BinderIconTextViewHolder()
     )

@@ -12,9 +12,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.funwithjetpackcompose.tutorials.book.canvas2d.samples.drawingcube.MatrixOperation.multiply
+import com.br.funwithjetpackcompose.tutorials.book.canvas2d.samples.drawingcube.MatrixOperation.multiplyByConst
 import com.br.funwithjetpackcompose.tutorials.book.canvas2d.samples.drawingcube.MatrixOperation.translate
 import com.br.funwithjetpackcompose.tutorials.book.canvas2d.samples.drawingcube.MatrixOperation.vecToMatrix
-import com.br.mylibrary.R
+import com.br.mylibrary.databinding.ActivityDrawingCubeBinding
 import kotlin.math.cos
 import kotlin.math.sin
 
@@ -22,11 +23,19 @@ import kotlin.math.sin
     https://github.com/VictorFranco/AndroidCube/blob/main/app/src/main/java/com/example/cube/MainActivity.java
  */
 class DrawingCubeActivity : AppCompatActivity() {
+
+    private val binding: ActivityDrawingCubeBinding by lazy {
+        ActivityDrawingCubeBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_drawing_cube)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        setContentView(AnimatedCubeCanvas(this))
+    }
+
+    private fun test() {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -95,15 +104,39 @@ class AnimatedCubeCanvas @JvmOverloads constructor(
         drawVertices(rotateX, rotateY, rotateZ, canvas)
         connectedVertices(canvas)
         angle += ANGLE_OFFSET
+        showAngle(canvas)
         handler.postDelayed({ invalidate() }, 10)
+    }
+
+    private fun showAngle(canvas: Canvas) {
+        canvas.drawText("Ângulo: $angle", 100.0f, 200.0f, paintAngleLog)
     }
 
     private fun connectedVertices(canvas: Canvas) {
         val relationAmongPoints = arrayOf(0, 1, 3, 2)
         for (idx in relationAmongPoints.indices) {
+            val modularIdx = (idx + 1) % relationAmongPoints.size
+
             connectVertices(
                 relationAmongPoints[idx],
-                relationAmongPoints[idx + 1 % relationAmongPoints.size],
+                relationAmongPoints[modularIdx],
+                canvas,
+                paintCubeEdge,
+                projectedVertices
+            )
+
+            connectVertices(
+                relationAmongPoints[idx] + 4,
+                relationAmongPoints[modularIdx] + 4,
+                canvas,
+                paintCubeEdge,
+                projectedVertices
+            )
+
+
+            connectVertices(
+                relationAmongPoints[idx],
+                relationAmongPoints[idx] + 4,
                 canvas,
                 paintCubeEdge,
                 projectedVertices
@@ -131,9 +164,7 @@ class AnimatedCubeCanvas @JvmOverloads constructor(
         rotateZ: Array<Array<Double>>,
         canvas: Canvas
     ) {
-
         val distance = 4
-
         for (i in 0 until 8) {
             var rotated = multiply(
                 rotateZ,
@@ -149,6 +180,7 @@ class AnimatedCubeCanvas @JvmOverloads constructor(
             )
 
             var projected = multiply(projection, rotated)
+            projected = multiplyByConst(500.0, projected)
             val middle = Pair(canvas.width / 2.0, canvas.height / 2.0)
             projected = translate(middle, projected)
             projectedVertices[i][0] = projected[0][0]

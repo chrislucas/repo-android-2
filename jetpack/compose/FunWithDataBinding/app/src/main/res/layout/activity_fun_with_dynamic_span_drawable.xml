@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/label_test_spannable_interval_inclusive_inclusive"
-        android:textSize="23sp"
+        android:textSize="@dimen/test_text_spannable"
         />
 
 
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/label_test_spannable_interval_inclusive_exclusive"
-        android:textSize="23sp"
+        android:textSize="@dimen/test_text_spannable"
         />
 
 
@@ -40,7 +40,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/label_test_spannable_interval_exclusive_exclusive"
-        android:textSize="23sp"
+        android:textSize="@dimen/test_text_spannable"
         />
 
 
@@ -52,7 +52,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/label_test_spannable_interval_exclusive_inclusive"
-        android:textSize="23sp"
+        android:textSize="@dimen/test_text_spannable"
+        />
+
+    <TextView
+        android:id="@+id/test_dynamic_drawable_span"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/test_spannable_interval_exclusive_inclusive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/test_centered_image_span"
+        android:text="@string/label_test_dynamic_drawable_span"
+        android:textSize="@dimen/test_text_spannable"
+        />
+
+    <TextView
+        android:id="@+id/test_centered_image_span"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/test_dynamic_drawable_span"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/test_image_span"
+        android:text="@string/label_test_centered_image_span"
+        android:textSize="@dimen/test_text_spannable"
+        />
+
+    <TextView
+        android:id="@+id/test_image_span"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/test_centered_image_span"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/label_test_image_span"
+        android:textSize="@dimen/test_text_spannable"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
