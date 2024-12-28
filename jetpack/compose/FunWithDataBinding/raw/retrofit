@@ -15,3 +15,7 @@ https://square.github.io/okhttp/3.x/okhttp-urlconnection/okhttp3/JavaNetCookieJa
 
 Accessing the SPtrans API, authorization failing on information requests
 https://stackoverflow.com/questions/23723478/accessing-the-sptrans-api-authorization-failing-on-information-requests
+
+File Upload
+https://medium.com/nerd-for-tech/upload-with-retrofit2-android-92785679eb24
+https://medium.com/@mrizqi070502/uploading-file-to-your-server-using-retrofit-android-835b3c7f47e8

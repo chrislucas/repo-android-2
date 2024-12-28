@@ -28,4 +28,17 @@
     <string name="label_test_dynamic_drawable_span">CustomDynamicDrawableSpan [ ]</string>
     <string name="label_test_centered_image_span">CenteredImageSpan [ ]</string>
     <string name="label_test_image_span">ImageSpan [ ]</string>
+    <string name="txt_compose_studying_about_scaffold">Compose: Exemplo simples sobre a função \'scaffold\'</string>
+    <string name="txt_compose_studying_about_app_bars">Compose: Estudos sobre App Bars</string>
+    <string name="txt_simple_webkit">Abrir: Exemplo simples Webview</string>
+    <string name="txt_open_camera_from_webview">Abrir Câmera a partir de uma webview</string>
+    <string name="txt_getting_starting_camerax_activity">Codelabs: Getting Started with CameraX</string>
+    <string name="txt_get_result_from_activity">Nova API Activity Result API</string>
+    <string name="btn_result_ok">Done</string>
+    <string name="btn_start_new_activity_results_api">Iniciar nova Activity</string>
+    <string name="btn_start_new_activity_results_api_for_result">Iniciar nova Activity "For Result"</string>
+    <string name="txt_coordinate_transformation">[And2dGraphics Cap8]: Transformação de coordenadas</string>
+    <string name="txt_canvas_drawing_primitives">[And2dGraphics Cap3]: Desenhando Primitivas</string>
+    <string name="txt_canvas_introduction_to_path">[And2dGraphics Cap3]: Introdução a classe Paths</string>
+    <string name="txt_canvas_path_drawing_cross_line">[And2dGraphics Cap3]: Desenhando linhas cruzadas na tela</string>
 </resources>

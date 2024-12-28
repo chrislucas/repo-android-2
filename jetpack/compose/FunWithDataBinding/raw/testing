@@ -1,0 +1,23 @@
+Test smarter, not harder: new testing strategies documentation
+https://medium.com/androiddevelopers/test-smarter-not-harder-new-testing-strategies-documentation-255973814ae3
+
+Test different screen and window sizes
+https://developer.android.com/training/testing/different-screens
+
+Libraries and tools to test different screen sizes
+https://developer.android.com/training/testing/different-screens/tools
+
+Teste de estratégias
+https://developer.android.com/training/testing/fundamentals/strategies?hl=pt-br
+
+An Introduction to Testing Custom Views on Android
+https://proandroiddev.com/an-introduction-to-testing-custom-views-on-android-10a6152f379
+
+Android CustomView Unit Testing
+https://prasoon-abhishek009.medium.com/android-customview-unit-testing-644286737263
+
+How to test a method that draws to the canvas?
+https://stackoverflow.com/questions/53681542/how-to-test-a-method-that-draws-to-the-canvas
+
+Insets handling tips for Android 15’s edge-to-edge enforcement
+https://medium.com/androiddevelopers/insets-handling-tips-for-android-15s-edge-to-edge-enforcement-872774e8839b

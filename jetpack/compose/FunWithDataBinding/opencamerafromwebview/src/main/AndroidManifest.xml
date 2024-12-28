@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
+    <application android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".ImageUploadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OldStyleOpenCameraFromWebViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="open_camera_inside_web_view_old_style_permission"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SimpleWebViewActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <data
+                    android:host="simple_webkit"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OpenCameraFromWebViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="open_camera_from_web_view"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,66 @@
+https://stackoverflow.com/questions/2835556/whats-the-difference-between-setwebviewclient-vs-setwebchromeclient
+
+WebViewClient provides the following callback methods,
+with which you can interfere in how WebView makes a transition to the next content.
+
+void doUpdateVisitedHistory (WebView view, String url, boolean isReload)
+void onFormResubmission (WebView view, Message dontResend, Message resend)
+void onLoadResource (WebView view, String url)
+void onPageCommitVisible (WebView view, String url)
+void onPageFinished (WebView view, String url)
+void onPageStarted (WebView view, String url, Bitmap favicon)
+void onReceivedClientCertRequest (WebView view, ClientCertRequest request)
+void onReceivedError (WebView view, int errorCode, String description, String failingUrl)
+void onReceivedError (WebView view, WebResourceRequest request, WebResourceError error)
+void onReceivedHttpAuthRequest (WebView view, HttpAuthHandler handler, String host, String realm)
+void onReceivedHttpError (WebView view, WebResourceRequest request, WebResourceResponse errorResponse)
+void onReceivedLoginRequest (WebView view, String realm, String account, String args)
+void onReceivedSslError (WebView view, SslErrorHandler handler, SslError error)
+boolean onRenderProcessGone (WebView view, RenderProcessGoneDetail detail)
+void onSafeBrowsingHit (WebView view, WebResourceRequest request, int threatType, SafeBrowsingResponse callback)
+void onScaleChanged (WebView view, float oldScale, float newScale)
+void onTooManyRedirects (WebView view, Message cancelMsg, Message continueMsg)
+void onUnhandledKeyEvent (WebView view, KeyEvent event)
+WebResourceResponse shouldInterceptRequest (WebView view, WebResourceRequest request)
+WebResourceResponse shouldInterceptRequest (WebView view, String url)
+boolean shouldOverrideKeyEvent (WebView view, KeyEvent event)
+boolean shouldOverrideUrlLoading (WebView view, WebResourceRequest request)
+boolean shouldOverrideUrlLoading (WebView view, String url)
+
+WebChromeClient provides the following callback methods,
+with which your Activity or Fragment can update the surroundings of WebView.
+
+Bitmap getDefaultVideoPoster ()
+View getVideoLoadingProgressView ()
+void getVisitedHistory (ValueCallback<String[]> callback)
+void onCloseWindow (WebView window)
+boolean onConsoleMessage (ConsoleMessage consoleMessage)
+void onConsoleMessage (String message, int lineNumber, String sourceID)
+boolean onCreateWindow (WebView view, boolean isDialog, boolean isUserGesture, Message resultMsg)
+void onExceededDatabaseQuota (String url, String databaseIdentifier, long quota, long estimatedDatabaseSize, long totalQuota, WebStorage.QuotaUpdater quotaUpdater)
+void onGeolocationPermissionsHidePrompt ()
+void onGeolocationPermissionsShowPrompt (String origin, GeolocationPermissions.Callback callback)
+void onHideCustomView ()
+boolean onJsAlert (WebView view, String url, String message, JsResult result)
+boolean onJsBeforeUnload (WebView view, String url, String message, JsResult result)
+boolean onJsConfirm (WebView view, String url, String message, JsResult result)
+boolean onJsPrompt (WebView view, String url, String message, String defaultValue, JsPromptResult result)
+boolean onJsTimeout ()
+void onPermissionRequest (PermissionRequest request)
+void onPermissionRequestCanceled (PermissionRequest request)
+void onProgressChanged (WebView view, int newProgress)
+void onReachedMaxAppCacheSize (long requiredStorage, long quota, WebStorage.QuotaUpdater quotaUpdater)
+void onReceivedIcon (WebView view, Bitmap icon)
+void onReceivedTitle (WebView view, String title)
+void onReceivedTouchIconUrl (WebView view, String url, boolean precomposed)
+void onRequestFocus (WebView view)
+void onShowCustomView (View view, int requestedOrientation, WebChromeClient.CustomViewCallback callback)
+void onShowCustomView (View view, WebChromeClient.CustomViewCallback callback)
+boolean onShowFileChooser (WebView webView, ValueCallback<Uri[]> filePathCallback, WebChromeClient.FileChooserParams fileChooserParams)
+
+-----------------------------------------------------------------------------------------------
+
+Android – Load WebView with ProgressBar
+https://technotalkative.com/android-load-webview-with-progressbar/
+
+-----------------------------------------------------------------------------------------------

@@ -3,13 +3,149 @@
 
     <application>
         <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.featureflagwithfirebaseremoteconfig.FeatureFlagWithFirebaseRemoteConfigActivity"
+            android:exported="false"
+            android:label="@string/title_activity_feature_flag_with_firebase_remote_config"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.aivision.AIVisionCameraXActivity"
+            android:exported="false"
+            android:label="@string/title_activity_aivision_camera_xactivity"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.substitutefragment.SubstituteFragmentWithJetpackComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_substitute_fragment_with_jetpack_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.compositionpattern.CompositionPatternActivity"
+            android:exported="false"
+            android:label="@string/title_activity_composition_pattern"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.animatednavbar.AnimatedNavBarActivity"
+            android:exported="false"
+            android:label="@string/title_activity_animated_nav_bar"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.masteringnavigationcompose.MasteringNavigationComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_mastering_navigation_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.book.programmingandroidwithkotlin.chp4.ConcurrencyInAndroidComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_concurrency"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.codelabs.states.CodeLabsStateComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_code_labs_state_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.codelabs.basics.CodeLabsBasicsComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_code_labs_basics_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.components.lists.ComposeListsAndGridsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_lists_and_grids"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.components.cards.ComposeCardsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_cards"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.components.chips.ComposeChipsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_chips"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.appbars.StudyingAppBarsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_studying_app_bars"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_about_app_bars"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.navegationandstate.NavigatingMutableIntStateActivity"
+            android:exported="false"
+            android:label="@string/title_activity_navigating_mutable_int_state"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.stateincompose.StateInComposeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_state_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_state_in_compose"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.playground.TopAppBarPlaygroundActivity"
+            android:exported="true"
+            android:label="@string/title_activity_top_app_bar_playground"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_top_app_bar_playground"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.topappbar.TopAppBarActivity"
+            android:exported="false"
+            android:label="@string/title_activity_top_app_bar"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.foundation.FoundationComposeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_foundation_compose"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_about_scaffold"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name="com.br.funwithjetpackcompose.tutorials.book.canvas2d.chp3.priimitives.DrawingLineShapeActivity"
             android:exported="true">
             <intent-filter>
                 <data
                     android:host="drawing_line_shape_canvas_book"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -21,7 +157,9 @@
                 <data
                     android:host="drawing_cube_canvas"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>

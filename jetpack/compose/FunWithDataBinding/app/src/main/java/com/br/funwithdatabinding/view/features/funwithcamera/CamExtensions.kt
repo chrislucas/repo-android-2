@@ -1,6 +1,7 @@
 package com.br.funwithdatabinding.view.features.funwithcamera
 
 /*
+    TODO
     https://developer.android.com/media/camera/camera2
     https://developer.android.com/media/camera/camerax
 

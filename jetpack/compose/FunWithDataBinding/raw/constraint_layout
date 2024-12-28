@@ -1,0 +1,33 @@
+guideline
+https://developer.android.com/reference/androidx/constraintlayout/widget/Guideline
+https://constraintlayout.com/basics/guidelines.html
+
+Build a responsive UI with ConstraintLayout
+https://developer.android.com/develop/ui/views/layout/constraint-layout
+
+Understanding Guideline and Barrier : Constraint Layout Part-2
+https://sharmaricha7724.medium.com/understanding-guideline-and-barrier-constratint-layout-part-2-a7a0cc58f8cd
+
+Guidelines in Android ConstraintLayout
+https://www.geeksforgeeks.org/guidelines-in-android-constraintlayout/
+
+----------------------------------------------------------------------------------------------------
+
+Barrier
+
+constraintlayout guideline vs barrier
+https://riggaroo.dev/constraintlayout-guidelines-barriers-chains-groups/
+https://constraintlayout.com/basics/barriers.html
+
+----------------------------------------------------------------------------------------------------
+Tutorial
+Getting started with ConstraintLayout in Kotlin - Part 3: using helpers - guidelines, groups, and barriers
+
+https://pusher.com/tutorials/constraintlayout-kotlin-part-1/
+https://pusher.com/tutorials/constraintlayout-kotlin-part-2/
+https://pusher.com/tutorials/constraintlayout-kotlin-part-3/
+
+----------------------------------------------------------------------------------------------------
+
+Constraint Layout Series: Group & Barriers
+https://medium.com/dayplug/constraint-layout-series-group-barriers-fae2f4d7e9f0

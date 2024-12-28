@@ -123,6 +123,85 @@ fun getFeatures(context: Context): List<ViewElement<Feature, ViewHolder>> = list
             "dpl://window_insets_listeners_to_layout"
         ),
         BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_compose_studying_about_scaffold),
+            "dpl://compose_studying_about_scaffold"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_compose_studying_about_app_bars),
+            "dpl://compose_studying_about_app_bars"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_get_result_from_activity),
+            "dpl://get_result_from_activity"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_simple_webkit),
+            "dpl://simple_webkit"
+        ),
+        BinderIconTextViewHolder()
+    ),
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_open_camera_from_webview),
+            "dpl://open_camera_from_web_view"
+        ),
+        BinderIconTextViewHolder()
+    ),
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_getting_starting_camerax_activity),
+            "dpl://getting_starting_camerax_activity"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_coordinate_transformation),
+            "dpl://coordinate_transformation"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_canvas_drawing_primitives),
+            "dpl://canvas_drawing_primitives"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_canvas_introduction_to_path),
+            "dpl://canvas_introduction_to_path"
+        ),
+        BinderIconTextViewHolder()
+    ),
+
+
+    ViewElement(
+        Feature(
+            context.getString(R.string.txt_canvas_path_drawing_cross_line),
+            "dpl://canvas_path_drawing_cross_line"
+        ),
+        BinderIconTextViewHolder()
     )
 )
 

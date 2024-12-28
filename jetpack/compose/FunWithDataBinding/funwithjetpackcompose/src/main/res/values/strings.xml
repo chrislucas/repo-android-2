@@ -12,4 +12,28 @@
     <string name="title_activity_optmize_recomposition">OptmizeRecompositionActivity</string>
     <string name="title_activity_custom_slider">CustomSliderActivity</string>
     <string name="title_activity_camera_and_canvas">CameraAndCanvasActivity</string>
+    <string name="title_activity_foundation_compose">FoundationComposeActivity</string>
+    <string name="title_activity_top_app_bar">TopAppBarActivity</string>
+    <string name="title_activity_top_app_bar_playground">TopAppBarPlaygroundActivity</string>
+    <string name="title_activity_state_in_compose">StateInComposeActivity</string>
+    <string name="title_activity_navigating_mutable_int_state">NavigatingMutableIntStateActivity
+    </string>
+    <string name="title_activity_studying_app_bars">StudyingAppBarsActivity</string>
+    <string name="title_activity_compose_chips">ComposeChipsActivity</string>
+    <string name="title_activity_compose_cards">ComposeCardsActivity</string>
+    <string name="title_activity_compose_lists_and_grids">ComposeListsAndGridsActivity</string>
+    <string name="title_activity_code_labs_basics_compose">CodeLabsBasicsComposeActivity</string>
+    <string name="title_activity_code_labs_state_compose">CodeLabsStateComposeActivity</string>
+    <string name="title_activity_concurrency">ConcurrencyActivity</string>
+    <string name="title_activity_mastering_navigation_compose">MasteringNavigationComposeActivity
+    </string>
+    <string name="title_activity_animated_nav_bar">AnimatedNavBarActivity</string>
+    <string name="title_activity_composition_pattern">CompositionPatternActivity</string>
+    <string name="title_activity_substitute_fragment_with_jetpack_compose">
+        SubstituteFragmentWithJetpackComposeActivity
+    </string>
+    <string name="title_activity_aivision_camera_xactivity">AIVisionCameraXActivity</string>
+    <string name="title_activity_feature_flag_with_firebase_remote_config">
+        FeatureFlagWithFirebaseRemoteConfigActivity
+    </string>
 </resources>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="camera_permission_granted_txt">Permissão para acessar câmera concedida!</string>
+    <string name="camera_permission_denied_txt">Permissão para acessar câmera negada!</string>
+    <string name="file_chooser_title">Escolha um arquivo</string>
+    <string name="cannot_open_file_chooser_txt">Não foi possível abrir o a funcionalidade para escolher um arquivo no dipositivo</string>
+    <string name="ok">ok</string>
+</resources>

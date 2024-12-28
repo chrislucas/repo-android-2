@@ -41,6 +41,12 @@ android {
         buildConfig = true
         viewBinding = true
     }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -48,6 +54,10 @@ dependencies {
     implementation(project(":reflibs"))
     implementation(project(":restclientlib"))
     implementation(project(":wrapperviewmodel"))
+
+    api(libs.kotlinx.coroutines.core)
+    api(libs.kotlinx.coroutines.android)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,14 +66,13 @@ dependencies {
     implementation(libs.androidx.graphics.path)
     implementation(libs.androidx.graphics.shapes)
 
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
     implementation(libs.okhttp.urlconnection)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.picasso)
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.junit.jupiter)
     annotationProcessor(libs.androidx.databinding.compiler)
     kapt(libs.compiler)
 
@@ -126,12 +135,21 @@ dependencies {
     // optional - RxJava3 support
     implementation("androidx.datastore:datastore-rxjava3:1.1.1")
 
+
+    implementation(libs.timber)
+
     // optional - Test helpers for LiveData
     testImplementation(libs.androidx.core.testing)
 
     // optional - Test helpers for Lifecycle runtime
     testImplementation(libs.androidx.lifecycle.runtime.testing)
     testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    /*
+        https://developer.android.com/training/testing/local-tests/robolectric?hl=pt-br
+     */
+    testImplementation(libs.robolectric)
 }

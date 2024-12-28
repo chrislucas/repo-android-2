@@ -41,6 +41,10 @@ dependencies {
     api(libs.kotlinx.coroutines.android)
 
     api(libs.retrofit)
+    api(libs.converter.gson)
+    api(libs.logging.interceptor)
+    api(libs.okhttp.urlconnection)
+
     // https://github.com/square/retrofit/tree/trunk/retrofit-adapters/rxjava3
     implementation(libs.adapter.rxjava2)
     implementation(libs.adapter.rxjava3)
@@ -72,6 +76,8 @@ dependencies {
     debugApi(libs.leakcanary.android)
 
     testImplementation(libs.junit)
+    testApi(libs.kotlinx.coroutines.test)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }

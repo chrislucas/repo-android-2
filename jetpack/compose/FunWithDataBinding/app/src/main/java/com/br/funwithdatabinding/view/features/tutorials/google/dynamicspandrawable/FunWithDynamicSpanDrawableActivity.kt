@@ -19,8 +19,8 @@ import com.br.funwithdatabinding.R
 import com.br.funwithdatabinding.databinding.ActivityFunWithDynamicSpanDrawableBinding
 
 /**
+ * TODO estudar sobre spannable
  * https://developer.android.com/reference/android/text/style/DynamicDrawableSpan
--
  */
 class FunWithDynamicSpanDrawableActivity : AppCompatActivity() {
 

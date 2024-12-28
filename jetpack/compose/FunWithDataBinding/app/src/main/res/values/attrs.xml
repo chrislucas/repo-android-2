@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        https://developer.android.com/develop/ui/views/layout/custom-views/create-view
+    -->
+    <declare-styleable name="DraggablePoint">
+        <attr name="geometricForm" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="square" value="1"/>
+            <enum name="triangle" value="1"/>
+        </attr>
+        <attr name="showPosition" format="boolean" />
+    </declare-styleable>
+</resources>

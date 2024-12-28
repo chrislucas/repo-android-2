@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_capture_button_width_height">110dp</dimen>
+    <dimen name="mage_capture_button_width_elevation">2dp</dimen>
+    <dimen name="margin_button_capture">50dp</dimen>
+</resources>

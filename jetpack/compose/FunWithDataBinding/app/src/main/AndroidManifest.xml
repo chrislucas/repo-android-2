@@ -2,9 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Always include this permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include only if your app benefits from precise location access. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
 
     <application
         android:allowBackup="true"
@@ -16,6 +25,148 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp3.DrawingCenteredCrossLineActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_path_drawing_cross_line"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.android2dgraphics.playwithpaths.PlayingWithPathActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp3.IntroductionToPathActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_introduction_to_path"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp3.DrawingPrimitivesActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_drawing_primitives"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.paging3remoteapi.Paging3RemoteApiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.customviews.CustomViewResizableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.dragdropcodelabs.EnableDragAndDropActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.nestingintent.NestingIntentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.deeplink.SecCheckDeeplinkOriginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.activityresultapi.TryAllDefaultActivityResultApiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.edgetoedge.DisplayContentEdgeToEdgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.screenshotwithpixelcopy.TakeScreenshotWithPixelCopyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.interactwithotherapps.activityresultapis.SimpleResultActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="starting_simple_result_activity"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.activityresultapi.anotheractivityresultapitutorial.AnotherActivityResultApiTutorialActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.activityresultapi.startactivitywithnewapi.StartingActivityWithNewActivityResultApiActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="starting_activity_with_new_activity_result_api"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.activityresultapi.thecleanway.ActivityResultApiCleanWayActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="activity_result_api_clean_way"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.google.interactwithotherapps.activityresultapis.GetResultFromActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="get_result_from_activity"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.programmingandroidwithkotlin.chp4.ConcurrencyInAndroidActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.testingtoucheventsrobolectric.TestingTouchEventsInRobolectricActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.thrivingandroidusingkt.ThrivingInAndroidUsingKotlinActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.acessibility.scalingtext.AccessibleTextScalingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.revealimagecustomview.RevealImageCustomViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.customstatedrawable.CustomStateDrawableActivity"
+            android:exported="false" />
         <activity
             android:name=".view.features.tutorials.funwithspannablestringbuilder.FunWithSpannableStringBuiliderAndRangeSliderActivity"
             android:exported="false" />
@@ -68,13 +219,15 @@
                 <data
                     android:host="dynamic_span_drawable"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.features.android2dgraphics.chp8.DrawingCubeActivity"
+            android:name=".view.features.books.android2dgraphics.chp8.DrawingCubeActivity"
             android:exported="true">
             <intent-filter>
                 <data
@@ -108,8 +261,19 @@
             android:name=".view.features.tutorials.medium.callbackflow.funwithlocationandcallbackfunction.FunWithLocationAndCallbackFlowActivity"
             android:exported="false" />
         <activity
-            android:name=".view.features.android2dgraphics.chp8.CoordinateTransformationActivity"
-            android:exported="false" />
+            android:name=".view.features.books.android2dgraphics.chp8.CoordinateTransformationActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="coordinate_transformation"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.tutorials.medium.funwithviewmodelfactory.FunWithViewModelFactoryActivity"
             android:exported="false" />
