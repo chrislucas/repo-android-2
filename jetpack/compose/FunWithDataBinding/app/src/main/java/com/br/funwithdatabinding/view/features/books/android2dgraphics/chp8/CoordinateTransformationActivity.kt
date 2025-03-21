@@ -9,6 +9,7 @@ import com.br.funwithdatabinding.R
 import com.br.funwithdatabinding.view.features.books.android2dgraphics.Transform
 
 /*
+    TODO
     Capitulo 8 livro Android 2d Graphics
 
     Nesse capitulo é apresentado os tipos de "Operacoes de transformacao" de coordenadas
@@ -110,5 +111,4 @@ class CoordinateTransformationActivity : AppCompatActivity() {
             insets
         }
     }
-
 }

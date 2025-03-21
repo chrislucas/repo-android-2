@@ -14,6 +14,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.br.funwithjetpackcompose.tutorials.google.codelabs.states.ui.theme.FunWithDataBindingTheme
 
 /*
+    State and Jetpack Compose
+    https://developer.android.com/develop/ui/compose/state
+
+    State in Jetpack Compose
     https://developer.android.com/codelabs/jetpack-compose-state#0
  */
 class CodeLabsStateComposeActivity : ComponentActivity() {

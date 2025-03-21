@@ -1,6 +1,5 @@
 package com.br.funwithdatabinding.view.features.tutorials.google.interactwithotherapps.activityresultapis
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -9,8 +8,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.databinding.ActivityResultBinding
 import com.br.funwithdatabinding.view.features.tutorials.google.interactwithotherapps.activityresultapis.SimpleResultActivityContract.Companion.KEY_INPUT
-import kotlin.properties.Delegates
 
+/*
+    TODO
+    https://developer.android.com/training/basics/intents/result
+ */
 class SimpleResultActivity : AppCompatActivity() {
 
     val binding: ActivityResultBinding by lazy {

@@ -1,0 +1,31 @@
+fragment and compose android
+Using Views in Compose
+
+https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose?authuser=1
+
+Migration strategy
+https://developer.android.com/develop/ui/compose/migrate/strategy
+
+Fragments & Compose interoperability — Android
+https://proandroiddev.com/fragments-compose-interoperability-android-a9a8efee0040
+
+Interoperability: Compose Screen + Fragments in XML Nav Graph
+https://medium.com/@syedamariarasheed/interoperability-compose-screen-in-fragment-nav-graph-1e70d5cd9ff3
+
+objectanimator android
+https://developer.android.com/reference/android/animation/ObjectAnimator
+
+Property Animation Overview
+https://developer.android.com/reference/android/animation/ObjectAnimator
+https://developer.android.com/develop/ui/views/animations/prop-animation#object-animator
+
+Android Object Animator
+https://medium.com/cstech/objectanimator-in-android-42660fa28cb
+https://developer.android.com/develop/ui/compose/animation/value-based#animate-as-state
+
+Value-based animations
+https://developer.android.com/develop/ui/compose/animation/value-based
+https://developer.android.com/develop/ui/compose/animation/introduction
+
+Jetpack Compose value-based animation could be tricky!
+https://medium.com/@camp888/be-careful-with-jetpack-compose-state-animation-89cffc6d773c

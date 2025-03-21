@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.R
 
 /**
- * @see com.br.funwithdatabinding.view.features.tutorials.google.dynamicspandrawable.FunWithDynamicSpanDrawableActivity
+ * @see com.br.funwithdatabinding.view.features.tutorials.google.span.dynamicspandrawable.FunWithDynamicSpanDrawableActivity
     TODO -
     Criar um mecanismo que pegue o tamanho da string S crie un intervalo 0 a S e permita
     que o usuario escolha esse intervalo para modificar o tamanho do SpannableStringBuilder

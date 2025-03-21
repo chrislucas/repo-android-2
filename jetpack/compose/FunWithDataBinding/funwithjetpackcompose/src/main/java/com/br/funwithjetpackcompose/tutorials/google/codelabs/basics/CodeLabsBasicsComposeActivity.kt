@@ -15,7 +15,24 @@ import com.br.funwithjetpackcompose.tutorials.google.codelabs.basics.ui.theme.Fu
 
 
 /*
+    https://developer.android.com/codelabs/jetpack-compose-layouts?hl=en#0
+
+
     https://developer.android.com/codelabs/jetpack-compose-basics#0
+
+
+    https://developer.android.com/courses/pathways/jetpack-compose-for-android-developers-1
+    Thinking in Compose
+    Composable functions
+        - Tomar cuidado para que Composable Function nao causem side-effets
+            - Nao alterar propriedades dentro de Composable Function como por exemplo mudar
+            um boolean de um objeto de true para false
+         - Recomposition
+            - Quando construimos uma UI atraves de uma fucncao baseada no estado de um objeto, quando esse objeto
+            muda seu estado a UI tbm muda atraves da re-execucao dessa funcao com o novo estado do objeto
+
+            - Recomposition ocorre quando quando uma funcao composable e re-executada com novos
+            parametros e tambem ocorre quando um estado interno na funcao muda.
  */
 class CodeLabsBasicsComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

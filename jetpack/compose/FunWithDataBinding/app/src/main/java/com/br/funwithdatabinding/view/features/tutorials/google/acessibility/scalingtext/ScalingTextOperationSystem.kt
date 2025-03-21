@@ -1,6 +1,7 @@
 package com.br.funwithdatabinding.view.features.tutorials.google.acessibility.scalingtext
 
 /*
+    TODO
     A ideia é explorar soluções para criar layouts adaptáveis ao aumento do tamanho da fonte
     usando os recursos de acessibilidade do sistema operacional
 

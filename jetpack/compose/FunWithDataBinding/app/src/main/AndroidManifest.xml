@@ -26,20 +26,238 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
+            android:name=".view.features.tutorials.google.uiarchitecture.managingstate.overview.ManagingStateOverviewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_manageing_state_overiew"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".view.features.tutorials.google.uiarchitecture.managingstate.hoiststate.HoistStateActivity"
+            android:exported="false"
+            android:label="@string/title_activity_hoist_state"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".view.features.tutorials.google.uiarchitecture.stateandlifecycle.StatesAndLifecycleComposableActivity"
+            android:exported="false"
+            android:label="@string/title_activity_states_and_lifecycle_composable"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".view.features.tutorials.google.span.superscript.SuperScriptSpanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.activityresultcontracts.funwithcontracts.FunWithActivityResultContractsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.webview.jsinterface.LaunchIntentTakePictureActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="launch_intent_take_picture_bridge_js"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.google.fragments.createsimplefragment.CreateSimpleFragmentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.fragments.navanimation.NavBetweenFragmentsWithAnimActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.web.loadcontent.LoadInAppContentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.web.prefetch.PrefetchingWebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.codelabs.camerax.gettingstart.GettingStartCameraXActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.resultregistry.receiveresultoutofactivity.FireEventReceiveResultOutOfActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.webview.jsinterface.LaunchIntentFromJsActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="bridge_js"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.arch.mvi.unidirectionaldataflow.UnidirectionalDataFlowMVIActivity"
+            android:exported="true"
+            android:label="@string/title_activity_unidirectional_data_flow_mviactivity"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="unidirectional_data_flow_mvi"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.recyclerview.pagination.PaginationAndStuffsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.recyclerview.pagination.RecyclerViewPaginationInMvvmActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.recyclerview.pagination.RecyclerViewPaginationScrollListenerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.recyclerview.pagination.PaginationRecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.recyclerview.pagination.DoingRecyclerViewPaginationWithPaging3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.flexboxlayout.FunWithFlexBoxLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.flexbox.LearningFlexBoxLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animations.AnimateVectorDrawableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animations.AnimateViewStageChangesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animations.CurveMotionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animations.StartUsingAnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animations.TransitionBasicActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animations.RevealOrHideViewWithAnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.robolectric.firsttest.MyFirstRobolectricTestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.vogella.robolectrictest.SimpleTestWithRobolectricActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.strikethroughtext.AnimatedStrikeThroughTextViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.strikethroughtext.StrikethroughSpanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.strikethroughtext.WaysToStrikethroughTextActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.objectanimator.ObjectAnimatorIIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.objectanimator.ObjectAnimatorIActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp6.DrawingArcShapeActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_drawing_arc_shape"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp6.DrawingOvalShapeActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_drawing_oval_shape"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp3.DashedLineViewActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_drawing_dashed_line"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.android2dgraphics.chp6.CirclesOvalsAndArcsActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_drawing_circle"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.books.android2dgraphics.playwithpaths.FunWithSliderAndPolygonsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.playwithpaths.VectorDrawableAnimationActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.features.books.android2dgraphics.chp3.DrawingCenteredCrossLineActivity"
             android:exported="true">
             <intent-filter>
                 <data
                     android:host="canvas_path_drawing_cross_line"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
         <activity
             android:name=".view.features.books.android2dgraphics.playwithpaths.PlayingWithPathActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="canvas_playing_with_path"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.books.android2dgraphics.chp3.IntroductionToPathActivity"
             android:exported="true">
@@ -47,7 +265,9 @@
                 <data
                     android:host="canvas_introduction_to_path"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -185,11 +405,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.features.allfeatures.view.GroupingFeaturesActivity"
+            android:name=".view.features.allfeatures.view.ShowCaseFeatureByViewBasedOrComposeActivity"
             android:exported="true">
             <intent-filter>
                 <data
-                    android:host="e"
+                    android:host="show_case_section_view_based_or_compose"
                     android:scheme="dpl" />
 
                 <action android:name="android.intent.action.VIEW" />
@@ -213,7 +433,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.features.tutorials.google.dynamicspandrawable.FunWithDynamicSpanDrawableActivity"
+            android:name=".view.features.tutorials.google.span.dynamicspandrawable.FunWithDynamicSpanDrawableActivity"
             android:exported="true">
             <intent-filter>
                 <data

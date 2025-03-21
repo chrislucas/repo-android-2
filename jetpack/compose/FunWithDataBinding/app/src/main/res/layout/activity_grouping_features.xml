@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".view.features.allfeatures.view.GroupingFeaturesActivity">
+    tools:context=".view.features.allfeatures.view.ShowCaseFeatureByViewBasedOrComposeActivity">
 
     <TextView
         android:id="@+id/title_grouping_tutorials"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/grouping_tutorials"
+        app:layout_constraintBottom_toTopOf="@id/view_based_tutorials"
         android:text="@string/label_tutorials"
         android:textSize="20sp"
         android:paddingTop="@dimen/title_grouping_tutorial_padding"
@@ -24,10 +24,10 @@
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/grouping_tutorials"
+        android:id="@+id/view_based_tutorials"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:context=".view.features.allfeatures.view.GroupingFeaturesActivity"
+        tools:context=".view.features.allfeatures.view.ShowCaseFeatureByViewBasedOrComposeActivity"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/layout_card_default"
         tools:itemCount="4"
@@ -45,8 +45,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/grouping_tutorials"
-        app:layout_constraintBottom_toTopOf="@id/tutorials"
+        app:layout_constraintTop_toBottomOf="@+id/view_based_tutorials"
+        app:layout_constraintBottom_toTopOf="@id/compose_tutorials"
         android:text="@string/label_tutorial"
         android:textSize="20sp"
         android:paddingTop="@dimen/title_grouping_tutorial_padding"
@@ -55,10 +55,10 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/tutorials"
+        android:id="@+id/compose_tutorials"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:context=".view.features.allfeatures.view.GroupingFeaturesActivity"
+        tools:context=".view.features.allfeatures.view.ShowCaseFeatureByViewBasedOrComposeActivity"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:listitem="@layout/layout_card_default"
         tools:itemCount="6"

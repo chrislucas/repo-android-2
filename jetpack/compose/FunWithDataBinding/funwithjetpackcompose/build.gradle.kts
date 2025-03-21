@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.br.mylibrary"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         minSdk = 21
@@ -37,8 +37,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-
-
 }
 
 dependencies {
@@ -51,9 +49,13 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.ui.graphics)
 
+    implementation(libs.androidx.activity.ktx)
     implementation("androidx.graphics:graphics-core:1.0.1")
     implementation("androidx.graphics:graphics-path:1.0.1")
     implementation("androidx.graphics:graphics-shapes:1.0.1")
+
+    implementation("io.coil-kt.coil3:coil-compose:3.1.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
 
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom.v3320))
@@ -66,6 +68,13 @@ dependencies {
     // compose
 
     implementation(platform(libs.androidx.compose.bom.v20240901))
+
+   implementation("androidx.compose.ui:ui-viewbinding")
+
+    // Java language implementation
+    implementation("androidx.fragment:fragment:1.8.6")
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:1.8.6")
 
     // Choose one of the following:
     // Material Design 3
@@ -82,6 +91,8 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    testImplementation(libs.jupiter.junit.jupiter)
+    testImplementation(libs.jupiter.junit.jupiter)
     debugImplementation(libs.ui.tooling)
 
     // UI Tests
@@ -128,8 +139,6 @@ dependencies {
 
     testImplementation(libs.androidx.paging.common)
 
-    val room_version = "2.6.1"
-
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
 
@@ -155,8 +164,17 @@ dependencies {
     // optional - Paging 3 Integration
     implementation(libs.androidx.room.paging)
 
+    implementation(libs.coil3.coil.compose)
+    implementation(libs.coil3.coil.network.okhttp)
+
 
     androidTestImplementation(platform(libs.androidx.compose.bom.v20240901))
+
+    // Test rules and transitive dependencies:
+    androidTestImplementation(libs.ui.test.junit4)
+// Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>():
+    debugImplementation(libs.ui.test.manifest)
+    testImplementation(libs.robolectric)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

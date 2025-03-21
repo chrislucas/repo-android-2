@@ -16,6 +16,9 @@ import com.br.funwithdatabinding.R
 import java.util.Locale
 import kotlin.math.min
 
+/*
+    TODO
+ */
 class IntroductionToPathActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

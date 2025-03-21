@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OpenCameraFromWebViewActivity">
+    tools:context=".tutorialiv.OpenCameraFromWebViewActivity">
     <WebView
         android:id="@+id/web_view_with_camera"
         android:layout_width="0dp"
@@ -15,13 +15,16 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <ImageView
-        android:id="@+id/image_view_chosen"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/selected_images"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/web_view_with_camera"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

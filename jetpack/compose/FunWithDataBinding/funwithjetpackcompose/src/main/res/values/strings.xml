@@ -36,4 +36,77 @@
     <string name="title_activity_feature_flag_with_firebase_remote_config">
         FeatureFlagWithFirebaseRemoteConfigActivity
     </string>
+    <string name="title_activity_plot3_dactivity">Plot3DActivity</string>
+    <string name="title_activity_drawing_fractals">DrawingFractalsActivity</string>
+    <string name="title_activity_testing_compose_layout">TestingComposeLayoutActivity</string>
+    <string name="title_activity_value_based_animation">ValueBasedAnimationActivity</string>
+    <string name="title_activity_mvi_arch">MviArchActivity</string>
+    <string name="title_activity_fun_with_coil">FunWithCoilActivity</string>
+    <string name="title_activity_loading_image">LoadingImageActivity</string>
+    <string name="title_activity_fun_with_jet_servey">FunWithJetServeyActivity</string>
+    <string name="title_activity_fun_with_side_effect_mistakes">FunWithSideEffectMistakesActivity
+    </string>
+    <string name="title_activity_thinking_in_compose_recomposition">
+        ThinkingInComposeRecompositionActivity
+    </string>
+    <string name="title_activity_register_for_result_photo_picker">
+        RegisterForResultPhotoPickerActivity
+    </string>
+    <string name="title_activity_building_uiactivity">BuildingUIActivity</string>
+    <string name="title_activity_the_first_app">TheFirstAppActivity</string>
+    <string name="title_activity_composable_arg_function">ComposableArgFunctionActivity</string>
+    <string name="title_activity_intrinsic_measurements">IntrinsicMeasurementsActivity</string>
+    <string name="title_activity_measurements_compose_layouts_and_modifiers">
+        MeasurementsComposeLayoutsAndModifiersActivity
+    </string>
+    <string name="title_activity_custom_layouts">CustomLayoutsActivity</string>
+    <string name="title_activity_layout_recomposition">LayoutRecompositionActivity</string>
+    <string name="title_activity_advanced_layout_in_compose">AdvancedLayoutInComposeActivity
+    </string>
+    <string name="title_activity_using_layout_id">UsingLayoutIdActivity</string>
+    <string name="title_activity_using_views_in_compose">UsingViewsInComposeActivity</string>
+    <string name="title_activity_testing_beyond_basics">TestingBeyondBasicsActivity</string>
+    <string name="title_activity_testing_layout">TestingLayoutActivity</string>
+    <string name="title_activity_testing_in_jetpack_compose">TestingInJetpackComposeActivity
+    </string>
+    <string name="title_activity_minimax_tic_tac_toe">MinimaxTicTacToeActivity</string>
+    <string name="title_activity_list_buttons">ListButtonsActivity</string>
+    <string name="title_activity_grid_buttons">GridButtonsActivity</string>
+    <string name="title_activity_scrollable_compose_modifier">ScrollableComposeModifierActivity
+    </string>
+    <string name="title_activity_spacer_fun">SpacerFunActivity</string>
+    <string name="title_activity_fun_with_padding_and_margin">FunWithPaddingAndMarginActivity
+    </string>
+    <string name="title_activity_fun_with_spacer">FunWithSpacerActivity</string>
+    <string name="title_activity_focus_in_compose">FocusInComposeActivity</string>
+    <string name="title_activity_fill_max_width_modifier">FillMaxWidthModifierActivity</string>
+    <string name="title_activity_intrinsic_measurements_compose">
+        IntrinsicMeasurementsComposeActivity
+    </string>
+    <string name="title_activity_lazy_lists_compose">LazyListsComposeActivity</string>
+    <string name="title_activity_tutorial_constraint_layout_iactivity">
+        TutorialConstraintLayoutIActivity
+    </string>
+    <string name="title_activity_tutorial_iiconstraint_layout_in_compose">
+        TutorialIIConstraintLayoutInComposeActivity
+    </string>
+    <string name="title_activity_fun_with_divider">FunWithDividerActivity</string>
+    <string name="title_activity_fun_wirth_divisor">FunWirthDivisorActivity</string>
+    <string name="title_activity_nested_lazy_column">NestedLazyColumnActivity</string>
+    <string name="title_activity_mastering_lazy_row">MasteringLazyRowActivity</string>
+    <string name="title_activity_bitmap_cache_strategy">BitmapCacheStrategyActivity</string>
+    <string name="default_placeholder_image_description">Imagem temporária</string>
+    <string name="title_activity_fun_with_lazy_vertical_grid">FunWithLazyVerticalGridActivity
+    </string>
+    <string name="title_activity_android_view_binding_in_compose">
+        AndroidViewBindingInComposeActivity
+    </string>
+    <string name="title_activity_fragments_in_compose">FragmentsInComposeActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_onclick_interaction">OnclickInteractionActivity</string>
+    <string name="title_activity_calling_android_framework">CallingAndroidFrameworkActivity</string>
+    <string name="title_activity_case_study_broadcast_receivers">
+        CaseStudyBroadcastReceiversActivity
+    </string>
 </resources>

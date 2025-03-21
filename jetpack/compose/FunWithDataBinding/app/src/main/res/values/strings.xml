@@ -40,5 +40,22 @@
     <string name="txt_coordinate_transformation">[And2dGraphics Cap8]: Transformação de coordenadas</string>
     <string name="txt_canvas_drawing_primitives">[And2dGraphics Cap3]: Desenhando Primitivas</string>
     <string name="txt_canvas_introduction_to_path">[And2dGraphics Cap3]: Introdução a classe Paths</string>
+    <string name="txt_canvas_drawing_dashed_line">[And2dGraphics Cap3]: Desenhando Dashed Lines</string>
+    <string name="txt_canvas_drawing_circle">[And2dGraphics Cap6]: Desenhando Ciruclos</string>
+    <string name="txt_bridge_js">Bridge JS open camera</string>
+    <string name="show_case_section_view_based_or_compose">Show Case: ViewBased Or Compose</string>
     <string name="txt_canvas_path_drawing_cross_line">[And2dGraphics Cap3]: Desenhando linhas cruzadas na tela</string>
+    <string name="txt_canvas_path_drawing_drawing_polygons">[And2dGraphics Cap3]: Desenhando Poligonos</string>
+    <string name="txt_introduction_open_gl_android">[OpenGL] Introducao a OpenGL</string>
+    <string name="title_activity_unidirectional_data_flow_mviactivity">
+        UnidirectionalDataFlowMVIActivity
+    </string>
+    <string name="cannot_open_camera">Não foi possível abrir a câmera</string>
+    <string name="open_gallery_with_limit_of_quantity">Abrir a galeria com limite de fotos que se pode pegar</string>
+    <string name="title_activity_states_and_lifecycle_composable">
+        StatesAndLifecycleComposableActivity
+    </string>
+    <string name="title_activity_side_effects">SideEffectsActivity</string>
+    <string name="title_activity_hoist_state">HoistStateActivity</string>
+    <string name="title_activity_manageing_state_overiew">ManageingStateOveriewActivity</string>
 </resources>

@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.R
 
 /**
+ * TODO
  * https://medium.com/codex/creating-a-custom-view-in-android-a-step-by-step-guide-ccaf866781e7
  */
 class RevealImageCustomViewActivity : AppCompatActivity() {

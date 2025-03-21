@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.br.funwithjetpackcompose.tutorials.google.appbars.ui.theme.FunWithDataBindingTheme
 
 /*
+    TODO
     https://developer.android.com/develop/ui/compose/components/app-bars
  */
 class StudyingAppBarsActivity : ComponentActivity() {

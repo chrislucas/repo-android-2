@@ -4,11 +4,12 @@ plugins {
     id("kotlin-kapt")
     id("com.google.gms.google-services")
     id("kotlin-parcelize")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.br.funwithdatabinding"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.br.funwithdatabinding"
@@ -40,6 +41,7 @@ android {
         dataBinding = true
         buildConfig = true
         viewBinding = true
+        compose = true
     }
 
     testOptions {
@@ -71,10 +73,39 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     implementation(libs.picasso)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom.v20240901))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
+    androidTestImplementation(platform(libs.androidx.compose.bom.v20240901))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
     annotationProcessor(libs.androidx.databinding.compiler)
+    debugImplementation(libs.androidx.ui.tooling)
+    debugImplementation(libs.androidx.ui.test.manifest)
     kapt(libs.compiler)
+
+    val paging_version = "3.3.2"
+
+    implementation("androidx.paging:paging-runtime:$paging_version")
+
+    // alternatively - without Android dependencies for tests
+    testImplementation("androidx.paging:paging-common:$paging_version")
+
+    // optional - RxJava2 support
+    implementation("androidx.paging:paging-rxjava2:$paging_version")
+
+    // optional - RxJava3 support
+    implementation("androidx.paging:paging-rxjava3:$paging_version")
+
+    // optional - Guava ListenableFuture support
+    implementation("androidx.paging:paging-guava:$paging_version")
+
+    // optional - Jetpack Compose integration
+    implementation("androidx.paging:paging-compose:3.3.2")
 
     // livedata
 
@@ -137,6 +168,10 @@ dependencies {
 
 
     implementation(libs.timber)
+
+    val fragmentVersion = "1.8.6"
+    // Kotlin
+    implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
 
     // optional - Test helpers for LiveData
     testImplementation(libs.androidx.core.testing)

@@ -1,0 +1,49 @@
+fragment animation transition
+https://developer.android.com/guide/fragments/animate
+https://medium.com/androiddevelopers/fragment-transitions-ea2726c3f36f
+https://stackoverflow.com/questions/4932462/animate-the-transition-between-fragments
+
+Animate transitions between destinations
+https://developer.android.com/guide/navigation/use-graph/animate-transitions
+
+Building Beautiful Transitions with Material Motion for Android
+https://m3.material.io/blog/android-material-motion
+
+Fragment transitions with shared elements
+https://medium.com/@bherbst/fragment-transitions-with-shared-elements-7c7d71d31cbb
+
+fragment animation
+https://stackoverflow.com/questions/4817900/android-fragments-and-animation
+
+https://www.tutorialspoint.com/android/android_fragment_transitions.htm
+
+https://github.com/kakajika/FragmentAnimations
+
+https://www.kodeco.com/books/android-animations-by-tutorials/v1.0/chapters/4-animating-activity-fragment-transitions-with-xml
+
+
+-------
+https://developer.android.com/guide/fragments/animate
+https://developer.android.com/guide/fragments?authuser=1
+https://developer.android.com/guide/fragments/create
+https://developer.android.com/develop/ui/compose/migrate/strategy
+https://developer.android.com/develop/ui/compose/migrate/strategy
+
+
+tag fragment android
+https://developer.android.com/guide/fragments/fragmentmanager?hl=pt-br
+https://developer.android.com/guide/fragments/debugging
+https://stackoverflow.com/questions/6374170/how-to-set-a-fragment-tag-by-code
+https://developer.android.com/guide/fragments/fragmentmanager?hl=pt-br
+
+https://developer.android.com/guide/navigation
+
+Animation
+https://developer.android.com/reference/android/animation/ObjectAnimator
+https://developer.android.com/develop/ui/compose/animation/value-based#animate-as-state
+
+Value-based animations
+https://developer.android.com/develop/ui/compose/animation/value-based
+https://developer.android.com/develop/ui/compose/animation/introduction
+https://medium.com/@camp888/be-careful-with-jetpack-compose-state-animation-89cffc6d773c
+https://medium.com/@anandgaur2207/jetpack-compose-chapter-6-animations-in-compose-9bd47a5a645f

@@ -41,6 +41,12 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
+    /*
+        https://developer.android.com/jetpack/androidx/releases/javascriptengine
+     */
+    implementation(libs.androidx.javascriptengine)
+
+
     implementation(libs.androidx.webkit)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)

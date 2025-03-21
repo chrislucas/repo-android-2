@@ -24,23 +24,21 @@ fun Context.startActivityByDeeplink(
     flags: Int? = null,
     fn: (Context, String) -> Unit = { _, _ -> showErrorMessage(this, deeplink) }
 ) {
-    with(this) {
-        val flagClearAndNewTask = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
-        val defaultFlags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
-            flagClearAndNewTask or Intent.URI_ALLOW_UNSAFE
-        } else {
-            flagClearAndNewTask
-        }
-        val intent = Intent.parseUri(deeplink, flags ?: defaultFlags)
-
-        /**
-         * Pesquisar sobre essa classe
-         * https://developer.android.com/reference/android/content/pm/PackageManager.ResolveInfoFlags
-         */
-
-        val resolveInfo = getResolveInfo(intent)
-        resolveInfo?.let { redirect(it.activityInfo.createIntent()) } ?: fn(this, deeplink)
+    val flagClearAndNewTask = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+    val defaultFlags = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
+        flagClearAndNewTask or Intent.URI_ALLOW_UNSAFE
+    } else {
+        flagClearAndNewTask
     }
+    val intent = Intent.parseUri(deeplink, flags ?: defaultFlags)
+
+    /**
+     * Pesquisar sobre essa classe
+     * https://developer.android.com/reference/android/content/pm/PackageManager.ResolveInfoFlags
+     */
+
+    val resolveInfo = getResolveInfo(intent)
+    resolveInfo?.let { redirect(it.activityInfo.createIntent()) } ?: fn(this, deeplink)
 }
 
 private fun Context.getResolveInfo(intent: Intent): ResolveInfo? =

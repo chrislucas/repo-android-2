@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- https://developer.android.com/develop/ui/views/graphics/opengl/about-opengl#manifest -->
-    <uses-feature android:glEsVersion="0x00030002" android:required="true" />
+    <uses-feature
+        android:glEsVersion="0x00030002"
+        android:required="true" />
     <uses-feature android:name="android.hardware.camera.any" />
+
+    <supports-gl-texture android:name="GL_OES_compressed_ETC1_RGB8_texture" />
+    <supports-gl-texture android:name="GL_OES_compressed_paletted_texture" />
+
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         android:maxSdkVersion="28" />
 
     <application>
+        <activity
+            android:name=".tutorials.coursera.baseproject.BaseProjectOpenGLActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorials.google.introductionopengl.IntroductionToTheOpenGLActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="introduction_open_gl_android"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".tutorials.medium.masteringcamerax.MasteringCameraXJetpackComposeActivity"
             android:exported="false"
@@ -21,7 +45,9 @@
                 <data
                     android:host="getting_starting_camerax_activity"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>

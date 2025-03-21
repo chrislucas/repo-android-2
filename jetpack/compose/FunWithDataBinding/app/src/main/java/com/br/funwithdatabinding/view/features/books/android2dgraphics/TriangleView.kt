@@ -66,6 +66,9 @@ class TriangleView @JvmOverloads constructor(
     }
 
     private fun drawingTriangle() {
+        /*
+            TODO entender como esses pontos formam um triangulo na tela
+         */
         val pA = Pair(transform.transformX(.2f), transform.transformY(.2f))
         val pB = Pair(transform.transformX(.8f), transform.transformY(.8f))
         val pC = Pair(transform.transformX(.8f), transform.transformY(.2f))

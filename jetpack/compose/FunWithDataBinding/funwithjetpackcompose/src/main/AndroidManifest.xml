@@ -1,7 +1,293 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.callingandroidframework.broadcastreceiver.CaseStudyBroadcastReceiversActivity"
+            android:exported="false"
+            android:label="@string/title_activity_case_study_broadcast_receivers"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.callingandroidframework.compositionlocal.CallingAndroidFrameworkActivity"
+            android:exported="false"
+            android:label="@string/title_activity_calling_android_framework"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.callingandroidframework.onclickinteraction.OnclickInteractionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_onclick_interaction"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.fragmentsincompose.FragmentsInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fragments_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.usingviewsincompose.androidviewbinding.AndroidViewBindingInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_android_view_binding_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.lazyverticalgrid.FunWithLazyVerticalGridActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_lazy_vertical_grid"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.bitmapcache.BitmapCacheStrategyActivity"
+            android:exported="false"
+            android:label="@string/title_activity_bitmap_cache_strategy"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.libraries.coil.helloworld.FunWithCoilActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_coil"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.masteringlazyrow.MasteringLazyRowActivity"
+            android:exported="false"
+            android:label="@string/title_activity_mastering_lazy_row"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.ktacademy.nestedlazycolumn.NestedLazyColumnActivity"
+            android:exported="false"
+            android:label="@string/title_activity_nested_lazy_column"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.divisor.FunWirthDivisorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_wirth_divisor"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.divider.FunWithDividerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_divider"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.constraintlayout.tutorialii.TutorialIIConstraintLayoutInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial_iiconstraint_layout_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.constraintlayout.tutoriali.TutorialConstraintLayoutIActivity"
+            android:exported="false"
+            android:label="@string/title_activity_tutorial_constraint_layout_iactivity"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.lazylists.LazyListsComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_lazy_lists_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.modifier.intrinsicmeasurements.IntrinsicMeasurementsComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_intrinsic_measurements_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.modifier.fillmaxwidthmodifier.FillMaxWidthModifierActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fill_max_width_modifier"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.focusincompose.FocusInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_focus_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.spacer.funwithspacer.FunWithSpacerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_spacer"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.spacer.paddingandmarging.FunWithPaddingAndMarginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_padding_and_margin"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.spacer.basicsmodifier.SpacerFunActivity"
+            android:exported="false"
+            android:label="@string/title_activity_spacer_fun"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.pointers.scrolling.ScrollableComposeModifierActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scrollable_compose_modifier"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.gridbuttons.GridButtonsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_grid_buttons"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_grid_button_types"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.listbuttons.ListButtonsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_list_buttons"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_list_button_types"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.uiprojects.tictactoe.MinimaxTicTacToeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_minimax_tic_tac_toe"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinginjetpackcompose.TestingInJetpackComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_testing_in_jetpack_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.TestingLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_testing_layout"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.testing.testingbeyondbasics.TestingBeyondBasicsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_testing_beyond_basics"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.usingcomposeinviews.UsingComposeInViewsActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.usingviewsincompose.UsingViewsInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_using_views_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.usinglayoutid.UsingLayoutIdActivity"
+            android:exported="true"
+            android:label="@string/title_activity_using_layout_id"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_using_layout_id"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.advanced.advancedlayoutcompose.AdvancedLayoutInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_advanced_layout_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.advanced.recomposition.LayoutRecompositionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_layout_recomposition"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.customlayouts.CustomLayoutsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_custom_layouts"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.advanced.layoutconcepts.MeasurementsComposeLayoutsAndModifiersActivity"
+            android:exported="false"
+            android:label="@string/title_activity_measurements_compose_layouts_and_modifiers"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.measurements.IntrinsicMeasurementsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_intrinsic_measurements"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.composablelayout.ComposableArgFunctionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_composable_arg_function"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.firstapp.TheFirstAppActivity"
+            android:exported="false"
+            android:label="@string/title_activity_the_first_app"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.buildingui.BuildingUIActivity"
+            android:exported="false"
+            android:label="@string/title_activity_building_uiactivity"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.registerforactivityresult.photopicker.RegisterForResultPhotoPickerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_register_for_result_photo_picker"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.thinkingcompose.ThinkingInComposeRecompositionActivity"
+            android:exported="false"
+            android:label="@string/title_activity_thinking_in_compose_recomposition"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.sideeffects.FunWithSideEffectMistakesActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_side_effect_mistakes"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.samples.jetsurvey.FunWithJetServeyActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_jet_servey"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.packcodelabs.loadimage.LoadingImageActivity"
+            android:exported="false"
+            android:label="@string/title_activity_loading_image"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.funwithcoil.FunWithCoilActivity"
+            android:exported="false"
+            android:label="@string/title_activity_fun_with_coil"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.arch.mvi.learningmvi.MviArchActivity"
+            android:exported="false"
+            android:label="@string/title_activity_mvi_arch"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.valuebasedanimation.ValueBasedAnimationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_value_based_animation"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.testing.TestingComposeLayoutActivity"
+            android:exported="false"
+            android:label="@string/title_activity_testing_compose_layout"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.drawingfractals.DrawingFractalsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_drawing_fractals"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.canvas.plot3d.Plot3DActivity"
+            android:exported="false"
+            android:label="@string/title_activity_plot3_dactivity"
+            android:theme="@style/Theme.FunWithDataBinding" />
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.medium.featureflagwithfirebaseremoteconfig.FeatureFlagWithFirebaseRemoteConfigActivity"
             android:exported="false"

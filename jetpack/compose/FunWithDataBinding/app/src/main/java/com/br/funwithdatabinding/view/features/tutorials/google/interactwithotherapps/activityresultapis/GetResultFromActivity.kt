@@ -16,9 +16,9 @@ import com.br.funwithdatabinding.view.features.tutorials.google.interactwithothe
 import timber.log.Timber
 
 /**
-TODO
-Get a result from an activity
-https://developer.android.com/training/basics/intents/result
+    TODO
+    Get a result from an activity
+    https://developer.android.com/training/basics/intents/result
 
 Registrar um callback para um resultado de atividade
 https://developer.android.com/training/basics/intents/result?hl=pt-br#register

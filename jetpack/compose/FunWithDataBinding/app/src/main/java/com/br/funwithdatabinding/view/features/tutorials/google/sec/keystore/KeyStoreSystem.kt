@@ -5,6 +5,7 @@ import java.security.KeyPair
 import java.security.KeyPairGenerator
 
 /*
+    TODO
     https://developer.android.com/privacy-and-security/keystore?hl=pt-br
     KeyStore
     https://developer.android.com/reference/java/security/KeyStore

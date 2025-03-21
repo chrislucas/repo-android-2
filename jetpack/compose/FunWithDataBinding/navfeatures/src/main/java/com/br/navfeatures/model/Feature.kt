@@ -7,7 +7,8 @@ import com.br.navfeatures.utils.startActivityByDeeplink
 class Feature(
     val description: String,
     private val uri: String = "",
-    private val intent: Intent? = null
+    private val intent: Intent? = null,
+    val category: CategoryFeature
 ) {
     fun fireIntention(context: Context) {
         if (uri.isNotEmpty()) {
@@ -20,6 +21,10 @@ class Feature(
     }
 }
 
+
+enum class CategoryFeature {
+    COMPOSE, VIEW_BASED
+}
 
 
 
