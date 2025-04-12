@@ -1,0 +1,38 @@
+Stickerpack Management
+https://developers.facebook.com/docs/whatsapp/on-premises/reference/stickerpacks
+https://developers.facebook.com/docs/whatsapp/on-premises/reference/stickerpacks?locale=pt_BR
+
+        Intent intent = new Intent();
+        intent.setAction("com.whatsapp.intent.action.ENABLE_STICKER_PACK");
+        intent.putExtra(EXTRA_STICKER_PACK_ID, identifier);
+        intent.putExtra(EXTRA_STICKER_PACK_AUTHORITY, getContentProviderAuthority(reactContext));
+        intent.putExtra(EXTRA_STICKER_PACK_NAME, stickerPackName);
+
+https://sticker.ly/
+
+Sticker apps
+https://github.com/WhatsApp/stickers
+https://faq.whatsapp.com/959603618629670/?helpref=faq_content&cms_platform=android
+
+Gerenciamento de pacotes de figurinha
+https://developers.facebook.com/docs/whatsapp/on-premises/reference/stickerpacks?locale=pt_BR
+
+
+How can I create a sticker pack for Android like I have in iOS for iMessage?
+https://stackoverflow.com/questions/51384660/how-can-i-create-a-sticker-pack-for-android-like-i-have-in-ios-for-imessage
+
+Sticker packs
+https://github.com/jeluchu/waStickersOnline
+
+How to update the existing sticker pack of Whatsapp
+https://stackoverflow.com/questions/70771436/how-to-update-the-existing-sticker-pack-of-whatsapp
+
+Pesquisar sobre essa intent
+com.whatsapp.intent.action.ENABLE_STICKER_PACK
+
+Sticker Messages
+https://developers.facebook.com/docs/whatsapp/cloud-api/messages/sticker-messages/
+https://developers.facebook.com/docs/whatsapp/on-premises/reference/stickerpacks/stickerpack-id/sticker
+
+Bot criando um app de sticker
+https://chat.chatbotapp.ai/chats/-ONSeXaEgyeofqCRiaTr?model=gpt-3.5

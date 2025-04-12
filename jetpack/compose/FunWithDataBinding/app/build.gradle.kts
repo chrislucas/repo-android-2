@@ -173,6 +173,9 @@ dependencies {
     // Kotlin
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
 
+    val dynamicanimation_version = "1.0.0"
+    implementation("androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version")
+
     // optional - Test helpers for LiveData
     testImplementation(libs.androidx.core.testing)
 
@@ -187,4 +190,36 @@ dependencies {
         https://developer.android.com/training/testing/local-tests/robolectric?hl=pt-br
      */
     testImplementation(libs.robolectric)
+
+    // https://developer.android.com/jetpack/androidx/releases/test
+    val androidXTestVersion = "1.6.1"
+    // Core library
+    androidTestImplementation("androidx.test:core:$androidXTestVersion")
+
+    val testRunnerVersion = "1.6.2"
+    val testRulesVersion = "1.6.1"
+    // AndroidJUnitRunner and JUnit Rules
+    androidTestImplementation("androidx.test:runner:$testRunnerVersion")
+    androidTestImplementation("androidx.test:rules:$testRulesVersion")
+
+    val testJunitVersion = "1.2.1"
+    val truthVersion = "1.6.0"
+    // Assertions
+    androidTestImplementation("androidx.test.ext:junit:$testJunitVersion")
+    androidTestImplementation("androidx.test.ext:truth:$truthVersion")
+
+    val espressoVersion = "3.6.1"
+    // Espresso dependencies
+    androidTestImplementation( "androidx.test.espresso:espresso-core:$espressoVersion")
+    androidTestImplementation( "androidx.test.espresso:espresso-contrib:$espressoVersion")
+    androidTestImplementation( "androidx.test.espresso:espresso-intents:$espressoVersion")
+    androidTestImplementation( "androidx.test.espresso:espresso-accessibility:$espressoVersion")
+    androidTestImplementation( "androidx.test.espresso:espresso-web:$espressoVersion")
+    androidTestImplementation( "androidx.test.espresso.idling:idling-concurrent:$espressoVersion")
+
+    // The following Espresso dependency can be either "implementation",
+    // or "androidTestImplementation", depending on whether you want the
+    // dependency to appear on your APK"s compile classpath or the test APK
+    // classpath.
+    androidTestImplementation( "androidx.test.espresso:espresso-idling-resource:$espressoVersion")
 }

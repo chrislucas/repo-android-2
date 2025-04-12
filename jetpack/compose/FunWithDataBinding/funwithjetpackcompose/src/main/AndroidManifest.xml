@@ -8,6 +8,125 @@
 
     <application>
         <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.canvas.graphics.GraphicsInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_graphics_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.performance.memoryleak.ExploringMemoryLeakActivity"
+            android:exported="false"
+            android:label="@string/title_activity_exploring_memory_leak"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.performance.managermemory.ManagerMemoryActivity"
+            android:exported="false"
+            android:label="@string/title_activity_manager_memory"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.span.spnnabletext.SpannableTextInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_spannable_text_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.span.spandocs.SpansComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_spans_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.span.makesubstringsclickablesincompose.MakeSubstringsClickableInComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_make_substrings_clickeable_in_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.usingcomposeinviews.ViewCompositionStrategyInComposeViewActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.composecommonmistakes.CommonMistakesActivity"
+            android:exported="true"
+            android:label="@string/title_activity_common_mistakes"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_common_mistakes"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.jetpackcomposesnippets.interactiveparticlesnetwork.InteractiveParticleNetworkActivity"
+            android:exported="false"
+            android:label="@string/title_activity_interactive_particle_network"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.feature.searchpckagesapps.FilterAllAppsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_filter_all_apps"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.animation.stepper.StepperAnimatedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_stepper_animated"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.pointerinput.scroll.ScrollActivity"
+            android:exported="false"
+            android:label="@string/title_activity_scroll"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.textandtypography.TextAndTypographyActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text_and_typography"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.animation.customizeanimation.CustomizeAnimationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_customize_animation"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.userinteraction.draganddrop.DragAndDropActivity"
+            android:exported="false"
+            android:label="@string/title_activity_drag_and_drop"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.pointerinput.multitouchgesture.MultiTouchGestureActivity"
+            android:exported="false"
+            android:label="@string/title_activity_multi_touch_gesture"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.docs.pointerinput.dragswipefling.DragSwipeFlingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_drag_swipe_fling"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.canvas.pointerinput.CapturePointerInputActivity"
+            android:exported="false"
+            android:label="@string/title_activity_capture_pointer_input"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.canvas.drawingcircle.DrawCircleComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_draw_circle_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.basics.spanstyle.MultipleStylesSpanActivity"
+            android:exported="false"
+            android:label="@string/title_activity_multiple_stylen_span"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.ktacademy.animation.threedotsloading.ThreeDotsLoadingActivity"
+            android:exported="false"
+            android:label="@string/title_activity_three_dots_loading"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.ktacademy.animation.swipe.SwipeAnimationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_swipe_animation"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
             android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.callingandroidframework.broadcastreceiver.CaseStudyBroadcastReceiversActivity"
             android:exported="false"
             android:label="@string/title_activity_case_study_broadcast_receivers"
@@ -171,12 +290,34 @@
             android:theme="@style/Theme.FunWithDataBinding" />
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.usingcomposeinviews.UsingComposeInViewsActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="using_compose_in_view"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.google.interoperabillity.usingviewsincompose.UsingViewsInComposeActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_using_views_in_compose"
-            android:theme="@style/Theme.FunWithDataBinding" />
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="using_view_in_compose"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.br.funwithjetpackcompose.tutorials.google.basics.usinglayoutid.UsingLayoutIdActivity"
             android:exported="true"

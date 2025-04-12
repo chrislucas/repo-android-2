@@ -14,6 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.br.funwithdatabinding.view.features.tutorials.medium.arch.mvi.unidirectionaldataflow.ui.theme.FunWithDataBindingTheme
 
 /*
+    TODO
     https://medium.com/@ramadan123sayed/exploring-mvi-principles-and-unidirectional-data-flow-with-jetpack-compose-da2a2bc9b49e#fromHistory
  */
 class UnidirectionalDataFlowMVIActivity : ComponentActivity() {

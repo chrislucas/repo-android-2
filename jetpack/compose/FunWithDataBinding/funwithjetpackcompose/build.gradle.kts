@@ -66,10 +66,8 @@ dependencies {
     implementation(libs.google.firebase.analytics)
 
     // compose
-
     implementation(platform(libs.androidx.compose.bom.v20240901))
-
-   implementation("androidx.compose.ui:ui-viewbinding")
+    implementation("androidx.compose.ui:ui-viewbinding")
 
     // Java language implementation
     implementation("androidx.fragment:fragment:1.8.6")
@@ -91,6 +89,7 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    testImplementation(libs.jupiter.junit.jupiter)
     testImplementation(libs.jupiter.junit.jupiter)
     testImplementation(libs.jupiter.junit.jupiter)
     debugImplementation(libs.ui.tooling)
@@ -119,7 +118,6 @@ dependencies {
 
     // paging jetpack compose
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1
-
     implementation(libs.androidx.paging.runtime)
 
     // alternatively - without Android dependencies for tests
@@ -136,8 +134,6 @@ dependencies {
     // optional - Jetpack Compose integration
     implementation(libs.androidx.paging.compose)
 
-
-    testImplementation(libs.androidx.paging.common)
 
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
@@ -158,8 +154,7 @@ dependencies {
     // optional - Guava support for Room, including Optional and ListenableFuture
     implementation(libs.androidx.room.guava)
 
-    // optional - Test helpers
-    testImplementation(libs.androidx.room.testing)
+
 
     // optional - Paging 3 Integration
     implementation(libs.androidx.room.paging)
@@ -172,9 +167,12 @@ dependencies {
 
     // Test rules and transitive dependencies:
     androidTestImplementation(libs.ui.test.junit4)
-// Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>():
+    // Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>():
     debugImplementation(libs.ui.test.manifest)
     testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.paging.common)
+    // optional - Test helpers
+    testImplementation(libs.androidx.room.testing)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

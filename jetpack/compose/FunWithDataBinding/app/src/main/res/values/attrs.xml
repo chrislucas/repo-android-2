@@ -11,4 +11,9 @@
         </attr>
         <attr name="showPosition" format="boolean" />
     </declare-styleable>
+
+    <declare-styleable name="SimpleUnitCircleView">
+        <attr name="trackTouchPointer" format="boolean" />
+        <attr name="showCircleCenterText" format="boolean" />
+    </declare-styleable>
 </resources>

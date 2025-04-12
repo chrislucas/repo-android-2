@@ -1,0 +1,21 @@
+codelabs
+https://developer.android.com/codelabs/biometric-login#0
+https://github.com/android/codelab-biometric-login
+----------------------------------------------------------------------------------------------------
+Show a biometric authentication dialog
+https://developer.android.com/identity/sign-in/biometric-auth
+
+Authentication
+https://source.android.com/docs/security/features/authentication
+
+BiometricPrompt
+https://developer.android.com/reference/android/hardware/biometrics/BiometricPrompt
+
+android.hardware.fingerprint
+https://developer.android.com/reference/android/hardware/fingerprint/package-summary
+
+
+Implement Biometric Authentication in Android Apps
+https://pranaypatel.medium.com/implement-biometric-authentication-in-android-apps-f091fbbb9988
+
+----------------------------------------------------------------------------------------------------

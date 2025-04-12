@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".tutorials.compose.biometricsauth.BiometricsAuthActivity"
+            android:exported="false"
+            android:label="@string/title_activity_biometrics_auth"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".tutorials.compose.biometricsauthentication.BiometricsAuthenticationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_biometrics_authentication"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".codelabs.loginbiometrics.LoginBiometricActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

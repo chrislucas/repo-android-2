@@ -1,6 +1,5 @@
 package com.br.funwithjetpackcompose.tutorials.medium.testing.testinglayout.divider
 
-import android.R
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

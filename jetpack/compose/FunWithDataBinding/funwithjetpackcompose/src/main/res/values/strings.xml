@@ -109,4 +109,34 @@
     <string name="title_activity_case_study_broadcast_receivers">
         CaseStudyBroadcastReceiversActivity
     </string>
+    <string name="title_activity_swipe_animation">SwipeAnimationActivity</string>
+    <string name="title_activity_three_dots_loading">ThreeDotsLoadingActivity</string>
+    <string name="title_activity_multiple_stylen_span">MultipleStylenSpanActivity</string>
+    <string name="title_activity_draw_circle_compose">DrawCircleComposeActivity</string>
+    <string name="title_activity_capture_pointer_input">CapturePointerInputActivity</string>
+    <string name="title_activity_drag_swipe_fling">DragSwipeFlingActivity</string>
+    <string name="title_activity_multi_touch_gesture">MultiTouchGestureActivity</string>
+    <string name="title_activity_drag_and_drop">DragAndDropActivity</string>
+    <string name="title_activity_customize_animation">CustomizeAnimationActivity</string>
+    <string name="title_activity_text_and_typography">TextAndTypographyActivity</string>
+    <string name="title_activity_scroll">ScrollActivity</string>
+    <string name="title_activity_stepper_animated">StepperAnimatedActivity</string>
+    <string name="title_activity_filter_all_apps">FilterAllAppsActivity</string>
+    <string name="title_activity_interactive_particle_network">InteractiveParticleNetworkActivity
+    </string>
+    <string name="title_activity_common_mistakes">CommonMistakesActivity</string>
+    <string name="title_activity_make_substrings_clickeable_in_compose">
+        MakeSubstringsClickeableInComposeActivity
+    </string>
+    <string name="title_activity_spans_compose">SpansComposeActivity</string>
+    <string name="title_activity_spannable_text_in_compose">SpannableTextInComposeActivity</string>
+    <string name="title_activity_manager_memory">ManagerMemoryActivity</string>
+    <string name="title_activity_exploring_memory_leak">ExploringMemoryLeakActivity</string>
+    <string name="title_activity_graphics_in_compose">GraphicsInComposeActivity</string>
+    <string name="image_placehholder_description">placeholder image</string>
+    <string name="test_string_resource">String de Teste</string>
+    <plurals name="minute_plural">
+        <item quantity="one">%1$d minute</item>
+        <item quantity="other">%1$d minutes</item>
+    </plurals>
 </resources>

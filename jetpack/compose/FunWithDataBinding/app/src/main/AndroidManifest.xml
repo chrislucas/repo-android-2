@@ -26,6 +26,63 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
+            android:name=".view.features.tutorials.tdd.FunWithTDDActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.stackoverflow.clickablespan.PartOfStringClickableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.codelabs.archictecturecomponents.ArchitectureComponentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.sec.biometricprompt.BiometricAuthenticationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.sec.biometricprompt.UsingBiometricPromptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.activities.taskandstack.TaskAndBackStackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.music.circlefifthandforth.CircleOfFifthAndForthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.CreateCustomDrawingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.span.clickablespan.makesubstringclickable.MakeSubstringsClickableActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.clockview.ClockViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.books.android2dgraphics.trigonometriccircle.TrigonometricUnitCircleActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="unit_trigonometric_circle"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.medium.spannable.absoluteandrelatiespan.AbsoluteAndRelativeSpanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.medium.spannable.subscriptandsuperscriptspan.SubscriptAndSuperScriptSpanActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".view.features.tutorials.google.uiarchitecture.managingstate.overview.ManagingStateOverviewActivity"
             android:exported="false"
             android:label="@string/title_activity_manageing_state_overiew"

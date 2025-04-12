@@ -14,6 +14,12 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.br.funwithjetpackcompose.tutorials.medium.testing.testinginjetpackcompose.ui.theme.FunWithDataBindingTheme
 /*
     https://developer.android.com/codelabs/jetpack-compose-testing#0
+
+    Projetos em compose
+    https://github.com/android/codelab-android-compose
+
+    Testing cheatsheet
+    https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet
  */
 class TestingInJetpackComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +29,6 @@ class TestingInJetpackComposeActivity : ComponentActivity() {
             FunWithDataBindingTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = "Android",
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -33,17 +38,14 @@ class TestingInJetpackComposeActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun Greeting(modifier: Modifier = Modifier) {
+
 }
 
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     FunWithDataBindingTheme {
-        Greeting("Android")
+        Greeting()
     }
 }

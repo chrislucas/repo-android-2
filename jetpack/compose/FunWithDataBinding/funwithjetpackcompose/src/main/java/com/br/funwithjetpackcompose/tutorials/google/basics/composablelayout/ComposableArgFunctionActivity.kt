@@ -1,6 +1,7 @@
 package com.br.funwithjetpackcompose.tutorials.google.basics.composablelayout
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -35,11 +36,22 @@ class ComposableArgFunctionActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             FunWithDataBindingTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { _ ->
-
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    Modifier.padding(innerPadding)
                 }
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+    }
+
+    override fun onRestoreInstanceState(
+        savedInstanceState: Bundle?,
+        persistentState: PersistableBundle?
+    ) {
+        super.onRestoreInstanceState(savedInstanceState, persistentState)
     }
 }
 
