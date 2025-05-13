@@ -48,7 +48,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
 
     // compose
-    implementation(platform(libs.androidx.compose.bom.v20240901))
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui.viewbinding)
 
     // Optional - Included automatically by material, only add when you need
@@ -123,7 +123,7 @@ dependencies {
     implementation(libs.coil3.coil.network.okhttp)
 
 
-    androidTestImplementation(platform(libs.androidx.compose.bom.v20240901))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
 
     // Test rules and transitive dependencies:
     androidTestImplementation(libs.ui.test.junit4)

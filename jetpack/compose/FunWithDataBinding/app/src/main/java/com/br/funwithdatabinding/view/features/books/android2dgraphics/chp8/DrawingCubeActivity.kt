@@ -1,6 +1,9 @@
 package com.br.funwithdatabinding.view.features.books.android2dgraphics.chp8
 
+import android.content.Context
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -21,4 +24,13 @@ class DrawingCubeActivity : AppCompatActivity() {
             insets
         }
     }
+}
+
+
+class AnimatedCubeCanvas @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    styleAttr: Int = 0
+) : View(context, attrs, styleAttr) {
+
 }

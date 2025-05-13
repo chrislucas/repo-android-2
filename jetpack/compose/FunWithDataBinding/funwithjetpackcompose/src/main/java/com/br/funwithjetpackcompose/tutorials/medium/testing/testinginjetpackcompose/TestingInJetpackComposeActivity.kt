@@ -20,6 +20,9 @@ import com.br.funwithjetpackcompose.tutorials.medium.testing.testinginjetpackcom
 
     Testing cheatsheet
     https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet
+
+    Semantics
+    https://developer.android.com/develop/ui/compose/testing/semantics
  */
 class TestingInJetpackComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

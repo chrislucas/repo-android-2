@@ -66,7 +66,7 @@ dependencies {
     implementation(libs.google.firebase.analytics)
 
     // compose
-    implementation(platform(libs.androidx.compose.bom.v20240901))
+    implementation(platform(libs.androidx.compose.bom))
     implementation("androidx.compose.ui:ui-viewbinding")
 
     // Java language implementation
@@ -163,7 +163,18 @@ dependencies {
     implementation(libs.coil3.coil.network.okhttp)
 
 
-    androidTestImplementation(platform(libs.androidx.compose.bom.v20240901))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+
+    val ink_version = "1.0.0-alpha01"
+
+    implementation("androidx.ink:ink-authoring:$ink_version")
+    implementation("androidx.ink:ink-brush:$ink_version")
+    implementation("androidx.ink:ink-geometry:$ink_version")
+    implementation("androidx.ink:ink-nativeloader:$ink_version")
+    implementation("androidx.ink:ink-rendering:$ink_version")
+    implementation("androidx.ink:ink-strokes:$ink_version")
+
+    testImplementation(libs.mockk)
 
     // Test rules and transitive dependencies:
     androidTestImplementation(libs.ui.test.junit4)

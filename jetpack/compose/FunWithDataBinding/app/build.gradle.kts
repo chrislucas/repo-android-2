@@ -74,14 +74,14 @@ dependencies {
 
     implementation(libs.picasso)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom.v20240901))
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
-    androidTestImplementation(platform(libs.androidx.compose.bom.v20240901))
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
     annotationProcessor(libs.androidx.databinding.compiler)
     debugImplementation(libs.androidx.ui.tooling)
@@ -190,6 +190,7 @@ dependencies {
         https://developer.android.com/training/testing/local-tests/robolectric?hl=pt-br
      */
     testImplementation(libs.robolectric)
+    testImplementation(libs.mockk)
 
     // https://developer.android.com/jetpack/androidx/releases/test
     val androidXTestVersion = "1.6.1"

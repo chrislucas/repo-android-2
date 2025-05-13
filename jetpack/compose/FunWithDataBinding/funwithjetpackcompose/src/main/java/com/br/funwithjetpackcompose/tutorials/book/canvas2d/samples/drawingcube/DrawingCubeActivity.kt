@@ -133,7 +133,6 @@ class AnimatedCubeCanvas @JvmOverloads constructor(
                 projectedVertices
             )
 
-
             connectVertices(
                 relationAmongPoints[idx],
                 relationAmongPoints[idx] + 4,
@@ -191,14 +190,12 @@ class AnimatedCubeCanvas @JvmOverloads constructor(
     companion object {
         private const val ANGLE_OFFSET = 0.005
     }
-
 }
 
 object MatrixOperation {
     /*
         https://github.com/VictorFranco/AndroidCube/blob/main/app/src/main/java/com/example/cube/MatrixOperations.java
      */
-
 
     fun multiply(
         matrixA: Array<Array<Double>>,
@@ -210,9 +207,7 @@ object MatrixOperation {
         val lineB = matrixB.size
         val columnB = matrixB[0].size
 
-        if (columnA != lineB) {
-            throw Exception("")
-        }
+        if (columnA != lineB) { throw Exception("") }
 
         val result = Array(lineA) { Array(columnB) { 0.0 } }
 

@@ -1,6 +1,6 @@
 package com.br.funwithjetpackcompose.tutorials.google.textstyle
 
-import androidx.compose.material.Text
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color.Companion.Blue

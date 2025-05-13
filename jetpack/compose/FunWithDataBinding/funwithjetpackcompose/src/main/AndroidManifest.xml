@@ -8,6 +8,16 @@
 
     <application>
         <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.animation.animmodifier.AnimationModifierActivity"
+            android:exported="false"
+            android:label="@string/title_activity_animation_modifier"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.customviews.timer.CustomTimerViewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_custom_timer_view"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
             android:name="com.br.funwithjetpackcompose.tutorials.canvas.graphics.GraphicsInComposeActivity"
             android:exported="false"
             android:label="@string/title_activity_graphics_in_compose"

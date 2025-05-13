@@ -17,6 +17,7 @@ import com.br.funwithjetpackcompose.tutorials.google.span.makesubstringsclickabl
     TODO
     https://developer.android.com/reference/android/text/style/ClickableSpan?authuser=1
     https://medium.com/android-%D0%BA%D0%B0%D0%BA-%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C-%D1%87%D0%B0%D1%81%D1%82%D1%8C-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8-clickable/make-part-of-textview-clickable-5653ca3b8014
+    https://medium.com/@shmehdi01/clickable-spannabletext-in-jetpack-compose-c24514c34f27
  */
 class MakeSubstringsClickableInComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

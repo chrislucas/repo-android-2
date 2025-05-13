@@ -26,6 +26,38 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
+            android:name=".view.features.tutorials.google.animate.MoveViewWithAnimationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.animate.AnimatedViewsActivity"
+            android:exported="true">
+            <intent-filter>
+                <data android:host="animated_view"
+                    android:scheme="dpl" />
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.google.graphics.MagnifyTextActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.layout.CardBasedLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.layout.TwoPaneLayoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.graphics.CreateShadowsAndClipsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.graphics.TrackTouchAndPointerMovementsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.tutorials.google.graphics.DrawableOverviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.features.tutorials.tdd.FunWithTDDActivity"
             android:exported="false" />
         <activity
@@ -64,7 +96,6 @@
                     android:scheme="dpl" />
 
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -76,8 +107,11 @@
             android:name=".view.features.tutorials.medium.spannable.subscriptandsuperscriptspan.SubscriptAndSuperScriptSpanActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
+                <data
+                    android:host="spannable_subscriptandsuperscriptspan"
+                    android:scheme="dpl" />
 
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>

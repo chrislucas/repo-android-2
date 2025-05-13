@@ -139,4 +139,6 @@
         <item quantity="one">%1$d minute</item>
         <item quantity="other">%1$d minutes</item>
     </plurals>
+    <string name="title_activity_custom_timer_view">CustomTimerViewActivity</string>
+    <string name="title_activity_animation_modifier">AnimationModifierActivity</string>
 </resources>

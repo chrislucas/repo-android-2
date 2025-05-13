@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
@@ -25,10 +26,7 @@ class MultipleStylesSpanActivity : ComponentActivity() {
         setContent {
             FunWithDataBindingTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                    TextMultiplesStyles(Modifier.padding(innerPadding))
                 }
             }
         }
@@ -36,17 +34,16 @@ class MultipleStylesSpanActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun TextMultiplesStyles(modifier: Modifier = Modifier) {
+    Column(modifier) {
+        Text(text = "Hello")
+    }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun TextMultiplesStylesPreview() {
     FunWithDataBindingTheme {
-        Greeting("Android")
+        TextMultiplesStyles()
     }
 }

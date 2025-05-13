@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 rootProject.name = "KmmMyStuffs"
 include(":androidApp")
 include(":shared")
+include(":restclient")
