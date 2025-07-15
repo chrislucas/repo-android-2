@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithprotodatastore"
-    compileSdk = 34
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 21
@@ -24,11 +24,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
@@ -39,17 +36,21 @@ dependencies {
     implementation(libs.material)
 
     // https://developer.android.com/jetpack/androidx/releases/datastore
-    implementation("androidx.datastore:datastore:1.1.1")
+    implementation("androidx.datastore:datastore:1.1.7")
 
     // optional - RxJava2 support
-    implementation("androidx.datastore:datastore-rxjava2:1.1.1")
+    implementation("androidx.datastore:datastore-rxjava2:1.1.7")
 
     // optional - RxJava3 support
-    implementation("androidx.datastore:datastore-rxjava3:1.1.1")
+    implementation("androidx.datastore:datastore-rxjava3:1.1.7")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+kotlin {
+    jvmToolchain(17)
 }

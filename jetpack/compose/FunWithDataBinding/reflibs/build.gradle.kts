@@ -28,7 +28,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
@@ -49,6 +49,15 @@ dependencies {
     api(project(":funwithandroidktx"))
     api(project(":opencamerafromwebview"))
     api(project(":fileuploadclient"))
+    api(project(":funwithnavigationapi"))
+    api(project(":FunWithHilt"))
+    api(project(":loginbiometricandroid"))
+    api(project(":animationtransition"))
+    api(project(":funwithktor"))
+    api(project(":wrapperviewmodel"))
+    api(project(":funwithcontentprovider"))
+    api(project(":coroutinecodelabs"))
+    api(project(":restclientlib"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -1,0 +1,25 @@
+remote-mediator
+https://github.com/kido1611/Remote-Mediator-Example
+
+Page from network and database
+https://developer.android.com/topic/libraries/architecture/paging/v3-network-db
+
+
+RemoteMediator
+https://developer.android.com/reference/kotlin/androidx/paging/RemoteMediator
+
+https://developer.android.com/topic/libraries/architecture/paging/v3-overview#kts
+
+https://proandroiddev.com/pagination-with-paging-3-modifying-paged-data-223f0bea603b
+
+
+https://medium.com/simform-engineering/list-view-with-pagination-using-jetpack-compose-e131174eac8e
+
+Locally scoped data with CompositionLocal
+https://developer.android.com/develop/ui/compose/compositionlocal
+
+Efficient Data Loading in Android with RemoteMediator and Paging 3
+https://medium.com/@baserfatih40/efficient-data-loading-in-android-with-remotemediator-and-paging-3-5acd97848077
+
+How to Build a Modern Networking Architecture in Android: MVVM, Retrofit, and Paging with Jetpack Compose
+https://levelup.gitconnected.com/how-to-build-a-modern-networking-architecture-in-android-mvvm-retrofit-and-paging-with-jetpack-17cd4219ba11

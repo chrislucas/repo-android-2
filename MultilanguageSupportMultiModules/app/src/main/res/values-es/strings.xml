@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MultilanguageSupport</string>
+    <string name="greeting">Hola</string>
+    <string name="title_activity_per_app_language_preferences">PerAppLanguagePreferencesActivity</string>
+    <string name="language">Espanol</string>
+
+</resources>

@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.br.loginbiometric"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 24
@@ -68,7 +68,7 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
 
     // Kotlin
-    implementation("androidx.biometric:biometric:1.4.0-alpha03")
+    implementation("androidx.biometric:biometric:1.4.0-alpha04")
 
     // paging jetpack compose
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1

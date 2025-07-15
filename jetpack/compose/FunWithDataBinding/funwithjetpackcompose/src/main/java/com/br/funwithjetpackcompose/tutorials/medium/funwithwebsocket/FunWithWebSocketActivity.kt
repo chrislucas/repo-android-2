@@ -15,6 +15,7 @@ import com.br.funwithjetpackcompose.tutorials.medium.funwithwebsocket.ui.theme.F
 
 
 /**
+ * TODO
  * https://nglauber.medium.com/websockets-viewmodel-e-jetpack-compose-b710c529a412
  */
 class FunWithWebSocketActivity : ComponentActivity() {

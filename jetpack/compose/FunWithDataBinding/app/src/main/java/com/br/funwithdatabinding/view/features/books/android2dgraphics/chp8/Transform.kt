@@ -1,5 +1,8 @@
 package com.br.funwithdatabinding.view.features.books.android2dgraphics.chp8
 
+/*
+    TODO revisitar esse assunto
+ */
 class Transform(
     private var moveX: Float,
     private var moveY: Float,

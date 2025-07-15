@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithdatabinding"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.br.funwithdatabinding"
@@ -34,15 +34,18 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = "17"
-    }
+
     buildFeatures {
         dataBinding = true
         buildConfig = true
         viewBinding = true
         compose = true
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.15"
+    }
+
 
     testOptions {
         unitTests {
@@ -54,8 +57,17 @@ android {
 dependencies {
 
     implementation(project(":reflibs"))
-    implementation(project(":restclientlib"))
-    implementation(project(":wrapperviewmodel"))
+
+    // concurrent
+    implementation("androidx.concurrent:concurrent-futures:1.2.0")
+// Kotlin
+    implementation("androidx.concurrent:concurrent-futures-ktx:1.2.0")
+
+    //https://developer.android.com/develop/background-work/background-tasks/asynchronous/listenablefuture
+    // To use CallbackToFutureAdapter
+    implementation("androidx.concurrent:concurrent-futures:1.2.0")
+// Kotlin
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.10.2")
 
     api(libs.kotlinx.coroutines.core)
     api(libs.kotlinx.coroutines.android)
@@ -79,6 +91,9 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    //implementation(libs.androidx.compose.material3.material3)
+
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -88,7 +103,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     kapt(libs.compiler)
 
-    val paging_version = "3.3.2"
+    val paging_version = "3.3.6"
 
     implementation("androidx.paging:paging-runtime:$paging_version")
 
@@ -105,7 +120,7 @@ dependencies {
     implementation("androidx.paging:paging-guava:$paging_version")
 
     // optional - Jetpack Compose integration
-    implementation("androidx.paging:paging-compose:3.3.2")
+    implementation("androidx.paging:paging-compose:3.3.6")
 
     // livedata
 
@@ -141,7 +156,7 @@ dependencies {
 
 
     // Import the BoM for the Firebase platform
-    implementation(platform(libs.firebase.bom.v3320))
+    implementation(platform(libs.firebase.bom))
 
     // Add the dependencies for the Remote Config and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
@@ -150,42 +165,33 @@ dependencies {
 
     // Data store
 
-    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation("androidx.datastore:datastore-preferences:1.1.7")
 
     // optional - RxJava2 support
-    implementation("androidx.datastore:datastore-preferences-rxjava2:1.1.1")
+    implementation("androidx.datastore:datastore-preferences-rxjava2:1.1.7")
 
     // optional - RxJava3 support
-    implementation("androidx.datastore:datastore-preferences-rxjava3:1.1.1")
+    implementation("androidx.datastore:datastore-preferences-rxjava3:1.1.7")
 
-    implementation("androidx.datastore:datastore:1.1.1")
+    implementation("androidx.datastore:datastore:1.1.7")
 
     // optional - RxJava2 support
-    implementation("androidx.datastore:datastore-rxjava2:1.1.1")
+    implementation("androidx.datastore:datastore-rxjava2:1.1.7")
 
     // optional - RxJava3 support
-    implementation("androidx.datastore:datastore-rxjava3:1.1.1")
+    implementation("androidx.datastore:datastore-rxjava3:1.1.7")
 
 
     implementation(libs.timber)
 
-    val fragmentVersion = "1.8.6"
+    val fragmentVersion = "1.8.8"
     // Kotlin
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
 
-    val dynamicanimation_version = "1.0.0"
+    val dynamicanimation_version = "1.1.0"
     implementation("androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version")
 
-    // optional - Test helpers for LiveData
-    testImplementation(libs.androidx.core.testing)
 
-    // optional - Test helpers for Lifecycle runtime
-    testImplementation(libs.androidx.lifecycle.runtime.testing)
-    testImplementation(libs.junit)
-    testImplementation(libs.kotlinx.coroutines.test)
-
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
     /*
         https://developer.android.com/training/testing/local-tests/robolectric?hl=pt-br
      */
@@ -209,18 +215,37 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:$testJunitVersion")
     androidTestImplementation("androidx.test.ext:truth:$truthVersion")
 
-    val espressoVersion = "3.6.1"
     // Espresso dependencies
-    androidTestImplementation( "androidx.test.espresso:espresso-core:$espressoVersion")
-    androidTestImplementation( "androidx.test.espresso:espresso-contrib:$espressoVersion")
-    androidTestImplementation( "androidx.test.espresso:espresso-intents:$espressoVersion")
-    androidTestImplementation( "androidx.test.espresso:espresso-accessibility:$espressoVersion")
-    androidTestImplementation( "androidx.test.espresso:espresso-web:$espressoVersion")
-    androidTestImplementation( "androidx.test.espresso.idling:idling-concurrent:$espressoVersion")
-
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.espresso.contrib)
+    androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.androidx.espresso.accessibility)
+    androidTestImplementation(libs.androidx.espresso.web)
+    androidTestImplementation(libs.androidx.idling.concurrent)
     // The following Espresso dependency can be either "implementation",
     // or "androidTestImplementation", depending on whether you want the
     // dependency to appear on your APK"s compile classpath or the test APK
     // classpath.
-    androidTestImplementation( "androidx.test.espresso:espresso-idling-resource:$espressoVersion")
+    androidTestImplementation(libs.androidx.espresso.idling.resource)
+    // optional - Test helpers for LiveData
+    testImplementation(libs.androidx.core.testing)
+
+    // optional - Test helpers for Lifecycle runtime
+    testImplementation(libs.androidx.lifecycle.runtime.testing)
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    androidTestImplementation(libs.androidx.junit)
 }
+
+kotlin {
+    jvmToolchain(17)
+}
+
+
+/*
+configurations.all {
+    resolutionStrategy {
+        force(libs.androidx.compose.material3.material3)
+    }
+}
+ */

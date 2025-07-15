@@ -14,6 +14,9 @@
         android:networkSecurityConfig="@xml/security_network_config"
         android:requestLegacyExternalStorage="true">
         <activity
+            android:name=".executingjsandwebassembly.ExecutingJsAndWebAssemblyActivity"
+            android:exported="false" />
+        <activity
             android:name=".tutorials.jsinterface.nativecodeinteract.NativeCodeInteractWithJSActivity"
             android:exported="false" />
         <activity
@@ -83,10 +86,13 @@
                 <data
                     android:host="open_camera_from_web_view"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

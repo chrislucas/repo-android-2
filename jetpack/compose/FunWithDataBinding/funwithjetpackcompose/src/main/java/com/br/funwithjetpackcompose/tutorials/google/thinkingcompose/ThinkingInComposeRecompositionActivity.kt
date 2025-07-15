@@ -16,6 +16,15 @@ import com.br.funwithjetpackcompose.tutorials.google.thinkingcompose.ui.theme.Fu
 /*
     TODO
     https://developer.android.com/develop/ui/compose/mental-model
+
+    Sobre performance e recomposicao
+        - Como fazer debugging de recomposition
+        = xhttps://developer.android.com/develop/ui/compose/quick-guides/content/video/debugging-recomposition
+        - Jetpack Compose Performance
+        - https://developer.android.com/develop/ui/compose/performance
+            - Outras fontes
+            - https://proandroiddev.com/improving-performance-and-reducing-recomposition-in-jetpack-compose-a-case-study-4565cbef900d
+            - https://www.droidcon.com/2024/09/19/jetpack-compose-improve-performance-via-one-view-one-state-pattern/
  */
 class ThinkingInComposeRecompositionActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

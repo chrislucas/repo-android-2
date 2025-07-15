@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.R
 
 /*
+    TODO
     https://developer.android.com/develop/ui/views/touch-and-input/gestures/movement
  */
 class TrackTouchAndPointerMovementsActivity : AppCompatActivity() {

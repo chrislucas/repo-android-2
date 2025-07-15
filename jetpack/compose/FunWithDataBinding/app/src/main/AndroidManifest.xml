@@ -6,6 +6,7 @@
         android:name="android.hardware.camera"
         android:required="true" />
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Always include this permission -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- Include only if your app benefits from precise location access. -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -26,15 +27,80 @@
         android:theme="@style/Theme.FunWithDataBinding"
         tools:targetApi="31">
         <activity
-            android:name=".view.features.tutorials.google.animate.MoveViewWithAnimationActivity"
+            android:name=".view.features.tutorials.medium.guideofservice.GuideOfServicesOnAndroidActivity"
             android:exported="false" />
+        <!--
+            android:process
+            https://developer.android.com/guide/topics/manifest/service-element#proc
+
+            Nome do processo onde a service será executada
+        -->
+        <service
+            android:name=".view.features.voiceassistant.services.CustomVoiceInteractionService"
+            android:enabled="true"
+            android:exported="false"
+            android:process=":interactor">
+            <meta-data
+                android:name="android.voice_interaction"
+                android:resource="@xml/interaction_service" />
+        </service>
+
+        <activity
+            android:name=".view.features.voiceassistant.VoiceAssistantActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.features.findapponsystem.FindAppByNameActivity"
+            android:exported="false"
+            android:label="@string/title_activity_find_app_by_name"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".view.features.networking.coinlore.view.CoinLoreActivity"
+            android:exported="false"
+            android:label="@string/title_activity_coin_lore"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".view.features.tutorials.medium.simplecalculator.SimpleCalculatorActivity"
+            android:exported="false"
+            android:label="@string/title_activity_simple_calculator"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name=".view.features.tutorials.buttonprogressbar.FunWithLoadingButtonActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="button_loading"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.features.tutorials.google.animate.MoveViewWithAnimationActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="move_view"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".view.features.tutorials.google.animate.AnimatedViewsActivity"
             android:exported="true">
             <intent-filter>
-                <data android:host="animated_view"
+                <data
+                    android:host="animated_view"
                     android:scheme="dpl" />
+
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -96,6 +162,7 @@
                     android:scheme="dpl" />
 
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
@@ -112,6 +179,7 @@
                     android:scheme="dpl" />
 
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>

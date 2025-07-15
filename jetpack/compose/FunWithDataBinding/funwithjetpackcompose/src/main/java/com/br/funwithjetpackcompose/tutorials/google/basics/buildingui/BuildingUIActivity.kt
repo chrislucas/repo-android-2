@@ -51,7 +51,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(
     showBackground = true,
-    showSystemUi = true
+    showSystemUi = true,
+    name = "Previews"
 )
 @Composable
 fun GreetingPreview() {

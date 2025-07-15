@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".codelabs.pagingbasics.PagingBasicsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_paging_basics"
+            android:theme="@style/Theme.JustComposeLabs" />
+    </application>
+
+</manifest>

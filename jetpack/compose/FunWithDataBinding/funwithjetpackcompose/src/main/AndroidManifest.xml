@@ -8,6 +8,83 @@
 
     <application>
         <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.developer.training.cupcakecodelabs.MainCupCakeAppActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_cup_cake_app"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.modifier.controltextstyle.ControlTextStyleActivity"
+            android:exported="false"
+            android:label="@string/title_activity_control_text_style"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.codelabs.lifecycleaware.features.allfeatures.AllVersionsLifecycleAwareActivity"
+            android:exported="false"
+            android:label="@string/title_activity_all_versions_lifecycle_aware"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.codelabs.lifecycleaware.features.chronometerwithviewmodel.ChronometerWithViewModelActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.codelabs.lifecycleaware.features.simplestart.SimpleStartChronometerActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="view_about_simple_start_chronometer"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.makeanyclasslifecycleaware.DefaultLifecycleObserverActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.linkannotationtextlink.TextLinkActivity"
+            android:exported="false"
+            android:label="@string/title_activity_text_link"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.composables.state.EverythingAboutStateActivity"
+            android:exported="true"
+            android:label="@string/title_activity_everything_about_state"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_about_remember_functions"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.medium.rememberfunction.RememberFunctionActivity"
+            android:exported="true"
+            android:label="@string/title_activity_remember_function"
+            android:theme="@style/Theme.FunWithDataBinding">
+            <intent-filter>
+                <data
+                    android:host="compose_studying_remember_functions"
+                    android:scheme="dpl" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.br.funwithjetpackcompose.tutorials.google.codelabs.getdatafrominternet.GetDataFromInternetComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_get_data_from_internet_compose"
+            android:theme="@style/Theme.FunWithDataBinding" />
+        <activity
             android:name="com.br.funwithjetpackcompose.tutorials.google.animation.animmodifier.AnimationModifierActivity"
             android:exported="false"
             android:label="@string/title_activity_animation_modifier"
@@ -695,6 +772,18 @@
             android:exported="false"
             android:label="@string/title_activity_tutorial_list_paging"
             android:theme="@style/Theme.FunWithDataBinding" />
+
+        <receiver
+            android:name="com.br.funwithjetpackcompose.tutorials.google.widget.glance.AppWidgetReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_provider" />
+        </receiver>
     </application>
 
 </manifest>

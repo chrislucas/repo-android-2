@@ -1,0 +1,34 @@
+
+Esse projeto tem o proposito de explorar tudo o que for possivel sobre Jetpack Compose
+
+- Ferramentas de monitoramento de performance
+- Recomposition
+- Composition tracing - https://developer.android.com/develop/ui/compose/tooling/tracing
+- Debug your Compose UI - https://developer.android.com/develop/ui/compose/tooling/debug#compose_ui_check
+
+Eh um projeto com Foco em Compose
+
+
+- Navigation - https://developer.android.com/guide/navigation
+- Navigation with Compose - https://developer.android.com/develop/ui/compose/navigation#kts
+- Principles of navigation - https://developer.android.com/guide/navigation/principles
+- (Deprecated) Learn Jetpack Navigation - https://developer.android.com/codelabs/android-navigation#0
+
+Todos os estudos devem ser um novo modulo
+
+- Cria um modulo para unificar todos os outros e podermos fazer navegacao entre eles
+    - Verificar a possibilidade de usar o sistema de navegacao em compose
+    - Na pior das hipoteses usar intent
+
+- Criar modulo de network com retrofit
+    - Monitorar as requisicoes via intercept para explorar a ferramenta
+    - Disponibilizar uma interface para poder interceptar o proprio intercept
+
+
+
+
+
+
+
+Tools for Compose
+https://developer.android.com/develop/ui/compose/tooling

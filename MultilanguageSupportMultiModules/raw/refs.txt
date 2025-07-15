@@ -1,0 +1,27 @@
+Per-app language preferences
+https://developer.android.com/guide/topics/resources/app-languages
+
+
+----------------------------------------------------------------------------------------------------
+
+
+
+https://blog.kotlin-academy.com/localization-in-jetpack-compose-71b7f7233243
+https://phrase.com/blog/posts/internationalizing-jetpack-compose-android-apps/
+https://developer.android.com/training/basics/supporting-devices/languages
+
+
+https://medium.com/@dzenanbecirovicc/compose-multiplatform-localization-ec6745961ddc
+https://divyanshutw.medium.com/how-to-add-multiple-language-support-in-my-android-app-dynamic-text-6fffe70631d4
+https://medium.com/@khush.panchal123/supporting-multiple-languages-in-your-android-application-a08e21b1baf1
+
+
+https://phrase.com/blog/posts/android-app-development-tutorial-multi-language-support/
+
+https://developer.android.com/guide/topics/resources/localization
+
+
+https://jamescullimore.medium.com/preparing-your-android-app-for-international-markets-i18n-c9763e728422
+
+
+https://medium.com/@fierydinesh/multi-language-support-android-localization-in-app-and-system-settings-change-language-e00957e9c48c

@@ -1,50 +1,56 @@
 [versions]
 activityKtx = "1.10.1"
-adapterRxjava2 = "2.11.0"
-agp = "8.9.1"
-cameraCamera2 = "1.4.0"
-cameraCore = "1.4.0"
-cameraExtensions = "1.4.0"
-cameraLifecycle = "1.4.0"
-cameraVideo = "1.4.0"
-cameraView = "1.4.0"
-coilComposeVersion = "3.1.0"
-coilNetworkOkhttpVersion = "3.1.0"
-collectionKtx = "1.4.5"
+adapterRxjava2 = "3.0.0"
+agp = "8.11.1"
+cameraCamera2 = "1.4.2"
+cameraCore = "1.4.2"
+cameraExtensions = "1.4.2"
+cameraLifecycle = "1.4.2"
+cameraVideo = "1.4.2"
+cameraView = "1.4.2"
+coilComposeVersion = "3.2.0"
+coilNetworkOkhttpVersion = "3.2.0"
+collectionKtx = "1.5.0"
 compiler = "3.1.4"
-composeBomVersion = "2025.04.01"
+composeBomVersion = "2025.06.01"
 coreTesting = "2.2.0"
-databindingCompiler = "8.8.2"
-datastorePreferencesRxjava2 = "1.1.3"
-firebaseBom = "33.1.2"
-firebaseBomVersion = "33.10.0"
-fragmentKtx = "1.8.6"
-graphicsCore = "1.0.2"
+databindingCompiler = "8.11.1"
+datastorePreferencesRxjava2 = "1.1.7"
+espressoVersion = "3.6.1"
+espressoIdlingResourceVersion = "3.5.0"
+firebaseBom = "33.16.0"
+fragmentKtx = "1.8.8"
+glanceAppwidget = "1.1.1"
+glanceMaterial = "1.1.1"
+glanceMaterial3 = "1.1.1"
+graphicsCore = "1.0.3"
 graphicsPath = "1.0.1"
 graphicsShapes = "1.0.1"
-javascriptengine = "1.0.0-beta01"
-kotlin = "2.0.21"
-coreKtx = "1.15.0"
+javascriptengine = "1.0.0"
+kotlin = "2.2.0"
+coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
-kotlinxCoroutinesAndroid = "1.10.1"
-kotlinxCoroutinesCore = "1.10.1"
-kotlinxCoroutinesTest = "1.10.1"
+kotlinxCoroutinesAndroid = "1.10.2"
+kotlinxCoroutinesCore = "1.10.2"
+kotlinxCoroutinesTest = "1.10.2"
 leakcanaryAndroid = "2.14"
-lifecycleLivedataKtx = "2.8.7"
-lifecycleRuntimeKtx = "2.8.7"
+lifecycleLivedataKtx = "2.9.1"
+lifecycleRuntimeKtx = "2.9.1"
 activityCompose = "1.10.1"
 composeBom = "2025.04.01"
-appcompat = "1.7.0"
-lifecycleViewmodelCompose = "2.8.7"
-lifecycleViewmodelKtx = "2.8.7"
-loggingInterceptor = "4.12.0"
+appcompat = "1.7.1"
+lifecycleViewmodelCompose = "2.9.1"
+lifecycleViewmodelKtx = "2.9.1"
+loggingInterceptor = "5.1.0"
 material = "1.12.0"
 activity = "1.10.1"
 constraintlayout = "2.2.1"
-mockkVersion = "1.14.0"
-okhttpUrlconnection = "4.9.3"
+material3 = "1.9.0-beta01"
+mockkVersion = "1.14.4"
+navigationCompose = "2.9.1"
+okhttpUrlconnection = "5.1.0"
 pagingCommon = "3.3.6"
 pagingCompose = "3.3.6"
 pagingGuava = "3.3.6"
@@ -53,24 +59,28 @@ pagingRxjava2 = "3.3.6"
 pagingRxjava3 = "3.3.6"
 picasso = "2.71828"
 picassoVersion = "2.71828"
-retrofit = "2.11.0"
-retrofitVersion = "2.11.0"
-robolectric = "4.13"
-roomCompiler = "2.6.1"
-roomGuava = "2.6.1"
-roomKtx = "2.6.1"
-roomPaging = "2.6.1"
-roomRuntime = "2.6.1"
-roomRxjava2 = "2.6.1"
-roomRxjava3 = "2.6.1"
-roomTesting = "2.6.1"
+retrofit = "3.0.0"
+retrofitVersion = "3.0.0"
+robolectric = "4.15.1"
+roomCompiler = "2.7.2"
+roomGuava = "2.7.2"
+roomKtx = "2.7.2"
+roomPaging = "2.7.2"
+roomRuntime = "2.7.2"
+roomRxjava2 = "2.7.2"
+roomRxjava3 = "2.7.2"
+roomTesting = "2.7.2"
 rxandroid = "3.0.2"
-rxjava = "3.1.9"
-junitJupiter = "5.11.4"
+rxjava = "3.1.11"
+junitJupiter = "5.13.3"
 timber = "5.0.1"
-webkit = "1.13.0-beta01"
+tracingPerfetto = "1.0.0"
+tracingPerfettoBinary = "1.0.0"
+webkit = "1.14.0"
 webkitVersion = "1.8.0"
-junitJupiterVersion = "5.8.1"
+junitJupiterVersion = "5.13.3"
+workVersion = "2.10.2"
+material3Version = "1.3.2"
 
 [libraries]
 adapter-rxjava2 = { module = "com.squareup.retrofit2:adapter-rxjava2", version.ref = "adapterRxjava2" }
@@ -93,11 +103,20 @@ androidx-datastore-preferences-rxjava2 = { module = "androidx.datastore:datastor
 androidx-datastore-preferences-rxjava3 = { module = "androidx.datastore:datastore-preferences-rxjava3", version.ref = "datastorePreferencesRxjava2" }
 androidx-datastore-rxjava2 = { module = "androidx.datastore:datastore-rxjava2", version.ref = "datastorePreferencesRxjava2" }
 androidx-datastore-rxjava3 = { module = "androidx.datastore:datastore-rxjava3", version.ref = "datastorePreferencesRxjava2" }
+androidx-espresso-accessibility = { module = "androidx.test.espresso:espresso-accessibility", version.ref = "espressoVersion" }
+androidx-espresso-contrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "espressoVersion" }
+androidx-espresso-idling-resource = { module = "androidx.test.espresso:espresso-idling-resource", version.ref = "espressoIdlingResourceVersion" }
+androidx-espresso-intents = { module = "androidx.test.espresso:espresso-intents", version.ref = "espressoVersion" }
+androidx-espresso-web = { module = "androidx.test.espresso:espresso-web", version.ref = "espressoVersion" }
 androidx-foundation = { module = "androidx.compose.foundation:foundation" }
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glanceAppwidget" }
+androidx-glance-material = { module = "androidx.glance:glance-material", version.ref = "glanceMaterial" }
+androidx-glance-material3 = { module = "androidx.glance:glance-material3", version.ref = "glanceMaterial3" }
 androidx-graphics-core = { module = "androidx.graphics:graphics-core", version.ref = "graphicsCore" }
 androidx-graphics-path = { module = "androidx.graphics:graphics-path", version.ref = "graphicsPath" }
 androidx-graphics-shapes = { module = "androidx.graphics:graphics-shapes", version.ref = "graphicsShapes" }
+androidx-idling-concurrent = { module = "androidx.test.espresso.idling:idling-concurrent", version.ref = "espressoVersion" }
 androidx-javascriptengine = { module = "androidx.javascriptengine:javascriptengine", version.ref = "javascriptengine" }
 androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycleLivedataKtx" }
 androidx-lifecycle-compiler = { module = "androidx.lifecycle:lifecycle-compiler", version.ref = "lifecycleLivedataKtx" }
@@ -113,6 +132,7 @@ androidx-lifecycle-viewmodel-savedstate = { module = "androidx.lifecycle:lifecyc
 androidx-material = { module = "androidx.compose.material:material" }
 androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core" }
 androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-paging-common = { module = "androidx.paging:paging-common", version.ref = "pagingCommon" }
 androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
 androidx-paging-guava = { module = "androidx.paging:paging-guava", version.ref = "pagingGuava" }
@@ -129,15 +149,23 @@ androidx-room-rxjava3 = { module = "androidx.room:room-rxjava3", version.ref = "
 androidx-room-testing = { module = "androidx.room:room-testing", version.ref = "roomTesting" }
 androidx-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
 androidx-runtime-rxjava2 = { module = "androidx.compose.runtime:runtime-rxjava2" }
+androidx-runtime-tracing = { module = "androidx.compose.runtime:runtime-tracing" }
+androidx-tracing-perfetto = { module = "androidx.tracing:tracing-perfetto", version.ref = "tracingPerfetto" }
+androidx-tracing-perfetto-binary = { module = "androidx.tracing:tracing-perfetto-binary", version.ref = "tracingPerfettoBinary" }
 androidx-ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding" }
 androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "webkit" }
+androidx-work-gcm = { module = "androidx.work:work-gcm", version.ref = "workVersion" }
+androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "workVersion" }
+androidx-work-runtime = { module = "androidx.work:work-runtime", version.ref = "workVersion" }
+androidx-work-runtime-ktx = { module = "androidx.work:work-runtime-ktx", version.ref = "workVersion" }
+androidx-work-rxjava2 = { module = "androidx.work:work-rxjava2", version.ref = "workVersion" }
+androidx-work-testing = { module = "androidx.work:work-testing", version.ref = "workVersion" }
 coil3-coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilComposeVersion" }
 coil3-coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilNetworkOkhttpVersion" }
 compiler = { module = "com.android.databinding:compiler", version.ref = "compiler" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofitVersion" }
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-firebase-bom-v3320 = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBomVersion" }
 firebase-config = { module = "com.google.firebase:firebase-config" }
 google-firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
 google-firebase-config = { module = "com.google.firebase:firebase-config" }
@@ -150,7 +178,7 @@ androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
-androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version = "1.8.0" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version = "1.8.3" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
@@ -178,6 +206,7 @@ ui-tooling = { module = "androidx.compose.ui:ui-tooling" }
 ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiter" }
 jupiter-junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJupiterVersion" }
+ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

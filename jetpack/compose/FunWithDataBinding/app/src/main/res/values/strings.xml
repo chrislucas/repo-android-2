@@ -58,4 +58,14 @@
     <string name="title_activity_side_effects">SideEffectsActivity</string>
     <string name="title_activity_hoist_state">HoistStateActivity</string>
     <string name="title_activity_manageing_state_overiew">ManageingStateOveriewActivity</string>
+    <string name="btn_loading">Carregar</string>
+    <string name="title_activity_simple_calculator">SimpleCalculatorActivity</string>
+    <string name="title_activity_coin_lore">CoinLoreActivity</string>
+    <string name="title_activity_find_app_by_name">FindAppByNameActivity</string>
+
+
+    <string name="app_name_voice_interaction_sample">VoiceInteractionSample</string>
+    <string name="how_can_i_help_you">How can I help you?</string>
+    <string name="not_compatible">Google speech to text is not available on your device</string>
+    <string name="show_voice_recognition">Start</string>
 </resources>

@@ -4,6 +4,14 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.compose.compiler) apply false
-    id("com.google.gms.google-services") version "4.4.2" apply false
-    id("com.google.devtools.ksp") version "2.0.10-1.0.24" apply false
+    id("com.google.gms.google-services") version "4.4.3" apply false
+    id("com.google.devtools.ksp") version "2.2.0-2.0.2" apply false
 }
+
+/*
+configurations.all {
+    resolutionStrategy {
+        force(libs.androidx.compose.material3.material3)
+    }
+}
+ */

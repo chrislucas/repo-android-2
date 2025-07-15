@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MultilanguageSupport</string>
+    <string name="greeting">Hello</string>
+    <string name="title_activity_per_app_language_preferences">PerAppLanguagePreferencesActivity</string>
+    <string name="language">Português</string>
+
+</resources>

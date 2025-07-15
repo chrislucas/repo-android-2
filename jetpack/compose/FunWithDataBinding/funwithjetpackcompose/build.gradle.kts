@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.br.mylibrary"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         minSdk = 21
@@ -50,15 +50,15 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
 
     implementation(libs.androidx.activity.ktx)
-    implementation("androidx.graphics:graphics-core:1.0.1")
+    implementation("androidx.graphics:graphics-core:1.0.3")
     implementation("androidx.graphics:graphics-path:1.0.1")
     implementation("androidx.graphics:graphics-shapes:1.0.1")
 
-    implementation("io.coil-kt.coil3:coil-compose:3.1.0")
-    implementation("io.coil-kt.coil3:coil-network-okhttp:3.1.0")
+    implementation("io.coil-kt.coil3:coil-compose:3.2.0")
+    implementation("io.coil-kt.coil3:coil-network-okhttp:3.2.0")
 
     // Import the BoM for the Firebase platform
-    implementation(platform(libs.firebase.bom.v3320))
+    implementation(platform(libs.firebase.bom))
 
     // Add the dependencies for the Remote Config and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
@@ -67,12 +67,27 @@ dependencies {
 
     // compose
     implementation(platform(libs.androidx.compose.bom))
-    implementation("androidx.compose.ui:ui-viewbinding")
+    implementation(libs.ui.viewbinding)
+    // dependency without a version
+    implementation(libs.androidx.runtime.tracing)
+
+    // Capture a trace from terminal https://developer.android.com/develop/ui/compose/tooling/tracing#terminal
+    implementation(libs.androidx.tracing.perfetto)
+    implementation(libs.androidx.tracing.perfetto.binary)
 
     // Java language implementation
-    implementation("androidx.fragment:fragment:1.8.6")
+    implementation("androidx.fragment:fragment:1.8.8")
     // Kotlin
-    implementation("androidx.fragment:fragment-ktx:1.8.6")
+    implementation("androidx.fragment:fragment-ktx:1.8.8")
+
+    // Glance setup
+
+    // For AppWidgets support
+    implementation(libs.androidx.glance.appwidget)
+    // For interop APIs with Material 3
+    implementation(libs.androidx.glance.material3)
+    // For interop APIs with Material 2
+    implementation(libs.androidx.glance.material)
 
     // Choose one of the following:
     // Material Design 3
@@ -165,7 +180,7 @@ dependencies {
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
 
-    val ink_version = "1.0.0-alpha01"
+    val ink_version = "1.0.0-alpha05"
 
     implementation("androidx.ink:ink-authoring:$ink_version")
     implementation("androidx.ink:ink-brush:$ink_version")

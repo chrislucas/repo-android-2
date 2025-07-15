@@ -157,6 +157,7 @@ class OldStyleOpenCameraFromWebViewActivity : AppCompatActivity() {
             Log.i(TAG, "onPermissionRequestCanceled: $request")
         }
 
+        @Deprecated("Deprecated in Java")
         override fun onShowFileChooser(
             webView: WebView?,
             filePathCallback: ValueCallback<Array<Uri>>?,
@@ -177,7 +178,6 @@ class OldStyleOpenCameraFromWebViewActivity : AppCompatActivity() {
             chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray)
 
             try {
-
                 startActivityForResult(chooserIntent, REQUEST_SELECT_FILE)
             } catch (e: ActivityNotFoundException) {
                 imagePathCallback = null

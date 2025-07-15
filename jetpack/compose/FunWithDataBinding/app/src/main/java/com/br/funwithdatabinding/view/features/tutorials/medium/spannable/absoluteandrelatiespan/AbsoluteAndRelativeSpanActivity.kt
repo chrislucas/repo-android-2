@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.funwithdatabinding.R
 
 /*
+    TODO
     https://stackoverflow.com/questions/16335178/different-font-size-of-strings-in-the-same-textview
 
     TODO explorar

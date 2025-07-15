@@ -14,9 +14,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.br.funwithjetpackcompose.tutorials.medium.testing.testinginjetpackcompose.ui.theme.FunWithDataBindingTheme
 /*
     https://developer.android.com/codelabs/jetpack-compose-testing#0
+    https://github.com/android/codelab-android-compose/tree/main/TestingCodelab
 
     Projetos em compose
     https://github.com/android/codelab-android-compose
+
+    Testing
+    https://developer.android.com/develop/ui/compose/testing
 
     Testing cheatsheet
     https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet
@@ -31,7 +35,7 @@ class TestingInJetpackComposeActivity : ComponentActivity() {
         setContent {
             FunWithDataBindingTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
+                    RallyApp(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
@@ -40,8 +44,12 @@ class TestingInJetpackComposeActivity : ComponentActivity() {
     }
 }
 
+/*
+    https://github.com/android/codelab-android-compose/blob/main/TestingCodelab/app/src/main/java/com/example/compose/rally/RallyActivity.kt
+ */
+
 @Composable
-fun Greeting(modifier: Modifier = Modifier) {
+fun RallyApp(modifier: Modifier = Modifier) {
 
 }
 
@@ -49,6 +57,6 @@ fun Greeting(modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     FunWithDataBindingTheme {
-        Greeting()
+        RallyApp()
     }
 }

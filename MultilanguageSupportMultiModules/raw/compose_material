@@ -1,0 +1,28 @@
+Compose Material
+
+https://developer.android.com/jetpack/androidx/releases/compose-material
+
+
+compose.animation	Build animations in their Jetpack Compose applications to enrich the user experience.
+
+compose.compiler	Transform @Composable functions and enable optimizations with a Kotlin compiler plugin.
+
+compose.foundation
+Write Jetpack Compose applications with ready to use building blocks and extend foundation
+to build your own design system pieces.
+
+compose.material
+Build Jetpack Compose UIs with ready to use Material Design Components.
+ This is the higher level entry point of Compose, designed to provide components
+ that match those described at www.material.io.
+
+compose.material3
+Build Jetpack Compose UIs with Material Design 3 Components,
+the next evolution of Material Design. Material 3 includes updated theming and components
+and Material You personalization features like dynamic color,
+and is designed to be cohesive with the new Android 12 visual style and system UI.
+
+
+compose.runtime	Fundamental building blocks of Compose's programming model and
+state management, and core runtime for the Compose Compiler Plugin to target.
+compose.ui	Fundamental components of compose UI needed to interact with the device, including layout, drawing, and input.
