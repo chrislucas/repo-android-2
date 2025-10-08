@@ -1,0 +1,45 @@
+custom accessibility action compose
+https://developer.android.com/develop/ui/compose/accessibility
+https://appt.org/en/docs/jetpack-compose/samples/accessibility-action
+https://developer.android.com/codelabs/jetpack-compose-accessibility#0
+
+Accessibility action on Android
+https://appt.org/en/docs/android/samples/accessibility-action
+
+Accessibility action in Jetpack Compose
+https://appt.org/en/docs/jetpack-compose/samples/accessibility-action
+
+Principles for improving app accessibility
+https://developer.android.com/guide/topics/ui/accessibility/principles
+
+Enhanced accessibility gestures for custom components on Android
+https://medium.com/@leboncoin_tech/enhanced-accessibility-gestures-for-custom-components-on-android-041e73b7539c
+
+https://appt.org/en/docs/jetpack-compose
+https://appt.org/en/docs/android
+https://appt.org/en/
+
+accessibilityLiveRegion view android
+
+Accessibility live region on Android
+https://appt.org/en/docs/android/samples/accessibility-live-region#
+
+Accessibility live region in Jetpack Compose
+https://appt.org/en/docs/jetpack-compose/samples/accessibility-live-region
+
+Tutorial: Debugging Android Accessibility
+https://withintent.uncorkedstudios.com/tutorial-debugging-android-accessibility-818cfd361414
+
+https://developer.android.com/reference/android/view/View#IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+https://developer.android.com/reference/android/accessibilityservice/AccessibilityServiceInfo
+
+addAccessibilityAction android
+
+Pesquisar por
+Adds an accessibility action that can be performed on a node associated with a view. A view can only have 32 actions created with this API.
+
+
+AccessibilityViewCommand.CommandArguments
+https://developer.android.com/reference/androidx/core/view/accessibility/AccessibilityViewCommand.CommandArguments
+
+AccessibilityViewCommand examples android

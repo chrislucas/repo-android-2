@@ -1,0 +1,10 @@
+combine multiple call flow coroutines and retrofit
+
+https://medium.com/better-programming/a-solution-for-combining-kotlin-suspend-function-retrofit-8d17e1f4886
+https://www.baeldung.com/kotlin/combining-multiple-flows
+https://medium.com/@keyvan.nrz/call-multile-api-calls-with-combine-and-stateflow-1cf4ea4ac322
+https://medium.com/@devarshbhalara3072/building-efficient-api-calls-in-android-with-retrofit-coroutines-flow-and-dependency-injection-60e022b16987
+https://proandroiddev.com/modeling-retrofit-responses-with-sealed-classes-and-coroutines-9d6302077dfe
+https://blog.stackademic.com/retrofit-with-kotlin-coroutines-9d6468b8d220
+https://outcomeschool.com/blog/retrofit-with-kotlin-flow
+https://inside.caratlane.com/ways-to-hit-multiple-api-calls-efficiently-with-kotlin-coroutine-threads-34a6cedfec68

@@ -1,0 +1,18 @@
+page sizes memory android
+https://www.linkedin.com/pulse/android-15-16kb-page-size-heres-why-i-had-roll-back-4kb-anil-kumar-clxtc/
+
+
+Android is transitioning from a 4KB to a 16KB page size, particularly on devices with 64-bit ARM processors
+ - This change, driven by the hardware capabilities of many ARM CPUs,
+ aims to improve system performance and efficiency by reducing overhead in memory management.
+
+16 KB Google Play compatibility requirement
+https://developer.android.com/guide/practices/page-sizes
+
+Get ready to upgrade your app's performance as Android embraces 16 KB memory page sizes
+https://android-developers.googleblog.com/2025/07/transition-to-16-kb-page-sizes-android-apps-games-android-studio.html#
+
+page-size-agnostic
+https://android-developers.googleblog.com/2025/07/transition-to-16-kb-page-sizes-android-apps-games-android-studio.html#
+
+---------------------------------------------------------------------------------------------------------

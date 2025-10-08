@@ -1,0 +1,17 @@
+Fragments
+https://developer.android.com/guide/fragments
+
+Decomposing FragmentLifecycleCallbacks
+https://medium.com/yoomoney-eng/decomposing-fragmentlifecyclecallbacks-b69ec1e21232
+
+
+FragmentManager.FragmentLifecycleCallbacks
+https://developer.android.com/reference/androidx/fragment/app/FragmentManager.FragmentLifecycleCallbacks
+
+https://github.com/android/user-interface-samples/tree/main/Haptics
+
+Fragments & Compose interoperability — Android
+https://proandroiddev.com/fragments-compose-interoperability-android-a9a8efee0040
+
+
+https://www.droidcon.com/2025/08/01/jetpack-compose-with-android-fragment-ui-data-sharing/

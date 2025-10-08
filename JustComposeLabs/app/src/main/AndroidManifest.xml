@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,12 +12,283 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JustComposeLabs">
+        android:theme="@style/Theme.JustComposeLabsCanvas">
+        <activity
+            android:name=".tutorial.compose.list.circularlist.InfiniteCircularListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_infinite_circular_list"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.views.recyclerview.circularlist.InfiniteCircularRecyclerViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.google.compose.snackbar.BuildAndDisplayPopupMessageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.google.compose.snackbar.SnackBarViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.google.compose.recompositionhighlighter.RecompositionHighlighterActivity"
+            android:exported="true"
+            android:label="@string/title_activity_recomposition_highlighter"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="modifier_recomposition_highlighter"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.eventhandling.localbroadcastmanager.EventHandlingLocalBroadcastManagerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <data
+                    android:host="event_handling_local_broadcast_manager"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.localbroadcastmanager.LocalBroadcastManagerActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <data
+                    android:host="local_broadcast_manager"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.view.bottomsheet.aboutbottomsheetbehavior.MenuActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="bottom_sheet_types"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.view.bottomsheet.v2.AndroidUiBottomSheetActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.google.view.bottomsheet.aboutbottomsheetbehavior.PersistentBottomSheetViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.google.androidview.bottomsheetdialogfragment.OpenModalBottomSheetActivity"
+            android:exported="true"
+            android:label="@string/title_activity_open_modal_bottom_sheet"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="openmodalbottomsheetactivity"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.compose.basics.stagesoflifecycle.DessertCodelabsWithViewModelActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dessert_codelabs_with_view_model"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.compose.basics.stagesoflifecycle.DessertCodelabsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dessert_codelabs"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.compose.sideffects.SideEffectsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_side_effects"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.compose.launchactivity.EndActivity"
+            android:exported="false"
+            android:label="@string/title_activity_end"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.compose.launchactivity.StartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_start"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.compose.navcomponent.clonejetsnack.CloneJetSnackActivity"
+            android:exported="false"
+            android:label="@string/title_activity_clone_jet_snack"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.launchedeffects.sideeffects.FunWithLaunchedEffectsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_fun_with_launched_effects"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="fun_with_launched_effects"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.medium.timerflowtype.TimerWithFlowTypesActivity"
+            android:exported="true"
+            android:label="@string/title_activity_timer_with_flow_types"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="fun_with_flow_types_clocks"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.medium.funwithflowtype.FunWithFlowTypesActivity"
+            android:exported="true"
+            android:label="@string/title_activity_fun_with_flow_types"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="fun_with_flow_types"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.medium.remembersaveabletutorial.RememberSaveableActivity"
+            android:exported="false"
+            android:label="@string/title_activity_remember_saveable"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.lifecyclecompose.LifecycleComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_lifecycle_compose"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.composecustomview.ComposeCustomViewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_compose_custom_view"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.canvas.geom.triangle.DraggableTriangleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_draggable_triangle"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="view_in_compose_triangle_draggable"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.codelabs.viewmodelstateflow.ViewModelStateFlowCourseActivity"
+            android:exported="false"
+            android:label="@string/title_activity_view_model_state_flow_course"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.codelabs.diceroller.DiceRollerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_dice_roller"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.codelabs.navigationcompose.appwalkthrough.WalkThroughActivity"
+            android:exported="false"
+            android:label="@string/title_activity_walk_through"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.codelabs.marsphotos.MarsPhotosActivity"
+            android:exported="false"
+            android:label="@string/title_activity_mars_photos"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.listui.listandgrids.ListsAndGridsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_lists_and_grids"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.searchbar.searchscreen.SearchScreenActivity"
+            android:exported="false"
+            android:label="@string/title_activity_search_screen"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.searchbar.autocompletesearchbarii.AutocompleteSearchBarIIActivity"
+            android:exported="false"
+            android:label="@string/title_activity_autocomplete_search_bar_iiactivity"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.medium.searchbar.autocompletesearchbar.AutoCompleteSearchBarActivity"
+            android:exported="false"
+            android:label="@string/title_activity_auto_complete_search_bar"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.searchbar.simplesearchbar.SimpleSearchBarComposeActivity"
+            android:exported="false"
+            android:label="@string/title_activity_simple_search_bar_compose"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
+        <activity
+            android:name=".tutorial.google.usingviewsincompose.UsingViewInComposeActivity"
+            android:exported="true"
+            android:label="@string/title_activity_using_view_in_compose"
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <data
+                    android:host="view_in_compose"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".allfeatures.AllFeatureActivity"
+            android:exported="false"
+            android:label="@string/title_activity_all_feature"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.JustComposeLabs">
+            android:theme="@style/Theme.JustComposeLabsCanvas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

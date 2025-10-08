@@ -1,0 +1,14 @@
+https://proandroiddev.com/composable-scoped-viewmodel-an-interesting-experiment-b982b86d84cd
+https://medium.com/androiddevelopers/viewmodel-one-off-event-antipatterns-16a1da869b95
+
+Use Kotlin coroutines with lifecycle-aware components
+https://developer.android.com/topic/libraries/architecture/coroutines
+
+Android notes: Understanding viewModelScope.launch{}
+https://dev.to/theplebdev/android-notes-understanding-viewmodelscopelaunch-230f
+
+🎯Comparing SupervisorScope with viewModelScope: Understanding Their Use Cases and Differences in Android
+https://proandroiddev.com/comparing-supervisorscope-with-viewmodelscope-understanding-their-use-cases-and-differences-in-ae2726a095bc
+
+Creating a Single-Thread Dispatcher in Kotlin Coroutines
+https://medium.com/@gaj.programmer/creating-a-single-thread-dispatcher-in-kotlin-coroutines-eeda54150c53

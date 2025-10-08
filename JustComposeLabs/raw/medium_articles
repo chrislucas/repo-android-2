@@ -1,0 +1,91 @@
+Não lidos
+
+Compose Performance
+https://tanishranjan.medium.com/compose-ui-performance-secrets-part-1-5-core-optimizations-every-developer-should-know-e3d17f4d3f3b
+
+Compose Basics
+https://developer.android.com/courses/pathways/android-basics-compose-unit-5-pathway-2
+https://developer.android.com/courses/android-basics-compose/course
+https://developer.android.com/topic/libraries/architecture/additional-resources?hl=pt-br
+https://developer.android.com/develop/ui/compose/testing
+
+
+Compose Arch
+https://medium.com/@sujathamudadla1213/module-architecture-pattern-subtopic-viewmodel-savedstatehandle-de764615f7c6
+
+Compose UI
+https://medium.com/@nirmale.ashwin9696/building-a-reels-tiktok-feed-in-jetpack-compose-with-one-exoplayer-and-one-styledplayerview-3ea8092abb89
+
+Jetpack Compose - UI Test with Function Argument
+https://stackoverflow.com/questions/69854013/jetpack-compose-ui-test-with-function-argument
+https://kamiy2j.medium.com/a-smarter-way-to-test-your-code-with-parameterized-unit-tests-junit4-android-f7f81627b019
+
+
+ViewModel Stateflow example android
+https://www.valueof.io/blog/stateflow-sharedflow-flow-viewmodel-lifecycle
+https://nglauber.medium.com/stateflow-no-lugar-de-livedata-f31a72d24c80
+
+HorizontalPager PageState compose
+https://developer.android.com/develop/ui/compose/layouts/pager?hl=pt-br
+
+Sealed class and interface
+https://medium.com/@manuchekhrdev/sealed-class-vs-sealed-interface-in-kotlin-47222335040a
+
+https://maxim-gorin.medium.com/stop-writing-if-else-trees-use-the-state-pattern-instead-1fe9ff39a39c
+https://sachankapil.medium.com/mastering-rendering-performance-in-jetpack-compose-jank-detection-and-prevention-in-android-9e0ebeaa7393
+https://medium.com/@ramadan123sayed/the-complete-guide-to-detectdraggestures-and-pointerinput-in-jetpack-compose-08f7f367d9bc
+https://medium.com/@eevajonna/the-problem-of-trun-b8ea9be5ca94
+
+https://amritpandey.medium.com/jdk-24-is-here-game-changing-features-every-java-developer-must-know-c34754286d02
+https://medium.com/design-bootcamp/modern-android-app-architecture-with-clean-code-principles-2025-edition-95f4c2afeadb
+https://medium.com/android-alchemy/kotlin-custom-extension-functions-for-a-senior-developers-toolkit-110b061a8b43
+
+https://medium.com/@jecky999/mastering-mutablestateflow-powerful-atomic-operations-you-might-be-missing-b3685fee96e8
+https://proandroiddev.com/compose-multiplatform-ktor-secure-networking-with-bearer-auth-and-shared-code-93a5e32b2c4e
+
+Backend
+https://medium.com/@optimzationking2/we-threw-1-million-concurrent-users-at-go-rust-and-node-the-results-hurt-6cfa7ff6a4d0
+
+Retrofit
+https://medium.com/@prahaladsharma4u/how-to-use-a-local-json-file-with-retrofit-in-android-studio-part1-cc8591b7716f
+https://square.github.io/okhttp/recipes/
+
+Codelabs
+https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=pt-br#2
+Deprecated) Use Kotlin Coroutines in your Android App
+https://developer.android.com/codelabs/kotlin-coroutines#1
+https://github.com/android/codelab-kotlin-coroutines
+
+StateFlow
+Coroutine StateFlow stops emitting when CoroutineScope is cancelled
+https://stackoverflow.com/questions/62747825/coroutine-stateflow-stops-emitting-when-coroutinescope-is-cancelled
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/
+https://developer.android.com/kotlin/flow/stateflow-and-sharedflow?hl=pt-br
+https://www.rocketseat.com.br/blog/artigos/post/kotlin-stateflow-sharedflow
+https://medium.com/@appdevinsights/purpose-of-launchin-in-kotlin-flow-206a46b331c1
+https://medium.com/@math.perroud/understanding-the-differences-between-mutablestateflow-mutablesharedflow-and-channels-in-ffa606764a5b
+
+Dependency injection with Hilt
+https://developer.android.com/training/dependency-injection/hilt-android
+https://developer.android.com/codelabs/android-hilt#2
+
+MutableStateFlow: Managing UI State
+https://developer.android.com/topic/architecture/ui-layer/state-production
+https://developer.android.com/kotlin/flow
+https://developer.android.com/kotlin/coroutines/additional-resources
+https://medium.com/@anandgaur2207/stateflow-vs-mutablestate-in-android-6ba7fe2528da
+https://medium.com/@hunterfreas/understanding-state-maintenance-with-mutablestateflow-a40509693b00
+https://medium.com/@anandgaur2207/stateflow-and-sharedflow-in-android-33905df1977d
+
+Jetpack Navigation for Compose
+https://developer.android.com/develop/ui/compose/navigation
+https://android-developers.googleblog.com/2025/05/announcing-jetpack-navigation-3-for-compose.html
+
+kTor
+https://medium.com/@nachare.reena8/integrating-ktor-in-your-android-app-like-a-pro-74412db642ff
+
+----------------------------------------------------------------------------------------------------
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+
+Lidos

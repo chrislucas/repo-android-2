@@ -82,7 +82,10 @@ fun MessagesPreview() {
 /*
     https://developer.android.com/reference/kotlin/androidx/paging/PagingSource
 
-    - Uma instancia de
+    - Uma instancia de PagingSource é usada para carregar pagina de dados de uma instance de
+    PagingData
+
+    - Uma PagingData pode crescer coonforme carregada mais dados
  */
 
 private const val STARTING_PAGE_INDEX = 1

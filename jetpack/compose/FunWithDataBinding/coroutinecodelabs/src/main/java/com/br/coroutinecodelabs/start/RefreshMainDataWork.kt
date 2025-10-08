@@ -6,7 +6,9 @@ import androidx.work.ListenableWorker
 import androidx.work.WorkerFactory
 import androidx.work.WorkerParameters
 
-class OwnWorkerFactory(private val doWork: () -> ListenableWorker.Result = { ListenableWorker.Result.success() }) :
+class OwnWorkerFactory(
+    private val doWork: () -> ListenableWorker.Result = { ListenableWorker.Result.success() }
+) :
     WorkerFactory() {
     override fun createWorker(
         appContext: Context,

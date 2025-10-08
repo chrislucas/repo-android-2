@@ -1,0 +1,42 @@
+android.appcompat.widget.AppCompatRatingBar vs RatingBar
+https://www.geeksforgeeks.org/kotlin/ratingbar-in-kotlin/
+
+Customize RatingBar Component in Android
+https://medium.com/@mu9z1aslam/customize-ratingbar-component-in-android-58cf62d4cdc8
+
+https://stackoverflow.com/questions/2874537/how-to-make-a-smaller-ratingbar
+
+
+https://medium.com/@DarishJoy/constraintlayout-vs-coordinatorlayout-brief-comparison-aa1e64292462
+
+Migrate CoordinatorLayout to Compose
+https://developer.android.com/develop/ui/compose/migrate/migration-scenarios/coordinator-layout
+
+Difference Between Modal and Persistent Bottom Sheet in Android
+https://www.geeksforgeeks.org/android/difference-between-modal-and-persistent-bottom-sheet-in-android/
+https://developer.android.com/reference/com/google/android/material/bottomsheet/package-summary
+
+https://m2.material.io/components/sheets-bottom/android#standard-bottom-sheet
+
+Advanced Android Edge-to-Edge (Part 1): Keyboard Transitions with MotionLayout
+https://medium.com/livefront/advanced-android-edge-to-edge-part-1-keyboard-transitions-with-motionlayout-66ae34d4c78a
+
+Android BottomSheetDialogFragment with Callbacks to parent Fragment and transparent layer
+https://medium.com/@misterandroid/android-bottomsheetdialogfragment-with-callbacks-to-parent-fragment-and-transparent-layer-8b52a13abd65
+
+Comprehensive Guide to Creating a Custom Bottom Sheet Dialog in Android with Kotlin
+https://medium.com/@aslam.iit.ju41/comprehensive-guide-to-creating-a-custom-bottom-sheet-dialog-in-android-with-kotlin-c56bfebf88b2
+
+Display dialogs with DialogFragment
+https://developer.android.com/guide/fragments/dialogs
+
+Android: Sticky view at the bottom of bottom sheet dialog fragment
+https://dorianpavetic.medium.com/android-sticky-view-at-the-bottom-of-bottom-sheet-dialog-fragment-ac91242bc1b7
+
+https://medium.com/@anitas3791/android-bottomsheetdialog-3871a6e9d538
+
+
+
+
+
+

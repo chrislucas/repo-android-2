@@ -1,0 +1,13 @@
+Best practices for coroutines in Android
+https://developer.android.com/kotlin/coroutines/coroutines-best-practices
+
+
+CloseableCoroutineDispatcher
+https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-closeable-coroutine-dispatcher/
+
+Closeable Coroutine scope
+How To Stop Or Cancel A Kotlin Coroutine (Stop Currently Running Code Block Instantly)?
+https://stackoverflow.com/questions/69097765/how-to-stop-or-cancel-a-kotlin-coroutine-stop-currently-running-code-block-inst
+
+Kotlin Coroutines and Swift
+https://kt.academy/article/interop-coroutines-swift?gr_m=BZJoEb&gr_co=VgswW6&gr_s=BowXfXY&gr_x=a62b

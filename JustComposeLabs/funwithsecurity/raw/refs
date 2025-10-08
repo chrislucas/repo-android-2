@@ -1,0 +1,98 @@
+https://source.android.com/docs/security/overview/app-security
+
+Security
+https://developer.android.com/jetpack/androidx/releases/security
+
+Cryptography
+https://developer.android.com/privacy-and-security/cryptography
+
+deprecated
+https://developer.android.com/privacy-and-security/cryptography#security-crypto-jetpack-deprecated
+
+EncryptedSharedPreferences is Deprecated — What Should Android Developers Use Now?
+https://medium.com/@n20/encryptedsharedpreferences-is-deprecated-what-should-android-developers-use-now-7476140e8347
+
+
+
+
+
+
+
+https://developer.android.com/reference/android/telephony/SubscriptionManager
+
+import android.content.Context;
+import android.telephony.SubscriptionInfo;
+import android.telephony.SubscriptionManager;
+import android.util.Log;
+import java.util.List;
+
+public class SubscriptionInfoHelper {
+
+    /*
+        The Android SubscriptionManager class, part of the android.telephony package,
+        provides access to information about the active telephony subscriptions (SIM cards) on a device.
+
+        It is particularly useful for handling multi-SIM scenarios.
+        Here is an example demonstrating basic usage of SubscriptionManager:
+
+
+        Key points:
+        Permissions: Accessing most SubscriptionManager methods requires the READ_PHONE_STATE permission in your AndroidManifest.xml.
+
+        Context: You obtain an instance of SubscriptionManager using SubscriptionManager.from(context).
+
+        SubscriptionInfo: The SubscriptionInfo class encapsulates details about a single subscription.
+
+        Listeners: You can register an OnSubscriptionsChangedListener to be notified when the active
+         subscriptions or their details change. Remember to unregister the listener when it's no longer needed to prevent memory leaks.
+    */
+
+    private static final String TAG = "SubscriptionInfoHelper";
+
+    public static void displaySubscriptionInfo(Context context) {
+        // Get an instance of SubscriptionManager
+        SubscriptionManager subscriptionManager = SubscriptionManager.from(context);
+
+        // Check if the device supports multiple active subscriptions (e.g., dual SIM)
+        int activeSubscriptionCount = subscriptionManager.getActiveSubscriptionInfoCount();
+        Log.d(TAG, "Active Subscription Count: " + activeSubscriptionCount);
+
+        if (activeSubscriptionCount > 0) {
+            // Get a list of active SubscriptionInfo objects
+            // Requires READ_PHONE_STATE permission
+            List<SubscriptionInfo> activeSubscriptions = subscriptionManager.getActiveSubscriptionInfoList();
+
+            if (activeSubscriptions != null && !activeSubscriptions.isEmpty()) {
+                for (SubscriptionInfo subInfo : activeSubscriptions) {
+                    Log.d(TAG, "--- Subscription Info ---");
+                    Log.d(TAG, "Subscription ID: " + subInfo.getSubscriptionId());
+                    Log.d(TAG, "SIM Slot Index: " + subInfo.getSimSlotIndex());
+                    Log.d(TAG, "Display Name: " + subInfo.getDisplayName());
+                    Log.d(TAG, "Carrier Name: " + subInfo.getCarrierName());
+                    Log.d(TAG, "Country ISO: " + subInfo.getCountryIso());
+                    // You can access other information like ICC ID, mobile network code (MNC),
+                    // mobile country code (MCC), etc., depending on your needs.
+                }
+            } else {
+                Log.d(TAG, "No active SubscriptionInfo found, even though count is > 0.");
+            }
+        } else {
+            Log.d(TAG, "No active subscriptions found on this device.");
+        }
+    }
+
+    // Example of how to register a listener for subscription changes
+    public static void registerSubscriptionChangeListener(Context context) {
+        SubscriptionManager subscriptionManager = SubscriptionManager.from(context);
+        SubscriptionManager.OnSubscriptionsChangedListener listener = new SubscriptionManager.OnSubscriptionsChangedListener() {
+            @Override
+            public void onSubscriptionsChanged() {
+                super.onSubscriptionsChanged();
+                Log.d(TAG, "Subscriptions changed! Reloading information...");
+                displaySubscriptionInfo(context); // Re-display info on change
+            }
+        };
+        // Register the listener. It's good practice to unregister it when no longer needed.
+        subscriptionManager.addOnSubscriptionsChangedListener(listener);
+    }
+}

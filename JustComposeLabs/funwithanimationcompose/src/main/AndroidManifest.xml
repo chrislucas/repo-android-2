@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".codelabs.animatingelements.finished.FinishedActivity"
+            android:exported="false"
+            android:label="@string/title_activity_finished"
+            android:theme="@style/Theme.JustComposeLabs" />
+        <activity
+            android:name=".codelabs.animatingelements.start.StartActivity"
+            android:exported="false"
+            android:label="@string/title_activity_start"
+            android:theme="@style/Theme.JustComposeLabs" />
+    </application>
+
+</manifest>

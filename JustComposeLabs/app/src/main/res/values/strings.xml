@@ -1,3 +1,95 @@
 <resources>
     <string name="app_name">JustComposeLabs</string>
+    <string name="title_activity_all_feature">AllFeatureActivity</string>
+    <string name="title_activity_using_view_in_compose">UsingViewInComposeActivity</string>
+    <string name="title_activity_simple_search_bar_compose">SimpleSearchBarComposeActivity</string>
+    <string name="title_activity_auto_complete_search_bar">AutoCompleteSearchBarActivity</string>
+    <string name="title_activity_autocomplete_search_bar_iiactivity">
+        AutocompleteSearchBarIIActivity
+    </string>
+    <string name="title_activity_search_screen">SearchScreenActivity</string>
+    <string name="title_activity_lists_and_grids">ListsAndGridsActivity</string>
+    <string name="title_activity_mars_photos">MarsPhotosActivity</string>
+    <string name="title_activity_walk_through">WalkThroughActivity</string>
+    <string name="title_activity_dice_roller">DiceRollerActivity</string>
+    <string name="title_activity_view_model_state_flow_course">ViewModelStateFlowCourseActivity
+    </string>
+    <string name="title_activity_draggable_triangle">DraggableTriangleActivity</string>
+    <string name="title_activity_compose_custom_view">ComposeCustomViewActivity</string>
+    <string name="title_activity_lifecycle_compose">LifecycleComposeActivity</string>
+    <string name="title_activity_remember_saveable">RememberSaveableActivity</string>
+    <string name="title_activity_fun_with_flow_types">FunWithFlowTypesActivity</string>
+    <string name="title_activity_timer_with_flow_types">TimerWithFlowTypesActivity</string>
+    <string name="title_activity_fun_with_launched_effects">FunWithLaunchedEffectsActivity</string>
+    <string name="title_activity_clone_jet_snack">CloneJetSnackActivity</string>
+    <string name="greeting">Olá</string>
+
+    <!-- codelabs cup cake -->
+    <string name="order_cupcakes">Order Cupcakes</string>
+    <string name="one_cupcake">One Cupcake</string>
+    <string name="six_cupcakes">Six Cupcakes</string>
+    <string name="twelve_cupcakes">Twelve Cupcakes</string>
+    <string name="choose_flavor">Choose Flavor</string>
+    <string name="vanilla">Vanilla</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="red_velvet">Red Velvet</string>
+    <string name="salted_caramel">Salted Caramel</string>
+    <string name="coffee">Coffee</string>
+    <string name="special_flavor">Special Flavor</string>
+    <string name="cancel">Cancel</string>
+    <string name="next">Next</string>
+    <string name="choose_pickup_date">Choose Pickup Date</string>
+    <string name="order_summary">Order Summary</string>
+    <string name="send">Send Order to Another App</string>
+    <string name="quantity">Quantity</string>
+    <string name="flavor">Flavor</string>
+    <string name="pickup_date">Pickup date</string>
+    <string name="subtotal_price">Subtotal %s</string>
+    <string name="total_price">Total %s</string>
+    <string name="new_cupcake_order">New Cupcake Order</string>
+    <string name="order_details">Quantity: %1$s \nFlavor: %2$s \nPickup date: %3$s \nTotal: %4$s \n\nThank you!</string>
+    <string name="back_button">Back</string>
+    <plurals name="cupcakes">
+        <item quantity="one">%d cupcake</item>
+        <item quantity="many">%d cupcakes</item>
+    </plurals>
+
+
+    <!--  close codelabs cup cake -->
+
+    <!-- start codelabs dessert clicker -->
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_end">EndActivity</string>
+    <string name="title_activity_side_effects">SideEffectsActivity</string>
+    <string name="title_activity_dessert_codelabs">DessertCodelabsActivity</string>
+    <string name="dessert_sold">Desserts sold</string>
+    <string name="total_revenue">Total Revenue</string>
+    <string name="share">Share</string>
+    <string name="share_text">I\'ve clicked %1$d Desserts for a total of $%2$d #AndroidDessertClicker</string>
+    <string name="sharing_not_available">Sharing Not Available</string>
+    <string name="title_activity_dessert_codelabs_with_view_model">
+        DessertCodelabsWithViewModelActivity
+    </string>
+    <string name="title_activity_open_modal_bottom_sheet">OpenModalBottomSheetActivity</string>
+    <string name="mocked_rating_bar_value">4.7</string>
+    <string name="mocked_value_bottom_sheet">(51)</string>
+    <string name="mocked_label_bottom_sheet">12 min away</string>
+    <string name="sample_street">740 Valencia St, San Fracisco, CA</string>
+    <string name="sample_phone">(415) 349-0942</string>
+    <string name="sample_date_hour">Wed, 10 AM - 9 PM</string>
+    <string name="sample_status_payment">PROCEED PAYMENT</string>
+    <string name="show_bottom_sheet">Show Bottom Sheet</string>
+    <string name="show_bottom_sheet_dialog">Show Bottom Sheet Dialog</string>
+    <string name="show_bottom_sheet_dialog_fragment">Show Bottom Sheet Dialog Fragment</string>
+    <string name="persistent_bottom_sheet">Persistent Bottom Sheet</string>
+    <string name="modal_bottom_sheet_bottomsheetdialog">Modal Bottom Sheet (BottomSheetDialog)</string>
+    <string name="modal_bottom_sheet_bottomsheetdialogfragment">Modal Bottom Sheet (BottomSheetDialogFragment)</string>
+    <string name="dandelion_chocolate">Dandelion Chocolate</string>
+    <string name="send_mock_event">Send Mock Event Broadcast Receiver</string>
+    <string name="title_activity_recomposition_highlighter">RecompositionHighlighterActivity
+    </string>
+    <string name="title_activity_infinite_circular_list">InfiniteCircularListActivity</string>
+
+    <!-- end codelabs dessert clicker -->
+
 </resources>

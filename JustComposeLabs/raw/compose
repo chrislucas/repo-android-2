@@ -1,0 +1,50 @@
+Entendendo States, remember e rememberSaveable no Jetpack Compose
+https://medium.com/@vitorhilario/entendendo-states-remember-e-remembersaveable-no-jetpack-compose-c08b9eae5d18
+
+How to test mutableStateFlow when previewing a composable?
+https://stackoverflow.com/questions/77991414/how-to-test-mutablestateflow-when-previewing-a-composable
+
+
+Jetpack Compose with Android Fragment | UI & Data Sharing
+https://proandroiddev.com/jetpack-compose-with-android-fragment-ui-data-sharing-ae7077a9a160
+
+
+Replacing BottomSheetDialogFragment with Jetpack Compose’s ModalBottomSheetLayout: A Compose migration journey
+https://proandroiddev.com/replacing-bottomsheetdialogfragment-with-jetpack-composes-modalbottomsheetlayout-a-compose-901d31a18aa3
+
+Comprehensive Guide to ModalBottomSheetLayout in Jetpack Compose
+https://medium.com/@prashantkumar4393/comprehensive-guide-to-modalbottomsheetlayout-in-jetpack-compose-8c2cdf084236
+
+Bottom sheets
+https://developer.android.com/develop/ui/compose/components/bottom-sheets
+
+Using BottomSheetDialogFragment with Material Design Guideline
+https://medium.com/@kosta.palash/using-bottomsheetdialogfragment-with-material-design-guideline-f9814c39b9fc
+
+Day 14: MutableState vs StateFlow — What’s the Difference in Compose?
+https://medium.com/@ignatiah.x/day-14-mutablestate-vs-stateflow-whats-the-difference-in-compose-af9d9afeb55a
+
+Gotchas in Jetpack Compose Recomposition
+https://multithreaded.stitchfix.com/blog/2022/08/05/jetpack-compose-recomposition/#gotcha---unstable-lambdas
+
+Jetpack Compose bottom sheet over Android view using Kotlin extension
+https://www.droidcon.com/2022/06/21/jetpack-compose-bottom-sheet-over-android-view-using-kotlin-extension/
+
+Using Views in Compose
+https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose
+
+AndroidView
+https://foso.github.io/Jetpack-Compose-Playground/viewinterop/androidview/
+
+Animations in Compose
+https://developer.android.com/develop/ui/compose/animation/introduction
+
+
+Using Views in Compose
+https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose
+
+Android UI: Bottom Sheet
+https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
+
+
+

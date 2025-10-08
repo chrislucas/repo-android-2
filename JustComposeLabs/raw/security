@@ -1,0 +1,22 @@
+Guia de seguranca
+https://developer.android.com/security
+https://source.android.com/docs/security
+
+Blog post
+Making security easy: How we are helping you fix vulnerabilities in your Android apps
+
+Mitigate security risks in your app - Leia esse cara
+https://developer.android.com/privacy-and-security/risks
+
+Leia como aplicar esse lint
+https://github.com/google/android-security-lints
+
+Como melhorar o linter
+Improve your code with lint checks
+https://developer.android.com/studio/write/lint
+
+https://developer.android.com/security
+
+Sobre lint
+https://pranaypatel.medium.com/using-lint-pre-commit-hook-in-android-project-31e2b9baff5d
+https://proandroiddev.com/lint-be-gone-speed-up-your-android-release-apk-builds-aafb7cf430a7

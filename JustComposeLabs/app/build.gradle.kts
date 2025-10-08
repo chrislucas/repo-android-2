@@ -1,9 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    /*
+        Compose Compiler Gradle plugin
+        https://developer.android.com/develop/ui/compose/compiler
+     */
     alias(libs.plugins.compose.compiler)
+
+
     id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
+    kotlin("plugin.serialization") version "2.0.21"
 }
 
 android {
@@ -18,6 +25,16 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // This block is different from the one you use to link Gradle
+        // to your CMake or ndk-build script.
+        externalNativeBuild {
+            // For ndk-build, instead use the ndkBuild block.
+            cmake {
+                // Passes optional arguments to CMake.
+                arguments += listOf("-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON")
+            }
+        }
     }
 
     buildTypes {
@@ -29,26 +46,60 @@ android {
             )
         }
     }
+
     buildFeatures {
         compose = true
         viewBinding = true
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
+
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging = true
+        }
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force(libs.androidx.espresso.idling.resource)
+        force(libs.androidx.espresso.core)
+        force(libs.androidx.junit)
     }
 }
 
 dependencies {
 
+    implementation(libs.androidx.compose.ui.ui.test.junit4)
+    implementation(libs.androidx.appcompat)
+    testImplementation(libs.junit.jupiter)
+    testImplementation(libs.junit.jupiter)
+    lintChecks(libs.lint)
+    implementation(libs.androidx.dynamicanimation)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
+    implementation("androidx.compose.material3.adaptive:adaptive")
+    implementation("androidx.compose.material3.adaptive:adaptive-layout")
+    implementation("androidx.compose.material3.adaptive:adaptive-navigation")
 
 
     implementation(libs.androidx.activity.ktx)
@@ -58,9 +109,14 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
+    implementation("io.coil-kt.coil3:coil-svg:3.3.0")
+
+    implementation(libs.material)
+    implementation(libs.timber)
+
 
     // Import the BoM for the Firebase platform
-   implementation(platform(libs.firebase.bom.v3320))
+   implementation(platform(libs.firebase.bom))
 
     // Add the dependencies for the Remote Config and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
@@ -78,9 +134,9 @@ dependencies {
     implementation(libs.androidx.tracing.perfetto.binary)
 
     // Java language implementation
-    implementation("androidx.fragment:fragment:1.8.8")
+    implementation(libs.androidx.fragment)
     // Kotlin
-    implementation("androidx.fragment:fragment-ktx:1.8.6")
+    implementation(libs.androidx.fragment.ktx)
 
     // Glance setup
 
@@ -107,14 +163,18 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(project(":referencelinbraries"))
-    testImplementation(libs.jupiter.junit.jupiter)
-    testImplementation(libs.jupiter.junit.jupiter)
-    testImplementation(libs.jupiter.junit.jupiter)
+    testImplementation(libs.junit.jupiter)
     debugImplementation(libs.ui.tooling)
+
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+    testImplementation(libs.kotlinx.coroutines.test)
 
     // UI Tests
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.test.manifest)
+    testImplementation(libs.robolectric)
+
 
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
@@ -177,13 +237,10 @@ dependencies {
     // optional - Paging 3 Integration
     implementation(libs.androidx.room.paging)
 
-    implementation(libs.coil.compose)
-    implementation(libs.coil.network.okhttp)
-
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
 
-    val ink_version = "1.0.0-alpha01"
+    val ink_version = "1.0.0-alpha05"
 
     implementation("androidx.ink:ink-authoring:$ink_version")
     implementation("androidx.ink:ink-brush:$ink_version")
@@ -192,7 +249,6 @@ dependencies {
     implementation("androidx.ink:ink-rendering:$ink_version")
     implementation("androidx.ink:ink-strokes:$ink_version")
 
-    testImplementation(libs.mockk)
 
     // Test rules and transitive dependencies:
     androidTestImplementation(libs.ui.test.junit4)
@@ -204,13 +260,27 @@ dependencies {
     testImplementation(libs.androidx.room.testing)
 
 
+    /*
+        https://github.com/android/testing-samples
+     */
+
+    // Optional -- Robolectric environment
+    testImplementation("androidx.test:core:1.7.0")
+    testImplementation("androidx.test:core-ktx:1.7.0")
+// Optional -- Mockito framework
+    testImplementation("org.mockito:mockito-core:5.11.0")
+// Optional -- mockito-kotlin
+    testImplementation("org.mockito.kotlin:mockito-kotlin:6.0.0")
+    testImplementation(libs.mockk)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
+
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+    testImplementation(kotlin("test"))
 }
 
 kotlin {

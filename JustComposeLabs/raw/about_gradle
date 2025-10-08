@@ -1,0 +1,67 @@
+What's the purpose of .properties files in APK packages?
+https://stackoverflow.com/questions/58811165/whats-the-purpose-of-properties-files-in-apk-packages
+Verificar se esse trecho de codigo realmente funciona
+android {
+    packagingOptions {
+        exclude "firebase-*.properties"
+        exclude "play-services-*.properties"
+        exclude "google-http-client.version"
+    }
+}
+
+Gradle Build System in Android
+https://medium.com/@KaushalVasava/gradle-build-system-in-android-27117fce2322
+
+Stop Leaking Your API Keys! Secure Your Android App the Right Way 🚀
+https://medium.com/@i.gauravdubey/stop-leaking-your-api-keys-secure-your-android-app-the-right-way-b4982eaad1d2
+
+Pesquisar por
+obfuscate .properties with gradle tools android
+
+Environment variables
+https://developer.android.com/tools/variables
+
+Keeping Secrets Safe in Android Projects
+https://infinum.com/blog/secrets-android-projects/
+
+How to use properties file to do android sign action in Gradle
+https://medium.com/@chauyan/how-to-use-properties-file-to-do-android-sign-action-in-gradle-45d51e31a98c
+
+How to replace deprecated packagingOptions in Android Gradle build files
+https://stackoverflow.com/questions/75172062/how-to-replace-deprecated-packagingoptions-in-android-gradle-build-files
+
+old:
+packagingOptions {
+    resources {
+        excludes += '/META-INF/{AL2.0,LGPL2.1}'
+    }
+}
+replace:
+ packaging {
+     resources {
+         excludes += "/META-INF/{AL2.0,LGPL2.1}"
+     }
+ }
+
+ Exclude resources for Android android. packagingOptions
+https://youtrack.jetbrains.com/issue/AMPER-371/Exclude-resources-for-Android-android.-packagingOptions
+
+
+---------------------------------------------------------------------------------------------------
+
+How to Store Credentials in Android Projects Using gradle.properties
+https://medium.com/swlh/how-to-safely-store-credentials-in-android-projects-using-gradle-properties-8cf500561095
+
+Configure your build
+https://developer.android.com/build
+
+Pesquisa
+load credentials from .properties file android by gradle script is security ?
+
+Quero saber se os arquivos .properties permanecem legiveis depois que geramos o apk
+
+Where to put Gradle configuration (i.e. credentials) that should not be committed?
+https://stackoverflow.com/questions/12749225/where-to-put-gradle-configuration-i-e-credentials-that-should-not-be-committe
+
+How do I set an environment variable in Android Studio before it runs my gradle build
+https://stackoverflow.com/questions/34941043/how-do-i-set-an-environment-variable-in-android-studio-before-it-runs-my-gradle#:~:text=These%20are%20just%20environment%20variables,Android%20Studio%20after%20the%20edit.
