@@ -1,0 +1,15 @@
+https://developer.android.com/develop/ui/compose/side-effects#producestate
+https://github.com/android/snippets/blob/c4096d2f95c497da62c0c955bda4186e7ac79d2a/compose/snippets/src/main/java/com/example/compose/snippets/sideeffects/SideEffectsSnippets.kt#L187-L217
+
+https://medium.com/@ramadan123sayed/snapshotflow-vs-producestate-in-jetpack-compose-a-complete-guide-0091692d62e0
+
+https://www.droidcon.com/2024/10/28/the-simplest-way-to-understand-side-effects-in-compose/
+
+
+SnapshotFlow
+https://medium.com/@tangkegaga/snapshotflow-3895096e6fd9
+https://medium.com/@ramadan123sayed/understanding-snapshotflow-in-jetpack-compose-converting-state-to-flow-69b961282694
+https://proandroiddev.com/snapshotflow-or-collectasstate-how-to-pick-the-right-tool-for-jetpack-compose-d6f1cc9d2123
+
+
+https://medium.com/@ramadan123sayed/understanding-producestate-in-jetpack-compose-principles-and-best-practices-for-2025-df8b43d02e98

@@ -89,6 +89,7 @@
     <string name="title_activity_recomposition_highlighter">RecompositionHighlighterActivity
     </string>
     <string name="title_activity_infinite_circular_list">InfiniteCircularListActivity</string>
+    <string name="title_activity_jet_chat_main">JetChatMainActivity</string>
 
     <!-- end codelabs dessert clicker -->
 

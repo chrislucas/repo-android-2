@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,6 +16,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JustComposeLabsCanvas">
+        <activity
+            android:name=".tutorial.google.compose.samples.jetchat.JetChatMainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_jet_chat_main"
+            android:theme="@style/Theme.JustComposeLabsCanvas" />
         <activity
             android:name=".tutorial.compose.list.circularlist.InfiniteCircularListActivity"
             android:exported="false"

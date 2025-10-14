@@ -2,6 +2,4 @@ package com.br.justcomposelabs.tutorial.google.quickguides.displayinteractivecom
 
 /*
     https://developer.android.com/develop/ui/compose/quick-guides/collections/display-interactive-components
-
-
  */

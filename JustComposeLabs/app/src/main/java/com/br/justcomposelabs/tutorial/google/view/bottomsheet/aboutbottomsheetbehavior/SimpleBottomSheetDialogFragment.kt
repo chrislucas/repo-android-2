@@ -7,12 +7,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 import com.br.justcomposelabs.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import timber.log.Timber
 
 class SimpleBottomSheetDialogFragment(
     private val lifecycleObserver: DefaultLifecycleObserver
@@ -67,17 +66,14 @@ class SimpleBottomSheetDialogFragment(
 }
 
 
-class OwnLifecycleObserver : DefaultLifecycleObserver {
-
-
+class DefaultBottomSheetDialogFragment : DefaultLifecycleObserver {
     override fun onStart(owner: LifecycleOwner) {
         super.onStart(owner)
-        Log.d("OwnLifecycleObserver", "ON_START")
+        Timber.tag("OwnLifecycleObserver").d("ON_START")
     }
 
     override fun onStop(owner: LifecycleOwner) {
         super.onStop(owner)
-        Log.d("OwnLifecycleObserver", "ON_START")
+        Timber.tag("OwnLifecycleObserver").d("ON_START")
     }
-
 }

@@ -26,7 +26,9 @@ class MenuActivity : AppCompatActivity() {
             }
 
             btnModalFragment.setOnClickListener {
-                val bottomSheetFragment = SimpleBottomSheetDialogFragment(OwnLifecycleObserver())
+                val bottomSheetFragment = SimpleBottomSheetDialogFragment(
+                    DefaultBottomSheetDialogFragment()
+                )
                 bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
             }
 

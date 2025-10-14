@@ -4,7 +4,10 @@ import androidx.lifecycle.DefaultLifecycleObserver
 import androidx.lifecycle.LifecycleOwner
 
 /*
+    Handling lifecycles with lifecycle-aware components
     https://developer.android.com/topic/libraries/architecture/lifecycle
+
+    https://buraaktasci.medium.com/making-any-class-lifecycle-aware-in-android-a-practical-guide-db9d1ce68a93
  */
 
 enum class CallbackLifecycleObserver {

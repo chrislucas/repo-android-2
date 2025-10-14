@@ -11,6 +11,10 @@ plugins {
     id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
     kotlin("plugin.serialization") version "2.0.21"
+
+    // Add the Crashlytics Gradle plugin
+    id("com.google.firebase.crashlytics")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -82,6 +86,7 @@ dependencies {
 
     implementation(libs.androidx.compose.ui.ui.test.junit4)
     implementation(libs.androidx.appcompat)
+    implementation(libs.room.ktx)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
     lintChecks(libs.lint)
@@ -122,6 +127,7 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
    implementation(libs.google.firebase.config)
    implementation(libs.google.firebase.analytics)
+   implementation(libs.google.firebase.crashlytics)
 
     // compose
     implementation(platform(libs.androidx.compose.bom))
@@ -193,6 +199,7 @@ dependencies {
     implementation(libs.androidx.runtime.livedata)
     // Optional - Integration with RxJava
     implementation(libs.androidx.runtime.rxjava2)
+    implementation(libs.androidx.runtime.rxjava3)
 
     // paging jetpack compose
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1

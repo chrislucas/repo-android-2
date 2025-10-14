@@ -1,6 +1,7 @@
 package com.br.justcomposelabs.tutorial.google.compose.state
 
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -23,7 +24,15 @@ import timber.log.Timber
 /*
     https://stackoverflow.com/questions/66169601/what-is-the-difference-between-remember-and-mutablestate-in-android-jetpack
 
-    val text = remember{ ""
+    - Remember: Permite fazer cache de estado de uma variavel entre as chamadas de recomposicoes
+    - MutableState: observa e armazena o estado de uma variavel, porem entre recomposicoes
+    uma nova instancia de MutableState é criada.
+
+        - A combinacao dos 2 permite que guardemos o estado de variaveis durante a recomposicao
+
+
+
+    val text = remember{ "" }
         - faz cache de uma string vazia
 
     val text = mutableStateOf("")
@@ -39,11 +48,16 @@ import timber.log.Timber
 
  */
 
-val mutableStateField: MutableState<Int> = mutableIntStateOf(1)
 
+@SuppressLint("UnrememberedMutableState")
 @Preview(showBackground = true, showSystemUi = true, name = "NoCacheStateBoxTextView")
 @Composable
 fun NoCacheStateBoxTextView() {
+    /*
+        Nao usar o remember faz com que toda recomposicao seja criada uma nova instancia de
+        MutableState
+     */
+    val mutableStateField: MutableState<Int> = mutableIntStateOf(1)
     Box(
         modifier = Modifier
             .clickable { mutableStateField.value += 1 }

@@ -1,1 +1,8 @@
 https://www.linkedin.com/posts/nikitavasko_kotlin-androiddev-coroutines-activity-7375916612543025152-BzxL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
+
+
+How to safely (lifecycle aware) .collectAsState() a StateFlow?
+https://stackoverflow.com/questions/70645699/how-to-safely-lifecycle-aware-collectasstate-a-stateflow
+
+Additional resources for experienced Kotlin users
+https://developer.android.com/kotlin/already-using-resources

@@ -11,6 +11,9 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 
 /*
     https://developer.android.com/topic/libraries/architecture/compose
+
+    Warning: You cannot use this to listen for Lifecycle.Event.ON_DESTROY since composition ends before this signal is sent.
+
  */
 
 @Composable

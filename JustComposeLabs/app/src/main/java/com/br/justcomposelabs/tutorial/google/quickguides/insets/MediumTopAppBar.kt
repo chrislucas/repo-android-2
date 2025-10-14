@@ -21,11 +21,12 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview
+@Preview(showSystemUi = true, apiLevel = 35)
 @Composable
-fun TopBarAppPreview() {
+fun TopBarAppPreview(modifier: Modifier = Modifier) {
 
     /*
         https://developer.android.com/develop/ui/compose/quick-guides/content/display-top-app-bar
@@ -71,7 +72,7 @@ internal fun ScrollContent(innerPadding: PaddingValues) {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(range.count()) {
-            Text("Content: $it")
+            Text(String.format(Locale.getDefault(),"Item %02d", it))
         }
     }
 }

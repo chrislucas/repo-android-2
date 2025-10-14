@@ -97,16 +97,21 @@ fun CounterRecomposition(modifier: Modifier = Modifier) {
 
 
      TODO estudar Custom Annotation
-
  */
 
 
 @Stable
-fun Modifier.recomposeHighlighter(callback: (Long) -> Unit = {}): Modifier = this.then(RecomposeHighlighterElement(callback))
+fun Modifier.recomposeHighlighter(
+    turnOn: Boolean = true,
+    callback: (Long) -> Unit = {}
+): Modifier =
+    this.then(RecomposeHighlighterElement(turnOn, callback))
 
-private class RecomposeHighlighterElement(private val callback: (Long) -> Unit = {}) : ModifierNodeElement<RecomposeHighlighterModifier>() {
 
-
+private class RecomposeHighlighterElement(
+    val turnOn: Boolean,
+    private val callback: (Long) -> Unit = {}
+) : ModifierNodeElement<RecomposeHighlighterModifier>() {
     /*
 
      */
@@ -114,7 +119,7 @@ private class RecomposeHighlighterElement(private val callback: (Long) -> Unit =
         debugInspectorInfo { name = "recomposeHighlighter" }
     }
 
-    override fun create(): RecomposeHighlighterModifier = RecomposeHighlighterModifier()
+    override fun create(): RecomposeHighlighterModifier = RecomposeHighlighterModifier(turnOn)
 
     override fun update(node: RecomposeHighlighterModifier) {
         node.incrementCompositions()
@@ -128,7 +133,9 @@ private class RecomposeHighlighterElement(private val callback: (Long) -> Unit =
 }
 
 
-private class RecomposeHighlighterModifier : Modifier.Node(), DrawModifierNode {
+private class RecomposeHighlighterModifier(
+    private val turnOn: Boolean
+) : Modifier.Node(), DrawModifierNode {
 
     private var timerJob: Job? = null
 
@@ -189,57 +196,54 @@ private class RecomposeHighlighterModifier : Modifier.Node(), DrawModifierNode {
 
     override fun ContentDrawScope.draw() {
         // desenha o conteudo atual
-        /**
-         * @see ContentDrawScope.drawContent
-         */
-        drawContent()
+        if (turnOn) {
+            /**
+             * @see ContentDrawScope.drawContent
+             */
+            drawContent()
 
-        /*
-            Abaixo o codigo responsavbel por desenhar o highlight, se necessario.
-            Muito do codigo abaixo foi tirado do Modifier.border
-         */
+            /*
+                Abaixo o codigo responsavbel por desenhar o highlight, se necessario.
+                Muito do codigo abaixo foi tirado do Modifier.border
+             */
 
-        val hasValidBorderParams = size.minDimension > 0f
-        if (!hasValidBorderParams || totalCompositions <= 0) {
-            return
-        }
-
-        val (color: Color, strokeWidthPx: Float) = when (totalCompositions) {
-            1L -> Color.Blue to 1f.dp.toPx()
-            2L -> Color.Green to 2f.dp.toPx()
-            else -> {
-
-                val start = Color.Yellow.copy(alpha = 0.8f)
-                val stop = Color.Red.copy(alpha = 0.5f)
-                val fraction = min(1f, (totalCompositions - 1).toFloat() / 100f)
-
-                val c = lerp(
-                    start = start,
-                    stop = stop,
-                    fraction = fraction
-                )
-
-                Timber.d("RecompositionHighlighter - color $c")
-
-                c to totalCompositions.toInt().dp.toPx()
+            val hasValidBorderParams = size.minDimension > 0f
+            if (!hasValidBorderParams || totalCompositions <= 0) {
+                return
             }
+
+            val (color: Color, strokeWidthPx: Float) = when (totalCompositions) {
+                1L -> Color.Blue to 1f.dp.toPx()
+                2L -> Color.Green to 2f.dp.toPx()
+                else -> {
+
+                    val start = Color.Yellow.copy(alpha = 0.8f)
+                    val stop = Color.Red.copy(alpha = 0.5f)
+                    val fraction = min(1f, (totalCompositions - 1).toFloat() / 100f)
+
+                    val interpolatedColor = lerp(start = start, stop = stop, fraction = fraction)
+
+                    Timber.d("RecompositionHighlighter - color $interpolatedColor")
+                    interpolatedColor to totalCompositions.toInt().dp.toPx()
+                }
+            }
+
+            val halfStroke = strokeWidthPx / 2
+            val topLeft = Offset(halfStroke, halfStroke)
+            val borderSize = Size(size.width - strokeWidthPx, size.height - strokeWidthPx)
+
+            val fillArea = (strokeWidthPx * 2) > size.minDimension
+            val rectTopLeft = if (fillArea) Offset.Zero else topLeft
+            val size = if (fillArea) size else borderSize
+            val style = if (fillArea) Fill else Stroke(strokeWidthPx)
+
+            drawRect(
+                brush = SolidColor(color),
+                topLeft = rectTopLeft,
+                size = size,
+                style = style
+            )
         }
-
-        val halfStroke = strokeWidthPx / 2
-        val topLeft = Offset(halfStroke, halfStroke)
-        val borderSize = Size(size.width - strokeWidthPx, size.height - strokeWidthPx)
-
-        val fillArea = (strokeWidthPx * 2) > size.minDimension
-        val rectTopLeft = if (fillArea) Offset.Zero else topLeft
-        val size = if (fillArea) size else borderSize
-        val style = if (fillArea) Fill else Stroke(strokeWidthPx)
-
-        drawRect(
-            brush = SolidColor(color),
-            topLeft = rectTopLeft,
-            size = size,
-            style = style
-        )
     }
 }
 
