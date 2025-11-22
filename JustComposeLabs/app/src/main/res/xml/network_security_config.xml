@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!--
+        Tráfego cleartext desabilitado por padrão (versão de produção)
+        Usar network security config para permitir cleartext apenas em debug.
+
+        Security with network protocols
+        https://developer.android.com/privacy-and-security/security-ssl
+
+        TLS - Transport Layer Security https://en.wikipedia.org/wiki/Transport_Layer_Security
+        PKI - Public Key Infrastructure https://en.wikipedia.org/wiki/Public_key_infrastructure
+
+        Conceito - Um Servico com certificado TLS tem uma chave publica que combina com
+        uma chave privada. O Servidor usa a chave publica de criptografia para assinar
+        o certificado durante o TLS Handshake
+
+            - O processo de handshake somente atesta que o servidor conhece a chave privado
+            do certificado
+
+            - Para resolver essa situacao, permite-se que o cliente confie em multiplos certificados.
+
+            - Um dado servidor deixa de ser confiavel se o certificado nao aparece na lista
+            de certificados confiaveis do lado do cliente
+
+
+       CA - Certificate Authorities (CA)
+            - https://en.wikipedia.org/wiki/Certificate_authority
+            - https://en.wikipedia.org/wiki/Digital_signature
+
+        Cleartext traffic opt-out in Android applications refers to the process of preventing
+        an app from using unencrypted network traffic (e.g., HTTP)
+        and instead enforcing secure connections (e.g., HTTPS).
+        This is a crucial security measure to protect sensitive data from being
+        intercepted during transmission.
+
+        - Disable Cleartext Globally: Set cleartextTrafficPermitted="false"
+        in the <base-config> element TO DISABLE CLEARTEXT TRAFFIC FOR ALL DOMAINS BY DEFAULt.
+
+         - Allow Cleartext for Specific Domains (e.g., during development):
+            - Within the <network-security-config>, you can add
+            <domain-config cleartextTrafficPermitted="true"> for specific domains
+            where cleartext traffic is temporarily necessary
+            (e.g., for debugging purposes on a development server).
+
+        Cleartext communications
+        https://developer.android.com/privacy-and-security/risks/cleartext-communications
+
+        Configuration file format
+        https://developer.android.com/privacy-and-security/security-config#FileFormat
+
+        Network security configuration
+        https://developer.android.com/privacy-and-security/security-config
+
+        - Cystom trust anchors
+            - Permite personalizar quais certificado de autoridade (CA - Certificate Authorites)
+            sao confiaveis para conexao segura do app
+
+            - Debug-only overrrides: Depuracao segura de conexoes sem adicionar riscos
+            a instalacao base
+
+            - Cleartext traffic opt-out: Protege o app de uso acidental de cleartext trafic (
+            trafego descriptografado)
+
+            - Certificate transparency opt-in: Restring as conexoes seguras de um app a usar
+            certificados com registro de logs comprovados
+
+            - Certificate pinning:
+                - restringir a conexao segura de um app a um certificado particular
+
+
+
+
+        Cleartext communications
+        https://developer.android.com/privacy-and-security/risks/cleartext-communications
+
+        Bypassing Android’s Network Security Configuration
+        https://medium.com/keylogged/bypassing-androids-network-security-configuration-575819a8f317
+
+        A Guide to Network Configuration Android
+        https://towardsdev.com/a-guide-to-network-configuration-android-29c6b38617a8
+
+        Tags
+
+        Network security configuration
+        http://developer.android.com/privacy-and-security/security-config
+
+        Cleartext communications
+        https://developer.android.com/privacy-and-security/risks/cleartext-communications
+
+        Security with network protocols
+        https://developer.android.com/privacy-and-security/security-ssl
+
+    -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <domain-config cleartextTrafficPermitted="true">
+        <!--
+        -->
+        <domain includeSubdomains="true">example.com</domain>
+    </domain-config>
+
+    <!--
+        Configuracao apenas em build de debug
+    -->
+    <debug-overrides>
+        <trust-anchors>
+            <!--
+                https://developer.android.com/privacy-and-security/security-config#certificates
+
+                <certificates src=["system" | "user" | "raw resource"]
+                    overridePins=["true" | "false"] />
+
+                    src: Fonte do CA. cada certificado pode ser: system, user, raw resource id
+                    overridePins
+            -->
+            <certificates src="user" />
+        </trust-anchors>
+    </debug-overrides>
+
+</network-security-config>

@@ -21,7 +21,7 @@ import com.br.justcomposelabs.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CupcakeLayoutScreen(
+fun CupcakeAppScaffold(
     currentScreen: CupCakeScreen,
     canNavigateBack: Boolean,
     navigateUp: () -> Unit,
@@ -30,10 +30,16 @@ fun CupcakeLayoutScreen(
 ) {
     Scaffold(
         topBar = {
-            TopBar(currentScreen = currentScreen, canNavigateBack = canNavigateBack, navigateUp = navigateUp)
+            CupCakeAppTopAppBar(
+                currentScreen = currentScreen,
+                canNavigateBack = canNavigateBack,
+                navigateUp = navigateUp
+            )
         },
         bottomBar = {
-            BottomAppBar {  }
+            BottomAppBar {
+
+            }
         }
     ) { innerPadding ->
         content(modifier.padding(innerPadding))
@@ -42,7 +48,7 @@ fun CupcakeLayoutScreen(
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(
+fun CupCakeAppTopAppBar(
     currentScreen: CupCakeScreen,
     modifier: Modifier = Modifier,
     canNavigateBack: Boolean,
@@ -67,11 +73,11 @@ fun TopBar(
     )
 }
 
-@Preview
+@Preview(showBackground = true)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CupcakeAppBarPreview() {
-    CupcakeLayoutScreen(
+private fun CupcakeAppScaffoldPreview() {
+    CupcakeAppScaffold(
         currentScreen = CupCakeScreen.Start,
         canNavigateBack = false,
         navigateUp = {},
@@ -79,10 +85,10 @@ fun CupcakeAppBarPreview() {
     )
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
-fun TopBarPreview() {
-    TopBar(
+fun CupCakeAppTopAppBarPreview() {
+    CupCakeAppTopAppBar(
         currentScreen = CupCakeScreen.Start,
         canNavigateBack = false,
         navigateUp = {}

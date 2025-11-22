@@ -8,3 +8,25 @@ https://jsonplaceholder.typicode.com/
 
 Retrofit – Mock service with an interceptor
 https://thinkupsoft.com/blog/retrofit-mock-service-with-an-interceptor/
+
+
+cookies
+https://square.github.io/okhttp/3.x/okhttp/okhttp3/Cookie.html
+https://gist.github.com/tsuharesu/cbfd8f02d46498b01f1b
+https://medium.com/@shiraz990/sending-cookies-through-api-interceptors-cae026fa2162
+https://medium.com/@jejeje0350/sending-access-token-and-refresh-token-in-cookies-on-android-how-to-use-cookiejar-d2d19397f201
+https://tsuharesu.com/dev/handling-cookies-with-okhttp.html
+https://blog.krybot.com/t/optimizing-cookie-support-in-retrofit-a-step-by-step-guide/21901
+
+caching responses retrofit
+https://square.github.io/okhttp/features/caching/
+https://programmerr47.medium.com/client-cache-retrofit-5efa4201e862
+
+Autenticação Cookies HTTP, HTTP Only, JWT, SessionStorage,LocalStorage, com ReactJs Context API e Node no Backend
+https://dev.to/guillerbr/autenticacao-cookies-http-http-only-jwt-sessionstorage-localstorage-com-reactjs-context-api-e-node-no-backend-4jmo
+
+https://medium.com/@danimahardhika/handle-api-limits-in-trendnow-implement-okhttp-cache-for-client-side-caching-5989b67ddfbf
+https://janjiralasai420.medium.com/caching-in-retrofit-with-okhttp-a-comprehensive-guide-78ff63c5b54d
+
+Caching with OkHttp Interceptor and Retrofit
+https://futurestud.io/tutorials/retrofit-2-activate-response-caching-etag-last-modified

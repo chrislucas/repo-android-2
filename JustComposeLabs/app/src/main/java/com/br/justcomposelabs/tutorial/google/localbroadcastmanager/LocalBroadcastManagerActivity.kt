@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.br.justcomposelabs.R
 import com.br.justcomposelabs.databinding.ActivityLocalBroadcastManagerBinding
 
 /*

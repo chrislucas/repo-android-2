@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:name=".codelabs.usinghilt.LogApplication">
+        <activity
+            android:name=".codelabs.usinghilt.MainHiltCodelabsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main_hilt_codelabs"
+            android:theme="@style/Theme.JustComposeLabs" />
+    </application>
+
+</manifest>

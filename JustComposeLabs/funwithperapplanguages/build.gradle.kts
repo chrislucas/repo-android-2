@@ -1,5 +1,3 @@
-import com.android.ide.common.resources.generateLocaleString
-
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -18,6 +16,9 @@ android {
     }
 
     defaultConfig {
+        /*
+            Esse projeto nao vai funcionar aqui porque o min sdk é maior do que o modulo app
+         */
         minSdk = 33
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -33,11 +34,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     /*
@@ -52,13 +50,16 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    val appcompat_version = "1.7.1"
-
-    implementation("androidx.appcompat:appcompat:$appcompat_version")
+    implementation(libs.androidx.appcompat)
     // For loading and tinting drawables on older versions of the platform
-    implementation("androidx.appcompat:appcompat-resources:$appcompat_version")
+    implementation(libs.androidx.appcompat.resources)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+
+kotlin {
+    jvmToolchain(17)
 }

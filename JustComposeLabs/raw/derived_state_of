@@ -1,0 +1,5 @@
+Jetpack Compose — When should I use derivedStateOf?
+https://medium.com/androiddevelopers/jetpack-compose-when-should-i-use-derivedstateof-63ce7954c11b
+
+derivedStateOf: convert one or multiple state objects into another state
+https://developer.android.com/develop/ui/compose/side-effects#derivedstateof

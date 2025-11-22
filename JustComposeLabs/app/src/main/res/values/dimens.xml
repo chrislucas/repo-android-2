@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2023 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +18,8 @@
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="thickness_divider">1dp</dimen>
 
-    <dimen name="padding_medium_dessert_clicker">16dp</dimen>
-    <dimen name="image_size">150dp</dimen>
+    <dimen name="card_view_default_radius">2sp</dimen>
+    <dimen name="card_view_default_elevation">6sp</dimen>
+    <dimen name="card_view_padding">8sp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

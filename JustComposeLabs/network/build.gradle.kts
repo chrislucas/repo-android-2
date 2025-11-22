@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+
+    kotlin("plugin.serialization") version "2.0.21"
 }
 
 android {
@@ -54,6 +56,19 @@ dependencies {
     api(libs.rxjava)
 
     debugApi(libs.leakcanary.android)
+
+    implementation(libs.ktor.client.core)
+    implementation(libs.ktor.client.android)
+    implementation(libs.ktor.client.content.negotiation)
+    // https://ktor.io/docs/client-webrtc.html#add-dependencies
+    // https://hackernoon.com/real-time-communication-with-webrtc-on-android-f96cdcfc4771
+    // min sdk 28
+    // implementation(libs.ktor.client.webrtc)
+    implementation("io.ktor:ktor-serialization-gson:3.3.1")
+
+    implementation("io.ktor:ktor-serialization-kotlinx-protobuf:3.3.1")
+
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.1")
 
 
     api(libs.converter.gson)

@@ -11,6 +11,7 @@ import com.google.firebase.remoteconfig.ConfigUpdateListener
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigException
 import com.google.firebase.remoteconfig.remoteConfig
 import com.google.firebase.remoteconfig.remoteConfigSettings
+import timber.log.Timber
 
 
 /**
@@ -75,7 +76,7 @@ class ConfigUpdateListenerDefault : ConfigUpdateListener {
 
     override fun onError(error: FirebaseRemoteConfigException) {
         if(BuildConfig.DEBUG) {
-            Log.e("FB_REMOTE_CONFIG", "$error")
+            Timber.tag("FB_REMOTE_CONFIG").e("$error")
         }
     }
 }

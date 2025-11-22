@@ -11,8 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
-import com.br.justcomposelabs.R
 import com.br.justcomposelabs.databinding.ActivityEventHandlingLocalBrodcastManagerBinding
+import timber.log.Timber
 
 /*
     https://kalpeshchandora12.medium.com/event-handling-with-localbroadcastmanager-android-b62ae5759b5e
@@ -23,7 +23,7 @@ class EventHandlingLocalBroadcastManagerActivity : AppCompatActivity() {
         BroadcastEvent(this) { intent ->
             intent?.extras?.let { bundle ->
                 val data = bundle.getString(EXTRA_STRING) ?: "empty extras"
-                Log.i("EVENT_HANDLING", data)
+                Timber.tag("EVENT_HANDLING").i(data)
             }
         }
     }
@@ -97,11 +97,11 @@ class BroadcastEvent(private val context: Context, block: (Intent?) -> Unit) :
             this
         )
 
-        Log.i("EVENT_HANDLING", "dispose")
+        Timber.tag("EVENT_HANDLING").i("dispose")
     }
 
     companion object {
-        val ACTION = "BROADCAST_EVENT"
-        private val EVENT_MOCK = "EVENT_MOCK"
+        const val ACTION = "BROADCAST_EVENT"
+        private const val EVENT_MOCK = "EVENT_MOCK"
     }
 }

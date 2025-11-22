@@ -1,0 +1,31 @@
+Criar um color picker
+    - estudar como implementam color pickers
+    - Estudar sobre espaços de cor
+        - RGB
+        - HSV (https://medium.com/@md-jewel/understanding-digital-images-for-image-processing-and-computer-vision-part-1-cc42be78cca1)
+
+ - fontes
+ https://proandroiddev.com/color-picker-in-compose-f8c29744705
+ https://www.droidcon.com/2023/06/01/color-picker-in-compose/
+ https://medium.com/@kavi707/jetpack-compose-color-picker-19f27ef947dc
+ https://github.com/godaddy/compose-color-picker
+
+ HSL and HSV
+https://en.wikipedia.org/wiki/HSL_and_HSV
+
+A Beginner’s Guide to understand the HSV Color Model.
+https://medium.com/@dijdomv01/a-beginners-guide-to-understand-the-color-models-rgb-and-hsv-244226e4b3e3
+
+ HSV color model
+ https://www.geeksforgeeks.org/computer-graphics/hsv-color-model-in-computer-graphics/
+
+ https://www.geeksforgeeks.org/kotlin/color-picker-in-android-using-jetpack-compose/
+
+Enable users to personalize their color experience in your app
+ https://developer.android.com/develop/ui/views/theming/dynamic-colors
+
+ Material Design 3 in Compose
+https://developer.android.com/develop/ui/compose/designsystems/material3#dynamic_color_schemes
+
+Select colors with the Palette API
+https://developer.android.com/develop/ui/views/graphics/palette-colors

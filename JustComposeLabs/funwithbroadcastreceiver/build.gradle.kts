@@ -164,7 +164,6 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":referencelinbraries"))
     testImplementation(libs.junit.jupiter)
     debugImplementation(libs.ui.tooling)
 

@@ -1,8 +1,12 @@
 package com.br.network.utils.interceptor
 
+import okhttp3.Cache
+import okhttp3.CacheControl
 import okhttp3.Interceptor
+import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
+import java.util.concurrent.TimeUnit
 
 
 /*
@@ -24,3 +28,23 @@ class ResponseInterceptor(private val callback: (Response) -> Unit) : Intercepto
         return originalResponse
     }
 }
+
+/*
+    caching responses retrofit
+ */
+
+val cacheInterceptor = Interceptor { chain ->
+    val response = chain.proceed(chain.request())
+    val cacheControl = CacheControl.Builder()
+        .maxAge(5, TimeUnit.MINUTES)
+        .build()
+
+    response.newBuilder()
+        .header("Cache-Control", cacheControl.toString())
+        .build()
+}
+
+val okHttpClient = OkHttpClient.Builder()
+    .addNetworkInterceptor(cacheInterceptor)
+    //.cache(Cache())
+    .build()

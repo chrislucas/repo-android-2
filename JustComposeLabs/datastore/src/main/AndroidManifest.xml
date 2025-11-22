@@ -1,4 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <application>
+        <activity
+            android:name=".tutorials.google.codelabs.preferencedatstore.ui.TaskActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="codelabs_view_working_with_data_store"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".tutorials.google.codelabs.compose.workingwithpreferencedatastire.TaskActivity"
+            android:exported="true">
+            <intent-filter>
+                <data
+                    android:host="codelabs_compose_working_with_data_store"
+                    android:scheme="dpl" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+    </application>
+
 </manifest>

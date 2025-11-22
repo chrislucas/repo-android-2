@@ -11,3 +11,6 @@ https://stackoverflow.com/questions/69097765/how-to-stop-or-cancel-a-kotlin-coro
 
 Kotlin Coroutines and Swift
 https://kt.academy/article/interop-coroutines-swift?gr_m=BZJoEb&gr_co=VgswW6&gr_s=BowXfXY&gr_x=a62b
+
+Kotlin Flow vs Suspend: Do You Really Need Flow for Simple API Calls?
+https://doonprogramming.com/kotlin-flow-vs-suspend-do-you-really-need-flow-for-simple-api-calls/

@@ -8,7 +8,10 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        minSdk = 24
+        /*
+            Esse projeto nao vai funcionar aqui porque o min sdk é maior do que o modulo app
+         */
+        minSdk = 26
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")

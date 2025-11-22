@@ -1,0 +1,16 @@
+Android 11
+SSL sockets use Conscrypt SSL engine by default
+https://developer.android.com/privacy-and-security/security-ssl#android-11
+
+https://source.android.com/docs/core/ota/modular-system/conscrypt
+https://github.com/google/conscrypt
+
+Conscrypt: The TLS Provider Behind Your HTTPS Requests
+https://medium.com/@gthea/conscrypt-the-tls-provider-behind-your-https-requests-b6fdfac57be5
+
+Mainline
+Android 10 introduced Mainline (formerly called modular system components on this site)
+https://source.android.com/docs/core/ota/modular-system
+
+How to prevent choosePrivateKeyAlias dialog in android app?
+https://stackoverflow.com/questions/44974349/how-to-prevent-chooseprivatekeyalias-dialog-in-android-app

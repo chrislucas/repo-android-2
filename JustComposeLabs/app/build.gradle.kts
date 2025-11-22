@@ -6,12 +6,9 @@ plugins {
         https://developer.android.com/develop/ui/compose/compiler
      */
     alias(libs.plugins.compose.compiler)
-
-
     id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
     kotlin("plugin.serialization") version "2.0.21"
-
     // Add the Crashlytics Gradle plugin
     id("com.google.firebase.crashlytics")
     id("kotlin-parcelize")
@@ -83,10 +80,20 @@ configurations.all {
 }
 
 dependencies {
+    implementation(project(":referencelinbraries"))
 
+    // View
+    // https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md
+    // https://developer.android.com/develop/ui/views/theming/look-and-feel
+    implementation("com.google.android.material:material:1.13.0")
+
+    // end views
     implementation(libs.androidx.compose.ui.ui.test.junit4)
     implementation(libs.androidx.appcompat)
-    implementation(libs.room.ktx)
+    implementation(libs.androidx.compose.material3.material3)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    annotationProcessor(libs.androidx.room.ktx)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
     lintChecks(libs.lint)
@@ -100,6 +107,26 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+
+    /*
+        Select colors with the Palette API
+        https://developer.android.com/develop/ui/views/graphics/palette-colors
+     */
+    implementation("androidx.palette:palette:1.0.0")
+
+
+    /*
+        // Compose Material 3
+
+        https://developer.android.com/jetpack/androidx/releases/compose-material3
+
+        Material Design 3 in Compose
+
+         https://developer.android.com/develop/ui/compose/designsystems/material3
+     */
+
+    implementation("androidx.compose.material3:material3-window-size-class")
+    implementation("androidx.compose.material3:material3-adaptive-navigation-suite")
 
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
     implementation("androidx.compose.material3.adaptive:adaptive")
@@ -118,7 +145,6 @@ dependencies {
 
     implementation(libs.material)
     implementation(libs.timber)
-
 
     // Import the BoM for the Firebase platform
    implementation(platform(libs.firebase.bom))
@@ -168,8 +194,8 @@ dependencies {
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":referencelinbraries"))
     testImplementation(libs.junit.jupiter)
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.1")
     debugImplementation(libs.ui.tooling)
 
     implementation(libs.kotlinx.coroutines.android)
@@ -204,6 +230,7 @@ dependencies {
     // paging jetpack compose
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1
     implementation(libs.androidx.paging.runtime)
+
 
     // alternatively - without Android dependencies for tests
 
@@ -245,16 +272,41 @@ dependencies {
     implementation(libs.androidx.room.paging)
 
 
+
+
+
     androidTestImplementation(platform(libs.androidx.compose.bom))
 
-    val ink_version = "1.0.0-alpha05"
+    val inkVersion = "1.0.0-alpha05"
 
-    implementation("androidx.ink:ink-authoring:$ink_version")
-    implementation("androidx.ink:ink-brush:$ink_version")
-    implementation("androidx.ink:ink-geometry:$ink_version")
-    implementation("androidx.ink:ink-nativeloader:$ink_version")
-    implementation("androidx.ink:ink-rendering:$ink_version")
-    implementation("androidx.ink:ink-strokes:$ink_version")
+    implementation("androidx.ink:ink-authoring:$inkVersion")
+    implementation("androidx.ink:ink-brush:$inkVersion")
+    implementation("androidx.ink:ink-geometry:$inkVersion")
+    implementation("androidx.ink:ink-nativeloader:$inkVersion")
+    implementation("androidx.ink:ink-rendering:$inkVersion")
+    implementation("androidx.ink:ink-strokes:$inkVersion")
+
+    implementation("androidx.hilt:hilt-work:1.3.0")
+    // When using Kotlin.
+    ksp("androidx.hilt:hilt-compiler:1.3.0")
+    // When using Java.
+    annotationProcessor("androidx.hilt:hilt-compiler:1.3.0")
+
+
+    /*
+        Getting started with WorkManager
+        https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started
+     */
+    implementation(libs.androidx.ui.viewbinding)
+    implementation(libs.androidx.webkit)
+    implementation(libs.androidx.work.gcm)
+    implementation(libs.androidx.work.multiprocess)
+    implementation(libs.androidx.work.runtime)
+    implementation(libs.androidx.work.runtime.ktx)
+    implementation(libs.androidx.work.rxjava2 )
+    implementation(libs.androidx.work.testing)
+
+
 
 
     // Test rules and transitive dependencies:
@@ -266,7 +318,6 @@ dependencies {
     // optional - Test helpers
     testImplementation(libs.androidx.room.testing)
 
-
     /*
         https://github.com/android/testing-samples
      */
@@ -274,9 +325,9 @@ dependencies {
     // Optional -- Robolectric environment
     testImplementation("androidx.test:core:1.7.0")
     testImplementation("androidx.test:core-ktx:1.7.0")
-// Optional -- Mockito framework
+    // Optional -- Mockito framework
     testImplementation("org.mockito:mockito-core:5.11.0")
-// Optional -- mockito-kotlin
+    // Optional -- mockito-kotlin
     testImplementation("org.mockito.kotlin:mockito-kotlin:6.0.0")
     testImplementation(libs.mockk)
 

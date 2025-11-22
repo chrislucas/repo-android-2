@@ -1,0 +1,18 @@
+https://developer.android.com/studio/debug/logcat
+
+
+Logical operators and parentheses
+https://developer.android.com/studio/debug/logcat#logical-operators
+
+Special queries
+https://developer.android.com/studio/debug/logcat#special-queries
+- package:mine
+- level
+- age
+- package:mine
+- is
+    - is:crash
+    - is:stacktrace
+- name
+
+

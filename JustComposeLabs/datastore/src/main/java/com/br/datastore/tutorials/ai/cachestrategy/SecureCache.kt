@@ -1,0 +1,9 @@
+package com.br.datastore.tutorials.ai.cachestrategy
+
+
+/*
+    TODO
+    https://www.google.com/search?q=DataStore+encrypted+cache+android+with+mechanism+to+clean+after+time&rlz=1C5GCEA_enBR1109BR1109&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCTI1ODA1ajBqMagCALACAA&sourceid=chrome&ie=UTF-8&udm=50&fbs=AIIjpHydJdUtNKrM02hj0s4nbm4yz2OIO8EWX9DX1JDOVfANVibrkBXjJDr4a7HdbTImZmstopHzBrlJdV7PRr-92tli2VwLOMYiNPlb4kF8HlBZHXT_3j4ZCc5asrbArR-I1pnvcD69Ht_89xviIbGjCDs7KgVv5hnisKH6w9DwwcTH1J7Vch7ADLe2TrCmr7fVEW93WSR0XMnHqMpt-jXIi4kmqaiJCQ&ved=2ahUKEwiwj96d7LaQAxWrrpUCHZtTE0sQ0NsOegQIAxAB&aep=10&ntc=1&safe=active&ssui=on&mtid=rU34aI6sAcHM1sQPoquCiAs&mstk=AUtExfD2gDCLzcu-vAmCKUUmC0l-iFh-ttmKIQYUjR9ZEsPnrTXN0lDS8QiPOtnra1mFARPab5_Oetv0th4r4URpJ9S38LwmbFtPWy4NDkQSntIWkZU5nc0KaEMFDrt-tMUXfCwJZ8dSuIXD2gQRDnXLZa4vQNC2LA04p-Q4xi-qmAsGFRZ-IQI0DcsrPQYcPf1XlqITqEKdbCDq_qG8jigD5iqjDAGMCJ3-vynMzFx6cZ7LBbr-s5cOs_Cax2Q7BCdSz9HURR5Nw78-hva2C-qsMJKegJheQeUD3byuKMOBn1PZRAe3iOxaagUgD-NTWN5UfFRai-dy0vc8aQ&csuir=1
+ */
+class SecureCache {
+}

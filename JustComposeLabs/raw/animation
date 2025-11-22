@@ -19,3 +19,40 @@ https://mmrndev.medium.com/understanding-b%C3%A9zier-curves-f6eaa0fa6c7d
 https://medium.com/androiddevelopers/playing-with-paths-3fbc679a6f77
 
 https://github.com/androidx/constraintlayout/tree/main
+
+Compose
+https://developer.android.com/develop/ui/views/animations/fling-animation
+https://developer.android.com/reference/androidx/dynamicanimation/animation/FlingAnimation
+https://canopas.com/android-spring-fling-animation-in-jetpack-compose-64b2a2e54c88
+https://temidjoy.medium.com/android-animations-and-transistions-fling-animation-f5bf42bfef55
+https://canopas.com/android-spring-fling-animation-in-jetpack-compose-64b2a2e54c88
+
+
+derivedStateOf
+https://medium.com/androiddevelopers/jetpack-compose-when-should-i-use-derivedstateof-63ce7954c11b
+https://medium.com/@theAndroidDeveloper/derivedstateof-a-definitive-guide-on-when-to-use-it-420985c9d296
+
+Mastering rememberSaveable in Jetpack Compose: Pros, Cons & When to Use It!
+https://towardsdev.com/mastering-remembersaveable-in-jetpack-compose-pros-cons-when-to-use-it-d3f1e17803d8
+
+Explained Custom Savers in rememberSaveable for Jetpack Compose!
+https://proandroiddev.com/explained-custom-savers-in-remembersaveable-for-jetpack-compose-070211eb3e92
+
+SaveableStateHolder
+https://composables.com/docs/androidx.compose.runtime/runtime-saveable/interfaces/SaveableStateHolder
+
+rememberSerializable
+https://composables.com/docs/androidx.compose.runtime/runtime-saveable/composable-functions/rememberSerializable
+
+
+State preservation and persistent storage
+https://developer.android.com/develop/ui/compose/touch-input/stylus-input/ink-api-state-preservation
+
+
+Da Intent ao Compose Navigation 3: a evolução da navegação no Android
+https://medium.com/@ademarxiii/da-intent-ao-compose-navigation-3-a-evolu%C3%A7%C3%A3o-da-navega%C3%A7%C3%A3o-no-android-e4809913f8ca
+
+
+Compose Runtime
+https://developer.android.com/jetpack/androidx/releases/compose-runtime
+

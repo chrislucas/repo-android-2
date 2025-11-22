@@ -24,10 +24,19 @@ import com.br.justcomposelabs.allfeatures.ui.theme.JustComposeLabsTheme
 
 /*
     TODO
+        = Criar uma navegacao via deeplink usando o componente de Navigation
+        https://developer.android.com/develop/ui/compose/navigation#deeplinks
+
+    TODO
         - listar todas as funcionlidades exploradas no projeto
         - Criar um layout que permita que o estilo da lista possa ser modificado, de grid para lista e vice-versa
         - Criar um sistema de navegacao entre modulos para que possamos
         adicionar um card de uma funcionalidade de um modulo desse projeto
+
+    -- NAO criar uma lista de features que va por um caminho generalista, o codigo fica
+    muito complexo. Ja tentamos e ficou horrivel
+
+
  */
 class AllFeatureActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

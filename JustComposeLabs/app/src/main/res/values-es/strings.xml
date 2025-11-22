@@ -67,6 +67,32 @@
     <string name="share">Share</string>
     <string name="share_text">I\'ve clicked %1$d Desserts for a total of $%2$d #AndroidDessertClicker</string>
     <string name="sharing_not_available">Sharing Not Available</string>
+    <string name="title_activity_dessert_codelabs_with_view_model">
+        DessertCodelabsWithViewModelActivity
+    </string>
+    <string name="title_activity_open_modal_bottom_sheet">OpenModalBottomSheetActivity</string>
+    <string name="mocked_rating_bar_value">4.7</string>
+    <string name="mocked_value_bottom_sheet">(51)</string>
+    <string name="mocked_label_bottom_sheet">12 min away</string>
+    <string name="sample_street">740 Valencia St, San Fracisco, CA</string>
+    <string name="sample_phone">(415) 349-0942</string>
+    <string name="sample_date_hour">Wed, 10 AM - 9 PM</string>
+    <string name="sample_status_payment">PROCEED PAYMENT</string>
+    <string name="show_bottom_sheet">Show Bottom Sheet</string>
+    <string name="show_bottom_sheet_dialog">Show Bottom Sheet Dialog</string>
+    <string name="show_bottom_sheet_dialog_fragment">Show Bottom Sheet Dialog Fragment</string>
+    <string name="persistent_bottom_sheet">Persistent Bottom Sheet</string>
+    <string name="modal_bottom_sheet_bottomsheetdialog">Modal Bottom Sheet (BottomSheetDialog)</string>
+    <string name="modal_bottom_sheet_bottomsheetdialogfragment">Modal Bottom Sheet (BottomSheetDialogFragment)</string>
+    <string name="dandelion_chocolate">Dandelion Chocolate</string>
+    <string name="send_mock_event">Send Mock Event Broadcast Receiver</string>
+    <string name="title_activity_recomposition_highlighter">RecompositionHighlighterActivity
+    </string>
+    <string name="title_activity_infinite_circular_list">InfiniteCircularListActivity</string>
+    <string name="title_activity_jet_chat_main">JetChatMainActivity</string>
+    <string name="content_card_sample">1</string>
+    <string name="score">score</string>
+
 
     <!-- end codelabs dessert clicker -->
 

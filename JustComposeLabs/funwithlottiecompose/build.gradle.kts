@@ -39,13 +39,26 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+
+
+
     /*
         https://airbnb.io/lottie/#/
         https://lottiefiles.com/blog/working-with-lottie-animations/getting-started-with-lottie-animations-in-android-app
         https://lottiefiles.com/blog/working-with-lottie-animations/getting-started-with-lottie-animations-in-android-app
         https://airbnb.io/lottie/#/android-compose
      */
-    //implementation("com.airbnb.android:lottie-compose:6.6.6")
+    implementation("com.airbnb.android:lottie-compose:6.6.10")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

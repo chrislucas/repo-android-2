@@ -46,5 +46,10 @@ https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/v
 Android UI: Bottom Sheet
 https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
 
+SaveableStateHolder
+https://developer.android.com/reference/kotlin/androidx/compose/runtime/saveable/SaveableStateHolder
+
+Type safety in Kotlin DSL and Navigation Compose
+https://developer.android.com/guide/navigation/design/type-safety
 
 

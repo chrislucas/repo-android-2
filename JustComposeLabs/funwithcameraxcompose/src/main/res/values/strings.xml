@@ -1,0 +1,5 @@
+<resources>
+    <string name="title_activity_google_camera_clone">GoogleCameraCloneActivity</string>
+    <string name="title_activity_getting_start_camera_xcompose">GettingStartCameraXComposeActivity
+    </string>
+</resources>
