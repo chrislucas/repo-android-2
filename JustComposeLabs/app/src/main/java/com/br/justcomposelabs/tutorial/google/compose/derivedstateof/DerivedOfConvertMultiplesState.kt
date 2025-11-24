@@ -1,14 +1,21 @@
 package com.br.justcomposelabs.tutorial.google.compose.derivedstateof
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.glance.text.Text
+import kotlinx.coroutines.launch
 
 /*
     derivedStateOf: convert one or multiple state objects into another state
@@ -67,6 +74,39 @@ fun MessageList(modifier: Modifier = Modifier, messages: List<Message>) {
             }
         }
 
+
+        val showButton by remember {
+            derivedStateOf {
+                listState.firstVisibleItemIndex > 0
+            }
+        }
+
+
+        AnimatedVisibility(visible = showButton) {
+            ScrollTopButton(onClick = {
+                listState.animateScrollToItem(0)
+            })
+        }
+    }
+}
+
+@Composable
+fun ScrollTopButton(onClick: suspend () -> Unit) {
+    /*
+        rememberCoroutineScope
+        rememberCoroutineScope: obtain a composition-aware scope to launch a coroutine outside a composable
+        https://developer.android.com/develop/ui/compose/side-effects#remembercoroutinescope
+     */
+    val scope = rememberCoroutineScope()
+
+    Box(modifier = Modifier.navigationBarsPadding()) {
+        Button(onClick = {
+            scope.launch {
+                onClick()
+            }
+        }) {
+            Text("Scroll to Top")
+        }
     }
 }
 
@@ -76,17 +116,10 @@ fun MessageList(modifier: Modifier = Modifier, messages: List<Message>) {
 fun MessageListPreview() {
     MessageList(
         modifier = Modifier.systemBarsPadding().navigationBarsPadding(),
-        messages = listOf(
-            Message("Message 1"),
-            Message("Message 2"),
-            Message("Message 3"),
-            Message("Message 4"),
-            Message("Message 5"),
-            Message("Message 6"),
-            Message("Message 7"),
-            Message("Message 8"),
-            Message("Message 9"),
-            Message("Message 10"),
-        )
+        messages = buildList(100) {
+            for (i in 1..100) {
+                add(Message("Message $i"))
+            }
+        }
     )
 }

@@ -59,6 +59,8 @@ dependencies {
 
     api(libs.androidx.datastore)
 
+    api(libs.androidx.datastore.preferences.core)
+
     // optional - RxJava2 support
     api(libs.androidx.datastore.rxjava2)
 

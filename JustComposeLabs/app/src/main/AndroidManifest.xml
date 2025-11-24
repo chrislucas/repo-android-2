@@ -16,6 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JustComposeLabsCanvas">
         <activity
+            android:name=".tutorial.views.slider.typesofslider.TypeOfSlidersActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.views.slider.verticalslider.VerticalSliderComponentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tutorial.views.animation.slidercounteranimation.SliderCounterAnimationActivity"
+            android:exported="false" />
+        <activity
             android:name=".tutorial.views.animation.textcounteranimation.TextCounterAnimationActivity"
             android:exported="true"
             android:theme="@style/Theme.JustComposeLabsCanvas">
@@ -30,7 +39,6 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".tutorial.views.numberaddremoveanimtion.AddAndRemoveValueAnimationActivity"
             android:exported="true"

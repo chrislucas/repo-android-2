@@ -1,0 +1,30 @@
+5 minute guide on understanding Hilt annotations
+https://proandroiddev.com/5-minute-guide-on-understanding-hilt-annotations-50fe33b1919b
+
+💉 Mastering Dagger Hilt in Android: From Beginner to Expert with Real Examples Part I
+https://medium.com/@niteshkrjhag/mastering-dagger-hilt-in-android-from-beginner-to-expert-with-real-examples-part-i-e4153572c96f
+
+Hilt testing guide
+https://developer.android.com/training/dependency-injection/hilt-testing
+
+
+Hilt
+    - Component lifetimes https://developer.android.com/training/dependency-injection/hilt-android#component-lifetimes
+        - Hilt automaticamente cria e destroi instancias de classes de componentes gerados, seguindo
+        o ciclo de vida das classes Android correspondentes. Abaixo segue os componentes e
+        quando eles sao criados e destruidos as instancias conforme o ciclo de vida
+
+        - Component                 |  created at               | destroyed at
+          SingletonComponent           Application#onCreate         Application destroyed
+          ActivityRetainedComponent    Activity#onCreate()          Activity#onCreate()
+
+          ViewModelComponent           ViewModel#onCreate           ViewModel destroyed
+          ActivityComponent            Activity#onCreate()          Activity#onCreate()
+          FragmentComponent            Fragment#onAttach            Fragment#onDestroy
+          ViewComponent                View#super                   View destroyed
+          ViewWithFragmentComponent    View#super                   View destroyed
+          ServiceComponent             Service#onCreate             Service#onDestroy
+
+
+Component Scopes
+    -

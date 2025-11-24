@@ -58,6 +58,50 @@ dependencies {
 
     implementation(project(":reflibs"))
 
+    // Preferences DataStore
+
+    implementation("androidx.datastore:datastore-preferences:1.1.7")
+
+    // optional - RxJava2 support
+    implementation("androidx.datastore:datastore-preferences-rxjava2:1.1.7")
+
+    // optional - RxJava3 support
+    implementation("androidx.datastore:datastore-preferences-rxjava3:1.1.7")
+
+    implementation("androidx.datastore:datastore-preferences-core:1.1.7")
+
+    // Proto DataStore
+    implementation("androidx.datastore:datastore:1.1.7")
+
+    // optional - RxJava2 support
+    implementation("androidx.datastore:datastore-rxjava2:1.1.7")
+
+    // optional - RxJava3 support
+    implementation("androidx.datastore:datastore-rxjava3:1.1.7")
+
+    implementation("androidx.datastore:datastore-core:1.1.7")
+
+    val workVersion = "2.10.5"
+
+    // (Java only)
+    implementation("androidx.work:work-runtime:$workVersion")
+
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:$workVersion")
+
+    // optional - RxJava2 support
+    implementation("androidx.work:work-rxjava2:$workVersion")
+
+    // optional - GCMNetworkManager support
+    implementation("androidx.work:work-gcm:$workVersion")
+
+    // optional - Test helpers
+    androidTestImplementation("androidx.work:work-testing:$workVersion")
+
+    // optional - Multiprocess support
+    implementation("androidx.work:work-multiprocess:$workVersion")
+
+
     // concurrent
     implementation("androidx.concurrent:concurrent-futures:1.2.0")
 // Kotlin
@@ -68,6 +112,7 @@ dependencies {
     implementation("androidx.concurrent:concurrent-futures:1.2.0")
 // Kotlin
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-guava:1.10.2")
+
 
     api(libs.kotlinx.coroutines.core)
     api(libs.kotlinx.coroutines.android)

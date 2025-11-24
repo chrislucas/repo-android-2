@@ -1,7 +1,6 @@
 package com.br.funwithdatabinding.view.features.utils
 
 
-import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import com.br.funwithdatabinding.BuildConfig
 import com.google.android.gms.tasks.Task
@@ -11,6 +10,7 @@ import com.google.firebase.remoteconfig.ConfigUpdateListener
 import com.google.firebase.remoteconfig.FirebaseRemoteConfigException
 import com.google.firebase.remoteconfig.remoteConfig
 import com.google.firebase.remoteconfig.remoteConfigSettings
+import kotlinx.coroutines.tasks.await
 import timber.log.Timber
 
 
@@ -37,7 +37,7 @@ Understand real-time Remote Config
 https://firebase.google.com/docs/remote-config/real-time?authuser=1&platform=ios
  */
 
-class FirebaseRemoteConfig(
+class FirebaseRemoteConfigProxy(
     configUpdateListener: ConfigUpdateListener = ConfigUpdateListenerDefault()
 ) {
     private val remoteConfig = Firebase.remoteConfig
@@ -53,7 +53,7 @@ class FirebaseRemoteConfig(
         spTransToken = remoteConfig.getString(SP_TRANSPORT_TOKEN_KEY)
     }
 
-    companion object {
+    companion object Companion {
         private val configSettings = remoteConfigSettings { minimumFetchIntervalInSeconds = 120 }
         const val SP_TRANSPORT_TOKEN_KEY = "sptranstoken"
     }
@@ -64,6 +64,16 @@ class FirebaseRemoteConfig(
      */
     fun fetchAndActivate(activity: FragmentActivity, callback: (Task<Boolean>) -> Unit) =
         remoteConfig.fetchAndActivate().addOnCompleteListener(activity, callback)
+
+
+    fun fetchToken(callback: (Task<Boolean>) -> Unit) {
+        remoteConfig.fetchAndActivate().addOnCompleteListener(callback)
+    }
+
+    suspend fun fetchToken(): String  {
+        remoteConfig.fetchAndActivate().await()
+        return remoteConfig.getString(SP_TRANSPORT_TOKEN_KEY)
+    }
 }
 
 

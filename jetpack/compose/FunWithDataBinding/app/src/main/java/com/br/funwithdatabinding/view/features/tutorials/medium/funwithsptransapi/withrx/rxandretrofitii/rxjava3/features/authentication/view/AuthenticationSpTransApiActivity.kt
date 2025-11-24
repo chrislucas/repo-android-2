@@ -11,6 +11,7 @@ import com.br.funwithdatabinding.BuildConfig
 import com.br.funwithdatabinding.R
 import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.commons.service.FirebaseConfigRepository
 import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava3.features.authentication.view.viewmodel.AuthenticationSpTransApiViewModel
+import timber.log.Timber
 
 class AuthenticationSpTransApiActivity : AppCompatActivity() {
 
@@ -34,7 +35,7 @@ class AuthenticationSpTransApiActivity : AppCompatActivity() {
                  */
                 viewModel.getObserverIsAuthenticated().observe(this) { verify ->
                     if (BuildConfig.DEBUG) {
-                        Log.d("TOKEN", "Is Authenticated? $verify")
+                        Timber.tag("TOKEN").d("Is Authenticated? $verify")
                     }
                 }
                 "Token: $it"
@@ -42,7 +43,7 @@ class AuthenticationSpTransApiActivity : AppCompatActivity() {
                 "Token: null"
             }
             if (BuildConfig.DEBUG) {
-                Log.d("TOKEN", message)
+                Timber.tag("TOKEN").d(message)
             }
         }
     }

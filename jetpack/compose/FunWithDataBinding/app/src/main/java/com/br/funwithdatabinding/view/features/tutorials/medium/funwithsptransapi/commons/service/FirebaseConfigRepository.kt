@@ -2,7 +2,7 @@ package com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransa
 
 import androidx.fragment.app.FragmentActivity
 import com.br.funwithdatabinding.view.features.tutorials.medium.funwithsptransapi.withrx.rxandretrofitii.rxjava2.features.authentication.services.RxSpTransportAuthenticationService
-import com.br.funwithdatabinding.view.features.utils.FirebaseRemoteConfig
+import com.br.funwithdatabinding.view.features.utils.FirebaseRemoteConfigProxy
 
 
 interface CallbackAuthenticationSpTransApi {
@@ -24,14 +24,13 @@ object FirebaseConfigRepository {
         context: FragmentActivity,
         callback: ((token: String?) -> Unit)? = null
     ) {
-        val firebaseRemoteConfig = FirebaseRemoteConfig()
-        firebaseRemoteConfig.fetchAndActivate(context) { task ->
+        val firebaseRemoteConfigProxy = FirebaseRemoteConfigProxy()
+        firebaseRemoteConfigProxy.fetchAndActivate(context) { task ->
             if (task.isSuccessful) {
-                callback?.invoke(firebaseRemoteConfig.spTransToken)
+                callback?.invoke(firebaseRemoteConfigProxy.spTransToken)
             }
         }
     }
-
 
     @Deprecated("")
     fun fetchDeprecated(

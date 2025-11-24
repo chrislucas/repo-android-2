@@ -15,6 +15,7 @@ compiler = "3.1.4"
 composeBomVersion = "2025.06.01"
 coreTesting = "2.2.0"
 databindingCompiler = "8.11.1"
+datastorePreferencesCore = "1.1.7"
 datastorePreferencesRxjava2 = "1.1.7"
 espressoVersion = "3.6.1"
 espressoIdlingResourceVersion = "3.5.0"
@@ -99,6 +100,7 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 androidx-databinding-compiler = { module = "androidx.databinding:databinding-compiler", version.ref = "databindingCompiler" }
 androidx-datastore = { module = "androidx.datastore:datastore", version.ref = "datastorePreferencesRxjava2" }
+androidx-datastore-preferences-core = { module = "androidx.datastore:datastore-preferences-core", version.ref = "datastorePreferencesCore" }
 androidx-datastore-preferences-rxjava2 = { module = "androidx.datastore:datastore-preferences-rxjava2", version.ref = "datastorePreferencesRxjava2" }
 androidx-datastore-preferences-rxjava3 = { module = "androidx.datastore:datastore-preferences-rxjava3", version.ref = "datastorePreferencesRxjava2" }
 androidx-datastore-rxjava2 = { module = "androidx.datastore:datastore-rxjava2", version.ref = "datastorePreferencesRxjava2" }

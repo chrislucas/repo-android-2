@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tutorial.views.animation.slidercounteranimation.SliderCounterAnimationActivity">
+
+    <!--
+        https://m2.material.io/components/sliders/android#using-sliders
+        https://developer.android.com/reference/com/google/android/material/slider/Slider
+        https://www.geeksforgeeks.org/kotlin/material-design-components-sliders-in-android/
+        https://medium.com/analytics-vidhya/sliders-material-component-for-android-5be61bbe6726
+    -->
+    <com.google.android.material.slider.Slider
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
