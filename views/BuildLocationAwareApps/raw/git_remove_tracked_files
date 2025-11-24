@@ -1,0 +1,20 @@
+git ignore not ignore changes to file
+
+
+If Git is not ignoring changes to a file that is listed in your .gitignore file, it is highly likely that the file was already tracked by Git before you added it to .gitignore.
+
+Explanation:
+.gitignore only prevents Git from tracking new files or files that are not yet tracked. If a file was previously added to the Git repository and committed, Git will continue to track its changes even if it's listed in .gitignore.
+
+
+Solution:
+To make Git ignore changes to a file that is already tracked and listed in .gitignore, you need to untrack it first:
+Remove the file from Git's index (but not from your working directory):
+    git rm --cached <file_path>
+
+Replace <file_path> with the actual path to the file you want to untrack. If you want to untrack all files that should be ignored according to your .gitignore file, you can use:
+
+    git rm -r --cached .
+
+This command recursively removes all files from the Git index, effectively untracking them. Commit the change.
+    git commit -m "Untracked <file_path> (or files based on .gitignore)"
