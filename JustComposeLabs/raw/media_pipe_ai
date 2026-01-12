@@ -1,0 +1,22 @@
+https://github.com/collidingScopes/threejs-handtracking-101/tree/main
+
+MediaPipe Solutions guide
+https://ai.google.dev/edge/mediapipe/solutions/guide
+
+
+Hand landmarks detection guide
+https://ai.google.dev/edge/mediapipe/solutions/vision/hand_landmarker
+
+
+Examples
+https://ai.google.dev/edge/mediapipe/solutions/setup_android
+https://github.com/google-ai-edge/mediapipe-samples/tree/main/examples
+
+AI Vision on Android: CameraX ImageAnalysis + MediaPipe + Compose
+https://proandroiddev.com/ai-vision-on-android-camerax-imageanalysis-mediapipe-compose-db6afb738248
+
+Implementing Face Landmark Detection with MediaPipe on Android
+https://medium.com/@bimovallentino/implementing-face-landmark-detection-with-mediapipe-on-android-287246487d6f
+
+Android Face Detection using MediaPipe and Jetpack Compose 🤖
+https://medium.com/@eldirohmanur/android-face-detection-using-mediapipe-and-jetpack-compose-6c60b1eabe10

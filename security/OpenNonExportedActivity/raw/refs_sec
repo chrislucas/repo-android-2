@@ -1,0 +1,38 @@
+
+Pesquisar por: android component proxy intent
+
+
+// Esse projeto foi criado para estudar como eh possivel abrir uma activity
+que nao eh exportada atraves de outro app, como por exempplo: como em 2 apps de uma determinada
+empresa, um deles eh capaz de abrir a tela do outro, sendo que tal tela esta protegida com
+exported=false ?
+
+
+Uma das formas é enviar uma intent para um component como broadcast receiver ou service que
+estao exportadas e esses componentes realizarem um startActivity, e assim A Activity nao fica
+exposta
+
+
+PendingIntent
+https://developer.android.com/privacy-and-security/risks/pending-intent
+
+Doc sobre PendingIntent
+https://developer.android.com/reference/android/app/PendingIntent
+
+https://medium.com/@appdevinsights/pending-intent-in-android-fc93a8b6c2ac
+https://www.digitalocean.com/community/tutorials/android-notification-pendingintent
+
+Setting Exported on Activities, Broadcasts, and Services
+https://sentry.io/answers/setting-exported-on-activities-broadcasts-and-services/
+
+
+Exploiting Android Intent Redirection: A Hidden Path to Internal File Access
+https://medium.com/@tinopreter/exploiting-android-intent-redirection-a-hidden-path-to-internal-file-access-284cc7715f23
+
+
+Exploiting Android Activities
+https://medium.com/@0xkenway/exploiting-android-activities-f398a796e021
+
+https://developer.android.com/training/basics/intents/filters
+
+Pesquisar por: how to access a not exported activity

@@ -1,0 +1,11 @@
+Android Graphics Shading Language (AGSL)
+https://developer.android.com/develop/ui/views/graphics/agsl
+https://medium.com/@timo_86166/using-androids-new-custom-pixel-shader-agsl-in-compose-part-1-6e6784b5e4d4
+
+
+Using AGSL in your Android app
+https://developer.android.com/develop/ui/views/graphics/agsl/using-agsl#:~:text=This%20page%20covers%20AGSL%20basics,This%20also%20compiles%20the%20shader.
+
+
+Having fun with AGSL Shaders in Jetpack Compose
+https://www.youtube.com/watch?v=aHzFRPSo2s0

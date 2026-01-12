@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">OpenNonExportedActivity</string>
+    <string name="title_activity_simple_non_exported">SimpleNonExportedActivity</string>
+</resources>

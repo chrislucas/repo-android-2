@@ -1,0 +1,16 @@
+https://developer.android.com/topic/libraries/architecture/lifecycle
+
+Use Kotlin coroutines with lifecycle-aware components
+https://developer.android.com/topic/libraries/architecture/coroutines
+
+repeatOnLifecycle API design story
+https://medium.com/androiddevelopers/repeatonlifecycle-api-design-story-8670d1a7d333
+
+A safer way to collect flows from Android UIs
+https://medium.com/androiddevelopers/a-safer-way-to-collect-flows-from-android-uis-23080b1f8bda
+
+Understanding the “stateIn” Operator in Kotlin Flow
+https://medium.com/@jatingujjar646/understanding-the-statein-operator-in-kotlin-flow-f8394cc7a30f
+
+StateFlow and SharedFlow
+https://developer.android.com/kotlin/flow/stateflow-and-sharedflow#:~:text=Unlike%20a%20cold%20flow%20built,other%20observable%20classes%20like%20LiveData%20.&text=Warning:%20Never%20collect%20a%20flow,Kotlin%20flows%20on%20Android%20page.

@@ -5,6 +5,8 @@
 
     <style name="Theme.JustComposeLabsCanvas" parent="android:Theme.Material.Light.NoActionBar" />
 
+    <style name="Theme.JustComposeLabsCanvas.Light" parent="Theme.Material3.DayNight.NoActionBar" />
+
     <style name="Theme.Cupcake" parent="android:Theme.Material.Light.NoActionBar" />
     <!-- Base application theme. -->
     <style name="Base.Theme.JustComposeLabsCanvas" parent="Theme.Material3.DayNight.NoActionBar">

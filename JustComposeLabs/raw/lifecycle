@@ -1,0 +1,83 @@
+viewLifecycleOwner.repeatOnLifecycle
+https://medium.com/androiddevelopers/repeatonlifecycle-api-design-story-8670d1a7d333
+https://developer.android.com/topic/libraries/architecture/coroutines
+
+repeatOnLifecycle API design story
+https://medium.com/androiddevelopers/repeatonlifecycle-api-design-story-8670d1a7d333
+
+viewLifecycleOwner observer two StateFlows
+// Assuming you have these in your Fragment or Activity
+// val viewModel: MyViewModel by viewModels()
+// val flow1: StateFlow<MyData1> = viewModel.stateFlow1
+// val flow2: StateFlow<MyData2> = viewModel.stateFlow2
+
+// In your Fragment or Activity:
+viewLifecycleOwner.lifecycleScope.launch {
+    // Collect the first StateFlow
+    flow1.collect { data1 ->
+        // Update your UI with data1
+        // For example: textView1.text = data1.someProperty
+    }
+}
+
+viewLifecycleOwner.lifecycleScope.launch {
+    // Collect the second StateFlow
+    flow2.collect { data2 ->
+        // Update your UI with data2
+        // For example: textView2.text = data2.anotherProperty
+    }
+}
+
+viewLifecycleOwner.lifecycleScope
+https://www.linkedin.com/pulse/understanding-lifecyclescope-viewlifecyclescope-android-essam-mosbah-behtf/
+https://medium.com/@contact2kalshetty/unlock-the-power-of-viewlifecycleowner-lifecyclescope-fdecab56b6c7
+
+
+LifecycleScope: https://developer.android.com/topic/libraries/architecture/coroutines#lifecyclescope
+class MyFragment: Fragment() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewLifecycleOwner.lifecycleScope.launch {
+            val params = TextViewCompat.getTextMetricsParams(textView)
+            val precomputedText = withContext(Dispatchers.Default) {
+                PrecomputedTextCompat.create(longTextContent, params)
+            }
+            TextViewCompat.setPrecomputedText(textView, precomputedText)
+        }
+    }
+}
+
+Restartable Lifecycle-aware coroutines:
+https://developer.android.com/topic/libraries/architecture/coroutines#restart
+class MyFragment : Fragment() {
+
+    val viewModel: MyViewModel by viewModel()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Create a new coroutine in the lifecycleScope
+        viewLifecycleOwner.lifecycleScope.launch {
+            // repeatOnLifecycle launches the block in a new coroutine every time the
+            // lifecycle is in the STARTED state (or above) and cancels it when it's STOPPED.
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                // Trigger the flow and start listening for values.
+                // This happens when lifecycle is STARTED and stops
+                // collecting when the lifecycle is STOPPED
+                viewModel.someDataFlow.collect {
+                    // Process item
+                }
+            }
+        }
+    }
+}
+
+Pesquisa
+viewlifecycleowner lifecyclescope launch vs lifecyclescope launch
+
+
+
+
+
+
+

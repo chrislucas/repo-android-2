@@ -93,6 +93,10 @@ dependencies {
     implementation(libs.androidx.compose.material3.material3)
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation(libs.androidx.fragment.compose)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     annotationProcessor(libs.androidx.room.ktx)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
@@ -133,6 +137,17 @@ dependencies {
     implementation("androidx.compose.material3.adaptive:adaptive-layout")
     implementation("androidx.compose.material3.adaptive:adaptive-navigation")
 
+
+    // camera x
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.extensions)
+    implementation(libs.androidx.camera.video)
+    implementation(libs.androidx.camera.view)
+
+    // ktx
+    implementation(libs.androidx.collection.ktx)
 
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.graphics.core)

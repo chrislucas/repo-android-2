@@ -1,0 +1,6 @@
+
+https://developer.android.com/reference/android/location/LocationListener
+
+https://developer.android.com/develop/sensors-and-location/location/retrieve-current
+
+https://github.com/android/platform-samples/blob/main/samples/location/src/main/java/com/example/platform/location/currentLocation/CurrentLocationScreen.kt

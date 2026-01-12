@@ -2,7 +2,7 @@
 
 activityKtx = "1.11.0"
 adapterRxjava2 = "3.0.0"
-agp = "8.12.0-alpha06"
+agp = "8.12.3"
 appcompatVersion = "1.7.1"
 cameraCamera2 = "1.5.1"
 cameraCore = "1.5.1"
@@ -93,6 +93,8 @@ secretsGradlePlugin = "2.0.1"
 androidxMaterial3 = "1.4.0"
 navigationFragmentKtx = "2.9.6"
 navigationUiKtx = "2.9.6"
+fragmentCompose = "1.8.9"
+legacySupportV4 = "1.0.0"
 
 
 [libraries]
@@ -235,6 +237,8 @@ secrets-gradle-plugin = { module = "com.google.android.libraries.mapsplatform.se
 androidx-compose-material3-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "androidxMaterial3" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
+androidx-fragment-compose = { group = "androidx.fragment", name = "fragment-compose", version.ref = "fragmentCompose" }
+androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

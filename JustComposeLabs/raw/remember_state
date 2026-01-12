@@ -1,0 +1,17 @@
+internals remember compose
+https://androidengineers.substack.com/p/the-complete-internals-of-jetpack
+proandroiddev.com/understanding-retain-internals-a-new-way-to-preserve-state-in-jetpack-compose-54471a32fd05
+https://jorgecastillo.dev/book/
+https://medium.com/kotlin-android-chronicle/what-happens-internally-in-remember-in-jetpack-compose-c63aa38f47dd
+https://www.youtube.com/watch?v=66T3bkJazoY
+https://proandroiddev.com/exploring-retain-api-a-new-way-to-persist-state-in-jetpack-compose-bfb2fe2eae43
+
+remember vs rememberSaveable: deep dive into state management and recomposition in Jetpack Compose
+https://www.revenuecat.com/blog/engineering/remember-vs-remembersaveable/
+
+
+retain
+https://proandroiddev.com/exploring-retain-api-a-new-way-to-persist-state-in-jetpack-compose-bfb2fe2eae43
+https://composables.com/docs/androidx.compose.runtime/runtime/composable-functions/retain
+https://android-developers.googleblog.com/2025/12/whats-new-in-jetpack-compose-december.html
+

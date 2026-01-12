@@ -1,0 +1,20 @@
+Node vs Composed: Writing Faster, Smoother Jetpack Compose UI
+
+https://www.linkedin.com/posts/tetianasynytsyna_android-jetpackcompose-kotlin-activity-7404912897845415936-EnG4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
+
+Create custom modifiers
+https://developer.android.com/develop/ui/compose/custom-modifiers
+
+composed {}
+Create a custom modifier using a composable modifier factory
+https://developer.android.com/develop/ui/compose/custom-modifiers#create-custom
+
+composed
+https://developer.android.com/reference/kotlin/androidx/compose/ui/Modifier#(androidx.compose.ui.Modifier).composed(kotlin.Function1,kotlin.Function1)
+
+Node modifiers compose
+Implement custom modifier behavior using Modifier.Node
+https://developer.android.com/develop/ui/compose/custom-modifiers#implement-custom
+
+Exploring Modifier.Node for creating custom Modifiers in Jetpack Compose
+https://www.revenuecat.com/blog/engineering/compose-custom-modifier/

@@ -1,0 +1,62 @@
+edge computing
+
+- Computacao de borda: Uma arfquitetura que processa dados perto de onde sao gerados (
+na borda da rede, em dispositivos ou servidores locais), ao inao inves de envia-los aum
+servivor centralizado.
+
+    - Isso reduz a latencia e permite analise e acoes em tempo real
+    - fontes
+        - https://www.redhat.com/pt-br/topics/edge-computing/what-is-edge-computing
+        - https://aws.amazon.com/what-is/edge-computing/
+        - https://www.linkedin.com/pulse/edge-computing-android-building-intelligent-offline-apps-winklix-nsdnc/
+
+https://github.com/tensorflow/examples
+
+
+Modelos e conjuntos de dados
+https://www.tensorflow.org/resources/models-datasets?hl=pt-br
+
+Conversor do TensorFlow Lite
+https://www.tensorflow.org/lite/convert?hl=pt-br
+
+Use a TensorFlow Lite model for inference with ML Kit on Android
+https://firebase.google.com/docs/ml-kit/android/use-custom-models
+
+
+
+Tensor flow Lite
+https://www.udemy.com/course/android-machine-learning-with-tensorflow-lite-using_kotlin_masterclass/
+https://www.coursera.org/learn/device-based-models-tensorflow?specialization=tensorflow-data-and-deployment
+https://www.coursera.org/learn/device-based-models-tensorflow?action=enroll&specialization=tensorflow-data-and-deployment
+
+https://www.tensorflow.org/lite/guide?hl=pt-br
+
+TensorFlow Lite
+https://www.tensorflow.org/lite/guide?hl=pt-br
+
+
+Use a custom TensorFlow Lite model on Android
+https://firebase.google.com/docs/ml/android/use-custom-models
+
+LiteRT para Android
+https://ai.google.dev/edge/litert/android?hl=pt-br&authuser=1
+
+
+Edge Computing + Android: The Next Big Wave in Mobile Apps
+https://medium.com/@androidlab/edge-computing-android-the-next-big-wave-in-mobile-apps-6d7d0a989638
+
+
+ML Kit Analyzer
+https://developer.android.com/media/camera/camerax/mlkitanalyzer
+
+https://www.quora.com/What-is-the-counterpart-of-Apples-CoreML-in-Android
+
+
+On-device Inference with LiteRT
+https://ai.google.dev/edge/litert/inference
+
+
+
+Edge Computing + Android: The Next Big Wave in Mobile Apps
+https://medium.com/@androidlab/edge-computing-android-the-next-big-wave-in-mobile-apps-6d7d0a989638
+https://www.linkedin.com/pulse/edge-computing-android-building-intelligent-offline-apps-winklix-nsdnc/

@@ -1,0 +1,21 @@
+https://developer.android.com/develop/ui/compose/testing?hl=pt-br
+
+test compose waitForIdle
+https://developer.android.com/develop/ui/compose/testing/synchronization
+
+
+InstantTaskExecutorRule
+https://medium.com/@mutkan/what-is-instanttaskexecutorrule-6b436deb2a99
+
+InstantTaskExecutorRule rule
+
+The InstantTaskExecutorRule is a JUnit test rule for Android Architecture Components
+(like LiveData, ViewModel, Room) that makes background tasks run synchronously
+(immediately) instead of asynchronously, solving the "no main thread in tests" problem,
+
+InstantTaskExecutorRule for stateflow
+The InstantTaskExecutorRule is not needed for testing StateFlow.
+This rule is specific to Android's LiveData and architecture components,
+as it synchronizes background tasks on a single thread during tests.
+
+https://medium.com/@bhargavamandapati/a-comprehensive-guide-to-mastering-kotlin-coroutines-in-modern-android-development-part-3-3-a4005ca3933c

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FunWithTensorFlowLite</string>
+    <string name="title_activity_digit_classifier">DigitClassifierActivity</string>
+</resources>

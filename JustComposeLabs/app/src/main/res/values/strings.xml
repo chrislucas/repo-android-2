@@ -145,6 +145,15 @@
     <string name="zero">0\n</string>
     <string name="start">Start</string>
     <string name="reset">Reset</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_fragment_in_compose">FragmentInComposeActivity</string>
+    <string name="title_activity_fragment_screen_compose">FragmentScreenComposeActivity</string>
+    <string name="main_content_below">Main Content Below</string>
+    <string name="title_activity_show_load_custom_view">ShowLoadCustomViewActivity</string>
+    <string name="loading_label">loading ...</string>
+    <string name="title_activity_wrapper_load_view">WrapperLoadViewActivity</string>
+    <string name="init_state_label">init</string>
 
     <!-- end codelabs dessert clicker -->
 
