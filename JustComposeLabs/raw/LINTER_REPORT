@@ -1,0 +1,178 @@
+https://proandroiddev.com/mastering-jacoco-with-agp-8-5-pursuit-of-code-coverage-d3f57c0587a3
+
+
+https://stackoverflow.com/questions/79475120/how-to-have-single-jacoco-code-coverage-report-for-multi-module-project
+https://gist.github.com/shubhendras11/d366717985ca5eae776bfbb153c5d1a0
+android {
+    buildTypes {
+        debug {
+            enableAndroidTestCoverage = true
+            enableUnitTestCoverage = true
+        }
+    }
+}
+
+tasks.register<JacocoReport>("jacocoFullCoverageReportAllModules") {
+    group = "Reports"
+    description = "Generate JaCoCo coverage reports (Unit + Instrumented) for all modules"
+
+    val fileFilter = listOf(
+        // Android-specific generated files
+        "**/R.class",
+        "**/R$*.class",
+        "**/BuildConfig.*",
+        "**/Manifest*.*",
+        "**/resources/**",
+        "**/values/**",
+
+        // Test files
+        "**/*Test*.*",
+        "**/*Test$*.*",
+        "**/androidTest/**",
+        "**/test/**",
+
+        // Hilt/Dagger-generated code
+        "**/hilt_aggregated_deps/**",
+        "**/dagger/hilt/internal/**",
+        "**/dagger/hilt/android/internal/**",
+        "**/*_MembersInjector.class",
+        "**/Dagger*Component.class",
+        "**/*Module_*Factory.class",
+        "**/*_Factory.class",
+        "**/*_Provide*Factory.class",
+        "**/*_Impl.class",
+
+        // Kotlin-generated classes
+        "**/*\$Lambda$*.*",
+        "**/*\$inlined$*.*",
+        "**/*\$*.*", // anonymous classes and lambdas
+        "**/Companion.class",
+
+        // Navigation safe args (generated)
+        "**/*Directions*.class",
+        "**/*Args.class",
+
+        // Jetpack Compose compiler-generated
+        "**/*Preview*.*",
+        "**/*ComposableSingletons*.*",
+
+        // Room and other annotation processors
+        "**/*_Impl.class",
+        "**/*Serializer.class", // For Moshi, Retrofit, etc.
+
+        // Miscellaneous
+        "android/**/*.*",
+
+        // Project-specific exclusions
+        "**/di/**",
+        "**/state/**",
+        "**/mapper/**",
+        "**/domain/**"
+    )
+
+    val javaClasses = mutableListOf<FileTree>()
+    val kotlinClasses = mutableListOf<FileTree>()
+    val javaSrc = mutableListOf<String>()
+    val kotlinSrc = mutableListOf<String>()
+    val execution = mutableListOf<FileTree>()
+
+    rootProject.subprojects.forEach { proj ->
+        proj.tasks.findByName("testDebugUnitTest")?.let { dependsOn(it) }
+        proj.tasks.findByName("connectedDebugAndroidTest")?.let { dependsOn(it) }
+
+        javaClasses.add(proj.fileTree("${proj.buildDir}/intermediates/javac/debug") {
+            exclude(fileFilter)
+        })
+
+        kotlinClasses.add(proj.fileTree("${proj.buildDir}/tmp/kotlin-classes/debug") {
+            exclude(fileFilter)
+        })
+
+        javaSrc.add("${proj.projectDir}/src/main/java")
+        kotlinSrc.add("${proj.projectDir}/src/main/kotlin")
+
+        execution.add(proj.fileTree("${proj.buildDir}") {
+            include(
+                "jacoco/testDebugUnitTest.exec", // Unit test
+                "outputs/code_coverage/debugAndroidTest/connected/**/*.ec" // UI test
+            )
+        })
+    }
+
+    sourceDirectories.setFrom(files(javaSrc + kotlinSrc))
+    classDirectories.setFrom(files(javaClasses + kotlinClasses))
+    executionData.setFrom(files(execution))
+
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+        html.outputLocation.set(file("${rootProject.buildDir}/coverage-report"))
+    }
+
+    doLast {
+        println("✅ Combined coverage report generated at:")
+        println("📄 file://${reports.html.outputLocation.get()}/index.html")
+    }
+}
+
+tasks.register("runAllCoverageAndReport") {
+    group = "Verification"
+    description = "Runs unit + UI tests across all modules and generates a full Jacoco report"
+
+    val testTaskPaths = mutableListOf<String>()
+
+    rootProject.subprojects.forEach { proj ->
+        proj.tasks.matching { it.name == "testDebugUnitTest" }.forEach {
+            testTaskPaths.add(it.path)
+        }
+        proj.tasks.matching { it.name == "createDebugCoverageReport" }.forEach {
+            testTaskPaths.add(it.path)
+        }
+    }
+
+    dependsOn(testTaskPaths)
+    dependsOn("jacocoFullCoverageReportAllModules")
+
+    doFirst {
+        println("Running test tasks:")
+        testTaskPaths.forEach { println(" - $it") }
+    }
+}
+
+
+Choose Ktlint for strict code formatting and Detekt for deeper code quality analysis
+(complexity, smells, security, performance);
+
+often, the best approach is to use both, integrating Ktlint rules into Detekt for a comprehensive
+solution that covers both style and quality in one tool.
+
+Ktlint focuses on style guide adherence, while Detekt offers broader static analysis.
+
+Ktlint
+Focus: Code style and formatting (whitespace, imports, etc.).
+Strengths: Simple to set up, native auto-formatter, enforces Kotlin style guide.
+Best for: Ensuring consistent code appearance across the team
+
+Detekt
+Focus: Comprehensive static analysis (complexity, maintainability, bugs, security, performance).
+Strengths: Extensible, powerful rule sets, can integrate Ktlint formatting rules.
+Best for: Catching deeper code quality issues beyond just style
+
+Recommendation: Use Both (Integrated)
+Set up Detekt: Add the detekt-formatting plugin as a dependency.
+Run Detekt: This single tool will then run its own analysis and apply Ktlint's formatting rules.
+Benefit: You get style enforcement and quality analysis from one configuration, streamlining your CI/CD
+
+https://www.baeldung.com/kotlin/detekt-static-code-analysis#
+https://medium.com/@ipek.birinci8/what-is-detekt-dc1df0e2cb61
+
+
+configure ktlint and detekt android compose project
+https://mrmans0n.github.io/compose-rules/ktlint/
+
+
+dependencies {
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-rules-ktlint-wrapper:[version]") // Optional wrapper for some ktlint rules
+    detektPlugins("com.mrmansON:compose-rules:[version]") // Use the latest version
+}
+

@@ -97,6 +97,9 @@ dependencies {
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.foundation.layout)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
     annotationProcessor(libs.androidx.room.ktx)
     testImplementation(libs.junit.jupiter)
     testImplementation(libs.junit.jupiter)
@@ -171,7 +174,10 @@ dependencies {
    implementation(libs.google.firebase.crashlytics)
 
     // compose
-    implementation(platform(libs.androidx.compose.bom))
+    val composeBom = platform(libs.androidx.compose.bom)
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
+
     implementation(libs.ui.viewbinding)
     // dependency without a version
     implementation(libs.androidx.runtime.tracing)
@@ -290,7 +296,6 @@ dependencies {
 
 
 
-    androidTestImplementation(platform(libs.androidx.compose.bom))
 
     val inkVersion = "1.0.0-alpha05"
 

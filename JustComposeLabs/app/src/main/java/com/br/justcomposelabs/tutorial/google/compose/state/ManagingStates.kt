@@ -1,12 +1,15 @@
 package com.br.justcomposelabs.tutorial.google.compose.state
 
 import android.R.attr.name
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -26,6 +29,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.br.justcomposelabs.tutorial.google.compose.recompositionhighlighter.recomposeHighlighter
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import timber.log.Timber
 
 
 /*
@@ -112,11 +116,18 @@ fun StateTextFieldRemember() {
     /**
      * @see androidx.compose.runtime.MutableState
      * Essa desistruturacao abaixo vem da interface MutableSate que tem
-     *  - Um atributo mutavel value  T
-     *  - dois medotos operators
-     *      - um para retornar o valor
+     *  - Um atributo mutavel value T
+     *  - dois operators functions
+     *      - um para retornar o valor (Get)
      *      - e outro uma funcao que recebe o tipo T como argumento
      *       e atualiza o atributo generico value T
+     *
+     * @see androidx.compose.runtime.MutableState
+        public interface MutableState<T> : State<T> {
+            override var value: T
+            public operator fun component1(): T
+            public operator fun component2(): (T) -> Unit
+        }
      */
     val (name, setName) = remember { mutableStateOf(" ") }
     Column(modifier = Modifier.padding(16.dp)) {
@@ -148,11 +159,47 @@ fun MutableStateTextFieldRemember() {
                 modifier = Modifier.padding(bottom = 8.dp),
                 style = MaterialTheme.typography.headlineMedium
             )
+
+            /**
+             * @see com.br.justcomposelabs.tutorial.google.compose.playground.lifecycle.ComposeLifecycle
+             * https://foso.github.io/Jetpack-Compose-Playground/general/compose_lifecycle/
+             *
+             *
+             */
+
+            if (state.value.length < 3) {
+                /*
+                    sera chamada a primeira vez que a funcao compose for apliocada
+                 */
+                LaunchedEffect(Unit) {
+                    Timber.tag("COMPOSE_LAUNCH_EFFECT").d("on active with value ${state.value}")
+                }
+
+                /*
+                   Possui acesso a funcao onDispose() atraves de uma fuction with receiver
+                    - DisposableEffectScope.() -> DisposableEffectResult
+                    - essa funcao onDispose() que sera executada quando a funcao
+                    copose nao fizer parte da composition mais
+
+
+                   public fun DisposableEffect(
+                        key1: Any?,
+                        effect: DisposableEffectScope.() -> DisposableEffectResult,
+                    ) {
+                        remember(key1) { DisposableEffectImpl(effect) }
+                    }
+                 */
+                DisposableEffect(Unit) {
+                    onDispose {
+                        Timber.tag("COMPOSE_DISPOSE_EFFECT").d("on dispose with value ${state.value}")
+                    }
+                }
+            }
         }
 
         OutlinedTextField(
             value = state.value,
-            onValueChange = { it -> state.value = it },
+            onValueChange = { state.value = it },
             label = { Text("label") }
         )
     }
