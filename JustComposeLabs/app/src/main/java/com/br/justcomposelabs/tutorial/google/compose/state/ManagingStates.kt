@@ -1,9 +1,10 @@
 package com.br.justcomposelabs.tutorial.google.compose.state
 
-import android.R.attr.name
-import android.util.Log
+
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -123,11 +124,11 @@ fun StateTextFieldRemember() {
      *       e atualiza o atributo generico value T
      *
      * @see androidx.compose.runtime.MutableState
-        public interface MutableState<T> : State<T> {
-            override var value: T
-            public operator fun component1(): T
-            public operator fun component2(): (T) -> Unit
-        }
+    public interface MutableState<T> : State<T> {
+    override var value: T
+    public operator fun component1(): T
+    public operator fun component2(): (T) -> Unit
+    }
      */
     val (name, setName) = remember { mutableStateOf(" ") }
     Column(modifier = Modifier.padding(16.dp)) {
@@ -148,7 +149,11 @@ fun StateTextFieldRemember() {
 }
 
 
-@Preview(showBackground = true, showSystemUi = true, name = "MutableStateTextFieldRemember")
+@Preview(
+    showBackground = true,
+    showSystemUi = true,
+    name = "MutableStateTextFieldRemember"
+)
 @Composable
 fun MutableStateTextFieldRemember() {
     val state: MutableState<String> = remember { mutableStateOf(" ") }
@@ -191,7 +196,8 @@ fun MutableStateTextFieldRemember() {
                  */
                 DisposableEffect(Unit) {
                     onDispose {
-                        Timber.tag("COMPOSE_DISPOSE_EFFECT").d("on dispose with value ${state.value}")
+                        Timber.tag("COMPOSE_DISPOSE_EFFECT")
+                            .d("on dispose with value ${state.value}")
                     }
                 }
             }
@@ -225,7 +231,7 @@ fun MutableStateByDelegateTextFieldRemember() {
 
         OutlinedTextField(
             value = name,
-            onValueChange = { it -> name = it },
+            onValueChange = { name = it },
             label = { Text("label") }
         )
     }
@@ -236,9 +242,19 @@ fun MutableStateByDelegateTextFieldRemember() {
 @Preview(showSystemUi = true, name = "HelloScreen|HelloContent")
 fun HelloScreen() {
     var name: String by rememberSaveable { mutableStateOf(" ") }
+
     HelloContent(name) { newName ->
         name = newName
     }
+}
+
+
+@Composable
+@Preview(showSystemUi = true, name = "DestructuredHelloScreen|HelloContent")
+fun DestructuredHelloScreen() {
+    val mutableState =  rememberSaveable { mutableStateOf(" ") }
+    val (name, setter) = mutableState
+    HelloContent(name, setter)
 }
 
 /*
@@ -434,8 +450,10 @@ internal fun HelloContent(name: String = "", onNameChange: (String) -> Unit) {
      */
     Column(
         modifier = Modifier
-            .padding(16.dp)
-            .recomposeHighlighter(false)
+            .navigationBarsPadding()
+            .systemBarsPadding()
+            //.padding(16.dp)
+            //.recomposeHighlighter(false)
     ) {
         if (name.isNotBlank()) {
             Text(

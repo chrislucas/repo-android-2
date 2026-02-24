@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.google.compose.phases
+package com.br.justcomposelabs.tutorial.google.compose.performance.phases
 
 /*
     https://developer.android.com/develop/ui/compose/phases

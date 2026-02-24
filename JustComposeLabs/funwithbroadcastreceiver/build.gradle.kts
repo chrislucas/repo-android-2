@@ -44,8 +44,6 @@ android {
             isIncludeAndroidResources = true
         }
     }
-
-
 }
 
 dependencies {

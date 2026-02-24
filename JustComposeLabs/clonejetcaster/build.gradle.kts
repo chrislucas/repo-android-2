@@ -1,7 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.compose.compiler)
 }
+
+/*
+    https://developer.android.com/develop/ui/compose/architecture
+    https://github.com/android/compose-samples/tree/main/Jetcaster
+ */
 
 android {
     namespace = "com.br.clonejetcaster"
@@ -23,21 +29,27 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+
+    buildFeatures {
+        compose = true
+        viewBinding = true
     }
-    kotlinOptions {
-        jvmTarget = "11"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+kotlin {
+    jvmToolchain(17)
 }

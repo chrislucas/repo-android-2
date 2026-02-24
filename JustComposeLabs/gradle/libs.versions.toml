@@ -2,7 +2,7 @@
 
 activityKtx = "1.11.0"
 adapterRxjava2 = "3.0.0"
-agp = "9.0.0"
+agp = "9.0.1"
 appcompatVersion = "1.7.1"
 cameraCamera2 = "1.5.1"
 cameraCore = "1.5.1"
@@ -44,13 +44,17 @@ ktorClientContentNegotiation = "3.3.1"
 ktorClientCore = "3.3.1"
 ktorClientWebrtc = "3.3.1"
 leakcanaryAndroid = "2.14"
-lifecycleLivedataKtx = "2.9.4"
-lifecycleRuntimeKtx = "2.9.4"
-activityCompose = "1.11.0"
-composeBom = "2025.10.00"
+lifecycleLivedata = "2.10.0"
+lifecycleLivedataKtx = "2.10.0"
+lifecycleRuntime = "2.10.0"
+lifecycleRuntimeKtx = "2.10.0"
+activityCompose = "1.12.3"
+composeBom = "2026.01.01"
 appcompat = "1.7.1"
-lifecycleViewmodelCompose = "2.9.4"
-lifecycleViewmodelKtx = "2.9.4"
+lifecycleViewmodel = "2.10.0"
+lifecycleViewmodelCompose = "2.10.0"
+lifecycleViewmodelKtx = "2.10.0"
+lifecycleViewmodelNavigation3 = "2.10.0"
 lint = "1.0.3"
 loggingInterceptor = "5.2.1"
 material = "1.13.0"
@@ -70,9 +74,9 @@ picasso = "2.71828"
 retrofit = "3.0.0"
 retrofitVersion = "3.0.0"
 robolectric = "4.16"
-roomCompiler = "2.8.2"
+roomCompiler = "2.8.4"
 roomGuava = "2.8.2"
-roomKtx = "2.8.2"
+roomKtx = "2.8.4"
 roomPaging = "2.8.2"
 roomRuntime = "2.8.2"
 roomRxjava2 = "2.8.2"
@@ -100,10 +104,19 @@ foundationLayout = "1.10.1"
 
 [libraries]
 androidx-appcompat-resources = { module = "androidx.appcompat:appcompat-resources", version.ref = "appcompatVersion" }
+androidx-compose-adaptive = { module = "androidx.compose.material3.adaptive:adaptive" }
+androidx-compose-material-icons-core = { module = "androidx.compose.material:material-icons-core" }
+androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
+androidx-compose-runtime-livedata = { module = "androidx.compose.runtime:runtime-livedata" }
+androidx-compose-runtime-rxjava2 = { module = "androidx.compose.runtime:runtime-rxjava2" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-dynamicanimation = { module = "androidx.dynamicanimation:dynamicanimation", version.ref = "dynamicanimation" }
 androidx-fragment = { module = "androidx.fragment:fragment", version.ref = "fragment" }
 androidx-graphics-core = { module = "androidx.graphics:graphics-core", version.ref = "graphicsCoreVersion" }
+androidx-lifecycle-livedata = { module = "androidx.lifecycle:lifecycle-livedata", version.ref = "lifecycleLivedata" }
+androidx-lifecycle-runtime = { module = "androidx.lifecycle:lifecycle-runtime", version.ref = "lifecycleRuntime" }
+androidx-lifecycle-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "lifecycleViewmodel" }
+androidx-lifecycle-viewmodel-navigation3 = { module = "androidx.lifecycle:lifecycle-viewmodel-navigation3", version.ref = "lifecycleViewmodelNavigation3" }
 coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coilCompose" }
 coil-network-okhttp = { module = "io.coil-kt.coil3:coil-network-okhttp", version.ref = "coilNetworkOkhttp" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -233,7 +246,7 @@ ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding" }
 androidx-compose-ui-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "uiTestJunit4" }
 junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junitJunitJupiter" }
 
-kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlin-gradle-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version = "2.3.0" }
 secrets-gradle-plugin = { module = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin:secrets-gradle-plugin", version.ref = "secretsGradlePlugin" }
 androidx-compose-material3-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "androidxMaterial3" }
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
@@ -247,4 +260,9 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+
+# https://developer.android.com/build/releases/agp-9-0-0-release-notes
+# https://developer.android.com/kotlin/multiplatform/plugin
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 

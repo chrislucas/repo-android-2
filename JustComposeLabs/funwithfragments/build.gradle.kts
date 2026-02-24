@@ -109,20 +109,20 @@ dependencies {
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
     // custom design system based on Foundation)
-    implementation("androidx.compose.material:material-icons-core")
+    implementation(libs.androidx.compose.material.icons.core)
     // Optional - Add full set of material icons
-    implementation("androidx.compose.material:material-icons-extended")
+    implementation(libs.androidx.compose.material.icons.extended)
     // Optional - Add window size utils
-    implementation("androidx.compose.material3.adaptive:adaptive")
+    implementation(libs.androidx.compose.adaptive)
 
     // Optional - Integration with activities
     implementation("androidx.activity:activity-compose:1.10.1")
     // Optional - Integration with ViewModels
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.5")
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Optional - Integration with LiveData
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation(libs.androidx.compose.runtime.livedata)
     // Optional - Integration with RxJava
-    implementation("androidx.compose.runtime:runtime-rxjava2")
+    implementation(libs.androidx.compose.runtime.rxjava2)
 
     implementation(libs.ui.viewbinding)
     // dependency without a version
@@ -141,6 +141,37 @@ dependencies {
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
 
+    // lifecycle
+    // https://developer.android.com/jetpack/androidx/releases/lifecycle#kts
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel)
+    // LiveData
+    implementation(libs.androidx.lifecycle.livedata)
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation("androidx.lifecycle:lifecycle-runtime:2.10.0")
+    // Saved state module for ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.savedstate)
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation(libs.androidx.lifecycle.common.java8)
+    // Annotation processor
+    annotationProcessor(libs.androidx.lifecycle.compiler)
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    implementation(libs.androidx.lifecycle.process)
+    //  optional - helpers for implementing LifecycleOwner in a Service
+    implementation(libs.androidx.lifecycle.service)
+    // optional - ReactiveStreams support for LiveData
+    implementation(libs.androidx.lifecycle.reactivestreams.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.process)
+
+
+    // optional - Test helpers for LiveData
+    testImplementation(libs.androidx.core.testing )
+    // optional - Test helpers for Lifecycle runtime
+    testImplementation(libs.androidx.lifecycle.runtime.testing)
 
     implementation(libs.material)
     testImplementation(libs.junit)
