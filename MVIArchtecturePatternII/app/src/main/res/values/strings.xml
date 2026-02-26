@@ -1,3 +1,4 @@
 <resources>
-  <string name="app_name">MVIArchtecturePatternII</string>
+    <string name="app_name">MVIArchtecturePatternII</string>
+    <string name="title_activity_counter_event">CounterEvent</string>
 </resources>

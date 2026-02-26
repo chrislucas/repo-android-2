@@ -99,6 +99,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.foundation.layout)
+    implementation(libs.ads.mobile.sdk)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     annotationProcessor(libs.androidx.room.ktx)
     testImplementation(libs.junit.jupiter)
@@ -216,7 +217,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit.jupiter)
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.1")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:6.0.3")
     debugImplementation(libs.ui.tooling)
 
     implementation(libs.kotlinx.coroutines.android)
@@ -287,16 +288,8 @@ dependencies {
     // optional - Guava support for Room, including Optional and ListenableFuture
     implementation(libs.androidx.room.guava)
 
-
-
     // optional - Paging 3 Integration
     implementation(libs.androidx.room.paging)
-
-
-
-
-
-
     val inkVersion = "1.0.0-alpha05"
 
     implementation("androidx.ink:ink-authoring:$inkVersion")
@@ -326,9 +319,6 @@ dependencies {
     implementation(libs.androidx.work.rxjava2 )
     implementation(libs.androidx.work.testing)
 
-
-
-
     // Test rules and transitive dependencies:
     androidTestImplementation(libs.ui.test.junit4)
     // Needed for createComposeRule(), but not for createAndroidComposeRule<YourActivity>():
@@ -355,9 +345,11 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
+    // test compose: https://developer.android.com/codelabs/jetpack-compose-testing#0
     androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    debugImplementation(libs.androidx.ui.tooling)
     testImplementation(kotlin("test"))
 }
 

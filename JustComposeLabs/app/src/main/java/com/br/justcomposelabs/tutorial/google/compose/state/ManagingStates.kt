@@ -242,10 +242,7 @@ fun MutableStateByDelegateTextFieldRemember() {
 @Preview(showSystemUi = true, name = "HelloScreen|HelloContent")
 fun HelloScreen() {
     var name: String by rememberSaveable { mutableStateOf(" ") }
-
-    HelloContent(name) { newName ->
-        name = newName
-    }
+    HelloContent(name) { newName -> name = newName }
 }
 
 

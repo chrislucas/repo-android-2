@@ -1,6 +1,9 @@
 package com.br.justcomposelabs.tutorial.google.compose.state.wheretohoiststate
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -15,25 +18,26 @@ import androidx.compose.ui.tooling.preview.Preview
 /**
  * TODO: Estudar esse assunto
  * https://developer.android.com/develop/ui/compose/state-hoisting#classes-as-state-owner
-- UI Logic
-- Quando a logica de UI precisa ler ou rescrever um estado, devmos
-restringir esse estado para a UI.
-- Podemos fazer isso elevando o estado para um "nível correto" em uma
-composable function
+ *
+    - UI Logic
+    - Quando a logica de UI precisa ler ou rescrever um estado, devmos
+    restringir esse estado para a UI.
+    - Podemos fazer isso elevando o estado para um "nível correto" em uma
+    composable function
 
-- Podemos fazer isso em uma classe especifica para manter estados
-- plain state holder class (https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-logic)
+    - Podemos fazer isso em uma classe especifica para manter estados
+    - plain state holder class (https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-logic)
 
-Composables as state owner
-- https://developer.android.com/develop/ui/compose/state-hoisting#composables-as-state-owner
-- Se estamos lidando com logica de estado simples, a documentacao nos diz que
-nao ha problemas. Podemos deixar o controle do estado internamente para composable ou "iça-lo / hoist"
-se for requisido
+    Composables as state owner
+    - https://developer.android.com/develop/ui/compose/state-hoisting#composables-as-state-owner
+    - Se estamos lidando com logica de estado simples, a documentacao nos diz que
+    nao ha problemas. Podemos deixar o controle do estado internamente para composable ou "iça-lo / hoist"
+    se for requisido
 
-No state hoisting needed
-- https://developer.android.com/develop/ui/compose/state-hoisting#no-state-hoisting
-- Hoisting state nem sempre é requirido. O estado pode ser mantido internamente
-nos casos que nenhuma outra composable necessite controla-lo.
+    No state hoisting needed
+    - https://developer.android.com/develop/ui/compose/state-hoisting#no-state-hoisting
+    - Hoisting state nem sempre é requirido. O estado pode ser mantido internamente
+    nos casos que nenhuma outra composable necessite controla-lo.
 
  */
 
@@ -57,20 +61,30 @@ fun ExpandableTextBox(
         timestamp = "${System.currentTimeMillis()}ms"
     )
 ) {
+    /**
+     * @see
+     * Usamos rememberSaveable para manter o estado durante o processo de recomposicao/recriacao
+     * do componente
+     *
+     * @see com.br.justcomposelabs.tutorial.google.compose.state.StateTextField
+     *     rememberSaveable é capaz de salvar automaticamente qualquer valor que é
+     *     possivel de ser armazenado em um Bundle.
+     *
 
-    /*
+        - rememberSaveable stores UI element state in a Bundle through the saved
+    instance state mechanism.
+
 
      */
     var showDetails by rememberSaveable { mutableStateOf(false) }
+    Column(modifier = Modifier.fillMaxSize().systemBarsPadding()) {
+        Text(
+            text = AnnotatedString(message.content),
+            modifier = Modifier.clickable { showDetails = !showDetails }
+        )
 
-    Text(
-        text = AnnotatedString(message.content),
-        modifier = Modifier.clickable {
-            showDetails = !showDetails
+        if (showDetails) {
+            Text(message.timestamp)
         }
-    )
-
-    if (showDetails) {
-        Text(message.timestamp)
     }
 }
