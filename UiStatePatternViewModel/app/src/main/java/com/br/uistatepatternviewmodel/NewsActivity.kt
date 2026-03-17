@@ -10,12 +10,18 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
@@ -44,17 +50,29 @@ class NewsActivity : ComponentActivity() {
     }
 }
 
-class NewsViewModelUiStatePattern : ViewModel() {
+open class NewsViewModelUiStatePattern : ViewModel() {
 
+    /*
+        Aqui poderia e talvez faça mais sentido uma sealed class
+     */
     sealed interface NewsUIState {
-        data object Loading : NewsUIState
-        data class ShowNews(val news: List<News>) : NewsUIState
+
+        val news: List<News>
+
+        data class Loading(override val news: List<News>) : NewsUIState
+        data class ShowNews(override val news: List<News>) : NewsUIState
+
+        data object EmptyNews : NewsUIState {
+            override val news: List<News>
+                get() = emptyList()
+        }
     }
 
-    private val _uiState = MutableStateFlow<NewsUIState>(NewsUIState.Loading)
+    private val currentNews: MutableList<News> = mutableListOf()
+
+    private val _uiState = MutableStateFlow<NewsUIState>(NewsUIState.EmptyNews)
     val uiState: StateFlow<NewsUIState> = _uiState.asStateFlow()
 
-    private val currentNews: MutableList<News> = mutableListOf()
 
     init {
         viewModelScope.launch {
@@ -64,7 +82,12 @@ class NewsViewModelUiStatePattern : ViewModel() {
 
     private suspend fun fetchNews() {
         while (true) {
-            _uiState.update { NewsUIState.Loading }
+            _uiState.update {
+                NewsUIState.Loading(
+                    currentNews.toList()
+                )
+            }
+
             delay(DELAY_LOADING) // Simulate network delay
             val news = List(4) {
                 News(
@@ -100,19 +123,37 @@ fun UiStatePatternNewsScreen(
                     "News Updated: ${state.news.size} items",
                     Toast.LENGTH_SHORT
                 ).show()
+            }
 
-                News(
-                    modifier,
-                    news = state.news
+            is NewsViewModelUiStatePattern.NewsUIState.EmptyNews -> {
+                Text(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(8.dp),
+                    text = "Empty State",
+                    style = TextStyle(
+                        fontSize = 23.sp,
+                        fontWeight = FontWeight.Bold
+                    ),
+
+                    textAlign = TextAlign.Center
                 )
             }
         }
+
+        News(
+            modifier,
+            news = uiState.news
+        )
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true, name = "UiStatePatternNewsScreen - ShowNews")
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
 @Composable
-private fun UiStatePatternNewsScreenPreview() {
+private fun UiStatePatternNewsScreenNewsPreview() {
     // Sample data to preview the content state
     val sampleNews = List(4) { index ->
         News(
@@ -126,6 +167,18 @@ private fun UiStatePatternNewsScreenPreview() {
             .fillMaxSize()
             .padding(8.dp),
         news = sampleNews
+    )
+}
+
+@Preview(
+    showBackground = true,
+    showSystemUi = true
+)
+@Composable
+private fun UiStatePatternNewsScreenEmptyNewsPreview() {
+    // Sample data to preview the content state
+    UiStatePatternNewsScreen(
+        modifier = Modifier.fillMaxSize()
     )
 }
 
