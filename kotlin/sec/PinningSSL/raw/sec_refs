@@ -1,0 +1,44 @@
+Vulnerabilidade em Intent-Filter e deeplink
+https://www.mentebinaria.com.br/artigos/pequenas-liga%C3%A7%C3%B5es-grandes-vulnerabilidades-uma-breve-introdu%C3%A7%C3%A3o-a-deep-links-em-android-r75/
+https://github.com/B3nac/InjuredAndroid
+
+Android CTF
+android ctf walkthrough
+https://infosecwriteups.com/hacker101-ctf-android-challenge-writeups-f830a382c3ce
+https://morioh.com/p/1fbe0d91a76c
+https://medium.com/swlh/morty-sherlocked-android-application-ctf-challenge-walkthrough-ab1ec2161cb4
+https://saurabh-jain.medium.com/planet-x-android-application-based-ctf-challenge-walkthrough-778547aac015'
+https://infosecwriteups.com/injuredandroid-ctf-writeup-41dd40165cfa
+https://infosecwriteups.com/hacker101-ctf-android-challenge-writeups-f830a382c3ce
+https://github.com/luker983/google-ctf-2020/tree/master/reversing/android
+
+Google CTF
+https://github.com/google/google-ctf
+https://buildyourfuture.withgoogle.com/events/ctf/
+https://ctftime.org/event/list/past
+https://capturetheflag.withgoogle.com/
+
+open reverse shell android
+https://www.programmersought.com/article/74132560187/
+https://gist.github.com/random-robbie/4d6264cfadc7d716cd28ba29e424f62d
+https://null-byte.wonderhowto.com/how-to/create-reverse-shell-remotely-execute-root-commands-over-any-open-port-using-netcat-bash-0132658/
+https://null-byte.wonderhowto.com/how-to/create-persistent-back-door-android-using-kali-linux-0161280/
+https://www.linkedin.com/pulse/how-hack-android-devices-2-easy-steps-using-adb-albert-lim-1
+
+
+android deep link with parameters
+https://developer.android.com/guide/navigation/navigation-deep-link
+https://stackoverflow.com/questions/35645414/android-deep-linking-with-multiple-query-parameters
+https://proandroiddev.com/best-practices-for-deeplinking-in-android-1dc1ea060c0c
+https://www.raywenderlich.com/18330247-deep-links-in-android-getting-started
+https://github.com/android/architecture-components-samples/issues/585
+
+
+open reverse shell
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md
+https://www.netsparker.com/blog/web-security/understanding-reverse-shells/
+https://medium.com/@pedr0ni/reverse-shell-com-netcat-2fe833d2b4e7
+https://tiagosouza.com/reverse-shell-cheat-sheet-bind-shell/
+https://gist.github.com/random-robbie/4d6264cfadc7d716cd28ba29e424f62d
+https://medium.com/@leonardomarciano/criando-backdoors-para-android-utilizando-metaexploit-e-obtendo-acesso-a-mensagens-de-whatsapp-6ad888696f06
+https://irfaanshakeel.medium.com/hacking-android-phone-remotely-using-metasploit-43ccf0fbe9b8

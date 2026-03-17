@@ -8,15 +8,14 @@ plugins {
     alias(libs.plugins.compose.compiler) apply false
 
     id("com.google.gms.google-services") version "4.4.4" apply false
-    id("com.google.devtools.ksp") version "2.3.2" apply false
+    id("com.google.devtools.ksp") version "2.3.4" apply false
 
     // https://infinum.com/blog/automated-gradle-dependency-updates/
     id("com.github.ben-manes.versions") version "0.53.0"
-    id("nl.littlerobots.version-catalog-update") version "1.0.1"
+    id("nl.littlerobots.version-catalog-update") version "1.1.0"
     // Add the dependency for the Crashlytics Gradle plugin
     id("com.google.firebase.crashlytics") version "3.0.6" apply false
-
-    id("com.google.dagger.hilt.android") version "2.58" apply false
+    id("com.google.dagger.hilt.android") version "2.59.2" apply false
 }
 
 buildscript {

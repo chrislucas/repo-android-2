@@ -43,6 +43,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import timber.log.Timber
 
 /*
     https://medium.com/@shivayogih25/android-kotlin-stateflow-vs-flow-vs-sharedflow-vs-livedata-when-to-use-what-3521ebffcb5d
@@ -63,6 +64,8 @@ class FunWithFlowTypesActivity : ComponentActivity() {
     }
 }
 
+private const val OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL = "OIObservedByStateFlowVM"
+
 @Composable
 fun OIObservedByStateFlowViewModel(
     modifier: Modifier = Modifier,
@@ -79,31 +82,31 @@ fun OIObservedByStateFlowViewModel(
     fun callbackLifecycle(event: Lifecycle.Event) {
         when (event) {
             Lifecycle.Event.ON_CREATE -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_CREATE")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_CREATE")
             }
 
             Lifecycle.Event.ON_START -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_START")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_START")
             }
 
             Lifecycle.Event.ON_RESUME -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_RESUME")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_RESUME")
             }
 
             Lifecycle.Event.ON_PAUSE -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_PAUSE")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_PAUSE")
             }
 
             Lifecycle.Event.ON_STOP -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_STOP")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_STOP")
             }
 
             Lifecycle.Event.ON_DESTROY -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_DESTROY")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_DESTROY")
             }
 
             Lifecycle.Event.ON_ANY -> {
-                Log.d("OIObservedByStateFlowViewModel", "ON_ANY")
+                Timber.tag(OI_OBSERVED_BY_STATE_FLOW_VIEW_MODEL).d("ON_ANY")
             }
         }
     }
@@ -159,7 +162,7 @@ fun UpdateStateFlowViewModel(
 }
 
 class StateFlowViewModel() : ViewModel() {
-    private val content = MutableStateFlow("Init StateFlowViewModel")
+    private val content = MutableStateFlow("Init State Flow ViewModel")
     val message: StateFlow<String> = content
 
     fun updateContent(newContent: String) {

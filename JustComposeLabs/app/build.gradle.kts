@@ -51,6 +51,7 @@ android {
     buildFeatures {
         compose = true
         viewBinding = true
+        buildConfig = true
     }
 
     compileOptions {
@@ -160,7 +161,7 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
-    implementation("io.coil-kt.coil3:coil-svg:3.3.0")
+    implementation("io.coil-kt.coil3:coil-svg:3.4.0")
 
     implementation(libs.material)
     implementation(libs.timber)

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FunWithHilt" />
+            <option value="$PROJECT_DIR$/animationtransition" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/appdataandfile" />
+            <option value="$PROJECT_DIR$/coroutinecodelabs" />
+            <option value="$PROJECT_DIR$/fileuploadclient" />
+            <option value="$PROJECT_DIR$/funwithandroidktx" />
+            <option value="$PROJECT_DIR$/funwithcamerax" />
+            <option value="$PROJECT_DIR$/funwithconcatadapter" />
+            <option value="$PROJECT_DIR$/funwithcontentprovider" />
+            <option value="$PROJECT_DIR$/funwithcurrencyconversionapi" />
+            <option value="$PROJECT_DIR$/funwithjetpackcompose" />
+            <option value="$PROJECT_DIR$/funwithktor" />
+            <option value="$PROJECT_DIR$/funwithnavigationapi" />
+            <option value="$PROJECT_DIR$/funwithprotodatastore" />
+            <option value="$PROJECT_DIR$/funwithshapes" />
+            <option value="$PROJECT_DIR$/funwithworkmanager" />
+            <option value="$PROJECT_DIR$/justconstraintlayoutstudies" />
+            <option value="$PROJECT_DIR$/loginbiometricandroid" />
+            <option value="$PROJECT_DIR$/mapsandroidktx" />
+            <option value="$PROJECT_DIR$/navfeatures" />
+            <option value="$PROJECT_DIR$/navfeaturescompose" />
+            <option value="$PROJECT_DIR$/opencamerafromwebview" />
+            <option value="$PROJECT_DIR$/recyclerviewcomponent" />
+            <option value="$PROJECT_DIR$/reflibs" />
+            <option value="$PROJECT_DIR$/restclientlib" />
+            <option value="$PROJECT_DIR$/wrapperviewmodel" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

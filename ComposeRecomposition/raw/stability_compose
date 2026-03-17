@@ -1,0 +1,12 @@
+https://developer.android.com/develop/ui/compose/performance/stability/fix#immutable-collections
+
+Strong skipping mode
+https://developer.android.com/develop/ui/compose/performance/stability/strongskipping#enable-strong
+
+
+Tutorials
+https://blog.kotlin-academy.com/understanding-stable-immutable-immutablecollection-and-persistentcollection-in-jetpack-compose-5b352f3a265f
+https://carrion.dev/en/posts/immutable-collections/
+https://medium.com/@KaushalVasava/stable-and-immutable-in-jetpack-compose-10e34295bc1c
+https://proandroiddev.com/performance-in-jetpack-compose-stability-immutability-472ee13bef94
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="temurin-17" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/appobservability" />
+            <option value="$PROJECT_DIR$/canvasviews" />
+            <option value="$PROJECT_DIR$/clonejetcaster" />
+            <option value="$PROJECT_DIR$/clonejetcaster/core" />
+            <option value="$PROJECT_DIR$/clonejetcaster/core/data" />
+            <option value="$PROJECT_DIR$/clonejetchat" />
+            <option value="$PROJECT_DIR$/datastore" />
+            <option value="$PROJECT_DIR$/funcodelabsanimation" />
+            <option value="$PROJECT_DIR$/funwithanimationcompose" />
+            <option value="$PROJECT_DIR$/funwithbroadcastreceiver" />
+            <option value="$PROJECT_DIR$/funwithcameraxcompose" />
+            <option value="$PROJECT_DIR$/funwithfragments" />
+            <option value="$PROJECT_DIR$/funwithglance" />
+            <option value="$PROJECT_DIR$/funwithgmaps" />
+            <option value="$PROJECT_DIR$/funwithhilt" />
+            <option value="$PROJECT_DIR$/funwithlifecycle" />
+            <option value="$PROJECT_DIR$/funwithlottiecompose" />
+            <option value="$PROJECT_DIR$/funwithmlkit" />
+            <option value="$PROJECT_DIR$/funwithperapplanguages" />
+            <option value="$PROJECT_DIR$/funwithrolleta" />
+            <option value="$PROJECT_DIR$/funwithsecurity" />
+            <option value="$PROJECT_DIR$/funwithviewmodel" />
+            <option value="$PROJECT_DIR$/migrationstrategycompose" />
+            <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/okhttpwebsocket" />
+            <option value="$PROJECT_DIR$/paginglibrarysamples" />
+            <option value="$PROJECT_DIR$/referencelinbraries" />
+            <option value="$PROJECT_DIR$/scaffoldttopbarsample" />
+            <option value="$PROJECT_DIR$/scarletwebsocket" />
+            <option value="$PROJECT_DIR$/searchinaccessibility" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

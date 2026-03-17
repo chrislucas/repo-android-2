@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="CHOOSE_PER_TEST" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/adaptativerecyclerview" />
+            <option value="$PROJECT_DIR$/androidblockstoreapi" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/archtemplatetest" />
+            <option value="$PROJECT_DIR$/baseviewmodel" />
+            <option value="$PROJECT_DIR$/checkreflex" />
+            <option value="$PROJECT_DIR$/composestuffs" />
+            <option value="$PROJECT_DIR$/creatingeffecswithshaders" />
+            <option value="$PROJECT_DIR$/gramaticalinflectionapi" />
+            <option value="$PROJECT_DIR$/openactivity" />
+            <option value="$PROJECT_DIR$/propertyanimation" />
+            <option value="$PROJECT_DIR$/reflibs" />
+          </set>
+        </option>
+        <option name="resolveExternalAnnotations" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

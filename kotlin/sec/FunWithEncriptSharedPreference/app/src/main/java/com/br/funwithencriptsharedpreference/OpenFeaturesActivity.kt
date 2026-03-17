@@ -20,13 +20,19 @@ class OpenFeaturesActivity : AppCompatActivity() {
         with(bindView) {
             btnOpenEncryptedSharedPreferenceActivity.setOnClickListener {
                 startActivity(
-                    Intent(this@OpenFeaturesActivity, EncryptedSharedPreferenceIActivity::class.java)
+                    Intent(
+                        this@OpenFeaturesActivity,
+                        EncryptedSharedPreferenceIActivity::class.java
+                    )
                 )
             }
 
             btnOpenPersistDataSharedPreference.setOnClickListener {
                 startActivity(
-                    Intent(this@OpenFeaturesActivity, PersistsSharedPreferenceActivity::class.java)
+                    Intent(
+                        this@OpenFeaturesActivity,
+                        PersistsSharedPreferenceActivity::class.java
+                    )
                 )
             }
         }

@@ -103,8 +103,9 @@ fun StateTextField() {
 
         OutlinedTextField(
             value = name,
-            onValueChange = {},
-            label = { Text("label") }
+            onValueChange = { name = it },
+            label = { Text("label") },
+            singleLine = true
         )
     }
 }

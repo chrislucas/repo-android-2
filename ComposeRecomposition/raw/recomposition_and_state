@@ -1,0 +1,96 @@
+/*
+
+    Quando recomposition realmente acontece ?
+        - https://www.linkedin.com/posts/tetianasynytsyna_androiddevelopment-jetpackcompose-kotlin-activity-7432816778910683136-__uS/?utm_source=share&utm_medium=member_android&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
+
+    - De maneira simples, quando o parâmetro passado para uma função muda
+        - Exemplo uma data class, um atributo obervavel uma viewmodel
+        - Esse conceito é muito importante de ser entendido
+
+    - No link acima é declarado que o recomendado é o uso de uma unica UiState data class
+    para controle de estado de um componente UI, inclusive para implementar uma arquitetura
+    MVI.
+        - Entretanto precisamos saber como a recomposição realmente funciona.
+        - Compose não re-renderiza o componente porque o "estado mudou"
+        - Compose re-renderiza o componente quando o parâmetro da funcao composable muda
+
+    - Se passarmos uma UiState para muitas funcoes composables, mesmo uma pequena e nao relacionada
+    mudanca dentro deste objeto pode disparar o mecanismo de recomposicao em lugares que nao sao
+    necessarios
+
+    - Coisas para ter em mente
+        1 -> Passar somente o que for preciso para composable, nao o estado inteiro. Isso ajuda
+        Compose a pular recompositions. Ficar atento com Collections
+        2 -> Mutable ou Unstable list dentro de uma classe ou composable que gerencia estados pode
+        afetar a estabilidade do comportamento de recomposicao
+            - Considerar usar Immutable collections onde for apropriado
+        3 -> Usar a funcao DerivedStateOf quando necessario. Se estivermos computando valores a partir
+        de um outro estado, como flags de visibilidade ou scroll baseado em alguma condicao,
+        derivedStateOf pode ajudar a prevenir recomposicoes desnecessarias
+
+   - Conclusao
+     - O ponto forte de usar uma unica UiState ;e ter uma uma fonte de verdade, mas o desempenho
+     depende de como cada composable consome esse estado
+     - Passar somente a estrutura necessaria, estabilize colecoes, e derive valores ja computados
+     quando possivel
+     - Dessa forma, temos uma arquitetura preditivel sem recomposicoes desnecessarias
+
+
+    - Google AI sobre: "recomposition happens when composable parameter changes"
+        - Core Principle
+            - Funcoes compose sao projetadas para ser stateless e deterministicas. Elas
+            transformam um dado estado atual da app em uma UI
+        - Trigger Mechanism
+            - Quando um pedaco de uma estado observavel muda, Compose marca a funcao composable
+            que le aquele estado como invalida
+        - Re-execution:
+            - Compose re-execita (recomposes)  as funcoes invalidadas com os seus novos parametros.
+
+        - Conceitos chave
+            - State: Dado observavel (MutableState) que quando atualizado dispara o processo de recomposicao
+            - Stability:
+                - Para que o Compose nao aplique recomposicoes desnecessarias, todos os parametros
+                de uma composable necessital ser estáveis (stables = Immutable ou Observable)
+                - Se a estabilidade do parâmetro nao puder ser inferida, Compose defensivamente
+                aplica a recomposicao a função toda vez que sua função "pai" for recomposta
+
+
+    https://developer.android.com/develop/ui/compose/state
+
+    Compose Concepts
+        - https://androidbyexample.com/modules/compose-concepts/index.html
+        -
+    Composable Functions
+    https://androidbyexample.com/modules/compose-concepts/STEP_020_FULL.html
+
+    Pesquisar por
+    - recomposition happens when composable parameter changes
+    - collections and recompositions android
+        - Compose trata colecoes (List, Set, Map) com unstable, causando excessivas recomposicoes
+        - Para otimizar use immutable collections
+            - kotlinx.collections.immutable
+        - Use DerivedStateOf para filtros e mapping
+ */
+
+
+State preservation and persistent storage
+https://developer.android.com/develop/ui/compose/touch-input/stylus-input/ink-api-state-preservation
+
+🧠 Recomposition vs Invalidation: How Jetpack Compose Changes the Game
+https://medium.com/kotlin-android-chronicle/recomposition-vs-invalidation-how-jetpack-compose-changes-the-game-4f89fd7a222d
+
+Understanding retain{} internals: A Scope-based State Preservation in Jetpack Compose
+https://proandroiddev.com/understanding-retain-internals-a-new-way-to-preserve-state-in-jetpack-compose-54471a32fd05
+
+Scoped recomposition in Jetpack Compose — what happens when state changes?
+https://blog.zachklipp.com/scoped-recomposition-in-jetpack-compose-what-happens-when-state-changes/
+
+Why Your State Isn’t Updating the Way You Expect in Jetpack Compose
+https://medium.com/kotlin-android-chronicle/why-your-state-isnt-updating-the-way-you-expect-in-jetpack-compose-4b052c4a0fd9
+
+retain
+Retain API in Jetpack Compose: A Smarter Way to Manage State
+https://medium.com/@anandgaur2207/retain-api-in-jetpack-compose-a-smarter-way-to-manage-state-7135b5a8340f
+
+Previewing retain{} API: A New Way to Persist State in Jetpack Compose
+https://proandroiddev.com/exploring-retain-api-a-new-way-to-persist-state-in-jetpack-compose-bfb2fe2eae43

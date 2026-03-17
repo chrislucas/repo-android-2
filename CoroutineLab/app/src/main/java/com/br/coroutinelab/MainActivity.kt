@@ -49,3 +49,10 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+
+object DesignKotlinCoroutine {
+    /*
+        https://proandroiddev.com/design-of-kotlin-coroutines-879bd35e0f34
+     */
+}

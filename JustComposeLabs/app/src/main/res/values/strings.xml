@@ -171,6 +171,7 @@
     <string name="bills">Bills</string>
     <string name="sort">Sort</string>
     <string name="see_all">SEE ALL</string>
+    <string name="hello_world">Hello World</string>
     <!-- ends codelabs Como testar no Jetpack Compose -->
 
 </resources>
