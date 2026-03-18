@@ -12,11 +12,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -50,7 +51,7 @@ class NewsActivity : ComponentActivity() {
     }
 }
 
-open class NewsViewModelUiStatePattern : ViewModel() {
+class NewsViewModelUiStatePattern : ViewModel() {
 
     /*
         Aqui poderia e talvez faça mais sentido uma sealed class
@@ -62,7 +63,7 @@ open class NewsViewModelUiStatePattern : ViewModel() {
         data class Loading(override val news: List<News>) : NewsUIState
         data class ShowNews(override val news: List<News>) : NewsUIState
 
-        data object EmptyNews : NewsUIState {
+        data object Idle : NewsUIState {
             override val news: List<News>
                 get() = emptyList()
         }
@@ -70,9 +71,8 @@ open class NewsViewModelUiStatePattern : ViewModel() {
 
     private val currentNews: MutableList<News> = mutableListOf()
 
-    private val _uiState = MutableStateFlow<NewsUIState>(NewsUIState.EmptyNews)
+    private val _uiState = MutableStateFlow<NewsUIState>(NewsUIState.Idle)
     val uiState: StateFlow<NewsUIState> = _uiState.asStateFlow()
-
 
     init {
         viewModelScope.launch {
@@ -80,12 +80,10 @@ open class NewsViewModelUiStatePattern : ViewModel() {
         }
     }
 
-    private suspend fun fetchNews() {
+    suspend fun fetchNews() {
         while (true) {
             _uiState.update {
-                NewsUIState.Loading(
-                    currentNews.toList()
-                )
+                NewsUIState.Loading(currentNews.toList())
             }
 
             delay(DELAY_LOADING) // Simulate network delay
@@ -111,6 +109,7 @@ fun UiStatePatternNewsScreen(
     viewModel: NewsViewModelUiStatePattern = viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+
     Box(modifier = modifier) {
         when (val state = uiState) {
             is NewsViewModelUiStatePattern.NewsUIState.Loading -> {
@@ -118,40 +117,29 @@ fun UiStatePatternNewsScreen(
             }
 
             is NewsViewModelUiStatePattern.NewsUIState.ShowNews -> {
-                Toast.makeText(
-                    LocalContext.current,
-                    "News Updated: ${state.news.size} items",
-                    Toast.LENGTH_SHORT
-                ).show()
+                if (state.news.isNotEmpty()) {
+                    Toast.makeText(
+                        LocalContext.current,
+                        "News Updated: ${state.news.size} items",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
 
-            is NewsViewModelUiStatePattern.NewsUIState.EmptyNews -> {
-                Text(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(8.dp),
-                    text = "Empty State",
-                    style = TextStyle(
-                        fontSize = 23.sp,
-                        fontWeight = FontWeight.Bold
-                    ),
-
-                    textAlign = TextAlign.Center
-                )
+            is NewsViewModelUiStatePattern.NewsUIState.Idle -> {
+                EmptyStateComponent()
             }
         }
 
-        News(
-            modifier,
-            news = uiState.news
-        )
+        if (uiState.news.isNotEmpty()) {
+            News(modifier, news = uiState.news)
+        } else {
+            EmptyStateComponent()
+        }
     }
 }
 
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun UiStatePatternNewsScreenNewsPreview() {
     // Sample data to preview the content state
@@ -170,16 +158,11 @@ private fun UiStatePatternNewsScreenNewsPreview() {
     )
 }
 
-@Preview(
-    showBackground = true,
-    showSystemUi = true
-)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
-private fun UiStatePatternNewsScreenEmptyNewsPreview() {
+private fun UiStatePatternNewsScreenIdlePreview() {
     // Sample data to preview the content state
-    UiStatePatternNewsScreen(
-        modifier = Modifier.fillMaxSize()
-    )
+    UiStatePatternNewsScreen(modifier = Modifier.fillMaxSize())
 }
 
 
@@ -190,4 +173,25 @@ fun UiStatePatternNewsScreenLoadingPreview() {
     Column(modifier = Modifier.fillMaxSize()) {
         LoadingOverlayComponent()
     }
+}
+
+
+@Composable
+fun EmptyStateComponent(message: String = "Empty State") {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(8.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = message,
+            style = TextStyle(
+                fontSize = 23.sp,
+                fontWeight = FontWeight.Bold
+            ),
+            textAlign = TextAlign.Center
+        )
+    }
+
 }

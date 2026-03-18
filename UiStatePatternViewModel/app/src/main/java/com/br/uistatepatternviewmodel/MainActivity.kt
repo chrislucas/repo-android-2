@@ -153,38 +153,39 @@ fun News(
         .navigationBarsPadding()
         .padding(start = 8.dp, end = 8.dp)
     ) {
-        Text(
-            "News: ${news.size}",
-            style = MaterialTheme.typography.headlineMedium
-        )
-
-        LazyColumn {
-            items(news) { newsItem ->
-                key(newsItem.title) {
-                    Card(
-                        modifier = Modifier
-                            .fillMaxSize()
-                            .padding(top = 8.dp, bottom = 8.dp)
-                    ) {
-                        Column(modifier = Modifier.padding(16.dp)) {
-                            Text(
-                                text = newsItem.title,
-                                style = TextStyle(
-                                    fontSize = MaterialTheme.typography.headlineSmall.fontSize,
-                                    fontStyle = MaterialTheme.typography.headlineSmall.fontStyle,
-                                    fontWeight = MaterialTheme.typography.headlineSmall.fontWeight
-                                ),
-                                maxLines = 1
-                            )
-                            Text(
-                                text = newsItem.description,
-                                style = TextStyle(
-                                    fontSize = MaterialTheme.typography.bodyMedium.fontSize,
-                                    fontStyle = MaterialTheme.typography.bodyMedium.fontStyle,
-                                    fontWeight = MaterialTheme.typography.bodyMedium.fontWeight
-                                ),
-                                maxLines = 10
-                            )
+        if (news.isNotEmpty()) {
+            Text(
+                "News: ${news.size}",
+                style = MaterialTheme.typography.headlineMedium
+            )
+            LazyColumn {
+                items(news) { newsItem ->
+                    key(newsItem.title) {
+                        Card(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(top = 8.dp, bottom = 8.dp)
+                        ) {
+                            Column(modifier = Modifier.padding(16.dp)) {
+                                Text(
+                                    text = newsItem.title,
+                                    style = TextStyle(
+                                        fontSize = MaterialTheme.typography.headlineSmall.fontSize,
+                                        fontStyle = MaterialTheme.typography.headlineSmall.fontStyle,
+                                        fontWeight = MaterialTheme.typography.headlineSmall.fontWeight
+                                    ),
+                                    maxLines = 1
+                                )
+                                Text(
+                                    text = newsItem.description,
+                                    style = TextStyle(
+                                        fontSize = MaterialTheme.typography.bodyMedium.fontSize,
+                                        fontStyle = MaterialTheme.typography.bodyMedium.fontStyle,
+                                        fontWeight = MaterialTheme.typography.bodyMedium.fontWeight
+                                    ),
+                                    maxLines = 10
+                                )
+                            }
                         }
                     }
                 }
