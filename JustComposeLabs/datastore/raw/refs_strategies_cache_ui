@@ -1,0 +1,44 @@
+strategies to keep data on change screen android, using local cache.
+
+    Strategy	                     Use Case	                                                            Mecanism	                               Persistence
+
+    ViewModel                        "UI-Related State(User input, ephemera data)                           Retains data in memory across              Stored in memory, lost on process death
+                                                                                                            configuration changes
+                                     during active use and configuration changes."
+
+    SavedStateHandle                 "Transient UI state that depends on user input or navigation           Key-value storage that uses the            Persists across process death
+                                                                                                            saved instance state mechanism
+
+                                     persisting across system-initiated process death"
+
+
+    Local Persistence                Complex, large data, or data needed for offline access                 Database (Room) or asynchronous             Stored on disk, persists indefinitely
+                                                                                                            key-values store (DataStore)
+
+    (Room, DataStore)
+
+implementation Details
+    - ViewModel: ViewModel é automaticamente retida em mudancas de configuracoes (rotacao de tela,
+    mudança de tamanho de fonte) e prove a fonte de dados para UI
+        - A UI observa um Livedata, um Flow ou uma estrutura observavel similar
+        - Beneficios
+            - Acesso mais rápido (memory cache) com minimo de boilerplate para configurar
+
+    - SavedStateHandle
+        - Se a ViewModel necessita armazenar dados depois que o sistema mata o processo do app,
+        use o SavedStateHandle.
+            - Ele permite guardar e recuperar uma quantidade pequena de dados usada na UI para
+            representar o seu estado usando uma estrutura de chave-valor
+
+    - Repository Patter with Local Persistence
+        - Para dados que precisam estar disponiveis mesmo se o app for fechado e reiniciado, uma
+        estrategia de cache robusta usando repository pattern é um caminho recomendado.
+
+            - O repository age como um single source of truth,
+            decidindo se busca dados locais ou remotos
+
+            - Common Strategy (Cache First - network second). O repositorio recupera e mostra dados
+            do cache local, entao faz uma requisição em background, com o resultado atualiza o
+            cache local e se tiver um observador ele receberá essa atualizacao
+                - Resumindo, buscar um dado local, devolver a informação local e realizar uma requisição HTTP
+                para atualizar a base de cache local.˜

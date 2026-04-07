@@ -76,8 +76,10 @@ Pesquisa
 viewlifecycleowner lifecyclescope launch vs lifecyclescope launch
 
 
+Why Doesn’t Compose Have Lifecycle Callbacks Like Fragments?
+https://medium.com/kotlin-android-chronicle/why-doesnt-compose-have-lifecycle-callbacks-like-fragments-eaf1383bf01f
 
 
 
-
-
+Collecting Flows in ViewModel. Is repeatOnLifeCycle needed?
+https://stackoverflow.com/questions/69982729/collecting-flows-in-viewmodel-is-repeatonlifecycle-needed#

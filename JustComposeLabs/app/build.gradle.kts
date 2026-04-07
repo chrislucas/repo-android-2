@@ -88,6 +88,9 @@ dependencies {
     // https://developer.android.com/develop/ui/views/theming/look-and-feel
     implementation("com.google.android.material:material:1.13.0")
 
+    // https://developer.android.com/develop/ui/views/components/settings
+    implementation("androidx.preference:preference-ktx:1.2.1")
+
     // end views
     implementation(libs.androidx.compose.ui.ui.test.junit4)
     implementation(libs.androidx.appcompat)

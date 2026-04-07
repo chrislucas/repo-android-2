@@ -1,0 +1,26 @@
+AIDL overview
+https://source.android.com/docs/core/architecture/aidl
+
+What's Android Interface Definition Language (AIDL) in Android?
+https://www.geeksforgeeks.org/android/whats-android-interface-definition-language-aidl-in-android/
+
+
+Android Interface Definition Language (AIDL)
+https://developer.android.com/develop/background-work/services/aidl
+
+
+https://developer.android.com/reference/android/os/IInterface
+https://developer.android.com/develop/background-work/services/aidl
+
+Android AIDL
+https://medium.com/@paulo_linhares/android-deeplink-aidl-441774a09345
+
+AIDL (Android Interface Definition Language): How Binder IPC Works Inside AOSP
+https://medium.com/@anuragsingh7238/aidl-android-interface-definition-language-how-binder-ipc-works-inside-aosp-19465655bd00
+
+
+A Practical Guide to Android Interface Definition Language (AIDL) with a Real-Time Example
+https://proandroiddev.com/a-practical-guide-to-android-interface-definition-language-aidl-with-a-real-time-example-517909777921
+
+
+https://gitlab.com/kalilinux/nethunter/apps/kali-nethunter-store-privileged-extension/-/blob/nethunter/app/src/main/java/android/content/pm/IPackageDeleteObserver.java?ref_type=heads

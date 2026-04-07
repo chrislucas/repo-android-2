@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".tutorial.google.view.preferences.FontScaleConfigurationActivity">
+
+    <TextView
+        android:id="@+id/text_view_sample_font_scale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/font_scale_text_sample"
+        android:textAlignment="center"
+        />
+
+    <!--
+        https://developer.android.com/reference/com/google/android/material/slider/RangeSlider
+    -->
+
+    <com.google.android.material.slider.RangeSlider
+        android:id="@+id/range_slider_font_scale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_sample_font_scale"
+        android:padding="8dp"
+        android:valueFrom="1.0"
+        android:valueTo="2.0"
+        android:stepSize="0.1"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

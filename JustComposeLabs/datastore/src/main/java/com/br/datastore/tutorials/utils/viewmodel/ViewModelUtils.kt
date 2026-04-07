@@ -82,3 +82,8 @@ abstract class BaseViewModelHandlerException(
     }
 
 }
+
+/*
+    Saved State module for ViewModel
+    https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-savedstate
+ */

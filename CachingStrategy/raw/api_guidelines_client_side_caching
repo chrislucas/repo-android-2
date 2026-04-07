@@ -1,0 +1,5 @@
+Android API client-side caching guidelines
+https://source.android.com/docs/setup/contribute/api-guidelines/caching
+
+
+IpcDataCache

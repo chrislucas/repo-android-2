@@ -6,6 +6,10 @@ import androidx.work.Worker
 import androidx.work.WorkerParameters
 
 /*
+    Task scheduling
+    https://developer.android.com/develop/background-work/background-tasks/persistent
+
+   Getting started with WorkManager
     https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started
  */
 

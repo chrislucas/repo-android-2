@@ -15,7 +15,6 @@ import com.br.coroutinelab.ui.theme.CoroutineLabTheme
 
 /*
     https://developer.android.com/kotlin/coroutines/coroutines-adv
-    https://medium.com/@sivavishnu0705/kotlin-coroutines-performance-optimization-building-a-custom-dispatcher-for-low-latency-android-a1c242f6ce3c
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

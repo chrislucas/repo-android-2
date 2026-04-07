@@ -171,5 +171,9 @@
     <string name="bills">Bills</string>
     <string name="sort">Sort</string>
     <string name="see_all">SEE ALL</string>
+    <string name="hello_world">Hello World</string>
+    <string name="font_scale_text_sample">Texto de exemplo para mudança de escala em tempo de execução</string>
+    <string name="increase_font_scale">Aumentar Escala de Fonte</string>
+    <string name="decrease_font_scale">Diminuir escala de fonte</string>
     <!-- ends codelabs Como testar no Jetpack Compose -->
 </resources>

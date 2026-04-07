@@ -51,6 +51,25 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
+    val workVersion = "2.11.1"
+
+    // (Java only)
+    implementation("androidx.work:work-runtime:$workVersion")
+
+    // Kotlin + coroutines
+    implementation("androidx.work:work-runtime-ktx:$workVersion")
+
+    // optional - RxJava2 support
+    implementation("androidx.work:work-rxjava2:$workVersion")
+
+    // optional - GCMNetworkManager support
+    implementation("androidx.work:work-gcm:$workVersion")
+
+    // optional - Test helpers
+    androidTestImplementation("androidx.work:work-testing:$workVersion")
+
+    // optional - Multiprocess support
+    implementation("androidx.work:work-multiprocess:$workVersion")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.10.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2")

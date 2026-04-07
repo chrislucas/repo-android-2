@@ -23,6 +23,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JustComposeLabsCanvas">
         <activity
+            android:name=".tutorial.google.view.preferences.FontScaleConfigurationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="view_font_scale_configuration"
+                    android:scheme="dpl" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.view.ChangeOrientationActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="view_request_orientation_change_activity"
+                    android:scheme="dpl" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.view.materialdesign.components.rangeslider.TypesOfRangeSliderActivity"
+            android:exported="false" />
+        <!--             android:configChanges="fontScale|orientation|screenSize|keyboardHidden" -->
+        <activity
+            android:name=".tutorial.google.view.preferences.HandlerConfigurationChangesActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="view_handler_configuration_changes_activity"
+                    android:scheme="dpl" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".tutorial.google.view.preferences.PreferencesActivity"
+            android:exported="false" />
+        <activity
             android:name=".tutorial.google.compose.uitesting.rallyproject.RallyActivity"
             android:exported="false"
             android:label="@string/title_activity_rally"

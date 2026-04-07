@@ -18,6 +18,7 @@ import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableLongStateOf
 import androidx.compose.runtime.remember
@@ -39,8 +40,8 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 /*
-
-    Side-effects in Compose
+    Side-effects in Compose:
+    https://developer.android.com/develop/ui/compose/side-effects
 
     - Side Effect em compose é a mudacan de estado do app que ocorre ou inicia fora do escopo de uma composable
     function.
@@ -64,6 +65,14 @@ import kotlinx.coroutines.launch
 
     Effect APIs: Executar side effects de uma maneira preditivel
         - LaunchedEffect
+        - rememberCoroutineScope
+        - DisposableEffect
+        - SideEffect
+        - rememberUpdatedState
+        - produceState
+        - derivedStateOf
+        - snapshotFlow
+
 
 
     LaunchedEffect: run suspend functions in the scope of a composable
@@ -130,6 +139,53 @@ fun PulseTextComponent() {
     }
 }
 
+@Preview(showSystemUi = true, showBackground = true)
+@Composable
+fun PulseTextSideEffectComponent() {
+    var pulseRateMs by remember { mutableLongStateOf(1000L) }
+    val alpha = remember { Animatable(1f) }
+    LaunchedEffect(pulseRateMs) { // Restart the effect when the pulse rate changes
+        while (true) {
+            delay(pulseRateMs) // Pulse the alpha every pulseRateMs to alert the user
+            alpha.animateTo(0f)
+            alpha.animateTo(1f)
+        }
+    }
+
+    SideEffect {
+        // Update the pulse rate every 5 seconds to demonstrate restarting the effect}
+        pulseRateMs = if (pulseRateMs == 1000L) {
+            500L
+        } else {
+            1000L
+        }
+    }
+
+    Box(
+        modifier = Modifier
+            .statusBarsPadding()
+            .fillMaxWidth()
+            .height(IntrinsicSize.Min)
+            .border(
+                BorderStroke(2.dp, Color.Red)
+            )
+            .graphicsLayer {
+                this.alpha = alpha.value
+            },
+        contentAlignment = Alignment.Center,
+    ) {
+        Text(
+            "Pulse",
+            textAlign = TextAlign.Center,
+            style = TextStyle(
+                color = Color.Red,
+                fontSize = 60.sp,
+                fontFamily = FontFamily.Cursive
+            )
+        )
+    }
+}
+
 /*
     rememberCoroutineScope: obtain a composition-aware scope to launch a coroutine outside a composable
     - LaunchedEffect é uma
@@ -140,7 +196,6 @@ fun PulseTextComponent() {
 fun SnackbarComponent(snackbarHostState: SnackbarHostState = remember { SnackbarHostState() }) {
     // CoroutineScope vinculada ao lifecycle da composable
     val scope = rememberCoroutineScope()
-
     Scaffold(
         modifier = Modifier
             .fillMaxSize()
