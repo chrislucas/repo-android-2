@@ -31,7 +31,7 @@ import java.text.DecimalFormat
  * A row representing the basic information of an Account.
  */
 @Composable
-fun AccountRow(name: String, number: Int, amount: Float, color: Color) {
+internal fun AccountRow(name: String, number: Int, amount: Float, color: Color) {
     val subtitle = "${stringResource(R.string.account_redacted)}${AccountDecimalFormat.format(number)}"
     BaseRow(
         color = color,

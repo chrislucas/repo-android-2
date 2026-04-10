@@ -76,14 +76,36 @@
             android:exported="false" />
         <activity
             android:name=".tutorial.google.compose.uitesting.rallyproject.RallyActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_rally"
-            android:theme="@style/Theme.JustComposeLabsCanvas" />
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="rallyproject_codelabs"
+                    android:scheme="dpl" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".tutorial.google.codelabs.jetpackcomposetesting.ending.RallyActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/title_activity_rally"
-            android:theme="@style/Theme.JustComposeLabsCanvas" />
+            android:theme="@style/Theme.JustComposeLabsCanvas">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="rally_codelabs"
+                    android:scheme="dpl" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".tutorial.customview.loadoverlaycustomview.ui.WrapperLoadViewActivity"
             android:exported="true"

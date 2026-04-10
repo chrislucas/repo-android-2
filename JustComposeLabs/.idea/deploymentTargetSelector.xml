@@ -5,23 +5,23 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="FilterListNeverEqualPolicy">
+      <SelectionState runConfigName="test()">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="FilterList">
+      <SelectionState runConfigName="CardElevationAnimatedSampleTest">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ScrollToTopExample">
+      <SelectionState runConfigName="GivenCardElevationAnimated_WhenClickTwice_ThenReturnElevatedStateOrigin()">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ScrollToSpecificPositionExample">
+      <SelectionState runConfigName="GivenCardElevationAnimated_WhenClickOnce_ThenReturnElevatedStateTrue()">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="HorizontalCenteredScroll">
+      <SelectionState runConfigName="GivenCardElevationAnimated_WhenClickOnce_ThenReturnElevatedStateAsTrue()">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

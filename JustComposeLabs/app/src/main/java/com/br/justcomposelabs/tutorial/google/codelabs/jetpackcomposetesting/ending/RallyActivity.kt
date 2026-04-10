@@ -20,6 +20,8 @@ import com.br.justcomposelabs.tutorial.google.codelabs.jetpackcomposetesting.end
     Test your Compose layout
     https://developer.android.com/develop/ui/compose/testing
 
+    Testing cheatsheet
+    https://developer.android.com/static/develop/ui/compose/images/compose-testing-cheatsheet.png
 
 
  */

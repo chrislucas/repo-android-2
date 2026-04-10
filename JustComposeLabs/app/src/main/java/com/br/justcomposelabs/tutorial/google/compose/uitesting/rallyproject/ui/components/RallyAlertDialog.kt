@@ -47,13 +47,13 @@ fun RallyAlertDialog(rallyAlertDialogContext: RallyAlertDialogContext) {
             onDismissRequest = rallyAlertDialogContext.onTapOutside,
             text = { Text(rallyAlertDialogContext.bodyText) },
             confirmButton = {
-                ConfirmButtonDialog(
+                ConfirmDialogButton(
                     buttonConfirmContext.onConfirm,
                     buttonConfirmContext.confirmButtonText
                 )
             },
             dismissButton = {
-                DismissButtonDialog(
+                DismissDialogButton(
                     buttonDismissContext.onDismiss,
                     buttonDismissContext.dismissButtonText
                 )
@@ -63,7 +63,7 @@ fun RallyAlertDialog(rallyAlertDialogContext: RallyAlertDialogContext) {
 }
 
 @Composable
-fun DismissButtonDialog(
+fun DismissDialogButton(
     onDismiss: () -> Unit,
     buttonText: String
 ) {
@@ -84,7 +84,7 @@ fun DismissButtonDialog(
 }
 
 @Composable
-fun ConfirmButtonDialog(
+fun ConfirmDialogButton(
     onConfirm: () -> Unit,
     buttonText: String
 ) {
@@ -106,22 +106,46 @@ fun ConfirmButtonDialog(
 
 // ===== PREVIEW FUNCTIONS =====
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun RallyAlertDialogPreview() {
     val showDialog = remember { mutableStateOf(true) }
     if (showDialog.value) {
-        val rallyAlertDialogContext = RallyAlertDialogContext(
-            buttonConfirmContext = ButtonConfirmContext(
-                onConfirm = { showDialog.value = false },
-                confirmButtonText = "Confirm"
-            ),
-            buttonDismissContext = ButtonDismissContext(
-                onDismiss = { showDialog.value = false },
-                dismissButtonText = "Dismiss"
-            ),
-            bodyText = "Are you sure you want to proceed with this action? This operation cannot be undone."
-        ) {}
-        RallyAlertDialog(rallyAlertDialogContext)
+        RallyAlertDialog(
+            RallyAlertDialogContext(
+                buttonConfirmContext = ButtonConfirmContext(
+                    onConfirm = { showDialog.value = false },
+                    confirmButtonText = "Confirm"
+                ),
+                buttonDismissContext = ButtonDismissContext(
+                    onDismiss = { showDialog.value = false },
+                    dismissButtonText = "Dismiss"
+                ),
+                bodyText = "Are you sure you want to proceed with this action? This operation cannot be undone.",
+                onTapOutside = { showDialog.value = false }
+            )
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ConfirmDialogButtonPreview() {
+    RallyDialogThemeOverlay {
+        ConfirmDialogButton(
+            onConfirm = {},
+            buttonText = "Confirm"
+        )
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DismissDialogButtonPreview() {
+    RallyDialogThemeOverlay {
+        DismissDialogButton(
+            onDismiss = {},
+            buttonText = "Dismiss"
+        )
     }
 }

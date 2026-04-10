@@ -8,12 +8,13 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.br.justcomposelabs.R
+import com.br.justcomposelabs.tutorial.google.codelabs.jetpackcomposetesting.ending.data.UserData
 import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.RallyScreen
+import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.components.AccountRow
 
-private val RallyDefaultPadding = 12.dp
-
-private const val SHOWN_ITEMS = 3
 
 @Composable
 fun OverviewBody(onScreenChange: (RallyScreen) -> Unit = {}) {
@@ -30,13 +31,29 @@ fun OverviewBody(onScreenChange: (RallyScreen) -> Unit = {}) {
     }
 }
 
+
+/**
+ * The Accounts card within the Rally Overview screen.
+ */
 @Composable
-private fun AlertCard() {}
+internal fun AccountsCard(onScreenChange: (RallyScreen) -> Unit) {
+    val amount = UserData.accounts.map { account -> account.balance }.sum()
+    OverviewScreenCard(
+        title = stringResource(R.string.accounts),
+        amount = amount,
+        onClickSeeAll = {
+            onScreenChange(RallyScreen.Accounts)
+        },
+        data = UserData.accounts,
+        colors = { it.color },
+        values = { it.balance }
+    ) { account ->
+        AccountRow(
+            name = account.name,
+            number = account.number,
+            amount = account.balance,
+            color = account.color
+        )
+    }
+}
 
-
-@Composable
-private fun AccountsCard(onScreenChange: (RallyScreen) -> Unit) {}
-
-
-@Composable
-private fun BillsCard(onScreenChange: (RallyScreen) -> Unit) {}
