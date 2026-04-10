@@ -21,7 +21,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".CustomApplication"
         android:theme="@style/Theme.JustComposeLabsCanvas">
+        <activity
+            android:name=".tutorial.google.view.materialdesign.studies.owl.OwlActivity"
+            android:exported="false" />
         <activity
             android:name=".tutorial.google.view.preferences.FontScaleConfigurationActivity"
             android:exported="true">
@@ -52,8 +56,7 @@
         </activity>
         <activity
             android:name=".tutorial.google.view.materialdesign.components.rangeslider.TypesOfRangeSliderActivity"
-            android:exported="false" />
-        <!--             android:configChanges="fontScale|orientation|screenSize|keyboardHidden" -->
+            android:exported="false" /> <!-- android:configChanges="fontScale|orientation|screenSize|keyboardHidden" -->
         <activity
             android:name=".tutorial.google.view.preferences.HandlerConfigurationChangesActivity"
             android:exported="true">

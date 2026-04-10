@@ -5,23 +5,23 @@
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="HandlerConfigurationChangesActivity">
+      <SelectionState runConfigName="FilterListNeverEqualPolicy">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="HandlerConfigurationChangesActivity (1)">
+      <SelectionState runConfigName="FilterList">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="HandlerConfigurationChangesActivity (2)">
+      <SelectionState runConfigName="ScrollToTopExample">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ChangeOrientationActivity (1)">
+      <SelectionState runConfigName="ScrollToSpecificPositionExample">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="FontScaleConfigurationActivity">
+      <SelectionState runConfigName="HorizontalCenteredScroll">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

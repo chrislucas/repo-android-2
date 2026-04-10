@@ -1,3 +1,5 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -12,6 +14,8 @@ plugins {
     // Add the Crashlytics Gradle plugin
     id("com.google.firebase.crashlytics")
     id("kotlin-parcelize")
+    id("io.gitlab.arturbosch.detekt")
+    id("org.jlleitschuh.gradle.ktlint")
 }
 
 android {
@@ -45,6 +49,12 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+
+        debug {
+            // For AGP 8.0 and later:
+            enableAndroidTestCoverage = true
+            enableUnitTestCoverage = true
         }
     }
 
@@ -90,6 +100,8 @@ dependencies {
 
     // https://developer.android.com/develop/ui/views/components/settings
     implementation("androidx.preference:preference-ktx:1.2.1")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0")
 
     // end views
     implementation(libs.androidx.compose.ui.ui.test.junit4)
@@ -355,8 +367,36 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation(kotlin("test"))
+
+
+    // https://github.com/mrmans0n/compose-rules
+    // https://mrmans0n.github.io/compose-rules/ktlint/
+    detektPlugins("io.nlopez.compose.rules:detekt:0.5.3") // Use the latest version
+    detektPlugins("dev.detekt:detekt-rules-ktlint-wrapper:2.0.0-alpha.1")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
 }
 
 kotlin {
     jvmToolchain(17)
+}
+
+/*
+    https://detekt.dev/docs/intro
+    https://github.com/detekt/detekt
+ */
+detekt {
+    toolVersion = "1.23.8"
+    autoCorrect = true
+    parallel = true
+    config.setFrom(file("${rootProject.layout.projectDirectory}/config/detekt/detekt.yml"))
+    buildUponDefaultConfig = true
+}
+
+// Kotlin DSL
+tasks.withType<Detekt>().configureEach {
+    reports {
+        html.required.set(true)
+        sarif.required.set(true)
+        md.required.set(true)
+    }
 }

@@ -16,6 +16,12 @@ import com.br.justcomposelabs.tutorial.google.codelabs.jetpackcomposetesting.end
 /*
     https://developer.android.com/codelabs/jetpack-compose-testing#0
     https://github.com/android/codelab-android-compose/blob/end/TestingCodelab/app/src/main/java/com/example/compose/rally/RallyActivity.kt
+
+    Test your Compose layout
+    https://developer.android.com/develop/ui/compose/testing
+
+
+
  */
 class RallyActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
