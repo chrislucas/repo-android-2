@@ -2,7 +2,16 @@ import io.gitlab.arturbosch.detekt.Detekt
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    /*
+        # Compatibility with AGP 9.0+
+        If you have upgraded to Android Gradle Plugin 9.0 or higher,
+        the org.jetbrains.kotlin.android plugin is no longer required
+        as Kotlin support is built-in.
+
+        Migrate to built-in Kotlin
+        https://developer.android.com/build/migrate-to-built-in-kotlin
+     */
+    //alias(libs.plugins.jetbrains.kotlin.android)
     /*
         Compose Compiler Gradle plugin
         https://developer.android.com/develop/ui/compose/compiler
@@ -20,7 +29,7 @@ plugins {
 
 android {
     namespace = "com.br.justcomposelabs"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.br.justcomposelabs"
@@ -113,7 +122,10 @@ dependencies {
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
     implementation(platform(libs.androidx.compose.bom))
+    implementation("androidx.paging:paging-compose:3.4.2")
+
     implementation(libs.androidx.compose.foundation.layout)
     implementation(libs.ads.mobile.sdk)
     androidTestImplementation(platform(libs.androidx.compose.bom))
@@ -139,23 +151,8 @@ dependencies {
     implementation("androidx.palette:palette:1.0.0")
 
 
-    /*
-        // Compose Material 3
-
-        https://developer.android.com/jetpack/androidx/releases/compose-material3
-
-        Material Design 3 in Compose
-
-         https://developer.android.com/develop/ui/compose/designsystems/material3
-     */
-
-    implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.compose.material3:material3-adaptive-navigation-suite")
-
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
-    implementation("androidx.compose.material3.adaptive:adaptive")
-    implementation("androidx.compose.material3.adaptive:adaptive-layout")
-    implementation("androidx.compose.material3.adaptive:adaptive-navigation")
+    implementation(libs.androidx.adaptive)
 
 
     // camera x
@@ -352,9 +349,9 @@ dependencies {
     testImplementation("androidx.test:core:1.7.0")
     testImplementation("androidx.test:core-ktx:1.7.0")
     // Optional -- Mockito framework
-    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-core:5.23.0")
     // Optional -- mockito-kotlin
-    testImplementation("org.mockito.kotlin:mockito-kotlin:6.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:6.3.0")
     testImplementation(libs.mockk)
 
     testImplementation(libs.junit)
@@ -371,9 +368,9 @@ dependencies {
 
     // https://github.com/mrmans0n/compose-rules
     // https://mrmans0n.github.io/compose-rules/ktlint/
-    detektPlugins("io.nlopez.compose.rules:detekt:0.5.3") // Use the latest version
-    detektPlugins("dev.detekt:detekt-rules-ktlint-wrapper:2.0.0-alpha.1")
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")
+    detektPlugins("io.nlopez.compose.rules:detekt:0.5.7") // Use the latest version
+    detektPlugins("dev.detekt:detekt-rules-ktlint-wrapper:2.0.0-alpha.2")
+    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.8")
 }
 
 kotlin {

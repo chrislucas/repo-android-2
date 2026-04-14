@@ -14,7 +14,7 @@ plugins {
     id("com.github.ben-manes.versions") version "0.53.0"
     id("nl.littlerobots.version-catalog-update") version "1.1.0"
     // Add the dependency for the Crashlytics Gradle plugin
-    id("com.google.firebase.crashlytics") version "3.0.6" apply false
+    id("com.google.firebase.crashlytics") version "3.0.7" apply false
     id("com.google.dagger.hilt.android") version "2.59.2" apply false
 
     id("io.gitlab.arturbosch.detekt") version("1.23.6")
@@ -39,6 +39,7 @@ buildscript {
     dependencies {
         classpath(libs.kotlin.gradle.plugin)
         classpath(libs.secrets.gradle.plugin)
+        classpath("com.google.devtools.ksp:symbol-processing-gradle-plugin:2.3.6")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle.kts files

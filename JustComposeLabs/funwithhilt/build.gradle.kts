@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     /*
         Compose Compiler Gradle plugin
         https://developer.android.com/develop/ui/compose/compiler
@@ -16,7 +16,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithhilt"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -140,18 +140,18 @@ dependencies {
     annotationProcessor(libs.androidx.room.ktx)
 
     // hilt
-    implementation("com.google.dagger:hilt-android:2.57.2")
-    ksp("com.google.dagger:hilt-android-compiler:2.57.2")
+    implementation("com.google.dagger:hilt-android:2.59.2")
+    ksp("com.google.dagger:hilt-android-compiler:2.59.2")
     // https://developer.android.com/training/dependency-injection/hilt-testing#kts
     // For Robolectric tests.
-    testImplementation("com.google.dagger:hilt-android-testing:2.57.2")
+    testImplementation("com.google.dagger:hilt-android-testing:2.59.2")
     // ...with Kotlin.
-    kspTest("com.google.dagger:hilt-android-compiler:2.57.2")
+    kspTest("com.google.dagger:hilt-android-compiler:2.59.2")
 
     // For instrumented tests.
-    androidTestImplementation("com.google.dagger:hilt-android-testing:2.57.2")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.59.2")
     // ...with Kotlin.
-    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.57.2")
+    kspAndroidTest("com.google.dagger:hilt-android-compiler:2.59.2")
 
     // To use Kotlin Symbol Processing (KSP)
     ksp(libs.androidx.room.compiler)
@@ -214,9 +214,9 @@ dependencies {
     testImplementation("androidx.test:core:1.7.0")
     testImplementation("androidx.test:core-ktx:1.7.0")
     // Optional -- Mockito framework
-    testImplementation("org.mockito:mockito-core:5.11.0")
+    testImplementation("org.mockito:mockito-core:5.23.0")
     // Optional -- mockito-kotlin
-    testImplementation("org.mockito.kotlin:mockito-kotlin:6.0.0")
+    testImplementation("org.mockito.kotlin:mockito-kotlin:6.3.0")
     testImplementation(libs.mockk)
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)

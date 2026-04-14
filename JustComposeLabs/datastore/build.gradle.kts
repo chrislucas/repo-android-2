@@ -1,16 +1,15 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.br.datastore"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -58,11 +57,11 @@ dependencies {
 
     // Preferences DataStore
 
-    implementation("androidx.datastore:datastore-preferences:1.1.7")
+    implementation("androidx.datastore:datastore-preferences:1.2.1")
 
-    implementation("androidx.datastore:datastore-preferences-core:1.1.7")
+    implementation("androidx.datastore:datastore-preferences-core:1.2.1")
 
-    implementation("androidx.datastore:datastore-core:1.1.7")
+    implementation("androidx.datastore:datastore-core:1.2.1")
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.lifecycle.runtime.ktx)

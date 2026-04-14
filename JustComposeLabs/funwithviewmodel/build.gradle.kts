@@ -1,12 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.br.funwithviewmodel"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -53,35 +53,35 @@ dependencies {
 
     // Choose one of the following:
     // Material Design 3
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.material3)
     // or skip Material Design and build directly on top of foundational components
-    implementation("androidx.compose.foundation:foundation")
+    implementation(libs.androidx.foundation)
     // or only import the main APIs for the underlying toolkit systems,
     // such as input and measurement/layout
-    implementation("androidx.compose.ui:ui")
+    implementation(libs.ui)
 
     // Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation(libs.ui.tooling)
+    implementation(libs.ui.tooling.preview)
 
     // UI Tests
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest)
 
     // Optional - Add window size utils
-    implementation("androidx.compose.material3.adaptive:adaptive")
+    implementation(libs.androidx.adaptive)
 
     // Optional - Integration with activities
-    implementation("androidx.activity:activity-compose:1.12.2")
+    implementation(libs.androidx.activity.compose)
     // Optional - Integration with ViewModels
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Optional - Integration with LiveData
-    implementation("androidx.compose.runtime:runtime-livedata")
+    implementation(libs.androidx.runtime.livedata)
     // Optional - Integration with RxJava
-    implementation("androidx.compose.runtime:runtime-rxjava2")
+    implementation(libs.androidx.runtime.rxjava2)
     // Quick start - ending
 
-    implementation("io.coil-kt.coil3:coil-compose:3.3.0")
+    implementation("io.coil-kt.coil3:coil-compose:3.4.0")
 
 
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")

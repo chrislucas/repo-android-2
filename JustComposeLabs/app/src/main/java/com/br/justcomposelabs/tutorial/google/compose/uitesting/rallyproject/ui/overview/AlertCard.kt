@@ -8,8 +8,9 @@ import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -113,10 +114,26 @@ fun AlertCardPreview() {
     JustComposeLabsTheme {
         Box(
             modifier = Modifier
-                .navigationBarsPadding()
                 .systemBarsPadding()
+                .statusBarsPadding()
+                .fillMaxSize()
         ) {
             OverviewBody()
+        }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun AlertCardOnlyPreview() {
+    JustComposeLabsTheme {
+        Box(
+            modifier = Modifier
+                .systemBarsPadding()
+                .statusBarsPadding()
+                .fillMaxSize()
+        ) {
+            AlertCard()
         }
     }
 }

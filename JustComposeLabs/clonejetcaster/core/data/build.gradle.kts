@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 /*
@@ -16,7 +16,7 @@ plugins {
 
 android {
     namespace = "com.br.clonejetcaster.core.data"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24

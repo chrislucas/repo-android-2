@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.br.funwithglance"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24

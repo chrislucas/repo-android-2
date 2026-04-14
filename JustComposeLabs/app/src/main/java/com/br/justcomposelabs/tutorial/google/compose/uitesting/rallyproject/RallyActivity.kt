@@ -1,5 +1,6 @@
 package com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject
 
+import ads_mobile_sdk.cu
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -15,6 +16,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.components.RallyTopAppBar
 import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.theme.JustComposeLabsTheme
 
 /*
@@ -44,9 +46,19 @@ fun RallyApp(modifier: Modifier = Modifier) {
         https://developer.android.com/develop/ui/compose/state-saving?hl=pt-br#ui-logic
      */
     var currentScreen by rememberSaveable { mutableStateOf(RallyScreen.Overview) }
-    Scaffold(topBar = {}) { innerPadding ->
+    val onChangeScreen: (RallyScreen) -> Unit = { screen -> currentScreen = screen }
+    Scaffold(
+        topBar = {
+            RallyTopAppBar(
+                allScreens = RallyScreen.entries,
+                onChangeScreen = onChangeScreen,
+                currentScreen = currentScreen
+            )
+        },
+        modifier = modifier
+    ) { innerPadding ->
         Box(Modifier.padding(innerPadding)) {
-            currentScreen.Content(onScreenChange = { screen -> currentScreen = screen })
+            currentScreen.Content(onScreenChange = onChangeScreen)
         }
     }
 }

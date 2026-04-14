@@ -16,7 +16,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import kotlin.test.BeforeTest
 import kotlin.test.assertEquals
 
 /*

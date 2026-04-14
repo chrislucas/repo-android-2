@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
 
 
@@ -17,7 +17,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithgmaps"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -61,14 +61,14 @@ dependencies {
         https://github.com/googlemaps/android-maps-compose
      */
 
-    implementation("com.google.maps.android:maps-compose:6.12.1")
+    implementation("com.google.maps.android:maps-compose:8.3.0")
     // Optionally, you can include the Compose utils library for Clustering,
     // Street View metadata checks, etc.
-    implementation("com.google.maps.android:maps-compose-utils:6.12.1")
+    implementation("com.google.maps.android:maps-compose-utils:8.3.0")
     // Optionally, you can include the widgets library for ScaleBar, etc.
-    implementation("com.google.maps.android:maps-compose-widgets:6.12.1")
+    implementation("com.google.maps.android:maps-compose-widgets:8.3.0")
 
-    implementation("com.google.android.gms:play-services-maps:19.0.0")
+    implementation("com.google.android.gms:play-services-maps:20.0.0")
 
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)

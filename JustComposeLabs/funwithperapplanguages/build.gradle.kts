@@ -1,11 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
     namespace = "com.br.funwithperapplanguages"
-    compileSdk = 36
+    compileSdk = 37
 
     // This block is specifically for configuring Android resources
     androidResources {

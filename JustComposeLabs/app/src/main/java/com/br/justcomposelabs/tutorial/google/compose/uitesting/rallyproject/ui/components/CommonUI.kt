@@ -119,7 +119,9 @@ private fun BaseRow(
  */
 @Composable
 private fun AccountIndicator(color: Color, modifier: Modifier = Modifier) {
-    Spacer(modifier.size(4.dp, 36.dp).background(color = color))
+    Spacer(modifier
+        .size(4.dp, 36.dp)
+        .background(color = color))
 }
 
 @Composable
@@ -127,9 +129,7 @@ fun RallyDivider(modifier: Modifier = Modifier) {
     HorizontalDivider(color = MaterialTheme.colorScheme.background, thickness = 1.dp, modifier = modifier)
 }
 
-fun formatAmount(amount: Float): String {
-    return AmountDecimalFormat.format(amount)
-}
+fun formatAmount(amount: Float): String = AmountDecimalFormat.format(amount)
 
 private val AccountDecimalFormat = DecimalFormat("####")
 private val AmountDecimalFormat = DecimalFormat("#,###.##")

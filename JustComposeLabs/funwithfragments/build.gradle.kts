@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 
     /*
         Compose Compiler Gradle plugin
@@ -14,7 +14,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithfragments"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -89,22 +89,22 @@ dependencies {
 
     // Choose one of the following:
     // Material Design 3
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.material3)
     // or Material Design 2
-    implementation("androidx.compose.material:material")
+    implementation(libs.androidx.material)
     // or skip Material Design and build directly on top of foundational components
-    implementation("androidx.compose.foundation:foundation")
+    implementation(libs.androidx.foundation)
     // or only import the main APIs for the underlying toolkit systems,
     // such as input and measurement/layout
-    implementation("androidx.compose.ui:ui")
+    implementation(libs.ui)
 
     // Android Studio Preview support
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
+    debugImplementation(libs.ui.tooling)
+    implementation(libs.ui.tooling.preview)
 
     // UI Tests
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
+    androidTestImplementation(libs.ui.test.junit4)
+    debugImplementation(libs.ui.test.manifest)
 
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
@@ -116,7 +116,7 @@ dependencies {
     implementation(libs.androidx.compose.adaptive)
 
     // Optional - Integration with activities
-    implementation("androidx.activity:activity-compose:1.10.1")
+    implementation("androidx.activity:activity-compose:1.13.0")
     // Optional - Integration with ViewModels
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Optional - Integration with LiveData

@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
 }
 
 android {
     namespace = "com.br.funwithlottiecompose"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -58,7 +58,7 @@ dependencies {
         https://lottiefiles.com/blog/working-with-lottie-animations/getting-started-with-lottie-animations-in-android-app
         https://airbnb.io/lottie/#/android-compose
      */
-    implementation("com.airbnb.android:lottie-compose:6.6.10")
+    implementation("com.airbnb.android:lottie-compose:6.7.1")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

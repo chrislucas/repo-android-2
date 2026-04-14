@@ -1,11 +1,11 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
     namespace = "com.br.funwithmlkit"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         /*
@@ -58,7 +58,7 @@ dependencies {
      */
     implementation("com.google.mlkit:genai-summarization:1.0.0-beta1")
 
-    implementation("com.google.mlkit:face-mesh-detection:16.0.0-beta1")
+    implementation("com.google.mlkit:face-mesh-detection:16.0.0-beta3")
 
 
     testImplementation(libs.junit)

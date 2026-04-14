@@ -1,13 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+   // alias(libs.plugins.jetbrains.kotlin.android)
 
     kotlin("plugin.serialization") version "2.0.21"
 }
 
 android {
     namespace = "com.br.network"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -61,11 +61,11 @@ dependencies {
     // https://hackernoon.com/real-time-communication-with-webrtc-on-android-f96cdcfc4771
     // min sdk 28
     // implementation(libs.ktor.client.webrtc)
-    implementation("io.ktor:ktor-serialization-gson:3.3.1")
+    implementation("io.ktor:ktor-serialization-gson:3.4.2")
 
-    implementation("io.ktor:ktor-serialization-kotlinx-protobuf:3.3.1")
+    implementation("io.ktor:ktor-serialization-kotlinx-protobuf:3.4.2")
 
-    implementation("io.ktor:ktor-serialization-kotlinx-json:3.3.1")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:3.4.2")
 
 
     api(libs.converter.gson)

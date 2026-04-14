@@ -1,8 +1,12 @@
 package com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.overview
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.statusBarsPadding
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Sort
 import androidx.compose.material3.Icon
@@ -14,6 +18,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.tooling.preview.Preview
+import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
 @Composable
 internal fun AlertItem(message: String) {
@@ -39,6 +45,23 @@ internal fun AlertItem(message: String) {
                 .clearAndSetSemantics {}
         ) {
             Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null)
+        }
+    }
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun AlertItemPreview() {
+    JustComposeLabsTheme {
+        Box(
+            modifier = Modifier
+                .systemBarsPadding()
+                .statusBarsPadding()
+                .fillMaxSize()
+        ) {
+            AlertItem(
+                message = "Heads up, you've used up 90% of your Shopping budget for this month."
+            )
         }
     }
 }

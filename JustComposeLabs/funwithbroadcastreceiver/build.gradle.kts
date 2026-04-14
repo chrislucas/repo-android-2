@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithbroadcastreceiver"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -79,7 +79,7 @@ dependencies {
     implementation("androidx.core:core-remoteviews:1.1.0")
 
     // Optional - APIs for SplashScreen, including compatibility helpers on devices prior Android 12
-    implementation("androidx.core:core-splashscreen:1.2.0-rc01")
+    implementation("androidx.core:core-splashscreen:1.2.0")
 
     implementation(libs.androidx.compose.ui.ui.test.junit4)
     implementation(libs.androidx.appcompat)
@@ -98,9 +98,7 @@ dependencies {
     implementation(libs.androidx.material3)
 
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
-    implementation("androidx.compose.material3.adaptive:adaptive")
-    implementation("androidx.compose.material3.adaptive:adaptive-layout")
-    implementation("androidx.compose.material3.adaptive:adaptive-navigation")
+    implementation(libs.androidx.adaptive)
 
 
     implementation(libs.androidx.activity.ktx)
@@ -110,7 +108,7 @@ dependencies {
 
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
-    implementation("io.coil-kt.coil3:coil-svg:3.3.0")
+    implementation("io.coil-kt.coil3:coil-svg:3.4.0")
 
     implementation(libs.material)
 

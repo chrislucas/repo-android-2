@@ -1,8 +1,9 @@
 # Como configurar plugins de análise estática de código
 
-## KtLint - https://pinterest.github.io/ktlint/latest/
+## [KtLint](https://pinterest.github.io/ktlint/latest/)
 
-### Funcionalidaees
+
+### Funcionalides
 - KtLint é um linter para Kotlin que ajuda a manter um código limpo e 
 consistente, seguindo as convenções de estilo do Kotlin.
   - Sem configuraçÕes: KtLint usa as regras de
@@ -26,7 +27,7 @@ consistente, seguindo as convenções de estilo do Kotlin.
 que corrige violações quando possível
 
 
-### Configuraç!oes
+### Configurações
 
 - Adicione esse trecho de código no arquivo build.gradle.kts do módulo app para configurar o plugin KtLint:
 ```
@@ -42,7 +43,39 @@ plugins {
 }
 ```
 
-### Configurando o as regras do KtLint e Detekt para Compose
+### [Integração (Opcional)](https://pinterest.github.io/ktlint/latest/install/integrations/#gradle-integration)
+
+```
+tasks.register("ktlintCheck", JavaExec) {
+    group = "verification"
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    mainClass = "com.pinterest.ktlint.Main"
+    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
+    args "src/**/*.kt", "**.kts", "!**/build/**"
+}
+
+tasks.named("check") {
+    dependsOn tasks.named("ktlintCheck")
+}
+
+tasks.register("ktlintFormat", JavaExec) {
+    group = "formatting"
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    mainClass = "com.pinterest.ktlint.Main"
+    // Suppress "sun.misc.Unsafe::objectFieldOffset" on Java24 (warning) (https://github.com/pinterest/ktlint/issues/2973)
+    // jvmArgs("--sun-misc-unsafe-memory-access=allow") // Java 24+
+    // see https://pinterest.github.io/ktlint/install/cli/#command-line-usage for more information
+    args "-F", "src/**/*.kt", "**.kts", "!**/build/**"
+}
+```
+
+### Configurando o as regras do KtLint para Compose
+
+- [ktlint-gradle](https://github.com/JLLeitschuh/ktlint-gradle)
+  - Adicionar essa dependencia
+-
 
 
 ### Lint e formatação do código
@@ -53,6 +86,7 @@ ktlint --format
 # or
 ktlint -F
 ```
+- [integration](https://pinterest.github.io/ktlint/latest/install/integrations/#gradle-integration)
 - [Command line](https://pinterest.github.io/ktlint/latest/install/cli/#command-line-usage)
 - [Lint & Format](https://pinterest.github.io/ktlint/latest/quick-start/#step-2-lint-and-format-your-code)
 
@@ -64,8 +98,9 @@ ktlint -F
 
 
 
-## Detekt
+## [Detekt](https://detekt.dev/docs/1.23.8/intro/)
 
+- Adicionar essa dependência ao build.gradle.kts do projeto
 ```
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
@@ -73,6 +108,7 @@ plugins {
 }
 ```
 
+- Adicionar ao build.gradle.kts do módulo
 ```
 plugins {
     id("io.gitlab.arturbosch.detekt")
@@ -89,6 +125,7 @@ plugins {
 ```
 
 
+- Adicionar ao final do arquivo build.gradle.kts do módulo
 ```
 // https://detekt.dev/docs/intro
 // https://github.com/detekt/detekt
@@ -109,7 +146,78 @@ tasks.withType<Detekt>().configureEach {
         md.required.set(true)
     }
 }
+
 ```
+
+- Criar uma pasta config/detekt e adicionar o arquivo detekt.yml
+
+```
+# https://detekt.dev/docs/1.23.8/rules/formatting
+config:
+  validation: true
+  warningsAsErrors: false
+  excludes: ''
+
+# how to configure detekt to autofix
+formatting:
+  active: true
+  autoCorrect: true # This property is deprecated in newer versions and should be set via Gradle/CLI
+  MaximumLineLength:
+    active: true
+    autoCorrect: true
+  FinalNewline:
+    active: true
+    autoCorrect: true
+
+style:
+  MagicNumber:
+    # Allows numbers in property declarations, useful for colors/dimensions
+    ignorePropertyDeclaration: true
+    active: false # Disable a specific rule
+  UnusedPrivateMember:
+    # Ignores unused private members annotated with @Preview
+    ignoreAnnotated: ['Preview']
+
+# configure ktlint and detekt android compose project
+build:
+  maxIssues: 100 # Fail the build if any issues are found
+  weights:
+  # complexity: 2
+  # LongParameterList: 1
+  # style: 1
+  # comments: 1
+  # ...
+
+complexity:
+  TooManyFunctions:
+    thresholdInFiles: 20
+    ignoreAnnotatedFunctions: ['Preview']
+  LongParameterList:
+    # Increase the threshold for parameter count, common in Composable functions
+    functionThreshold: 15
+  CyclomaticComplexMethod:
+    threshold: 1
+    ignoreNestingFunctions: true
+
+naming:
+  FunctionNaming:
+    # Allows PascalCase for functions annotated with @Composable
+    ignoreAnnotated: [ 'Composable' ]
+
+console-reports:
+  active: true
+  exclude:
+    #  - 'ProjectStatisticsReport'
+    #  - 'ComplexityReport'
+    #  - 'NotificationReport'
+    #  - 'FindingsReport'
+    #  - 'FileBasedFindingsReport'
+    - 'LiteFindingsReport'
+
+
+```
+
+### Detekt Baseline
 
 fontes:
 - https://kt.academy/article/ak-static-analysis
@@ -125,7 +233,7 @@ fontes:
 - https://medium.com/@ipek.birinci8/what-is-detekt-dc1df0e2cb61
 - https://medium.com/@SaezChristopher/how-to-automatically-update-detekt-on-your-android-project-without-gradle-d275e1c214df
 
-## lint-checker
+## [lint-checker](https://developer.android.com/studio/write/lint)
 
 fontes:
 - https://developer.android.com/studio/write/lint
@@ -143,7 +251,7 @@ fontes:
 - https://proandroiddev.com/mastering-jacoco-with-agp-8-5-pursuit-of-code-coverage-d3f57c0587a3
 
 
-## Pre commit hooks
+## [Pre-commit hooks](https://pre-commit.com/)
 
 fonts
 - https://pre-commit.com/

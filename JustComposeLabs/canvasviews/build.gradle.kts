@@ -1,12 +1,12 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.br.canvasviews"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -68,9 +68,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // Java language implementation
-    implementation("androidx.fragment:fragment:1.8.8")
+    implementation("androidx.fragment:fragment:1.8.9")
     // Kotlin
-    implementation("androidx.fragment:fragment-ktx:1.8.8")
+    implementation("androidx.fragment:fragment-ktx:1.8.9")
 
     // Glance setup
 

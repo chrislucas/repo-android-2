@@ -1,7 +1,7 @@
 
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    //alias(libs.plugins.jetbrains.kotlin.android)
 
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
@@ -12,7 +12,7 @@ plugins {
 
 android {
     namespace = "com.br.funwithcameraxcompose"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         minSdk = 24
@@ -48,28 +48,13 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
 
-    /*
-    // Compose Material 3
-
-    https://developer.android.com/jetpack/androidx/releases/compose-material3
-
-    Material Design 3 in Compose
-
-     https://developer.android.com/develop/ui/compose/designsystems/material3
- */
-
-    implementation("androidx.compose.material3:material3-window-size-class")
-    implementation("androidx.compose.material3:material3-adaptive-navigation-suite")
-
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
-    implementation("androidx.compose.material3.adaptive:adaptive")
-    implementation("androidx.compose.material3.adaptive:adaptive-layout")
-    implementation("androidx.compose.material3.adaptive:adaptive-navigation")
+    implementation(libs.androidx.adaptive)
 
 
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
-    implementation("io.coil-kt.coil3:coil-svg:3.3.0")
+    implementation("io.coil-kt.coil3:coil-svg:3.4.0")
 
     // compose
     implementation(platform(libs.androidx.compose.bom))
@@ -184,21 +169,13 @@ dependencies {
     implementation(libs.androidx.room.guava)
 
     // camera x
-    // CameraX core library using the camera2 implementation
-    val cameraxVersion = "1.5.1"
-    // The following line is optional, as the core library is included indirectly by camera-camera2
-    implementation("androidx.camera:camera-core:${cameraxVersion}")
-    implementation("androidx.camera:camera-camera2:${cameraxVersion}")
-    // If you want to additionally use the CameraX Lifecycle library
-    implementation("androidx.camera:camera-lifecycle:${cameraxVersion}")
-    // If you want to additionally use the CameraX VideoCapture library
-    implementation("androidx.camera:camera-video:${cameraxVersion}")
-    // If you want to additionally use the CameraX View class
-    implementation("androidx.camera:camera-view:${cameraxVersion}")
-    // If you want to additionally add CameraX ML Kit Vision Integration
-    implementation("androidx.camera:camera-mlkit-vision:${cameraxVersion}")
-    // If you want to additionally use the CameraX Extensions library
-    implementation("androidx.camera:camera-extensions:${cameraxVersion}")
+    implementation(libs.androidx.camera.core)
+    implementation(libs.androidx.camera.camera2)
+    implementation(libs.androidx.camera.lifecycle)
+    implementation(libs.androidx.camera.video)
+    implementation(libs.androidx.camera.view)
+    implementation(libs.androidx.camera.mlkit.vision)
+    implementation(libs.androidx.camera.extensions)
 
 
     // optional - Paging 3 Integration

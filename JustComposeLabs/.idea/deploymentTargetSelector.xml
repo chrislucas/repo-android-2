@@ -4,12 +4,9 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-      </SelectionState>
-      <SelectionState runConfigName="test()">
-        <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="CardElevationAnimatedSampleTest">
+      <SelectionState runConfigName="test()">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
@@ -21,7 +18,11 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="GivenCardElevationAnimated_WhenClickOnce_ThenReturnElevatedStateAsTrue()">
+      <SelectionState runConfigName="DisplayScreenPreview">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="DisplayAppendedTextComponent">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
