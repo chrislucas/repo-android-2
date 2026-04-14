@@ -4,7 +4,7 @@ import android.app.Application
 import android.os.StrictMode
 import timber.log.Timber
 
-class CustomApplication: Application() {
+class CustomApplication : Application() {
 
     override fun onCreate() {
         if (BuildConfig.DEBUG) {
@@ -22,16 +22,16 @@ class CustomApplication: Application() {
                 StrictMode.ThreadPolicy.Builder()
                     .detectAll() // Detecta leituras, escritas e rede
                     .penaltyLog() // Loga no Logcat
-                    //.penaltyFlashScreen() // Pisca a tela para avisar
+                    // .penaltyFlashScreen() // Pisca a tela para avisar
                     .build()
             )
 
             // 2. VM Policy: Detecta vazamentos de memória (Activities, Closables)
             StrictMode.setVmPolicy(
                 StrictMode.VmPolicy.Builder()
-                    //.detectLeakedSqlLiteObjects()
-                    //.detectLeakedClosableObjects() // Helps catch unclosed streams, a common I/O oversight
-                    //.detectActivityLeaks()
+                    // .detectLeakedSqlLiteObjects()
+                    // .detectLeakedClosableObjects() // Helps catch unclosed streams, a common I/O oversight
+                    // .detectActivityLeaks()
                     .detectAll()
                     .penaltyLog()
                     .build()

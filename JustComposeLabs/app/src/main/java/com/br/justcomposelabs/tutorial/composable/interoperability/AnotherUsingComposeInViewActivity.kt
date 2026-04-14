@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.justcomposelabs.R
 
-
 /*
     https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/compose-in-views
  */

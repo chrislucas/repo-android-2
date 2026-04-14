@@ -1,4 +1,5 @@
 import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.DetektCreateBaselineTask
 
 plugins {
     alias(libs.plugins.android.application)
@@ -179,13 +180,13 @@ dependencies {
     implementation(libs.timber)
 
     // Import the BoM for the Firebase platform
-   implementation(platform(libs.firebase.bom))
+    implementation(platform(libs.firebase.bom))
 
     // Add the dependencies for the Remote Config and Analytics libraries
     // When using the BoM, you don't specify versions in Firebase library dependencies
-   implementation(libs.google.firebase.config)
-   implementation(libs.google.firebase.analytics)
-   implementation(libs.google.firebase.crashlytics)
+    implementation(libs.google.firebase.config)
+    implementation(libs.google.firebase.analytics)
+    implementation(libs.google.firebase.crashlytics)
 
     // compose
     val composeBom = platform(libs.androidx.compose.bom)
@@ -329,7 +330,7 @@ dependencies {
     implementation(libs.androidx.work.multiprocess)
     implementation(libs.androidx.work.runtime)
     implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.androidx.work.rxjava2 )
+    implementation(libs.androidx.work.rxjava2)
     implementation(libs.androidx.work.testing)
 
     // Test rules and transitive dependencies:
@@ -382,18 +383,55 @@ kotlin {
     https://github.com/detekt/detekt
  */
 detekt {
+    /*
+        https://detekt.dev/docs/gettingstarted/gradle/#options-for-detekt-configuration-closure
+     */
     toolVersion = "1.23.8"
     autoCorrect = true
     parallel = true
+    source.setFrom("src/main/java", "src/main/kotlin")
     config.setFrom(file("${rootProject.layout.projectDirectory}/config/detekt/detekt.yml"))
     buildUponDefaultConfig = true
+    baseline = file("${rootProject.layout.projectDirectory}/config/detekt/baseline.xml")
 }
 
 // Kotlin DSL
 tasks.withType<Detekt>().configureEach {
     reports {
+        //html.required.set(true)
+        //sarif.required.set(true)
+        //md.required.set(true)
+
+        // Enable/Disable checkstyle report (default: true)
+        //checkstyle.required.set(true)
+        //checkstyle.outputLocation.set(file("build/reports/detekt.xml"))
+        // Enable/Disable HTML report (default: true)
         html.required.set(true)
+        html.outputLocation.set(file("build/reports/detekt.html"))
+        // Enable/Disable SARIF report (default: false)
         sarif.required.set(true)
+        sarif.outputLocation.set(file("build/reports/detekt.sarif"))
+        // Enable/Disable Markdown report (default: false)
         md.required.set(true)
+        md.outputLocation.set(file("build/reports/detekt.md"))
+        custom {
+            // The simple class name of your custom report.
+            reportId = "CustomJsonReport"
+            outputLocation.set(file("build/reports/detekt.json"))
+        }
     }
+}
+
+val detektProjectBaseline by tasks.registering(DetektCreateBaselineTask::class) {
+    description = "Overrides current baseline."
+    buildUponDefaultConfig.set(true)
+    ignoreFailures.set(true)
+    parallel.set(true)
+    setSource(files(rootDir))
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
+    baseline.set(file("$rootDir/config/detekt/baseline.xml"))
+    include("**/*.kt")
+    include("**/*.kts")
+    exclude("**/resources/**")
+    exclude("**/build/**")
 }

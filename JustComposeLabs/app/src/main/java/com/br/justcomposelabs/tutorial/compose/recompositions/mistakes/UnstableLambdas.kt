@@ -34,7 +34,6 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
         (só quando você realmente garante o contrato)
  */
 
-
 data class User(val name: String, val age: Int)
 
 @Composable
@@ -44,7 +43,8 @@ fun UnstableLambdas(users: List<User>) {
         items(users) { user ->
             val onClick: () -> Unit = {
                 Toast.makeText(
-                    ctx, "Clicked on $user",
+                    ctx,
+                    "Clicked on $user",
                     Toast.LENGTH_LONG
                 ).show()
             }
@@ -77,7 +77,6 @@ fun StableLambdasPreview() {
     }
 }
 
-
 @Composable
 fun StableLambdas(users: List<User>) {
     val ctx = LocalContext.current
@@ -94,7 +93,8 @@ fun StableLambdas(users: List<User>) {
             val onClick: () -> Unit = remember(user) {
                 {
                     Toast.makeText(
-                        ctx, "Clicked on $user",
+                        ctx,
+                        "Clicked on $user",
                         Toast.LENGTH_LONG
                     ).show()
                 }

@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
@@ -32,7 +31,6 @@ import timber.log.Timber
             copose nao fizer parte da composition mais
  */
 
-
 @Preview(uiMode = 1, showSystemUi = true, showBackground = true)
 @Composable
 fun ComposeLifecycle() {
@@ -54,9 +52,7 @@ fun ComposeLifecycle() {
         Button(onClick = { count.intValue++ }) {
             Text(
                 "Count: ${count.intValue}",
-                style = TextStyle(
-
-                ),
+                style = TextStyle(),
                 textAlign = TextAlign.Center
             )
         }

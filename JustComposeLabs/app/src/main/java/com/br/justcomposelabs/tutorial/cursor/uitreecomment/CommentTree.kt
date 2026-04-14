@@ -212,7 +212,9 @@ fun LazyListScope.renderCommentTree(
             onToggle = { onToggleComment(comment) },
             onNavigate = if (hasReplies) {
                 { onNavigateToComment(comment.id) }
-            } else null,
+            } else {
+                null
+            },
             onReply = { onShowReply(comment) },
             reachedMaxLevel = reachedMaxLevel && hasReplies
         )
@@ -287,4 +289,3 @@ fun PreviewInfiniteScrollCommentTree() {
         )
     }
 }
-

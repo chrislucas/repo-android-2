@@ -12,5 +12,3 @@ fun WhiteLabelBasicCard(content: @Composable () -> Unit) {
         content()
     }
 }
-
-

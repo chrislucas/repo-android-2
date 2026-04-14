@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.tutorial.medium.listui.listandgrids.ui.theme.JustComposeLabsTheme
 
-
 /*
     https://medium.com/@manishkumar_75473/jetpack-compose-exploring-lists-horizontal-vertical-grid-and-custom-8f83807bf506
  */

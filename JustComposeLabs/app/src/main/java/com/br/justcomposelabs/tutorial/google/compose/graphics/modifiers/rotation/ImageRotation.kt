@@ -17,7 +17,6 @@ import com.br.justcomposelabs.R
     https://developer.android.com/develop/ui/compose/graphics/draw/modifiers#graphics-modifier-rotate
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun RotatedImageComponent() {
@@ -32,6 +31,7 @@ fun RotatedImageComponent() {
             contentDescription = "cupcale",
             modifier = Modifier.graphicsLayer {
                 rotationZ = 45f
-            })
+            }
+        )
     }
 }

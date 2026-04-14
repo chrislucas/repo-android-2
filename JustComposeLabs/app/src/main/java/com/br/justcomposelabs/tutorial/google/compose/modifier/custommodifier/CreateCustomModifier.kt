@@ -46,19 +46,16 @@ import androidx.compose.ui.unit.dp
     https://proandroiddev.com/custom-modifiers-in-jetpack-compose-a950e6f9eb72
  */
 
-
 @Composable
 fun Modifier.customRoundedBackground(color: Color) =
     padding(16.dp)
         .clip(RoundedCornerShape(8.dp))
         .background(color)
 
-
 @Composable
 fun Modifier.customShapedBackground(color: Color, shape: Shape) =
     this.clip(shape)
         .background(color)
-
 
 /*
     Create a custom modifier using a composable modifier factory
@@ -71,7 +68,6 @@ fun Modifier.fade(enable: Boolean): Modifier {
     val alpha by animateFloatAsState(if (enable) 0.5f else 1.0f)
     return this then Modifier.graphicsLayer { this.alpha = alpha }
 }
-
 
 @Preview(showBackground = true)
 @Composable

@@ -43,10 +43,10 @@ fun AnimatedCounterComponent() {
     val offset = 200
 
     val slideRight = slideIn(initialOffset = { IntOffset(offset, 0) }) + scaleIn() togetherWith
-            slideOut(targetOffset = { IntOffset(-offset, 0) }) + scaleOut()
+        slideOut(targetOffset = { IntOffset(-offset, 0) }) + scaleOut()
 
     val slideLeft = slideIn(initialOffset = { IntOffset(-offset, 0) }) + scaleIn() togetherWith
-            slideOut(targetOffset = { IntOffset(offset, 0) }) + scaleOut()
+        slideOut(targetOffset = { IntOffset(offset, 0) }) + scaleOut()
 
     Column(
         verticalArrangement = Arrangement.Center,

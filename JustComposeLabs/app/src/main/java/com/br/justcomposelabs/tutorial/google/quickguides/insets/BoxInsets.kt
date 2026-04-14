@@ -12,6 +12,5 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun BoxInsets() {
     Box(modifier = Modifier.windowInsetsPadding(WindowInsets.statusBars)) {
-
     }
 }

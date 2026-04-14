@@ -11,17 +11,16 @@ interface RepositoryPlainText {
     suspend fun fetch(): List<String>
 }
 
-class MockRepository: RepositoryPlainText {
+class MockRepository : RepositoryPlainText {
     override suspend fun fetch(): List<String> {
         delay(1000L)
         return listOf("item1", "item2", "item3")
     }
 }
 
-
 sealed class MainIntent {
-    object LoadData: MainIntent()
-    data class ItemClocked(val itemId: String): MainIntent()
+    object LoadData : MainIntent()
+    data class ItemClocked(val itemId: String) : MainIntent()
 }
 
 /*
@@ -33,6 +32,5 @@ data class MainViewState(
     val data: List<String> = emptyList(),
     val error: String? = null
 )
-
 
 class MainViewModel()

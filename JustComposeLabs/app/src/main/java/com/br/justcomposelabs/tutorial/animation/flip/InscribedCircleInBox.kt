@@ -34,13 +34,15 @@ fun InteractiveBoxWithCircle() {
     val initialColor by remember { mutableStateOf(Color.Red) }
     val currentColor by animateColorAsState(
         targetValue = if (isFlipped) targetColor else initialColor,
-        animationSpec = tween(durationMillis = 500), label = "colorAnimation"
+        animationSpec = tween(durationMillis = 500),
+        label = "colorAnimation"
     )
 
     // State for managing the rotation animation
     val rotation by animateFloatAsState(
         targetValue = if (isFlipped) 180f else 0f,
-        animationSpec = tween(durationMillis = 500, easing = LinearEasing), label = "rotationAnimation"
+        animationSpec = tween(durationMillis = 500, easing = LinearEasing),
+        label = "rotationAnimation"
     )
 
     Box(

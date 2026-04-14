@@ -1,7 +1,6 @@
 package com.br.justcomposelabs.utils.pallete
 
 import android.graphics.Bitmap
-import android.graphics.Color
 import androidx.palette.graphics.Palette
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext

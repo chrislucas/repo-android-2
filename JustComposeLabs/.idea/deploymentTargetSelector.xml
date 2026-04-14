@@ -10,19 +10,15 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="GivenCardElevationAnimated_WhenClickTwice_ThenReturnElevatedStateOrigin()">
-        <option name="selectionMode" value="DROPDOWN" />
-        <DialogSelection />
-      </SelectionState>
-      <SelectionState runConfigName="GivenCardElevationAnimated_WhenClickOnce_ThenReturnElevatedStateTrue()">
-        <option name="selectionMode" value="DROPDOWN" />
-        <DialogSelection />
-      </SelectionState>
       <SelectionState runConfigName="DisplayScreenPreview">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="DisplayAppendedTextComponent">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="LazyListWithKey">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

@@ -43,7 +43,6 @@ fun CircularElevatedButton(content: @Composable () -> Unit, onClick: () -> Unit 
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun CircularElevatedButtonPreview() {
@@ -55,7 +54,6 @@ private fun CircularElevatedButtonPreview() {
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
-
             CircularElevatedButton(content = {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             })

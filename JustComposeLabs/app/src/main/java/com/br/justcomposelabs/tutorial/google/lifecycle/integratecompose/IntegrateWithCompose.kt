@@ -14,5 +14,4 @@ fun Lifecycle() {
     val lifecycleOwner = LocalLifecycleOwner.current
     val stateFlow = lifecycleOwner.lifecycle.currentStateFlow
     val currentLifecycleState by stateFlow.collectAsState()
-
 }

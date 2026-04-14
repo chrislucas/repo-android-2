@@ -26,7 +26,6 @@ class FragmentScreenComposeActivity : ComponentActivity() {
                         clazz = InteroperabilityComposeFragment::class.java,
                         arguments = Bundle.EMPTY
                     ) { fragment ->
-
                     }
                 }
             }
@@ -37,5 +36,4 @@ class FragmentScreenComposeActivity : ComponentActivity() {
 @Preview
 @Composable
 fun FragmentScreenExample() {
-
 }

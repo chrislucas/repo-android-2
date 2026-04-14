@@ -9,6 +9,4 @@ import androidx.lifecycle.ViewModel
     https://www.linkedin.com/pulse/optimizing-multiple-api-calls-android-kotlin-flow-riazul-karim-ivan-ljckc/
  */
 
-class CombineCallViewModel: ViewModel() {
-
-}
+class CombineCallViewModel : ViewModel()

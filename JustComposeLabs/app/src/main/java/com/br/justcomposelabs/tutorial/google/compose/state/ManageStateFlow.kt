@@ -6,7 +6,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 
-
 @Composable
 @Preview(showSystemUi = true, name = "HelloScreenFlowViewModel")
 fun HelloScreenFlow(helloStateFlowViewModel: HelloStateFlowViewModel = viewModel()) {

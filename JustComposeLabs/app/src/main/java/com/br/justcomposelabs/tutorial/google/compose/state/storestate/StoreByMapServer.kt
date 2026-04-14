@@ -30,7 +30,6 @@ val CitySaver = run {
     )
 }
 
-
 /*
     https://developer.android.com/develop/ui/compose/state#listsaver
     Se quiermos evitar a necessidade de definir chaves para o Map do MapSaver
@@ -43,12 +42,11 @@ val CityListSaver = listSaver<City, Any> (
 
 @Composable
 fun CityScreenII(city: City) {
-
     val selectedCity = rememberSaveable(stateSaver = CitySaver) {
         mutableStateOf(city)
     }
 
-    val selectedCityII = rememberSaveable(stateSaver = CityListSaver){
+    val selectedCityII = rememberSaveable(stateSaver = CityListSaver) {
         mutableStateOf(city)
     }
 }

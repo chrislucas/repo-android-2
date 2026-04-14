@@ -31,11 +31,9 @@ import com.br.justcomposelabs.tutorial.google.compose.preview.largedataset.UserP
     Veja o exemplo abaixo
  */
 
-
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun UserInfo(@PreviewParameter(UserPreviewParameterProvider::class, 3) user: User) {
-
     val modifier = Modifier
         .fillMaxSize()
         .systemBarsPadding()

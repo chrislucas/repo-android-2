@@ -15,7 +15,6 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.tutorial.google.compose.modifier.custommodifier.customShapedBackground
 
-
 /*
     https://www.linkedin.com/posts/mohamed-sobhi74_compose-tip-1-linkedin-ugcPost-7389639834299961344-cWdu/?utm_source=share&utm_medium=member_android&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
 
@@ -46,7 +45,7 @@ fun BottomButton(modifier: Modifier = Modifier) {
             onClick = {},
             modifier = modifier
                 .align(Alignment.BottomCenter)
-                //.padding(16.dp)
+            // .padding(16.dp)
         ) {
             Text("navigationBarsPadding")
         }

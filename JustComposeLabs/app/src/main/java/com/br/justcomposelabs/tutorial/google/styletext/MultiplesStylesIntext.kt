@@ -19,7 +19,6 @@ import com.br.justcomposelabs.R
     https://developer.android.com/develop/ui/compose/text/style-text#multiple-styles
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun MultiplesStylesText(color: Color = Color(0xFFB388FF)) {

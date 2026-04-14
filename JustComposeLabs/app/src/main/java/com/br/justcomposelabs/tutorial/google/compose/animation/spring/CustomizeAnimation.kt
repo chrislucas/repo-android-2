@@ -54,7 +54,6 @@ import kotlinx.coroutines.launch
     https://developer.android.com/develop/ui/compose/animation/customize
  */
 
-
 class SizeAnimationViewModel : ViewModel() {
     var expanded by mutableStateOf(false)
 
@@ -129,7 +128,6 @@ data class SpringSpecState<T>(
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun CustomizeAnimation(viewModel: SizeAnimationViewModel = viewModel()) {
-
     val size by animateDpAsState(
         targetValue = if (viewModel.expanded) 200.dp else 100.dp,
         animationSpec = spring(
@@ -174,7 +172,6 @@ fun CustomizeAnimation(viewModel: SizeAnimationViewModel = viewModel()) {
     }
 }
 
-
 class FadeViewModel : ViewModel() {
     private val mutableStateVisibility = MutableStateFlow(true)
     val isVisible: StateFlow<Boolean> = mutableStateVisibility.asStateFlow()
@@ -199,7 +196,6 @@ class FadeViewModel : ViewModel() {
         mutableVisibilityThreshold.update { threshold }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -249,5 +245,3 @@ fun FadeAnimationScreen(viewModel: FadeViewModel = viewModel()) {
         Text(text = if (isVisible) "Visível" else "Escondido")
     }
 }
-
-

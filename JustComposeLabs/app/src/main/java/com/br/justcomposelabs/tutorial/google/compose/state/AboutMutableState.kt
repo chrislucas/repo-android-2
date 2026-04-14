@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.state
 
-
 import android.annotation.SuppressLint
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -48,7 +47,6 @@ import timber.log.Timber
 
  */
 
-
 @SuppressLint("UnrememberedMutableState")
 @Preview(showBackground = true, showSystemUi = true, name = "NoCacheStateBoxTextView")
 @Composable
@@ -69,12 +67,11 @@ fun NoCacheStateBoxTextView() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true, name = "KeyCacheStateBoxTextView")
 @Composable
 fun KeyCacheStateBoxTextView() {
     val key = remember { 0 }
-    var state by remember (key) { mutableIntStateOf(1) }
+    var state by remember(key) { mutableIntStateOf(1) }
 
     Box(
         modifier = Modifier
@@ -83,7 +80,7 @@ fun KeyCacheStateBoxTextView() {
             .padding(3.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(text = "Value: ${state} | Ref: $state| Ref Key: $key")
+        Text(text = "Value: $state | Ref: $state| Ref Key: $key")
     }
 }
 
@@ -104,7 +101,6 @@ fun StateBoxTextView() {
         )
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true, name = "StateSurfaceTextView")
 @Composable
@@ -129,5 +125,4 @@ fun StateSurfaceTextView() {
             )
         }
     }
-
 }

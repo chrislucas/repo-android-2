@@ -11,11 +11,11 @@ import kotlinx.coroutines.flow.shareIn
     https://medium.com/@mortitech/sharein-vs-statein-in-kotlin-flows-when-to-use-each-1a19bd187553
  */
 
-class SharedRandomNumberFlow: ViewModel() {
+class SharedRandomNumberFlow : ViewModel() {
     val sharedRandomNumberFlow = flow {
         while (true) {
             delay(1000)
-            emit((0 .. 100).random())
+            emit((0..100).random())
         }
     }.shareIn(
         scope = viewModelScope,
@@ -23,8 +23,7 @@ class SharedRandomNumberFlow: ViewModel() {
     )
 }
 
-
-class StateIn: ViewModel() {
+class StateIn : ViewModel() {
 
     /*
         Criar um exemplo com a doc abaixo

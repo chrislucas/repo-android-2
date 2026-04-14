@@ -26,11 +26,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.lifecycle.Lifecycle
-import com.br.justcomposelabs.utils.composable.ComposableLifecycle
 import com.br.justcomposelabs.R
 import com.br.justcomposelabs.tutorial.google.compose.basics.stagesoflifecycle.data.Datasource
 import com.br.justcomposelabs.tutorial.google.compose.basics.stagesoflifecycle.data.Dessert
 import com.br.justcomposelabs.tutorial.google.compose.basics.stagesoflifecycle.ui.theme.JustComposeLabsTheme
+import com.br.justcomposelabs.utils.composable.ComposableLifecycle
 
 class DessertCodelabsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,10 +53,11 @@ class DessertCodelabsActivity : ComponentActivity() {
     }
 }
 
-
 private fun determineDessertToShow(
-    desserts: List<Dessert>, dessertsSold: Int
-): Dessert {/*
+    desserts: List<Dessert>,
+    dessertsSold: Int
+): Dessert {
+    /*
         var dessertToShow = desserts.first()
         for (dessert in desserts) {
             if (dessertsSold >= dessert.startProductionAmount) {
@@ -69,7 +70,6 @@ private fun determineDessertToShow(
 
     return desserts.maxBy { it.startProductionAmount >= dessertsSold }
 }
-
 
 private fun shareSoldDessertsInformation(context: Context, dessertSold: Int, revenue: Int) {
     val intent = Intent().apply {
@@ -164,17 +164,14 @@ fun Layout(modifier: Modifier = Modifier, desserts: List<Dessert>) {
     }
 }
 
-
 @Composable
 private fun DessertClickerAppBar(
     modifier: Modifier = Modifier,
     onShareButtonClicked: () -> Unit
 ) {
     Row(modifier = modifier) {
-
     }
 }
-
 
 @Composable
 private fun DessertClickerScreen(

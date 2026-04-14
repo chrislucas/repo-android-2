@@ -46,7 +46,7 @@ import kotlinx.coroutines.launch
                 s.distinctUntilChanged().collect {
                     /*
                         Nao emite valores repetidos consecutivos
-                     */
+ */
                     println(it)
                 }
             }
@@ -74,13 +74,11 @@ fun MessageList(modifier: Modifier = Modifier, messages: List<Message>) {
             }
         }
 
-
         val showButton by remember {
             derivedStateOf {
                 listState.firstVisibleItemIndex > 0
             }
         }
-
 
         AnimatedVisibility(visible = showButton) {
             ScrollTopButton(onClick = {
@@ -109,7 +107,6 @@ fun ScrollTopButton(onClick: suspend () -> Unit) {
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

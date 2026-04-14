@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.components.switchcomponent
 
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Switch
@@ -13,12 +12,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-
-
 /*
     https://developer.android.com/develop/ui/compose/components/switch
  */
-
 
 @Preview(showBackground = true)
 @Composable
@@ -34,5 +30,4 @@ fun BasicSwitch() {
             onCheckedChange = { checked = it }
         )
     }
-
 }

@@ -13,4 +13,3 @@ class NoteRow(note: Any)
 class Snack
 
 val snack = Snack()
-

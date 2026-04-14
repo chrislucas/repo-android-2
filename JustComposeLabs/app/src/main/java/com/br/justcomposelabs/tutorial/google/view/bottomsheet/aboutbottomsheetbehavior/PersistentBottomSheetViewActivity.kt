@@ -6,7 +6,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.br.justcomposelabs.R
 import com.br.justcomposelabs.databinding.PersistentActivityBottomSheetViewBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
@@ -46,7 +45,6 @@ class PersistentBottomSheetViewActivity : AppCompatActivity() {
                 insets
             }
 
-
             setSupportActionBar(toolbar)
             supportActionBar?.setDisplayShowHomeEnabled(true)
             toolbar.setNavigationOnClickListener { }
@@ -54,9 +52,7 @@ class PersistentBottomSheetViewActivity : AppCompatActivity() {
             val sheetBehavior = BottomSheetBehavior.from(simpleBottomSheetDialogLayout.bottomSheet)
             mainContentBottomSheet.btnBottomSheet.setOnClickListener {
                 if (sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
-
                 } else {
-
                 }
             }
 
@@ -70,11 +66,8 @@ class PersistentBottomSheetViewActivity : AppCompatActivity() {
 
                     override fun onSlide(bottomSheet: View, slideOffset: Float) {
                     }
-
-                })
+                }
+            )
         }
-
     }
 }
-
-

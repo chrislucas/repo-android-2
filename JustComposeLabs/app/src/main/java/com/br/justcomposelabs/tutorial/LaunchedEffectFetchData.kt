@@ -14,7 +14,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 
@@ -22,7 +21,6 @@ suspend fun fetchData(): String {
     delay(10000) // Simulate a network request or long-running operation
     return "Data from suspend function"
 }
-
 
 @Preview(showBackground = true)
 @Composable

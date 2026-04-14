@@ -1,7 +1,6 @@
 package com.br.justcomposelabs.tutorial.google.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -40,12 +39,10 @@ class ChangeOrientationActivity : AppCompatActivity() {
         }
     }
 
-
     private fun getOrientationName(@Orientation orientation: Int): String =
         when (orientation) {
             android.content.res.Configuration.ORIENTATION_LANDSCAPE -> return "LANDSCAPE"
             android.content.res.Configuration.ORIENTATION_PORTRAIT -> return "PORTRAIT"
             else -> return "UNDEFINED"
         }
-
 }

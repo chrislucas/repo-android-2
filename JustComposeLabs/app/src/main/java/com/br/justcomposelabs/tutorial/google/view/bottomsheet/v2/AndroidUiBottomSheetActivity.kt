@@ -9,7 +9,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.justcomposelabs.R
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-
 /*
     https://medium.com/android-dev-br/android-ui-bottom-sheet-4709cad826d2
  */
@@ -26,8 +25,7 @@ class AndroidUiBottomSheetActivity : AppCompatActivity() {
     }
 }
 
-
-class AndroidUiBottomSheetBottomSheetDialogFragment: BottomSheetDialogFragment() {
+class AndroidUiBottomSheetBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)

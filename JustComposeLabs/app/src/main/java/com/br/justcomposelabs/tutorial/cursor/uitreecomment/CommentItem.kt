@@ -95,7 +95,7 @@ private fun CommentExpandIcon(
         hasReplies -> {
             val iconVector = if (isExpanded) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore
             val iconDescription = if (isExpanded) "Colapsar" else "Expandir"
-            
+
             IconButton(onClick = onToggle) {
                 Icon(
                     imageVector = iconVector,
@@ -124,7 +124,7 @@ private fun CommentCard(
     } else {
         MaterialTheme.colorScheme.surface
     }
-    
+
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -255,7 +255,7 @@ private fun CommentMetadata(
 @Composable
 private fun ReplyCount(count: Int) {
     val replyText = if (count == 1) "resposta" else "respostas"
-    
+
     Text(
         text = "$count $replyText",
         style = MaterialTheme.typography.labelSmall,
@@ -270,7 +270,6 @@ private fun NavigateButton(
     onClick: () -> Unit
 ) {
     TextButton(onClick = onClick) {
-
         val content = if (reachedMaxLevel) "Respostas →" else "Thread →"
         val textColor = if (reachedMaxLevel) {
             MaterialTheme.colorScheme.primary
@@ -278,7 +277,7 @@ private fun NavigateButton(
             MaterialTheme.colorScheme.onSurface
         }
         val textFontWeight = if (reachedMaxLevel) FontWeight.Bold else FontWeight.Normal
-        
+
         Text(
             text = content,
             style = MaterialTheme.typography.labelSmall,
@@ -575,4 +574,3 @@ fun PreviewCommentMetadata() {
         }
     }
 }
-

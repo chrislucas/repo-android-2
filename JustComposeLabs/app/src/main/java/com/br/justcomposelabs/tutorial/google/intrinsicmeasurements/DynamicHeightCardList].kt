@@ -24,7 +24,7 @@ data class MyCardData(val title: String, val description: String)
 
 @Composable
 fun DynamicHeightCardList(dataList: List<MyCardData>) {
-    LazyRow (
+    LazyRow(
         modifier = Modifier
             .padding(WindowInsets.safeDrawing.asPaddingValues())
             .fillMaxHeight()
@@ -57,7 +57,7 @@ private fun DynamicHeightCardListPreview() {
         MyCardData(
             "Card 1",
             "Long text that exceeds the card's height.\n" +
-                    "this is the fourth card.\nAdding more text to see how it looks."
+                "this is the fourth card.\nAdding more text to see how it looks."
         ),
         MyCardData("Card 2", "This is the second card."),
         MyCardData("Card 3", "This is the thrid card."),

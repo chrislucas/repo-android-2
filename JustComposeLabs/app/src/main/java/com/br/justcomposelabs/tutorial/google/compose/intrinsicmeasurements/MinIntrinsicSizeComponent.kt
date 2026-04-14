@@ -8,7 +8,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
-import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
@@ -53,12 +52,10 @@ https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements
         medir o seu componente filho
  */
 
-
 /*
     Intrinsics in action
     https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements#intrinsics-in-action
  */
-
 
 @Composable
 fun TwoTextsUndesiredResultComponent(
@@ -112,12 +109,12 @@ private fun TwoTextsUndesiredResultComponentPreview() {
 }
 
 data class Content(val first: String, val second: String)
+
 @Composable
 private fun TwoTextsDesiredResultComponent(
     modifier: Modifier = Modifier,
     content: Content
 ) {
-
     /*
        Para que o componente Divider preencha somente o espaco disponivel dado um tamano
        especifico, devemos usar o IntrinsicSize.Min passando dentro do metodo height
@@ -154,7 +151,6 @@ private fun TwoTextsDesiredResultComponent(
                 .wrapContentWidth(Alignment.Start)
         )
 
-
         VerticalDivider(
             color = Color.Black,
             modifier = Modifier
@@ -172,16 +168,14 @@ private fun TwoTextsDesiredResultComponent(
     }
 }
 
-
 class ContentPreviewParameterProvider(
-    override val values: Sequence<Content>
-    = sequenceOf(
-        Content("Hello", "World"),
-        Content("This is a longer text that might wrap around several lines.", "Jetpack"),
-        Content("Compose", "Labs"),
-    )
+    override val values: Sequence<Content> =
+        sequenceOf(
+            Content("Hello", "World"),
+            Content("This is a longer text that might wrap around several lines.", "Jetpack"),
+            Content("Compose", "Labs"),
+        )
 ) : PreviewParameterProvider<Content>
-
 
 @Preview(showBackground = true)
 @Composable

@@ -22,7 +22,6 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TextDecoratedUnderline() {
@@ -98,7 +97,6 @@ fun TextDecoratedUnderlineSpecificWords() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun TextDecoratedUnderlineWithOverflow() {
@@ -124,7 +122,6 @@ fun TextDecoratedUnderlineWithOverflow() {
         )
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -153,7 +150,6 @@ fun TextCombiningDecorationUnderAndLineThrough() {
         )
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -211,7 +207,6 @@ fun TextCombiningDecorationUnderAndLineThroughSpecificWords() {
         )
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

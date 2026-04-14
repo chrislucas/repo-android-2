@@ -32,7 +32,8 @@ class LocalBroadcastManagerActivity : AppCompatActivity() {
 
         val ctx = this
         LocalBroadcastManager.getInstance(ctx).registerReceiver(
-            broadcastReceiver, IntentFilter(CustomBroadcastReceiver.INTENT_FILTER)
+            broadcastReceiver,
+            IntentFilter(CustomBroadcastReceiver.INTENT_FILTER)
         )
 
         binding.run {
@@ -62,7 +63,6 @@ class LocalBroadcastManagerActivity : AppCompatActivity() {
         LocalBroadcastManager.getInstance(this).unregisterReceiver(broadcastReceiver)
     }
 }
-
 
 class CustomBroadcastReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {

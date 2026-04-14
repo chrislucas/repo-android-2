@@ -8,7 +8,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class AnotherMockViewModelVersionII(): ViewModel() {
+class AnotherMockViewModelVersionII() : ViewModel() {
 
     private val mutableString = MutableStateFlow("")
 

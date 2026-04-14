@@ -6,7 +6,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleEventObserver
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LifecycleEventEffect
-import androidx.lifecycle.compose.LifecycleResumeEffect
 import androidx.lifecycle.compose.LocalLifecycleOwner
 
 /*
@@ -19,13 +18,10 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 @Composable
 fun Start() {
     LifecycleEventEffect(event = Lifecycle.Event.ON_START) {
-
     }
 
     LifecycleEventEffect(event = Lifecycle.Event.ON_STOP) {
-
     }
-
 }
 
 /*

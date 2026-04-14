@@ -7,9 +7,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
-
-
 @Preview(showBackground = true)
 @Composable
 fun DrawCanvas() {
@@ -18,9 +15,7 @@ fun DrawCanvas() {
      */
 
     Canvas(Modifier.size(120.dp)) { }
-
 }
-
 
 @Preview(showBackground = true)
 @Composable

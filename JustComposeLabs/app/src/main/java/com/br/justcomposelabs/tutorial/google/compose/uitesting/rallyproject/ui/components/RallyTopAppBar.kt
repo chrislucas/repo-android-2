@@ -16,9 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.RallyScreen
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
-
 internal val TabHeight = 56.dp
-
 
 @Composable
 fun RallyTopAppBar(

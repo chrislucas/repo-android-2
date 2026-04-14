@@ -10,7 +10,6 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SecureDataScreen(onTimeout: () -> Unit) {
-
     LaunchedEffect(Unit) {
         delay(60_000L)
         onTimeout()

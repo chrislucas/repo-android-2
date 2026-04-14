@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.composable.shapes
 
-import android.view.RoundedCorner
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -27,7 +26,6 @@ import androidx.compose.ui.unit.dp
     https://foso.github.io/Jetpack-Compose-Playground/foundation/shape/
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun RectangleShapeBox() {
@@ -44,7 +42,7 @@ fun RectangleShapeBox() {
                     brush = Brush.horizontalGradient(
                         listOf(
                             Color(0xFFB174DE), // Indigo
-                            Color(0xFF8F00FF)  // Violet
+                            Color(0xFF8F00FF) // Violet
                         )
                     )
                 )
@@ -60,7 +58,6 @@ fun RectangleShapeBox() {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -78,7 +75,7 @@ fun CircleShapeBox() {
                     brush = Brush.horizontalGradient(
                         listOf(
                             Color(0xFFB174DE), // Indigo
-                            Color(0xFF8F00FF)  // Violet
+                            Color(0xFF8F00FF) // Violet
                         )
                     )
                 )
@@ -94,7 +91,6 @@ fun CircleShapeBox() {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -112,7 +108,7 @@ fun RoundedCornerBox() {
                     brush = Brush.horizontalGradient(
                         listOf(
                             Color(0xFFB174DE), // Indigo
-                            Color(0xFF8F00FF)  // Violet
+                            Color(0xFF8F00FF) // Violet
                         )
                     )
                 )

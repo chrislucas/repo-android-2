@@ -19,7 +19,6 @@ import androidx.compose.ui.unit.dp
     https://developer.android.com/reference/kotlin/androidx/compose/ui/graphics/drawscope/DrawScope
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun CanvasDrawScope() {

@@ -9,8 +9,6 @@ import okhttp3.OkHttpClient
     https://developer.android.com/develop/connectivity/avoid-unoptimized-downloads
  */
 
-
-
 fun Context.cachedOkHttp(cacheSize: Long = 10 * 1024 * 1024) =
     OkHttpClient.Builder()
         .cache(Cache(cacheDir, cacheSize))

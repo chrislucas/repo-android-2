@@ -38,7 +38,6 @@ import androidx.compose.ui.window.DialogProperties
         - content: @Composable () -> Unit,
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun MinimalDialog() {
@@ -59,7 +58,7 @@ fun MinimalDialog() {
 
     if (showDialog) {
         Dialog(
-            onDismissRequest = { showDialog = ! showDialog},
+            onDismissRequest = { showDialog = !showDialog },
             properties = DialogProperties()
         ) {
             Card(
@@ -78,5 +77,4 @@ fun MinimalDialog() {
             }
         }
     }
-
 }

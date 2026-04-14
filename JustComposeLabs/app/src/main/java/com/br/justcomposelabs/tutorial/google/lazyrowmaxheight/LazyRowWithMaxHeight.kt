@@ -19,7 +19,6 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
 /*
     TODO estudar como resolver o problema de calcular o tamanho do maior card e fazer com que
     todos tenham esse tamanho.
@@ -31,7 +30,6 @@ data class MockContent(
     val second: String? = null,
     val third: String? = null
 )
-
 
 internal val items = listOf(
     MockContent(first = null, second = "Second", third = "Third"),
@@ -49,7 +47,6 @@ internal val items = listOf(
     MockContent(first = "first", second = null, third = null),
     MockContent(first = "first", second = "second", third = "third"),
 )
-
 
 @Preview(showBackground = true)
 @Composable
@@ -73,8 +70,8 @@ fun LazyRowWithMaxHeight() {
                     }
                     .padding(2.dp)
                     .onSizeChanged { size ->
-
-                    }) {
+                    }
+            ) {
                 // Content of the card
                 val (f, s, t) = item
                 Column {
@@ -86,7 +83,6 @@ fun LazyRowWithMaxHeight() {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -112,7 +108,6 @@ fun LazyRowWithMaxHeightCalculateBefore() {
                         }
                         .padding(2.dp)
                         .onSizeChanged { size ->
-
                         }
                 ) {
                     TextCard(item)
@@ -135,7 +130,6 @@ fun LazyRowWithMaxHeightCalculateBefore() {
         }
     }
 }
-
 
 @Composable
 fun TextCard(mockContent: MockContent) {

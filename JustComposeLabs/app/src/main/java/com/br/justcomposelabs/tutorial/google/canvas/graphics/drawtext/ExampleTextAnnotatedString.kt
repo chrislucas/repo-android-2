@@ -25,7 +25,6 @@ import androidx.compose.ui.unit.sp
 @Preview(showBackground = true, showSystemUi = false)
 @Composable
 fun ExampleTextAnnotatedString() {
-
     val textMeasure = rememberTextMeasurer()
 
     val rainbowColors = listOf(
@@ -35,7 +34,7 @@ fun ExampleTextAnnotatedString() {
         Color.Green,
         Color.Blue,
         Color(0xFF4B0082), // Indigo
-        Color(0xFF8F00FF)  // Violet
+        Color(0xFF8F00FF) // Violet
     )
 
     val text = buildAnnotatedString {

@@ -53,13 +53,12 @@ import timber.log.Timber
 
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun AnimatedBox() {
     val isVisible = remember { mutableStateOf(false) }
 
-    //var s by remember { mutableStateOf(false) }
+    // var s by remember { mutableStateOf(false) }
 
     val alpha: Float by animateFloatAsState(
         targetValue = if (isVisible.value) 1f else 0f,

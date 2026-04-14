@@ -36,7 +36,6 @@ class DisplayTextViewModel() : ViewModel() {
 @Preview(showBackground = true)
 @Composable
 fun DisplayAppendedTextComponent(viewModel: DisplayTextViewModel = viewModel()) {
-
     val contentState by viewModel.content.collectAsState()
 
     LogCompositions("DisplayAppendedTextComponent", contentState)

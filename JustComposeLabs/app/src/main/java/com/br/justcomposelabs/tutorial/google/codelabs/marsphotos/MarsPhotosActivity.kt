@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.tutorial.google.codelabs.marsphotos.ui.theme.JustComposeLabsTheme
 
-
 /*
     TODO
     https://developer.android.com/codelabs/basic-android-kotlin-compose-getting-data-internet?hl=pt-br#2

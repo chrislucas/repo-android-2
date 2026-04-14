@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject
 
-import ads_mobile_sdk.cu
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent

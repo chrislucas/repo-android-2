@@ -1,0 +1,1038 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues/>
+  <CurrentIssues>
+    <ID>CommentWrapping:OrderOfModifiersMatters.kt$/* Ja a seguinte ordem Modifier .padding(padding) .clickable(onClick = {}) .wrapContentSize() A area de padding nao é clicavel */</ID>
+    <ID>CyclomaticComplexMethod:AboutMutableState.kt$@Preview(showBackground = true, showSystemUi = true, name = "KeyCacheStateBoxTextView") @Composable fun KeyCacheStateBoxTextView()</ID>
+    <ID>CyclomaticComplexMethod:AboutMutableState.kt$@Preview(showBackground = true, showSystemUi = true, name = "StateBoxTextView") @Composable fun StateBoxTextView()</ID>
+    <ID>CyclomaticComplexMethod:AboutMutableState.kt$@Preview(showBackground = true, showSystemUi = true, name = "StateSurfaceTextView") @Composable fun StateSurfaceTextView()</ID>
+    <ID>CyclomaticComplexMethod:AboutMutableState.kt$@SuppressLint("UnrememberedMutableState") @Preview(showBackground = true, showSystemUi = true, name = "NoCacheStateBoxTextView") @Composable fun NoCacheStateBoxTextView()</ID>
+    <ID>CyclomaticComplexMethod:AccountsBody.kt$@Composable fun AccountsBody(accounts: List&lt;Account&gt;)</ID>
+    <ID>CyclomaticComplexMethod:AccountsBody.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AccountsBodyPreview()</ID>
+    <ID>CyclomaticComplexMethod:AccountsCard.kt$@Composable internal fun AccountsCard(onScreenChange: (RallyScreen) -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:AccountsCard.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AccountsCardPreview()</ID>
+    <ID>CyclomaticComplexMethod:AddAndRemoveValueAnimationActivity.kt$AddAndRemoveValueAnimationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:AdvancedStateAndSideEffects.kt$UiUnsafeState$fun updateData(operation: () -&gt; Int)</ID>
+    <ID>CyclomaticComplexMethod:AdvancedStateAndSideEffects.kt$fun test()</ID>
+    <ID>CyclomaticComplexMethod:AdvanvcedCustomDialog.kt$@Preview(showBackground = true) @Composable fun ImageDialog()</ID>
+    <ID>CyclomaticComplexMethod:AlertCard.kt$@Composable fun AlertCard()</ID>
+    <ID>CyclomaticComplexMethod:AlertCard.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AlertCardOnlyPreview()</ID>
+    <ID>CyclomaticComplexMethod:AlertCard.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AlertCardPreview()</ID>
+    <ID>CyclomaticComplexMethod:AlertHeader.kt$@Composable internal fun AlertHeader(onClickSeeAll: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:AlertHeader.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AlertHeaderPreview()</ID>
+    <ID>CyclomaticComplexMethod:AlertItem.kt$@Composable internal fun AlertItem(message: String)</ID>
+    <ID>CyclomaticComplexMethod:AlertItem.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AlertItemPreview()</ID>
+    <ID>CyclomaticComplexMethod:AlignmentBoxChild.kt$@Preview(showBackground = true) @Composable fun AlignmentBoxChild()</ID>
+    <ID>CyclomaticComplexMethod:AllFeatureActivity.kt$@Composable fun AllFeatures( modifier: Modifier = Modifier, features: List&lt;String&gt; = listOf() )</ID>
+    <ID>CyclomaticComplexMethod:AllFeatureActivity.kt$@Preview(showBackground = true) @Composable fun AllFeaturesPreview()</ID>
+    <ID>CyclomaticComplexMethod:AllFeatureActivity.kt$AllFeatureActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:AndroidUiBottomSheetActivity.kt$AndroidUiBottomSheetActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:AndroidUiBottomSheetActivity.kt$AndroidUiBottomSheetBottomSheetDialogFragment$override fun onDismiss(dialog: DialogInterface)</ID>
+    <ID>CyclomaticComplexMethod:AndroidViewBinding.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AndroidBindingViewSample()</ID>
+    <ID>CyclomaticComplexMethod:AndroidViewBinding.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun AndroidViewBindingExamplePreview()</ID>
+    <ID>CyclomaticComplexMethod:AndroidViewInLazyList.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AndroidViewBindingInLazyList()</ID>
+    <ID>CyclomaticComplexMethod:AndroidViewInLazyList.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AndroidViewInLazyList()</ID>
+    <ID>CyclomaticComplexMethod:AnimateColorExample.kt$@Preview(showBackground = true) @Composable fun AnimatedColorExample()</ID>
+    <ID>CyclomaticComplexMethod:AnimatedCircle.kt$@Composable fun AnimatedCircle( proportions: List&lt;Float&gt;, colors: List&lt;Color&gt;, modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:AnimatedCircle.kt$@Preview(showBackground = true) @Composable fun AnimatedCirclePreview()</ID>
+    <ID>CyclomaticComplexMethod:AnimatedCircularElevatedButton.kt$@Composable fun AnimatedCircularElevatedSurface(onClick: () -&gt; Unit = {})</ID>
+    <ID>CyclomaticComplexMethod:AnimatedCircularElevatedButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AnimatedCircularElevatedSurfacePreview()</ID>
+    <ID>CyclomaticComplexMethod:AnimatedCounterComponent.kt$@Preview(showBackground = true) @Composable fun AnimatedCounterComponent()</ID>
+    <ID>CyclomaticComplexMethod:AnimatedText.kt$@Preview(showBackground = true) @Composable fun AnimatedText(isVisible: Boolean = false)</ID>
+    <ID>CyclomaticComplexMethod:AnimatingMultipleColors.kt$@Preview(showBackground = true) @Composable fun UpdateTransitionColorExample()</ID>
+    <ID>CyclomaticComplexMethod:AnimatorUtils.kt$fun ValueAnimator.withDuration(duration: Long = 1000L)</ID>
+    <ID>CyclomaticComplexMethod:AnimatorUtils.kt$fun ValueAnimator.withInterpolator(interpolator: TimeInterpolator = AccelerateDecelerateInterpolator())</ID>
+    <ID>CyclomaticComplexMethod:AnimatorUtils.kt$fun countAnimator(start: Float, end: Float, duration: Long = 1000L)</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModel.kt$AnotherMockViewModel$fun register()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelVersionII.kt$AnotherMockViewModelVersionII$fun fetchData()</ID>
+    <ID>CyclomaticComplexMethod:AnotherUsingComposeInViewActivity.kt$AnotherUsingComposeInViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:AppendContentComponent.kt$@Preview(showBackground = true) @Composable fun DisplayAppendedTextComponent(viewModel: DisplayTextViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:AppendContentComponent.kt$DisplayTextViewModel$fun onTapAppendContent(content: String)</ID>
+    <ID>CyclomaticComplexMethod:AppendContentComponent.kt$DisplayTextViewModel$fun reset(value: String)</ID>
+    <ID>CyclomaticComplexMethod:AsyncImageCoil.kt$@Preview @Composable fun SingletonImageLoader()</ID>
+    <ID>CyclomaticComplexMethod:AsyncImageCoil.kt$@Preview(showBackground = true) @Composable private fun AsyncImageComponent()</ID>
+    <ID>CyclomaticComplexMethod:AsyncImageCoil.kt$@Preview(showBackground = true) @Composable private fun AsyncImageSvgComponent()</ID>
+    <ID>CyclomaticComplexMethod:AutoAdvancePager.kt$@Composable fun AutoAdvancePager(pageItems: List&lt;Color&gt;, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:AutoAdvancePager.kt$@Composable fun PagerIndicator(pageCount: Int, currentPageIndex: Int, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:AutoAdvancePagerPreview.kt$@Preview @Composable private fun AutoAdvancePagerPreview()</ID>
+    <ID>CyclomaticComplexMethod:AutoCompleteSearchBarActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:AutoCompleteSearchBarActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:AutoCompleteSearchBarActivity.kt$AutoCompleteSearchBarActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:AutoResizeText.kt$@Preview(showBackground = true) @Composable fun AutoResizeText()</ID>
+    <ID>CyclomaticComplexMethod:AutocompleteSearchBarIIActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:AutocompleteSearchBarIIActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:AutocompleteSearchBarIIActivity.kt$AutocompleteSearchBarIIActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:BaseViewModelExample.kt$BaseViewModelExample$fun &lt;T&gt; Flow&lt;T&gt;.toScopedCall(default: T)</ID>
+    <ID>CyclomaticComplexMethod:BaseViewModelExample.kt$BaseViewModelExample$fun emitUserEvent(userEvent: UserEvent)</ID>
+    <ID>CyclomaticComplexMethod:BaseViewModelExample.kt$BaseViewModelExample$fun tryEmitUiEvent(uiEvent: UIEvent)</ID>
+    <ID>CyclomaticComplexMethod:BaseViewModelExample.kt$BaseViewModelExample$fun viewModelIOScope(block: suspend CoroutineScope.() -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:BaseViewModelExample.kt$UserEventListener$fun onUserEvent(userEvent: UserEvent)</ID>
+    <ID>CyclomaticComplexMethod:BasicCard.kt$@Composable fun WhiteLabelBasicCard(content: @Composable () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:BillsBody.kt$@Composable fun BillsBody(bills: List&lt;Bill&gt;)</ID>
+    <ID>CyclomaticComplexMethod:BillsBody.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun BillsBodyPreview()</ID>
+    <ID>CyclomaticComplexMethod:BillsCard.kt$@Composable fun BillsCard(onScreenChange: (RallyScreen) -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:BillsCard.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun BillsCardPreview()</ID>
+    <ID>CyclomaticComplexMethod:BottomSheetOverview.kt$@OptIn(ExperimentalMaterial3Api::class) @Preview(showBackground = true) @Composable fun BottomSheetPreview()</ID>
+    <ID>CyclomaticComplexMethod:BottomSheetScaffold.kt$@Composable fun BottomSheetScaffoldComponent()</ID>
+    <ID>CyclomaticComplexMethod:BottomSheetScaffoldMaterial3.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun BottomSheetScaffoldMaterial3Component()</ID>
+    <ID>CyclomaticComplexMethod:BoxAbsolutePosition.kt$@Preview(showBackground = true) @Composable fun BoxWithOffset()</ID>
+    <ID>CyclomaticComplexMethod:BoxAlign.kt$@Preview(showBackground = true) @Composable fun BoxWithIndividualAlignment()</ID>
+    <ID>CyclomaticComplexMethod:BoxDisableLaunchEffect.kt$@Preview(showBackground = true) @Composable fun AnimatedBox()</ID>
+    <ID>CyclomaticComplexMethod:BoxInsets.kt$@Preview @Composable fun BoxInsets()</ID>
+    <ID>CyclomaticComplexMethod:BrushGradient.kt$@Preview(showBackground = true) @Composable fun CircleGradient()</ID>
+    <ID>CyclomaticComplexMethod:BuildAndDisplayPopupMessageActivity.kt$BuildAndDisplayPopupMessageActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ButtonCounter.kt$@Preview(showBackground = true) @Composable fun CounterButton()</ID>
+    <ID>CyclomaticComplexMethod:CardComponent.kt$@Composable fun CardFaceDisplay( modifier: Modifier = Modifier, cardFace: CardFace? )</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSample.kt$@Composable fun CardElevationAnimated( isElevated: Boolean, onIsElevatedChange: (Boolean) -&gt; Unit, )</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CardElevationAnimatedPreview()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun OutlinedCardExample()</ID>
+    <ID>CyclomaticComplexMethod:CardFlipActivity.kt$@Preview(showBackground = true) @Composable fun Stack(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:CardFlipActivity.kt$CardFlipActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DCompose.kt$@Preview(showBackground = true, showSystemUi = false, uiMode = UI_MODE_NIGHT_YES) @Composable fun Cartesian3DCompose()</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DComposeSmooth.kt$@Preview(showBackground = true, showSystemUi = false, uiMode = UI_MODE_NIGHT_YES) @Composable fun Cartesian3DComposeSmooth()</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DComposeSmooth.kt$fun projectPoint( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f // profundidade da câmera ): Offset</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DComposeSmooth.kt$fun rotatePoint(point: FloatArray, rotX: Float, rotY: Float): FloatArray</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DView.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun CartesianPlan3dAxis()</ID>
+    <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$@Composable fun SystemBroadcastReceiver( systemActions: List&lt;String&gt;, onSystemEvent: (intent: Intent?) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$@Preview(showSystemUi = true) @Composable private fun ComponentAwareBatteryState()</ID>
+    <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$private fun Context.determineCurrentBatteryLevel(intent: Intent?)</ID>
+    <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$private fun Context.processIntentAction(intent: Intent?)</ID>
+    <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$private fun batteryStatus(intent: Intent?)</ID>
+    <ID>CyclomaticComplexMethod:CenterAlignedTopAppBar.kt$@Preview @Composable fun CenterAlignedTopAppBarPreview()</ID>
+    <ID>CyclomaticComplexMethod:ChangeOrientationActivity.kt$ChangeOrientationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ChangeOrientationActivity.kt$ChangeOrientationActivity$private fun getOrientationName(@Orientation orientation: Int): String</ID>
+    <ID>CyclomaticComplexMethod:ChatBubble.kt$@Preview(showBackground = true) @Composable fun ChatBubble( message: Message = Message( id = "1", content = "Hello World", timestamp = "${System.currentTimeMillis()}ms" ) )</ID>
+    <ID>CyclomaticComplexMethod:CheckPreviewParameter.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun UserInfo(@PreviewParameter(UserPreviewParameterProvider::class, 3) user: User)</ID>
+    <ID>CyclomaticComplexMethod:CircularAdapter.kt$CircularAdapter$override fun getItemCount(): Int</ID>
+    <ID>CyclomaticComplexMethod:CircularAdapter.kt$CircularAdapter$override fun onBindViewHolder(holder: V, position: Int)</ID>
+    <ID>CyclomaticComplexMethod:CircularAdapter.kt$CircularAdapter$override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): V</ID>
+    <ID>CyclomaticComplexMethod:CircularAdapter.kt$CircularDefaultViewHolder$fun setContent(content: String)</ID>
+    <ID>CyclomaticComplexMethod:CircularAdapter.kt$CircularScrollListener$override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int)</ID>
+    <ID>CyclomaticComplexMethod:CircularElevatedButton.kt$@Composable fun CircularElevatedButton(content: @Composable () -&gt; Unit, onClick: () -&gt; Unit = {})</ID>
+    <ID>CyclomaticComplexMethod:CircularElevatedButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun CircularElevatedButtonPreview()</ID>
+    <ID>CyclomaticComplexMethod:CircularRecyclerViewActivity.kt$CircularRecyclerViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:CloneJetSnackActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:CloneJetSnackActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:CloneJetSnackActivity.kt$CloneJetSnackActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipActivity.kt$CoinFlipActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipAnimation.kt$@Composable fun FlipCardFace(color: Color, text: String)</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ClickableTimedFlippingBox()</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CoinFlipAnimation()</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CoinTossFlippingBox()</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun PreviewFlipCardFace()</ID>
+    <ID>CyclomaticComplexMethod:CoinFlipViewActivity.kt$CoinFlipViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$@Composable fun ClockScreen(viewModel: ClockViewModelFlow = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$@Composable fun ClockScreenImproved(viewModel: ClockViewModelFlowImproved = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$@Preview(showBackground = true, name = "ClockCard") @Composable fun ClockCard(currentHour: String = "--:--:--")</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$@Preview(showBackground = true, name = "ClockScreenImprovedPreview") @Composable private fun ClockScreenImprovedPreview()</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$@Preview(showBackground = true, name = "ClockScreenPreview") @Composable private fun ClockScreenPreview()</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$ClockViewModelFlow$private fun currentHour()</ID>
+    <ID>CyclomaticComplexMethod:CollectAsStateWithLifecycle.kt$ClockViewModelFlowImproved$private fun currentHour()</ID>
+    <ID>CyclomaticComplexMethod:ColumnExpandShrink.kt$@Composable fun ColumnExpandShrink()</ID>
+    <ID>CyclomaticComplexMethod:ColumnExpandShrink.kt$@Preview @Composable fun ColumnExpandShrinkPreview()</ID>
+    <ID>CyclomaticComplexMethod:ColumnHorizontalArrangement.kt$@Preview @Composable fun ColumnHorizontalArrangement()</ID>
+    <ID>CyclomaticComplexMethod:ColumnVerticalArrangement.kt$@Preview @Composable fun ColumnVerticalArrangement()</ID>
+    <ID>CyclomaticComplexMethod:Colums.kt$@Composable private fun FakeItemCard(content: String)</ID>
+    <ID>CyclomaticComplexMethod:Colums.kt$@Preview(showBackground = true) @Composable fun FakeItemsPreview()</ID>
+    <ID>CyclomaticComplexMethod:Comment.kt$Comment$fun addReply(reply: Comment): Comment</ID>
+    <ID>CyclomaticComplexMethod:Comment.kt$Comment$fun findComment(commentId: Int): Comment?</ID>
+    <ID>CyclomaticComplexMethod:Comment.kt$fun String.truncate(maxLength: Int): String</ID>
+    <ID>CyclomaticComplexMethod:Comment.kt$fun findCommentInList(comments: List&lt;Comment&gt;, commentId: Int): Comment?</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable fun CommentItem( comment: Comment, level: Int, isExpanded: Boolean, onToggle: () -&gt; Unit, onNavigate: (() -&gt; Unit)? = null, onReply: () -&gt; Unit, reachedMaxLevel: Boolean = false )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun CommentActions( comment: Comment, reachedMaxLevel: Boolean, onReply: () -&gt; Unit, onNavigate: (() -&gt; Unit)? )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun CommentCard( comment: Comment, level: Int, reachedMaxLevel: Boolean, onReply: () -&gt; Unit, onNavigate: (() -&gt; Unit)? )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun CommentExpandIcon( hasReplies: Boolean, isExpanded: Boolean, reachedMaxLevel: Boolean, onToggle: () -&gt; Unit, onNavigate: (() -&gt; Unit)? )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun CommentHeader( author: String, content: String )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun CommentMetadata( comment: Comment, reachedMaxLevel: Boolean, onNavigate: (() -&gt; Unit)? )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun MaxLevelWarning()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun NavigateButton( reachedMaxLevel: Boolean, onClick: () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun ReplyButton(onClick: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Composable private fun ReplyCount(count: Int)</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentExpandIcon()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentExpandIconMaxLevel()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentHeader()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentItem()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentItemExpanded()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentItemMaxLevel()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentItemNoReplies()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewCommentMetadata()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewNavigateButton()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewNavigateButtonMaxLevel()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewReplyButton()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true) @Composable fun PreviewReplyCount()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true, widthDp = 320) @Composable fun PreviewMaxLevelWarning()</ID>
+    <ID>CyclomaticComplexMethod:CommentItem.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewCommentActions()</ID>
+    <ID>CyclomaticComplexMethod:CommentScreen.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CommentScreen()</ID>
+    <ID>CyclomaticComplexMethod:CommentTree.kt$@Composable fun NavigationBar(onBack: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:CommentTree.kt$@Composable fun ScrollableCommentList( comments: List&lt;Comment&gt;, focusedCommentId: Int?, expandedComments: Set&lt;Int&gt;, onToggleComment: (Comment) -&gt; Unit, onNavigateToComment: (Int) -&gt; Unit, onShowReply: (Comment) -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:CommentTree.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun InfiniteScrollCommentTree( comments: List&lt;Comment&gt;, modifier: Modifier = Modifier, onAddComment: (Comment, String, String) -&gt; Unit = { _, _, _ -&gt; } )</ID>
+    <ID>CyclomaticComplexMethod:CommentTree.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun PreviewInfiniteScrollCommentTree()</ID>
+    <ID>CyclomaticComplexMethod:CommentTree.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewNavigationBar()</ID>
+    <ID>CyclomaticComplexMethod:CommentTree.kt$fun LazyListScope.renderCommentTree( comment: Comment, level: Int, expandedComments: Set&lt;Int&gt;, onToggleComment: (Comment) -&gt; Unit, onNavigateToComment: (Int) -&gt; Unit, onShowReply: (Comment) -&gt; Unit, maxLevel: Int = 2 // Máximo 3 níveis (0, 1, 2) )</ID>
+    <ID>CyclomaticComplexMethod:CommentViewModel.kt$CommentViewModel$fun addComment(parentComment: Comment, author: String, content: String)</ID>
+    <ID>CyclomaticComplexMethod:CommentViewModel.kt$CommentViewModel$private fun initializeSampleComments()</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Composable fun BillRow(name: String, due: String, amount: Float, color: Color)</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Composable fun FormattedPriceLabel(subtotal: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Composable fun RallyDivider(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Composable internal fun AccountRow(name: String, number: Int, amount: Float, color: Color)</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Composable private fun AccountIndicator(color: Color, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Composable private fun BaseRow( color: Color, title: String, subtitle: String, amount: Float, negative: Boolean )</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Preview(showBackground = true) @Composable fun AccountRowPreview()</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Preview(showBackground = true) @Composable fun BillRowPreview()</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@Preview(showBackground = true) @Composable fun RallyDividerPreview()</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$@ShowBackgroundOrNot @Composable private fun FormattedPriceLabelPreview()</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$fun &lt;E&gt; List&lt;E&gt;.extractProportions(selector: (E) -&gt; Float): List&lt;Float&gt;</ID>
+    <ID>CyclomaticComplexMethod:CommonUI.kt$fun formatAmount(amount: Float): String</ID>
+    <ID>CyclomaticComplexMethod:Composables.kt$@Composable private fun ScrollToTopButton(onClick: () -&gt; Unit = {})</ID>
+    <ID>CyclomaticComplexMethod:Composables.kt$@Composable private fun animateColorBetween(first: Color, second: Color): State&lt;Color&gt;</ID>
+    <ID>CyclomaticComplexMethod:ComposeAGSL.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AGSLExample()</ID>
+    <ID>CyclomaticComplexMethod:ComposeCustomViewActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ComposeCustomViewActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:ComposeCustomViewActivity.kt$ComposeCustomViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$@Composable fun ComposeDrawView( modifier: Modifier = Modifier, factory: (ctx: Context) -&gt; View, update: (View) -&gt; Unit = {} )</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$@Preview(name = "DrawViewDrawTextPreview", showBackground = true, showSystemUi = true) @Composable fun ComposeDrawViewDrawTextPreview()</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int)</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int)</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$private fun createEmptyStaticLayout(): StaticLayout</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$private fun getDesiredHeight(availableWidth: Int): Int</ID>
+    <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$private fun getOrCreateStaticLayout( textSize: Float, availableWidth: Int, availableHeight: Int ): StaticLayout</ID>
+    <ID>CyclomaticComplexMethod:ComposeLifecycle.kt$@Preview(uiMode = 1, showSystemUi = true, showBackground = true) @Composable fun ComposeLifecycle()</ID>
+    <ID>CyclomaticComplexMethod:ConfigurationUtils.kt$fun Context.adjustFontSize(scale: Float): Context</ID>
+    <ID>CyclomaticComplexMethod:ConfigurationUtils.kt$fun Context.adjustKeyboardHiddenState(@KeyboardHiddenState keyboardHiddenState: Int): Context</ID>
+    <ID>CyclomaticComplexMethod:ConfigurationUtils.kt$fun Context.adjustOrientation(@Orientation orientation: Int): Context</ID>
+    <ID>CyclomaticComplexMethod:ConfigurationUtils.kt$fun Context.adjustScreenSize(screenSize: Int): Context</ID>
+    <ID>CyclomaticComplexMethod:CoroutineScopeUtils.kt$GenericScope$fun destroy()</ID>
+    <ID>CyclomaticComplexMethod:CoroutineScopeUtils.kt$GenericScope$fun run()</ID>
+    <ID>CyclomaticComplexMethod:CounterState.kt$@Preview(showBackground = true) @Composable fun CounterComponent()</ID>
+    <ID>CyclomaticComplexMethod:CreateCustomModifier.kt$@Composable fun Modifier.customRoundedBackground(color: Color)</ID>
+    <ID>CyclomaticComplexMethod:CreateCustomModifier.kt$@Composable fun Modifier.customShapedBackground(color: Color, shape: Shape)</ID>
+    <ID>CyclomaticComplexMethod:CreateCustomModifier.kt$@Composable fun Modifier.fade(enable: Boolean): Modifier</ID>
+    <ID>CyclomaticComplexMethod:CreateCustomModifier.kt$@Preview(showBackground = true) @Composable private fun BoxFade()</ID>
+    <ID>CyclomaticComplexMethod:CupcakeAppScaffold.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun CupCakeAppTopAppBar( currentScreen: CupCakeScreen, modifier: Modifier = Modifier, canNavigateBack: Boolean, navigateUp: () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:CupcakeAppScaffold.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun CupcakeAppScaffold( currentScreen: CupCakeScreen, canNavigateBack: Boolean, navigateUp: () -&gt; Unit, modifier: Modifier = Modifier, content: @Composable (Modifier) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:CupcakeAppScaffold.kt$@Preview(showBackground = true) @Composable fun CupCakeAppTopAppBarPreview()</ID>
+    <ID>CyclomaticComplexMethod:CupcakeAppScaffold.kt$@Preview(showBackground = true) @OptIn(ExperimentalMaterial3Api::class) @Composable private fun CupcakeAppScaffoldPreview()</ID>
+    <ID>CyclomaticComplexMethod:CustomApplication.kt$CustomApplication$override fun onCreate()</ID>
+    <ID>CyclomaticComplexMethod:CustomLifecycleObserver.kt$CustomLifecycleObserver$override fun onCreate(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:CustomLifecycleObserver.kt$CustomLifecycleObserver$override fun onDestroy(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:CustomLifecycleObserver.kt$CustomLifecycleObserver$override fun onPause(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:CustomLifecycleObserver.kt$CustomLifecycleObserver$override fun onResume(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:CustomLifecycleObserver.kt$CustomLifecycleObserver$override fun onStart(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:CustomLifecycleObserver.kt$CustomLifecycleObserver$override fun onStop(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:CustomizeAnimation.kt$@Preview(showBackground = true) @Composable fun FadeAnimationScreen(viewModel: FadeViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:CustomizeAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CustomizeAnimation(viewModel: SizeAnimationViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:CustomizeAnimation.kt$FadeViewModel$fun updateVisibilityThreshold(threshold: Float)</ID>
+    <ID>CyclomaticComplexMethod:CustomizeAnimation.kt$FadeViewModel$private fun alternarVisibilidade()</ID>
+    <ID>CyclomaticComplexMethod:CustomizeAnimation.kt$SizeAnimationViewModel$fun init()</ID>
+    <ID>CyclomaticComplexMethod:CustomizeAnimation.kt$SizeAnimationViewModel$fun updateSpringSpecState(newSpecState: SpringSpecState&lt;Dp&gt;)</ID>
+    <ID>CyclomaticComplexMethod:DerivedOfConvertMultiplesState.kt$@Composable fun MessageList(modifier: Modifier = Modifier, messages: List&lt;Message&gt;)</ID>
+    <ID>CyclomaticComplexMethod:DerivedOfConvertMultiplesState.kt$@Composable fun ScrollTopButton(onClick: suspend () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:DerivedOfConvertMultiplesState.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun MessageListPreview()</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsActivity.kt$@Composable fun Layout(modifier: Modifier = Modifier, desserts: List&lt;Dessert&gt;)</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsActivity.kt$@Composable private fun DessertClickerAppBar( modifier: Modifier = Modifier, onShareButtonClicked: () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsActivity.kt$@Composable private fun DessertClickerScreen( modifier: Modifier = Modifier, revenue: Int, dessertsSold: Int, @DrawableRes dessertImageId: Int, onDessertClicked: () -&gt; Unit, )</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsActivity.kt$DessertCodelabsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsActivity.kt$private fun determineDessertToShow( desserts: List&lt;Dessert&gt;, dessertsSold: Int ): Dessert</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsActivity.kt$private fun shareSoldDessertsInformation(context: Context, dessertSold: Int, revenue: Int)</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsWithViewModelActivity.kt$@Composable fun DessertClickerApp( modifier: Modifier = Modifier, viewModel: DessertViewModel = viewModel() )</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsWithViewModelActivity.kt$@Composable private fun DessertClickerApp( modifier: Modifier = Modifier, uiState: DessertUiState, onDessertClicked: () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsWithViewModelActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:DessertCodelabsWithViewModelActivity.kt$DessertCodelabsWithViewModelActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:DessertViewModel.kt$DessertViewModel$fun onDessertClicked()</ID>
+    <ID>CyclomaticComplexMethod:DessertViewModel.kt$DessertViewModel$private fun determineDessertIndex(dessertsSold: Int): Int</ID>
+    <ID>CyclomaticComplexMethod:DialogComponent.kt$@Composable fun SimpleAlertDialogComponent( onDismissRequest: () -&gt; Unit, onConfirm: () -&gt; Unit, dialogTitle: String, dialogText: String, icon: ImageVector )</ID>
+    <ID>CyclomaticComplexMethod:DialogComponent.kt$@Preview(showBackground = true) @Composable fun ButtonFire()</ID>
+    <ID>CyclomaticComplexMethod:DialogComponent.kt$@Preview(showBackground = true) @Composable fun SimpleAlertDialogComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:DiceRollStateHolder.kt$DiceRollStateHolder$fun rollDice()</ID>
+    <ID>CyclomaticComplexMethod:DiceRollStateHolder.kt$RandomProvider$fun nextInt(range: IntRange): Int</ID>
+    <ID>CyclomaticComplexMethod:DiceRollerActivity.kt$@Composable fun DiceWithButtonAndImage(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:DiceRollerActivity.kt$@Preview @Composable fun DiceRollerApp(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:DiceRollerActivity.kt$DiceRollerActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:DiceViewModel.kt$DiceViewModel$override fun onCleared()</ID>
+    <ID>CyclomaticComplexMethod:DisposableEffectAndRememberUpdatedState.kt$@Composable fun RememberUpdateStateComponent( lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, onStart: () -&gt; Unit, onStop: () -&gt; Unit, content: @Composable () -&gt; Unit, )</ID>
+    <ID>CyclomaticComplexMethod:DisposableEffectAndRememberUpdatedState.kt$@Preview(showSystemUi = true) @Composable private fun RememberUpdateStateSamplePreview()</ID>
+    <ID>CyclomaticComplexMethod:DocDrawScope.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CanvasDrawScope()</ID>
+    <ID>CyclomaticComplexMethod:DogIcon.kt$@Composable fun DogIcon( @DrawableRes dogIcon: Int, modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleActivity.kt$@Composable fun DraggableTriangleView(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleActivity.kt$DraggableTriangleActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleView.kt$DraggableTriangleView$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleView.kt$DraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleView.kt$DraggableTriangleView$override fun performClick(): Boolean</ID>
+    <ID>CyclomaticComplexMethod:DraggableTriangleView.kt$DraggableTriangleView$private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float</ID>
+    <ID>CyclomaticComplexMethod:DrawBehindBetterThanBackgroundInAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun StableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:DrawBehindBetterThanBackgroundInAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:DrawBehindBetterThanBackgroundInAnimation.kt$SimpleViewModel$fun startColorAnimation()</ID>
+    <ID>CyclomaticComplexMethod:DrawInDrawScope.kt$@Preview(showBackground = true) @Composable fun DrawCanvas()</ID>
+    <ID>CyclomaticComplexMethod:DrawInDrawScope.kt$@Preview(showBackground = true) @Composable fun DrawScopeRetargetingSample()</ID>
+    <ID>CyclomaticComplexMethod:DrawWithCache.kt$@Preview(showBackground = true) @Composable fun RectGradient()</ID>
+    <ID>CyclomaticComplexMethod:DrawWithCache.kt$@Preview(showBackground = true) @Composable fun SpacerGradient(size: Dp = 200.dp)</ID>
+    <ID>CyclomaticComplexMethod:DrawingCustomShapes.kt$@Preview(showBackground = false) @Composable fun TriangleShape()</ID>
+    <ID>CyclomaticComplexMethod:DrswRect.kt$@Composable fun DrawShapeRect()</ID>
+    <ID>CyclomaticComplexMethod:DynamicColorScreen.kt$@Composable fun DynamicColorScreen( modifier: Modifier = Modifier, palette: Palette? )</ID>
+    <ID>CyclomaticComplexMethod:DynamicColorScreen.kt$@Preview(showBackground = true) @Composable fun DynamicColorScreenPreview()</ID>
+    <ID>CyclomaticComplexMethod:DynamicHeightCardList].kt$@Composable fun DynamicHeightCardList(dataList: List&lt;MyCardData&gt;)</ID>
+    <ID>CyclomaticComplexMethod:DynamicHeightCardList].kt$@Preview(showBackground = true) @Composable private fun DynamicHeightCardListPreview()</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$private fun adjustVertex(vertexIndex: Int, movedVertexIndex: Int, originalLength: Float)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$private fun applyElasticEffect(movedVertexIndex: Int)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$private fun distance(p1: PointF, p2: PointF): Float</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewII.kt$ElasticDraggableTriangleViewII$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewII.kt$ElasticDraggableTriangleViewII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewII.kt$ElasticDraggableTriangleViewII$private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$private fun adjustVertex(vertexIndex: Int, movedVertexIndex: Int, originalLength: Float)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$private fun applyElasticEffect(movedVertexIndex: Int)</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$private fun distance(p1: PointF, p2: PointF): Float</ID>
+    <ID>CyclomaticComplexMethod:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float</ID>
+    <ID>CyclomaticComplexMethod:ElevatedButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ElevatedButtonBrushedComponent()</ID>
+    <ID>CyclomaticComplexMethod:ElevatedButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ElevatedButtonComponent()</ID>
+    <ID>CyclomaticComplexMethod:ElevatedButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ElevatedButtonTextBrushedComponent()</ID>
+    <ID>CyclomaticComplexMethod:ElevatedCard.kt$@Composable fun WhitelabelElevatedCard(content: @Composable () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:EndActivity.kt$@Composable fun Greeting2(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:EndActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview2()</ID>
+    <ID>CyclomaticComplexMethod:EndActivity.kt$EndActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$BroadcastEvent$fun dispose()</ID>
+    <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$BroadcastEvent$fun sendEvent(context: Context, bundle: Bundle)</ID>
+    <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$EventBroadcastManager$override fun onReceive(context: Context?, intent: Intent?)</ID>
+    <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$EventHandlingLocalBroadcastManagerActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$EventHandlingLocalBroadcastManagerActivity$override fun onDestroy()</ID>
+    <ID>CyclomaticComplexMethod:ExampleTextAnnotatedString.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun ExampleTextAnnotatedString()</ID>
+    <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View</ID>
+    <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onDestroy()</ID>
+    <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onViewCreated(view: View, savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment.Companion$fun newInstance()</ID>
+    <ID>CyclomaticComplexMethod:ExpadingTextView.kt$@Preview(showSystemUi = true) @Composable fun TextExpandable()</ID>
+    <ID>CyclomaticComplexMethod:ExpandShrinkAnimation.kt$@Composable fun ExpandShrinkAnimation()</ID>
+    <ID>CyclomaticComplexMethod:ExpandShrinkAnimation.kt$@Preview @Composable fun ExpandShrinkAnimationPreview()</ID>
+    <ID>CyclomaticComplexMethod:FetchImageLorenIpsum.kt$@Composable fun rememberFetchRandomImageLorenPicsum( seed: Int = range.random(), width: Int = 300, height: Int = width, ): String</ID>
+    <ID>CyclomaticComplexMethod:FetchImageLorenIpsum.kt$fun fetchRandomImageLorenPicsum( seed: Int = range.random(), width: Int = 300, height: Int = width, )</ID>
+    <ID>CyclomaticComplexMethod:FillMaxSizeLazyRow.kt$@Composable fun FillMaxSizeLazyRow( modifier: Modifier = Modifier, messages: List&lt;Pair&lt;String?, String?&gt;&gt; )</ID>
+    <ID>CyclomaticComplexMethod:FillMaxSizeLazyRow.kt$@Composable fun MessageCard(message: Pair&lt;String?, String?&gt;, height: Dp = 123.dp)</ID>
+    <ID>CyclomaticComplexMethod:FillMaxSizeLazyRow.kt$@Preview(showSystemUi = true) @Composable private fun FillMaxSizeLazyRowPreview()</ID>
+    <ID>CyclomaticComplexMethod:FillingMaxSizeProblem.kt$@Composable fun FillingMaxSizeProblem()</ID>
+    <ID>CyclomaticComplexMethod:FillingMaxSizeProblem.kt$@Preview(showBackground = true) @Composable private fun ContentPreview()</ID>
+    <ID>CyclomaticComplexMethod:FillingMaxSizeSolution.kt$@Composable fun FillingMaxSizeSolution()</ID>
+    <ID>CyclomaticComplexMethod:FillingMaxSizeSolution.kt$@Preview(showBackground = true) @Composable private fun ContentPreview()</ID>
+    <ID>CyclomaticComplexMethod:FilterListDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FilterList()</ID>
+    <ID>CyclomaticComplexMethod:FilterListDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FilterListNeverEqualPolicy()</ID>
+    <ID>CyclomaticComplexMethod:FilterListDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FilterListStructuralEqualityPolicy()</ID>
+    <ID>CyclomaticComplexMethod:FlowRowSimpleUsageExample.kt$@OptIn(ExperimentalMaterialApi::class) @Composable fun ChipItem(text: String, onClick: () -&gt; Unit = {})</ID>
+    <ID>CyclomaticComplexMethod:FlowRowSimpleUsageExample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun FlowRowSimpleUsageExample()</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$override fun attachBaseContext(newBase: Context?)</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$override fun onRestoreInstanceState(savedInstanceState: Bundle)</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle)</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$private fun getFontScaleFromPreferences(context: Context?): Float</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$private fun restoreConfigurationStateFromBundle(bundle: Bundle?): Float?</ID>
+    <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$private fun syncFontScaleFromPreferences(source: String)</ID>
+    <ID>CyclomaticComplexMethod:ForceCrash.kt$@Preview(showBackground = true, showSystemUi = true, name = "ButtonForceCrash") @Composable fun ButtonForceCrash()</ID>
+    <ID>CyclomaticComplexMethod:ForceCrash.kt$@Preview(showBackground = true, showSystemUi = true, name = "ButtonThrowNoFatalException") @Composable fun ButtonThrowNoFatalException()</ID>
+    <ID>CyclomaticComplexMethod:ForceCrash.kt$private fun tryExec()</ID>
+    <ID>CyclomaticComplexMethod:ForegroundOnlyLocationService.kt$ForegroundOnlyLocationService$override fun onBind(intent: Intent): IBinder</ID>
+    <ID>CyclomaticComplexMethod:FragmentInComposeActivity.kt$FragmentInComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FragmentScreenComposeActivity.kt$@Preview @Composable fun FragmentScreenExample()</ID>
+    <ID>CyclomaticComplexMethod:FragmentScreenComposeActivity.kt$FragmentScreenComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FragmentsInCompose.kt$@Composable fun FragmentScreen( modifier: Modifier = Modifier, clazz: Class&lt;out Fragment&gt;, arguments: Bundle, callback: (Fragment) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:FragmentsInCompose.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FragmentInCompose(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:FragmentsInCompose.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FragmentScreenExample()</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$@Composable fun OIObservedByStateFlowViewModel( modifier: Modifier = Modifier, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, stateFlowViewModel: StateFlowViewModel = StateFlowViewModel(), sharedFlowViewModel: SharedFlowViewModel = SharedFlowViewModel(), liveDataViewModel: LiveDataViewModel = LiveDataViewModel() )</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$@Composable fun UpdateLiveDataViewModel( modifier: Modifier, liveDataViewModel: LiveDataViewModel )</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$@Composable fun UpdateSharedFlowViewModel( modifier: Modifier, sharedFlowViewModel: SharedFlowViewModel )</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$@Composable fun UpdateStateFlowViewModel( modifier: Modifier = Modifier, stateFlowViewModel: StateFlowViewModel )</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$@Preview(showBackground = true) @Composable fun OIObservedByStateFlowViewModelPreview()</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$FunWithFlowTypesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$LiveDataViewModel$fun updateContent(newContent: String)</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$SharedFlowViewModel$fun updateContent(newContent: String)</ID>
+    <ID>CyclomaticComplexMethod:FunWithFlowTypesActivity.kt$StateFlowViewModel$fun updateContent(newContent: String)</ID>
+    <ID>CyclomaticComplexMethod:FunWithLaunchedEffectsActivity.kt$@Composable fun PulseEffect(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:FunWithLaunchedEffectsActivity.kt$@Composable private fun TimerScreen()</ID>
+    <ID>CyclomaticComplexMethod:FunWithLaunchedEffectsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:FunWithLaunchedEffectsActivity.kt$FunWithLaunchedEffectsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FunWithStateFlow.kt$@Preview(showSystemUi = true) @Composable fun ButtonUpdateStateFlow( viewModel: StateFlowSampleViewModel = StateFlowSampleViewModel() )</ID>
+    <ID>CyclomaticComplexMethod:FunWithStateFlow.kt$StateFlowSampleViewModel$fun decrementCounter()</ID>
+    <ID>CyclomaticComplexMethod:FunWithStateFlow.kt$StateFlowSampleViewModel$fun incrementCounter()</ID>
+    <ID>CyclomaticComplexMethod:FunWithStateFlow.kt$StateFlowSampleViewModel$fun resetCounter()</ID>
+    <ID>CyclomaticComplexMethod:GameStatus.kt$@Preview(showBackground = true) @Composable fun GameStatus(modifier: Modifier = Modifier, score: Int = 0)</ID>
+    <ID>CyclomaticComplexMethod:GetLastLocationUseCase.kt$GetLastLocationUseCase$@RequiresPermission( allOf = [ Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION ] ) suspend operator fun invoke(provider: String): Result&lt;Location?&gt;</ID>
+    <ID>CyclomaticComplexMethod:GroupChipsComponents.kt$@OptIn(ExperimentalMaterialApi::class) @Composable fun GroupChipComponent(words: List&lt;String&gt; = emptyList())</ID>
+    <ID>CyclomaticComplexMethod:GroupChipsComponents.kt$@Preview(showBackground = true) @Composable private fun GroupChipComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:HandleConfigurationChanges.kt$@Preview(showSystemUi = true) @Composable fun ConfigurationDeviceInfoComponent()</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$ConfigurationViewModel$fun updateFontScale(fontScale: Float)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$ConfigurationViewModel$fun updateOrientationScreen(@Orientation orientation: Int)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun attachBaseContext(newBase: Context?)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onConfigurationChanged(newConfig: Configuration)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onRestoreInstanceState(savedInstanceState: Bundle)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onSaveInstanceState(outState: Bundle)</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$private fun getFontScaleFromPreferences(context: Context?): Float</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$private fun restoreConfigurationStateFromBundle(bundle: Bundle?): ConfigurationState?</ID>
+    <ID>CyclomaticComplexMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$private fun syncFontScaleFromPreferences(source: String = "syncFontScale")</ID>
+    <ID>CyclomaticComplexMethod:HandlingInteractionsState.kt$@Composable fun ButtonInteractionStateSample()</ID>
+    <ID>CyclomaticComplexMethod:HandlingInteractionsState.kt$@Composable fun DisplayScreen(contentStart: String)</ID>
+    <ID>CyclomaticComplexMethod:HandlingInteractionsState.kt$@Composable fun DisplayTextContent(value: String)</ID>
+    <ID>CyclomaticComplexMethod:HandlingInteractionsState.kt$@Composable fun UpdateDisplayTextContent(label: String, value: String, update: (String) -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:HandlingInteractionsState.kt$@Composable fun UpdateDisplayTextContent(value: String, update: (String) -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:HandlingInteractionsState.kt$@Preview(showBackground = true) @Composable fun DisplayScreenPreview()</ID>
+    <ID>CyclomaticComplexMethod:HandlingUserInteractions.kt$@Preview @Composable private fun InteractionStateButton()</ID>
+    <ID>CyclomaticComplexMethod:HelloMessageRemoteConfigActivity.kt$@Composable fun Greeting(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:HelloMessageRemoteConfigActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:HelloMessageRemoteConfigActivity.kt$HelloMessageRemoteConfigActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:HorizontalPageSample.kt$@Preview( showSystemUi = false, showBackground = true, device = "spec:width=411dp,height=891dp", name = "HorizontalPagerSample" ) @Composable fun HorizontalPagerSample(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:Icons.kt$@Preview @Composable fun IconPreview()</ID>
+    <ID>CyclomaticComplexMethod:ImageCoil.kt$@Composable fun CardImageComponent( modifier: Modifier = Modifier, imageContext: ImageContext = ImageContext(model = R.drawable.oreo) )</ID>
+    <ID>CyclomaticComplexMethod:ImageCoil.kt$@Preview(showBackground = true) @Composable fun CardImageComponentPreview( @PreviewParameter(ImageContextProvider::class) imageContext: ImageContext )</ID>
+    <ID>CyclomaticComplexMethod:ImageRotation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun RotatedImageComponent()</ID>
+    <ID>CyclomaticComplexMethod:ImageTranslationComponent.kt$@Composable fun ImageTranslation()</ID>
+    <ID>CyclomaticComplexMethod:ImmutableCollections.kt$@Composable private fun AddItem()</ID>
+    <ID>CyclomaticComplexMethod:ImmutableCollections.kt$@Composable private fun PersistItems(state: UiState)</ID>
+    <ID>CyclomaticComplexMethod:ImmutableCollections.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun PersistScreen(viewModel: MyViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:ImmutableCollections.kt$MyViewModel$fun addItem(item: ItemUi)</ID>
+    <ID>CyclomaticComplexMethod:ImmutableCollections.kt$MyViewModel$fun removeItem(id: String)</ID>
+    <ID>CyclomaticComplexMethod:ImmutableCollections.kt$MyViewModel$private fun loadItems()</ID>
+    <ID>CyclomaticComplexMethod:InfiniteCircularListActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:InfiniteCircularListActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:InfiniteCircularListActivity.kt$InfiniteCircularListActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:InfiniteCircularRecyclerViewActivity.kt$InfiniteCircularRecyclerViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:InitialFadeIn.kt$@Preview(showBackground = true) @Composable fun AnimatedContentFadeDemo()</ID>
+    <ID>CyclomaticComplexMethod:InitialFadeIn.kt$@Preview(showBackground = true) @Composable fun AnimatedTextContent()</ID>
+    <ID>CyclomaticComplexMethod:InscribedCircleInBox.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun InteractiveBoxWithCircle()</ID>
+    <ID>CyclomaticComplexMethod:InsetsCompose.kt$@Preview @Composable fun BottomAppBarPreview()</ID>
+    <ID>CyclomaticComplexMethod:IntegrateLifecycleWithCompose.kt$@Composable fun BindingDisposableEffect( lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, callback: CallbackLocalLifecycleOwner )</ID>
+    <ID>CyclomaticComplexMethod:IntegrateLifecycleWithCompose.kt$@Composable fun Start()</ID>
+    <ID>CyclomaticComplexMethod:IntegrateLifecycleWithCompose.kt$CallbackLocalLifecycleOwner$fun onEvent(e: Lifecycle.Event)</ID>
+    <ID>CyclomaticComplexMethod:IntegrateWithCompose.kt$@Composable fun Lifecycle()</ID>
+    <ID>CyclomaticComplexMethod:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
+    <ID>CyclomaticComplexMethod:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment.Companion$@JvmStatic fun newInstance(param1: String, param2: String)</ID>
+    <ID>CyclomaticComplexMethod:JetChatMainActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:JetChatMainActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:JetChatMainActivity.kt$JetChatMainActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:LaunchEffectRunSuspendFunctions.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SnackbarComponent(snackbarHostState: SnackbarHostState = remember { SnackbarHostState() })</ID>
+    <ID>CyclomaticComplexMethod:LaunchEffectRunSuspendFunctions.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun PulseTextComponent()</ID>
+    <ID>CyclomaticComplexMethod:LaunchEffectRunSuspendFunctions.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun PulseTextSideEffectComponent()</ID>
+    <ID>CyclomaticComplexMethod:LaunchedEffectFetchData.kt$@Composable fun ChildComposable(data: String)</ID>
+    <ID>CyclomaticComplexMethod:LaunchedEffectFetchData.kt$@Preview(showBackground = true) @Composable fun ParentComposable()</ID>
+    <ID>CyclomaticComplexMethod:LaunchedEffectFetchData.kt$suspend fun fetchData(): String</ID>
+    <ID>CyclomaticComplexMethod:LayoutModifiers.kt$fun Modifier.pad(size: Dp)</ID>
+    <ID>CyclomaticComplexMethod:LazilyLoadDataWithPaging.kt$@Composable fun Messages( modifier: Modifier = Modifier, pager: Pager&lt;Int, Message&gt; )</ID>
+    <ID>CyclomaticComplexMethod:LazilyLoadDataWithPaging.kt$@Composable private fun MessagePlaceholder(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:LazilyLoadDataWithPaging.kt$@Composable private fun MessageRow( modifier: Modifier = Modifier, message: Message )</ID>
+    <ID>CyclomaticComplexMethod:LazilyLoadDataWithPaging.kt$@Preview @Composable fun MessagesPreview()</ID>
+    <ID>CyclomaticComplexMethod:LazilyLoadDataWithPaging.kt$MockMessagePagingSource$override fun getRefreshKey(state: PagingState&lt;Int, Message&gt;): Int?</ID>
+    <ID>CyclomaticComplexMethod:LazilyLoadDataWithPaging.kt$MockMessagePagingSource$override suspend fun load(params: LoadParams&lt;Int&gt;): LoadResult&lt;Int, Message&gt;</ID>
+    <ID>CyclomaticComplexMethod:LazyListKey.kt$@Composable fun ElementWithKey( element: String, remove: (String) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:LazyListKey.kt$@Preview(showBackground = true) @Composable fun LazyListWithKey()</ID>
+    <ID>CyclomaticComplexMethod:LazyRowCardsMaxHeight.kt$@Composable fun LazyRowWithUniformCardHeight( modifier: Modifier = Modifier, cardDataList: List&lt;MockContent&gt; )</ID>
+    <ID>CyclomaticComplexMethod:LazyRowCardsMaxHeight.kt$@Preview(showSystemUi = true, showBackground = true, device = "spec:parent=pixel_8") @Preview(showSystemUi = true, showBackground = true, device = "spec:parent=pixel_8,navigation=buttons") @Preview(showSystemUi = true, showBackground = true, device = "spec:width=1080px,height=2400px,cutout=punch_hole") @Preview(showSystemUi = true, showBackground = true, device = "spec:width=1080px,height=2400px,cutout=tall") @Preview(showSystemUi = true, showBackground = true, device = "spec:width=1080px,height=2400px,cutout=corner") @Preview(showSystemUi = true, showBackground = true, device = "spec:width=1080px,height=2400px,cutout=double") @Composable private fun LazyRowWithUniformCardHeightPreview()</ID>
+    <ID>CyclomaticComplexMethod:LazyRowWithMaxHeight.kt$@Composable fun TextCard(mockContent: MockContent)</ID>
+    <ID>CyclomaticComplexMethod:LazyRowWithMaxHeight.kt$@Preview(showBackground = true) @Composable fun LazyRowWithMaxHeight()</ID>
+    <ID>CyclomaticComplexMethod:LazyRowWithMaxHeight.kt$@Preview(showBackground = true) @Composable fun LazyRowWithMaxHeightCalculateBefore()</ID>
+    <ID>CyclomaticComplexMethod:LerpFunction.kt$@Preview(showBackground = true) @Composable fun LerpColorExample()</ID>
+    <ID>CyclomaticComplexMethod:LerpFunction.kt$fun toHex(value: Int): String</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$@RequiresPermission( anyOf = [ Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION ] ) override fun onStart(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onCreate(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onDestroy(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onLocationChanged(location: Location)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onProviderDisabled(provider: String)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onProviderEnabled(provider: String)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onStop(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleComposeActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleComposeActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:LifecycleComposeActivity.kt$LifecycleComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ListsAndGridsActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ListsAndGridsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:ListsAndGridsActivity.kt$ListsAndGridsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:LoadCustomViewOverlay.kt$LoadCustomViewOverlay$fun hide()</ID>
+    <ID>CyclomaticComplexMethod:LoadCustomViewOverlay.kt$LoadCustomViewOverlay$fun registerLifecycleOwner(lifecycleOwner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:LoadCustomViewOverlay.kt$LoadCustomViewOverlay$fun show()</ID>
+    <ID>CyclomaticComplexMethod:LoadingImage.kt$@Preview(showBackground = true) @Composable private fun LoadImage()</ID>
+    <ID>CyclomaticComplexMethod:LocalBroadcastManagerActivity.kt$CustomBroadcastReceiver$override fun onReceive(context: Context?, intent: Intent?)</ID>
+    <ID>CyclomaticComplexMethod:LocalBroadcastManagerActivity.kt$LocalBroadcastManagerActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:LocalBroadcastManagerActivity.kt$LocalBroadcastManagerActivity$override fun onDestroy()</ID>
+    <ID>CyclomaticComplexMethod:LorenIpsumCompose.kt$@Preview(showBackground = true) @Composable fun TextPageContent()</ID>
+    <ID>CyclomaticComplexMethod:LorenIpsumCompose.kt$fun lorenIpsum(separator: String = " ", words: Int): String</ID>
+    <ID>CyclomaticComplexMethod:MainActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MainActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:MainActivity.kt$MainActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:MainIntent.kt$MockRepository$override suspend fun fetch(): List&lt;String&gt;</ID>
+    <ID>CyclomaticComplexMethod:MainIntent.kt$RepositoryPlainText$suspend fun fetch(): List&lt;String&gt;</ID>
+    <ID>CyclomaticComplexMethod:ManageStateFlow.kt$@Composable @Preview(showSystemUi = true, name = "HelloScreenFlowViewModel") fun HelloScreenFlow(helloStateFlowViewModel: HelloStateFlowViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:ManageStateRxJava3.kt$@Composable private fun HelloContentPresentationRxJava3( value: String = "", onValueChange: (String) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ManageStateRxJava3.kt$@Preview(showSystemUi = true, name = "HelloScreenRx") @Composable fun HelloScreenRx(helloStateRxViewModel: HelloStateRx3ava3ViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:ManageStateRxJava3.kt$HelloStateRx3ava3ViewModel$fun onDataChange(data: String)</ID>
+    <ID>CyclomaticComplexMethod:ManageStatesRx.kt$@Composable private fun HelloContentPresentation( value: String = "", onValueChange: (String) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ManageStatesRx.kt$@Preview(showSystemUi = true, name = "HelloScreenRx") @Composable fun HelloScreenRx(helloStateRxViewModel: HelloStateRxViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:ManageStatesRx.kt$HelloStateRxViewModel$fun onDataChange(data: String)</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Composable @Preview(showSystemUi = true, name = "DestructuredHelloScreen|HelloContent") fun DestructuredHelloScreen()</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Composable @Preview(showSystemUi = true, name = "HelloLiveDataViewModel") fun HelloScreen(helloLiveDataViewModel: HelloLiveDataViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Composable @Preview(showSystemUi = true, name = "HelloScreen|HelloContent") fun HelloScreen()</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Composable @Preview(showSystemUi = true, name = "HelloStateFlowViewModel") fun HelloScreen(helloStateFlowViewModel: HelloStateFlowViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Composable internal fun HelloContent(name: String = "", onNameChange: (String) -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Preview( showBackground = true, showSystemUi = true, name = "MutableStateByDelegateTextFieldRemember" ) @Composable fun MutableStateByDelegateTextFieldRemember()</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Preview( showBackground = true, showSystemUi = true, name = "MutableStateTextFieldRemember" ) @Composable fun MutableStateTextFieldRemember()</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Preview(showBackground = true, showSystemUi = true, name = "StateTextField") @Composable fun StateTextField()</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$@Preview(showBackground = true, showSystemUi = true, name = "StateTextFieldRemember") @Composable fun StateTextFieldRemember()</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$HelloLiveDataViewModel$fun onNameChange(newName: String)</ID>
+    <ID>CyclomaticComplexMethod:ManagingStates.kt$HelloStateFlowViewModel$fun onNameChange(newName: String)</ID>
+    <ID>CyclomaticComplexMethod:MarsPhotosActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MarsPhotosActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:MarsPhotosActivity.kt$MarsPhotosActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:MaxIntrinsicSizeComponent.kt$@Composable fun TwoTextsDesiredResultInstrinsicSizeComponent( modifier: Modifier = Modifier, first: String, second: String )</ID>
+    <ID>CyclomaticComplexMethod:MaxIntrinsicSizeComponent.kt$@Preview(showBackground = true) @Composable private fun TwoTextsDesiredResultInstrinsicSizeComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:MaxIntrinsicSizeComponent.kt$@Preview(showBackground = true) @Composable private fun TwoTextsDesiredResultMinInstrinsicSizeComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:MediumTopAppBar.kt$@Composable internal fun ScrollContent(innerPadding: PaddingValues)</ID>
+    <ID>CyclomaticComplexMethod:MediumTopAppBar.kt$@OptIn(ExperimentalMaterial3Api::class) @Preview(showSystemUi = true, apiLevel = 35) @Composable fun TopBarAppPreview(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MenuActivity.kt$MenuActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:MinIntrinsicSizeComponent.kt$@Composable fun TwoTextsUndesiredResultComponent( modifier: Modifier = Modifier, first: String, second: String )</ID>
+    <ID>CyclomaticComplexMethod:MinIntrinsicSizeComponent.kt$@Composable private fun TwoTextsDesiredResultComponent( modifier: Modifier = Modifier, content: Content )</ID>
+    <ID>CyclomaticComplexMethod:MinIntrinsicSizeComponent.kt$@Preview(showBackground = true) @Composable private fun TwoTextsDesiredResultComponentPreview( @PreviewParameter(ContentPreviewParameterProvider::class) content: Content )</ID>
+    <ID>CyclomaticComplexMethod:MinIntrinsicSizeComponent.kt$@Preview(showBackground = true) @Composable private fun TwoTextsUndesiredResultComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:MinIntrinsicsSizeColumnComponent.kt$@Composable fun MinIntrinsicColumnSizeUndesiredResultComponent( modifier: Modifier = Modifier, first: String, second: String )</ID>
+    <ID>CyclomaticComplexMethod:MinIntrinsicsSizeColumnComponent.kt$@Preview(showBackground = true) @Composable fun MinIntrinsicColumnSizeUndesiredResultComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:MinimalDialog.kt$@Preview(showBackground = true) @Composable fun MinimalDialog()</ID>
+    <ID>CyclomaticComplexMethod:MinimizeExpensiveCalculations.kt$@Composable fun ContactListCorrect( modifier: Modifier = Modifier, contacts: List&lt;Contact&gt;, comparator: Comparator&lt;Contact&gt; = Comparator { first, second -&gt; first.name.compareTo(second.name) }, )</ID>
+    <ID>CyclomaticComplexMethod:MinimizeExpensiveCalculations.kt$@Composable fun ContactListWrong( modifier: Modifier = Modifier, contacts: List&lt;Contact&gt;, comparator: Comparator&lt;Contact&gt; = Comparator { first, second -&gt; first.name.compareTo(second.name) }, )</ID>
+    <ID>CyclomaticComplexMethod:MinimizeExpensiveCalculations.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ContactListCorrectPreview()</ID>
+    <ID>CyclomaticComplexMethod:MinimizeExpensiveCalculations.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ContactListWrongPreview()</ID>
+    <ID>CyclomaticComplexMethod:MockPerformanceData.kt$Contact$override fun compareTo(other: Contact): Int</ID>
+    <ID>CyclomaticComplexMethod:MockViewModel.kt$MockViewModel$fun fetchContent()</ID>
+    <ID>CyclomaticComplexMethod:ModalBottomSheet.kt$ModalBottomSheet$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
+    <ID>CyclomaticComplexMethod:ModifierOrderAffectsAppearance.kt$@Preview(showBackground = true) @Composable fun ModifierOrderMatters()</ID>
+    <ID>CyclomaticComplexMethod:ModifierWeight.kt$@Composable fun ModifierWeight(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ModifierWeight.kt$@Preview(showBackground = true) @Composable fun ModifierWeightPreview()</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable @Preview(showBackground = true) fun LayoutDemo()</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable fun GridFixedLayout(items: List&lt;String&gt;, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable fun GridFlexibleLayout(items: List&lt;String&gt;, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable fun GridItemCard(text: String)</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable fun LayoutContent(items: List&lt;String&gt;, layoutType: LayoutType, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable fun ListItemCard(text: String)</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@Composable fun ListLayout(items: List&lt;String&gt;, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MultiplesGridAndListLayout.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun LayoutTopBar( onLayoutChange: (LayoutType) -&gt; Unit, expanded: Boolean, onExpandChange: (Boolean) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:MultiplesPreviews.kt$@LocalePreviews @FontScalePreviews @Composable fun Greeting()</ID>
+    <ID>CyclomaticComplexMethod:MultiplesStylesIntext.kt$@Preview(showBackground = true) @Composable fun MultiplesStylesText(color: Color = Color(0xFFB388FF))</ID>
+    <ID>CyclomaticComplexMethod:MultplesPreviewsII.kt$@DevicePreviews @DarkNode @Composable fun GreetingPreviewII()</ID>
+    <ID>CyclomaticComplexMethod:NavigationBarsPaddingExample.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun BottomButton(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:NetworkBoundResource.kt$fun &lt;Res, Req&gt; networkBoundResource()</ID>
+    <ID>CyclomaticComplexMethod:OpenModalBottomSheetActivity.kt$@Composable fun ButtonModalBottomSheet(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:OpenModalBottomSheetActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:OpenModalBottomSheetActivity.kt$ComposeViewBottomSheet$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
+    <ID>CyclomaticComplexMethod:OpenModalBottomSheetActivity.kt$OpenModalBottomSheetActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:OpenMovieDatabaseActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:OpenMovieDatabaseActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:OpenMovieDatabaseActivity.kt$OpenMovieDatabaseActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:OptimizedDownload.kt$fun Context.cachedOkHttp(cacheSize: Long = 10 * 1024 * 1024)</ID>
+    <ID>CyclomaticComplexMethod:OrderOfModifiersMatters.kt$@Preview() @Composable fun ProfileLayout(modifier: Modifier = Modifier, artist: Artist = Artist())</ID>
+    <ID>CyclomaticComplexMethod:OrderOfModifiersMatters.kt$@Preview(showBackground = true) @Composable fun ArtistAvatar(artist: Artist = Artist())</ID>
+    <ID>CyclomaticComplexMethod:OrderOfModifiersMatters.kt$@Preview(showBackground = true) @Composable fun OrderMatters1(artist: Artist = Artist(name = "Chris"))</ID>
+    <ID>CyclomaticComplexMethod:OrderViewModel.kt$OrderViewModel$private fun pickupOptions(): List&lt;String&gt;</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun StatefulOutlinedTextFieldErrorSupport( modifier: Modifier = Modifier, )</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun StatelessOutlinedTextFieldErrorSupport( modifier: Modifier = Modifier, viewModel: TextFieldStateViewModel = viewModel() )</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$NonEmptyText.Companion$fun of(content: String)</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$NonEmptyText.Companion$private fun valid(content: String)</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$NonForbidden.Companion$fun of(word: String)</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$TextFieldStateViewModel$fun onEventError(isError: Boolean)</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$TextFieldStateViewModel$fun onTextChange(content: String)</ID>
+    <ID>CyclomaticComplexMethod:OutlinedTextFieldErrorSupport.kt$ValidationText$fun valid(content: String): Boolean</ID>
+    <ID>CyclomaticComplexMethod:OverViewDivider.kt$@Composable fun &lt;T&gt; OverViewDivider( data: List&lt;T&gt;, values: (T) -&gt; Float, colors: (T) -&gt; Color )</ID>
+    <ID>CyclomaticComplexMethod:OverViewDivider.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun OverViewDividerPreview()</ID>
+    <ID>CyclomaticComplexMethod:OverviewBody.kt$@Composable fun OverviewBody(onScreenChange: (RallyScreen) -&gt; Unit = {})</ID>
+    <ID>CyclomaticComplexMethod:OverviewBody.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun OverviewBodyPreview()</ID>
+    <ID>CyclomaticComplexMethod:OverviewScreenCard.kt$@Composable fun &lt;T&gt; OverviewScreenCard( title: String, amount: Float, onClickSeeAll: () -&gt; Unit, values: (T) -&gt; Float, colors: (T) -&gt; Color, data: List&lt;T&gt;, row: @Composable (T) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:OverviewScreenCard.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun OverviewScreenCardPreview()</ID>
+    <ID>CyclomaticComplexMethod:OwlActivity.kt$OwlActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:OwnLifecycle.kt$MyLocationListener$override fun onPause(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:OwnLifecycle.kt$MyLocationListener$override fun onResume(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:PagerIndicatorPreview.kt$@Preview @Composable private fun PagerIndicatorPreview()</ID>
+    <ID>CyclomaticComplexMethod:PalleteUtils.kt$suspend fun generatePalette(bitmap: Bitmap): Palette</ID>
+    <ID>CyclomaticComplexMethod:ParcelizeRestoringState.kt$@Composable fun CityScreen()</ID>
+    <ID>CyclomaticComplexMethod:ParcelizeSample.kt$User.Companion$override fun User.write( parcel: Parcel, flags: Int )</ID>
+    <ID>CyclomaticComplexMethod:ParcelizeSample.kt$User.Companion$override fun create(parcel: Parcel): User</ID>
+    <ID>CyclomaticComplexMethod:PermissionsCameraX.kt$private fun AppCompatActivity.activityResultLauncher(startCamera: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:PreferencesActivity.kt$PreferencesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:PreviewAndLargeDataSetExample.kt$@Composable fun UserProfile(modifier: Modifier = Modifier, user: User)</ID>
+    <ID>CyclomaticComplexMethod:PreviewAndLargeDataSetExample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun UserProfilePreview( @PreviewParameter(UserPreviewParameterProvider::class, 2) user: User )</ID>
+    <ID>CyclomaticComplexMethod:PulsingCircle.kt$@Preview(showBackground = true) @Composable fun PulsingCircle()</ID>
+    <ID>CyclomaticComplexMethod:RallyActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:RallyActivity.kt$@Composable fun RallyApp(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:RallyActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:RallyActivity.kt$RallyActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:RallyAlertDialog.kt$@Composable fun ConfirmDialogButton( onConfirm: () -&gt; Unit, buttonText: String )</ID>
+    <ID>CyclomaticComplexMethod:RallyAlertDialog.kt$@Composable fun DismissDialogButton( onDismiss: () -&gt; Unit, buttonText: String )</ID>
+    <ID>CyclomaticComplexMethod:RallyAlertDialog.kt$@Composable fun RallyAlertDialog(rallyAlertDialogContext: RallyAlertDialogContext)</ID>
+    <ID>CyclomaticComplexMethod:RallyAlertDialog.kt$@Preview(showBackground = true) @Composable fun ConfirmDialogButtonPreview()</ID>
+    <ID>CyclomaticComplexMethod:RallyAlertDialog.kt$@Preview(showBackground = true) @Composable fun DismissDialogButtonPreview()</ID>
+    <ID>CyclomaticComplexMethod:RallyAlertDialog.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun RallyAlertDialogPreview()</ID>
+    <ID>CyclomaticComplexMethod:RallyScreen.kt$RallyScreen$@Composable fun Content(onScreenChange: (RallyScreen) -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:RallyTab.kt$@Composable internal fun RallyTab( text: String, icon: ImageVector, onSelected: () -&gt; Unit, selected: Boolean )</ID>
+    <ID>CyclomaticComplexMethod:RallyTab.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun RallyTabSelectedPreview()</ID>
+    <ID>CyclomaticComplexMethod:RallyTab.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun RallyTabUnselectedPreview()</ID>
+    <ID>CyclomaticComplexMethod:RallyTopAppBar.kt$@Composable fun RallyTopAppBar( allScreens: List&lt;RallyScreen&gt;, onChangeScreen: (RallyScreen) -&gt; Unit, currentScreen: RallyScreen )</ID>
+    <ID>CyclomaticComplexMethod:RallyTopAppBar.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun RallyTopAppBarPreview()</ID>
+    <ID>CyclomaticComplexMethod:RangeSliderComponent.kt$@Preview(showBackground = true) @Composable fun RangeSliderComponent()</ID>
+    <ID>CyclomaticComplexMethod:ReactingToScrollPosition.kt$@Composable fun MessageList(messages: List&lt;Message&gt;)</ID>
+    <ID>CyclomaticComplexMethod:ReactingToScrollPosition.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun PreviewMessageList()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$@Composable fun CounterRecomposition(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$@Stable fun Modifier.recomposeHighlighter( turnOn: Boolean = true, callback: (Long) -&gt; Unit = {} ): Modifier</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun InspectorInfo.inspectableProperties()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun create(): RecomposeHighlighterModifier</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun equals(other: Any?): Boolean</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun hashCode(): Int</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun update(node: RecomposeHighlighterModifier)</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterModifier$fun incrementCompositions()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterModifier$override fun ContentDrawScope.draw()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterModifier$override fun onAttach()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterModifier$override fun onDetach()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterModifier$override fun onReset()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecomposeHighlighterModifier$private fun restartTimer()</ID>
+    <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$RecompositionHighlighterActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:RememberKeyRetrigger.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun BackgroundBanner(viewModel: ImageResourceViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:RememberKeyRetrigger.kt$@SuppressLint("ComposableNaming") @Composable private fun RememberImageResourceUiState(id: Int)</ID>
+    <ID>CyclomaticComplexMethod:RememberLazyListState.kt$@Composable fun rememberLazyListSate( initialFistVisibleItemIndex: Int = 0, initialFistVisibleItemScrollOffset: Int = 0 ): LazyListState</ID>
+    <ID>CyclomaticComplexMethod:RememberSaveableActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:RememberSaveableActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:RememberSaveableActivity.kt$RememberSaveableActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:RememberTextMeasure.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun DrawTextCompose()</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Composable fun ReplyBottomSheetContent( parentComment: Comment, onDismiss: () -&gt; Unit, onAddComment: (String, String) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Composable private fun BottomSheetHeader( parentAuthor: String, onDismiss: () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Composable private fun CommentContextCard(comment: Comment)</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Composable private fun ReplyFormFields( author: String, onAuthorChange: (String) -&gt; Unit, content: String, onContentChange: (String) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Composable private fun SendReplyButton( enabled: Boolean, onClick: () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun PreviewReplyBottomSheetContent()</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewBottomSheetHeader()</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewCommentContextCard()</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewReplyFormFields()</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewSendReplyButtonDisabled()</ID>
+    <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewSendReplyButtonEnabled()</ID>
+    <ID>CyclomaticComplexMethod:Repository.kt$Repository$fun init()</ID>
+    <ID>CyclomaticComplexMethod:Repository.kt$Repository$suspend fun fetchData(): String</ID>
+    <ID>CyclomaticComplexMethod:RickAndMortyApi.kt$RickAndMortyApi$@GET("api/character/") suspend fun getCharactersByPage(@Query("page") page: Int)</ID>
+    <ID>CyclomaticComplexMethod:RickAndMortyApi.kt$RickAndMortyApi$@GET("api/episode/") suspend fun getEpisode()</ID>
+    <ID>CyclomaticComplexMethod:RickAndMortyApi.kt$RickAndMortyApi$@GET("api/location/") suspend fun getLocation()</ID>
+    <ID>CyclomaticComplexMethod:RouteNavigation.kt$@Composable fun Route( modifier: Modifier = Modifier, navController: NavHostController = rememberNavController() )</ID>
+    <ID>CyclomaticComplexMethod:RowHorizontalArrangement.kt$@Composable fun RowArrangementRepeat()</ID>
+    <ID>CyclomaticComplexMethod:RowHorizontalArrangement.kt$@Preview @Composable fun RowHorizontalArrangement()</ID>
+    <ID>CyclomaticComplexMethod:RowVerticalArrangement.kt$@Preview @Composable fun RowVerticalArrangement()</ID>
+    <ID>CyclomaticComplexMethod:ScaffoldComponentToHoldUITogether.kt$@OptIn(ExperimentalMaterial3Api::class) @Preview(showSystemUi = true) @Composable fun ScaffoldComponentTopAppBar()</ID>
+    <ID>CyclomaticComplexMethod:ScaffoldSample.kt$@Preview(showBackground = true) @Composable fun SimpleDrawerScaffoldComponent()</ID>
+    <ID>CyclomaticComplexMethod:ScrollIndicatorModifiers.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ScrollBoxes()</ID>
+    <ID>CyclomaticComplexMethod:ScrollIndicatorModifiers.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SimpleScrollBox()</ID>
+    <ID>CyclomaticComplexMethod:ScrollIndicatorModifiers.kt$fun Modifier.customScrollState( scrollState: LazyListState, thumbColor: Color = Color.DarkGray, trackColor: Color = Color.LightGray, trackWidth: Dp = 8.dp, rememberThumbColor: (Color) -&gt; Color, rememberTrackColor: (Color) -&gt; Color )</ID>
+    <ID>CyclomaticComplexMethod:ScrollListTopDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ScrollToSpecificPositionExample()</ID>
+    <ID>CyclomaticComplexMethod:ScrollListTopDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ScrollToTopExample()</ID>
+    <ID>CyclomaticComplexMethod:ScrollListTopDerivedStateOf.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun HorizontalCenteredScroll()</ID>
+    <ID>CyclomaticComplexMethod:SearchScreenActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:SearchScreenActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:SearchScreenActivity.kt$SearchScreenActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SecureDataScreen.kt$@Composable fun SecureDataScreen(onTimeout: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:SeeAllButton.kt$@Composable fun SeeAllButton(onClick: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:SeeAllButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SeeAllButtonPreview()</ID>
+    <ID>CyclomaticComplexMethod:SelectOptionScreen.kt$@Composable fun SelectOptionScreen( modifier: Modifier = Modifier, subtotal: String, options: List&lt;String&gt;, onSelectionChanged: (String) -&gt; Unit = {}, onCancelButtonClicked: () -&gt; Unit = {}, onNextButtonClicked: () -&gt; Unit = {} )</ID>
+    <ID>CyclomaticComplexMethod:SelectOptionScreen.kt$@ShowBackgroundOrNot @Composable private fun SelectOptionPreview()</ID>
+    <ID>CyclomaticComplexMethod:Shapes.kt$@Preview(showBackground = true) @Composable fun CircleShapeBox()</ID>
+    <ID>CyclomaticComplexMethod:Shapes.kt$@Preview(showBackground = true) @Composable fun RectangleShapeBox()</ID>
+    <ID>CyclomaticComplexMethod:Shapes.kt$@Preview(showBackground = true) @Composable fun RoundedCornerBox()</ID>
+    <ID>CyclomaticComplexMethod:Shapes.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun HexagonBox()</ID>
+    <ID>CyclomaticComplexMethod:Shapes.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ShapeRotatedBox()</ID>
+    <ID>CyclomaticComplexMethod:Shapes.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TriangleBox()</ID>
+    <ID>CyclomaticComplexMethod:ShowCaseMaterial3ComponentsViewActivity.kt$ShowCaseMaterial3ComponentsViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ShowCustomViewInCompose.kt$@Preview(showBackground = true, showSystemUi = false, name = "PreviewAddCustomView") @Composable fun AddCustomView(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ShowIcon.kt$@Preview(showBackground = true) @Composable fun ShowIcon()</ID>
+    <ID>CyclomaticComplexMethod:ShowLoadCustomViewActivity.kt$@Composable fun OpaqueOverlay(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ShowLoadCustomViewActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:ShowLoadCustomViewActivity.kt$ShowLoadCustomViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ShowcaseCard.kt$@Preview(showBackground = true) @Composable fun ShowcaseCardComponent( modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:SideEffectsActivity.kt$@Composable fun PulseEffect()</ID>
+    <ID>CyclomaticComplexMethod:SideEffectsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:SideEffectsActivity.kt$SideEffectsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SimpleBorder.kt$@Preview(showBackground = true) @Composable fun BorderSample()</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$DefaultBottomSheetDialogFragment$override fun onStart(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$DefaultBottomSheetDialogFragment$override fun onStop(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onCreateDialog(savedInstanceState: Bundle?): Dialog</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onDismiss(dialog: DialogInterface)</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onStart()</ID>
+    <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onStop()</ID>
+    <ID>CyclomaticComplexMethod:SimpleBrushBorder.kt$@Preview(showBackground = true) @Composable fun SimpleBrushBorder()</ID>
+    <ID>CyclomaticComplexMethod:SimpleClickableText.kt$@Composable fun ClickableTextExample(onClick: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:SimpleColumn.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SimpleColumn()</ID>
+    <ID>CyclomaticComplexMethod:SimpleSampleAGSL.kt$@RequiresApi(Build.VERSION_CODES.TIRAMISU) @Preview(showBackground = true) @Composable fun BoxShaderAGSL()</ID>
+    <ID>CyclomaticComplexMethod:SimpleSearchBarComposeActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:SimpleSearchBarComposeActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:SimpleSearchBarComposeActivity.kt$SimpleSearchBarComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SimpleText.kt$@Composable fun MyLayoutWithText(first: String, second: String)</ID>
+    <ID>CyclomaticComplexMethod:SimpleText.kt$@Preview(showBackground = true) @Composable private fun MyLayoutWithTextPreview()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidView.kt$@Composable fun SimpleTextAndroidView(value: String)</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidView.kt$@Preview(showBackground = true) @Composable fun SimpleTextAndroidViewPreview()</ID>
+    <ID>CyclomaticComplexMethod:SimpleViewModel.kt$SimpleViewModel$fun incrementCounter()</ID>
+    <ID>CyclomaticComplexMethod:SimpleViewModel.kt$SimpleViewModel$fun updateMessage(newMessage: String)</ID>
+    <ID>CyclomaticComplexMethod:SliderCounterAnimationActivity.kt$SliderCounterAnimationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SnackBarComponent.kt$@Composable fun StatefulSnackBarComponent()</ID>
+    <ID>CyclomaticComplexMethod:SnackBarComponentII.kt$@Composable fun StatelessSnackBarComponent()</ID>
+    <ID>CyclomaticComplexMethod:SnackBarViewActivity.kt$SnackBarViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>CyclomaticComplexMethod:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$private fun applySpringForce(movedVertexIndex: Int)</ID>
+    <ID>CyclomaticComplexMethod:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$private fun applySpringToVertex(vertexIndex: Int, movedVertexIndex: Int)</ID>
+    <ID>CyclomaticComplexMethod:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float</ID>
+    <ID>CyclomaticComplexMethod:SpringVisibilityThresholdParameter.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:StabilityInCompose.kt$@Composable fun ContactDetails( modifier: Modifier = Modifier, contact: Contact )</ID>
+    <ID>CyclomaticComplexMethod:StabilityInCompose.kt$@Composable fun ToggleButton( modifier: Modifier = Modifier, selected: Boolean, onToggled: (Boolean) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:StabilityInCompose.kt$@Preview(showBackground = true) @Composable fun ContactRow( @PreviewParameter(ContactParameterProvider::class) contact: Contact, modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:StackComponent.kt$@Composable fun Stack(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:StackComponent.kt$@Composable fun StackLayout( modifier: Modifier = Modifier, flipcard: Card?, leftStack: @Composable () -&gt; Unit, rightStack: @Composable () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:StartActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:StartActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:StartActivity.kt$StartActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:StartOrderScreen.kt$@Composable fun SelectQuantityButton( @StringRes labelResourceId: Int, onClick: () -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:StartOrderScreen.kt$@Composable fun StartOrderScreen( quantityOptions: List&lt;Pair&lt;Int, Int&gt;&gt;, onNextButtonClicked: (Int) -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>CyclomaticComplexMethod:StartOrderScreen.kt$@Preview(showBackground = true) @Composable fun SelectQuantityButtonPreview()</ID>
+    <ID>CyclomaticComplexMethod:StartOrderScreen.kt$@Preview(showBackground = true) @Composable fun StartOrderScreenPreview()</ID>
+    <ID>CyclomaticComplexMethod:StateHolders.kt$@Preview(showBackground = true) @Composable fun StateCounterByItSelf()</ID>
+    <ID>CyclomaticComplexMethod:StateInViewModel.kt$FakeRepository$suspend fun fetch(): List&lt;String&gt;</ID>
+    <ID>CyclomaticComplexMethod:StateInViewModel.kt$StateInViewModel$fun refreshData()</ID>
+    <ID>CyclomaticComplexMethod:StatementBody.kt$@Composable fun &lt;T&gt; StatementBody( items: List&lt;T&gt;, colors: (T) -&gt; Color, amounts: (T) -&gt; Float, amountsTotal: Float, circleLabel: String, rows: @Composable (T) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:StatementBody.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun StatementBodyPreview()</ID>
+    <ID>CyclomaticComplexMethod:StoreByMapServer.kt$@Composable fun CityScreenII(city: City)</ID>
+    <ID>CyclomaticComplexMethod:StoreParcelize.kt$@Composable fun CityScreen(city: City)</ID>
+    <ID>CyclomaticComplexMethod:StyleText.kt$@Preview(showBackground = true) @Composable fun ColoredText(color: Color = Color(0xFFB388FF))</ID>
+    <ID>CyclomaticComplexMethod:StyleText.kt$@Preview(showBackground = true) @Composable fun StyleText(color: Color = Color(0xFFB388FF))</ID>
+    <ID>CyclomaticComplexMethod:Surface.kt$@Preview(showBackground = true) @Composable fun TrySurface()</ID>
+    <ID>CyclomaticComplexMethod:Surface.kt$@Preview(showBackground = true) @Composable private fun TryClickableSurface()</ID>
+    <ID>CyclomaticComplexMethod:SurfaceTapper.kt$@Preview(showBackground = true) @Composable private fun ClickableSurfaceView()</ID>
+    <ID>CyclomaticComplexMethod:SwitchComponent.kt$@Preview(showBackground = true) @Composable fun BasicSwitch()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun CenterHorizontallyText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun VerticallyCenteredText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeCenterEndText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeCenterStartText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeCenterText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeTopCenterText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeTopEndText()</ID>
+    <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeTopStartText()</ID>
+    <ID>CyclomaticComplexMethod:TextCounterAnimationActivity.kt$TextCounterAnimationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:TextDecoratedUnderline.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TextCombiningDecorationUnderAndLineThrough()</ID>
+    <ID>CyclomaticComplexMethod:TextDecoratedUnderline.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TextCombiningDecorationUnderAndLineThroughSpecificWords()</ID>
+    <ID>CyclomaticComplexMethod:TextDecoratedUnderline.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TextDashedStyledUnderline()</ID>
+    <ID>CyclomaticComplexMethod:TextDecoratedUnderline.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TextDecoratedUnderline()</ID>
+    <ID>CyclomaticComplexMethod:TextDecoratedUnderline.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TextDecoratedUnderlineSpecificWords()</ID>
+    <ID>CyclomaticComplexMethod:TextDecoratedUnderline.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun TextDecoratedUnderlineWithOverflow()</ID>
+    <ID>CyclomaticComplexMethod:TextFieldState.kt$@Preview(showBackground = true) @Composable fun TextComponentExternalState()</ID>
+    <ID>CyclomaticComplexMethod:TextFieldState.kt$@Preview(showBackground = true) @Composable fun TextComponentInternalState()</ID>
+    <ID>CyclomaticComplexMethod:TextFieldState.kt$TextState$fun onChange(content: String)</ID>
+    <ID>CyclomaticComplexMethod:TextFromResource.kt$@Preview(showBackground = true) @Composable fun ResourceText()</ID>
+    <ID>CyclomaticComplexMethod:TextLayout.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ClipText()</ID>
+    <ID>CyclomaticComplexMethod:TextLayout.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun EllipsisText()</ID>
+    <ID>CyclomaticComplexMethod:TextLayout.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun LongText()</ID>
+    <ID>CyclomaticComplexMethod:TextLayout.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun MiddleEllipsisText()</ID>
+    <ID>CyclomaticComplexMethod:TextLayout.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun StartEllipsisText()</ID>
+    <ID>CyclomaticComplexMethod:Theme.kt$@Composable fun JustComposeLabsTheme( darkTheme: Boolean = isSystemInDarkTheme(), // Dynamic color is available on Android 12+ dynamicColor: Boolean = true, content: @Composable () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:Theme.kt$@Composable fun RallyDialogThemeOverlay(content: @Composable () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:ThemeDynamicColor.kt$@Composable fun ThemeDynamicColor( darkTheme: Boolean = isSystemInDarkTheme(), dynamicColor: Boolean = true, content: @Composable () -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ThemeSwitcher.kt$@Composable fun SimpleThemeSwitcher( darkTheme: Boolean, onThemeChange: (Boolean) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:ThemeSwitcher.kt$@Composable fun ThemeSwitcher()</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$@Composable fun BoxContainer( modifier: Modifier = Modifier, content: @Composable BoxScope.() -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$@Composable fun Clocks( modifier: Modifier = Modifier, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, clockViewModelStateFlow: ClockViewModelStateFlow = viewModel(), )</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$@Composable private fun ClockLiveData( modifier: Modifier = Modifier, viewModel: ClockViewModelLiveData = viewModel() )</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$@Composable private fun ClockSharedFlow( modifier: Modifier = Modifier, viewModel: ClockViewModelSharedFlow = viewModel() )</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$@Composable private fun ClockStateFlow( modifier: Modifier = Modifier, viewModel: ClockViewModelStateFlow )</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$@Preview(showBackground = true) @Composable fun ClocksPreview()</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$ClockViewModelLiveData$private fun currentHour()</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$ClockViewModelSharedFlow$private fun currentHour()</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$ClockViewModelStateFlow$private fun currentHour()</ID>
+    <ID>CyclomaticComplexMethod:TimerWithFlowTypesActivity.kt$TimerWithFlowTypesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:TypeOfSlidersActivity.kt$TypeOfSlidersActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:TypesOfRangeSliderActivity.kt$TypesOfRangeSliderActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:UnderstandingSnapshotFlow.kt$@OptIn(FlowPreview::class) @Composable fun RealTimeQuery(viewModel: QueryViewModel = viewModel())</ID>
+    <ID>CyclomaticComplexMethod:UnderstandingSnapshotFlow.kt$QueryViewModel$fun performSearch(query: String)</ID>
+    <ID>CyclomaticComplexMethod:UnderstandingSnapshotFlow.kt$SearchRepository$fun performSearch(query: String)</ID>
+    <ID>CyclomaticComplexMethod:UnstableLambdas.kt$@Composable fun StableLambdas(users: List&lt;User&gt;)</ID>
+    <ID>CyclomaticComplexMethod:UnstableLambdas.kt$@Composable fun UnstableLambdas(users: List&lt;User&gt;)</ID>
+    <ID>CyclomaticComplexMethod:UnstableLambdas.kt$@Preview(showBackground = true) @Composable fun StableLambdasPreview()</ID>
+    <ID>CyclomaticComplexMethod:UnstableLambdas.kt$@Preview(showBackground = true) @Composable fun UnstableLambdasPreview()</ID>
+    <ID>CyclomaticComplexMethod:UploadWorker.kt$UploadWorker$override fun doWork(): Result</ID>
+    <ID>CyclomaticComplexMethod:UploadWorker.kt$Uploader$fun upload(): ListenableWorker.Result</ID>
+    <ID>CyclomaticComplexMethod:UserRepository.kt$UserRepository$suspend fun getAllUsers(): List&lt;User&gt;</ID>
+    <ID>CyclomaticComplexMethod:UserRepository.kt$UserRepository$suspend fun register(user: User)</ID>
+    <ID>CyclomaticComplexMethod:UsingDerivedStateOf.kt$@Composable fun DisplayResult(count: State&lt;Int&gt;)</ID>
+    <ID>CyclomaticComplexMethod:UsingDerivedStateOf.kt$@Preview(showBackground = true) @Composable private fun DisplayResultPreview()</ID>
+    <ID>CyclomaticComplexMethod:UsingViewInComposeActivity.kt$@Composable fun CustomView(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:UsingViewInComposeActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:UsingViewInComposeActivity.kt$UsingViewInComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:UtilsComposable.kt$@Composable fun ComposableLifecycle( lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, onEvent: (LifecycleOwner, Lifecycle.Event) -&gt; Unit )</ID>
+    <ID>CyclomaticComplexMethod:UtilsComposable.kt$@Composable fun LogCompositions(tag: String, msg: String)</ID>
+    <ID>CyclomaticComplexMethod:UtilsComposable.kt$@Composable fun Modifier.paddingEdgeToEdge()</ID>
+    <ID>CyclomaticComplexMethod:VerticalPagerSample.kt$@Preview( showSystemUi = false, showBackground = true, device = "spec:width=411dp,height=891dp", name = "VerticalPagerSample" ) @Composable fun VerticalPagerSample(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:VerticalSliderComponentActivity.kt$VerticalSliderComponentActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T</ID>
+    <ID>CyclomaticComplexMethod:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$private fun &lt;T : ViewModel&gt; test( modelClass: Class&lt;T&gt;, dependency: Array&lt;Class&lt;*&gt;&gt;, eachDependency: List&lt;List&lt;*&gt;&gt; ): T</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactories.kt$ViewModelFactories$@JvmStatic fun &lt;V : ViewModel&gt; create( viewModelStore: ViewModelStore, factory: ViewModelProvider.Factory, ref: Class&lt;V&gt; ): V</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactories.kt$ViewModelFactories$fun modernFactory(): ViewModelProvider.Factory</ID>
+    <ID>CyclomaticComplexMethod:ViewModelStateFlowCourseActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ViewModelStateFlowCourseActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelStateFlowCourseActivity.kt$ViewModelStateFlowCourseActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$@Composable fun NavController()</ID>
+    <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun CupCakeContainerUI( modifier: Modifier = Modifier, viewModel: OrderViewModel = viewModel(), navController: NavHostController = rememberNavController() )</ID>
+    <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$WalkThroughActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$private fun cancelOrderAndNavigateToStart()</ID>
+    <ID>CyclomaticComplexMethod:WhereToHoistState.kt$@Preview(showBackground = true) @Composable fun ExpandableTextBox( message: Message = Message( id = "1", content = "Hello World", timestamp = "${System.currentTimeMillis()}ms" ) )</ID>
+    <ID>CyclomaticComplexMethod:WrapperLoadView.kt$WrapperLoadView$fun hide()</ID>
+    <ID>CyclomaticComplexMethod:WrapperLoadView.kt$WrapperLoadView$fun release()</ID>
+    <ID>CyclomaticComplexMethod:WrapperLoadView.kt$WrapperLoadView$fun show()</ID>
+    <ID>CyclomaticComplexMethod:WrapperLoadViewActivity.kt$@Composable fun LoadView(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:WrapperLoadViewActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview2()</ID>
+    <ID>CyclomaticComplexMethod:WrapperLoadViewActivity.kt$WrapperLoadViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>EmptyDefaultConstructor:AnotherMockViewModelVersionII.kt$AnotherMockViewModelVersionII$()</ID>
+    <ID>EmptyDefaultConstructor:AppendContentComponent.kt$DisplayTextViewModel$()</ID>
+    <ID>EmptyDefaultConstructor:CustomView.kt$CustomViewModel$()</ID>
+    <ID>EmptyDefaultConstructor:DummyViewModel.kt$DummyViewModel$()</ID>
+    <ID>EmptyDefaultConstructor:FunWithFlowTypesActivity.kt$StateFlowViewModel$()</ID>
+    <ID>EmptyDefaultConstructor:FunWithStateFlow.kt$StateFlowSampleViewModel$()</ID>
+    <ID>EmptyDefaultConstructor:GithubRepository.kt$GithubRepository$()</ID>
+    <ID>EmptyDefaultConstructor:MainIntent.kt$MainViewModel$()</ID>
+    <ID>EmptyElseBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity${ }</ID>
+    <ID>EmptyFunctionBlock:CardComponent.kt${ }</ID>
+    <ID>EmptyFunctionBlock:DessertCodelabsWithViewModelActivity.kt${ }</ID>
+    <ID>EmptyFunctionBlock:DiceRollerActivity.kt${ }</ID>
+    <ID>EmptyFunctionBlock:DogIcon.kt${ }</ID>
+    <ID>EmptyFunctionBlock:FragmentScreenComposeActivity.kt${ }</ID>
+    <ID>EmptyFunctionBlock:HandlingInteractionsState.kt${ }</ID>
+    <ID>EmptyFunctionBlock:ImageTranslationComponent.kt${ }</ID>
+    <ID>EmptyFunctionBlock:ImmutableCollections.kt${ }</ID>
+    <ID>EmptyFunctionBlock:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager${}</ID>
+    <ID>EmptyFunctionBlock:MinIntrinsicsSizeColumnComponent.kt${ }</ID>
+    <ID>EmptyFunctionBlock:NetworkBoundResource.kt${}</ID>
+    <ID>EmptyFunctionBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity.&lt;no name provided&gt;${ }</ID>
+    <ID>EmptyFunctionBlock:ShowcaseCard.kt${ }</ID>
+    <ID>EmptyFunctionBlock:SnackBarComponentII.kt${ }</ID>
+    <ID>EmptyFunctionBlock:StackComponent.kt${ }</ID>
+    <ID>EmptyFunctionBlock:ThemeDynamicColor.kt${ }</ID>
+    <ID>EmptyFunctionBlock:ThemeSwitcher.kt${ }</ID>
+    <ID>EmptyFunctionBlock:WalkThroughActivity.kt${ }</ID>
+    <ID>EmptyIfBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity${ }</ID>
+    <ID>EqualsAlwaysReturnsTrueOrFalse:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun equals(other: Any?): Boolean</ID>
+    <ID>Filename:BasicGuideGra[hicsLayer.kt$com.br.justcomposelabs.tutorial.google.compose.graphicslayer.BasicGuideGra[hicsLayer.kt</ID>
+    <ID>Filename:CoroutineScopeUtils.kt$com.br.justcomposelabs.CoroutineScopeUtils.kt</ID>
+    <ID>Filename:DiceRoll.kt$com.br.justcomposelabs.tutorial.google.compose.state.production.diceroll.DiceRoll.kt</ID>
+    <ID>Filename:DynamicHeightCardList].kt$com.br.justcomposelabs.tutorial.google.intrinsicmeasurements.DynamicHeightCardList].kt</ID>
+    <ID>Filename:EditTask.kt$com.br.justcomposelabs.tutorial.google.compose.state.production.edittask.EditTask.kt</ID>
+    <ID>Filename:FilterWhileTyping.kt$com.br.justcomposelabs.tutorial.google.filterwhiletyping.FilterWhileTyping.kt</ID>
+    <ID>Filename:OwnLifecycle.kt$com.br.justcomposelabs.tutorial.google.lifecycle.handlerlifecycle.OwnLifecycle.kt</ID>
+    <ID>Filename:ParcelizeSample.kt$com.br.justcomposelabs.tutorial.google.parcelize.ParcelizeSample.kt</ID>
+    <ID>ForbiddenComment:CustomizeAnimation.kt$SizeAnimationViewModel$/* TODO: usar esse estado para criar uma interface com controles que possam modificar seus valores - Use algum componente de seleção com as opçoes de mudanca de: - dampingRatio - stiffness - talvez visibilidade */</ID>
+    <ID>ForbiddenComment:DynamicColorScreen.kt$/* TODO: Preview nao ta aparecendo */</ID>
+    <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$// TODO: Rename parameter arguments, choose names that match</ID>
+    <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$// TODO: Rename and change types of parameters</ID>
+    <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment.Companion$// TODO: Rename and change types and number of parameters</ID>
+    <ID>ForbiddenComment:WhereToHoistState.kt$Message$* TODO: Estudar esse assunto * https://developer.android.com/develop/ui/compose/state-hoisting#classes-as-state-owner * - UI Logic - Quando a logica de UI precisa ler ou rescrever um estado, devmos restringir esse estado para a UI. - Podemos fazer isso elevando o estado para um "nível correto" em uma composable function - Podemos fazer isso em uma classe especifica para manter estados - plain state holder class (https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-logic) Composables as state owner - https://developer.android.com/develop/ui/compose/state-hoisting#composables-as-state-owner - Se estamos lidando com logica de estado simples, a documentacao nos diz que nao ha problemas. Podemos deixar o controle do estado internamente para composable ou "iça-lo / hoist" se for requisido No state hoisting needed - https://developer.android.com/develop/ui/compose/state-hoisting#no-state-hoisting - Hoisting state nem sempre é requirido. O estado pode ser mantido internamente nos casos que nenhuma outra composable necessite controla-lo.</ID>
+    <ID>ImplicitDefaultLocale:LerpFunction.kt$String.format("%s%s", Integer.toHexString(value / 16), Integer.toHexString(value % 16))</ID>
+    <ID>LongMethod:AdvanvcedCustomDialog.kt$@Preview(showBackground = true) @Composable fun ImageDialog()</ID>
+    <ID>LongMethod:AnimatedCircle.kt$@Composable fun AnimatedCircle( proportions: List&lt;Float&gt;, colors: List&lt;Color&gt;, modifier: Modifier = Modifier )</ID>
+    <ID>LongMethod:AnimatedCounterComponent.kt$@Preview(showBackground = true) @Composable fun AnimatedCounterComponent()</ID>
+    <ID>LongMethod:Cartesian3DView.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun CartesianPlan3dAxis()</ID>
+    <ID>LongMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ClickableTimedFlippingBox()</ID>
+    <ID>LongMethod:CommentTree.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun InfiniteScrollCommentTree( comments: List&lt;Comment&gt;, modifier: Modifier = Modifier, onAddComment: (Comment, String, String) -&gt; Unit = { _, _, _ -&gt; } )</ID>
+    <ID>LongMethod:CommentViewModel.kt$CommentViewModel$private fun initializeSampleComments()</ID>
+    <ID>LongMethod:HandleConfigurationChanges.kt$@Preview(showSystemUi = true) @Composable fun ConfigurationDeviceInfoComponent()</ID>
+    <ID>LongMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>LongMethod:OrderOfModifiersMatters.kt$@Preview(showBackground = true) @Composable fun OrderMatters1(artist: Artist = Artist(name = "Chris"))</ID>
+    <ID>LongMethod:ScrollIndicatorModifiers.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ScrollBoxes()</ID>
+    <ID>LongMethod:ScrollListTopDerivedStateOf.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun HorizontalCenteredScroll()</ID>
+    <ID>LongMethod:SelectOptionScreen.kt$@Composable fun SelectOptionScreen( modifier: Modifier = Modifier, subtotal: String, options: List&lt;String&gt;, onSelectionChanged: (String) -&gt; Unit = {}, onCancelButtonClicked: () -&gt; Unit = {}, onNextButtonClicked: () -&gt; Unit = {} )</ID>
+    <ID>LongMethod:SpringVisibilityThresholdParameter.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel())</ID>
+    <ID>LongMethod:StartOrderScreen.kt$@Composable fun StartOrderScreen( quantityOptions: List&lt;Pair&lt;Int, Int&gt;&gt;, onNextButtonClicked: (Int) -&gt; Unit, modifier: Modifier = Modifier )</ID>
+    <ID>MatchingDeclarationName:AdvancedStateAndSideEffects.kt$UiUnsafeState : ViewModel</ID>
+    <ID>MatchingDeclarationName:AppendContentComponent.kt$DisplayTextViewModel : ViewModel</ID>
+    <ID>MatchingDeclarationName:CoroutineScopeUtils.kt$GenericScope</ID>
+    <ID>MatchingDeclarationName:DerivedOfConvertMultiplesState.kt$Message</ID>
+    <ID>MatchingDeclarationName:DiceRoll.kt$DiceUiState</ID>
+    <ID>MatchingDeclarationName:DrawBehindBetterThanBackgroundInAnimation.kt$SimpleViewModel : ViewModel</ID>
+    <ID>MatchingDeclarationName:DynamicHeightCardList].kt$MyCardData</ID>
+    <ID>MatchingDeclarationName:EditTask.kt$AddEditTaskUiState</ID>
+    <ID>MatchingDeclarationName:FilterWhileTyping.kt$FilterTextViewModel : ViewModel</ID>
+    <ID>MatchingDeclarationName:FunWithStateFlow.kt$StateFlowSampleViewModel : ViewModel</ID>
+    <ID>MatchingDeclarationName:LazyRowWithMaxHeight.kt$MockContent</ID>
+    <ID>MatchingDeclarationName:ManageStateRxJava3.kt$HelloStateRx3ava3ViewModel : ViewModel</ID>
+    <ID>MatchingDeclarationName:ManageStatesRx.kt$HelloStateRxViewModel : ViewModel</ID>
+    <ID>MatchingDeclarationName:MultiplesGridAndListLayout.kt$LayoutType</ID>
+    <ID>MatchingDeclarationName:MultplesPreviewsII.kt$DarkNode</ID>
+    <ID>MatchingDeclarationName:OrderOfModifiersMatters.kt$Artist</ID>
+    <ID>MatchingDeclarationName:OwnLifecycle.kt$MyLocationListener : DefaultLifecycleObserver</ID>
+    <ID>MatchingDeclarationName:ParcelizeSample.kt$User : Parcelable</ID>
+    <ID>MatchingDeclarationName:ReactingToScrollPosition.kt$MessagePreviewParameterProvider : CollectionPreviewParameterProvider</ID>
+    <ID>MatchingDeclarationName:StoreParcelize.kt$City : Parcelable</ID>
+    <ID>MatchingDeclarationName:TextFieldState.kt$TextState</ID>
+    <ID>MatchingDeclarationName:TypesSaverRestoringState.kt$User</ID>
+    <ID>MatchingDeclarationName:UnstableLambdas.kt$User</ID>
+    <ID>MatchingDeclarationName:UtilsComposable.kt$ShowBackgroundOrNot</ID>
+    <ID>MatchingDeclarationName:WhereToHoistState.kt$Message</ID>
+    <ID>MaxLineLength:CommentItem.kt$content = "Este é o conteúdo do comentário que pode ser bem longo e ocupar várias linhas para demonstrar como o layout se comporta."</ID>
+    <ID>MaxLineLength:CommentItem.kt$content = "Este é um comentário de exemplo com texto suficiente para testar o layout e verificar como fica a exibição."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Concordo! E com @PreviewParameter fica ainda melhor para testar diferentes estados."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "E os componentes adaptam automaticamente! Surface, Card, tudo muda de forma consistente."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Exato! StateFlow para lógica de negócio, State para UI local. Separação clara!"</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Excelente dica! E não se esqueça de usar key() no items do LazyColumn."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "LazyColumn funciona perfeitamente! É equivalente ao RecyclerView em performance."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Nível 5 de profundidade! Compose torna isso tudo possível de visualizar facilmente."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Sim! Especialmente para tablets e foldables. Essencial hoje em dia."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Sim! Estou usando há 6 meses. A produtividade aumentou muito, especialmente com previews."</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Use remember e derivedStateOf para otimizar recomposições. Faz muita diferença!"</ID>
+    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Você usa @PreviewScreenSizes também? Ajuda muito com responsividade."</ID>
+    <ID>MaxLineLength:DiceViewModel.kt$/* https://developer.android.com/topic/libraries/architecture/viewmodel - View Model class é uma estrutura que manter estado de logica de negocio ou de um componente UI a nivel de tela - Podemos expor estado de uma UI atraves de um componente observador como LiveData, Flow, StateFlow e encappsular uma logica de negocio relacionada a View - Beneficios de uma ViewModel - A alternativa para uma ViewModel é usar uma plain class que mantem o estado de um dado que exibimos na tela. Isso começa a ficar complicado quando navegamos entre activities ou entre os destinos num grafo de navegacao. - Usar uma classe que nao a ViewModel para isso nos força a ter que utilizar algum mecanismo de armazenamento dessa classe, seja onSaveInstanceState da View ou rememberSaveable do compose. - A ViewModel fornece uma API para persistir dados que resolve o problema - Pontos chave - Permite persistir dados para UI State - Prove um espaço onde podemos implementar Lógica separado da UI - Persistence (https://developer.android.com/topic/libraries/architecture/viewmodel#persistence) - - Ciclo de vida de uma ViewModel esta vinculado ao de um activity ou fragment ? - Sim, uma viewmodel persiste enquanto o componente ao qual esta ligado nao fo destruido permanentemente, como um activity que é destruida ou um fragment removido - A Vinculacao - O ciclo de vida de uma viewmodel é gerenciado por ViewModelStoreOwner https://developer.android.com/topic/libraries/architecture/viewmodel#scope - Escopo (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#scope) - - O ciclo de vida de um ViewModel (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#lifecycle) - O Ciclo de vida de uma viewmodel está diretamente vinculada ao escopo dela. - Ela permanece em memoria ate que o ViewModelStoreOwner definido como escopo dela desapareça - Isso pode ocorrer nos seguintes contextos - Uma activity que finaliza - Um fragment que é removido - Uma entrada de uma navegacao, quando ela é removida da backstack (NavComponent) - Isso faz da ViewModel uma otima opcao para armazenar dados quando ocorre uma mudanca de configuracao https://developer.android.com/topic/architecture/ui-layer/stateholders -------------- lifecycleowner independent compose https://www.linkedin.com/feed/update/urn:li:activity:7366888898473517058/ ------------------------------------------ what is lifecycle in android ? - lifecycle define e gerencia o estado dos componentes em android, tais como: Activity ou Fragment. - Essa gerencia ocorre desde a criacao do componente ate sua destruicao - Android forncece callbacks methods para interceptar esses estados - Como desenvolvedores, podemos utilizr esses callback methods para adicionar algum comportamento ou gerenciar recursos, manipular eventos como navegacao do usuario ou interrupcoes do sistema de forma harmoniosa. */</ID>
+    <ID>MaxLineLength:DraggableTriangleView.kt$DraggableTriangleView$/* DraggableTriangleView#onTouchEvent should call DraggableTriangleView#performClick when a click is detected Toggle info (⌘F1) view#ontouchevent should call view#performclick accessibility https://developer.android.com/guide/topics/ui/accessibility/custom-views */</ID>
+    <ID>MaxLineLength:ImageCoil.kt$ImageContextProvider$"https://www.gstatic.com/devrel-devsite/prod/v9de0f443992d54ad799f913d3a82969ff613e39ab9e3e056983c556b3c2ef1f8/android/images/lockup.png"</ID>
+    <ID>MaxLineLength:IntegrateLifecycleWithCompose.kt$/* https://developer.android.com/topic/libraries/architecture/compose Warning: You cannot use this to listen for Lifecycle.Event.ON_DESTROY since composition ends before this signal is sent. */</ID>
+    <ID>MaxLineLength:ReplyBottomSheet.kt$content = "Este é o comentário pai ao qual você está respondendo. Pode conter bastante texto para demonstrar o layout."</ID>
+    <ID>MaxLineLength:Surface.kt$/* The size of the shadow below the surface. Note that It will not affect z index of the Surface. If you want to change the drawing order you can use Modifier.zIndex. */</ID>
+    <ID>MaxLineLength:Surface.kt$// Defines the surface's shape as well its shadow. A shadow is only displayed if the elevation is greater than zero.</ID>
+    <ID>MaxLineLength:TextDecoratedUnderline.kt$"on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped."</ID>
+    <ID>MaxLineLength:TextDecoratedUnderline.kt$text = "Text with Underline Decoration and Overflow Handling. This text is intentionally long to demonstrate how the Text composable handles overflow when the text exceeds the available space. The text should be truncated with an ellipsis at the end."</ID>
+    <ID>MaxLineLength:UsingDerivedStateOf.kt$/* https://www.linkedin.com/feed/update/urn:li:activity:7447659533109497856/ derivedStateOf: convert one or multiple state objects into another state - https://developer.android.com/develop/ui/compose/side-effects#derivedstateof - Em compose, recomposicoes ocorrem cada vez que um objeto de Estado observavel ou um parâmetro de entrada de uma função composable muda. - Um objeto de estado ou dados de entrada podem mudar com mais frequencia do que a UI realmente necessita ser atualizada, isso causa recomposições desnecessarias - Em casos que os inputs mudem mais do que a UI necessita ser atualizada devemos usar derivedStateOf(https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#derivedStateOf(kotlin.Function0)) */</ID>
+    <ID>MaxLineLength:WindowInsets.kt$/* https://developer.android.com/develop/ui/compose/system/insets Compose and Window Insets https://developer.android.com/develop/ui/compose/system/insets https://developer.android.com/develop/ui/compose/system/insets-ui Compose layout adjust layout below edges Adjusting a Jetpack Compose layout "below edges" typically refers to handling window insets to ensure content is not obscured by system UI elements like the status bar, navigation bar, or display cutouts, especially when implementing an edge-to-edge design. Key concepts for adjusting layouts below edges: Window Insets: These represent areas of the screen that are occupied by system UI. Compose provides APIs to access and utilize these insets to adjust your layout. WindowInsets.safeDrawing: Represents the area where interactive elements should be placed to avoid overlapping with system UI. WindowInsets.systemBars: Represents the space occupied by the status bar and navigation bar. WindowInsets.displayCutout: Represents the area of display cutouts (notches, punch-holes). Applying Insets: Padding Modifiers: The most common way to adjust for insets is by applying padding modifiers using the WindowInsets values. For example, Modifier.padding(WindowInsets.safeDrawing.asPaddingValues()) applies padding around the entire content to avoid system UI. Inset Size Modifiers: For more fine-grained control, you can use modifiers like Modifier.windowInsetsPadding() or Modifier.windowInsetsEnd() to apply padding or size adjustments based on specific inset types. Edge-to-Edge Design: When designing edge-to-edge, your app draws behind the system bars and display cutouts. This requires careful handling of insets to prevent content from being hidden. On Android 15 (API level 35) and higher, edge-to-edge is enforced when targeting SDK 35, requiring apps to handle insets. The Scaffold component from Material 3 can simplify handling insets for common UI structures. */</ID>
+    <ID>MaximumLineLength:CommentItem.kt$ </ID>
+    <ID>MaximumLineLength:CommentViewModel.kt$CommentViewModel$ </ID>
+    <ID>MaximumLineLength:ImageCoil.kt$ImageContextProvider$ </ID>
+    <ID>MaximumLineLength:ReplyBottomSheet.kt$ </ID>
+    <ID>MaximumLineLength:TextDecoratedUnderline.kt$ </ID>
+    <ID>MemberNameEqualsClassName:SharedInRandomViewModel.kt$SharedRandomNumberFlow$val sharedRandomNumberFlow = flow { while (true) { delay(1000) emit((0..100).random()) } }.shareIn( scope = viewModelScope, started = SharingStarted.WhileSubscribed() )</ID>
+    <ID>NoWildcardImports:Cartesian3DCompose.kt$import androidx.compose.runtime.*</ID>
+    <ID>NoWildcardImports:Cartesian3DComposeSmooth.kt$import androidx.compose.runtime.*</ID>
+    <ID>NoWildcardImports:Cartesian3DView.kt$import androidx.compose.runtime.*</ID>
+    <ID>NoWildcardImports:ColumnExpandShrink.kt$import androidx.compose.animation.core.*</ID>
+    <ID>NoWildcardImports:ColumnExpandShrink.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>NoWildcardImports:ColumnExpandShrink.kt$import androidx.compose.runtime.*</ID>
+    <ID>NoWildcardImports:DraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>NoWildcardImports:ElasticDraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>NoWildcardImports:ElasticDraggableTriangleViewII.kt$import kotlin.math.*</ID>
+    <ID>NoWildcardImports:ElasticDraggableTriangleViewIII.kt$import kotlin.math.*</ID>
+    <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.animation.core.*</ID>
+    <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.runtime.*</ID>
+    <ID>NoWildcardImports:Icons.kt$import androidx.compose.ui.graphics.*</ID>
+    <ID>NoWildcardImports:Icons.kt$import androidx.compose.ui.graphics.vector.*</ID>
+    <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.material3.*</ID>
+    <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.runtime.*</ID>
+    <ID>NoWildcardImports:ShowLoadCustomViewActivity.kt$import androidx.appcompat.app.AppCompatDelegate.*</ID>
+    <ID>NoWildcardImports:SpringAnimationDraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>PrintStackTrace:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$e</ID>
+    <ID>ReturnCount:Comment.kt$Comment$fun findComment(commentId: Int): Comment?</ID>
+    <ID>ReturnCount:DraggableTriangleView.kt$DraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>ReturnCount:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>ReturnCount:ElasticDraggableTriangleViewII.kt$ElasticDraggableTriangleViewII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>ReturnCount:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>ReturnCount:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>SpreadOperator:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$(*dependency)</ID>
+    <ID>SwallowedException:DessertCodelabsActivity.kt$e: ActivityNotFoundException</ID>
+    <ID>TooGenericExceptionCaught:ForceCrash.kt$e: Exception</ID>
+    <ID>TopLevelPropertyNaming:AnimatedCircle.kt$private const val DividerLengthInDegrees = 1.8f</ID>
+    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val InactiveTabOpacity = 0.60f</ID>
+    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeInAnimationDelay = 100</ID>
+    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeInAnimationDuration = 150</ID>
+    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeOutAnimationDuration = 100</ID>
+    <ID>UnusedParameter:CardComponent.kt$cardFace: CardFace?</ID>
+    <ID>UnusedParameter:CardComponent.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:CardFlipActivity.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:Cartesian3DComposeSmooth.kt$screenHeight: Float</ID>
+    <ID>UnusedParameter:Cartesian3DComposeSmooth.kt$screenWidth: Float</ID>
+    <ID>UnusedParameter:ChatBubble.kt$message: Message = Message( id = "1", content = "Hello World", timestamp = "${System.currentTimeMillis()}ms" )</ID>
+    <ID>UnusedParameter:Composables.kt$onClick: () -&gt; Unit = {}</ID>
+    <ID>UnusedParameter:Composables.kt$second: Color</ID>
+    <ID>UnusedParameter:DessertCodelabsActivity.kt$@DrawableRes dessertImageId: Int</ID>
+    <ID>UnusedParameter:DessertCodelabsActivity.kt$dessertsSold: Int</ID>
+    <ID>UnusedParameter:DessertCodelabsActivity.kt$onDessertClicked: () -&gt; Unit</ID>
+    <ID>UnusedParameter:DessertCodelabsActivity.kt$onShareButtonClicked: () -&gt; Unit</ID>
+    <ID>UnusedParameter:DessertCodelabsActivity.kt$revenue: Int</ID>
+    <ID>UnusedParameter:DessertCodelabsWithViewModelActivity.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:DessertCodelabsWithViewModelActivity.kt$onDessertClicked: () -&gt; Unit</ID>
+    <ID>UnusedParameter:DessertCodelabsWithViewModelActivity.kt$uiState: DessertUiState</ID>
+    <ID>UnusedParameter:DiceRollerActivity.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:DogIcon.kt$@DrawableRes dogIcon: Int</ID>
+    <ID>UnusedParameter:DogIcon.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:FunWithLaunchedEffectsActivity.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:MediumTopAppBar.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:RouteNavigation.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:RouteNavigation.kt$navController: NavHostController = rememberNavController()</ID>
+    <ID>UnusedParameter:ShowcaseCard.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:StackComponent.kt$flipcard: Card?</ID>
+    <ID>UnusedParameter:StackComponent.kt$leftStack: @Composable () -&gt; Unit</ID>
+    <ID>UnusedParameter:StackComponent.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:StackComponent.kt$rightStack: @Composable () -&gt; Unit</ID>
+    <ID>UnusedParameter:ThemeDynamicColor.kt$content: @Composable () -&gt; Unit</ID>
+    <ID>UnusedParameter:ThemeDynamicColor.kt$darkTheme: Boolean = isSystemInDarkTheme()</ID>
+    <ID>UnusedParameter:ThemeDynamicColor.kt$dynamicColor: Boolean = true</ID>
+    <ID>UnusedParameter:ThemeSwitcher.kt$darkTheme: Boolean</ID>
+    <ID>UnusedParameter:ThemeSwitcher.kt$onThemeChange: (Boolean) -&gt; Unit</ID>
+    <ID>UnusedParameter:TimerWithFlowTypesActivity.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedParameter:VerticalPagerSample.kt$modifier: Modifier = Modifier</ID>
+    <ID>UnusedPrivateMember:CommonUI.kt$@ShowBackgroundOrNot @Composable private fun FormattedPriceLabelPreview()</ID>
+    <ID>UnusedPrivateMember:Composables.kt$@Composable private fun ScrollToTopButton(onClick: () -&gt; Unit = {})</ID>
+    <ID>UnusedPrivateMember:Composables.kt$@Composable private fun animateColorBetween(first: Color, second: Color): State&lt;Color&gt;</ID>
+    <ID>UnusedPrivateMember:DessertCodelabsActivity.kt$private fun determineDessertToShow( desserts: List&lt;Dessert&gt;, dessertsSold: Int ): Dessert</ID>
+    <ID>UnusedPrivateMember:FunWithLaunchedEffectsActivity.kt$@Composable private fun TimerScreen()</ID>
+    <ID>UnusedPrivateMember:PermissionsCameraX.kt$private fun AppCompatActivity.activityResultLauncher(startCamera: () -&gt; Unit)</ID>
+    <ID>UnusedPrivateMember:RememberKeyRetrigger.kt$@SuppressLint("ComposableNaming") @Composable private fun RememberImageResourceUiState(id: Int)</ID>
+    <ID>UnusedPrivateMember:SelectOptionScreen.kt$@ShowBackgroundOrNot @Composable private fun SelectOptionPreview()</ID>
+    <ID>UnusedPrivateMember:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$private fun &lt;T : ViewModel&gt; test( modelClass: Class&lt;T&gt;, dependency: Array&lt;Class&lt;*&gt;&gt;, eachDependency: List&lt;List&lt;*&gt;&gt; ): T</ID>
+    <ID>UnusedPrivateMember:WalkThroughActivity.kt$private fun cancelOrderAndNavigateToStart()</ID>
+    <ID>UnusedPrivateProperty:AnimatingMultipleColors.kt$val interpolatedColor = lerp( startColor, endColor, sliderPosition )</ID>
+    <ID>UnusedPrivateProperty:AsyncImageCoil.kt$val s = setSingletonImageLoaderFactory { context -&gt; ImageLoader.Builder(context) .components { add(SvgDecoder.Factory()) }.build() }</ID>
+    <ID>UnusedPrivateProperty:BaseViewModelExample.kt$BaseViewModelExample$private val sharedFlowUiEvent: SharedFlow&lt;UIEvent&gt; = mutableSharedFlowUIEvent.asSharedFlow()</ID>
+    <ID>UnusedPrivateProperty:BottomSheetScaffold.kt$val colors = remember { listOf&lt;Color&gt;( Color.Blue, Color.Gray, Color.Green, Color.Magenta, Color.Yellow, Color.Cyan ) }</ID>
+    <ID>UnusedPrivateProperty:BottomSheetScaffold.kt$val scope = rememberCoroutineScope()</ID>
+    <ID>UnusedPrivateProperty:BottomSheetScaffoldMaterial3.kt$val colors = remember { listOf( Color.Blue, Color.Gray, Color.Green, Color.Magenta, Color.Yellow, Color.Cyan ) }</ID>
+    <ID>UnusedPrivateProperty:BottomSheetScaffoldMaterial3.kt$val scope = rememberCoroutineScope()</ID>
+    <ID>UnusedPrivateProperty:CoinFlipAnimation.kt$val sideFaceFalse = Color.Red</ID>
+    <ID>UnusedPrivateProperty:CustomView.kt$CustomView$private val viewModel: CustomViewModel? by lazy { findViewTreeViewModelStoreOwner()?.let { lifecycleOwner -&gt; ViewModelProvider(lifecycleOwner)[CustomViewModel::class.java] } }</ID>
+    <ID>UnusedPrivateProperty:DessertCodelabsActivity.kt$val direction = LocalLayoutDirection.current</ID>
+    <ID>UnusedPrivateProperty:DessertCodelabsActivity.kt$var currentDessertPrice by rememberSaveable { mutableIntStateOf(desserts[currentDessertIndex].price) }</ID>
+    <ID>UnusedPrivateProperty:GithubRepository.kt$// GitHub page API is 1 based: https://developer.github.com/v3/#pagination private const val GITHUB_STARTING_PAGE_INDEX = 1</ID>
+    <ID>UnusedPrivateProperty:IntegrateWithCompose.kt$val currentLifecycleState by stateFlow.collectAsState()</ID>
+    <ID>UnusedPrivateProperty:LazyRowCardsMaxHeight.kt$val density = LocalDensity.current</ID>
+    <ID>UnusedPrivateProperty:MockPerformanceData.kt$NoteRow$note: Any</ID>
+    <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val callback: (Location) -&gt; Unit</ID>
+    <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val context: Context</ID>
+    <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val lifecycle: Lifecycle</ID>
+    <ID>UnusedPrivateProperty:ParcelizeRestoringState.kt$val selectedCity = rememberSaveable { mutableStateOf(City("São Paulo", "Brazil")) }</ID>
+    <ID>UnusedPrivateProperty:SideEffectsActivity.kt$SideEffectsActivity$val paddingModifier = Modifier.padding(innerPadding)</ID>
+    <ID>UnusedPrivateProperty:SideEffectsActivity.kt$val alpha = remember { Animatable(1f) }</ID>
+    <ID>UnusedPrivateProperty:SideEffectsActivity.kt$var pulseRateMs by remember { mutableStateOf(500L) }</ID>
+    <ID>UnusedPrivateProperty:SnackBarComponent.kt$val snackBarStateHost = remember { SnackbarHostState() }</ID>
+    <ID>UnusedPrivateProperty:StoreByMapServer.kt$val selectedCity = rememberSaveable(stateSaver = CitySaver) { mutableStateOf(city) }</ID>
+    <ID>UnusedPrivateProperty:StoreByMapServer.kt$val selectedCityII = rememberSaveable(stateSaver = CityListSaver) { mutableStateOf(city) }</ID>
+    <ID>UnusedPrivateProperty:StoreParcelize.kt$val selectedCity = rememberSaveable { mutableStateOf(city) }</ID>
+    <ID>UnusedPrivateProperty:TextCounterAnimationActivity.kt$TextCounterAnimationActivity$private val timeInterpolation = TimeInterpolator { input -&gt; /* https://developer.android.com/reference/android/animation/TimeInterpolator */ 0.1f * input }</ID>
+    <ID>UseCheckOrError:ForceCrash.kt$throw IllegalStateException("No Fatal Exception Crash")</ID>
+    <ID>UtilityClassWithPublicConstructor:GithubRepository.kt$GithubRepository</ID>
+    <ID>WildcardImport:Cartesian3DCompose.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:Cartesian3DComposeSmooth.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:Cartesian3DView.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:ColumnExpandShrink.kt$import androidx.compose.animation.core.*</ID>
+    <ID>WildcardImport:ColumnExpandShrink.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:ColumnExpandShrink.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:DraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>WildcardImport:ElasticDraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>WildcardImport:ElasticDraggableTriangleViewII.kt$import kotlin.math.*</ID>
+    <ID>WildcardImport:ElasticDraggableTriangleViewIII.kt$import kotlin.math.*</ID>
+    <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.animation.core.*</ID>
+    <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:Icons.kt$import androidx.compose.ui.graphics.*</ID>
+    <ID>WildcardImport:Icons.kt$import androidx.compose.ui.graphics.vector.*</ID>
+    <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.foundation.layout.*</ID>
+    <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.material3.*</ID>
+    <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.runtime.*</ID>
+    <ID>WildcardImport:ShowLoadCustomViewActivity.kt$import androidx.appcompat.app.AppCompatDelegate.*</ID>
+    <ID>WildcardImport:SpringAnimationDraggableTriangleView.kt$import kotlin.math.*</ID>
+  </CurrentIssues>
+</SmellBaseline>

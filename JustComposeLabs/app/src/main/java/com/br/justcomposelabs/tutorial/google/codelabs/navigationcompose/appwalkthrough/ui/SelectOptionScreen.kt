@@ -22,10 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import com.br.justcomposelabs.R
-import com.br.justcomposelabs.utils.composable.ShowBackgroundOrNot
 import com.br.justcomposelabs.tutorial.google.codelabs.navigationcompose.appwalkthrough.ui.components.FormattedPriceLabel
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
-
+import com.br.justcomposelabs.utils.composable.ShowBackgroundOrNot
 
 @Composable
 fun SelectOptionScreen(

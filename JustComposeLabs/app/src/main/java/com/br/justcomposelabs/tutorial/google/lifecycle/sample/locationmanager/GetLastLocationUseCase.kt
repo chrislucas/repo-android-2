@@ -13,8 +13,10 @@ class GetLastLocationUseCase(
 ) {
 
     @RequiresPermission(
-        allOf = [Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION]
+        allOf = [
+            Manifest.permission.ACCESS_FINE_LOCATION,
+            Manifest.permission.ACCESS_COARSE_LOCATION
+        ]
     )
     suspend operator fun invoke(provider: String): Result<Location?> {
         return Result.success(

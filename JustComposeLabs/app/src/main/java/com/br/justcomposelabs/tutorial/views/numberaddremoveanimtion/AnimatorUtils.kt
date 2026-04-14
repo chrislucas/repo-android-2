@@ -11,8 +11,8 @@ fun countAnimator(start: Float, end: Float, duration: Long = 1000L) =
         withDuration()
     }
 
-fun ValueAnimator.withInterpolator(interpolator: TimeInterpolator = AccelerateDecelerateInterpolator())  = apply {
-    this.interpolator =interpolator
+fun ValueAnimator.withInterpolator(interpolator: TimeInterpolator = AccelerateDecelerateInterpolator()) = apply {
+    this.interpolator = interpolator
 }
 
 fun ValueAnimator.withDuration(duration: Long = 1000L) = apply {

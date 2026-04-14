@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
-import com.br.justcomposelabs.R
 
 /*
     https://composables.com/docs/androidx.compose.material/material/components/Surface
@@ -29,7 +28,6 @@ import com.br.justcomposelabs.R
     pedaço de surface visualmente relacionar-se com outras surfaces and como tal
     surface projeta com sombras
  */
-
 
 @Preview(showBackground = true)
 @Composable
@@ -67,11 +65,9 @@ fun TrySurface() {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 private fun TryClickableSurface() {
-
     val interactionSource = remember { MutableInteractionSource() }
 
     Surface(
@@ -93,5 +89,3 @@ private fun TryClickableSurface() {
         )
     }
 }
-
-

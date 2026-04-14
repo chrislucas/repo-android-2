@@ -5,8 +5,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
-import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.tooling.preview.datasource.CollectionPreviewParameterProvider
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
@@ -14,7 +12,6 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
     Reacting to scroll position
     https://developer.android.com/develop/ui/compose/lists#react-to-scroll-position
  */
-
 
 class MessagePreviewParameterProvider : CollectionPreviewParameterProvider<Message>(
     listOf(
@@ -32,7 +29,6 @@ class MessagePreviewParameterProvider : CollectionPreviewParameterProvider<Messa
     )
 )
 
-
 @Composable
 fun MessageList(messages: List<Message>) {
     // Remember our own LazyListState
@@ -49,7 +45,7 @@ fun MessageList(messages: List<Message>) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewMessageList() {
-    JustComposeLabsTheme() {
+    JustComposeLabsTheme {
         MessageList(
             listOf(
                 Message(1, "A", "B"),

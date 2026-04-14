@@ -42,7 +42,6 @@ import androidx.paging.compose.itemKey
 
 data class Message(val author: String, val body: String)
 
-
 @Composable
 fun Messages(
     modifier: Modifier = Modifier,
@@ -77,7 +76,6 @@ fun MessagesPreview() {
         )
     )
 }
-
 
 /*
     https://developer.android.com/reference/kotlin/androidx/paging/PagingSource

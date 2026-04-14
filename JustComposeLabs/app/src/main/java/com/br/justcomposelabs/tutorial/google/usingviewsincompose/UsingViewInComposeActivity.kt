@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -36,7 +35,6 @@ class UsingViewInComposeActivity : ComponentActivity() {
 
 @Composable
 fun CustomView(modifier: Modifier = Modifier) {
-
     AndroidView(modifier = modifier, factory = { context ->
         Cartesian3DView(context)
     }, update = {
@@ -44,7 +42,6 @@ fun CustomView(modifier: Modifier = Modifier) {
             Aqui a view esta sendo inflatada
          */
     })
-
 }
 
 @Preview(showBackground = true)

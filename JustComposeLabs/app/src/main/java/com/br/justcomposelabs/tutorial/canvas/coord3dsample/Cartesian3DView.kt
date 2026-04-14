@@ -16,20 +16,18 @@ import androidx.compose.ui.text.drawText
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import kotlinx.coroutines.launch
 import kotlin.math.cos
 import kotlin.math.sin
-import kotlinx.coroutines.launch
 
 @Preview(showBackground = true, showSystemUi = false)
 @Composable
 fun CartesianPlan3dAxis() {
-
     val scope = rememberCoroutineScope()
 
     // Animatables para rotação suave
     val rotX = remember { Animatable(0f) }
     val rotY = remember { Animatable(0f) }
-
 
     val textMeasurer = rememberTextMeasurer()
     val textStyle = TextStyle(fontSize = 23.sp)
@@ -55,12 +53,12 @@ fun CartesianPlan3dAxis() {
 
         // Pontos finais dos eixos
         val axes = listOf(
-            floatArrayOf(axisLen, 0f, 0f),  // X positiva
+            floatArrayOf(axisLen, 0f, 0f), // X positiva
             floatArrayOf(-axisLen, 0f, 0f), // X negativa
-            floatArrayOf(0f, axisLen, 0f),  // Y positiva
+            floatArrayOf(0f, axisLen, 0f), // Y positiva
             floatArrayOf(0f, -axisLen, 0f), // Y negativa
-            floatArrayOf(0f, 0f, axisLen),  // Z positiva
-            floatArrayOf(0f, 0f, -axisLen)  // Z negativa
+            floatArrayOf(0f, 0f, axisLen), // Z positiva
+            floatArrayOf(0f, 0f, -axisLen) // Z negativa
         )
         val colors = listOf(Color.Red, Color.Red, Color.Green, Color.Green, Color.Blue, Color.Blue)
 
@@ -83,7 +81,6 @@ fun CartesianPlan3dAxis() {
         }
 
         // Dentro do seu DrawScope (no Canvas)
-
 
         for (i in axes.indices step 2) {
             val startXYZ = axes[i]

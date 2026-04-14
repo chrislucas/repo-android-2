@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.statusBarsPadding
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Warning
@@ -31,7 +30,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-
 /*
     TODO utilizar essa view model na funcao OutlinedTextFieldErrorSupport
  */
@@ -42,11 +40,9 @@ class TextFieldStateViewModel : ViewModel() {
     private val mutableStateError = MutableStateFlow(false)
     val stateError = mutableStateError.asStateFlow()
 
-
     fun onTextChange(content: String) {
         mutableContent.update { content }
     }
-
 
     fun onEventError(isError: Boolean) {
         mutableStateError.update { isError }
@@ -54,11 +50,10 @@ class TextFieldStateViewModel : ViewModel() {
 }
 
 sealed class StatusTextValidation {
-    object Success: StatusTextValidation()
-    object Error: StatusTextValidation()
-    object Warning: StatusTextValidation()
+    object Success : StatusTextValidation()
+    object Error : StatusTextValidation()
+    object Warning : StatusTextValidation()
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -123,7 +118,6 @@ fun StatefulOutlinedTextFieldErrorSupport(
     }
 }
 
-
 /*
     Criar um componente de TextField que suporte mensagem de erro
         - Criar estados de erros diferentes para poder suportar trailingIcon diferentes
@@ -150,11 +144,9 @@ fun StatelessOutlinedTextFieldErrorSupport(
     }
 }
 
-
 interface ValidationText {
     fun valid(content: String): Boolean
 }
-
 
 @JvmInline
 value class NonEmptyText private constructor(val content: String) {
@@ -168,8 +160,6 @@ value class NonEmptyText private constructor(val content: String) {
         private fun valid(content: String) = content.isNotEmpty() && content.isNotBlank()
     }
 }
-
-
 
 /*
     Checar se a palavra nao é uma palavra proibida

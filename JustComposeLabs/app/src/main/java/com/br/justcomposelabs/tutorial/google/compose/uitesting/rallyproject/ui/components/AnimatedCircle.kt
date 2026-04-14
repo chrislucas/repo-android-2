@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.components
 
-
 import androidx.compose.animation.core.CubicBezierEasing
 import androidx.compose.animation.core.LinearOutSlowInEasing
 import androidx.compose.animation.core.MutableTransitionState
@@ -24,7 +23,6 @@ import androidx.compose.ui.unit.dp
 private const val DividerLengthInDegrees = 1.8f
 
 private enum class AnimatedCircleProgress { START, END }
-
 
 /**
  * A donut chart that animates when loaded.
@@ -114,4 +112,3 @@ fun AnimatedCirclePreview() {
             .size(200.dp)
     )
 }
-

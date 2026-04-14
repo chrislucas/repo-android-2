@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.canvas.graphics.commonsdrawoperations
 
-
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable

@@ -19,7 +19,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.theme.RallyDialogThemeOverlay
 
-
 class ButtonConfirmContext(
     val onConfirm: () -> Unit,
     val confirmButtonText: String

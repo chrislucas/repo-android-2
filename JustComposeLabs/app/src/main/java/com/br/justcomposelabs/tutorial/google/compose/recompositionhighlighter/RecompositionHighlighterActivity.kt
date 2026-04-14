@@ -24,10 +24,10 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.graphics.drawscope.Fill
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.node.DrawModifierNode
 import androidx.compose.ui.node.ModifierNodeElement
 import androidx.compose.ui.node.invalidateDraw
@@ -42,7 +42,6 @@ import kotlinx.coroutines.launch
 import timber.log.Timber
 import java.util.Objects
 import kotlin.math.min
-
 
 /*
     https://github.com/android/snippets/blob/main/compose/recomposehighlighter/src/main/java/com/example/android/compose/recomposehighlighter/MainActivity.kt
@@ -80,7 +79,7 @@ fun CounterRecomposition(modifier: Modifier = Modifier) {
         }
 
         Text(
-            "Count Click: ${counter}, Counter Recompoition: $counterRecomposition",
+            "Count Click: $counter, Counter Recompoition: $counterRecomposition",
             modifier = Modifier.recomposeHighlighter { counter ->
                 counterRecomposition = counter
             }
@@ -99,14 +98,12 @@ fun CounterRecomposition(modifier: Modifier = Modifier) {
      TODO estudar Custom Annotation
  */
 
-
 @Stable
 fun Modifier.recomposeHighlighter(
     turnOn: Boolean = true,
     callback: (Long) -> Unit = {}
 ): Modifier =
     this.then(RecomposeHighlighterElement(turnOn, callback))
-
 
 private class RecomposeHighlighterElement(
     val turnOn: Boolean,
@@ -132,7 +129,6 @@ private class RecomposeHighlighterElement(
     override fun hashCode(): Int = Objects.hash(this)
 }
 
-
 private class RecomposeHighlighterModifier(
     private val turnOn: Boolean
 ) : Modifier.Node(), DrawModifierNode {
@@ -147,8 +143,9 @@ private class RecomposeHighlighterModifier(
     private var totalCompositions: Long = 0
         set(value) {
             if (field == value) return
-            if (value > 0)
+            if (value > 0) {
                 restartTimer()
+            }
 
             field = value
             invalidateDraw()
@@ -182,8 +179,9 @@ private class RecomposeHighlighterModifier(
     }
 
     private fun restartTimer() {
-        if (!isAttached)
+        if (!isAttached) {
             return
+        }
 
         timerJob?.cancel()
         timerJob = coroutineScope.launch {
@@ -216,7 +214,6 @@ private class RecomposeHighlighterModifier(
                 1L -> Color.Blue to 1f.dp.toPx()
                 2L -> Color.Green to 2f.dp.toPx()
                 else -> {
-
                     val start = Color.Yellow.copy(alpha = 0.8f)
                     val stop = Color.Red.copy(alpha = 0.5f)
                     val fraction = min(1f, (totalCompositions - 1).toFloat() / 100f)
@@ -246,7 +243,6 @@ private class RecomposeHighlighterModifier(
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

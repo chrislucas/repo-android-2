@@ -6,8 +6,6 @@ import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
@@ -20,7 +18,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,14 +31,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.br.justcomposelabs.R
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
-import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 import kotlinx.coroutines.launch
 import kotlin.random.Random
 
@@ -60,7 +54,6 @@ fun CoinFlipAnimation() {
         animationSpec = tween(durationMillis = 500, easing = LinearEasing),
         label = "rotationY"
     )
-
 
     LaunchedEffect(rY) {
         if (rY == 360f) {
@@ -89,7 +82,6 @@ fun CoinFlipAnimation() {
          */
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -254,7 +246,6 @@ fun CoinTossFlippingBox() {
     }
 }
 
-
 @Composable
 fun FlipCardFace(color: Color, text: String) {
     Card(
@@ -286,4 +277,3 @@ private fun PreviewFlipCardFace() {
         FlipCardFace(color = Color.Blue, text = "TRUE")
     }
 }
-

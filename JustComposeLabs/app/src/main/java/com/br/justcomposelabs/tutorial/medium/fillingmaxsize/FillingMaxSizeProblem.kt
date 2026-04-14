@@ -22,10 +22,9 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
     https://medium.com/rocknnull/jetpack-compose-filling-max-width-or-height-94e3af129a7b
  */
 
-
 @Composable
 fun FillingMaxSizeProblem() {
-    Row (
+    Row(
         modifier = Modifier
             .padding(WindowInsets.safeDrawing.asPaddingValues())
     ) {
@@ -35,10 +34,11 @@ fun FillingMaxSizeProblem() {
 
             Segundo a doc
          */
-        Box(modifier = Modifier
-            .width(8.dp)
-            .fillMaxHeight()
-            .background(Color.Red)
+        Box(
+            modifier = Modifier
+                .width(8.dp)
+                .fillMaxHeight()
+                .background(Color.Red)
         )
         Column {
             Text("Hello")

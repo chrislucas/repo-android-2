@@ -25,7 +25,6 @@ import io.reactivex.rxjava3.subjects.BehaviorSubject
     https://developer.android.com/develop/ui/compose/state#use-other-types-of-state-in-jetpack-compose
  */
 
-
 class HelloStateRx3ava3ViewModel : ViewModel() {
     private val state: BehaviorSubject<String> = BehaviorSubject.createDefault("")
 
@@ -48,7 +47,6 @@ fun HelloScreenRx(helloStateRxViewModel: HelloStateRx3ava3ViewModel = viewModel(
         helloStateRxViewModel::onDataChange
     )
 }
-
 
 @Composable
 private fun HelloContentPresentationRxJava3(

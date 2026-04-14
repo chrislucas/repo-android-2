@@ -2,7 +2,6 @@ package com.br.justcomposelabs.tutorial.customview.loadoverlaycustomview
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.FrameLayout
@@ -25,7 +24,9 @@ import timber.log.Timber
     https://medium.com/@Zielony/guide-to-android-custom-views-attributes-ab28de3e54b7
  */
 class LoadCustomViewOverlay @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
 ) : FrameLayout(context, attrs, defStyleAttr) {
 
     private val textLoading: TextView
@@ -33,10 +34,11 @@ class LoadCustomViewOverlay @JvmOverloads constructor(
 
     private val viewOverlay: View
 
-
     init {
         LayoutInflater.from(context).inflate(
-            R.layout.layout_custom_view_overlay, this, true
+            R.layout.layout_custom_view_overlay,
+            this,
+            true
         )
 
         textLoading = rootView.findViewById<TextView>(R.id.text_centered)
@@ -60,7 +62,6 @@ class LoadCustomViewOverlay @JvmOverloads constructor(
         custom view lifecycle aware
         https://proandroiddev.com/make-your-custom-view-lifecycle-aware-its-a-piece-of-cake-90b7c0498686
      */
-
 
     private val lifecycleObserver = object : DefaultLifecycleObserver {
 

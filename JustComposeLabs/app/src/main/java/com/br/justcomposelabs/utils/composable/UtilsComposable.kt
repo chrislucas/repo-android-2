@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.utils.composable
 
-import android.util.Log
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.padding
@@ -9,9 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.NestedScrollSource.Companion.SideEffect
@@ -23,7 +20,6 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import timber.log.Timber
 
-
 @Preview(showBackground = true)
 @Preview(showBackground = false)
 annotation class ShowBackgroundOrNot
@@ -31,7 +27,6 @@ annotation class ShowBackgroundOrNot
 @Composable
 fun Modifier.paddingEdgeToEdge() =
     padding(WindowInsets.safeDrawing.asPaddingValues())
-
 
 /*
     https://stackoverflow.com/questions/71239101/how-to-listen-for-lifecycle-in-jetpack-compose
@@ -96,7 +91,6 @@ fun LogCompositions(tag: String, msg: String) {
         Timber.tag(tag).d("$msg: $counter")
 
      */
-
 }
 
 /*

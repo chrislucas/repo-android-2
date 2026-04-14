@@ -51,7 +51,6 @@ fun Greeting(modifier: Modifier = Modifier) {
         Text("Welcome")
 
         Button(onClick = {
-
         }) {
             Text("fetch remote welcome<")
         }

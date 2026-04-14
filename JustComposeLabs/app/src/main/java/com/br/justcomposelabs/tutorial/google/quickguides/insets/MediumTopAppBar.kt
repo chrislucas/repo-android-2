@@ -27,7 +27,6 @@ import java.util.Locale
 @Preview(showSystemUi = true, apiLevel = 35)
 @Composable
 fun TopBarAppPreview(modifier: Modifier = Modifier) {
-
     /*
         https://developer.android.com/develop/ui/compose/quick-guides/content/display-top-app-bar
      */
@@ -62,7 +61,6 @@ fun TopBarAppPreview(modifier: Modifier = Modifier) {
     }
 }
 
-
 @Composable
 internal fun ScrollContent(innerPadding: PaddingValues) {
     val range = 1..100
@@ -72,7 +70,7 @@ internal fun ScrollContent(innerPadding: PaddingValues) {
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         items(range.count()) {
-            Text(String.format(Locale.getDefault(),"Item %02d", it))
+            Text(String.format(Locale.getDefault(), "Item %02d", it))
         }
     }
 }

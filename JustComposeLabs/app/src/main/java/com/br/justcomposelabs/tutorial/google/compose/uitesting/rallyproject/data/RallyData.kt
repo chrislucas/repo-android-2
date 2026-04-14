@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.data
 
-
 import androidx.compose.runtime.Immutable
 import androidx.compose.ui.graphics.Color
 

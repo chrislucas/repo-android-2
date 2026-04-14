@@ -1,10 +1,8 @@
 package com.br.justcomposelabs.tutorial.google.camerax.codelabs
 
-import android.content.Context
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
 
 /*
     CameraX overview
@@ -14,8 +12,8 @@ import androidx.fragment.app.FragmentActivity
 
 private fun AppCompatActivity.activityResultLauncher(startCamera: () -> Unit) {
     registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions())
-    { permissions ->
+        ActivityResultContracts.RequestMultiplePermissions()
+    ) { permissions ->
         // Handle Permission granted/rejected
         var permissionGranted = true
         permissions.entries.forEach {
@@ -24,12 +22,13 @@ private fun AppCompatActivity.activityResultLauncher(startCamera: () -> Unit) {
                 permissionGranted = false
 
              */
-
         }
         if (!permissionGranted) {
-            Toast.makeText(baseContext,
+            Toast.makeText(
+                baseContext,
                 "Permission request denied",
-                Toast.LENGTH_SHORT).show()
+                Toast.LENGTH_SHORT
+            ).show()
         } else {
             startCamera()
         }

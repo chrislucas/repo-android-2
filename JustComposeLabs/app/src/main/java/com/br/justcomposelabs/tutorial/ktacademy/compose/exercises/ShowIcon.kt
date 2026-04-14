@@ -13,7 +13,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
 @Preview(showBackground = true)
 @Composable
 fun ShowIcon() {
@@ -24,9 +23,9 @@ fun ShowIcon() {
         Image(
             imageVector = MilkIcon,
             contentDescription = "Milk",
-                modifier = Modifier.padding(20.dp)
-                    .clip(CircleShape)
-                    .size(200.dp)
+            modifier = Modifier.padding(20.dp)
+                .clip(CircleShape)
+                .size(200.dp)
         )
     }
 }

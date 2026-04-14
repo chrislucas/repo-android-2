@@ -7,7 +7,7 @@ import android.os.IBinder
 /*
     LocationManager
     https://developer.android.com/reference/android/location/LocationManager
-    
+
     https://codelabs.developers.google.com/codelabs/while-in-use-location#2
     https://github.com/android/codelab-while-in-use-location/blob/master/base/src/main/java/com/example/android/whileinuselocation/ForegroundOnlyLocationService.kt
  */

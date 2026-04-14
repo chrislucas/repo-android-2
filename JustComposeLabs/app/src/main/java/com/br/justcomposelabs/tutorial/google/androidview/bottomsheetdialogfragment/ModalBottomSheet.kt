@@ -13,7 +13,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
     Tutorial
     https://m2.material.io/components/sheets-bottom/android#using-bottom-sheets
  */
-class ModalBottomSheet: BottomSheetDialogFragment() {
+class ModalBottomSheet : BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,

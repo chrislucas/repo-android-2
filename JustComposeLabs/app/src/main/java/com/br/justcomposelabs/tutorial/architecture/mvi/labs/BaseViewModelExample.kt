@@ -14,30 +14,27 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 /**
-    https://www.linkedin.com/posts/zain-ul-abdin-274787211_androiddevelopment-jetpackcompose-kotlin-ugcPost-7389517172487741441-zVMr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
+ https://www.linkedin.com/posts/zain-ul-abdin-274787211_androiddevelopment-jetpackcompose-kotlin-ugcPost-7389517172487741441-zVMr?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
 
-     have you noticed that `LaunchedEffect(Unit)` is becoming the new `GlobalScope.launch`?
-        - usado de forma exacerbada
-        - mal usado
-        - https://www.linkedin.com/posts/sergey-neskoromny_androiddev-jetpackcompose-mobiledevelopment-activity-7434278563807207424-zt6t/
+ have you noticed that `LaunchedEffect(Unit)` is becoming the new `GlobalScope.launch`?
+ - usado de forma exacerbada
+ - mal usado
+ - https://www.linkedin.com/posts/sergey-neskoromny_androiddev-jetpackcompose-mobiledevelopment-activity-7434278563807207424-zt6t/
 
-        - Se as funcoes composables do projeto estao cheias de
-            LaunchEffect(Unit) { viewModel.doSomething() }
-            - para realizar load, navegacao, ou trigger one-shots
-            - gerando provaveis bugs em recomposition, chamdas dubplicas, ou bugs de navegacao confusa.]
+ - Se as funcoes composables do projeto estao cheias de
+ LaunchEffect(Unit) { viewModel.doSomething() }
+ - para realizar load, navegacao, ou trigger one-shots
+ - gerando provaveis bugs em recomposition, chamdas dubplicas, ou bugs de navegacao confusa.]
 
-  * @see com.br.justcomposelabs.tutorial.google.compose.sideffects.launcheffect.PulseTextComponent
-     * - LaunchEffect: como executar suspend functions em escopo de composables
-            - https://developer.android.com/develop/ui/compose/side-effects#launchedeffect
-            -
+ * @see com.br.justcomposelabs.tutorial.google.compose.sideffects.launcheffect.PulseTextComponent
+ * - LaunchEffect: como executar suspend functions em escopo de composables
+ - https://developer.android.com/develop/ui/compose/side-effects#launchedeffect
+ -
  */
 
-
 interface UserEventListener<UserEvent> {
-   fun onUserEvent(userEvent: UserEvent)
+    fun onUserEvent(userEvent: UserEvent)
 }
-
-
 
 abstract class BaseViewModelExample<UserEvent, UIEvent>(
     private val userEventListener: UserEventListener<UserEvent>
@@ -116,7 +113,6 @@ abstract class BaseViewModelExample<UserEvent, UIEvent>(
     private val sharedFlowUiEvent: SharedFlow<UIEvent> = mutableSharedFlowUIEvent.asSharedFlow()
 
     fun tryEmitUiEvent(uiEvent: UIEvent) = mutableSharedFlowUIEvent.tryEmit(uiEvent)
-
 
     fun emitUserEvent(userEvent: UserEvent) {
         userEventListener.onUserEvent(userEvent)

@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -24,13 +24,12 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-
 /**
  *
  * @see com.br.justcomposelabs.tutorial.google.compose.state.StateTextField
-    collectAsStateWithLifecycle
-    https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.StateFlow).collectAsStateWithLifecycle(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext)
-    https://developer.android.com/develop/ui/compose/text/user-input?textfield=state-based
+ collectAsStateWithLifecycle
+ https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.StateFlow).collectAsStateWithLifecycle(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext)
+ https://developer.android.com/develop/ui/compose/text/user-input?textfield=state-based
  */
 
 class TextState {
@@ -62,7 +61,7 @@ fun TextComponentInternalState() {
     ) {
         if (content.isNotBlank()) {
             Text(
-                text = "Hello, ${content}!",
+                text = "Hello, $content!",
                 modifier = Modifier.padding(bottom = 8.dp),
                 style = MaterialTheme.typography.headlineMedium
             )
@@ -74,7 +73,6 @@ fun TextComponentInternalState() {
         )
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

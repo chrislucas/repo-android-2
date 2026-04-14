@@ -1,11 +1,9 @@
 package com.br.justcomposelabs.tutorial.medium.funwithflowtype
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.animation.SharedTransitionScope
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -74,7 +72,6 @@ fun OIObservedByStateFlowViewModel(
     sharedFlowViewModel: SharedFlowViewModel = SharedFlowViewModel(),
     liveDataViewModel: LiveDataViewModel = LiveDataViewModel()
 ) {
-
     /*
         https://developer.android.com/develop/ui/compose/side-effects#disposableeffect
      */
@@ -137,13 +134,11 @@ fun OIObservedByStateFlowViewModel(
     }
 }
 
-
 @Composable
 fun UpdateStateFlowViewModel(
     modifier: Modifier = Modifier,
     stateFlowViewModel: StateFlowViewModel
 ) {
-
     val collectStateFlow by stateFlowViewModel.message.collectAsState()
 
     Column(
@@ -170,14 +165,12 @@ class StateFlowViewModel() : ViewModel() {
     }
 }
 
-
 @Composable
 fun UpdateSharedFlowViewModel(
     modifier: Modifier,
     sharedFlowViewModel: SharedFlowViewModel
 
 ) {
-
     /*
         var stateSharedFlow by remember {
             mutableStateOf("Empty State Shared Flow")
@@ -258,7 +251,6 @@ class LiveDataViewModel : ViewModel() {
         content.value = newContent
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

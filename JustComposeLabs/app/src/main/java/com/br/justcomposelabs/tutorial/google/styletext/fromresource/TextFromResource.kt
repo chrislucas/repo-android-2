@@ -13,7 +13,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import com.br.justcomposelabs.R
 
-
 /*
     https://developer.android.com/develop/ui/compose/text/display-text#text-from-resource
  */

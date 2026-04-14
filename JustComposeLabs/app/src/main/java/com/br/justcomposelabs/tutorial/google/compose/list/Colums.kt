@@ -4,7 +4,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -26,7 +25,6 @@ import androidx.compose.ui.unit.sp
     LazyListScope DSL
     https://developer.android.com/develop/ui/compose/lists#lazylistscope
  */
-
 
 @Preview(showBackground = true)
 @Composable
@@ -53,7 +51,6 @@ fun FakeItemsPreview() {
     }
 }
 
-
 @Composable
 private fun FakeItemCard(content: String) {
     Card(
@@ -68,10 +65,10 @@ private fun FakeItemCard(content: String) {
             modifier = Modifier.fillMaxSize()
         ) {
             Text(
-                text = content, fontSize = 12.sp,
+                text = content,
+                fontSize = 12.sp,
                 textAlign = TextAlign.Center
             )
         }
     }
 }
-

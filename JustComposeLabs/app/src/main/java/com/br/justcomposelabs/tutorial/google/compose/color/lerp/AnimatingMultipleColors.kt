@@ -1,9 +1,7 @@
 package com.br.justcomposelabs.tutorial.google.compose.color.lerp
 
 import androidx.compose.animation.animateColor
-import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.animateSize
-import androidx.compose.animation.core.animateValue
 import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -29,9 +27,7 @@ import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
 private enum class AnimationState { Start, End }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -51,7 +47,6 @@ fun UpdateTransitionColorExample() {
         sliderPosition
     )
 
-
     val animatedColor by transition.animateColor(label = "box_color") { state ->
         when (state) {
             AnimationState.Start -> startColor
@@ -65,7 +60,6 @@ fun UpdateTransitionColorExample() {
             AnimationState.End -> Size(200f, 200f)
         }
     }
-
 
     Column(
         modifier = Modifier.fillMaxSize(),

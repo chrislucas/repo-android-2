@@ -18,11 +18,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun GroupChipComponent(words: List<String> = emptyList()) {
-
     var selectedChip by remember(key1 = words) { mutableStateOf(words.first()) }
 
     FlowRow(
@@ -37,9 +35,7 @@ fun GroupChipComponent(words: List<String> = emptyList()) {
             FilterChip(selected = selectedChip == word, onClick = { selectedChip = word }) {
                 Text(
                     text = word,
-                    style = TextStyle(
-
-                    )
+                    style = TextStyle()
                 )
             }
         }
@@ -51,7 +47,6 @@ fun GroupChipComponent(words: List<String> = emptyList()) {
  * criar um componente que o ususuário digita uma conteúdo e isso alimenta
  * GroupChipComponent
  */
-
 
 @Preview(showBackground = true)
 @Composable

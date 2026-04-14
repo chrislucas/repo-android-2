@@ -5,11 +5,9 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-
 /*
     https://medium.com/bumble-tech/crash-course-on-the-android-ui-layer-part-1-2094221a9be3
  */
-
 
 /*
     Producing UI state with local source of state change
@@ -29,6 +27,7 @@ class DiceRollStateHolder(
 ) {
 
     private val _uiState = MutableStateFlow(DiceRollUiState())
+
     /*
        Por que usar o metodo asStateFlow()?
        https://stackoverflow.com/questions/71276772/why-do-the-author-need-to-use-asstateflow-in-compose

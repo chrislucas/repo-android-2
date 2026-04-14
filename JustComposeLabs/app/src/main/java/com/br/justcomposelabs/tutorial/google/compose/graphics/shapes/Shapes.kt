@@ -19,7 +19,6 @@ import androidx.graphics.shapes.toPath
     https://developer.android.com/develop/ui/compose/graphics/draw/shapes
  */
 
-
 val hexagonShape = Modifier.drawWithCache {
     val shape = RoundedPolygon(
         numVertices = 6,
@@ -54,7 +53,6 @@ val triangleShape = Modifier.drawWithCache {
     }
 }.fillMaxSize()
 
-
 val shape = Modifier.drawWithCache {
     val shape = RoundedPolygon(
         numVertices = 3,
@@ -79,7 +77,6 @@ val shape = Modifier.drawWithCache {
     }
 }.fillMaxSize()
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun HexagonBox() {
@@ -87,15 +84,16 @@ fun HexagonBox() {
         https://developer.android.com/develop/ui/compose/graphics/draw/shapes#create-polygons
      */
 
-    Column(modifier = Modifier.fillMaxSize()
-        .systemBarsPadding()
-        .statusBarsPadding()) {
+    Column(
+        modifier = Modifier.fillMaxSize()
+            .systemBarsPadding()
+            .statusBarsPadding()
+    ) {
         Box(modifier = hexagonShape) {
             // Content of the box
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -104,15 +102,16 @@ fun TriangleBox() {
         https://developer.android.com/develop/ui/compose/graphics/draw/shapes#create-polygons
      */
 
-    Column(modifier = Modifier.fillMaxSize()
-        .systemBarsPadding()
-        .statusBarsPadding()) {
+    Column(
+        modifier = Modifier.fillMaxSize()
+            .systemBarsPadding()
+            .statusBarsPadding()
+    ) {
         Box(modifier = triangleShape) {
             // Content of the box
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -121,9 +120,11 @@ fun ShapeRotatedBox() {
         https://developer.android.com/develop/ui/compose/graphics/draw/shapes#create-polygons
      */
 
-    Column(modifier = Modifier.fillMaxSize()
-        .systemBarsPadding()
-        .statusBarsPadding()) {
+    Column(
+        modifier = Modifier.fillMaxSize()
+            .systemBarsPadding()
+            .statusBarsPadding()
+    ) {
         Box(modifier = shape) {
             // Content of the box
         }

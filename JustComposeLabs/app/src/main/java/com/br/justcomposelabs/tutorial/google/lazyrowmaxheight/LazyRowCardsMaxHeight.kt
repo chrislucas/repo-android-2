@@ -43,11 +43,11 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
     height to match the tallest card, creating a visually consistent layout.
  */
 
-
-
-
 @Composable
-fun LazyRowWithUniformCardHeight(modifier: Modifier= Modifier, cardDataList: List<MockContent>) { // cardDataList represents your data for each card
+fun LazyRowWithUniformCardHeight(
+    modifier: Modifier = Modifier,
+    cardDataList: List<MockContent>
+) { // cardDataList represents your data for each card
     var maxHeightPx by remember { mutableIntStateOf(1) }
     val density = LocalDensity.current
     LazyRow(modifier) {
@@ -59,7 +59,7 @@ fun LazyRowWithUniformCardHeight(modifier: Modifier= Modifier, cardDataList: Lis
                     }
                     .padding(2.dp)
 
-                    //.height(with(density) { maxHeightPx.toDp() }) // Apply the maximum height
+                // .height(with(density) { maxHeightPx.toDp() }) // Apply the maximum height
             ) {
                 // Your card content goes here, using 'cardData'
                 // Example: Text(text = cardData)

@@ -3,18 +3,15 @@ package com.br.justcomposelabs.tutorial.google.codelabs.state.advancedstateandsi
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
 
 /*
     https://developer.android.com/codelabs/jetpack-compose-advanced-state-side-effects
  */
 
-
 /*
     A pergunta
     using explicity StateFlow<T> is not enough to make sure that uiState is read only
  */
-
 
 class UiUnsafeState : ViewModel() {
     // Private mutable backing property (only ViewModel can change)
@@ -26,14 +23,13 @@ class UiUnsafeState : ViewModel() {
         diretamente.
      */
     // Public read-only property for the UI
-    val uiState: StateFlow<Int> = _uiState//.asStateFlow()
+    val uiState: StateFlow<Int> = _uiState // .asStateFlow()
 
     fun updateData(operation: () -> Int) {
         // Logic to update the state
         _uiState.value = operation()
     }
 }
-
 
 fun test() {
     val uiUnsafeState = UiUnsafeState()

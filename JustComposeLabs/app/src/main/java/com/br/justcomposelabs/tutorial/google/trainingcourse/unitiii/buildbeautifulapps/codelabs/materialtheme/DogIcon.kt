@@ -22,5 +22,4 @@ fun DogIcon(
     @DrawableRes dogIcon: Int,
     modifier: Modifier = Modifier
 ) {
-
 }

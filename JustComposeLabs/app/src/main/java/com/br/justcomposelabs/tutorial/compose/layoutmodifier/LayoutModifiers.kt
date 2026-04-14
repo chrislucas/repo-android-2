@@ -5,11 +5,10 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.unit.Dp
 
 /**
-    https://composables.com/community/layout-modifiers
-    * @see Modifier.layout
-        - interface usada para personalizar medições e posicionamentos
+ https://composables.com/community/layout-modifiers
+ * @see Modifier.layout
+ - interface usada para personalizar medições e posicionamentos
  */
-
 
 fun Modifier.pad(size: Dp) = layout { measurable, constraints ->
     // mede no filho

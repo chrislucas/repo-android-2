@@ -1,7 +1,5 @@
 package com.br.justcomposelabs.tutorial.compose.recompositions.mistakes
 
-import android.util.Log
-import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
@@ -36,7 +34,6 @@ import timber.log.Timber
 
  */
 
-
 @Composable
 fun DisplayResult(count: State<Int>) {
     /*
@@ -64,25 +61,23 @@ private fun DisplayResultPreview() {
 
         /**
          *
-        derivedStateOf
+         derivedStateOf
          ** @see derivedStateOf(calculation: () -> T)
-        - Cria um State Objetct cujo State.value é o resultado da execução da função lambda
-        calculation () -> T
+         - Cria um State Objetct cujo State.value é o resultado da execução da função lambda
+         calculation () -> T
 
-        - resultado fa funcao lambda é armazenado em um cache, tal que ao chamar o resultado
-        State.value repetidas vezes nao causa a execução da função lambda
+         - resultado fa funcao lambda é armazenado em um cache, tal que ao chamar o resultado
+         State.value repetidas vezes nao causa a execução da função lambda
 
          ** @see androidx.compose.runtime.DerivedSnapshotState
 
-        - Estados derivados criados sem definir  politicas de mutação acionam atualizações a cada mudanca
-        de dependência. (Construor recebe um parametro que define essa politica)
+         - Estados derivados criados sem definir  politicas de mutação acionam atualizações a cada mudanca
+         de dependência. (Construor recebe um parametro que define essa politica)
 
          ** @see State.value
          */
 
-
         val stateResult = remember { derivedStateOf { a + b } }
-
 
         /*
             Estudar esse link

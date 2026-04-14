@@ -68,7 +68,6 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
         ActivityHandlerConfigurationChangesBinding.inflate(layoutInflater)
     }
 
-
     companion object {
         private const val TAG = "HandlerConfigChanges"
         private const val SAVE_CONFIG_STATE = "saveConfigState"
@@ -80,13 +79,13 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
     /**
      * ✅ Método privado para recuperar e sincronizar fontScale de SharedPreferences
      * Elimina duplicação de código em onCreate(), onRestoreInstanceState() e attachBaseContext()
-     * 
+     *
      * @param source Origem da chamada (para logging)
      */
     private fun syncFontScaleFromPreferences(source: String = "syncFontScale") {
         val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
         val savedFontScale = prefs.getFloat(PREF_FONT_SCALE, 1.0f)
-        
+
         // Sincronizar se o fontScale foi salvo e é diferente
         if (savedFontScale != 1.0f && initConfigurationState?.fontScale != savedFontScale) {
             initConfigurationState = initConfigurationState?.copy(fontScale = savedFontScale)
@@ -136,7 +135,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        
+
         /**
          * ✅ Agora que o estado foi restaurado, aplicar as configurações.
          * A escala de fonte será reaplicada quando recreate() for chamado,
@@ -238,7 +237,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: Context?) {
         /**
          * ✅ SOLUÇÃO: Ler fontScale de SharedPreferences que foi salvo em onSaveInstanceState()
-         * 
+         *
          * Fluxo:
          * 1. User move slider
          * 2. viewModel.updateFontScale(value)
@@ -249,9 +248,9 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
          * 7. onCreate() restaura estado e sincroniza UI ✅
          */
         val savedFontScale = getFontScaleFromPreferences(newBase)
-        
+
         Timber.tag(TAG).d("attachBaseContext: FontScale lido = $savedFontScale")
-        
+
         // ✅ Aplicar fontScale ao contexto
         val contextWithFontScale = if (savedFontScale != 1.0f) {
             newBase?.adjustFontSize(savedFontScale)
@@ -264,7 +263,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putParcelable(SAVE_CONFIG_STATE, initConfigurationState)
-        
+
         /**
          * ✅ Salvar fontScale em SharedPreferences para que attachBaseContext()
          * possa acessá-lo antes de onCreate() ser chamado.
@@ -280,7 +279,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
-        
+
         /**
          * ✅ Restaurar estado de duas fontes para garantir consistência:
          * 1. Bundle: Para dados gerais de configuração (usando método privado)
@@ -289,7 +288,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
         restoreConfigurationStateFromBundle(savedInstanceState)?.let {
             initConfigurationState = it
         }
-        
+
         // ✅ Sincronizar fontScale de SharedPreferences usando método privado
         syncFontScaleFromPreferences("onRestoreInstanceState")
     }
@@ -300,10 +299,10 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
     }
 }
 
-
 @Parcelize
 data class ConfigurationState(
-    val fontScale: Float, @param:Orientation val orientation: Int
+    val fontScale: Float,
+    @param:Orientation val orientation: Int
 ) : Parcelable
 
 class ConfigurationViewModel(initConfigurationState: ConfigurationState) : ViewModel() {

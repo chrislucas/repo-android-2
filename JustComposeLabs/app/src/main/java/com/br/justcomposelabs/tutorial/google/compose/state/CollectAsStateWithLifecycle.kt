@@ -35,7 +35,6 @@ import java.util.Locale
     https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.Flow).collectAsStateWithLifecycle(kotlin.Any,androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext)
  */
 
-
 class ClockViewModelFlow : ViewModel() {
     /**
      * @see com.br.justcomposelabs.tutorial.medium.timerflowtype.TimerWithFlowTypesActivity
@@ -48,7 +47,6 @@ class ClockViewModelFlow : ViewModel() {
     }
 
     private fun currentHour() = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
-
 }
 
 data class ClockUiState(val currentTime: String = "--:--:--")
@@ -61,7 +59,6 @@ class ClockViewModelFlowImproved : ViewModel() {
             delay(1000L)
         }
     }
-
 
     private val _uiState = MutableStateFlow(ClockUiState())
     val uiState: StateFlow<ClockUiState> = _uiState.asStateFlow()
@@ -76,9 +73,7 @@ class ClockViewModelFlowImproved : ViewModel() {
         }
     }
 
-
     private fun currentHour() = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
-
 }
 
 @Composable
@@ -100,8 +95,8 @@ fun ClockScreenImproved(viewModel: ClockViewModelFlowImproved = viewModel()) {
     )
     /**
      * @see com.br.justcomposelabs.tutorial.google.compose.basics.lifecycle
-        Integrate Lifecycle with Compose
-        https://developer.android.com/topic/libraries/architecture/compose
+     Integrate Lifecycle with Compose
+     https://developer.android.com/topic/libraries/architecture/compose
      */
     LifecycleStartEffect(currentHour) {
         onStopOrDispose {

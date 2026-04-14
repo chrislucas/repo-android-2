@@ -9,5 +9,4 @@ fun CardFaceDisplay(
     modifier: Modifier = Modifier,
     cardFace: CardFace?
 ) {
-
 }

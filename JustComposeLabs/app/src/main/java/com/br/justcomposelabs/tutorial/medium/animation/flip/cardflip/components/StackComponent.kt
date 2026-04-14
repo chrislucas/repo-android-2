@@ -9,7 +9,6 @@ import com.br.justcomposelabs.tutorial.medium.animation.flip.cardflip.models.Car
 
 @Composable
 fun Stack(modifier: Modifier = Modifier) {
-
 }
 
 @Composable
@@ -20,6 +19,5 @@ fun StackLayout(
     rightStack: @Composable () -> Unit
 ) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-
     }
 }

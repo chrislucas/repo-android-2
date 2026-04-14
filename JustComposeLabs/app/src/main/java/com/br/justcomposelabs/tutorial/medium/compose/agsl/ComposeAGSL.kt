@@ -3,17 +3,16 @@ package com.br.justcomposelabs.tutorial.medium.compose.agsl
 import android.graphics.RuntimeShader
 import android.os.Build
 import androidx.compose.foundation.background
-import androidx.compose.ui.graphics.ShaderBrush
-import androidx.compose.ui.Modifier
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
-
 
 // ...
 
@@ -22,7 +21,6 @@ val shaderSource = """
         return half4(1, 0, 0, 1);
     }
 """.trimIndent()
-
 
 val glowButtonShader = """
     uniform shader button;

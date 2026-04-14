@@ -27,7 +27,6 @@ class User(val firstName: String, val lastName: String, val age: Int) : Parcelab
                 parcel.readString() ?: "",
                 parcel.readInt()
             )
-
         }
     }
 }

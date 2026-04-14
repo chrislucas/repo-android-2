@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.tutorial.google.codelabs.viewmodelstateflow.ui.theme.JustComposeLabsTheme
 
-
 /*
     https://developer.android.com/codelabs/basic-android-kotlin-compose-viewmodel-and-state#0
 

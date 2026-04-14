@@ -13,7 +13,6 @@ import com.br.justcomposelabs.databinding.ActivityFontScaleConfigurationBinding
 import com.br.justcomposelabs.tutorial.google.view.adjustFontSize
 import timber.log.Timber
 
-
 /**
  *
  *https://medium.com/@nicholas.rose/simple-in-app-text-resizing-f7c3fb8b1a02
@@ -23,14 +22,11 @@ import timber.log.Timber
  */
 class FontScaleConfigurationActivity : AppCompatActivity() {
 
-
     private val binding: ActivityFontScaleConfigurationBinding by lazy {
         ActivityFontScaleConfigurationBinding.inflate(layoutInflater)
     }
 
-
     private var fontScale: Float = 1.0f
-
 
     companion object {
         const val SAVE_FONT_SCALE = "save_font_scale"

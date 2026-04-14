@@ -27,6 +27,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -83,13 +84,12 @@ fun LazyListWithKey() {
     }
 }
 
-
 @Composable
 fun ElementWithKey(
     element: String,
     remove: (String) -> Unit
 ) {
-    var loading by remember { mutableStateOf(false) }
+    var loading by rememberSaveable { mutableStateOf(false) }
 
     LaunchedEffect(element) {
         loading = true
@@ -136,6 +136,4 @@ fun ElementWithKey(
             }
         }
     }
-
-
 }

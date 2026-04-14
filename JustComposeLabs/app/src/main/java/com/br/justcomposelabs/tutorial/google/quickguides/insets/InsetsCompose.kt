@@ -32,7 +32,6 @@ import androidx.compose.ui.tooling.preview.Preview
         taskbar
  */
 
-
 @Preview
 @Composable
 fun BottomAppBarPreview() {
@@ -76,7 +75,7 @@ fun BottomAppBarPreview() {
             )
         },
 
-        ) { innerPadding ->
+    ) { innerPadding ->
         Text(modifier = Modifier.padding(innerPadding), text = "Bottom app bar")
     }
 }

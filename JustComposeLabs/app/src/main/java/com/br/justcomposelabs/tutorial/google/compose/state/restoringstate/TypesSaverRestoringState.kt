@@ -6,9 +6,7 @@ import androidx.compose.runtime.saveable.mapSaver
     https://developer.android.com/develop/ui/compose/state#mapsaver
  */
 
-
 data class User(val name: String, val email: String)
-
 
 val UserSaver = run {
     val nameKey = "name"

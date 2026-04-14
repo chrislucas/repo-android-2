@@ -23,11 +23,9 @@ import com.br.justcomposelabs.databinding.LayoutTextCenterSampleBindingComposeBi
 
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun AndroidViewBindingExamplePreview() {
     AndroidViewBinding(LayoutTextCenterSampleBindingComposeBinding::inflate) {
-
     }
 }

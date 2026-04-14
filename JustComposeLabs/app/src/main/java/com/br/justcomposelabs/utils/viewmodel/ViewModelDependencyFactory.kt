@@ -3,7 +3,6 @@ package com.br.justcomposelabs.utils.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-
 /*
     https://developer.android.com/codelabs/kotlin-coroutines#1
     https://github.com/android/codelab-kotlin-coroutines/blob/master/coroutines-codelab/start/src/main/AndroidManifest.xml

@@ -51,10 +51,10 @@ https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements
 
 @Composable
 fun TwoTextsDesiredResultInstrinsicSizeComponent(
-    modifier: Modifier = Modifier, first: String, second: String
+    modifier: Modifier = Modifier,
+    first: String,
+    second: String
 ) {
-
-
     /*
         example intrinsics Max compose
         Usar Modifier.width(IntrinsicsSize.Max) ou
@@ -63,7 +63,6 @@ fun TwoTextsDesiredResultInstrinsicSizeComponent(
         recurso util quando seus componentes filhos tem um tamanho flexivel e
         precisamos alinhar para uma medida. em comum
      */
-
 
     /*
         A Row usas IntrinsicSize.Max paaa calcular o tamanho baseado em seu nó com
@@ -82,13 +81,13 @@ fun TwoTextsDesiredResultInstrinsicSizeComponent(
             textAlign = TextAlign.Start
         )
 
-
         /*
             Usa o fillMaxHeight que refere-se ao componente Row
             Calcula o intrinsic max height
          */
         VerticalDivider(
-            color = Color.Black, modifier = Modifier
+            color = Color.Black,
+            modifier = Modifier
                 .fillMaxHeight()
                 .width(1.dp)
         )
@@ -114,7 +113,6 @@ private fun TwoTextsDesiredResultInstrinsicSizeComponentPreview() {
         )
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable

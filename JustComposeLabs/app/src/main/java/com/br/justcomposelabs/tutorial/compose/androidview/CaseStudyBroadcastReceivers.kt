@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.BatteryManager
-import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -31,13 +30,11 @@ import timber.log.Timber
     - Exemplo de um BroadcastReceiver que precisa ser registrado atraves de uma composable
  */
 
-
 @Composable
 fun SystemBroadcastReceiver(
     systemActions: List<String>,
     onSystemEvent: (intent: Intent?) -> Unit
 ) {
-
     val context = LocalContext.current
     /*
         Recuperar a última lambda function onSystemEvent passada para a funcao composable
@@ -65,7 +62,6 @@ fun SystemBroadcastReceiver(
         }
     }
 }
-
 
 @Preview(showSystemUi = true)
 @Composable
@@ -120,7 +116,6 @@ private fun Context.determineCurrentBatteryLevel(intent: Intent?) {
     Timber.tag("battery_level").d("Battery level: $batteryPct%")
 }
 
-
 private const val BROADCAST_RECEIVER = "broadcast_receiver"
 
 private fun batteryStatus(intent: Intent?) {
@@ -130,7 +125,7 @@ private fun batteryStatus(intent: Intent?) {
 
     Timber.tag(BROADCAST_RECEIVER).d(
         "Charge Plug: $chargePlug\n" +
-                "USB Charge: $usbCharge\nAC Charge: $acCharge"
+            "USB Charge: $usbCharge\nAC Charge: $acCharge"
     )
 
     when (chargePlug) {
@@ -140,10 +135,10 @@ private fun batteryStatus(intent: Intent?) {
     }
 
     val status: Int = intent?.getIntExtra(BatteryManager.EXTRA_STATUS, -1) ?: -1
-    val isCharging: Boolean = status == BatteryManager.BATTERY_STATUS_CHARGING
-            || status == BatteryManager.BATTERY_STATUS_FULL
+    val isCharging: Boolean = status == BatteryManager.BATTERY_STATUS_CHARGING ||
+        status == BatteryManager.BATTERY_STATUS_FULL
     Timber.tag(BROADCAST_RECEIVER).d(
         "Intent: $intent\n" +
-                "Is Charging: $isCharging\nStatus: $status"
+            "Is Charging: $isCharging\nStatus: $status"
     )
 }

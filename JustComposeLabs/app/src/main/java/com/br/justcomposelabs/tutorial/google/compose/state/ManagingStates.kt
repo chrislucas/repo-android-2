@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.state
 
-
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
@@ -32,7 +31,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import timber.log.Timber
 
-
 /*
     https://developer.android.com/develop/ui/compose/state
     - Estado num app é qualquer valor que pode mudar conforme o tempo. Essa uma definicao
@@ -40,11 +38,9 @@ import timber.log.Timber
 
  */
 
-
 @Preview(showBackground = true, showSystemUi = true, name = "StateTextField")
 @Composable
 fun StateTextField() {
-
     /*
         // an observable tupe in compose
         Se utilizarmos somente o mutableStateOf toda vez que ocorrer uma recomposicao
@@ -92,7 +88,6 @@ fun StateTextField() {
     var name: String by rememberSaveable { mutableStateOf(" ") }
 
     Column(modifier = Modifier.padding(16.dp)) {
-
         if (name.isNotBlank()) {
             Text(
                 text = "Hello, $name!",
@@ -110,11 +105,9 @@ fun StateTextField() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true, name = "StateTextFieldRemember")
 @Composable
 fun StateTextFieldRemember() {
-
     /**
      * @see androidx.compose.runtime.MutableState
      * Essa desistruturacao abaixo vem da interface MutableSate que tem
@@ -125,13 +118,13 @@ fun StateTextFieldRemember() {
      *       e atualiza o atributo generico value T
      *
      * @see androidx.compose.runtime.MutableState
-    public interface MutableState<T> : State<T> {
-    override var value: T
-    public operator fun component1(): T
-    public operator fun component2(): (T) -> Unit
-    }
+     public interface MutableState<T> : State<T> {
+     override var value: T
+     public operator fun component1(): T
+     public operator fun component2(): (T) -> Unit
+     }
      */
-    val (name, setName) = remember { mutableStateOf(" ") }
+        val (name, setName) = remember { mutableStateOf(" ") }
     Column(modifier = Modifier.padding(16.dp)) {
         if (name.isNotBlank()) {
             Text(
@@ -148,7 +141,6 @@ fun StateTextFieldRemember() {
         )
     }
 }
-
 
 @Preview(
     showBackground = true,
@@ -212,7 +204,6 @@ fun MutableStateTextFieldRemember() {
     }
 }
 
-
 @Preview(
     showBackground = true,
     showSystemUi = true,
@@ -238,7 +229,6 @@ fun MutableStateByDelegateTextFieldRemember() {
     }
 }
 
-
 @Composable
 @Preview(showSystemUi = true, name = "HelloScreen|HelloContent")
 fun HelloScreen() {
@@ -246,11 +236,10 @@ fun HelloScreen() {
     HelloContent(name) { newName -> name = newName }
 }
 
-
 @Composable
 @Preview(showSystemUi = true, name = "DestructuredHelloScreen|HelloContent")
 fun DestructuredHelloScreen() {
-    val mutableState =  rememberSaveable { mutableStateOf(" ") }
+    val mutableState = rememberSaveable { mutableStateOf(" ") }
     val (name, setter) = mutableState
     HelloContent(name, setter)
 }
@@ -266,7 +255,6 @@ class HelloStateFlowViewModel : ViewModel() {
         _name.value = newName
     }
 }
-
 
 /*
     A viewmodel armazena e expoem o estado da variavel name
@@ -389,7 +377,6 @@ fun HelloScreen(helloStateFlowViewModel: HelloStateFlowViewModel = viewModel()) 
     val name by helloStateFlowViewModel.name.collectAsState()
     HelloContent(name, helloStateFlowViewModel::onNameChange)
 
-
     /*
         UDF - Unidirectional Data Flow
             - O padrao state hoisting gera um padrao de fluxo de dados, onde
@@ -450,8 +437,8 @@ internal fun HelloContent(name: String = "", onNameChange: (String) -> Unit) {
         modifier = Modifier
             .navigationBarsPadding()
             .systemBarsPadding()
-            //.padding(16.dp)
-            //.recomposeHighlighter(false)
+        // .padding(16.dp)
+        // .recomposeHighlighter(false)
     ) {
         if (name.isNotBlank()) {
             Text(
@@ -468,7 +455,6 @@ internal fun HelloContent(name: String = "", onNameChange: (String) -> Unit) {
         )
     }
 }
-
 
 /*
     Resumo

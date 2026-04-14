@@ -19,7 +19,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.br.justcomposelabs.tutorial.google.codelabs.navigationcompose.appwalkthrough.ui.OrderViewModel
@@ -39,7 +38,6 @@ import com.br.justcomposelabs.tutorial.google.codelabs.navigationcompose.appwalk
     https://developer.android.com/codelabs/basic-android-kotlin-compose-test-cupcake?hl=pt-br#0
 
  */
-
 
 class WalkThroughActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,41 +83,25 @@ private fun CupCakeContainerUI(
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState()),
             contentAlignment = Alignment.TopStart,
-        )  {
-            composable (route = CupCakeScreen.Start.name) {
-
+        ) {
+            composable(route = CupCakeScreen.Start.name) {
             }
 
-            composable (route = CupCakeScreen.Flavor.name) {
-
+            composable(route = CupCakeScreen.Flavor.name) {
             }
 
-            composable (route = CupCakeScreen.Pickup.name) {
-
+            composable(route = CupCakeScreen.Pickup.name) {
             }
 
-            composable (route = CupCakeScreen.Summary.name) {
-
+            composable(route = CupCakeScreen.Summary.name) {
             }
         }
     }
 }
 
-
 private fun cancelOrderAndNavigateToStart() {
-
 }
 
 @Composable
 fun NavController() {
-
 }
-
-
-
-
-
-
-
-
-

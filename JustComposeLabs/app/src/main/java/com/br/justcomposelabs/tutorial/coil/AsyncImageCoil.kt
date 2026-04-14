@@ -34,17 +34,16 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Preview(showBackground = true)
 @Composable
 private fun AsyncImageComponent() {
-
     val url = "https://t.ctcdn.com.br/lvns56iaSMyHvyTur4JeYS_NYeY=/i606944.png"
     JustComposeLabsTheme {
-
         /*
             https://composables.com/docs/androidx.compose.material/material/components/Surface
          */
-        Surface(modifier = Modifier
-            .fillMaxSize()
-            .padding(12.dp)) {
-
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(12.dp)
+        ) {
             Column(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -69,16 +68,16 @@ private fun AsyncImageComponent() {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 private fun AsyncImageSvgComponent() {
     JustComposeLabsTheme {
         val ctx = LocalContext.current
-        Surface(modifier = Modifier
-            .fillMaxSize()
-            .padding(12.dp)) {
-
+        Surface(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(12.dp)
+        ) {
             /*
 
 
@@ -102,7 +101,6 @@ private fun AsyncImageSvgComponent() {
     }
 }
 
-
 @Preview
 @Composable
 fun SingletonImageLoader() {
@@ -111,9 +109,5 @@ fun SingletonImageLoader() {
             .components {
                 add(SvgDecoder.Factory())
             }.build()
-
-
     }
 }
-
-

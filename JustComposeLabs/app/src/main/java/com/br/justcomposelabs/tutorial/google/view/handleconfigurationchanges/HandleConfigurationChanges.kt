@@ -1,7 +1,6 @@
 package com.br.justcomposelabs.tutorial.google.view.handleconfigurationchanges
 
 import android.content.res.Configuration
-import android.content.res.Configuration.COLOR_MODE_HDR_UNDEFINED
 import android.content.res.Configuration.COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED
 import android.os.Build
 import androidx.compose.foundation.layout.Column
@@ -12,7 +11,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -47,11 +45,9 @@ import com.br.justcomposelabs.tutorial.google.lazyrowmaxheight.items
                 -
  */
 
-
 @Preview(showSystemUi = true)
 @Composable
 fun ConfigurationDeviceInfoComponent() {
-
     /*
         https://developer.android.com/reference/android/content/res/Configuration
         - Essa classe descreve todas as configuracoes do device que podem impactar
@@ -132,7 +128,6 @@ fun ConfigurationDeviceInfoComponent() {
                 modifier = Modifier.padding(bottom = 4.dp)
             )
 
-
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 Text(
                     text = "Font Weight Adjustment: ${this.fontWeightAdjustment}",
@@ -163,5 +158,3 @@ fun ConfigurationDeviceInfoComponent() {
         )
     }
 }
-
-

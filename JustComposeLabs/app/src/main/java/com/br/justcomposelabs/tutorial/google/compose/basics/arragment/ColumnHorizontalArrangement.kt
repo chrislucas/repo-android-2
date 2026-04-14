@@ -12,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-
 /*
     https://developer.android.com/reference/kotlin/androidx/compose/foundation/layout/Arrangement
  */
@@ -58,5 +57,3 @@ fun ColumnHorizontalArrangement() {
         }
     }
 }
-
-

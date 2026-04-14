@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -41,8 +40,10 @@ class EventHandlingLocalBroadcastManagerActivity : AppCompatActivity() {
             ViewCompat.setOnApplyWindowInsetsListener(root) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
                 v.setPadding(
-                    systemBars.left, systemBars.top,
-                    systemBars.right, systemBars.bottom
+                    systemBars.left,
+                    systemBars.top,
+                    systemBars.right,
+                    systemBars.bottom
                 )
                 insets
             }
@@ -66,19 +67,18 @@ class EventHandlingLocalBroadcastManagerActivity : AppCompatActivity() {
     }
 }
 
-
 abstract class EventBroadcastManager(private val block: (Intent?) -> Unit) : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
         context?.let { block(intent) }
     }
 }
 
-
 class BroadcastEvent(private val context: Context, block: (Intent?) -> Unit) :
     EventBroadcastManager(block) {
     init {
         LocalBroadcastManager.getInstance(context).registerReceiver(
-            this, IntentFilter(ACTION)
+            this,
+            IntentFilter(ACTION)
         )
     }
 
@@ -90,7 +90,6 @@ class BroadcastEvent(private val context: Context, block: (Intent?) -> Unit) :
 
         LocalBroadcastManager.getInstance(context).sendBroadcast(data)
     }
-
 
     fun dispose() {
         LocalBroadcastManager.getInstance(context).unregisterReceiver(

@@ -25,7 +25,6 @@ fun VerticallyCenteredText() {
     )
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun CenterHorizontallyText() {
@@ -39,7 +38,6 @@ fun CenterHorizontallyText() {
     )
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun WrapContentSizeCenterText() {
@@ -51,7 +49,6 @@ fun WrapContentSizeCenterText() {
             .wrapContentSize(align = Alignment.Center)
     )
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -77,7 +74,6 @@ fun WrapContentSizeCenterEndText() {
     )
 }
 
-
 @Preview(showBackground = true)
 @Composable
 fun WrapContentSizeTopStartText() {
@@ -89,7 +85,6 @@ fun WrapContentSizeTopStartText() {
             .wrapContentSize(align = Alignment.TopStart)
     )
 }
-
 
 @Preview(showBackground = true)
 @Composable

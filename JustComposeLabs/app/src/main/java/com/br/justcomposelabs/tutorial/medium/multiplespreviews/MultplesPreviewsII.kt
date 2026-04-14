@@ -9,9 +9,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.R
-import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
-
+import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 
 @Preview(uiMode = UI_MODE_NIGHT_YES, showBackground = true)
 annotation class DarkNode

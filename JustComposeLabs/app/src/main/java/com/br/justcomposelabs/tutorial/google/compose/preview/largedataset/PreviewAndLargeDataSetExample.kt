@@ -15,7 +15,6 @@ import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.sp
 
-
 /*
     @Preview and large data sets
     https://developer.android.com/develop/ui/compose/tooling/previews#preview-data
@@ -40,8 +39,6 @@ import androidx.compose.ui.unit.sp
 
     Veja o exemplo abaixo
  */
-
-
 
 data class User(val name: String)
 

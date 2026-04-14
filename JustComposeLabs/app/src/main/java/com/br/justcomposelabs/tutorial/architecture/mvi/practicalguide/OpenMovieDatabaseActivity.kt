@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.tutorial.architecture.mvi.practicalguide.ui.theme.JustComposeLabsTheme
 
-
 /*
     https://medium.datadriveninvestor.com/mvi-architecture-in-android-with-jetpack-compose-a-practical-guide-76742389237e
     https://www.omdbapi.com/

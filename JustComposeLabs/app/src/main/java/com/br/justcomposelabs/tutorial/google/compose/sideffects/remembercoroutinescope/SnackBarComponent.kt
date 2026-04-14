@@ -6,8 +6,8 @@ import androidx.compose.runtime.remember
 
 /**
  * @see com.br.justcomposelabs.tutorial.google.compose.sideffects.launcheffect.SnackbarComponent
-    https://developer.android.com/develop/ui/compose/components/snackbar
-    https://developer.android.com/develop/ui/compose/side-effects#remembercoroutinescope
+ https://developer.android.com/develop/ui/compose/components/snackbar
+ https://developer.android.com/develop/ui/compose/side-effects#remembercoroutinescope
  */
 
 @Composable

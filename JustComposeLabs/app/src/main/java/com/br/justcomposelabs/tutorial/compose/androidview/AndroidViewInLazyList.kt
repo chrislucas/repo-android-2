@@ -19,7 +19,6 @@ import com.br.justcomposelabs.tutorial.canvas.DrawText
     https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#androidview_in_lazy_lists
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun AndroidViewBindingInLazyList() {
@@ -35,7 +34,6 @@ fun AndroidViewBindingInLazyList() {
         }
     }
 }
-
 
 /*
     AndroidView em Lazy Lists - DrawText com altura dinâmica

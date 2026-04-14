@@ -13,11 +13,9 @@ import androidx.fragment.compose.AndroidFragment
 import com.br.justcomposelabs.tutorial.composable.interoperability.InteroperabilityComposeFragment
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
-
 /*
     https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose#fragments-in-compose
  */
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -28,7 +26,6 @@ fun FragmentInCompose(modifier: Modifier = Modifier) {
 /*
     Example Google AI
  */
-
 
 @Composable
 fun FragmentScreen(
@@ -48,10 +45,8 @@ fun FragmentScreen(
         }
 
         Text("Below Content Fragment")
-
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -64,7 +59,6 @@ fun FragmentScreenExample() {
             clazz = InteroperabilityComposeFragment::class.java,
             arguments = Bundle.EMPTY
         ) { fragment ->
-
         }
     }
 }

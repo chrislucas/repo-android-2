@@ -3,7 +3,6 @@ package com.br.justcomposelabs.tutorial.google.view.recyclerviews
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Adapter
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.br.justcomposelabs.databinding.SampleCardForSampleRecyclerViewBinding
@@ -20,7 +19,6 @@ import timber.log.Timber
     https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md
     https://github.com/material-components/material-components-android/tree/master
  */
-
 
 class CircularAdapter<T, V : RecyclerView.ViewHolder>(
     private val dataSet: List<T>,
@@ -47,7 +45,6 @@ class CircularAdapter<T, V : RecyclerView.ViewHolder>(
 
     override fun getItemCount(): Int = virtualSizeAdapter
 
-
     companion object {
         const val VIRTUAL_LIMIT = 10
     }
@@ -67,8 +64,7 @@ class CircularDefaultViewHolder(view: ViewGroup) : RecyclerView.ViewHolder(
     }
 }
 
-
-class CircularScrollListener: RecyclerView.OnScrollListener() {
+class CircularScrollListener : RecyclerView.OnScrollListener() {
     /*
         https://medium.com/better-programming/what-goes-around-comes-around-1aae51da0f29
      */

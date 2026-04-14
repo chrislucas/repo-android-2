@@ -13,7 +13,6 @@ import com.br.justcomposelabs.R
     https://developer.android.com/develop/ui/compose/graphics/images/compare
  */
 
-
 @Preview(showBackground = true)
 @Composable
 private fun LoadImage() {

@@ -24,7 +24,6 @@ import androidx.compose.ui.unit.dp
     https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-logic
  */
 
-
 /*
     The UI state production pipeline
     https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-state-production-pipeline
@@ -39,17 +38,18 @@ fun StateCounterByItSelf() {
      */
     var count by remember { mutableIntStateOf(0) }
 
-    Row(modifier = Modifier.fillMaxSize()
-        .systemBarsPadding()
-        .navigationBarsPadding(),
+    Row(
+        modifier = Modifier.fillMaxSize()
+            .systemBarsPadding()
+            .navigationBarsPadding(),
         verticalAlignment = Alignment.CenterVertically,
         horizontalArrangement = Arrangement.Center
     ) {
-        Button(onClick = {++count}) {
+        Button(onClick = { ++count }) {
             Text(text = "Increment")
         }
         Spacer(modifier = Modifier.padding(2.dp))
-        Button(onClick = {--count}) {
+        Button(onClick = { --count }) {
             Text(text = "Decrement")
         }
     }

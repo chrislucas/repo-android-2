@@ -8,7 +8,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.justcomposelabs.databinding.ActivityTextCounterAnimationBinding
 
-
 /*
     Codigo auxiliado pela IA para estudar como ValueAnimator funciona
     Pesquisa: ValueAnimator text counter
@@ -38,15 +37,17 @@ class TextCounterAnimationActivity : AppCompatActivity() {
             ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
                 v.setPadding(
-                    systemBars.left, systemBars.top,
-                    systemBars.right, systemBars.bottom
+                    systemBars.left,
+                    systemBars.top,
+                    systemBars.right,
+                    systemBars.bottom
                 )
                 insets
             }
 
             countAnimationFloat.duration = 5000L
             countAnimationInt.duration = 5000L
-            //animator.interpolator = timeInterpolation
+            // animator.interpolator = timeInterpolation
 
             btReset.setOnClickListener {
                 countAnimationFloat.cancel()
@@ -68,5 +69,4 @@ class TextCounterAnimationActivity : AppCompatActivity() {
             }
         }
     }
-
 }

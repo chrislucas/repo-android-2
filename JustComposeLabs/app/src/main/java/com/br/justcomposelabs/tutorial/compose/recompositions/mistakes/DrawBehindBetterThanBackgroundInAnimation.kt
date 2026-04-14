@@ -8,10 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,14 +35,12 @@ import kotlinx.coroutines.launch
         animações mais suavizadas.
  */
 
-
 class SimpleViewModel : ViewModel() {
 
     private val first = Color(0xff332334)
     private val second = Color(0xFF3F51B5)
 
     var color: Color by mutableStateOf(second)
-
 
     fun startColorAnimation() {
         viewModelScope.launch {
@@ -59,12 +55,10 @@ class SimpleViewModel : ViewModel() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
-
     val color by animateColorAsState(
         targetValue = viewModel.color,
         animationSpec = tween(durationMillis = 1000)
     )
-
 
     LaunchedEffect(Unit) {
         // Do something with the color
@@ -98,7 +92,6 @@ fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun StableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
-
     val color by animateColorAsState(
         targetValue = viewModel.color,
         animationSpec = tween(durationMillis = 1000)

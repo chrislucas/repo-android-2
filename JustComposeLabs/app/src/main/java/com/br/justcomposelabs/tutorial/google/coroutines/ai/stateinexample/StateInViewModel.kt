@@ -3,15 +3,12 @@ package com.br.justcomposelabs.tutorial.google.coroutines.ai.stateinexample
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.flatMapLatest
-import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.flow.stateIn
-
 
 sealed class UIState {
     object Loading : UIState()
@@ -22,7 +19,6 @@ sealed class UIState {
 interface FakeRepository {
     suspend fun fetch(): List<String>
 }
-
 
 class StateInViewModel(val repository: FakeRepository) : ViewModel() {
     // 1. Create a trigger

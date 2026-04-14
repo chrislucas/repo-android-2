@@ -18,7 +18,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 
  */
 
-
 @Composable
 fun rememberLazyListSate(
     initialFistVisibleItemIndex: Int = 0,

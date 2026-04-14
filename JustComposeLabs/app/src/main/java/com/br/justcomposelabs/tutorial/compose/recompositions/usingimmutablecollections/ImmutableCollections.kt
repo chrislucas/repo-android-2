@@ -15,7 +15,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-
 import kotlinx.collections.immutable.PersistentList
 import kotlinx.collections.immutable.persistentListOf
 import kotlinx.collections.immutable.toPersistentList
@@ -58,7 +57,6 @@ class MyViewModel : ViewModel() {
         }
     }
 
-
     fun addItem(item: ItemUi) {
         _uiState.update { current ->
             current.copy(items = current.items.add(item))
@@ -72,14 +70,12 @@ class MyViewModel : ViewModel() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PersistScreen(viewModel: MyViewModel = viewModel()) {
     val uiState: UiState by viewModel.uiState.collectAsState()
     PersistItems(uiState)
 }
-
 
 @Composable
 private fun PersistItems(state: UiState) {
@@ -95,7 +91,8 @@ private fun PersistItems(state: UiState) {
             LazyColumn {
                 items(
                     state.items,
-                    { item -> item.hashCode().toLong() }) { item ->
+                    { item -> item.hashCode().toLong() }
+                ) { item ->
                     Text(item.title)
                 }
             }
@@ -111,5 +108,4 @@ private fun PersistItems(state: UiState) {
  */
 @Composable
 private fun AddItem() {
-
 }

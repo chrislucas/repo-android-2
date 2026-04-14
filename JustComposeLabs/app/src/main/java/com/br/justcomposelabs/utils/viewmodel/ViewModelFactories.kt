@@ -5,15 +5,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.viewmodel.CreationExtras
 
-
 /*
     Create ViewModels with dependencies
     https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-factories
  */
 
-
 object ViewModelFactories {
-
 
     fun modernFactory(): ViewModelProvider.Factory {
         // https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-factories
@@ -25,15 +22,14 @@ object ViewModelFactories {
     }
 
     /**
-     * @sse  ViewModelStore
+     * @sse ViewModelStore
      */
     @JvmStatic
-    fun <V: ViewModel> create(
+    fun <V : ViewModel> create(
         viewModelStore: ViewModelStore,
         factory: ViewModelProvider.Factory,
         ref: Class<V>
     ): V {
         return ViewModelProvider(viewModelStore, factory).get(ref)
     }
-
 }

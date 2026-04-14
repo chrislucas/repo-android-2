@@ -18,9 +18,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
-import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 import androidx.core.graphics.withTranslation
-
+import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
 /*
     https://developer.android.com/develop/ui/compose/migrate/interoperability-apis/views-in-compose
@@ -42,7 +41,6 @@ fun ComposeDrawView(
     )
 }
 
-
 @Preview(name = "DrawViewDrawTextPreview", showBackground = true, showSystemUi = true)
 @Composable
 fun ComposeDrawViewDrawTextPreview() {
@@ -57,10 +55,10 @@ fun ComposeDrawViewDrawTextPreview() {
                 DrawText(it).apply {
                     content = "hello world My Friend, How are you doing ?"
                 }
-            })
+            }
+        )
     }
 }
-
 
 class DrawText @JvmOverloads constructor(
     ctx: Context,
@@ -142,14 +140,14 @@ class DrawText @JvmOverloads constructor(
         // Se o texto mudou ou o tamanho da fonte é diferente, recriar
         if (cachedDisplayText != displayText || cachedTextSize != textSize) {
             textPaint.textSize = textSize
-            cachedTextSize = textSize  // ← Armazenar tamanho da fonte
+            cachedTextSize = textSize // ← Armazenar tamanho da fonte
             cachedDisplayText = displayText
             _cachedStaticLayout = StaticLayout.Builder.obtain(
                 displayText,
                 0,
                 displayText.length,
                 textPaint,
-                staticLayoutFixedWidth  // Usar largura fixa
+                staticLayoutFixedWidth // Usar largura fixa
             ).build()
         }
 

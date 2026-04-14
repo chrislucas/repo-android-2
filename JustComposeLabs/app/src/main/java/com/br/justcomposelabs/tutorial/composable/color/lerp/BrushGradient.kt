@@ -36,10 +36,8 @@ fun CircleGradient() {
         Slider(
             value = 0f,
             onValueChange = {
-
             },
             valueRange = 0f..1f
         )
     }
-
 }

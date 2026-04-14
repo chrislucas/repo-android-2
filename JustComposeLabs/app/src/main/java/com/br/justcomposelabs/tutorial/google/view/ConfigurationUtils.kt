@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.res.Configuration
 import androidx.annotation.IntDef
 
-
 /**
  * Ajusta a escala de fonte do contexto.
  *
@@ -63,7 +62,6 @@ fun Context.adjustScreenSize(screenSize: Int): Context {
 )
 @Retention(AnnotationRetention.SOURCE)
 annotation class KeyboardHiddenState
-
 
 fun Context.adjustKeyboardHiddenState(@KeyboardHiddenState keyboardHiddenState: Int): Context {
     // ✅ CORREÇÃO: Criar uma NOVA Configuration em vez de modificar a existente

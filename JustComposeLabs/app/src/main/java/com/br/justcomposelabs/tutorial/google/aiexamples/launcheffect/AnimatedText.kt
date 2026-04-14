@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.tooling.preview.Preview
 
-
 @Preview(showBackground = true)
 @Composable
 fun AnimatedText(isVisible: Boolean = false) {
@@ -26,5 +25,3 @@ fun AnimatedText(isVisible: Boolean = false) {
 
     Text("Hello, Compose!", modifier = Modifier.alpha(alpha.value))
 }
-
-

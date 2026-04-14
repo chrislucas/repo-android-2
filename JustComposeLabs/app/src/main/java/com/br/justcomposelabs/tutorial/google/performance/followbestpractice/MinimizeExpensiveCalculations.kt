@@ -15,7 +15,6 @@ import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
     https://developer.android.com/develop/ui/compose/performance/bestpractices#use-remember
  */
 
-
 @Composable
 fun ContactListWrong(
     modifier: Modifier = Modifier,

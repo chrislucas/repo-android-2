@@ -57,7 +57,6 @@ fun ButtonModalBottomSheet(modifier: Modifier = Modifier) {
             }
         }
     }
-
 }
 
 @Preview(showBackground = true)

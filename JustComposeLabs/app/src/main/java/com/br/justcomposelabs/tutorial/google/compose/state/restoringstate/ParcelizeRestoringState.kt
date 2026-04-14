@@ -11,13 +11,12 @@ import kotlinx.parcelize.Parcelize
         - https://developer.android.com/develop/ui/compose/state#restore-ui-state
  */
 
-
 @Parcelize
-private data class City(val name: String, val country: String): Parcelable
+private data class City(val name: String, val country: String) : Parcelable
 
 @Composable
 fun CityScreen() {
-    val selectedCity  = rememberSaveable {
+    val selectedCity = rememberSaveable {
         mutableStateOf(City("São Paulo", "Brazil"))
     }
 }

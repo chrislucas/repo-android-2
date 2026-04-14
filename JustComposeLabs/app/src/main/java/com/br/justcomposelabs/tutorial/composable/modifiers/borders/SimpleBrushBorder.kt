@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.composable.modifiers.borders
 
-
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
@@ -12,8 +11,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.TileMode
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-
-
 
 @Preview(showBackground = true)
 @Composable

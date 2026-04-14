@@ -1,11 +1,7 @@
 package com.br.justcomposelabs.tutorial.google.compose.performance.stability
 
-
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Text
 import androidx.compose.material3.Switch
 import androidx.compose.runtime.Composable
@@ -180,7 +176,6 @@ fun ContactDetails(
     modifier: Modifier = Modifier,
     contact: Contact
 ) {
-
     Column(modifier = modifier) {
         Text(text = "Name: ${contact.name}")
         Text(text = "Number: ${contact.number}")
@@ -190,6 +185,3 @@ fun ContactDetails(
 /*
     https://proandroiddev.com/stability-in-jetpack-compose-explained-87e78e0ae20e
  */
-
-
-

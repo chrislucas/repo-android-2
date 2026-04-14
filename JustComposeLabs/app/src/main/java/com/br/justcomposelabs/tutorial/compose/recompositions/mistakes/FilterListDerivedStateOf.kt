@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.compose.recompositions.mistakes
 
-import android.R
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -64,7 +63,6 @@ anulando o beneficio de desempenho do derivedStateOf
 
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun FilterListStructuralEqualityPolicy() {
@@ -83,7 +81,6 @@ fun FilterListStructuralEqualityPolicy() {
     val names = remember { listOf("Alice", "Alberto", "Bruno", "Caio") }
 
     val filteredNames by remember {
-
         derivedStateOf(policy = structuralEqualityPolicy()) {
             /*
                  Será executado toda vez que o usuario digitar
@@ -128,7 +125,6 @@ fun FilterListStructuralEqualityPolicy() {
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -186,7 +182,6 @@ fun FilterListNeverEqualPolicy() {
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

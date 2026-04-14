@@ -19,5 +19,4 @@ class UserRepository {
         delay(100L)
         return users
     }
-
 }

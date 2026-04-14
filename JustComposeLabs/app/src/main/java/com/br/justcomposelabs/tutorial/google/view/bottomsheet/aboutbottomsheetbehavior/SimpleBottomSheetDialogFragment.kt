@@ -3,7 +3,6 @@ package com.br.justcomposelabs.tutorial.google.view.bottomsheet.aboutbottomsheet
 import android.app.Dialog
 import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +26,6 @@ class SimpleBottomSheetDialogFragment(
         super.onCreate(savedInstanceState)
     }
 
-
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return super.onCreateDialog(savedInstanceState)
     }
@@ -39,7 +37,8 @@ class SimpleBottomSheetDialogFragment(
     ): View? {
         return inflater.inflate(
             R.layout.simple_bottom_sheet_dialog,
-            container, false
+            container,
+            false
         )
     }
 
@@ -61,10 +60,7 @@ class SimpleBottomSheetDialogFragment(
         super.onStop()
         lifecycle.removeObserver(lifecycleObserver)
     }
-
-
 }
-
 
 class DefaultBottomSheetDialogFragment : DefaultLifecycleObserver {
     override fun onStart(owner: LifecycleOwner) {

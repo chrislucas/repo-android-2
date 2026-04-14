@@ -20,7 +20,6 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import io.reactivex.Observable
 import io.reactivex.subjects.BehaviorSubject
 
-
 /*
 
     Other supported types of state
@@ -43,7 +42,6 @@ class HelloStateRxViewModel : ViewModel() {
         state.onNext(data)
     }
 }
-
 
 @Preview(showSystemUi = true, name = "HelloScreenRx")
 @Composable

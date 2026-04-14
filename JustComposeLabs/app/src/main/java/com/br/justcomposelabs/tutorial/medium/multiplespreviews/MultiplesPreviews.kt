@@ -9,8 +9,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.R
-import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
+import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 
 /*
     https://medium.com/@kyle.dahlin0/jetpack-compose-multipreview-setup-e9748b3dc86c
@@ -27,8 +27,8 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
     https://developer.android.com/develop/ui/compose/tooling/previews#preview-multipreview
  */
 
-
 const val LANGUAGES = "LANGUAGES"
+
 @Preview(
     locale = "pt",
     showBackground = true,
@@ -48,6 +48,7 @@ const val LANGUAGES = "LANGUAGES"
 annotation class LocalePreviews
 
 const val FONT_SCALE = "FONT_SCALE"
+
 @Preview(
     fontScale = 0.85f,
     group = FONT_SCALE,
@@ -66,6 +67,7 @@ const val FONT_SCALE = "FONT_SCALE"
 annotation class FontScalePreviews
 
 private const val DEVICES = "DEVICES"
+
 @Preview(
     name = "Phone_PIXEL_2",
     group = DEVICES,

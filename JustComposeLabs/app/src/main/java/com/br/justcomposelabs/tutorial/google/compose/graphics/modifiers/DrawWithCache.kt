@@ -32,7 +32,6 @@ import androidx.compose.ui.unit.sp
         a funcao rotate(degrees: Float)
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun RectGradient() {
@@ -42,14 +41,14 @@ fun RectGradient() {
             .systemBarsPadding()
             .navigationBarsPadding()
             .drawWithCache {
-            val gradient =
-                Brush.linearGradient(
-                    colors = listOf(Color.Red, Color.Blue),
-                    start = Offset.Zero,
-                    end = Offset(size.width, size.height),
-                )
-            onDrawBehind { drawRect(gradient) }
-        },
+                val gradient =
+                    Brush.linearGradient(
+                        colors = listOf(Color.Red, Color.Blue),
+                        start = Offset.Zero,
+                        end = Offset(size.width, size.height),
+                    )
+                onDrawBehind { drawRect(gradient) }
+            },
         contentAlignment = Alignment.Center
     ) {
         Text(

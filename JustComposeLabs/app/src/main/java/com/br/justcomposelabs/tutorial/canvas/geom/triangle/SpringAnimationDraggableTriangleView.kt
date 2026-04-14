@@ -13,7 +13,9 @@ import androidx.dynamicanimation.animation.SpringForce
 import kotlin.math.*
 
 class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     // Paint objects for drawing

@@ -8,7 +8,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.ui.Modifier
@@ -29,8 +28,6 @@ import timber.log.Timber
     https://developer.android.com/develop/ui/compose/side-effects#disposableeffect
  */
 
-
-
 @Composable
 fun RememberUpdateStateComponent(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
@@ -45,7 +42,6 @@ fun RememberUpdateStateComponent(
         DisposableEffect: effects that require cleanup
      */
     DisposableEffect(lifecycleOwner) {
-
         val tree = Timber.DebugTree()
         if (BuildConfig.DEBUG) {
             Timber.plant(tree) // This sends logs to Logcat
@@ -79,7 +75,6 @@ fun RememberUpdateStateComponent(
 
     content()
 }
-
 
 @Preview(showSystemUi = true)
 @Composable

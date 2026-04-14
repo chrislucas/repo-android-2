@@ -11,9 +11,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -45,15 +45,15 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
     val padding = 16.dp
 
     Column {
-
         ProfileLayout(
             modifier = Modifier.background(color = Color(0xFFE7BFBF)),
             artist = artist
         )
 
         Row(
-            verticalAlignment = Alignment.CenterVertically, modifier = Modifier.background(
-                color =  Color(0xFFB388FF)
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier.background(
+                color = Color(0xFFB388FF)
             )
         ) {
             Box {
@@ -76,7 +76,6 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
                 )
             }
 
-
             /*
                 Modifier
                     .clickable(onClick = { })
@@ -87,7 +86,6 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
                     seja clicavel inclusive a area com padding pq o modifier
                     clickable é aplicado antes
              */
-
 
             Column(
                 Modifier
@@ -137,12 +135,10 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
     }
 }
 
-
 /*
      Builtin Modifiers
      https://developer.android.com/develop/ui/compose/modifiers#built-in-modifiers
  */
-
 
 @Preview()
 @Composable
@@ -204,4 +200,3 @@ fun ArtistAvatar(artist: Artist = Artist()) {
         )
     }
 }
-

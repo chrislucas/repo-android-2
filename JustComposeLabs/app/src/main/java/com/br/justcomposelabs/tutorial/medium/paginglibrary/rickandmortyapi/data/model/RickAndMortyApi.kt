@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.medium.paginglibrary.rickandmortyapi.data.model
 
-
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -18,6 +17,5 @@ interface RickAndMortyApi {
     @GET("api/episode/")
     suspend fun getEpisode()
 }
-
 
 data class Character(val name: String)

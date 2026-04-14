@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.composable.modifiers.borders
 
-
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
@@ -13,7 +12,6 @@ import androidx.compose.ui.unit.dp
 /*
     https://composables.com/docs/androidx.compose.foundation/foundation/modifiers/border
  */
-
 
 @Preview(showBackground = true)
 @Composable

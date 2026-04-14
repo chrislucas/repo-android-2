@@ -15,7 +15,6 @@ import com.google.firebase.crashlytics.crashlytics
     https://firebase.google.com/docs/crashlytics/get-started?platform=android
  */
 
-
 @Preview(showBackground = true, showSystemUi = true, name = "ButtonForceCrash")
 @Composable
 fun ButtonForceCrash() {
@@ -29,7 +28,6 @@ fun ButtonForceCrash() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true, name = "ButtonThrowNoFatalException")
 @Composable
 fun ButtonThrowNoFatalException() {
@@ -41,13 +39,14 @@ fun ButtonThrowNoFatalException() {
             Relatar exceções não fatais
             https://firebase.google.com/docs/crashlytics/customize-crash-reports?authuser=1&hl=pt-br&platform=android
          */
-        Button(onClick = {
-            try {
-                tryExec()
-            } catch (e: Exception) {
-                Firebase.crashlytics.recordException(e)
+        Button(
+            onClick = {
+                try {
+                    tryExec()
+                } catch (e: Exception) {
+                    Firebase.crashlytics.recordException(e)
+                }
             }
-        }
         ) {
             Text("Test Crashlytics")
         }

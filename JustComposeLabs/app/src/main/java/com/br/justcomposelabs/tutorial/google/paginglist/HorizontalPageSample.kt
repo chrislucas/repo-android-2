@@ -54,7 +54,7 @@ fun HorizontalPagerSample(modifier: Modifier = Modifier) {
                     .background(Color.LightGray),
                 contentAlignment = Alignment.Center,
 
-                ) {
+            ) {
                 Text(
                     text = "Page: $page",
                     fontSize = TextUnit(30f, TextUnitType.Sp)
@@ -84,4 +84,3 @@ fun HorizontalPagerSample(modifier: Modifier = Modifier) {
         }
     }
 }
-

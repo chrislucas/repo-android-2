@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.paginglist
 
-
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -107,4 +106,3 @@ fun PagerIndicator(pageCount: Int, currentPageIndex: Int, modifier: Modifier = M
         }
     }
 }
-

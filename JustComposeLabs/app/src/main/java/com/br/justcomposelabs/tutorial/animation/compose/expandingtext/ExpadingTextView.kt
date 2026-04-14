@@ -22,8 +22,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
+import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 
 /*
     animation expand and collapse size android view
@@ -58,8 +58,7 @@ fun TextExpandable() {
                     .width(w)
                     .clickable {
                         expanded = !expanded
-                    }
-                ,
+                    },
                 textAlign = TextAlign.Center
             )
         }

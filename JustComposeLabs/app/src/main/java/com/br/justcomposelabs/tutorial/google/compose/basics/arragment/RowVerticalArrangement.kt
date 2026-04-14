@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.basics.arragment
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,7 +12,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 
-
 @Preview
 @Composable
 fun RowVerticalArrangement() {
@@ -22,8 +20,7 @@ fun RowVerticalArrangement() {
         Alignment.CenterVertically,
         Alignment.Bottom
     )
-    Column (modifier = Modifier.fillMaxWidth()) {
-
+    Column(modifier = Modifier.fillMaxWidth()) {
         Row {
             Button(onClick = {}) {
                 Text("A")
@@ -38,7 +35,7 @@ fun RowVerticalArrangement() {
 
         LazyColumn {
             items(verticalArrangement) { arrangement ->
-                Row (verticalAlignment = arrangement) {
+                Row(verticalAlignment = arrangement) {
                     Button(onClick = {}) {
                         Text("A")
                     }
@@ -53,5 +50,3 @@ fun RowVerticalArrangement() {
         }
     }
 }
-
-

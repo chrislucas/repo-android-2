@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import com.br.justcomposelabs.R
 
-
 data class ImageContext(val model: Any, val contentDescription: String = "")
+
 @Composable
 fun CardImageComponent(
     modifier: Modifier = Modifier,
@@ -25,7 +25,7 @@ fun CardImageComponent(
     /*
         https://developer.android.com/develop/ui/compose/quick-guides/content/create-card-as-container
      */
-    ElevatedCard (
+    ElevatedCard(
         modifier = modifier,
         shape = RoundedCornerShape(
             topStart = 16.dp,
@@ -78,5 +78,4 @@ class ImageContextProvider : PreviewParameterProvider<ImageContext> {
 
             )
         )
-
 }

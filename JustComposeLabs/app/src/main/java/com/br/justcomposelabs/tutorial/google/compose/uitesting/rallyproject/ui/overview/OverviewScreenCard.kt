@@ -19,11 +19,9 @@ import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.
 import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.components.formatAmount
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
-
 private const val SHOWN_ITEMS = 3
 
 internal val RallyDefaultPadding = 12.dp
-
 
 /**
  * Base structure for cards in the Overview screen.

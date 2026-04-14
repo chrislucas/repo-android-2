@@ -9,11 +9,11 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.material3.*
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 /*
     TODO explorar esse codigo
@@ -33,10 +33,15 @@ fun LayoutDemo() {
     Scaffold(
         topBar = {
             LayoutTopBar(
-                onLayoutChange = { selectedLayout = it; expanded = false },
+                onLayoutChange = {
+                    selectedLayout = it
+                    expanded = false
+                },
                 expanded = expanded,
-                onExpandChange = { expanded = it })
-        }) { innerPadding ->
+                onExpandChange = { expanded = it }
+            )
+        }
+    ) { innerPadding ->
         LayoutContent(
             items = items,
             layoutType = selectedLayout,
@@ -52,7 +57,8 @@ fun LayoutDemo() {
 @Composable
 fun LayoutTopBar(
     onLayoutChange: (LayoutType) -> Unit,
-    expanded: Boolean, onExpandChange: (Boolean) -> Unit
+    expanded: Boolean,
+    onExpandChange: (Boolean) -> Unit
 ) {
     TopAppBar(title = { Text("Layout Menu Demo") }, actions = {
         Box {
@@ -98,7 +104,9 @@ fun ListLayout(items: List<String>, modifier: Modifier = Modifier) {
 @Composable
 fun GridFixedLayout(items: List<String>, modifier: Modifier = Modifier) {
     LazyVerticalGrid(
-        columns = GridCells.Fixed(2), modifier = modifier, contentPadding = PaddingValues(8.dp)
+        columns = GridCells.Fixed(2),
+        modifier = modifier,
+        contentPadding = PaddingValues(8.dp)
     ) {
         items(items.size) { index ->
             GridItemCard(items[index])
@@ -131,7 +139,8 @@ fun ListItemCard(text: String) {
         elevation = CardDefaults.elevatedCardElevation(4.dp)
     ) {
         Box(
-            modifier = Modifier.padding(16.dp), contentAlignment = Alignment.CenterStart
+            modifier = Modifier.padding(16.dp),
+            contentAlignment = Alignment.CenterStart
         ) {
             Text(text)
         }

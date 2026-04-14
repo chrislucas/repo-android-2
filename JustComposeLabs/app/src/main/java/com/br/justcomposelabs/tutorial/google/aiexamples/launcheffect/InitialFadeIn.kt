@@ -4,9 +4,7 @@ import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.togetherWith
-import androidx.compose.animation.with
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -25,19 +23,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
 /*
     Launched used in animation compose
 
     LaunchedEffect used in animation compose
  */
 
-
-
 @Preview(showBackground = true)
 @Composable
 fun AnimatedTextContent() {
-    var visibility by remember { mutableStateOf (false) }
+    var visibility by remember { mutableStateOf(false) }
 
     AnimatedContent(
         targetState = visibility,
@@ -73,7 +68,8 @@ fun AnimatedContentFadeDemo() {
             transitionSpec = {
                 // Combine the enter and exit animations using the `with` infix function.
                 fadeIn(animationSpec = tween(300)) togetherWith fadeOut(animationSpec = tween(300))
-            }, label = "AnimatedContent Fade"
+            },
+            label = "AnimatedContent Fade"
         ) { targetState ->
             if (targetState) {
                 Text(

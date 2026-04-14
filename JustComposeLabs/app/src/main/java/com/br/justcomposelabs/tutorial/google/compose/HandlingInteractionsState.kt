@@ -14,18 +14,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.lifecycle.ViewModel
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 import com.br.justcomposelabs.utils.composable.LogCompositions
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 
 /*
     Interaction state
     https://developer.android.com/develop/ui/compose/touch-input/user-interactions/handling-interactions#interaction-state
  */
-
 
 @Composable
 fun DisplayTextContent(value: String) {
@@ -52,8 +48,6 @@ fun UpdateDisplayTextContent(label: String, value: String, update: (String) -> U
         Text(label)
     }
 }
-
-
 
 @Composable
 fun DisplayScreen(contentStart: String) {
@@ -87,8 +81,6 @@ fun DisplayScreenPreview() {
     }
 }
 
-
 @Composable
 fun ButtonInteractionStateSample() {
-
 }

@@ -37,6 +37,7 @@ build:
 complexity:
   TooManyFunctions:
     thresholdInFiles: 20
+    active: true
     ignoreAnnotatedFunctions: ['Preview']
   LongParameterList:
     # Increase the threshold for parameter count, common in Composable functions

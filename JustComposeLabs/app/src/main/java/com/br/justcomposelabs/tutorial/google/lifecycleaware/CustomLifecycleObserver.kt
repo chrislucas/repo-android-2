@@ -38,7 +38,6 @@ class CustomLifecycleObserver(
         callback(CallbackLifecycleObserver.ON_RESUME, owner)
     }
 
-
     override fun onStop(owner: LifecycleOwner) {
         super.onStop(owner)
         callback(CallbackLifecycleObserver.ON_STOP, owner)

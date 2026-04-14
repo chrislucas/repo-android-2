@@ -1,14 +1,14 @@
 package com.br.justcomposelabs.tutorial.google.lifecycleaware
 
 import android.Manifest
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
 import android.content.Context
 import android.location.Location
 import android.location.LocationListener
 import android.location.LocationManager
 import android.os.Bundle
 import androidx.annotation.RequiresPermission
+import androidx.lifecycle.DefaultLifecycleObserver
+import androidx.lifecycle.LifecycleOwner
 
 class LifecycleAwareLocationManager(
     private val context: Context,
@@ -35,7 +35,7 @@ class LifecycleAwareLocationManager(
             locationManager?.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
                 5000, // minTime (ms)
-                10f,  // minDistance (m)
+                10f, // minDistance (m)
                 this
             )
         } catch (e: SecurityException) {

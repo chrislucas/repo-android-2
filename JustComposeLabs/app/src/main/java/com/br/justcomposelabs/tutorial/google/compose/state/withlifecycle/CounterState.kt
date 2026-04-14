@@ -14,7 +14,6 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LifecycleEventEffect
 import androidx.lifecycle.compose.LifecycleResumeEffect
@@ -52,7 +51,6 @@ passado para o parametro minActiveState
 
  */
 
-
 class CounterState {
     val counter = flow {
         var count = 0
@@ -62,7 +60,6 @@ class CounterState {
         }
     }
 }
-
 
 @Preview(showBackground = true)
 @Composable
@@ -79,7 +76,6 @@ fun CounterComponent() {
     LifecycleEventEffect(Lifecycle.Event.ON_START) {
         Toast.makeText(ctx, "ON_START", Toast.LENGTH_SHORT).show()
     }
-
 
     /*
         LifecycleStartEffect

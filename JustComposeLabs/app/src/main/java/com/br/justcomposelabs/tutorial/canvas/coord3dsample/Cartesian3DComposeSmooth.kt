@@ -3,9 +3,9 @@ package com.br.justcomposelabs.tutorial.canvas.coord3dsample
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.tween
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.Canvas
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
@@ -56,16 +56,16 @@ fun Cartesian3DComposeSmooth() {
         val centerX = width / 2
         val centerY = height / 2
 
-        val spaceSize = 300f  // Tamanho do eixo
+        val spaceSize = 300f // Tamanho do eixo
 
         // Pontos finais dos eixos 3D
         val axes = listOf(
-            floatArrayOf(spaceSize, 0f, 0f),   // X positivo
-            floatArrayOf(-spaceSize, 0f, 0f),  // X negativo
-            floatArrayOf(0f, spaceSize, 0f),   // Y positivo
-            floatArrayOf(0f, -spaceSize, 0f),  // Y negativo
-            floatArrayOf(0f, 0f, spaceSize),   // Z positivo
-            floatArrayOf(0f, 0f, -spaceSize)   // Z negativo
+            floatArrayOf(spaceSize, 0f, 0f), // X positivo
+            floatArrayOf(-spaceSize, 0f, 0f), // X negativo
+            floatArrayOf(0f, spaceSize, 0f), // Y positivo
+            floatArrayOf(0f, -spaceSize, 0f), // Y negativo
+            floatArrayOf(0f, 0f, spaceSize), // Z positivo
+            floatArrayOf(0f, 0f, -spaceSize) // Z negativo
         )
         val colors = listOf(Color.Red, Color.Red, Color.Green, Color.Green, Color.Blue, Color.Blue)
 

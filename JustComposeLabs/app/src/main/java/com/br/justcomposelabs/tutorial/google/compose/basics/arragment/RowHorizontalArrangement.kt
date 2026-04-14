@@ -3,8 +3,6 @@ package com.br.justcomposelabs.tutorial.google.compose.basics.arragment
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -29,8 +27,7 @@ fun RowHorizontalArrangement() {
         Arrangement.SpaceAround,
         Arrangement.SpaceEvenly,
     )
-    Column (modifier = Modifier.fillMaxWidth()) {
-
+    Column(modifier = Modifier.fillMaxWidth()) {
         Row {
             Button(onClick = {}) {
                 Text("A")
@@ -45,7 +42,7 @@ fun RowHorizontalArrangement() {
 
         LazyColumn {
             items(arrangements) { arrangement ->
-                Row (horizontalArrangement = arrangement) {
+                Row(horizontalArrangement = arrangement) {
                     Button(onClick = {}) {
                         Text("A")
                     }
@@ -61,8 +58,7 @@ fun RowHorizontalArrangement() {
     }
 }
 
-
-//@Preview
+// @Preview
 @Composable
 fun RowArrangementRepeat() {
     /*
@@ -77,7 +73,7 @@ fun RowArrangementRepeat() {
         Arrangement.SpaceAround,
         Arrangement.SpaceEvenly,
     )
-    Column (modifier = Modifier.fillMaxWidth()) {
+    Column(modifier = Modifier.fillMaxWidth()) {
         Row {
             Button(onClick = {}) {
                 Text("A")
@@ -90,7 +86,7 @@ fun RowArrangementRepeat() {
             }
         }
         arrangements.forEach { arrangement ->
-            Row (horizontalArrangement = arrangement) {
+            Row(horizontalArrangement = arrangement) {
                 Button(onClick = {}) {
                     Text("A")
                 }

@@ -8,21 +8,21 @@ import kotlinx.coroutines.flow.update
 
 // ViewModel para gerenciar o estado da árvore de comentários
 class CommentViewModel : ViewModel() {
-    
+
     // Estado privado mutável
     private val _comments = MutableStateFlow<List<Comment>>(emptyList())
-    
+
     // Estado público imutável
     val comments: StateFlow<List<Comment>> = _comments.asStateFlow()
-    
+
     // Contador de IDs
     private var nextId = 1
-    
+
     // Inicializar com comentários de exemplo
     init {
         initializeSampleComments()
     }
-    
+
     // Adicionar comentário
     fun addComment(parentComment: Comment, author: String, content: String) {
         val newComment = Comment(
@@ -31,7 +31,7 @@ class CommentViewModel : ViewModel() {
             author = author,
             parentId = parentComment.id
         )
-        
+
         _comments.update { currentComments ->
             // Encontra o comentário pai e adiciona a resposta
             val updatedComments = currentComments.toMutableList()
@@ -42,7 +42,7 @@ class CommentViewModel : ViewModel() {
             updatedComments.toList()
         }
     }
-    
+
     // Inicializar com dados de exemplo
     private fun initializeSampleComments() {
         _comments.value = listOf(
@@ -132,7 +132,7 @@ class CommentViewModel : ViewModel() {
                     )
                 )
             ),
-            
+
             // ========== THREAD 2: Material Design 3 ==========
             Comment(
                 id = nextId++,
@@ -169,7 +169,7 @@ class CommentViewModel : ViewModel() {
                     )
                 )
             ),
-            
+
             // ========== THREAD 3: Estado e ViewModel ==========
             Comment(
                 id = nextId++,
@@ -209,4 +209,3 @@ class CommentViewModel : ViewModel() {
         )
     }
 }
-

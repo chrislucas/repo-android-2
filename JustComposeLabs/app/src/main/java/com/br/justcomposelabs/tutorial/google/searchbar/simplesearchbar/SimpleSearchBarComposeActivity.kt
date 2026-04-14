@@ -13,7 +13,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.tutorial.google.searchbar.simplesearchbar.ui.theme.JustComposeLabsTheme
 
-
 /*
     TODO
     https://developer.android.com/develop/ui/compose/components/search-bar

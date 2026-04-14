@@ -1,9 +1,7 @@
 package com.br.justcomposelabs.tutorial.google.compose.color.lerp
 
-import android.R
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize

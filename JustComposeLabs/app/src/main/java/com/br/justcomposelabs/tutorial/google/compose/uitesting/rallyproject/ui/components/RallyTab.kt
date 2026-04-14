@@ -31,12 +31,10 @@ import androidx.compose.ui.unit.dp
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 import java.util.Locale
 
-
 private const val TabFadeInAnimationDuration = 150
 private const val TabFadeInAnimationDelay = 100
 private const val TabFadeOutAnimationDuration = 100
 private const val InactiveTabOpacity = 0.60f
-
 
 @Composable
 internal fun RallyTab(

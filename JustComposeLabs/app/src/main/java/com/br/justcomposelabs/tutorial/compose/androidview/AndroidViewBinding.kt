@@ -15,13 +15,12 @@ import com.br.justcomposelabs.R
     gradle)
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun AndroidBindingViewSample() {
     val resource = LocalResources.current
     AndroidViewBinding(ActivityComposeInViewBinding::inflate) {
-        //tvSampleText.setBackgroundColor(Color.GREEN)
+        // tvSampleText.setBackgroundColor(Color.GREEN)
         tvSampleText.text = resource.getString(R.string.hello_world)
     }
 }

@@ -48,7 +48,6 @@ fun FillMaxSizeLazyRow(
     }
 }
 
-
 @Composable
 fun MessageCard(message: Pair<String?, String?>, height: Dp = 123.dp) {
     val ctx = LocalContext.current
@@ -59,21 +58,22 @@ fun MessageCard(message: Pair<String?, String?>, height: Dp = 123.dp) {
             .clickable {
                 Toast.makeText(
                     ctx,
-                    "Clicked", Toast.LENGTH_SHORT
+                    "Clicked",
+                    Toast.LENGTH_SHORT
                 ).show()
             },
         shape = RoundedCornerShape(6.dp),
         elevation = CardDefaults.cardElevation(16.dp),
     ) {
         val (first, second) = message
-        Row (modifier = Modifier.width(IntrinsicSize.Min)) {
+        Row(modifier = Modifier.width(IntrinsicSize.Min)) {
             Box(
                 modifier = Modifier
                     .width(8.dp)
                     .fillMaxHeight()
                     .background(Color.Red)
             )
-            Column (
+            Column(
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally

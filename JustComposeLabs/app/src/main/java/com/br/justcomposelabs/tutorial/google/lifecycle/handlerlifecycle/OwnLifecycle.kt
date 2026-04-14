@@ -23,7 +23,7 @@ class MyLocationListener(
     private val context: Context,
     private val lifecycle: Lifecycle,
     private val callback: (Location) -> Unit
-): DefaultLifecycleObserver {
+) : DefaultLifecycleObserver {
 
     override fun onResume(owner: LifecycleOwner) {
         super.onResume(owner)

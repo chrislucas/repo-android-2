@@ -49,7 +49,6 @@ class DessertViewModel : ViewModel() {
     }
 }
 
-
 data class DessertUiState(
     val currentDessertIndex: Int = 0,
     val dessertsSold: Int = 0,

@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.codelabs.navigationcompose.appwalkthrough.ui
 
-import android.util.Log
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -25,10 +24,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.Lifecycle
-import com.br.justcomposelabs.utils.composable.ComposableLifecycle
 import com.br.justcomposelabs.R
 import com.br.justcomposelabs.tutorial.google.codelabs.navigationcompose.appwalkthrough.data.DataSource
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
+import com.br.justcomposelabs.utils.composable.ComposableLifecycle
 import timber.log.Timber
 
 @Composable
@@ -38,7 +37,7 @@ fun StartOrderScreen(
     modifier: Modifier = Modifier
 ) {
     ComposableLifecycle { source, event ->
-        when(event) {
+        when (event) {
             Lifecycle.Event.ON_PAUSE -> {
                 Timber.tag("ON_PAUSE").i("Source: $source")
             } else -> {
@@ -100,7 +99,7 @@ fun StartOrderScreen(
                 SelectQuantityButton(
                     labelResourceId = item.first,
                     onClick = { onNextButtonClicked(item.second) },
-                    modifier = Modifier.fillMaxWidth()//.widthIn(min = 250.dp)
+                    modifier = Modifier.fillMaxWidth() // .widthIn(min = 250.dp)
                 )
             }
         }

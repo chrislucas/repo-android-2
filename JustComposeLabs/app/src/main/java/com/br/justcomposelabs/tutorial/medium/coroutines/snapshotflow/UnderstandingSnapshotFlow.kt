@@ -2,7 +2,6 @@ package com.br.justcomposelabs.tutorial.medium.coroutines.snapshotflow
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -21,7 +20,6 @@ import kotlinx.coroutines.flow.distinctUntilChanged
     https://www.linkedin.com/posts/pawan-jeswani-android_jetpackcompose-androiddev-kotlin-activity-7383486754026074112-1JEL?utm_source=share&utm_medium=member_android&rcm=ACoAAAucV48BgdbCBoMmXrArsYNH-OL_jFGhzfk
  */
 
-
 interface SearchRepository {
     fun performSearch(query: String)
 }
@@ -36,12 +34,9 @@ class QueryViewModel(private val searchRepository: SearchRepository) : ViewModel
     }
 }
 
-
-
 @OptIn(FlowPreview::class)
 @Composable
 fun RealTimeQuery(viewModel: QueryViewModel = viewModel()) {
-
     val searchQuery by remember { mutableStateOf("") }
 
     LaunchedEffect(Unit) {

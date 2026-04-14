@@ -34,7 +34,6 @@ import com.br.justcomposelabs.R
 
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun ImageDialog() {

@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.compose.color.lerp
 
-import androidx.collection.mutableFloatSetOf
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -20,8 +19,6 @@ import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.br.justcomposelabs.allfeatures.ui.theme.JustComposeLabsTheme
-import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 
 /*
     create color from lerp function android compose
@@ -58,7 +55,6 @@ fun LerpColorExample() {
                 .background(interpolatedColor)
 
         ) {
-
             interpolatedColor.run {
                 val red = red * 255
                 val green = green * 255
@@ -89,8 +85,6 @@ fun LerpColorExample() {
             modifier = Modifier.padding(16.dp)
         )
     }
-
-
 }
 
 fun toHex(value: Int): String =

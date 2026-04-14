@@ -7,9 +7,7 @@ import androidx.compose.runtime.remember
     https://github.com/android/snippets/blob/30ed522851a9273c94afcd3a4c30bf674346ad18/compose/snippets/src/main/java/com/example/compose/snippets/util/ImageLoadingSampleUtils.kt
  */
 
-
-private val range = (0 .. 1000000)
-
+private val range = (0..1000000)
 
 /*
     https://picsum.photos/
@@ -20,7 +18,6 @@ fun fetchRandomImageLorenPicsum(
     width: Int = 300,
     height: Int = width,
 ) = "https://picsum.photos/seed/$seed/$width/$height"
-
 
 @Composable
 fun rememberFetchRandomImageLorenPicsum(

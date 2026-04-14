@@ -24,7 +24,6 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
     https://medium.com/rocknnull/jetpack-compose-filling-max-width-or-height-94e3af129a7b
  */
 
-
 @Composable
 fun FillingMaxSizeSolution() {
     Row(

@@ -18,7 +18,6 @@ data class Article(
     val created: LocalDateTime,
 )
 
-
 private val firstArticleCreatedTime = LocalDateTime.now()
 
 /**
@@ -41,8 +40,9 @@ class ArticleRepository {
     )
 }
 
-val Article.createdText: String @RequiresApi(Build.VERSION_CODES.O)
-get() = articleDateFormatter.format(created)
+val Article.createdText: String
+    @RequiresApi(Build.VERSION_CODES.O)
+    get() = articleDateFormatter.format(created)
 
 @RequiresApi(Build.VERSION_CODES.O)
 private val articleDateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy")

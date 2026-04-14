@@ -31,7 +31,6 @@ import androidx.compose.ui.unit.dp
  * https://composables.com/jetpack-compose/androidx.compose.material3/material3/components/ElevatedButton/api
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ElevatedButtonComponent() {
@@ -75,7 +74,6 @@ fun ElevatedButtonComponent() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ElevatedButtonBrushedComponent() {
@@ -112,7 +110,8 @@ fun ElevatedButtonBrushedComponent() {
                 contentColor = MaterialTheme.colorScheme.onPrimaryContainer
             ),
             border = BorderStroke(
-                1.dp, Brush.horizontalGradient(
+                1.dp,
+                Brush.horizontalGradient(
                     listOf(
                         Color(0xFF673AB7),
                         Color(0xFFBE708B)
@@ -128,7 +127,6 @@ fun ElevatedButtonBrushedComponent() {
         }
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -170,7 +168,8 @@ fun ElevatedButtonTextBrushedComponent() {
                 contentColor = MaterialTheme.colorScheme.onPrimaryContainer
             ),
             border = BorderStroke(
-                1.dp, Brush.horizontalGradient(
+                1.dp,
+                Brush.horizontalGradient(
                     if (isPressed) gradient.reversed() else gradient
                 )
             ),
@@ -178,11 +177,11 @@ fun ElevatedButtonTextBrushedComponent() {
         ) {
             Text(
                 text = "Elevated Button",
-               style = TextStyle(
-                   brush = Brush.horizontalGradient(
-                       if (isPressed) gradient.reversed() else gradient
-                   )
-               )
+                style = TextStyle(
+                    brush = Brush.horizontalGradient(
+                        if (isPressed) gradient.reversed() else gradient
+                    )
+                )
             )
         }
     }

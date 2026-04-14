@@ -26,22 +26,24 @@ val AGSL_SHADER = """
     }
 """.trimIndent()
 
-
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Preview(showBackground = true)
 @Composable
 fun BoxShaderAGSL() {
     val shader = remember { RuntimeShader(AGSL_SHADER) }
     val brush = ShaderBrush(shader)
-    Box(modifier = Modifier
-        .systemBarsPadding()
-        .navigationBarsPadding()
-        .fillMaxSize(),
+    Box(
+        modifier = Modifier
+            .systemBarsPadding()
+            .navigationBarsPadding()
+            .fillMaxSize(),
         contentAlignment = Alignment.Center
     ) {
-        Box(modifier = Modifier.size(200.dp).drawBehind {
-            shader.setFloatUniform("uResolution", size.width, size.height)
-            drawRect(brush)
-        })
+        Box(
+            modifier = Modifier.size(200.dp).drawBehind {
+                shader.setFloatUniform("uResolution", size.width, size.height)
+                drawRect(brush)
+            }
+        )
     }
 }

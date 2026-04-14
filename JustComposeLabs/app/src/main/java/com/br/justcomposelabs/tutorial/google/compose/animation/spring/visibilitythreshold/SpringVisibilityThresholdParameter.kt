@@ -12,17 +12,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.IntrinsicSize
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
@@ -34,7 +30,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -79,14 +74,14 @@ fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel()) {
 
     /**
      * visibilityThreshold
-     * @see  androidx.compose.animation.core.VisibilityThreshold
+     * @see androidx.compose.animation.core.VisibilityThreshold
 
-            Dp.VisibilityThreshold
-            IntOffset.VisibilityThreshold
+     Dp.VisibilityThreshold
+     IntOffset.VisibilityThreshold
 
-            Desempenho: Definir um limite maior pode melhorar levemente a desempenho
-            ao encerrar animações complexas mais cedo, embora raramente seja necessário
-            alterar os padrões, a menos que você perceba "vibrações" indesejadas no final da transição
+     Desempenho: Definir um limite maior pode melhorar levemente a desempenho
+     ao encerrar animações complexas mais cedo, embora raramente seja necessário
+     alterar os padrões, a menos que você perceba "vibrações" indesejadas no final da transição
      */
 
     Column(
@@ -105,7 +100,7 @@ fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel()) {
                      animacao
                  */
                 .height(180.dp),
-                //.requiredHeight(intrinsicSize = IntrinsicSize.Min),
+            // .requiredHeight(intrinsicSize = IntrinsicSize.Min),
             contentAlignment = Alignment.Center
         ) {
             this@Column.AnimatedVisibility(

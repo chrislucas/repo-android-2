@@ -11,7 +11,9 @@ import android.view.View
 import kotlin.math.*
 
 class DraggableTriangleView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
 
     // Paint objects for drawing

@@ -35,8 +35,6 @@ import androidx.compose.ui.tooling.preview.Preview
     https://foso.github.io/Jetpack-Compose-Playground/material/scaffold/
  */
 
-
-
 @Preview(showBackground = true)
 @Composable
 fun SimpleDrawerScaffoldComponent() {

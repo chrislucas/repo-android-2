@@ -55,7 +55,6 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-
 /*
     https://medium.com/kotlin-android-chronicle/choosing-between-channels-and-flows-in-your-viewmodel-8d8287f624ac
 
@@ -82,7 +81,6 @@ class TimerWithFlowTypesActivity : ComponentActivity() {
     }
 }
 
-
 private val boxConstraints = Modifier
     .fillMaxWidth()
     .height(60.dp)
@@ -94,7 +92,6 @@ fun Clocks(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     clockViewModelStateFlow: ClockViewModelStateFlow = viewModel(),
 ) {
-
     fun callbackLifecycle(event: Lifecycle.Event) {
         when (event) {
             Lifecycle.Event.ON_CREATE -> {
@@ -103,7 +100,6 @@ fun Clocks(
 
             Lifecycle.Event.ON_START -> {
                 Timber.tag("CLOCK_CB_LIFECYCLE").d("ON_START")
-
             }
 
             Lifecycle.Event.ON_RESUME -> {
@@ -151,7 +147,8 @@ fun Clocks(
 
 @Composable
 private fun ClockStateFlow(
-    modifier: Modifier = Modifier, viewModel: ClockViewModelStateFlow
+    modifier: Modifier = Modifier,
+    viewModel: ClockViewModelStateFlow
 ) {
     val currentHour by viewModel.observableContent.collectAsState()
     /*
@@ -180,7 +177,6 @@ private fun ClockStateFlow(
         )
     }
 }
-
 
 @Composable
 fun BoxContainer(
@@ -215,7 +211,6 @@ class ClockViewModelStateFlow : ViewModel() {
 
     private fun currentHour() = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 }
-
 
 @Composable
 private fun ClockLiveData(
@@ -264,10 +259,10 @@ class ClockViewModelLiveData : ViewModel() {
     }
 
     private fun currentHour() = SimpleDateFormat(
-        "HH:mm:ss", Locale.getDefault()
+        "HH:mm:ss",
+        Locale.getDefault()
     ).format(Date())
 }
-
 
 @Composable
 private fun ClockSharedFlow(
@@ -331,7 +326,8 @@ class ClockViewModelSharedFlow : ViewModel() {
     }
 
     private fun currentHour() = SimpleDateFormat(
-        "HH:mm:ss", Locale.getDefault()
+        "HH:mm:ss",
+        Locale.getDefault()
     ).format(Date())
 }
 

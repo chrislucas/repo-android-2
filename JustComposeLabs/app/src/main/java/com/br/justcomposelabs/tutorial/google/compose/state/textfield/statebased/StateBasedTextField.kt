@@ -2,5 +2,5 @@ package com.br.justcomposelabs.tutorial.google.compose.state.textfield.statebase
 
 /**
  * @see com.br.justcomposelabs.tutorial.google.compose.state.withlifecycle
-    https://developer.android.com/develop/ui/compose/text/user-input?textfield=state-based
+ https://developer.android.com/develop/ui/compose/text/user-input?textfield=state-based
  */

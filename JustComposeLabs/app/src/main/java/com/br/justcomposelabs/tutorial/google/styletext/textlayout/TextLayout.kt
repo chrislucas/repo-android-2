@@ -4,9 +4,7 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -21,7 +19,6 @@ import androidx.compose.ui.unit.dp
     https://developer.android.com/develop/ui/compose/text/configure-layout
  */
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun LongText() {
@@ -34,7 +31,6 @@ fun LongText() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun EllipsisText() {
@@ -44,7 +40,8 @@ fun EllipsisText() {
         verticalArrangement = Arrangement.Center
     ) {
         Text(
-            "hello ".repeat(50), maxLines = 2,
+            "hello ".repeat(50),
+            maxLines = 2,
             overflow = TextOverflow.Ellipsis
         )
     }
@@ -67,7 +64,6 @@ fun MiddleEllipsisText() {
     }
 }
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun StartEllipsisText() {
@@ -84,7 +80,6 @@ fun StartEllipsisText() {
         )
     }
 }
-
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable

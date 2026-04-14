@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 /*
     https://waqasyounis334.medium.com/testing-coroutines-simplified-ace686331bda
  */
-class AnotherMockViewModel: ViewModel() {
+class AnotherMockViewModel : ViewModel() {
     private val mutableState = MutableStateFlow(false)
     val state: StateFlow<Boolean> = mutableState.asStateFlow()
 

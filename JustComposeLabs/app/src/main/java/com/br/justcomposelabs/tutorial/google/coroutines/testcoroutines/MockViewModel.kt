@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
     https://developer.android.com/kotlin/flow/test?hl=pt-br
  */
 
-class MockViewModel: ViewModel() {
+class MockViewModel : ViewModel() {
 
     private val mutableString = MutableStateFlow("")
 

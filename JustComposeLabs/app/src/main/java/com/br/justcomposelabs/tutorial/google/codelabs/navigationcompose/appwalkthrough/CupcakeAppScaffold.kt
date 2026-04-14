@@ -1,6 +1,5 @@
 package com.br.justcomposelabs.tutorial.google.codelabs.navigationcompose.appwalkthrough
 
-
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -38,7 +37,6 @@ fun CupcakeAppScaffold(
         },
         bottomBar = {
             BottomAppBar {
-
             }
         }
     ) { innerPadding ->
