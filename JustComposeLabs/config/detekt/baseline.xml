@@ -2,6 +2,22 @@
 <SmellBaseline>
   <ManuallySuppressedIssues/>
   <CurrentIssues>
+    <ID>ArgumentListWrapping:AnimatedVisibility.kt$( modifier = Modifier .align(Alignment.BottomCenter) .padding(10.dp) .fillMaxWidth() , onClick = { visible = !visible })</ID>
+    <ID>ArgumentListWrapping:IntegerDataStoreSample.kt$(name = COUNTER_INTEGER_DATA_STORE_NAME)</ID>
+    <ID>ArgumentListWrapping:TaskActivity.kt$TaskActivity$( systemBars.left, systemBars.top, systemBars.right, systemBars.bottom )</ID>
+    <ID>BlockCommentInitialStarAlignment:Theme.kt$/* Other default colors to override background = Color(0xFFFFFBFE), surface = Color(0xFFFFFBFE), onPrimary = Color.White, onSecondary = Color.White, onTertiary = Color.White, onBackground = Color(0xFF1C1B1F), onSurface = Color(0xFF1C1B1F), */</ID>
+    <ID>BlockCommentInitialStarAlignment:Type.kt$/* Other default text styles to override titleLarge = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Normal, fontSize = 22.sp, lineHeight = 28.sp, letterSpacing = 0.sp ), labelSmall = TextStyle( fontFamily = FontFamily.Default, fontWeight = FontWeight.Medium, fontSize = 11.sp, lineHeight = 16.sp, letterSpacing = 0.5.sp ) */</ID>
+    <ID>BlockCommentInitialStarAlignment:build.gradle.kts$/* https://github.com/android/testing-samples */</ID>
+    <ID>CommentSpacing:Interceptors.kt$//.cache(Cache())</ID>
+    <ID>CommentSpacing:SimpleTextKtTest.kt$SimpleTextKtTest$//@OptIn(ExperimentalTestApi::class)</ID>
+    <ID>CommentSpacing:SimpleTextKtTest.kt$SimpleTextKtTest$//composeTestRule.onNodeWithText("Hello").isDisplayed()</ID>
+    <ID>CommentSpacing:SimpleTextKtTest.kt$SimpleTextKtTest$//composeTestRule.onNodeWithText("World").isDisplayed()</ID>
+    <ID>CommentSpacing:build.gradle.kts$//alias(libs.plugins.jetbrains.kotlin.android)</ID>
+    <ID>CommentSpacing:build.gradle.kts$//checkstyle.outputLocation.set(file("build/reports/detekt.xml"))</ID>
+    <ID>CommentSpacing:build.gradle.kts$//checkstyle.required.set(true)</ID>
+    <ID>CommentSpacing:build.gradle.kts$//html.required.set(true)</ID>
+    <ID>CommentSpacing:build.gradle.kts$//md.required.set(true)</ID>
+    <ID>CommentSpacing:build.gradle.kts$//sarif.required.set(true)</ID>
     <ID>CommentWrapping:OrderOfModifiersMatters.kt$/* Ja a seguinte ordem Modifier .padding(padding) .clickable(onClick = {}) .wrapContentSize() A area de padding nao é clicavel */</ID>
     <ID>CyclomaticComplexMethod:AboutMutableState.kt$@Preview(showBackground = true, showSystemUi = true, name = "KeyCacheStateBoxTextView") @Composable fun KeyCacheStateBoxTextView()</ID>
     <ID>CyclomaticComplexMethod:AboutMutableState.kt$@Preview(showBackground = true, showSystemUi = true, name = "StateBoxTextView") @Composable fun StateBoxTextView()</ID>
@@ -14,6 +30,7 @@
     <ID>CyclomaticComplexMethod:AddAndRemoveValueAnimationActivity.kt$AddAndRemoveValueAnimationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:AdvancedStateAndSideEffects.kt$UiUnsafeState$fun updateData(operation: () -&gt; Int)</ID>
     <ID>CyclomaticComplexMethod:AdvancedStateAndSideEffects.kt$fun test()</ID>
+    <ID>CyclomaticComplexMethod:AdvancedWayToCommunicateFragmentsActivity.kt$AdvancedWayToCommunicateFragmentsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:AdvanvcedCustomDialog.kt$@Preview(showBackground = true) @Composable fun ImageDialog()</ID>
     <ID>CyclomaticComplexMethod:AlertCard.kt$@Composable fun AlertCard()</ID>
     <ID>CyclomaticComplexMethod:AlertCard.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AlertCardOnlyPreview()</ID>
@@ -39,12 +56,20 @@
     <ID>CyclomaticComplexMethod:AnimatedCircularElevatedButton.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AnimatedCircularElevatedSurfacePreview()</ID>
     <ID>CyclomaticComplexMethod:AnimatedCounterComponent.kt$@Preview(showBackground = true) @Composable fun AnimatedCounterComponent()</ID>
     <ID>CyclomaticComplexMethod:AnimatedText.kt$@Preview(showBackground = true) @Composable fun AnimatedText(isVisible: Boolean = false)</ID>
+    <ID>CyclomaticComplexMethod:AnimatedVisibility.kt$@Preview(showSystemUi = true) @Composable fun AnimatedVisibilityCompose()</ID>
     <ID>CyclomaticComplexMethod:AnimatingMultipleColors.kt$@Preview(showBackground = true) @Composable fun UpdateTransitionColorExample()</ID>
     <ID>CyclomaticComplexMethod:AnimatorUtils.kt$fun ValueAnimator.withDuration(duration: Long = 1000L)</ID>
     <ID>CyclomaticComplexMethod:AnimatorUtils.kt$fun ValueAnimator.withInterpolator(interpolator: TimeInterpolator = AccelerateDecelerateInterpolator())</ID>
     <ID>CyclomaticComplexMethod:AnimatorUtils.kt$fun countAnimator(start: Float, end: Float, duration: Long = 1000L)</ID>
     <ID>CyclomaticComplexMethod:AnotherMockViewModel.kt$AnotherMockViewModel$fun register()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$@After fun tearDown()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$@Before fun setUp()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$@Test fun `given a ViewModel when call register Then it state should change from false to true`()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$@Test fun `given a ViewModel when call register and advanced the time Then it state should change from false to true`()</ID>
     <ID>CyclomaticComplexMethod:AnotherMockViewModelVersionII.kt$AnotherMockViewModelVersionII$fun fetchData()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelVersionIITest.kt$AnotherMockViewModelVersionIITest$@After fun tearDown()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelVersionIITest.kt$AnotherMockViewModelVersionIITest$@Before fun setUp()</ID>
+    <ID>CyclomaticComplexMethod:AnotherMockViewModelVersionIITest.kt$AnotherMockViewModelVersionIITest$@Test fun `test`()</ID>
     <ID>CyclomaticComplexMethod:AnotherUsingComposeInViewActivity.kt$AnotherUsingComposeInViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:AppendContentComponent.kt$@Preview(showBackground = true) @Composable fun DisplayAppendedTextComponent(viewModel: DisplayTextViewModel = viewModel())</ID>
     <ID>CyclomaticComplexMethod:AppendContentComponent.kt$DisplayTextViewModel$fun onTapAppendContent(content: String)</ID>
@@ -86,6 +111,13 @@
     <ID>CyclomaticComplexMethod:CardElevationAnimatedSample.kt$@Composable fun CardElevationAnimated( isElevated: Boolean, onIsElevatedChange: (Boolean) -&gt; Unit, )</ID>
     <ID>CyclomaticComplexMethod:CardElevationAnimatedSample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun CardElevationAnimatedPreview()</ID>
     <ID>CyclomaticComplexMethod:CardElevationAnimatedSample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun OutlinedCardExample()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun GivenCardElevationAnimated_WhenClickOnce_ThenReturnElevatedStateAsTrue()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun GivenCardElevationAnimated_WhenClickTwice_ThenReturnElevatedStateOrigin()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun cardElevationAnimated_cardExposesClickSemantics()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun cardElevationAnimated_displaysCardContentText()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun cardElevationAnimated_twoSequentialClicks_emitTrueThenFalse()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun cardElevationAnimated_whenElevated_click_emitsFalse()</ID>
+    <ID>CyclomaticComplexMethod:CardElevationAnimatedSampleTest.kt$CardElevationAnimatedSampleTest$@Test fun cardElevationAnimated_whenNotElevated_click_emitsTrue()</ID>
     <ID>CyclomaticComplexMethod:CardFlipActivity.kt$@Preview(showBackground = true) @Composable fun Stack(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:CardFlipActivity.kt$CardFlipActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:Cartesian3DCompose.kt$@Preview(showBackground = true, showSystemUi = false, uiMode = UI_MODE_NIGHT_YES) @Composable fun Cartesian3DCompose()</ID>
@@ -93,6 +125,10 @@
     <ID>CyclomaticComplexMethod:Cartesian3DComposeSmooth.kt$fun projectPoint( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f // profundidade da câmera ): Offset</ID>
     <ID>CyclomaticComplexMethod:Cartesian3DComposeSmooth.kt$fun rotatePoint(point: FloatArray, rotX: Float, rotY: Float): FloatArray</ID>
     <ID>CyclomaticComplexMethod:Cartesian3DView.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun CartesianPlan3dAxis()</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DView.kt$Cartesian3DView$override fun onDraw(canvas: Canvas)</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DView.kt$Cartesian3DView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DView.kt$Cartesian3DView$private fun projectPoint( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f ): PointF</ID>
+    <ID>CyclomaticComplexMethod:Cartesian3DView.kt$Cartesian3DView$private fun rotatePoint(point: FloatArray, rotX: Float, rotY: Float): FloatArray</ID>
     <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$@Composable fun SystemBroadcastReceiver( systemActions: List&lt;String&gt;, onSystemEvent: (intent: Intent?) -&gt; Unit )</ID>
     <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$@Preview(showSystemUi = true) @Composable private fun ComponentAwareBatteryState()</ID>
     <ID>CyclomaticComplexMethod:CaseStudyBroadcastReceivers.kt$private fun Context.determineCurrentBatteryLevel(intent: Intent?)</ID>
@@ -188,6 +224,7 @@
     <ID>CyclomaticComplexMethod:Composables.kt$@Composable private fun ScrollToTopButton(onClick: () -&gt; Unit = {})</ID>
     <ID>CyclomaticComplexMethod:Composables.kt$@Composable private fun animateColorBetween(first: Color, second: Color): State&lt;Color&gt;</ID>
     <ID>CyclomaticComplexMethod:ComposeAGSL.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun AGSLExample()</ID>
+    <ID>CyclomaticComplexMethod:ComposeAndOpenGLES.kt$@Composable fun OpenGLView(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:ComposeCustomViewActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:ComposeCustomViewActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:ComposeCustomViewActivity.kt$ComposeCustomViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
@@ -199,6 +236,9 @@
     <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$private fun createEmptyStaticLayout(): StaticLayout</ID>
     <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$private fun getDesiredHeight(availableWidth: Int): Int</ID>
     <ID>CyclomaticComplexMethod:ComposeDrawViewComponent.kt$DrawText$private fun getOrCreateStaticLayout( textSize: Float, availableWidth: Int, availableHeight: Int ): StaticLayout</ID>
+    <ID>CyclomaticComplexMethod:ComposeInViewActivity.kt$@Composable fun Greeting(name: String)</ID>
+    <ID>CyclomaticComplexMethod:ComposeInViewActivity.kt$@Composable fun InteractiveUnitCircle()</ID>
+    <ID>CyclomaticComplexMethod:ComposeInViewActivity.kt$ComposeInViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:ComposeLifecycle.kt$@Preview(uiMode = 1, showSystemUi = true, showBackground = true) @Composable fun ComposeLifecycle()</ID>
     <ID>CyclomaticComplexMethod:ConfigurationUtils.kt$fun Context.adjustFontSize(scale: Float): Context</ID>
     <ID>CyclomaticComplexMethod:ConfigurationUtils.kt$fun Context.adjustKeyboardHiddenState(@KeyboardHiddenState keyboardHiddenState: Int): Context</ID>
@@ -246,6 +286,7 @@
     <ID>CyclomaticComplexMethod:DialogComponent.kt$@Composable fun SimpleAlertDialogComponent( onDismissRequest: () -&gt; Unit, onConfirm: () -&gt; Unit, dialogTitle: String, dialogText: String, icon: ImageVector )</ID>
     <ID>CyclomaticComplexMethod:DialogComponent.kt$@Preview(showBackground = true) @Composable fun ButtonFire()</ID>
     <ID>CyclomaticComplexMethod:DialogComponent.kt$@Preview(showBackground = true) @Composable fun SimpleAlertDialogComponentPreview()</ID>
+    <ID>CyclomaticComplexMethod:DiceRollActivity.kt$DiceRollActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:DiceRollStateHolder.kt$DiceRollStateHolder$fun rollDice()</ID>
     <ID>CyclomaticComplexMethod:DiceRollStateHolder.kt$RandomProvider$fun nextInt(range: IntRange): Int</ID>
     <ID>CyclomaticComplexMethod:DiceRollerActivity.kt$@Composable fun DiceWithButtonAndImage(modifier: Modifier = Modifier)</ID>
@@ -303,7 +344,9 @@
     <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$EventBroadcastManager$override fun onReceive(context: Context?, intent: Intent?)</ID>
     <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$EventHandlingLocalBroadcastManagerActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:EventHandlingLocalBroadcastManagerActivity.kt$EventHandlingLocalBroadcastManagerActivity$override fun onDestroy()</ID>
+    <ID>CyclomaticComplexMethod:ExampleInstrumentedTest.kt$ExampleInstrumentedTest$@Test fun useAppContext()</ID>
     <ID>CyclomaticComplexMethod:ExampleTextAnnotatedString.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun ExampleTextAnnotatedString()</ID>
+    <ID>CyclomaticComplexMethod:ExampleUnitTest.kt$ExampleUnitTest$@Test fun addition_isCorrect()</ID>
     <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View</ID>
     <ID>CyclomaticComplexMethod:ExampleViewModelFragment.kt$ExampleViewModelFragment$override fun onDestroy()</ID>
@@ -324,6 +367,12 @@
     <ID>CyclomaticComplexMethod:FilterListDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FilterList()</ID>
     <ID>CyclomaticComplexMethod:FilterListDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FilterListNeverEqualPolicy()</ID>
     <ID>CyclomaticComplexMethod:FilterListDerivedStateOf.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun FilterListStructuralEqualityPolicy()</ID>
+    <ID>CyclomaticComplexMethod:FinishedActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:FinishedActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:FinishedActivity.kt$FinishedActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FirstSampleGoogleMapsActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:FirstSampleGoogleMapsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:FirstSampleGoogleMapsActivity.kt$FirstSampleGoogleMapsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:FlowRowSimpleUsageExample.kt$@OptIn(ExperimentalMaterialApi::class) @Composable fun ChipItem(text: String, onClick: () -&gt; Unit = {})</ID>
     <ID>CyclomaticComplexMethod:FlowRowSimpleUsageExample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun FlowRowSimpleUsageExample()</ID>
     <ID>CyclomaticComplexMethod:FontScaleConfigurationActivity.kt$FontScaleConfigurationActivity$override fun attachBaseContext(newBase: Context?)</ID>
@@ -338,6 +387,7 @@
     <ID>CyclomaticComplexMethod:ForceCrash.kt$private fun tryExec()</ID>
     <ID>CyclomaticComplexMethod:ForegroundOnlyLocationService.kt$ForegroundOnlyLocationService$override fun onBind(intent: Intent): IBinder</ID>
     <ID>CyclomaticComplexMethod:FragmentInComposeActivity.kt$FragmentInComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:FragmentResultListenerActivity.kt$FragmentResultListenerActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:FragmentScreenComposeActivity.kt$@Preview @Composable fun FragmentScreenExample()</ID>
     <ID>CyclomaticComplexMethod:FragmentScreenComposeActivity.kt$FragmentScreenComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:FragmentsInCompose.kt$@Composable fun FragmentScreen( modifier: Modifier = Modifier, clazz: Class&lt;out Fragment&gt;, arguments: Bundle, callback: (Fragment) -&gt; Unit )</ID>
@@ -361,7 +411,14 @@
     <ID>CyclomaticComplexMethod:FunWithStateFlow.kt$StateFlowSampleViewModel$fun incrementCounter()</ID>
     <ID>CyclomaticComplexMethod:FunWithStateFlow.kt$StateFlowSampleViewModel$fun resetCounter()</ID>
     <ID>CyclomaticComplexMethod:GameStatus.kt$@Preview(showBackground = true) @Composable fun GameStatus(modifier: Modifier = Modifier, score: Int = 0)</ID>
+    <ID>CyclomaticComplexMethod:GetContent.kt$@Preview(showBackground = true, name = "GetContentComponentPreview", showSystemUi = true) @Composable fun GetContentComponent(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:GetLastLocationUseCase.kt$GetLastLocationUseCase$@RequiresPermission( allOf = [ Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION ] ) suspend operator fun invoke(provider: String): Result&lt;Location?&gt;</ID>
+    <ID>CyclomaticComplexMethod:GettingStartCameraXComposeActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:GettingStartCameraXComposeActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:GettingStartCameraXComposeActivity.kt$GettingStartCameraXComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:GoogleCameraCloneActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:GoogleCameraCloneActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:GoogleCameraCloneActivity.kt$GoogleCameraCloneActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:GroupChipsComponents.kt$@OptIn(ExperimentalMaterialApi::class) @Composable fun GroupChipComponent(words: List&lt;String&gt; = emptyList())</ID>
     <ID>CyclomaticComplexMethod:GroupChipsComponents.kt$@Preview(showBackground = true) @Composable private fun GroupChipComponentPreview()</ID>
     <ID>CyclomaticComplexMethod:HandleConfigurationChanges.kt$@Preview(showSystemUi = true) @Composable fun ConfigurationDeviceInfoComponent()</ID>
@@ -405,16 +462,22 @@
     <ID>CyclomaticComplexMethod:InitialFadeIn.kt$@Preview(showBackground = true) @Composable fun AnimatedTextContent()</ID>
     <ID>CyclomaticComplexMethod:InscribedCircleInBox.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun InteractiveBoxWithCircle()</ID>
     <ID>CyclomaticComplexMethod:InsetsCompose.kt$@Preview @Composable fun BottomAppBarPreview()</ID>
+    <ID>CyclomaticComplexMethod:IntegerDataStoreSample.kt$fun Context.counterDataStore(key: String): Flow&lt;Int&gt;</ID>
+    <ID>CyclomaticComplexMethod:IntegerDataStoreSample.kt$suspend fun Context.incrementCounterIntegerDataStore(key: String)</ID>
     <ID>CyclomaticComplexMethod:IntegrateLifecycleWithCompose.kt$@Composable fun BindingDisposableEffect( lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, callback: CallbackLocalLifecycleOwner )</ID>
     <ID>CyclomaticComplexMethod:IntegrateLifecycleWithCompose.kt$@Composable fun Start()</ID>
     <ID>CyclomaticComplexMethod:IntegrateLifecycleWithCompose.kt$CallbackLocalLifecycleOwner$fun onEvent(e: Lifecycle.Event)</ID>
     <ID>CyclomaticComplexMethod:IntegrateWithCompose.kt$@Composable fun Lifecycle()</ID>
+    <ID>CyclomaticComplexMethod:Interceptors.kt$RequestInterceptor$override fun intercept(chain: Interceptor.Chain): Response</ID>
+    <ID>CyclomaticComplexMethod:Interceptors.kt$ResponseInterceptor$override fun intercept(chain: Interceptor.Chain): Response</ID>
     <ID>CyclomaticComplexMethod:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
     <ID>CyclomaticComplexMethod:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment.Companion$@JvmStatic fun newInstance(param1: String, param2: String)</ID>
     <ID>CyclomaticComplexMethod:JetChatMainActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:JetChatMainActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:JetChatMainActivity.kt$JetChatMainActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:KtorUtils.kt$suspend inline fun &lt;reified E&gt; ResponseException.errorBody(): E?</ID>
+    <ID>CyclomaticComplexMethod:KtorUtils.kt$suspend inline fun &lt;reified T, reified E&gt; HttpClient.safeRequest( block: HttpRequestBuilder.() -&gt; Unit, ): ApiResponse&lt;T, E&gt;</ID>
     <ID>CyclomaticComplexMethod:LaunchEffectRunSuspendFunctions.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SnackbarComponent(snackbarHostState: SnackbarHostState = remember { SnackbarHostState() })</ID>
     <ID>CyclomaticComplexMethod:LaunchEffectRunSuspendFunctions.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun PulseTextComponent()</ID>
     <ID>CyclomaticComplexMethod:LaunchEffectRunSuspendFunctions.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun PulseTextSideEffectComponent()</ID>
@@ -445,9 +508,14 @@
     <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onProviderEnabled(provider: String)</ID>
     <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$override fun onStop(owner: LifecycleOwner)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleAwareUI.kt$@Composable fun TimerScreen()</ID>
+    <ID>CyclomaticComplexMethod:LifecycleComposableFun.kt$@Composable fun LifecycleAwareComponent()</ID>
     <ID>CyclomaticComplexMethod:LifecycleComposeActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:LifecycleComposeActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:LifecycleComposeActivity.kt$LifecycleComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleScopeSampleFragment.kt$LifecycleScopeSampleFragment$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:LifecycleScopeSampleFragment.kt$LifecycleScopeSampleFragment$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
+    <ID>CyclomaticComplexMethod:LifecycleScopeSampleFragment.kt$LifecycleScopeSampleFragment.Companion$@JvmStatic fun newInstance(param1: String, param2: String)</ID>
     <ID>CyclomaticComplexMethod:ListsAndGridsActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:ListsAndGridsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:ListsAndGridsActivity.kt$ListsAndGridsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
@@ -458,11 +526,17 @@
     <ID>CyclomaticComplexMethod:LocalBroadcastManagerActivity.kt$CustomBroadcastReceiver$override fun onReceive(context: Context?, intent: Intent?)</ID>
     <ID>CyclomaticComplexMethod:LocalBroadcastManagerActivity.kt$LocalBroadcastManagerActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:LocalBroadcastManagerActivity.kt$LocalBroadcastManagerActivity$override fun onDestroy()</ID>
+    <ID>CyclomaticComplexMethod:LocationActivity.kt$LocationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:LorenIpsumCompose.kt$@Preview(showBackground = true) @Composable fun TextPageContent()</ID>
     <ID>CyclomaticComplexMethod:LorenIpsumCompose.kt$fun lorenIpsum(separator: String = " ", words: Int): String</ID>
     <ID>CyclomaticComplexMethod:MainActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:MainActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:MainActivity.kt$MainActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:MainDispatcherRule.kt$MainDispatcherRule$override fun finished(description: Description?)</ID>
+    <ID>CyclomaticComplexMethod:MainDispatcherRule.kt$MainDispatcherRule$override fun starting(description: Description?)</ID>
+    <ID>CyclomaticComplexMethod:MainHiltCodelabsActivity.kt$@Composable fun Greeting(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:MainHiltCodelabsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:MainHiltCodelabsActivity.kt$MainHiltCodelabsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:MainIntent.kt$MockRepository$override suspend fun fetch(): List&lt;String&gt;</ID>
     <ID>CyclomaticComplexMethod:MainIntent.kt$RepositoryPlainText$suspend fun fetch(): List&lt;String&gt;</ID>
     <ID>CyclomaticComplexMethod:ManageStateFlow.kt$@Composable @Preview(showSystemUi = true, name = "HelloScreenFlowViewModel") fun HelloScreenFlow(helloStateFlowViewModel: HelloStateFlowViewModel = viewModel())</ID>
@@ -505,6 +579,9 @@
     <ID>CyclomaticComplexMethod:MinimizeExpensiveCalculations.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ContactListWrongPreview()</ID>
     <ID>CyclomaticComplexMethod:MockPerformanceData.kt$Contact$override fun compareTo(other: Contact): Int</ID>
     <ID>CyclomaticComplexMethod:MockViewModel.kt$MockViewModel$fun fetchContent()</ID>
+    <ID>CyclomaticComplexMethod:MockViewModelTest.kt$MockViewModelTest$@After fun tearDown()</ID>
+    <ID>CyclomaticComplexMethod:MockViewModelTest.kt$MockViewModelTest$@Before fun setup()</ID>
+    <ID>CyclomaticComplexMethod:MockViewModelTest.kt$MockViewModelTest$@Test fun `given a ViewModel when call fetchContent Then it state should change from loading to loaded in 1s`()</ID>
     <ID>CyclomaticComplexMethod:ModalBottomSheet.kt$ModalBottomSheet$override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View?</ID>
     <ID>CyclomaticComplexMethod:ModifierOrderAffectsAppearance.kt$@Preview(showBackground = true) @Composable fun ModifierOrderMatters()</ID>
     <ID>CyclomaticComplexMethod:ModifierWeight.kt$@Composable fun ModifierWeight(modifier: Modifier = Modifier)</ID>
@@ -552,6 +629,12 @@
     <ID>CyclomaticComplexMethod:OwnLifecycle.kt$MyLocationListener$override fun onPause(owner: LifecycleOwner)</ID>
     <ID>CyclomaticComplexMethod:OwnLifecycle.kt$MyLocationListener$override fun onResume(owner: LifecycleOwner)</ID>
     <ID>CyclomaticComplexMethod:PagerIndicatorPreview.kt$@Preview @Composable private fun PagerIndicatorPreview()</ID>
+    <ID>CyclomaticComplexMethod:PagingBasicsActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:PagingBasicsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:PagingBasicsActivity.kt$PagingBasicsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:PagingUserSource.kt$PagingUserSource$override fun getRefreshKey(state: PagingState&lt;Int, User&gt;): Int?</ID>
+    <ID>CyclomaticComplexMethod:PagingUserSource.kt$PagingUserSource$override suspend fun load(params: LoadParams&lt;Int&gt;): LoadResult&lt;Int, User&gt;</ID>
+    <ID>CyclomaticComplexMethod:PagingUserSource.kt$UserClient$suspend fun getUsers(): List&lt;User&gt;</ID>
     <ID>CyclomaticComplexMethod:PalleteUtils.kt$suspend fun generatePalette(bitmap: Bitmap): Palette</ID>
     <ID>CyclomaticComplexMethod:ParcelizeRestoringState.kt$@Composable fun CityScreen()</ID>
     <ID>CyclomaticComplexMethod:ParcelizeSample.kt$User.Companion$override fun User.write( parcel: Parcel, flags: Int )</ID>
@@ -561,7 +644,15 @@
     <ID>CyclomaticComplexMethod:PreferencesActivity.kt$PreferencesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:PreviewAndLargeDataSetExample.kt$@Composable fun UserProfile(modifier: Modifier = Modifier, user: User)</ID>
     <ID>CyclomaticComplexMethod:PreviewAndLargeDataSetExample.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun UserProfilePreview( @PreviewParameter(UserPreviewParameterProvider::class, 2) user: User )</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$fun createClientHandlerCookie(): OkHttpClient</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$fun createOkHttpClient(): OkHttpClient</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$fun createOkHttpClientBuilder(): OkHttpClient.Builder</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$fun createOkHttpClientBuilderHandlerCookie(): OkHttpClient.Builder</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$inline fun &lt;reified T&gt; createCompatRxJava2Service( url: String, converterFactory: Converter.Factory = GsonConverterFactory.create(), createOkHttpClient: () -&gt; OkHttpClient = ::createOkHttpClient ): T</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$inline fun &lt;reified T&gt; createReactiveService( url: String, converterFactory: Converter.Factory = GsonConverterFactory.create(), createOkHttpClient: () -&gt; OkHttpClient = ::createOkHttpClient ): T</ID>
+    <ID>CyclomaticComplexMethod:ProviderEndpointClient.kt$ProviderEndpointClient$inline fun &lt;reified T&gt; createService( url: String, converterFactory: Converter.Factory = GsonConverterFactory.create(), createOkHttpClient: () -&gt; OkHttpClient = ::createOkHttpClient ): T</ID>
     <ID>CyclomaticComplexMethod:PulsingCircle.kt$@Preview(showBackground = true) @Composable fun PulsingCircle()</ID>
+    <ID>CyclomaticComplexMethod:QuickGuideAnimation.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun AnimatedVisibilityModifierAlpha()</ID>
     <ID>CyclomaticComplexMethod:RallyActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:RallyActivity.kt$@Composable fun RallyApp(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:RallyActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
@@ -581,6 +672,7 @@
     <ID>CyclomaticComplexMethod:RangeSliderComponent.kt$@Preview(showBackground = true) @Composable fun RangeSliderComponent()</ID>
     <ID>CyclomaticComplexMethod:ReactingToScrollPosition.kt$@Composable fun MessageList(messages: List&lt;Message&gt;)</ID>
     <ID>CyclomaticComplexMethod:ReactingToScrollPosition.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun PreviewMessageList()</ID>
+    <ID>CyclomaticComplexMethod:ReactiveServiceCall.kt$fun &lt;T&gt; reactiveCallService(call: () -&gt; Single&lt;Response&lt;T&gt;&gt;): Single&lt;Response&lt;T&gt;&gt;</ID>
     <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$@Composable fun CounterRecomposition(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:RecompositionHighlighterActivity.kt$@Stable fun Modifier.recomposeHighlighter( turnOn: Boolean = true, callback: (Long) -&gt; Unit = {} ): Modifier</ID>
@@ -616,15 +708,29 @@
     <ID>CyclomaticComplexMethod:ReplyBottomSheet.kt$@Preview(showBackground = true, widthDp = 360) @Composable fun PreviewSendReplyButtonEnabled()</ID>
     <ID>CyclomaticComplexMethod:Repository.kt$Repository$fun init()</ID>
     <ID>CyclomaticComplexMethod:Repository.kt$Repository$suspend fun fetchData(): String</ID>
+    <ID>CyclomaticComplexMethod:Resource.kt$Resource.Companion$fun &lt;T, E&gt; error(message: E, data: T? = null)</ID>
+    <ID>CyclomaticComplexMethod:Resource.kt$Resource.Companion$fun &lt;T, E&gt; failure(message: E, data: T? = null)</ID>
+    <ID>CyclomaticComplexMethod:Resource.kt$Resource.Companion$fun &lt;T&gt; loading(data: T? = null)</ID>
+    <ID>CyclomaticComplexMethod:Resource.kt$Resource.Companion$fun &lt;T&gt; success(data: T): Resource&lt;T, Nothing&gt;</ID>
     <ID>CyclomaticComplexMethod:RickAndMortyApi.kt$RickAndMortyApi$@GET("api/character/") suspend fun getCharactersByPage(@Query("page") page: Int)</ID>
     <ID>CyclomaticComplexMethod:RickAndMortyApi.kt$RickAndMortyApi$@GET("api/episode/") suspend fun getEpisode()</ID>
     <ID>CyclomaticComplexMethod:RickAndMortyApi.kt$RickAndMortyApi$@GET("api/location/") suspend fun getLocation()</ID>
+    <ID>CyclomaticComplexMethod:RollActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:RollActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:RollActivity.kt$RollActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:RouteNavigation.kt$@Composable fun Route( modifier: Modifier = Modifier, navController: NavHostController = rememberNavController() )</ID>
     <ID>CyclomaticComplexMethod:RowHorizontalArrangement.kt$@Composable fun RowArrangementRepeat()</ID>
     <ID>CyclomaticComplexMethod:RowHorizontalArrangement.kt$@Preview @Composable fun RowHorizontalArrangement()</ID>
     <ID>CyclomaticComplexMethod:RowVerticalArrangement.kt$@Preview @Composable fun RowVerticalArrangement()</ID>
+    <ID>CyclomaticComplexMethod:SafeServiceCall.kt$SafeServiceCall$inline fun &lt;T, reified E&gt; callService( call: () -&gt; Response&lt;T&gt;, onError: (Throwable?) -&gt; E ): Resource&lt;T, E&gt;</ID>
     <ID>CyclomaticComplexMethod:ScaffoldComponentToHoldUITogether.kt$@OptIn(ExperimentalMaterial3Api::class) @Preview(showSystemUi = true) @Composable fun ScaffoldComponentTopAppBar()</ID>
     <ID>CyclomaticComplexMethod:ScaffoldSample.kt$@Preview(showBackground = true) @Composable fun SimpleDrawerScaffoldComponent()</ID>
+    <ID>CyclomaticComplexMethod:ScaffoldTopBarSampleActivity.kt$@Composable private fun SimpleScaffoldTopbar(modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:ScaffoldTopBarSampleActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:ScaffoldTopBarSampleActivity.kt$ScaffoldTopBarSampleActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ScopedBaseViewModel.kt$ScopedBaseViewModel$override fun onCleared()</ID>
+    <ID>CyclomaticComplexMethod:ScopedBaseViewModel.kt$SimpleScopedViewModel$fun execution()</ID>
+    <ID>CyclomaticComplexMethod:ScopedBaseViewModel.kt$SimpleViewModel$fun execution()</ID>
     <ID>CyclomaticComplexMethod:ScrollIndicatorModifiers.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ScrollBoxes()</ID>
     <ID>CyclomaticComplexMethod:ScrollIndicatorModifiers.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SimpleScrollBox()</ID>
     <ID>CyclomaticComplexMethod:ScrollIndicatorModifiers.kt$fun Modifier.customScrollState( scrollState: LazyListState, thumbColor: Color = Color.DarkGray, trackColor: Color = Color.LightGray, trackWidth: Dp = 8.dp, rememberThumbColor: (Color) -&gt; Color, rememberTrackColor: (Color) -&gt; Color )</ID>
@@ -655,6 +761,8 @@
     <ID>CyclomaticComplexMethod:SideEffectsActivity.kt$@Composable fun PulseEffect()</ID>
     <ID>CyclomaticComplexMethod:SideEffectsActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:SideEffectsActivity.kt$SideEffectsActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:SimCardInfo.kt$SubscriptionInfoHelper$fun showSubscriptionInfo(context: Context)</ID>
+    <ID>CyclomaticComplexMethod:SimCardInfo.kt$fun Context.getSimOperatorName(): String?</ID>
     <ID>CyclomaticComplexMethod:SimpleBorder.kt$@Preview(showBackground = true) @Composable fun BorderSample()</ID>
     <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$DefaultBottomSheetDialogFragment$override fun onStart(owner: LifecycleOwner)</ID>
     <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$DefaultBottomSheetDialogFragment$override fun onStop(owner: LifecycleOwner)</ID>
@@ -666,6 +774,7 @@
     <ID>CyclomaticComplexMethod:SimpleBottomSheetDialogFragment.kt$SimpleBottomSheetDialogFragment$override fun onStop()</ID>
     <ID>CyclomaticComplexMethod:SimpleBrushBorder.kt$@Preview(showBackground = true) @Composable fun SimpleBrushBorder()</ID>
     <ID>CyclomaticComplexMethod:SimpleClickableText.kt$@Composable fun ClickableTextExample(onClick: () -&gt; Unit)</ID>
+    <ID>CyclomaticComplexMethod:SimpleClickableTextTest.kt$SimpleClickableTextTest$@Test fun `given a text view when perform click should execute a lambda function`()</ID>
     <ID>CyclomaticComplexMethod:SimpleColumn.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun SimpleColumn()</ID>
     <ID>CyclomaticComplexMethod:SimpleSampleAGSL.kt$@RequiresApi(Build.VERSION_CODES.TIRAMISU) @Preview(showBackground = true) @Composable fun BoxShaderAGSL()</ID>
     <ID>CyclomaticComplexMethod:SimpleSearchBarComposeActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
@@ -675,6 +784,31 @@
     <ID>CyclomaticComplexMethod:SimpleText.kt$@Preview(showBackground = true) @Composable private fun MyLayoutWithTextPreview()</ID>
     <ID>CyclomaticComplexMethod:SimpleTextAndroidView.kt$@Composable fun SimpleTextAndroidView(value: String)</ID>
     <ID>CyclomaticComplexMethod:SimpleTextAndroidView.kt$@Preview(showBackground = true) @Composable fun SimpleTextAndroidViewPreview()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Composable @Test fun `SimpleTextAndroidView displays initial text correctly`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView accessibility check`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView factory block execution`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView text persistence across configuration changes`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView update block execution on initial composition`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView update block execution on subsequent recompositions`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView updates text on recomposition`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView with empty string`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView with null string if applicable though current signature prevents it `()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView with special characters`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView with very long string`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$@Test fun `SimpleTextAndroidView within different themes`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText displays both strings`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText preview rendering`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText recomposition with changed strings`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with both strings empty`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with empty first string`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with empty second string`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with long first string`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with long second string`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with strings containing leading trailing whitespace`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with strings containing newline characters`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with strings containing numbers`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextKtTest.kt$SimpleTextKtTest$@Test fun `MyLayoutWithText with strings containing special characters`()</ID>
+    <ID>CyclomaticComplexMethod:SimpleTextTest.kt$SimpleTextTest$@OptIn(ExperimentalTestApi::class) @Test fun test()</ID>
     <ID>CyclomaticComplexMethod:SimpleViewModel.kt$SimpleViewModel$fun incrementCounter()</ID>
     <ID>CyclomaticComplexMethod:SimpleViewModel.kt$SimpleViewModel$fun updateMessage(newMessage: String)</ID>
     <ID>CyclomaticComplexMethod:SliderCounterAnimationActivity.kt$SliderCounterAnimationActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
@@ -712,6 +846,11 @@
     <ID>CyclomaticComplexMethod:Surface.kt$@Preview(showBackground = true) @Composable private fun TryClickableSurface()</ID>
     <ID>CyclomaticComplexMethod:SurfaceTapper.kt$@Preview(showBackground = true) @Composable private fun ClickableSurfaceView()</ID>
     <ID>CyclomaticComplexMethod:SwitchComponent.kt$@Preview(showBackground = true) @Composable fun BasicSwitch()</ID>
+    <ID>CyclomaticComplexMethod:TaskActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
+    <ID>CyclomaticComplexMethod:TaskActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
+    <ID>CyclomaticComplexMethod:TaskActivity.kt$TaskActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:TasksViewModel.kt$TasksDataStoreViewModelFactory$@Suppress("UNCHECKED_CAST") override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T</ID>
+    <ID>CyclomaticComplexMethod:TasksViewModel.kt$TasksSharedPreferenceViewModelFactory$@Suppress("UNCHECKED_CAST") override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T</ID>
     <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun CenterHorizontallyText()</ID>
     <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun VerticallyCenteredText()</ID>
     <ID>CyclomaticComplexMethod:TextAlign.kt$@Preview(showBackground = true) @Composable fun WrapContentSizeCenterEndText()</ID>
@@ -766,6 +905,7 @@
     <ID>CyclomaticComplexMethod:UserRepository.kt$UserRepository$suspend fun register(user: User)</ID>
     <ID>CyclomaticComplexMethod:UsingDerivedStateOf.kt$@Composable fun DisplayResult(count: State&lt;Int&gt;)</ID>
     <ID>CyclomaticComplexMethod:UsingDerivedStateOf.kt$@Preview(showBackground = true) @Composable private fun DisplayResultPreview()</ID>
+    <ID>CyclomaticComplexMethod:UsingSimpleFragmentActivity.kt$UsingSimpleFragmentActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>CyclomaticComplexMethod:UsingViewInComposeActivity.kt$@Composable fun CustomView(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:UsingViewInComposeActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:UsingViewInComposeActivity.kt$UsingViewInComposeActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
@@ -778,9 +918,32 @@
     <ID>CyclomaticComplexMethod:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$private fun &lt;T : ViewModel&gt; test( modelClass: Class&lt;T&gt;, dependency: Array&lt;Class&lt;*&gt;&gt;, eachDependency: List&lt;List&lt;*&gt;&gt; ): T</ID>
     <ID>CyclomaticComplexMethod:ViewModelFactories.kt$ViewModelFactories$@JvmStatic fun &lt;V : ViewModel&gt; create( viewModelStore: ViewModelStore, factory: ViewModelProvider.Factory, ref: Class&lt;V&gt; ): V</ID>
     <ID>CyclomaticComplexMethod:ViewModelFactories.kt$ViewModelFactories$fun modernFactory(): ViewModelProvider.Factory</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Abstract ViewModel class`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Argument order correctness`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Constructor throws an exception`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Create ViewModel with default constructor`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Create ViewModel with multiple arguments constructor`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Create ViewModel with single argument constructor`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Empty map for a ViewModel with only a parameterized constructor`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Incorrect number of arguments`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Mismatched argument types`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Non existent constructor`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Null value for primitive type argument`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `Subclass of a provided argument type`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `ViewModel with a private constructor`()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelFactoryTest.kt$ViewModelFactoryTest$@Test fun `ViewModel with multiple constructors`()</ID>
     <ID>CyclomaticComplexMethod:ViewModelStateFlowCourseActivity.kt$@Composable fun Greeting(name: String, modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:ViewModelStateFlowCourseActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview()</ID>
     <ID>CyclomaticComplexMethod:ViewModelStateFlowCourseActivity.kt$ViewModelStateFlowCourseActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$BaseViewModel$override fun onCleared()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$BaseViewModelHandlerException$override fun onCleared()</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$ViewModelFactory$@Suppress("UNCHECKED_CAST") override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;, extras: CreationExtras): T</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$ViewModelFactory$override fun &lt;T : ViewModel&gt; create(modelClass: Class&lt;T&gt;): T</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$ViewModelFactory$private fun &lt;T : ViewModel&gt; buildCreationError( modelClass: Class&lt;T&gt;, parameterTypes: Array&lt;Class&lt;*&gt;&gt;, error: ReflectiveOperationException ): IllegalArgumentException</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$ViewModelFactory$private fun &lt;T : ViewModel&gt; findCreator(modelClass: Class&lt;T&gt;): ((CreationExtras) -&gt; ViewModel)?</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$ViewModelFactory$private fun expandConstructorArgs(): Pair&lt;Array&lt;Class&lt;*&gt;&gt;, Array&lt;Any?&gt;&gt;</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$ViewModelFactory.Companion$inline fun &lt;reified T&gt; arg(vararg values: T): ConstructorArg</ID>
+    <ID>CyclomaticComplexMethod:ViewModelUtils.kt$fun &lt;V : ViewModel&gt; createViewModel( viewModelStore: ViewModelStore, factory: ViewModelProvider.Factory, clazz: Class&lt;V&gt; ): V</ID>
     <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$@Composable fun NavController()</ID>
     <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$@Preview(showBackground = true, showSystemUi = true) @Composable private fun CupCakeContainerUI( modifier: Modifier = Modifier, viewModel: OrderViewModel = viewModel(), navController: NavHostController = rememberNavController() )</ID>
     <ID>CyclomaticComplexMethod:WalkThroughActivity.kt$WalkThroughActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
@@ -792,6 +955,15 @@
     <ID>CyclomaticComplexMethod:WrapperLoadViewActivity.kt$@Composable fun LoadView(modifier: Modifier = Modifier)</ID>
     <ID>CyclomaticComplexMethod:WrapperLoadViewActivity.kt$@Preview(showBackground = true) @Composable fun GreetingPreview2()</ID>
     <ID>CyclomaticComplexMethod:WrapperLoadViewActivity.kt$WrapperLoadViewActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
+    <ID>EmptyClassBlock:CustomGLSurfaceView.kt$CustomGLSurfaceView${ }</ID>
+    <ID>EmptyClassBlock:DiceRollViewModel.kt$DiceRollViewModel${ }</ID>
+    <ID>EmptyClassBlock:Observability.kt$Observability${ }</ID>
+    <ID>EmptyClassBlock:SecureCache.kt$SecureCache${ }</ID>
+    <ID>EmptyClassBlock:SimpleViewModel.kt$SimpleViewModel${ }</ID>
+    <ID>EmptyClassBlock:SocketService.kt$SocketService${ }</ID>
+    <ID>EmptyClassBlock:TasksViewModel.kt$TasksDataStoreViewModel${ }</ID>
+    <ID>EmptyClassBlock:UserPreferencesRepository.kt$UserDataStoreRepository${ }</ID>
+    <ID>EmptyClassBlock:UserPreferencesRepository.kt$UserRepository${ }</ID>
     <ID>EmptyDefaultConstructor:AnotherMockViewModelVersionII.kt$AnotherMockViewModelVersionII$()</ID>
     <ID>EmptyDefaultConstructor:AppendContentComponent.kt$DisplayTextViewModel$()</ID>
     <ID>EmptyDefaultConstructor:CustomView.kt$CustomViewModel$()</ID>
@@ -802,6 +974,7 @@
     <ID>EmptyDefaultConstructor:MainIntent.kt$MainViewModel$()</ID>
     <ID>EmptyElseBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity${ }</ID>
     <ID>EmptyFunctionBlock:CardComponent.kt${ }</ID>
+    <ID>EmptyFunctionBlock:ComposeAndOpenGLES.kt$&lt;no name provided&gt;${ }</ID>
     <ID>EmptyFunctionBlock:DessertCodelabsWithViewModelActivity.kt${ }</ID>
     <ID>EmptyFunctionBlock:DiceRollerActivity.kt${ }</ID>
     <ID>EmptyFunctionBlock:DogIcon.kt${ }</ID>
@@ -813,6 +986,7 @@
     <ID>EmptyFunctionBlock:MinIntrinsicsSizeColumnComponent.kt${ }</ID>
     <ID>EmptyFunctionBlock:NetworkBoundResource.kt${}</ID>
     <ID>EmptyFunctionBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity.&lt;no name provided&gt;${ }</ID>
+    <ID>EmptyFunctionBlock:ScaffoldTopBarSampleActivity.kt${ }</ID>
     <ID>EmptyFunctionBlock:ShowcaseCard.kt${ }</ID>
     <ID>EmptyFunctionBlock:SnackBarComponentII.kt${ }</ID>
     <ID>EmptyFunctionBlock:StackComponent.kt${ }</ID>
@@ -829,13 +1003,193 @@
     <ID>Filename:FilterWhileTyping.kt$com.br.justcomposelabs.tutorial.google.filterwhiletyping.FilterWhileTyping.kt</ID>
     <ID>Filename:OwnLifecycle.kt$com.br.justcomposelabs.tutorial.google.lifecycle.handlerlifecycle.OwnLifecycle.kt</ID>
     <ID>Filename:ParcelizeSample.kt$com.br.justcomposelabs.tutorial.google.parcelize.ParcelizeSample.kt</ID>
+    <ID>FinalNewline:Accessibility.kt$com.br.searchinaccessibility.Accessibility.kt</ID>
+    <ID>FinalNewline:AdvancedWayToCommunicateFragmentsActivity.kt$com.br.funwithfragments.tutorials.medium.advancedwaycommunicate.AdvancedWayToCommunicateFragmentsActivity.kt</ID>
+    <ID>FinalNewline:AdvancedWormanager.kt$com.br.datastore.tutorials.google.codelabs.workmanager.AdvancedWormanager.kt</ID>
+    <ID>FinalNewline:AnimatedVisibility.kt$com.br.funwithanimationcompose.tutorials.google.quickguide.AnimatedVisibility.kt</ID>
+    <ID>FinalNewline:AnimationLottie.kt$com.br.funwithlottiecompose.tutorial.ktacademy.lottie.AnimationLottie.kt</ID>
+    <ID>FinalNewline:AnimationPreview.kt$com.br.funwithanimationcompose.tutorials.google.animationpreview.AnimationPreview.kt</ID>
+    <ID>FinalNewline:AnotherMockViewModelTest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.AnotherMockViewModelTest.kt</ID>
+    <ID>FinalNewline:AnotherMockViewModelVersionIITest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.AnotherMockViewModelVersionIITest.kt</ID>
+    <ID>FinalNewline:BroadcastReceiver.kt$com.br.funwithbroadcastreceiver.tutorial.compose.BroadcastReceiver.kt</ID>
+    <ID>FinalNewline:ButtonEffect.kt$com.br.funwithanimationcompose.tutorials.canopas.buttoneffect.ButtonEffect.kt</ID>
+    <ID>FinalNewline:CachingStrategies.kt$com.br.datastore.tutorials.medium.cachestrategy.CachingStrategies.kt</ID>
+    <ID>FinalNewline:CameraViewFinder.kt$com.br.funwithcameraxcompose.google.cameraviewfinder.CameraViewFinder.kt</ID>
+    <ID>FinalNewline:CameraX.kt$com.br.funwithcameraxcompose.codelabs.CameraX.kt</ID>
+    <ID>FinalNewline:Cartesian3DView.kt$com.br.canvasviews.Cartesian3DView.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithgmaps.firstsample.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.funwithrolleta.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:Color.kt$com.br.scaffoldttopbarsample.ui.theme.Color.kt</ID>
+    <ID>FinalNewline:ComposeAndOpenGLES.kt$com.br.canvasviews.tutorial.opengles.ComposeAndOpenGLES.kt</ID>
+    <ID>FinalNewline:ComposeLibrariesReferences.kt$com.br.funwithviewmodel.tutorials.google.compose.libraries.ComposeLibrariesReferences.kt</ID>
+    <ID>FinalNewline:CustomGLSurfaceView.kt$com.br.canvasviews.tutorial.opengles.addmotion.CustomGLSurfaceView.kt</ID>
+    <ID>FinalNewline:DetectFaceMesh.kt$com.br.funwithmlkit.goodle.docs.facemesh.DetectFaceMesh.kt</ID>
+    <ID>FinalNewline:DiceRollActivity.kt$com.br.funwithlifecycle.samples.diceroll.DiceRollActivity.kt</ID>
+    <ID>FinalNewline:DiceRollViewModel.kt$com.br.funwithlifecycle.samples.diceroll.DiceRollViewModel.kt</ID>
+    <ID>FinalNewline:EchoWebSocketListener.kt$com.br.okhttpwebsocket.EchoWebSocketListener.kt</ID>
+    <ID>FinalNewline:EventHandlingLocalBroadcastManagerActivity.kt$com.br.funwithbroadcastreceiver.tutorial.medium.eventhandling.localbroadcastmanager.EventHandlingLocalBroadcastManagerActivity.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.appobservability.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.canvasviews.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.clonejetcaster.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.clonejetcaster.core.data.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.clonejetchat.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.datastore.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funcodelabsanimation.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithanimationcompose.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithbroadcastreceiver.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithcameraxcompose.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithfragments.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithglance.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithgmaps.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithhilt.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithlifecycle.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithlottiecompose.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithmlkit.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithperapplanguages.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithrolleta.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithsecurity.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.funwithviewmodel.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.justcomposelabs.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.migrationstrategycompose.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.network.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.okhttpwebsocket.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.paginglibrarysamples.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.referencelinbraries.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.scaffoldttopbarsample.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.scarletwebsocket.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleInstrumentedTest.kt$com.br.searchinaccessibility.ExampleInstrumentedTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.appobservability.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.canvasviews.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.clonejetcaster.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.clonejetcaster.core.data.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.clonejetchat.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.datastore.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funcodelabsanimation.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithanimationcompose.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithbroadcastreceiver.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithcameraxcompose.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithfragments.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithglance.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithgmaps.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithhilt.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithlifecycle.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithlottiecompose.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithmlkit.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithperapplanguages.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithrolleta.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithsecurity.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.funwithviewmodel.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.justcomposelabs.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.migrationstrategycompose.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.network.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.okhttpwebsocket.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.paginglibrarysamples.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.referencelinbraries.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.scaffoldttopbarsample.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.scarletwebsocket.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:ExampleUnitTest.kt$com.br.searchinaccessibility.ExampleUnitTest.kt</ID>
+    <ID>FinalNewline:FaceLadmarkDetection.kt$com.br.funwithmlkit.goodle.docs.face.landmarkdetection.FaceLadmarkDetection.kt</ID>
+    <ID>FinalNewline:FacialRegonigze.kt$com.br.funwithmlkit.codelabs.facialandtextrecognize.FacialRegonigze.kt</ID>
+    <ID>FinalNewline:FinishedActivity.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.FinishedActivity.kt</ID>
+    <ID>FinalNewline:FirstSampleGoogleMapsActivity.kt$com.br.funwithgmaps.firstsample.FirstSampleGoogleMapsActivity.kt</ID>
+    <ID>FinalNewline:FragmentResultListenerActivity.kt$com.br.funwithfragments.tutorials.medium.setfragmentresultlistener.FragmentResultListenerActivity.kt</ID>
+    <ID>FinalNewline:GetContent.kt$com.br.funwithviewmodel.tutorials.google.compose.libraries.activityresult.GetContent.kt</ID>
+    <ID>FinalNewline:GettingStartCameraXComposeActivity.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.GettingStartCameraXComposeActivity.kt</ID>
+    <ID>FinalNewline:GoogleCameraCloneActivity.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.GoogleCameraCloneActivity.kt</ID>
+    <ID>FinalNewline:IntegerDataStoreSample.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.IntegerDataStoreSample.kt</ID>
+    <ID>FinalNewline:Interceptors.kt$com.br.network.utils.interceptor.Interceptors.kt</ID>
+    <ID>FinalNewline:InternalsViewModel.kt$com.br.funwithviewmodel.tutorials.droid.viewmodelinternals.InternalsViewModel.kt</ID>
+    <ID>FinalNewline:KtorUtils.kt$com.br.network.utils.ktor.KtorUtils.kt</ID>
+    <ID>FinalNewline:LifecycleAwareUI.kt$com.br.funwithfragments.tutorials.medium.compose.ditchfragment.LifecycleAwareUI.kt</ID>
+    <ID>FinalNewline:LifecycleComposableFun.kt$com.br.funwithlifecycle.samples.compose.lifecyclecomposable.LifecycleComposableFun.kt</ID>
+    <ID>FinalNewline:LifecycleScopeSampleFragment.kt$com.br.funwithviewmodel.tutorials.google.lifecycleaware.lifecyclescope.simplefragment.LifecycleScopeSampleFragment.kt</ID>
+    <ID>FinalNewline:LocalBroadcastManagerActivity.kt$com.br.funwithbroadcastreceiver.tutorial.geeksforgeeks.localbroadcastmanager.LocalBroadcastManagerActivity.kt</ID>
+    <ID>FinalNewline:LocationActivity.kt$com.br.funwithlifecycle.LocationActivity.kt</ID>
+    <ID>FinalNewline:LogApplication.kt$com.br.funwithhilt.codelabs.usinghilt.LogApplication.kt</ID>
+    <ID>FinalNewline:Main.kt$com.br.migrationstrategycompose.Main.kt</ID>
+    <ID>FinalNewline:MainDispatcherRule.kt$com.br.justcomposelabs.MainDispatcherRule.kt</ID>
+    <ID>FinalNewline:MainHiltCodelabsActivity.kt$com.br.funwithhilt.codelabs.usinghilt.MainHiltCodelabsActivity.kt</ID>
+    <ID>FinalNewline:MainScreen.kt$com.br.okhttpwebsocket.tutorial.medium.websockettutorial.view.MainScreen.kt</ID>
+    <ID>FinalNewline:MockViewModelTest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.MockViewModelTest.kt</ID>
+    <ID>FinalNewline:Observability.kt$com.br.appobservability.Observability.kt</ID>
+    <ID>FinalNewline:PagingBasicsActivity.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.PagingBasicsActivity.kt</ID>
+    <ID>FinalNewline:PagingUserSource.kt$com.br.paginglibrarysamples.loadanddisplaypageddata.PagingUserSource.kt</ID>
+    <ID>FinalNewline:ProviderEndpointClient.kt$com.br.network.ProviderEndpointClient.kt</ID>
+    <ID>FinalNewline:QuickGuideAnimation.kt$com.br.funwithanimationcompose.tutorials.google.quickguide.QuickGuideAnimation.kt</ID>
+    <ID>FinalNewline:ReactiveServiceCall.kt$com.br.network.utils.compat.rxjava2.ReactiveServiceCall.kt</ID>
+    <ID>FinalNewline:ReactiveServiceCall.kt$com.br.network.utils.compat.rxjava3.ReactiveServiceCall.kt</ID>
+    <ID>FinalNewline:Resource.kt$com.br.network.utils.Resource.kt</ID>
+    <ID>FinalNewline:RollActivity.kt$com.br.funwithrolleta.RollActivity.kt</ID>
+    <ID>FinalNewline:SafeServiceCall.kt$com.br.network.utils.SafeServiceCall.kt</ID>
+    <ID>FinalNewline:SampleViewModel.kt$com.br.funwithviewmodel.tutorials.google.lifecycleaware.viewmodelscope.SampleViewModel.kt</ID>
+    <ID>FinalNewline:ScaffoldTopBarSampleActivity.kt$com.br.scaffoldttopbarsample.ScaffoldTopBarSampleActivity.kt</ID>
+    <ID>FinalNewline:SecureCache.kt$com.br.datastore.tutorials.ai.cachestrategy.SecureCache.kt</ID>
+    <ID>FinalNewline:SecureDataStore.kt$com.br.datastore.tutorials.medium.securedatastore.SecureDataStore.kt</ID>
+    <ID>FinalNewline:SimCardInfo.kt$com.br.funwithsecurity.helpers.simcard.SimCardInfo.kt</ID>
+    <ID>FinalNewline:SimpleClickableTextTest.kt$com.br.justcomposelabs.tutorial.google.unittest.clickablecomponent.SimpleClickableTextTest.kt</ID>
+    <ID>FinalNewline:SimpleTextAndroidViewKtTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextAndroidViewKtTest.kt</ID>
+    <ID>FinalNewline:SimpleTextKtTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextKtTest.kt</ID>
+    <ID>FinalNewline:SimpleTextTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextTest.kt</ID>
+    <ID>FinalNewline:SimpleViewModel.kt$com.br.funwithviewmodel.tutorials.google.viewmodelfactory.SimpleViewModel.kt</ID>
+    <ID>FinalNewline:SocketService.kt$com.br.scarletwebsocket.tutorials.medium.testscarletlib.SocketService.kt</ID>
+    <ID>FinalNewline:StartActivity.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.StartActivity.kt</ID>
+    <ID>FinalNewline:TaskActivity.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.TaskActivity.kt</ID>
+    <ID>FinalNewline:TaskActivity.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.ui.TaskActivity.kt</ID>
+    <ID>FinalNewline:TasksRepository.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.data.TasksRepository.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithgmaps.firstsample.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.funwithrolleta.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Theme.kt$com.br.scaffoldttopbarsample.ui.theme.Theme.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithgmaps.firstsample.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.funwithrolleta.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:Type.kt$com.br.scaffoldttopbarsample.ui.theme.Type.kt</ID>
+    <ID>FinalNewline:UserPreferencesRepository.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.data.UserPreferencesRepository.kt</ID>
+    <ID>FinalNewline:UsingSimpleFragmentActivity.kt$com.br.funwithfragments.tutorials.google.createfragment.UsingSimpleFragmentActivity.kt</ID>
+    <ID>FinalNewline:ViewModelFactoryTest.kt$com.br.datastore.tutorials.utils.viewmodel.ViewModelFactoryTest.kt</ID>
+    <ID>FinalNewline:ViewModelUtils.kt$com.br.datastore.tutorials.utils.viewmodel.ViewModelUtils.kt</ID>
+    <ID>FinalNewline:Websocket.kt$com.br.scarletwebsocket.Websocket.kt</ID>
+    <ID>FinalNewline:build.gradle.kts$.build.gradle.kts</ID>
     <ID>ForbiddenComment:CustomizeAnimation.kt$SizeAnimationViewModel$/* TODO: usar esse estado para criar uma interface com controles que possam modificar seus valores - Use algum componente de seleção com as opçoes de mudanca de: - dampingRatio - stiffness - talvez visibilidade */</ID>
     <ID>ForbiddenComment:DynamicColorScreen.kt$/* TODO: Preview nao ta aparecendo */</ID>
     <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$// TODO: Rename parameter arguments, choose names that match</ID>
     <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$// TODO: Rename and change types of parameters</ID>
     <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment.Companion$// TODO: Rename and change types and number of parameters</ID>
+    <ID>ForbiddenComment:LifecycleScopeSampleFragment.kt$// TODO: Rename parameter arguments, choose names that match</ID>
     <ID>ForbiddenComment:WhereToHoistState.kt$Message$* TODO: Estudar esse assunto * https://developer.android.com/develop/ui/compose/state-hoisting#classes-as-state-owner * - UI Logic - Quando a logica de UI precisa ler ou rescrever um estado, devmos restringir esse estado para a UI. - Podemos fazer isso elevando o estado para um "nível correto" em uma composable function - Podemos fazer isso em uma classe especifica para manter estados - plain state holder class (https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-logic) Composables as state owner - https://developer.android.com/develop/ui/compose/state-hoisting#composables-as-state-owner - Se estamos lidando com logica de estado simples, a documentacao nos diz que nao ha problemas. Podemos deixar o controle do estado internamente para composable ou "iça-lo / hoist" se for requisido No state hoisting needed - https://developer.android.com/develop/ui/compose/state-hoisting#no-state-hoisting - Hoisting state nem sempre é requirido. O estado pode ser mantido internamente nos casos que nenhuma outra composable necessite controla-lo.</ID>
     <ID>ImplicitDefaultLocale:LerpFunction.kt$String.format("%s%s", Integer.toHexString(value / 16), Integer.toHexString(value % 16))</ID>
+    <ID>ImportOrdering:ExampleInstrumentedTest.kt$import androidx.test.platform.app.InstrumentationRegistry import androidx.test.ext.junit.runners.AndroidJUnit4 import org.junit.Test import org.junit.runner.RunWith import org.junit.Assert.*</ID>
+    <ID>ImportOrdering:ExampleUnitTest.kt$import org.junit.Test import org.junit.Assert.*</ID>
+    <ID>ImportOrdering:LifecycleScopeSampleFragment.kt$import android.os.Bundle import androidx.fragment.app.Fragment import android.view.LayoutInflater import android.view.View import android.view.ViewGroup import com.br.funwithviewmodel.R</ID>
+    <ID>ImportOrdering:ReactiveServiceCall.kt$import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers import io.reactivex.rxjava3.core.Single import io.reactivex.rxjava3.schedulers.Schedulers import retrofit2.Response</ID>
+    <ID>ImportOrdering:SimpleClickableTextTest.kt$import androidx.compose.ui.test.junit4.createComposeRule import androidx.compose.ui.test.onNodeWithText import androidx.compose.ui.test.performClick import org.junit.Rule import org.junit.jupiter.api.Assertions.* import org.junit.runner.RunWith import org.robolectric.RobolectricTestRunner import org.robolectric.annotation.Config import kotlin.intArrayOf import org.junit.Test</ID>
+    <ID>Indentation:AnimatedVisibility.kt$ </ID>
+    <ID>Indentation:MainHiltCodelabsActivity.kt$MainHiltCodelabsActivity$ </ID>
+    <ID>Indentation:ScopedBaseViewModel.kt$ScopedBaseViewModel$ </ID>
+    <ID>Indentation:ScopedBaseViewModel.kt$SimpleScopedViewModel$ </ID>
+    <ID>Indentation:ScopedBaseViewModel.kt$SimpleViewModel$ </ID>
+    <ID>Indentation:TaskActivity.kt$TaskActivity$ </ID>
+    <ID>Indentation:TasksViewModel.kt$TasksSharedPreferenceViewModelFactory$ </ID>
+    <ID>Indentation:build.gradle.kts$ </ID>
     <ID>LongMethod:AdvanvcedCustomDialog.kt$@Preview(showBackground = true) @Composable fun ImageDialog()</ID>
     <ID>LongMethod:AnimatedCircle.kt$@Composable fun AnimatedCircle( proportions: List&lt;Float&gt;, colors: List&lt;Color&gt;, modifier: Modifier = Modifier )</ID>
     <ID>LongMethod:AnimatedCounterComponent.kt$@Preview(showBackground = true) @Composable fun AnimatedCounterComponent()</ID>
@@ -843,6 +1197,7 @@
     <ID>LongMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ClickableTimedFlippingBox()</ID>
     <ID>LongMethod:CommentTree.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun InfiniteScrollCommentTree( comments: List&lt;Comment&gt;, modifier: Modifier = Modifier, onAddComment: (Comment, String, String) -&gt; Unit = { _, _, _ -&gt; } )</ID>
     <ID>LongMethod:CommentViewModel.kt$CommentViewModel$private fun initializeSampleComments()</ID>
+    <ID>LongMethod:ComposeInViewActivity.kt$@Composable fun InteractiveUnitCircle()</ID>
     <ID>LongMethod:HandleConfigurationChanges.kt$@Preview(showSystemUi = true) @Composable fun ConfigurationDeviceInfoComponent()</ID>
     <ID>LongMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
     <ID>LongMethod:OrderOfModifiersMatters.kt$@Preview(showBackground = true) @Composable fun OrderMatters1(artist: Artist = Artist(name = "Chris"))</ID>
@@ -876,6 +1231,7 @@
     <ID>MatchingDeclarationName:UnstableLambdas.kt$User</ID>
     <ID>MatchingDeclarationName:UtilsComposable.kt$ShowBackgroundOrNot</ID>
     <ID>MatchingDeclarationName:WhereToHoistState.kt$Message</ID>
+    <ID>MaxLineLength:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$fun</ID>
     <ID>MaxLineLength:CommentItem.kt$content = "Este é o conteúdo do comentário que pode ser bem longo e ocupar várias linhas para demonstrar como o layout se comporta."</ID>
     <ID>MaxLineLength:CommentItem.kt$content = "Este é um comentário de exemplo com texto suficiente para testar o layout e verificar como fica a exibição."</ID>
     <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Concordo! E com @PreviewParameter fica ainda melhor para testar diferentes estados."</ID>
@@ -891,20 +1247,304 @@
     <ID>MaxLineLength:DiceViewModel.kt$/* https://developer.android.com/topic/libraries/architecture/viewmodel - View Model class é uma estrutura que manter estado de logica de negocio ou de um componente UI a nivel de tela - Podemos expor estado de uma UI atraves de um componente observador como LiveData, Flow, StateFlow e encappsular uma logica de negocio relacionada a View - Beneficios de uma ViewModel - A alternativa para uma ViewModel é usar uma plain class que mantem o estado de um dado que exibimos na tela. Isso começa a ficar complicado quando navegamos entre activities ou entre os destinos num grafo de navegacao. - Usar uma classe que nao a ViewModel para isso nos força a ter que utilizar algum mecanismo de armazenamento dessa classe, seja onSaveInstanceState da View ou rememberSaveable do compose. - A ViewModel fornece uma API para persistir dados que resolve o problema - Pontos chave - Permite persistir dados para UI State - Prove um espaço onde podemos implementar Lógica separado da UI - Persistence (https://developer.android.com/topic/libraries/architecture/viewmodel#persistence) - - Ciclo de vida de uma ViewModel esta vinculado ao de um activity ou fragment ? - Sim, uma viewmodel persiste enquanto o componente ao qual esta ligado nao fo destruido permanentemente, como um activity que é destruida ou um fragment removido - A Vinculacao - O ciclo de vida de uma viewmodel é gerenciado por ViewModelStoreOwner https://developer.android.com/topic/libraries/architecture/viewmodel#scope - Escopo (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#scope) - - O ciclo de vida de um ViewModel (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#lifecycle) - O Ciclo de vida de uma viewmodel está diretamente vinculada ao escopo dela. - Ela permanece em memoria ate que o ViewModelStoreOwner definido como escopo dela desapareça - Isso pode ocorrer nos seguintes contextos - Uma activity que finaliza - Um fragment que é removido - Uma entrada de uma navegacao, quando ela é removida da backstack (NavComponent) - Isso faz da ViewModel uma otima opcao para armazenar dados quando ocorre uma mudanca de configuracao https://developer.android.com/topic/architecture/ui-layer/stateholders -------------- lifecycleowner independent compose https://www.linkedin.com/feed/update/urn:li:activity:7366888898473517058/ ------------------------------------------ what is lifecycle in android ? - lifecycle define e gerencia o estado dos componentes em android, tais como: Activity ou Fragment. - Essa gerencia ocorre desde a criacao do componente ate sua destruicao - Android forncece callbacks methods para interceptar esses estados - Como desenvolvedores, podemos utilizr esses callback methods para adicionar algum comportamento ou gerenciar recursos, manipular eventos como navegacao do usuario ou interrupcoes do sistema de forma harmoniosa. */</ID>
     <ID>MaxLineLength:DraggableTriangleView.kt$DraggableTriangleView$/* DraggableTriangleView#onTouchEvent should call DraggableTriangleView#performClick when a click is detected Toggle info (⌘F1) view#ontouchevent should call view#performclick accessibility https://developer.android.com/guide/topics/ui/accessibility/custom-views */</ID>
     <ID>MaxLineLength:ImageCoil.kt$ImageContextProvider$"https://www.gstatic.com/devrel-devsite/prod/v9de0f443992d54ad799f913d3a82969ff613e39ab9e3e056983c556b3c2ef1f8/android/images/lockup.png"</ID>
+    <ID>MaxLineLength:IntegerDataStoreSample.kt$val Context.counterIntegerDataStore: DataStore&lt;Preferences&gt; by preferencesDataStore(name = COUNTER_INTEGER_DATA_STORE_NAME)</ID>
     <ID>MaxLineLength:IntegrateLifecycleWithCompose.kt$/* https://developer.android.com/topic/libraries/architecture/compose Warning: You cannot use this to listen for Lifecycle.Event.ON_DESTROY since composition ends before this signal is sent. */</ID>
     <ID>MaxLineLength:ReplyBottomSheet.kt$content = "Este é o comentário pai ao qual você está respondendo. Pode conter bastante texto para demonstrar o layout."</ID>
+    <ID>MaxLineLength:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Although the current signature is `String` (non-nullable), if it were `String?`, test how a null value is handled. </ID>
+    <ID>MaxLineLength:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Test that various special characters (e.g., emojis, symbols, non-ASCII characters) are displayed correctly in the TextView.</ID>
+    <ID>MaxLineLength:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Verify that the TextView within AndroidView displays the initial 'value' string when the composable is first rendered.</ID>
+    <ID>MaxLineLength:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Verify that the `update` block is executed with the new value when the `value` parameter changes and the composable recomposes.</ID>
+    <ID>MaxLineLength:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Verify that the displayed text is accessible, for example, by checking its content description or ensuring it's focusable if needed.</ID>
+    <ID>MaxLineLength:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Verify that the text appearance (e.g., color, font) is correctly inherited or applied when SimpleTextAndroidView is used within different MaterialTheme setups, as shown in the preview.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify how newline characters within the 'first' or 'second' strings affect the rendering within the Text composables and the Column layout.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify how the layout handles a very long string for 'first'. Check for truncation, wrapping, or other UI behaviors.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify how the layout handles a very long string for 'second'. Check for truncation, wrapping, or other UI behaviors.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify that leading and trailing whitespace in 'first' and 'second' strings are handled as expected (e.g., trimmed or preserved based on Text composable behavior).</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify that strings with special characters (e.g., emojis, symbols, non-ASCII characters) are rendered correctly.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify that the @Preview annotated 'MyLayoutWithTextPreview' renders correctly with the default 'Hello' and 'World' strings within a MaterialTheme.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify that the UI updates correctly when the 'first' or 'second' string parameters are changed after initial composition.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify that the first Text composable renders an empty string and the second Text composable renders the 'second' string correctly.</ID>
+    <ID>MaxLineLength:SimpleTextKtTest.kt$SimpleTextKtTest$// Verify that the second Text composable renders an empty string and the first Text composable renders the 'first' string correctly.</ID>
     <ID>MaxLineLength:Surface.kt$/* The size of the shadow below the surface. Note that It will not affect z index of the Surface. If you want to change the drawing order you can use Modifier.zIndex. */</ID>
     <ID>MaxLineLength:Surface.kt$// Defines the surface's shape as well its shadow. A shadow is only displayed if the elevation is greater than zero.</ID>
     <ID>MaxLineLength:TextDecoratedUnderline.kt$"on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped."</ID>
     <ID>MaxLineLength:TextDecoratedUnderline.kt$text = "Text with Underline Decoration and Overflow Handling. This text is intentionally long to demonstrate how the Text composable handles overflow when the text exceeds the available space. The text should be truncated with an ellipsis at the end."</ID>
     <ID>MaxLineLength:UsingDerivedStateOf.kt$/* https://www.linkedin.com/feed/update/urn:li:activity:7447659533109497856/ derivedStateOf: convert one or multiple state objects into another state - https://developer.android.com/develop/ui/compose/side-effects#derivedstateof - Em compose, recomposicoes ocorrem cada vez que um objeto de Estado observavel ou um parâmetro de entrada de uma função composable muda. - Um objeto de estado ou dados de entrada podem mudar com mais frequencia do que a UI realmente necessita ser atualizada, isso causa recomposições desnecessarias - Em casos que os inputs mudem mais do que a UI necessita ser atualizada devemos usar derivedStateOf(https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#derivedStateOf(kotlin.Function0)) */</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Test for IllegalAccessException when the matching constructor in the ViewModel is private and the factory doesn't have access. [16, 22]</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Test for IllegalArgumentException when a null value is provided for a constructor parameter that is a primitive type.</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Test for NoSuchMethodException when no constructor on the ViewModel class matches the arguments provided in argsToValues. [5, 6]</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Test that the factory correctly creates the ViewModel when a value in argsToValues is a subclass of the required constructor parameter type.</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Test that the factory selects the correct constructor when the ViewModel has multiple constructors and the provided arguments match one of them.</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Verify that if the ViewModel's constructor throws an exception, it is propagated as an InvocationTargetException. [16, 22]</ID>
+    <ID>MaxLineLength:ViewModelFactoryTest.kt$ViewModelFactoryTest$// Verify that the factory correctly maps argument types and values to the constructor parameters based on the order in the provided map. Note: Map iteration order is not guaranteed, so this might be tricky.</ID>
     <ID>MaxLineLength:WindowInsets.kt$/* https://developer.android.com/develop/ui/compose/system/insets Compose and Window Insets https://developer.android.com/develop/ui/compose/system/insets https://developer.android.com/develop/ui/compose/system/insets-ui Compose layout adjust layout below edges Adjusting a Jetpack Compose layout "below edges" typically refers to handling window insets to ensure content is not obscured by system UI elements like the status bar, navigation bar, or display cutouts, especially when implementing an edge-to-edge design. Key concepts for adjusting layouts below edges: Window Insets: These represent areas of the screen that are occupied by system UI. Compose provides APIs to access and utilize these insets to adjust your layout. WindowInsets.safeDrawing: Represents the area where interactive elements should be placed to avoid overlapping with system UI. WindowInsets.systemBars: Represents the space occupied by the status bar and navigation bar. WindowInsets.displayCutout: Represents the area of display cutouts (notches, punch-holes). Applying Insets: Padding Modifiers: The most common way to adjust for insets is by applying padding modifiers using the WindowInsets values. For example, Modifier.padding(WindowInsets.safeDrawing.asPaddingValues()) applies padding around the entire content to avoid system UI. Inset Size Modifiers: For more fine-grained control, you can use modifiers like Modifier.windowInsetsPadding() or Modifier.windowInsetsEnd() to apply padding or size adjustments based on specific inset types. Edge-to-Edge Design: When designing edge-to-edge, your app draws behind the system bars and display cutouts. This requires careful handling of insets to prevent content from being hidden. On Android 15 (API level 35) and higher, edge-to-edge is enforced when targeting SDK 35, requiring apps to handle insets. The Scaffold component from Material 3 can simplify handling insets for common UI structures. */</ID>
+    <ID>MaximumLineLength:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$ </ID>
     <ID>MaximumLineLength:CommentItem.kt$ </ID>
     <ID>MaximumLineLength:CommentViewModel.kt$CommentViewModel$ </ID>
     <ID>MaximumLineLength:ImageCoil.kt$ImageContextProvider$ </ID>
+    <ID>MaximumLineLength:IntegerDataStoreSample.kt$val</ID>
     <ID>MaximumLineLength:ReplyBottomSheet.kt$ </ID>
     <ID>MaximumLineLength:TextDecoratedUnderline.kt$ </ID>
     <ID>MemberNameEqualsClassName:SharedInRandomViewModel.kt$SharedRandomNumberFlow$val sharedRandomNumberFlow = flow { while (true) { delay(1000) emit((0..100).random()) } }.shareIn( scope = viewModelScope, started = SharingStarted.WhileSubscribed() )</ID>
+    <ID>NewLineAtEndOfFile:Accessibility.kt$com.br.searchinaccessibility.Accessibility.kt</ID>
+    <ID>NewLineAtEndOfFile:AdvancedWayToCommunicateFragmentsActivity.kt$com.br.funwithfragments.tutorials.medium.advancedwaycommunicate.AdvancedWayToCommunicateFragmentsActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:AdvancedWormanager.kt$com.br.datastore.tutorials.google.codelabs.workmanager.AdvancedWormanager.kt</ID>
+    <ID>NewLineAtEndOfFile:AnimatedVisibility.kt$com.br.funwithanimationcompose.tutorials.google.quickguide.AnimatedVisibility.kt</ID>
+    <ID>NewLineAtEndOfFile:AnimationLottie.kt$com.br.funwithlottiecompose.tutorial.ktacademy.lottie.AnimationLottie.kt</ID>
+    <ID>NewLineAtEndOfFile:AnimationPreview.kt$com.br.funwithanimationcompose.tutorials.google.animationpreview.AnimationPreview.kt</ID>
+    <ID>NewLineAtEndOfFile:AnotherMockViewModelTest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.AnotherMockViewModelTest.kt</ID>
+    <ID>NewLineAtEndOfFile:AnotherMockViewModelVersionIITest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.AnotherMockViewModelVersionIITest.kt</ID>
+    <ID>NewLineAtEndOfFile:BroadcastReceiver.kt$com.br.funwithbroadcastreceiver.tutorial.compose.BroadcastReceiver.kt</ID>
+    <ID>NewLineAtEndOfFile:ButtonEffect.kt$com.br.funwithanimationcompose.tutorials.canopas.buttoneffect.ButtonEffect.kt</ID>
+    <ID>NewLineAtEndOfFile:CachingStrategies.kt$com.br.datastore.tutorials.medium.cachestrategy.CachingStrategies.kt</ID>
+    <ID>NewLineAtEndOfFile:CameraViewFinder.kt$com.br.funwithcameraxcompose.google.cameraviewfinder.CameraViewFinder.kt</ID>
+    <ID>NewLineAtEndOfFile:CameraX.kt$com.br.funwithcameraxcompose.codelabs.CameraX.kt</ID>
+    <ID>NewLineAtEndOfFile:Cartesian3DView.kt$com.br.canvasviews.Cartesian3DView.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithgmaps.firstsample.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.funwithrolleta.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:Color.kt$com.br.scaffoldttopbarsample.ui.theme.Color.kt</ID>
+    <ID>NewLineAtEndOfFile:ComposeAndOpenGLES.kt$com.br.canvasviews.tutorial.opengles.ComposeAndOpenGLES.kt</ID>
+    <ID>NewLineAtEndOfFile:ComposeLibrariesReferences.kt$com.br.funwithviewmodel.tutorials.google.compose.libraries.ComposeLibrariesReferences.kt</ID>
+    <ID>NewLineAtEndOfFile:CustomGLSurfaceView.kt$com.br.canvasviews.tutorial.opengles.addmotion.CustomGLSurfaceView.kt</ID>
+    <ID>NewLineAtEndOfFile:DetectFaceMesh.kt$com.br.funwithmlkit.goodle.docs.facemesh.DetectFaceMesh.kt</ID>
+    <ID>NewLineAtEndOfFile:DiceRollActivity.kt$com.br.funwithlifecycle.samples.diceroll.DiceRollActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:DiceRollViewModel.kt$com.br.funwithlifecycle.samples.diceroll.DiceRollViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:EchoWebSocketListener.kt$com.br.okhttpwebsocket.EchoWebSocketListener.kt</ID>
+    <ID>NewLineAtEndOfFile:EventHandlingLocalBroadcastManagerActivity.kt$com.br.funwithbroadcastreceiver.tutorial.medium.eventhandling.localbroadcastmanager.EventHandlingLocalBroadcastManagerActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.appobservability.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.canvasviews.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.clonejetcaster.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.clonejetcaster.core.data.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.clonejetchat.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.datastore.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funcodelabsanimation.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithanimationcompose.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithbroadcastreceiver.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithcameraxcompose.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithfragments.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithglance.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithgmaps.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithhilt.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithlifecycle.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithlottiecompose.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithmlkit.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithperapplanguages.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithrolleta.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithsecurity.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.funwithviewmodel.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.justcomposelabs.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.migrationstrategycompose.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.network.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.okhttpwebsocket.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.paginglibrarysamples.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.referencelinbraries.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.scaffoldttopbarsample.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.scarletwebsocket.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleInstrumentedTest.kt$com.br.searchinaccessibility.ExampleInstrumentedTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.appobservability.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.canvasviews.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.clonejetcaster.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.clonejetcaster.core.data.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.clonejetchat.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.datastore.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funcodelabsanimation.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithanimationcompose.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithbroadcastreceiver.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithcameraxcompose.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithfragments.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithglance.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithgmaps.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithhilt.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithlifecycle.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithlottiecompose.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithmlkit.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithperapplanguages.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithrolleta.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithsecurity.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.funwithviewmodel.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.justcomposelabs.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.migrationstrategycompose.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.network.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.okhttpwebsocket.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.paginglibrarysamples.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.referencelinbraries.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.scaffoldttopbarsample.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.scarletwebsocket.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ExampleUnitTest.kt$com.br.searchinaccessibility.ExampleUnitTest.kt</ID>
+    <ID>NewLineAtEndOfFile:FaceLadmarkDetection.kt$com.br.funwithmlkit.goodle.docs.face.landmarkdetection.FaceLadmarkDetection.kt</ID>
+    <ID>NewLineAtEndOfFile:FacialRegonigze.kt$com.br.funwithmlkit.codelabs.facialandtextrecognize.FacialRegonigze.kt</ID>
+    <ID>NewLineAtEndOfFile:FinishedActivity.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.FinishedActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:FirstSampleGoogleMapsActivity.kt$com.br.funwithgmaps.firstsample.FirstSampleGoogleMapsActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:FragmentResultListenerActivity.kt$com.br.funwithfragments.tutorials.medium.setfragmentresultlistener.FragmentResultListenerActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:GetContent.kt$com.br.funwithviewmodel.tutorials.google.compose.libraries.activityresult.GetContent.kt</ID>
+    <ID>NewLineAtEndOfFile:GettingStartCameraXComposeActivity.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.GettingStartCameraXComposeActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:GoogleCameraCloneActivity.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.GoogleCameraCloneActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:IntegerDataStoreSample.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.IntegerDataStoreSample.kt</ID>
+    <ID>NewLineAtEndOfFile:Interceptors.kt$com.br.network.utils.interceptor.Interceptors.kt</ID>
+    <ID>NewLineAtEndOfFile:InternalsViewModel.kt$com.br.funwithviewmodel.tutorials.droid.viewmodelinternals.InternalsViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:KtorUtils.kt$com.br.network.utils.ktor.KtorUtils.kt</ID>
+    <ID>NewLineAtEndOfFile:LifecycleAwareUI.kt$com.br.funwithfragments.tutorials.medium.compose.ditchfragment.LifecycleAwareUI.kt</ID>
+    <ID>NewLineAtEndOfFile:LifecycleComposableFun.kt$com.br.funwithlifecycle.samples.compose.lifecyclecomposable.LifecycleComposableFun.kt</ID>
+    <ID>NewLineAtEndOfFile:LifecycleScopeSampleFragment.kt$com.br.funwithviewmodel.tutorials.google.lifecycleaware.lifecyclescope.simplefragment.LifecycleScopeSampleFragment.kt</ID>
+    <ID>NewLineAtEndOfFile:LocalBroadcastManagerActivity.kt$com.br.funwithbroadcastreceiver.tutorial.geeksforgeeks.localbroadcastmanager.LocalBroadcastManagerActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:LocationActivity.kt$com.br.funwithlifecycle.LocationActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:LogApplication.kt$com.br.funwithhilt.codelabs.usinghilt.LogApplication.kt</ID>
+    <ID>NewLineAtEndOfFile:Main.kt$com.br.migrationstrategycompose.Main.kt</ID>
+    <ID>NewLineAtEndOfFile:MainDispatcherRule.kt$com.br.justcomposelabs.MainDispatcherRule.kt</ID>
+    <ID>NewLineAtEndOfFile:MainHiltCodelabsActivity.kt$com.br.funwithhilt.codelabs.usinghilt.MainHiltCodelabsActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:MainScreen.kt$com.br.okhttpwebsocket.tutorial.medium.websockettutorial.view.MainScreen.kt</ID>
+    <ID>NewLineAtEndOfFile:MockViewModelTest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.MockViewModelTest.kt</ID>
+    <ID>NewLineAtEndOfFile:Observability.kt$com.br.appobservability.Observability.kt</ID>
+    <ID>NewLineAtEndOfFile:PagingBasicsActivity.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.PagingBasicsActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:PagingUserSource.kt$com.br.paginglibrarysamples.loadanddisplaypageddata.PagingUserSource.kt</ID>
+    <ID>NewLineAtEndOfFile:ProviderEndpointClient.kt$com.br.network.ProviderEndpointClient.kt</ID>
+    <ID>NewLineAtEndOfFile:QuickGuideAnimation.kt$com.br.funwithanimationcompose.tutorials.google.quickguide.QuickGuideAnimation.kt</ID>
+    <ID>NewLineAtEndOfFile:ReactiveServiceCall.kt$com.br.network.utils.compat.rxjava2.ReactiveServiceCall.kt</ID>
+    <ID>NewLineAtEndOfFile:ReactiveServiceCall.kt$com.br.network.utils.compat.rxjava3.ReactiveServiceCall.kt</ID>
+    <ID>NewLineAtEndOfFile:Resource.kt$com.br.network.utils.Resource.kt</ID>
+    <ID>NewLineAtEndOfFile:RollActivity.kt$com.br.funwithrolleta.RollActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:SafeServiceCall.kt$com.br.network.utils.SafeServiceCall.kt</ID>
+    <ID>NewLineAtEndOfFile:SampleViewModel.kt$com.br.funwithviewmodel.tutorials.google.lifecycleaware.viewmodelscope.SampleViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:ScaffoldTopBarSampleActivity.kt$com.br.scaffoldttopbarsample.ScaffoldTopBarSampleActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:SecureCache.kt$com.br.datastore.tutorials.ai.cachestrategy.SecureCache.kt</ID>
+    <ID>NewLineAtEndOfFile:SecureDataStore.kt$com.br.datastore.tutorials.medium.securedatastore.SecureDataStore.kt</ID>
+    <ID>NewLineAtEndOfFile:SimCardInfo.kt$com.br.funwithsecurity.helpers.simcard.SimCardInfo.kt</ID>
+    <ID>NewLineAtEndOfFile:SimpleClickableTextTest.kt$com.br.justcomposelabs.tutorial.google.unittest.clickablecomponent.SimpleClickableTextTest.kt</ID>
+    <ID>NewLineAtEndOfFile:SimpleTextAndroidViewKtTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextAndroidViewKtTest.kt</ID>
+    <ID>NewLineAtEndOfFile:SimpleTextKtTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextKtTest.kt</ID>
+    <ID>NewLineAtEndOfFile:SimpleTextTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextTest.kt</ID>
+    <ID>NewLineAtEndOfFile:SimpleViewModel.kt$com.br.funwithviewmodel.tutorials.google.viewmodelfactory.SimpleViewModel.kt</ID>
+    <ID>NewLineAtEndOfFile:SocketService.kt$com.br.scarletwebsocket.tutorials.medium.testscarletlib.SocketService.kt</ID>
+    <ID>NewLineAtEndOfFile:StartActivity.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.StartActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:TaskActivity.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.TaskActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:TaskActivity.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.ui.TaskActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:TasksRepository.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.data.TasksRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithgmaps.firstsample.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.funwithrolleta.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Theme.kt$com.br.scaffoldttopbarsample.ui.theme.Theme.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithgmaps.firstsample.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.funwithrolleta.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:Type.kt$com.br.scaffoldttopbarsample.ui.theme.Type.kt</ID>
+    <ID>NewLineAtEndOfFile:UserPreferencesRepository.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.data.UserPreferencesRepository.kt</ID>
+    <ID>NewLineAtEndOfFile:UsingSimpleFragmentActivity.kt$com.br.funwithfragments.tutorials.google.createfragment.UsingSimpleFragmentActivity.kt</ID>
+    <ID>NewLineAtEndOfFile:ViewModelFactoryTest.kt$com.br.datastore.tutorials.utils.viewmodel.ViewModelFactoryTest.kt</ID>
+    <ID>NewLineAtEndOfFile:ViewModelUtils.kt$com.br.datastore.tutorials.utils.viewmodel.ViewModelUtils.kt</ID>
+    <ID>NewLineAtEndOfFile:Websocket.kt$com.br.scarletwebsocket.Websocket.kt</ID>
+    <ID>NewLineAtEndOfFile:build.gradle.kts$.build.gradle.kts</ID>
+    <ID>NoBlankLineBeforeRbrace:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ComposeAndOpenGLES.kt$&lt;no name provided&gt;$ </ID>
+    <ID>NoBlankLineBeforeRbrace:IntegerDataStoreSample.kt$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ScaffoldTopBarSampleActivity.kt$ </ID>
+    <ID>NoBlankLineBeforeRbrace:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$ </ID>
+    <ID>NoBlankLineBeforeRbrace:SimpleTextKtTest.kt$SimpleTextKtTest$ </ID>
+    <ID>NoBlankLineBeforeRbrace:SimpleTextTest.kt$SimpleTextTest$ </ID>
+    <ID>NoBlankLineBeforeRbrace:SimpleViewModel.kt$SimpleViewModel$ </ID>
+    <ID>NoBlankLineBeforeRbrace:TaskActivity.kt$TaskActivity$ </ID>
+    <ID>NoBlankLineBeforeRbrace:TasksViewModel.kt$TasksSharedPreferenceViewModel$ </ID>
+    <ID>NoBlankLineBeforeRbrace:UserPreferencesRepository.kt$UserDataStoreRepository$ </ID>
+    <ID>NoBlankLineBeforeRbrace:UserPreferencesRepository.kt$UserRepository$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ViewModelFactoryTest.kt$ViewModelFactoryTest$ </ID>
+    <ID>NoBlankLineBeforeRbrace:ViewModelUtils.kt$BaseViewModelHandlerException$ </ID>
+    <ID>NoBlankLineBeforeRbrace:build.gradle.kts$ </ID>
+    <ID>NoConsecutiveBlankLines:AnotherMockViewModelTest.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:AnotherMockViewModelTest.kt$AnotherMockViewModelTest$ </ID>
+    <ID>NoConsecutiveBlankLines:ComposeAndOpenGLES.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ComposeInViewActivity.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:FragmentResultListenerActivity.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:GetContent.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:IntegerDataStoreSample.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:Interceptors.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:KtorUtils.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:LifecycleAwareUI.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:LifecycleComposableFun.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:LifecycleScopeSampleFragment.kt$LifecycleScopeSampleFragment$ </ID>
+    <ID>NoConsecutiveBlankLines:MainDispatcherRule.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:MockViewModelTest.kt$MockViewModelTest$ </ID>
+    <ID>NoConsecutiveBlankLines:PagingUserSource.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ProviderEndpointClient.kt$ProviderEndpointClient$ </ID>
+    <ID>NoConsecutiveBlankLines:QuickGuideAnimation.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:SampleViewModel.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ScaffoldTopBarSampleActivity.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ScopedBaseViewModel.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:SecureCache.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:SimCardInfo.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:SimpleClickableTextTest.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:SimpleClickableTextTest.kt$SimpleClickableTextTest$ </ID>
+    <ID>NoConsecutiveBlankLines:SimpleTextTest.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:SimpleTextTest.kt$SimpleTextTest$ </ID>
+    <ID>NoConsecutiveBlankLines:SimpleViewModel.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:TasksViewModel.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:TasksViewModel.kt$TasksSharedPreferenceViewModel$ </ID>
+    <ID>NoConsecutiveBlankLines:UserPreferencesRepository.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:UserPreferencesRepository.kt$UserPreferencesRepository$ </ID>
+    <ID>NoConsecutiveBlankLines:ViewModelUtils.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:build.gradle.kts$ </ID>
+    <ID>NoEmptyClassBody:CustomGLSurfaceView.kt$CustomGLSurfaceView${ }</ID>
+    <ID>NoEmptyClassBody:DiceRollViewModel.kt$DiceRollViewModel${ }</ID>
+    <ID>NoEmptyClassBody:Observability.kt$Observability${ }</ID>
+    <ID>NoEmptyClassBody:SecureCache.kt$SecureCache${ }</ID>
+    <ID>NoEmptyClassBody:SimpleViewModel.kt$SimpleViewModel${ }</ID>
+    <ID>NoEmptyClassBody:SocketService.kt$SocketService${ }</ID>
+    <ID>NoEmptyClassBody:TasksViewModel.kt$TasksDataStoreViewModel${ }</ID>
+    <ID>NoEmptyClassBody:UserPreferencesRepository.kt$UserDataStoreRepository${ }</ID>
+    <ID>NoEmptyClassBody:UserPreferencesRepository.kt$UserRepository${ }</ID>
+    <ID>NoEmptyFirstLineInMethodBlock:ComposeAndOpenGLES.kt$&lt;no name provided&gt;$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:MainHiltCodelabsActivity.kt$ </ID>
+    <ID>NoEmptyFirstLineInMethodBlock:ScaffoldTopBarSampleActivity.kt$ </ID>
+    <ID>NoMultipleSpaces:Cartesian3DView.kt$Cartesian3DView$ </ID>
+    <ID>NoMultipleSpaces:PagingUserSource.kt$PagingUserSource$ </ID>
+    <ID>NoMultipleSpaces:ScopedBaseViewModel.kt$ScopedBaseViewModel$ </ID>
+    <ID>NoMultipleSpaces:ViewModelUtils.kt$ViewModelFactory$ </ID>
+    <ID>NoTrailingSpaces:KtorUtils.kt$ </ID>
+    <ID>NoTrailingSpaces:SimCardInfo.kt$/* fun Context.simSerialNumber(): String? = (getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager)?.simSerialNumber */</ID>
+    <ID>NoTrailingSpaces:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// Although the current signature is `String` (non-nullable), if it were `String?`, test how a null value is handled. </ID>
+    <ID>NoTrailingSpaces:SimpleTextAndroidViewKtTest.kt$SimpleTextAndroidViewKtTest$// If the composable is part of a screen that undergoes configuration changes (e.g., screen rotation), </ID>
+    <ID>NoUnusedImports:AnimatedVisibility.kt$com.br.funwithanimationcompose.tutorials.google.quickguide.AnimatedVisibility.kt</ID>
+    <ID>NoUnusedImports:AnotherMockViewModelVersionIITest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.AnotherMockViewModelVersionIITest.kt</ID>
+    <ID>NoUnusedImports:ComposeInViewActivity.kt$com.br.canvasviews.tutorial.google.usingcomposeinview.ComposeInViewActivity.kt</ID>
+    <ID>NoUnusedImports:GetContent.kt$com.br.funwithviewmodel.tutorials.google.compose.libraries.activityresult.GetContent.kt</ID>
+    <ID>NoUnusedImports:Interceptors.kt$com.br.network.utils.interceptor.Interceptors.kt</ID>
+    <ID>NoUnusedImports:KtorUtils.kt$com.br.network.utils.ktor.KtorUtils.kt</ID>
+    <ID>NoUnusedImports:LogApplication.kt$com.br.funwithhilt.codelabs.usinghilt.LogApplication.kt</ID>
+    <ID>NoUnusedImports:MockViewModelTest.kt$com.br.justcomposelabs.tutorial.google.coroutines.testcoroutines.MockViewModelTest.kt</ID>
+    <ID>NoUnusedImports:ScaffoldTopBarSampleActivity.kt$com.br.scaffoldttopbarsample.ScaffoldTopBarSampleActivity.kt</ID>
+    <ID>NoUnusedImports:SimpleClickableTextTest.kt$com.br.justcomposelabs.tutorial.google.unittest.clickablecomponent.SimpleClickableTextTest.kt</ID>
+    <ID>NoUnusedImports:SimpleTextAndroidViewKtTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextAndroidViewKtTest.kt</ID>
+    <ID>NoUnusedImports:SimpleTextKtTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextKtTest.kt</ID>
+    <ID>NoUnusedImports:SimpleTextTest.kt$com.br.justcomposelabs.tutorial.google.unittest.simpletexttest.SimpleTextTest.kt</ID>
+    <ID>NoUnusedImports:TasksViewModel.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.ui.TasksViewModel.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.datastore.tutorials.google.codelabs.compose.workingwithpreferencedatastire.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithanimationcompose.codelabs.animatingelements.finished.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithcameraxcompose.google.clonecameragoogle.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithcameraxcompose.medium.gettingstartcamerax.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithgmaps.firstsample.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithhilt.codelabs.usinghilt.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.funwithrolleta.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.paginglibrarysamples.codelabs.pagingbasics.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:Theme.kt$com.br.scaffoldttopbarsample.ui.theme.Theme.kt</ID>
+    <ID>NoUnusedImports:UserPreferencesRepository.kt$com.br.datastore.tutorials.google.codelabs.preferencedatstore.data.UserPreferencesRepository.kt</ID>
     <ID>NoWildcardImports:Cartesian3DCompose.kt$import androidx.compose.runtime.*</ID>
     <ID>NoWildcardImports:Cartesian3DComposeSmooth.kt$import androidx.compose.runtime.*</ID>
     <ID>NoWildcardImports:Cartesian3DView.kt$import androidx.compose.runtime.*</ID>
@@ -915,6 +1555,8 @@
     <ID>NoWildcardImports:ElasticDraggableTriangleView.kt$import kotlin.math.*</ID>
     <ID>NoWildcardImports:ElasticDraggableTriangleViewII.kt$import kotlin.math.*</ID>
     <ID>NoWildcardImports:ElasticDraggableTriangleViewIII.kt$import kotlin.math.*</ID>
+    <ID>NoWildcardImports:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
+    <ID>NoWildcardImports:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
     <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.animation.core.*</ID>
     <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.foundation.layout.*</ID>
     <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.runtime.*</ID>
@@ -924,7 +1566,10 @@
     <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.material3.*</ID>
     <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.runtime.*</ID>
     <ID>NoWildcardImports:ShowLoadCustomViewActivity.kt$import androidx.appcompat.app.AppCompatDelegate.*</ID>
+    <ID>NoWildcardImports:SimpleClickableTextTest.kt$import org.junit.jupiter.api.Assertions.*</ID>
     <ID>NoWildcardImports:SpringAnimationDraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>ParameterListWrapping:Cartesian3DView.kt$Cartesian3DView$( context: Context, attrs: AttributeSet? = null )</ID>
+    <ID>ParameterListWrapping:LifecycleScopeSampleFragment.kt$LifecycleScopeSampleFragment$( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? )</ID>
     <ID>PrintStackTrace:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$e</ID>
     <ID>ReturnCount:Comment.kt$Comment$fun findComment(commentId: Int): Comment?</ID>
     <ID>ReturnCount:DraggableTriangleView.kt$DraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
@@ -932,9 +1577,26 @@
     <ID>ReturnCount:ElasticDraggableTriangleViewII.kt$ElasticDraggableTriangleViewII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
     <ID>ReturnCount:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
     <ID>ReturnCount:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
+    <ID>SpacingAroundColon:DiceRollViewModel.kt$DiceRollViewModel$:</ID>
+    <ID>SpacingAroundColon:MainDispatcherRule.kt$MainDispatcherRule$:</ID>
+    <ID>SpacingAroundColon:ScopedBaseViewModel.kt$ScopedBaseViewModel$:</ID>
+    <ID>SpacingAroundColon:ScopedBaseViewModel.kt$SimpleScopedViewModel$:</ID>
+    <ID>SpacingAroundColon:ScopedBaseViewModel.kt$SimpleViewModel$:</ID>
+    <ID>SpacingAroundColon:SimpleViewModel.kt$SimpleViewModel$:</ID>
+    <ID>SpacingAroundColon:TasksViewModel.kt$TasksDataStoreViewModelFactory$:</ID>
+    <ID>SpacingAroundComma:AnimatedVisibility.kt$,</ID>
+    <ID>SpacingAroundParens:QuickGuideAnimation.kt$(</ID>
+    <ID>SpacingAroundParens:UserPreferencesRepository.kt$UserDataStoreRepository$(</ID>
+    <ID>SpacingAroundParens:build.gradle.kts$)</ID>
+    <ID>SpacingBetweenDeclarationsWithComments:UserPreferencesRepository.kt$UserPreferencesRepository$/* Classe que mantem as preferencias do usuário. */</ID>
     <ID>SpreadOperator:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$(*dependency)</ID>
+    <ID>SpreadOperator:ViewModelUtils.kt$ViewModelFactory$(*parameterTypes)</ID>
+    <ID>SpreadOperator:ViewModelUtils.kt$ViewModelFactory$(*parameterValues)</ID>
     <ID>SwallowedException:DessertCodelabsActivity.kt$e: ActivityNotFoundException</ID>
+    <ID>SwallowedException:KtorUtils.kt$e: IOException</ID>
+    <ID>SwallowedException:KtorUtils.kt$e: SerializationException</ID>
     <ID>TooGenericExceptionCaught:ForceCrash.kt$e: Exception</ID>
+    <ID>TooGenericExceptionCaught:SafeServiceCall.kt$SafeServiceCall$e: Exception</ID>
     <ID>TopLevelPropertyNaming:AnimatedCircle.kt$private const val DividerLengthInDegrees = 1.8f</ID>
     <ID>TopLevelPropertyNaming:RallyTab.kt$private const val InactiveTabOpacity = 0.60f</ID>
     <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeInAnimationDelay = 100</ID>
@@ -945,6 +1607,8 @@
     <ID>UnusedParameter:CardFlipActivity.kt$modifier: Modifier = Modifier</ID>
     <ID>UnusedParameter:Cartesian3DComposeSmooth.kt$screenHeight: Float</ID>
     <ID>UnusedParameter:Cartesian3DComposeSmooth.kt$screenWidth: Float</ID>
+    <ID>UnusedParameter:Cartesian3DView.kt$Cartesian3DView$screenHeight: Float</ID>
+    <ID>UnusedParameter:Cartesian3DView.kt$Cartesian3DView$screenWidth: Float</ID>
     <ID>UnusedParameter:ChatBubble.kt$message: Message = Message( id = "1", content = "Hello World", timestamp = "${System.currentTimeMillis()}ms" )</ID>
     <ID>UnusedParameter:Composables.kt$onClick: () -&gt; Unit = {}</ID>
     <ID>UnusedParameter:Composables.kt$second: Color</ID>
@@ -963,6 +1627,7 @@
     <ID>UnusedParameter:MediumTopAppBar.kt$modifier: Modifier = Modifier</ID>
     <ID>UnusedParameter:RouteNavigation.kt$modifier: Modifier = Modifier</ID>
     <ID>UnusedParameter:RouteNavigation.kt$navController: NavHostController = rememberNavController()</ID>
+    <ID>UnusedParameter:ScaffoldTopBarSampleActivity.kt$modifier: Modifier = Modifier</ID>
     <ID>UnusedParameter:ShowcaseCard.kt$modifier: Modifier = Modifier</ID>
     <ID>UnusedParameter:StackComponent.kt$flipcard: Card?</ID>
     <ID>UnusedParameter:StackComponent.kt$leftStack: @Composable () -&gt; Unit</ID>
@@ -999,6 +1664,7 @@
     <ID>UnusedPrivateProperty:GithubRepository.kt$// GitHub page API is 1 based: https://developer.github.com/v3/#pagination private const val GITHUB_STARTING_PAGE_INDEX = 1</ID>
     <ID>UnusedPrivateProperty:IntegrateWithCompose.kt$val currentLifecycleState by stateFlow.collectAsState()</ID>
     <ID>UnusedPrivateProperty:LazyRowCardsMaxHeight.kt$val density = LocalDensity.current</ID>
+    <ID>UnusedPrivateProperty:LifecycleAwareUI.kt$val time = remember { mutableStateOf(0) }</ID>
     <ID>UnusedPrivateProperty:MockPerformanceData.kt$NoteRow$note: Any</ID>
     <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val callback: (Location) -&gt; Unit</ID>
     <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val context: Context</ID>
@@ -1007,13 +1673,21 @@
     <ID>UnusedPrivateProperty:SideEffectsActivity.kt$SideEffectsActivity$val paddingModifier = Modifier.padding(innerPadding)</ID>
     <ID>UnusedPrivateProperty:SideEffectsActivity.kt$val alpha = remember { Animatable(1f) }</ID>
     <ID>UnusedPrivateProperty:SideEffectsActivity.kt$var pulseRateMs by remember { mutableStateOf(500L) }</ID>
+    <ID>UnusedPrivateProperty:SimCardInfo.kt$SubscriptionInfoHelper$val subscriptionManager = context .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager?</ID>
     <ID>UnusedPrivateProperty:SnackBarComponent.kt$val snackBarStateHost = remember { SnackbarHostState() }</ID>
     <ID>UnusedPrivateProperty:StoreByMapServer.kt$val selectedCity = rememberSaveable(stateSaver = CitySaver) { mutableStateOf(city) }</ID>
     <ID>UnusedPrivateProperty:StoreByMapServer.kt$val selectedCityII = rememberSaveable(stateSaver = CityListSaver) { mutableStateOf(city) }</ID>
     <ID>UnusedPrivateProperty:StoreParcelize.kt$val selectedCity = rememberSaveable { mutableStateOf(city) }</ID>
+    <ID>UnusedPrivateProperty:TasksViewModel.kt$TasksSharedPreferenceViewModel$private val taskUiModelFlow = combine( repository.tasks, showCompletedFlow, sorOrderStateFlow ) { tasks: List&lt;Task&gt;, showCompleted: Boolean, sortOrder: SortOrder -&gt; }</ID>
     <ID>UnusedPrivateProperty:TextCounterAnimationActivity.kt$TextCounterAnimationActivity$private val timeInterpolation = TimeInterpolator { input -&gt; /* https://developer.android.com/reference/android/animation/TimeInterpolator */ 0.1f * input }</ID>
+    <ID>UnusedPrivateProperty:UserPreferencesRepository.kt$UserDataStoreRepository$private val dataStore: DataStore&lt;Preferences&gt;</ID>
     <ID>UseCheckOrError:ForceCrash.kt$throw IllegalStateException("No Fatal Exception Crash")</ID>
+    <ID>UseRequire:TasksViewModel.kt$TasksDataStoreViewModelFactory$throw IllegalArgumentException("Unknown ViewModel class")</ID>
+    <ID>UseRequire:TasksViewModel.kt$TasksSharedPreferenceViewModelFactory$throw IllegalArgumentException("Unknown ViewModel class")</ID>
     <ID>UtilityClassWithPublicConstructor:GithubRepository.kt$GithubRepository</ID>
+    <ID>VariableNaming:build.gradle.kts$val core_version = "1.17.0"</ID>
+    <ID>VariableNaming:build.gradle.kts$val fragment_version = "1.8.9"</ID>
+    <ID>VariableNaming:build.gradle.kts$val paging_version = "3.3.6"</ID>
     <ID>WildcardImport:Cartesian3DCompose.kt$import androidx.compose.runtime.*</ID>
     <ID>WildcardImport:Cartesian3DComposeSmooth.kt$import androidx.compose.runtime.*</ID>
     <ID>WildcardImport:Cartesian3DView.kt$import androidx.compose.runtime.*</ID>
@@ -1024,6 +1698,8 @@
     <ID>WildcardImport:ElasticDraggableTriangleView.kt$import kotlin.math.*</ID>
     <ID>WildcardImport:ElasticDraggableTriangleViewII.kt$import kotlin.math.*</ID>
     <ID>WildcardImport:ElasticDraggableTriangleViewIII.kt$import kotlin.math.*</ID>
+    <ID>WildcardImport:ExampleInstrumentedTest.kt$import org.junit.Assert.*</ID>
+    <ID>WildcardImport:ExampleUnitTest.kt$import org.junit.Assert.*</ID>
     <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.animation.core.*</ID>
     <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.foundation.layout.*</ID>
     <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.runtime.*</ID>
@@ -1033,6 +1709,9 @@
     <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.material3.*</ID>
     <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.runtime.*</ID>
     <ID>WildcardImport:ShowLoadCustomViewActivity.kt$import androidx.appcompat.app.AppCompatDelegate.*</ID>
+    <ID>WildcardImport:SimpleClickableTextTest.kt$import org.junit.jupiter.api.Assertions.*</ID>
     <ID>WildcardImport:SpringAnimationDraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>Wrapping:AnimatedVisibility.kt$(</ID>
+    <ID>Wrapping:AnimatedVisibility.kt$( modifier = Modifier .align(Alignment.BottomCenter) .padding(10.dp) .fillMaxWidth() , onClick = { visible = !visible })</ID>
   </CurrentIssues>
 </SmellBaseline>

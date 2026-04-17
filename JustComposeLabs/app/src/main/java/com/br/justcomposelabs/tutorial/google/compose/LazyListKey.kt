@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -29,6 +30,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.RectangleShape
@@ -38,6 +40,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.distinctUntilChanged
+import kotlinx.coroutines.flow.map
+import timber.log.Timber
 
 @Preview(showBackground = true)
 @Composable
@@ -91,7 +96,26 @@ fun ElementWithKey(
 ) {
     var loading by rememberSaveable { mutableStateOf(false) }
 
+
+    /*
+        Caso de uso de snapshotFlow.
+        https://share.google/aimode/LPUJIdnBEmGYJZZRX
+
+        Tracking de scroll em uma LazyColumn usando snapshotFlow.
+     */
+
+    val scrollTrackingState = rememberLazyListState()
+
     LaunchedEffect(element) {
+        snapshotFlow { scrollTrackingState.firstVisibleItemIndex }
+            .map { it > 0 }
+            .distinctUntilChanged()
+            .collect { isPastFirst ->
+                if (isPastFirst) {
+                    // poderíamos trocar por uma ferramenta de analytics, por exemplo
+                    Timber.tag("LazyListKey").d("Element $element is past the first item")
+                }
+            }
         loading = true
         // Simulate a loading delay
         delay(1000)
