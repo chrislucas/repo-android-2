@@ -10,13 +10,11 @@ import androidx.lifecycle.viewmodel.MutableCreationExtras
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.br.justcomposelabs.tutorial.medium.sideeffects.deepdivesnapshotflow.DistinctIntUntilChangeContent
 import com.br.justcomposelabs.tutorial.medium.sideeffects.deepdivesnapshotflow.DistinctMessage
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.debounce
-import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 
@@ -64,17 +62,16 @@ class FlowMessageDebounceViewModel(limit: Long) : ViewModel() {
     }
 }
 
-
 @Composable
 fun DebounceScreen(
     viewModel: FlowMessageDebounceViewModel = viewModel(
         factory = FlowMessageDebounceViewModel.FACTORY,
-        extras = MutableCreationExtras().apply { this[FlowMessageDebounceViewModel.KEY_DEBOUNCE] = 1500L })
+        extras = MutableCreationExtras().apply { this[FlowMessageDebounceViewModel.KEY_DEBOUNCE] = 1500L }
+    )
 ) {
     val distinctIntUntilChange by viewModel.distinctIntUntilChange.collectAsState(initial = "*")
     DebounceContent(distinctIntUntilChange = distinctIntUntilChange)
 }
-
 
 @Composable
 fun DebounceContent(

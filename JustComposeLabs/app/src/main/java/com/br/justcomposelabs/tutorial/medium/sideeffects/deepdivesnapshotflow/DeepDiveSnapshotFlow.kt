@@ -10,10 +10,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.distinctUntilChanged
@@ -39,7 +39,6 @@ import timber.log.Timber
          - Scroll Tracking, Text Input changes or gesture detection
  */
 
-
 class FlowIntViewModel : ViewModel() {
 
     /*
@@ -54,7 +53,6 @@ class FlowIntViewModel : ViewModel() {
         }
     }.distinctUntilChanged()
 }
-
 
 @Composable
 fun DistinctIntUntilChangeScreen(

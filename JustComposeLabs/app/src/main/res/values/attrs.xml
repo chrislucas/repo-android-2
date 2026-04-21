@@ -3,6 +3,42 @@
     <declare-styleable name="LoadCustomViewOverlay">
         <attr name="dismissible" format="boolean" />
         <attr name="closeable" format="boolean" />
+    </declare-styleable>
 
+    <!--
+        reference: References another resource ID (e.g., @drawable/my_image).
+        color: Hexadecimal color values or color references.
+        boolean: true or false.
+        dimension: Size values like 16dp or 12sp.
+        string: Raw text or string resource references.
+        integer / float: Numerical values.
+        fraction: Percentages (e.g., 50%).
+        enum: A list of predefined constant values.
+        flag: Similar to enum, but multiple values can be combined using the pipe (|) symbo
+    -->
+    <declare-styleable name="LineView">
+        <attr name="startX" format="float" />
+        <attr name="startY" format="float" />
+        <attr name="endX" format="float" />
+        <attr name="endY" format="float" />
+        <attr name="lineColor" format="color" />
+        <attr name="scaleStartX" format="float" />
+        <attr name="scaleStartY" format="float" />
+        <attr name="scaleEndX" format="float" />
+        <attr name="scaleEndY" format="float" />
+        <attr name="scaleStrokeWidth" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="LineSegmentPathView">
+        <attr name="startX"/>
+        <attr name="startY"/>
+        <attr name="endX"/>
+        <attr name="endY"/>
+        <attr name="lineColor"/>
+        <attr name="scaleStartX"/>
+        <attr name="scaleStartY"/>
+        <attr name="scaleEndX"/>
+        <attr name="scaleEndY"/>
+        <attr name="scaleStrokeWidth"/>
     </declare-styleable>
 </resources>

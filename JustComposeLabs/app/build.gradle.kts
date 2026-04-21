@@ -390,9 +390,9 @@ detekt {
     autoCorrect = true
     parallel = true
     source.setFrom("src/main/java", "src/main/kotlin")
-    config.setFrom(file("${rootProject.layout.projectDirectory}/config/detekt/detekt.yml"))
+    config.setFrom(file("$rootDir/config/detekt/detekt.yml"))
     buildUponDefaultConfig = true
-    baseline = file("${rootProject.layout.projectDirectory}/config/detekt/baseline.xml")
+    baseline = file("$rootDir/config/detekt/baseline.xml")
 }
 
 // Kotlin DSL
@@ -406,6 +406,8 @@ tasks.withType<Detekt>().configureEach {
         //checkstyle.required.set(true)
         //checkstyle.outputLocation.set(file("build/reports/detekt.xml"))
         // Enable/Disable HTML report (default: true)
+
+
         html.required.set(true)
         html.outputLocation.set(file("build/reports/detekt.html"))
         // Enable/Disable SARIF report (default: false)

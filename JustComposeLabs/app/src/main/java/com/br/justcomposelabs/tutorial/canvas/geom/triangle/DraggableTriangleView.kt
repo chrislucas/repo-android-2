@@ -28,10 +28,15 @@ class DraggableTriangleView @JvmOverloads constructor(
         color = Color.RED
         style = Paint.Style.FILL
         isAntiAlias = true
+        textSize = 30f
     }
 
     // Vertices of the triangle
-    private val vertices = arrayOf(PointF(300f, 300f), PointF(600f, 300f), PointF(450f, 600f))
+    private val vertices = arrayOf(
+        PointF(300f, 300f),
+        PointF(600f, 300f),
+        PointF(450f, 600f)
+    )
     private var selectedVertexIndex: Int = -1
     private val touchTolerance = 50f
 
@@ -54,7 +59,9 @@ class DraggableTriangleView @JvmOverloads constructor(
     }
 
     override fun performClick(): Boolean {
-        return super.performClick()
+        super.performClick()
+        // Handle click actions if needed
+        return true
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -68,6 +75,7 @@ class DraggableTriangleView @JvmOverloads constructor(
                     }
                 }
             }
+
             MotionEvent.ACTION_MOVE -> {
                 if (selectedVertexIndex != -1) {
                     // Move the selected vertex
@@ -77,6 +85,7 @@ class DraggableTriangleView @JvmOverloads constructor(
                     return true
                 }
             }
+
             MotionEvent.ACTION_UP -> {
                 /*
                     DraggableTriangleView#onTouchEvent should call DraggableTriangleView#performClick when a click is detected Toggle info (⌘F1)

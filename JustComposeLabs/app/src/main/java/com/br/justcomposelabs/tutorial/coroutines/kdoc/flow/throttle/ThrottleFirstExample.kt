@@ -6,7 +6,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 
-class ThrottleFirstViewModel: ViewModel() {
+class ThrottleFirstViewModel : ViewModel() {
 
     /*
         https://share.google/aimode/dWIksMfPyZU6UXVCO
@@ -20,5 +20,4 @@ class ThrottleFirstViewModel: ViewModel() {
             emit(message)
         }
     }.throttleFirst(1000L)
-
 }

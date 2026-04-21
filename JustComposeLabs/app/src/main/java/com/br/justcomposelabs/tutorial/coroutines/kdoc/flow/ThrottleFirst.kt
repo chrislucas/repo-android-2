@@ -3,7 +3,6 @@ package com.br.justcomposelabs.tutorial.coroutines.kdoc.flow
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-
 /*
     https://share.google/aimode/dWIksMfPyZU6UXVCO
 

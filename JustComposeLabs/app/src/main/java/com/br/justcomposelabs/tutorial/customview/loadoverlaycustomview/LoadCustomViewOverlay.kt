@@ -41,9 +41,9 @@ class LoadCustomViewOverlay @JvmOverloads constructor(
             true
         )
 
-        textLoading = rootView.findViewById<TextView>(R.id.text_centered)
-        progressBar = rootView.findViewById<ProgressBar>(R.id.progress_bar)
-        viewOverlay = rootView.findViewById<View>(R.id.overlay_view)
+        textLoading = rootView.findViewById(R.id.text_centered)
+        progressBar = rootView.findViewById(R.id.progress_bar)
+        viewOverlay = rootView.findViewById(R.id.overlay_view)
     }
 
     fun show() {

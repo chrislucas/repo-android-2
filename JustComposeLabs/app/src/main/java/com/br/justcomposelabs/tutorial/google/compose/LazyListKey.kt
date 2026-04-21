@@ -96,7 +96,6 @@ fun ElementWithKey(
 ) {
     var loading by rememberSaveable { mutableStateOf(false) }
 
-
     /*
         Caso de uso de snapshotFlow.
         https://share.google/aimode/LPUJIdnBEmGYJZZRX
