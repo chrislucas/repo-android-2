@@ -29,6 +29,15 @@
         <attr name="scaleStrokeWidth" format="float" />
     </declare-styleable>
 
+    <!--
+        https://share.google/aimode/XJ0GwdxmhNiTatxDJ
+        1. Reuso de Atributos (O "Falso" Herdar)
+
+            Você pode reutilizar atributos já definidos globalmente ou em outros styleables sem precisar
+            redefinir seu formato. Isso é útil quando sua classe filha precisa dos mesmos
+            atributos da classe pai.
+
+    -->
     <declare-styleable name="LineSegmentPathView">
         <attr name="startX"/>
         <attr name="startY"/>
