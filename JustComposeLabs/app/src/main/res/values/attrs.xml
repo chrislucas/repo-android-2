@@ -147,4 +147,12 @@
         <attr name="joinStyle" />
     </declare-styleable>
 
+
+    <declare-styleable name="DashedTriangleView">
+        <attr name="lineColor" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="strokeWidthPaint" />
+        <attr name="joinStyle" />
+    </declare-styleable>
+
 </resources>

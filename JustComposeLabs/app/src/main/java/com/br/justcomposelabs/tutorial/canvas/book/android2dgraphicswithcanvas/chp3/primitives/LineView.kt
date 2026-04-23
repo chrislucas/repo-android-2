@@ -69,13 +69,17 @@ class LineView @JvmOverloads constructor(
         val (startX, startY) = start
         val (endX, endY) = end
         canvas.drawLine(startX, startY, endX, endY, linePaint)
-
         drawTextFromStartToEnd(startX, startY, endX, endY, canvas)
-
         canvas.drawTextOnScreenMiddle("($width X $height)", textDimensionPaint)
     }
 
-    private fun drawTextFromStartToEnd(startX: Float, startY: Float, endX: Float, endY: Float, canvas: Canvas) {
+    private fun drawTextFromStartToEnd(
+        startX: Float,
+        startY: Float,
+        endX: Float,
+        endY: Float,
+        canvas: Canvas
+    ) {
         canvas.drawText(
             "Start: (${startX.toInt()}, ${startY.toInt()})",
             startX + 50f,
