@@ -13,24 +13,29 @@ import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.c
 @Preview(showBackground = true)
 @Composable
 fun DrawTrianglePathView() {
-    AndroidView(factory = { ctx ->
-        TrianglePathJoinView(ctx)
-    }, update = { view -> view.invalidate() }, modifier = Modifier
-        .fillMaxSize()
-        .systemBarsPadding()
-        .navigationBarsPadding()
+    AndroidView(
+        factory = { ctx ->
+            TrianglePathJoinView(ctx)
+        },
+        update = { view -> view.invalidate() },
+        modifier = Modifier
+            .fillMaxSize()
+            .systemBarsPadding()
+            .navigationBarsPadding()
     )
 }
-
 
 @Preview(showBackground = true)
 @Composable
 fun DrawTriangleNonClosedPathView() {
-    AndroidView(factory = { ctx ->
-        TriangleNonClosedPathJoinView(ctx)
-    }, update = { view -> view.invalidate() }, modifier = Modifier
-        .fillMaxSize()
-        .systemBarsPadding()
-        .navigationBarsPadding()
+    AndroidView(
+        factory = { ctx ->
+            TriangleNonClosedPathJoinView(ctx)
+        },
+        update = { view -> view.invalidate() },
+        modifier = Modifier
+            .fillMaxSize()
+            .systemBarsPadding()
+            .navigationBarsPadding()
     )
 }

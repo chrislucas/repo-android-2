@@ -9,11 +9,8 @@ class HexagonView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-): View(ctx, attrs, defStyleAttr) {
-
+) : View(ctx, attrs, defStyleAttr) {
 
     private val drawHexagonView = Paint().apply {
-
     }
-
 }

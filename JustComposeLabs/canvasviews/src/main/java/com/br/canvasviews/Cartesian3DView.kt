@@ -6,10 +6,13 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.PointF
 import android.util.AttributeSet
+import android.util.Log
+import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
 import kotlin.math.cos
 import kotlin.math.sin
+
 
 class Cartesian3DView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null
@@ -34,15 +37,27 @@ class Cartesian3DView @JvmOverloads constructor(
     init {
         isClickable = true
 
-        val scale = resources.displayMetrics.scaledDensity
-        // Converter 23sp para pixels
-        textSizePx = 15f * scale
+        /*
+            Deprecated
+            val scale = resources.displayMetrics.scaledDensity
+            // Converter 23sp para pixels
+            textSizePx = 15f * scale
+        */
+        textSizePx = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_SP, 20f, resources.displayMetrics
+        )
 
         // Configurar o Paint para o texto
         textPaint.apply {
             textSize = textSizePx
             isAntiAlias = true
         }
+    }
+
+    override fun performClick(): Boolean {
+        super.performClick()
+        Log.d("CARTESIAN_#D_VIEW", "click")
+        return true
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {
@@ -61,6 +76,10 @@ class Cartesian3DView @JvmOverloads constructor(
                 lastTouchX = event.x
                 lastTouchY = event.y
                 invalidate()
+            }
+
+            MotionEvent.ACTION_UP -> {
+                performClick()
             }
         }
         return true
@@ -112,12 +131,14 @@ class Cartesian3DView @JvmOverloads constructor(
                     // no final
                     canvas.drawText("X", end2D.x + labelOffset, end2D.y, textPaint)
                 }
+
                 2 -> { // eixo Y
                     // no início
                     canvas.drawText("Y", start2D.x, start2D.y - labelOffset, textPaint)
                     // no final
                     canvas.drawText("Y", end2D.x, end2D.y + labelOffset, textPaint)
                 }
+
                 4 -> { // eixo Z
                     // no início
                     canvas.drawText("Z", start2D.x, start2D.y + labelOffset, textPaint)

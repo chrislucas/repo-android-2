@@ -17,7 +17,6 @@ class TriangleFilledPathView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : View(ctx, set, defStyle) {
 
-
     private val path: Path = Path()
 
     private val paintFill = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -26,7 +25,7 @@ class TriangleFilledPathView @JvmOverloads constructor(
 
     private var join: Paint.Join by Delegates.notNull()
 
-    private var strokeWidthPaint: Float by Delegates.notNull()
+    private var strokeWidthValue: Float by Delegates.notNull()
 
     init {
         context.withStyledAttributes(set, R.styleable.TriangleFilledPathView) {
@@ -37,13 +36,12 @@ class TriangleFilledPathView @JvmOverloads constructor(
 
             join = Paint.Join.entries[joinValue]
 
-            strokeWidthPaint = getFloat(
-                R.styleable.TriangleFilledPathView_strokeWidth,
+            strokeWidthValue = getFloat(
+                R.styleable.TriangleFilledPathView_triangleStrokeWidth,
                 12.0f
             )
         }
     }
-
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -57,7 +55,7 @@ class TriangleFilledPathView @JvmOverloads constructor(
             style = Paint.Style.STROKE
             color = Color.rgb(0, 0, 0)
             strokeJoin = join
-            strokeWidth = strokeWidthPaint
+            strokeWidth = strokeWidthValue
             canvas.drawPath(path, this)
         }
     }

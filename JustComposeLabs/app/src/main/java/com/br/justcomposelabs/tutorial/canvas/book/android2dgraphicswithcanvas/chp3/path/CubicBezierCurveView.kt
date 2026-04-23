@@ -8,7 +8,6 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 
-
 /*
     https://share.google/aimode/XcJPiJkj55XKPuEQs
  */
@@ -17,7 +16,6 @@ class CubicBezierCurveView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyle: Int = 0
 ) : View(ctx, attrs, defStyle) {
-
 
     private val path = Path()
 
@@ -30,17 +28,18 @@ class CubicBezierCurveView @JvmOverloads constructor(
         path.run {
             moveTo(100.0f, 100.0f)
             path.cubicTo(
-                200f, 100f,         // x1, y1: Primeiro ponto de controle
-                400f, 900f,         // x2, y2: Segundo ponto de controle
-                600f, 500f          // x3, y3: Ponto final
+                200f,
+                100f, // x1, y1: Primeiro ponto de controle
+                400f,
+                900f, // x2, y2: Segundo ponto de controle
+                600f,
+                500f // x3, y3: Ponto final
             )
             canvas.drawPath(path, paintPath)
         }
     }
 
-
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
     }
-
 }

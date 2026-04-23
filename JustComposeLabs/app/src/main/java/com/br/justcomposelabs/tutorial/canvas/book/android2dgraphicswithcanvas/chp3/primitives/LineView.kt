@@ -8,8 +8,8 @@ import android.graphics.Paint.Cap
 import android.graphics.Typeface
 import android.util.AttributeSet
 import android.view.View
-import com.br.justcomposelabs.R
 import androidx.core.content.withStyledAttributes
+import com.br.justcomposelabs.R
 import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.drawTextOnScreenMiddle
 import kotlin.math.min
 import kotlin.properties.Delegates
@@ -33,7 +33,6 @@ class LineView @JvmOverloads constructor(
         isAntiAlias = true
     }
 
-
     private val textDimensionPaint = Paint().apply {
         color = Color.BLACK
         textSize = 50f
@@ -49,7 +48,6 @@ class LineView @JvmOverloads constructor(
     private var scaleStartY: Float by Delegates.notNull()
     private var scaleEndX: Float by Delegates.notNull()
     private var scaleEndY: Float by Delegates.notNull()
-
 
     init {
         context.withStyledAttributes(attrs, R.styleable.LineView) {
@@ -74,9 +72,8 @@ class LineView @JvmOverloads constructor(
 
         drawTextFromStartToEnd(startX, startY, endX, endY, canvas)
 
-        canvas.drawTextOnScreenMiddle( "(${width} X ${height})", textDimensionPaint)
+        canvas.drawTextOnScreenMiddle("($width X $height)", textDimensionPaint)
     }
-
 
     private fun drawTextFromStartToEnd(startX: Float, startY: Float, endX: Float, endY: Float, canvas: Canvas) {
         canvas.drawText(
@@ -94,11 +91,10 @@ class LineView @JvmOverloads constructor(
         )
     }
 
-
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         // Update the end point to be the bottom right corner of the view
-        //end = w.toFloat() to h.toFloat()
+        // end = w.toFloat() to h.toFloat()
         linePaint.strokeWidth = min(w, h) * scaleStrokeWidth // Set stroke width to 1% of the smaller dimension
         start = w * scaleStartX to h * scaleStartY
         end = w * scaleEndX to h * scaleEndY

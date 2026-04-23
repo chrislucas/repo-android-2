@@ -8,11 +8,10 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.withStyledAttributes
+import androidx.core.graphics.toColorInt
 import com.br.justcomposelabs.R
 import kotlin.math.min
 import kotlin.properties.Delegates
-import androidx.core.graphics.toColorInt
-
 
 /*
     Path: Classe que represent segmentos de linha, curvas ou outros objetos geométricos primitivos.
@@ -25,7 +24,6 @@ class LineSegmentPathView @JvmOverloads constructor(
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : View(ctx, attrs, defStyleAttr) {
-
 
     private val linePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         color = "#FF003432".toColorInt()
@@ -43,7 +41,6 @@ class LineSegmentPathView @JvmOverloads constructor(
 
     private var start: Pair<Float, Float> by Delegates.notNull()
     private var end: Pair<Float, Float> by Delegates.notNull()
-
 
     init {
         context.withStyledAttributes(attrs, R.styleable.LineSegmentPathView) {

@@ -9,14 +9,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp3.path.CubicBezierCurveView
 
-
 @Preview(showBackground = true)
 @Composable
 fun DrawCubeBezierCurveComponent() {
     AndroidView(
         factory = { ctx ->
-        CubicBezierCurveView(ctx)
-    }, update = { it.invalidate() },
+            CubicBezierCurveView(ctx)
+        },
+        update = { it.invalidate() },
         modifier = Modifier
             .fillMaxSize()
             .navigationBarsPadding()

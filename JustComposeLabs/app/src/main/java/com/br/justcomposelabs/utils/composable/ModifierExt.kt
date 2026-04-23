@@ -10,13 +10,8 @@ import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
-
-@Target(AnnotationTarget.FUNCTION)
-@Retention(AnnotationRetention.SOURCE)
-annotation class FillMaxSizePad
-
 @Composable
-fun Modifier.maxSizePadding() = this.fillMaxSize()
+fun Modifier.fillMaxSizePadding() = this.fillMaxSize()
     .systemBarsPadding()
     .navigationBarsPadding()
     .padding(WindowInsets.safeDrawing.asPaddingValues())

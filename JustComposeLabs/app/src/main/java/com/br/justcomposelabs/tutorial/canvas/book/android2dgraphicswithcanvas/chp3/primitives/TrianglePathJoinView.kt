@@ -30,7 +30,6 @@ import kotlin.properties.Delegates
  * - Um arco preenchido que conecta 2 linhas, criando uma curva arredondada
  */
 
-
 class TrianglePathJoinView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,

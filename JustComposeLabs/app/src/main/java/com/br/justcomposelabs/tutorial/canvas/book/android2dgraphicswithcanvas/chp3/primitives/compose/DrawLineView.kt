@@ -9,16 +9,17 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
 import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp3.primitives.LineView
 
-
 @Preview(showSystemUi = true, name = "DrawLineView")
 @Composable
 fun DrawLineView() {
     AndroidView(
         factory = { context ->
             LineView(context)
-        }, update = { view ->
+        },
+        update = { view ->
             view.invalidate()
-        }, modifier = Modifier
+        },
+        modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
             .navigationBarsPadding()

@@ -11,22 +11,18 @@ class RationalQuadraticCurveView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0
-): View(ctx, attrs, defStyle) {
-
+) : View(ctx, attrs, defStyle) {
 
     private val path = Path()
 
     private val paintPath = Paint(Paint.ANTI_ALIAS_FLAG).apply {}
 
     init {
-
     }
-
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
     }
-
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)

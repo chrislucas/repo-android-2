@@ -20,7 +20,6 @@ fun Canvas.drawTextOnScreenMiddle(text: String, paint: Paint) {
     drawText(text, middleX, middleY + adjustedMiddleY, paintAlignCenter)
 }
 
-
 fun Canvas.drawTextOnScreenMiddleWithTextBounds(text: String, paint: Paint) {
     val textBounds = android.graphics.Rect()
     paint.getTextBounds(text, 0, text.length, textBounds)

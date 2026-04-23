@@ -2,11 +2,8 @@ package com.br.justcomposelabs.utils.composable
 
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
-import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.SideEffect
@@ -100,5 +97,3 @@ fun LogCompositions(tag: String, msg: String) {
     Processes and app lifecycle
     https://developer.android.com/guide/components/activities/process-lifecycle
  */
-
-

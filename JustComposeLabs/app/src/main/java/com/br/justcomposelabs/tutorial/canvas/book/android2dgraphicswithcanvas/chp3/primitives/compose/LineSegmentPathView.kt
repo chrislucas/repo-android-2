@@ -14,8 +14,9 @@ import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.c
 fun LineSegmentPathView() {
     AndroidView(
         factory = { context ->
-        LineSegmentPathView(context)
-    }, update = { view -> view.invalidate() },
+            LineSegmentPathView(context)
+        },
+        update = { view -> view.invalidate() },
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()

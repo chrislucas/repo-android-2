@@ -9,7 +9,6 @@ import android.util.AttributeSet
 import android.view.View
 import java.text.DecimalFormat
 
-
 /*
     Trasformation Operation: Translation, scaling, rotation, skewing
      - Translation: move the canvas by a certain distance in x and y direction
@@ -18,7 +17,6 @@ import java.text.DecimalFormat
      - Skewing: skew the canvas by a certain angle in x and y direction (Skew = distorcer)
         - distorcer a tela por um determinado ângulo nas direções x e y
  */
-
 
 class TransformationOperation(
     private val move: Pair<Float, Float> = 0f to 0f,
@@ -38,7 +36,6 @@ class TransformationOperation(
     }
 }
 
-
 class TriangleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
@@ -48,6 +45,9 @@ class TriangleView @JvmOverloads constructor(
     private val paintTriangle: Paint
     private val paintPosition: Paint
 
+    private val pointA = .2f to .2f
+    private val pointB = .8f to .8f
+    private val pointC = .8f to .2f
     private var path = Path().apply {
         moveTo(.2f, .2f)
         lineTo(.8f, .8f)
@@ -56,7 +56,6 @@ class TriangleView @JvmOverloads constructor(
     }
 
     private var transformationOperation = TransformationOperation()
-
 
     init {
         setBackgroundColor(Color.WHITE)
@@ -75,17 +74,13 @@ class TriangleView @JvmOverloads constructor(
         }
     }
 
-
     private val decimalFormat = DecimalFormat("#.00")
-
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
         canvas.drawPath(path, paintTriangle)
 
-        val ax = transformationOperation.transformX(.2f)
-        val ay = transformationOperation.transformY(.2f)
-
+        val (ax, ay) = transformXY(pointA)
         canvas.drawText(
             "A(${decimalFormat.format(ax)}, ${decimalFormat.format(ay)})",
             ax - 130f,
@@ -93,8 +88,7 @@ class TriangleView @JvmOverloads constructor(
             paintPosition
         )
 
-        val bx = transformationOperation.transformX(.8f)
-        val by = transformationOperation.transformY(.8f)
+        val (bx, by) = transformXY(pointB)
         canvas.drawText(
             "B(${decimalFormat.format(bx)}, ${decimalFormat.format(by)})",
             bx - 130f,
@@ -102,8 +96,7 @@ class TriangleView @JvmOverloads constructor(
             paintPosition
         )
 
-        val cx = transformationOperation.transformX(.8f)
-        val cy = transformationOperation.transformY(.2f)
+        val (cx, cy) = transformXY(pointC)
         canvas.drawText(
             "C(${decimalFormat.format(cx)}, ${decimalFormat.format(cy)})",
             cx - 130f,
@@ -123,14 +116,9 @@ class TriangleView @JvmOverloads constructor(
                 .withScale(deviceWidth.toFloat(), -deviceWidth.toFloat())
         }
 
-        val ax = transformationOperation.transformX(.2f)
-        val ay = transformationOperation.transformY(.2f)
-
-        val bx = transformationOperation.transformX(.8f)
-        val by = transformationOperation.transformY(.8f)
-
-        val cx = transformationOperation.transformX(.8f)
-        val cy = transformationOperation.transformY(.2f)
+        val (ax, ay) = transformXY(pointA)
+        val (bx, by) = transformXY(pointB)
+        val (cx, cy) = transformXY(pointC)
 
         path = Path().apply {
             moveTo(ax, ay)
@@ -138,5 +126,9 @@ class TriangleView @JvmOverloads constructor(
             lineTo(cx, cy)
             close()
         }
+    }
+
+    private fun transformXY(p: Pair<Float, Float>): Pair<Float, Float> {
+        return transformationOperation.transformX(p.first) to transformationOperation.transformY(p.second)
     }
 }

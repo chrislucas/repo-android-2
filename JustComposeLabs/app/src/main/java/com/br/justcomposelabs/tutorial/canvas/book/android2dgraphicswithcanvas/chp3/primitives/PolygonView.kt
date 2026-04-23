@@ -14,9 +14,7 @@ class PolygonView @JvmOverloads constructor(
     defStyle: Int = 0
 ) : View(ctx, attr, defStyle) {
 
-
     var sides: Int by Delegates.notNull()
-
 
     init {
         context.withStyledAttributes(attr, R.styleable.PolygonView) {

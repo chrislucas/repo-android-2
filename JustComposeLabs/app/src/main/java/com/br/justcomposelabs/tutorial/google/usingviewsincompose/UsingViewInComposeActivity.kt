@@ -41,6 +41,8 @@ fun CustomView(modifier: Modifier = Modifier) {
         /*
             Aqui a view esta sendo inflatada
          */
+
+        it.invalidate()
     })
 }
 

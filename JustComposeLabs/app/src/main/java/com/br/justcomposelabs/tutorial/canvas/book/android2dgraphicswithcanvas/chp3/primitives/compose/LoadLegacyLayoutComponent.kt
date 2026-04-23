@@ -2,7 +2,6 @@ package com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.
 
 import android.view.View
 import android.widget.FrameLayout
-
 import androidx.annotation.LayoutRes
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -30,7 +29,6 @@ fun LoadLegacyLayoutComponent(@LayoutRes layoutId: Int, modifier: Modifier) {
         modifier = modifier
     )
 }
-
 
 @Preview(showBackground = true)
 @Composable

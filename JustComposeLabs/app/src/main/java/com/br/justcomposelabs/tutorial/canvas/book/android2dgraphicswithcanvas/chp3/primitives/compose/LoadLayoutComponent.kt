@@ -26,6 +26,8 @@ fun <T : ViewBinding> LoadMergeLayoutComponent(
         quando layout tem como elemento raiz <merge>. Nesse caso o métod0 inflate do
         layout não possui esse parâmetro booleano, então precisamos encapsular a chamada
 
+        Discussão sobre carregar Layout XML cujo elemento raiz é um merge
+        https://share.google/aimode/Y27EsTY1yZcLVtLK1
      */
     AndroidViewBinding(
         factory = { inflate, viewGroup, _ ->
@@ -35,7 +37,6 @@ fun <T : ViewBinding> LoadMergeLayoutComponent(
         update
     )
 }
-
 
 @Composable
 fun <T : ViewBinding> LoadLayoutComponent(
