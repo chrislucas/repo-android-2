@@ -1,5 +1,6 @@
 package com.br.justcomposelabs.tutorial.composable.interoperability
 
+import android.view.View
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidViewBinding
@@ -26,6 +27,9 @@ import com.br.justcomposelabs.databinding.LayoutTextCenterSampleBindingComposeBi
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 private fun AndroidViewBindingExamplePreview() {
-    AndroidViewBinding(LayoutTextCenterSampleBindingComposeBinding::inflate) {
+    AndroidViewBinding(
+        LayoutTextCenterSampleBindingComposeBinding::inflate
+    ) {
+        tvContent.textAlignment = View.TEXT_ALIGNMENT_CENTER
     }
 }

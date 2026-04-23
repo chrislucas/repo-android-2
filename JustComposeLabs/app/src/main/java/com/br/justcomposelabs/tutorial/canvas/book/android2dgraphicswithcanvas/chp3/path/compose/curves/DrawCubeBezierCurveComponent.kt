@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.compose
+package com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp3.path.compose.curves
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -7,20 +7,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.viewinterop.AndroidView
-import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp8.TriangleView
+import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp3.path.CubicBezierCurveView
 
 
-@Preview(showSystemUi = true, name = "DrawTriangleView")
+@Preview(showBackground = true)
 @Composable
-fun DrawTriangleView() {
+fun DrawCubeBezierCurveComponent() {
     AndroidView(
-        factory = { context ->
-            TriangleView(context)
-        }, update = { view ->
-            view.invalidate()
-        }, modifier = Modifier
+        factory = { ctx ->
+        CubicBezierCurveView(ctx)
+    }, update = { it.invalidate() },
+        modifier = Modifier
             .fillMaxSize()
-            .systemBarsPadding()
             .navigationBarsPadding()
+            .systemBarsPadding()
     )
 }

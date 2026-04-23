@@ -197,7 +197,6 @@ dependencies {
         Getting started with WorkManager
         https://developer.android.com/develop/background-work/background-tasks/persistent/getting-started
      */
-    implementation(libs.androidx.ui.viewbinding)
     implementation(libs.androidx.webkit)
     implementation(libs.androidx.work.gcm)
     implementation(libs.androidx.work.multiprocess)

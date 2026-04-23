@@ -27,6 +27,7 @@
         <attr name="scaleEndX" format="float" />
         <attr name="scaleEndY" format="float" />
         <attr name="scaleStrokeWidth" format="float" />
+        <attr name="strokeWidth" format="float" />
     </declare-styleable>
 
     <!--
@@ -39,15 +40,116 @@
 
     -->
     <declare-styleable name="LineSegmentPathView">
-        <attr name="startX"/>
-        <attr name="startY"/>
-        <attr name="endX"/>
-        <attr name="endY"/>
-        <attr name="lineColor"/>
-        <attr name="scaleStartX"/>
-        <attr name="scaleStartY"/>
-        <attr name="scaleEndX"/>
-        <attr name="scaleEndY"/>
-        <attr name="scaleStrokeWidth"/>
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="strokeWidth" />
     </declare-styleable>
+
+    <declare-styleable name="TrianglePathJoinView">
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="strokeWidth" />
+        <attr name="joinStyle" format="enum" />
+    </declare-styleable>
+
+    <declare-styleable name="TriangleNonClosedPathJoinView">
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="joinStyle" />
+        <attr name="strokeWidth" />
+
+    </declare-styleable>
+
+    <declare-styleable name="PolygonView">
+        <attr name="sides" format="integer" />
+        <attr name="strokeWidth" />
+    </declare-styleable>
+
+    <declare-styleable name="TriangleFilledPathView">
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="joinStyle" />
+        <attr name="strokeWidth" />
+    </declare-styleable>
+
+
+    <declare-styleable name="QuadraticBezierCurveView">
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="joinStyle" />
+        <attr name="strokeWidth" />
+    </declare-styleable>
+
+    <declare-styleable name="RationalQuadraticCurveView">
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="joinStyle" />
+        <attr name="strokeWidth" />
+
+    </declare-styleable>
+
+    <declare-styleable name="CubicBezierCurveView">
+        <attr name="startX" />
+        <attr name="startY" />
+        <attr name="endX" />
+        <attr name="endY" />
+        <attr name="lineColor" />
+        <attr name="scaleStartX" />
+        <attr name="scaleStartY" />
+        <attr name="scaleEndX" />
+        <attr name="scaleEndY" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="joinStyle" />
+        <attr name="strokeWidth" />
+
+    </declare-styleable>
+
 </resources>

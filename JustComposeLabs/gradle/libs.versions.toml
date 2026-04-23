@@ -2,7 +2,7 @@
 
 activityKtx = "1.13.0"
 adapterRxjava2 = "3.0.0"
-agp = "9.1.1"
+agp = "9.2.0"
 appcompatVersion = "1.7.1"
 cameraCamera2 = "1.6.0"
 cameraCore = "1.6.0"
@@ -201,7 +201,6 @@ androidx-runtime-rxjava3 = { module = "androidx.compose.runtime:runtime-rxjava3"
 androidx-runtime-tracing = { module = "androidx.compose.runtime:runtime-tracing" }
 androidx-tracing-perfetto = { module = "androidx.tracing:tracing-perfetto", version.ref = "tracingPerfetto" }
 androidx-tracing-perfetto-binary = { module = "androidx.tracing:tracing-perfetto-binary", version.ref = "tracingPerfettoBinary" }
-androidx-ui-viewbinding = { module = "androidx.compose.ui:ui-viewbinding" }
 androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "webkit" }
 androidx-work-gcm = { module = "androidx.work:work-gcm", version.ref = "workVersion" }
 androidx-work-multiprocess = { module = "androidx.work:work-multiprocess", version.ref = "workVersion" }

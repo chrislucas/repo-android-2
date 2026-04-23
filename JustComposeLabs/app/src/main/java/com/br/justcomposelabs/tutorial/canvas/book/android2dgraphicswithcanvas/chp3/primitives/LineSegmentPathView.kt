@@ -1,8 +1,7 @@
-package com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp3
+package com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.chp3.primitives
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Paint.Cap
 import android.graphics.Path
@@ -16,7 +15,7 @@ import androidx.core.graphics.toColorInt
 
 
 /*
-    Path: Classe que represent segmentos de linha, curvas ou outros objetos geometricos primitivos.
+    Path: Classe que represent segmentos de linha, curvas ou outros objetos geométricos primitivos.
 
 
  */
@@ -34,8 +33,7 @@ class LineSegmentPathView @JvmOverloads constructor(
         strokeCap = Cap.ROUND
     }
 
-
-    private val line = Path()
+    private val pathLine = Path()
 
     private var scaleStartX: Float by Delegates.notNull()
     private var scaleStartY: Float by Delegates.notNull()
@@ -66,8 +64,7 @@ class LineSegmentPathView @JvmOverloads constructor(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-
-        canvas.drawPath(line, linePaint)
+        canvas.drawPath(pathLine, linePaint)
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
@@ -77,7 +74,7 @@ class LineSegmentPathView @JvmOverloads constructor(
         end = w * scaleEndX to h * scaleEndY
         val (startX, startY) = start
         val (endX, endY) = end
-        line.run {
+        pathLine.run {
             reset()
             moveTo(startX, startY)
             lineTo(endX, endY)
@@ -114,7 +111,5 @@ class LineSegmentPathView @JvmOverloads constructor(
                     (ex: seguir o dedo no onTouchEvent).
              */
         }
-
-
     }
 }
