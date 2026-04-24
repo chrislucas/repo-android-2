@@ -136,4 +136,3 @@ class LoginWithLiveDataActivity : AppCompatActivity() {
         viewModel.login(user)
     }
 }
-

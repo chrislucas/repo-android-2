@@ -35,7 +35,7 @@ O trecho de código que recupera `initConfigurationState` do `savedInstanceState
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     // ... restauração
-    
+
     // Este código é executado ANTES de onRestoreInstanceState()
     initConfigurationState?.let { state ->
         requestedOrientation = if (state.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -170,4 +170,3 @@ onRestoreInstanceState()
 - Criando o método privado `restoreConfigurationStateFromBundle()`
 - Eliminando 100% da duplicação entre `onCreate()` e `onRestoreInstanceState()`
 - Mantendo a mesma funcionalidade com código mais limpo e manutenível
-

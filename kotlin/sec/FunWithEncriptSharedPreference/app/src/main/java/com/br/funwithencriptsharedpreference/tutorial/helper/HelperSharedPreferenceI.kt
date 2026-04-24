@@ -115,7 +115,3 @@ private val Context.encryptedSharedPreferences: ProviderEncryptedSharedPreferenc
             )
         }
     }
-
-
-
-

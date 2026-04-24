@@ -176,5 +176,3 @@ private class RegisterCallbackOpenCamera(
         private const val TAG = "WEB_CHROME_CLIENT"
     }
 }
-
-

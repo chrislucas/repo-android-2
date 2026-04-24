@@ -24,4 +24,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "ComposeRecomposition"
 include(":app")
- 

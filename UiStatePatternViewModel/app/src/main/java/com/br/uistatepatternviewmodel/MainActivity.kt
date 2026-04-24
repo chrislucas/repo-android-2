@@ -222,4 +222,3 @@ fun NewsPreview() {
         news = sampleNews
     )
 }
-

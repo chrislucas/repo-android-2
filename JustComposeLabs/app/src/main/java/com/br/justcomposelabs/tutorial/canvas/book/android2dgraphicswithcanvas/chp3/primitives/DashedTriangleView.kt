@@ -33,7 +33,6 @@ class DashedTriangleView @JvmOverloads constructor(
 
     private var lineColor: Int by Delegates.notNull()
 
-
     init {
         context.obtainStyledAttributes(attrs, R.styleable.DashedTriangleView).apply {
             scaleStrokeWidth = getFloat(

@@ -24,4 +24,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "FunWithWorkmanagerApi"
 include(":app")
- 

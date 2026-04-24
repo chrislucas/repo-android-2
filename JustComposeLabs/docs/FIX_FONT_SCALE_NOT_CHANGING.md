@@ -150,4 +150,3 @@ return createConfigurationContext(newConfiguration)
 ✅ **Orientação também muda quando o toggle é clicado**
 ✅ **Configurações são persistidas e restauradas corretamente**
 ✅ **Todas as funções de configuração funcionam agora**
-

@@ -15,7 +15,7 @@ class SampleRecursiveHandlerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sample_recursive_handler)
 
-        
+
         val simpleFormatDate = SimpleDateFormat("kk:mm:ss a", Locale.getDefault())
         val textViewDateNow = findViewById<TextView>(R.id.text_view_date_now)
         val handler = Handler()

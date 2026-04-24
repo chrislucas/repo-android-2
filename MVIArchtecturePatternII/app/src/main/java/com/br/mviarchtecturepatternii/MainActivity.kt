@@ -176,7 +176,7 @@ class MainActivity : ComponentActivity() {
 
       - State Holder: A classe responsabel por gerenciar o estado e manipular a logica
       de atualizacao
-            - 
+            -
 
  */
 

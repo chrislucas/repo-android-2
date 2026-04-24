@@ -267,4 +267,3 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 # https://developer.android.com/kotlin/multiplatform/plugin
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
-

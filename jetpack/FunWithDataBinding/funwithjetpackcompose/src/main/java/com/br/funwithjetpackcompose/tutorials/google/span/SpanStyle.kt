@@ -40,5 +40,3 @@ fun HelloWorld() =
         withStyle(style = SpanStyle(color = Color.Red)) { append("Hello") }
         withStyle(SpanStyle(color = Color.Blue)) { append(" World") }
     })
-
-

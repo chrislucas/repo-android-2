@@ -111,4 +111,3 @@ tasks.register<Exec>("Greeting") {
         println("Command output: ${outputStream.toString().trim()}")
     }
 }
-

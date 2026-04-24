@@ -21,11 +21,11 @@ Havia uma **inconsistência** na estratégia de persistência:
 ```kotlin
 override fun onRestoreInstanceState(savedInstanceState: Bundle) {
     super.onRestoreInstanceState(savedInstanceState)
-    
+
     // ❌ Só recupera do Bundle
     initConfigurationState = savedInstanceState.getParcelable(SAVE_CONFIG_STATE)
         ?: initConfigurationState
-    
+
     // ❌ Ignora o fontScale em SharedPreferences!
 }
 ```
@@ -35,7 +35,7 @@ override fun onRestoreInstanceState(savedInstanceState: Bundle) {
 ```kotlin
 override fun onRestoreInstanceState(savedInstanceState: Bundle) {
     super.onRestoreInstanceState(savedInstanceState)
-    
+
     // ✅ Restaurar do Bundle PRIMEIRO
     initConfigurationState = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
         savedInstanceState.getParcelable(SAVE_CONFIG_STATE, ConfigurationState::class.java)
@@ -44,11 +44,11 @@ override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         @Suppress("DEPRECATION")
         savedInstanceState.getParcelable(SAVE_CONFIG_STATE) ?: initConfigurationState
     }
-    
+
     // ✅ DEPOIS, recuperar fontScale de SharedPreferences
     val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
     val savedFontScale = prefs.getFloat(PREF_FONT_SCALE, 1.0f)
-    
+
     // ✅ Se o fontScale foi salvo e é diferente, atualizar
     if (savedFontScale != 1.0f && initConfigurationState?.fontScale != savedFontScale) {
         initConfigurationState = initConfigurationState?.copy(fontScale = savedFontScale)
@@ -138,7 +138,7 @@ if (savedFontScale != 1.0f && initConfigurationState?.fontScale != savedFontScal
     //  ↑ Só faz algo se:
     //  1. FontScale salvo é diferente do padrão (1.0f)
     //  2. E é diferente do que está em initConfigurationState
-    
+
     initConfigurationState = initConfigurationState?.copy(fontScale = savedFontScale)
     // Atualiza para garantir consistência
 }
@@ -176,4 +176,3 @@ Garantia: FontScale sempre sincronizado
 ## 🚀 Conclusão
 
 Agora a estratégia de persistência é **totalmente consistente** em todo o ciclo de vida da Activity. O `fontScale` é sempre restaurado da mesma fonte (SharedPreferences) em múltiplos pontos, garantindo que nunca seja perdido. 🎉
-

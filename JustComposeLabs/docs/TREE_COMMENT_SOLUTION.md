@@ -119,7 +119,7 @@ Barra superior para navegação quando em modo focado.
 
 ### Hierarquia Visual
 - **Indentação**: 16dp por nível
-- **Cores**: 
+- **Cores**:
   - Nível 0 usa `primaryContainer` (destaque)
   - Demais níveis usam `surface`
 - **Indicadores**: Contador de respostas inline
@@ -134,17 +134,17 @@ Barra superior para navegação quando em modo focado.
 - **Destaque**: Borda de 1dp com cor primária
 
 ### BottomSheet Design 🆕
-- **Header**: 
+- **Header**:
   - Título grande em negrito
   - Botão fechar (X) no canto direito
-- **Contexto**: 
+- **Contexto**:
   - Card com background `surfaceVariant`
   - Mostra autor e conteúdo do comentário pai
-- **Campos**: 
+- **Campos**:
   - OutlinedTextField com labels e placeholders
   - Campo de nome: linha única
   - Campo de comentário: 6 linhas máximo
-- **Botão Enviar**: 
+- **Botão Enviar**:
   - Largura total
   - Ícone de envio
   - Desabilitado quando campos vazios
@@ -162,7 +162,7 @@ Barra superior para navegação quando em modo focado.
 fun MyScreen() {
     var comments by remember { mutableStateOf(initialComments) }
     var nextId by remember { mutableStateOf(10) }
-    
+
     val onAddComment: (Comment, String, String) -> Unit = { parent, author, content ->
         val newComment = Comment(
             id = nextId++,
@@ -175,7 +175,7 @@ fun MyScreen() {
         // Força recomposição - IMPORTANTE para atualizar UI
         comments = comments.toList()
     }
-    
+
     MaterialTheme {
         InfiniteScrollCommentTree(
             comments = comments,
@@ -223,7 +223,7 @@ fun MyScreen() {
 
 ### 1. Clique no Botão "Comentário"
 ```
-Usuario clica → BottomSheet abre → Mostra contexto → 
+Usuario clica → BottomSheet abre → Mostra contexto →
 Preenche campos → Envia → UI atualiza automaticamente
 ```
 
@@ -234,7 +234,7 @@ Usuario clica em ↕ → Alterna visibilidade das respostas
 
 ### 3. Ver Thread
 ```
-Usuario clica "Ver thread →" → Foca no comentário → 
+Usuario clica "Ver thread →" → Foca no comentário →
 Auto-expande → Mostra barra de navegação
 ```
 
@@ -325,4 +325,3 @@ Quando o usuário clica em "Comentário":
 ---
 
 **Desenvolvido com ❤️ usando Jetpack Compose & Material 3**
-

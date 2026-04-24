@@ -32,4 +32,3 @@ https://developer.android.com/training/basics/network-ops/managing
 https://stackoverflow.com/questions/12821264/how-to-use-any-internet-connection-in-android-app-wifi-3g-4g-etc
 
 https://medium.freecodecamp.org/top-reasons-why-your-mobile-app-is-slow-and-how-to-fix-it-f0f7ce524934
-

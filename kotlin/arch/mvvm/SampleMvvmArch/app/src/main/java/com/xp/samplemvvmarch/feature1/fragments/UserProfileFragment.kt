@@ -36,7 +36,7 @@ class UserProfileFragment : Fragment() {
 
         //initViewModel()
         //anotherInitViewModel()
-        
+
         return inflater.inflate(R.layout.user_profile_fragment, container, false)
     }
 

@@ -172,5 +172,5 @@ private class Polygon(
     val laps: Int,
     val pathMeasure: PathMeasure
 ) {
-    
+
 }

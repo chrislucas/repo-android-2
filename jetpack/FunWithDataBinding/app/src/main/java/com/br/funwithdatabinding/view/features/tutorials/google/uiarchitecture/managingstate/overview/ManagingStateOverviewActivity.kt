@@ -79,9 +79,9 @@ fun Content(name: String, modifier: Modifier = Modifier) {
              - Um exemplo é a TextField
                 - Ela construida via XML (View) ao ser tocada por um usuario e tendo dados sendo inserido
                 "automaticamente" atualiza seu estado. A View composable nao faz isso
-                
+
                 - No exemplo abaixo, a OutlinedTextField so atualiza quando o parametro "value" e atualizado
-                
+
                 - Isso é defvido a como composition e recomposition funciona em compose
          */
 

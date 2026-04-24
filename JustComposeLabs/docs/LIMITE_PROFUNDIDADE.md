@@ -29,7 +29,7 @@ Quando a árvore de comentários tinha muitos níveis de profundidade (4, 5, 6+)
 ### Comportamento Novo:
 
 1. **Níveis 0, 1, 2**: Expandem normalmente inline
-2. **Nível 2 (terceiro nível)**: 
+2. **Nível 2 (terceiro nível)**:
    - Se tiver respostas, **não expande mais inline**
    - Mostra aviso visual
    - Força uso da navegação focada
@@ -67,7 +67,7 @@ Nível 0
     │ ║   continuar a thread ║   │
     │ ╚══════════════════════╝   │
     └────────────────────────────┘
-         ↓ Não expande mais! 
+         ↓ Não expande mais!
          ↓ Deve clicar "Ver respostas"
 ```
 
@@ -105,7 +105,7 @@ fun LazyListScope.renderCommentTree(
     val isExpanded = expandedComments.contains(comment.id)
     val hasReplies = comment.replies.isNotEmpty()
     val reachedMaxLevel = level >= maxLevel // ← Verifica se atingiu limite
-    
+
     item(key = comment.id) {
         CommentItem(
             comment = comment,
@@ -119,7 +119,7 @@ fun LazyListScope.renderCommentTree(
             reachedMaxLevel = reachedMaxLevel && hasReplies // ← Passa flag
         )
     }
-    
+
     // ⚠️ IMPORTANTE: Só renderiza filhos se NÃO atingiu o limite
     if (isExpanded && hasReplies && !reachedMaxLevel) {
         comment.replies.forEach { reply ->
@@ -151,7 +151,7 @@ fun CommentItem(
     reachedMaxLevel: Boolean = false // ← Nova flag
 ) {
     // ...
-    
+
     // Ícone muda quando atinge limite
     if (reachedMaxLevel) {
         IconButton(onClick = onNavigate ?: {}) {
@@ -163,29 +163,29 @@ fun CommentItem(
     } else {
         IconButton(onClick = onToggle) {
             Icon(
-                imageVector = if (isExpanded) 
-                    Icons.Filled.ExpandLess 
-                else 
+                imageVector = if (isExpanded)
+                    Icons.Filled.ExpandLess
+                else
                     Icons.Filled.ExpandMore
             )
         }
     }
-    
+
     // ...
-    
+
     // Botão "Ver respostas" fica destacado
     TextButton(onClick = onNavigate) {
         Text(
             if (reachedMaxLevel) "Ver respostas →" else "Ver thread →",
-            fontWeight = if (reachedMaxLevel) 
+            fontWeight = if (reachedMaxLevel)
                 FontWeight.Bold // ← Negrito quando é necessário
-            else 
+            else
                 FontWeight.Normal
         )
     }
-    
+
     // ...
-    
+
     // Aviso visual quando atingir limite
     if (reachedMaxLevel) {
         Surface(
@@ -382,5 +382,3 @@ if (reachedMaxLevel) {
 ---
 
 **✨ Implementação completa! Texto protegido contra esmagamento!**
-
-

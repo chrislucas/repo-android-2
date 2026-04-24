@@ -22,7 +22,7 @@ public class ImplPagerAdapter <T> extends PagerAdapter {
     public ImplPagerAdapter(List<T> elements) {
         this.elements = elements;
     }
-    
+
 
     @Override
     public int getCount() {

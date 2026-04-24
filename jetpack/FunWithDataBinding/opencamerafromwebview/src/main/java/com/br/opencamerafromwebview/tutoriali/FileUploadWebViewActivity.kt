@@ -181,5 +181,3 @@ class FileUploadWebViewActivity : AppCompatActivity(), CaptureImage {
         }
     }
 }
-
-

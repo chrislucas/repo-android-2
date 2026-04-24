@@ -59,10 +59,10 @@ override fun attachBaseContext(newBase: Context?) {
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
     initConfigurationState = ... // restaurar estado
-    
+
     super.onCreate(savedInstanceState)
     enableEdgeToEdge()
-    
+
     // ✅ Aplicar orientação corretamente
     initConfigurationState?.let { state ->
         requestedOrientation = if (state.orientation == Configuration.ORIENTATION_LANDSCAPE) {
@@ -71,7 +71,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
         }
     }
-    
+
     // ... resto do código
 }
 ```
@@ -163,4 +163,3 @@ Use:
 ✅ **Ambos funcionam corretamente agora**
 ✅ **Código segue as best practices do Android**
 ✅ **Sem mais erros ou warnings**
-

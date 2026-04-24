@@ -238,7 +238,3 @@ class EncryptedSharedPreferenceIActivity : AppCompatActivity() {
                 }
     }
 }
-
-
-
-

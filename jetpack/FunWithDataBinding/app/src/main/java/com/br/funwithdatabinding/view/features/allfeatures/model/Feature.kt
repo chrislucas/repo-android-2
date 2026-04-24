@@ -315,7 +315,3 @@ val Context.viewBasedFeatures: List<ViewElement<Feature, ViewHolder>>
 
 val Context.composeBasedFeatures: List<ViewElement<Feature, ViewHolder>>
     get() = getFeatures(this).filter { it.content.category == CategoryFeature.COMPOSE }
-
-
-
-

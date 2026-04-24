@@ -3,7 +3,7 @@
 ## 🎯 Problema Identificado
 
 Havia repetição de código para recuperar `fontScale` de SharedPreferences em **3 lugares diferentes**:
-1. `onCreate()` 
+1. `onCreate()`
 2. `onRestoreInstanceState()`
 3. `attachBaseContext()`
 
@@ -32,7 +32,7 @@ Usado em `onCreate()` e `onRestoreInstanceState()` - **recupera E sincroniza** o
 private fun syncFontScaleFromPreferences(source: String = "syncFontScale") {
     val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
     val savedFontScale = prefs.getFloat(PREF_FONT_SCALE, 1.0f)
-    
+
     if (savedFontScale != 1.0f && initConfigurationState?.fontScale != savedFontScale) {
         initConfigurationState = initConfigurationState?.copy(fontScale = savedFontScale)
         Timber.tag(TAG).d("$source: FontScale restaurado de SharedPreferences: $savedFontScale")
@@ -225,4 +225,3 @@ A refatoração **eliminou 100% da duplicação de código** mantendo a mesma fu
 ✅ **Debugging facilitado** com parametrização
 ✅ **Sem mudanças de funcionalidade**
 ✅ **Pronto para manutenção futura**
-

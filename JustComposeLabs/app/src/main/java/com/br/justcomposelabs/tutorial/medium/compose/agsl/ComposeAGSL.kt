@@ -45,7 +45,7 @@ val glowButtonShader = """
 val checkerboardShader = """
     uniform half4 color1;
     uniform half4 color2;
-    
+
     // Function to create a checkerboard pattern
     half4 checkerBoard(vec2 fragCoord) {
         float size = 100.0;

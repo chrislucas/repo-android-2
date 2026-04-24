@@ -30,7 +30,7 @@ data class SimCardInfo(private val context: Context) {
 /*
 fun Context.simSerialNumber(): String? =
     (getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager)?.simSerialNumber
-    
+
  */
 
 /*

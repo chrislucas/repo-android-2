@@ -605,5 +605,3 @@ private fun CommentCard(...) {
 ---
 
 **✨ Refatoração completa! Código modular, focado e profissional!**
-
-

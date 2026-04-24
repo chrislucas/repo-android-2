@@ -69,9 +69,9 @@ Adicionei um **contador de versão** (`refreshTrigger`) que incrementa sempre qu
 @Composable
 fun InfiniteScrollCommentTree(...) {
     var refreshTrigger by remember { mutableStateOf(0) } // ← Novo!
-    
+
     // ...
-    
+
     ModalBottomSheet(...) {
         ReplyBottomSheetContent(
             onAddComment = { author, content ->
@@ -100,7 +100,7 @@ fun ScrollableCommentList(
     } else {
         comments
     }
-    
+
     LazyColumn(
         state = listState,
         modifier = modifier.fillMaxWidth(),
@@ -177,9 +177,9 @@ fun InfiniteScrollCommentTree(
 ) {
     // ...
     var refreshTrigger by remember { mutableStateOf(0) } // ← NOVO!
-    
+
     // ...
-    
+
     ScrollableCommentList(
         comments = comments,
         focusedCommentId = focusedCommentId,
@@ -190,7 +190,7 @@ fun InfiniteScrollCommentTree(
         modifier = Modifier.weight(1f),
         refreshTrigger = refreshTrigger // ← NOVO! Passa o trigger
     )
-    
+
     // BottomSheet para adicionar comentário
     if (showingReplyTo != null) {
         ModalBottomSheet(...) {
@@ -223,7 +223,7 @@ fun ScrollableCommentList(
     refreshTrigger: Int = 0 // ← NOVO! Parâmetro adicionado
 ) {
     val listState = rememberLazyListState()
-    
+
     // Se há um comentário focado, mostra apenas ele e seu contexto
     // O refreshTrigger força a recomposição quando comentários são adicionados
     val displayComments = if (focusedCommentId != null) {
@@ -232,7 +232,7 @@ fun ScrollableCommentList(
     } else {
         comments
     }
-    
+
     // Use refreshTrigger como key para forçar recomposição da LazyColumn
     LazyColumn(
         state = listState,
@@ -320,7 +320,7 @@ data class Comment(
 var refreshTrigger by remember { mutableStateOf(0) }
 refreshTrigger++
 ```
-**Vantagens**: 
+**Vantagens**:
 - Leve (apenas um Int)
 - Simples de implementar
 - Performance excelente
@@ -393,20 +393,18 @@ LazyColumn(
 
 ### ✅ ANTES DO FIX:
 ```
-Adicionar comentário → 
-❌ Não aparece → 
-Voltar/Navegar → 
+Adicionar comentário →
+❌ Não aparece →
+Voltar/Navegar →
 ✅ Agora aparece
 ```
 
 ### ✅ DEPOIS DO FIX:
 ```
-Adicionar comentário → 
+Adicionar comentário →
 ✅ APARECE IMEDIATAMENTE! 🎊
 ```
 
 ---
 
 **🐛 Bug corrigido! Comentários agora aparecem instantaneamente após adicionar!**
-
-

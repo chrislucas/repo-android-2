@@ -72,7 +72,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
             orientation = configuration.orientation
         )
     }
-    
+
     super.onCreate(savedInstanceState)  // Agora o ViewModel terá o estado correto
     // ...rest of onCreate
 }
@@ -189,14 +189,14 @@ viewModel.updateOrientationScreen(orientation)
 override fun onCreate(savedInstanceState: Bundle?) {
     // 1️⃣ Restaurar PRIMEIRO
     initConfigurationState = ...
-    
+
     // 2️⃣ Depois chamar super
     super.onCreate(savedInstanceState)
-    
+
     // 3️⃣ Depois sincronizar UI
     initConfigurationState?.let { state ->
         rangeSliderFontScale.setValues(state.fontScale)
-        toggleButtonHandleOrientationScreen.isChecked = 
+        toggleButtonHandleOrientationScreen.isChecked =
             state.orientation == Configuration.ORIENTATION_LANDSCAPE
     }
 }
@@ -206,4 +206,3 @@ Este é o padrão fundamental que garante que:
 - O ViewModel tem o estado correto desde a criação
 - `attachBaseContext()` tem acesso ao estado correto
 - A UI está sincronizada com o estado quando renderizada
-

@@ -16,4 +16,3 @@ fun View.showSnackBar(message: String) {
 
 fun Snackbar.withBackground(@ColorInt color: Int): Snackbar =
     this.apply { view.setBackgroundColor(color) }
-

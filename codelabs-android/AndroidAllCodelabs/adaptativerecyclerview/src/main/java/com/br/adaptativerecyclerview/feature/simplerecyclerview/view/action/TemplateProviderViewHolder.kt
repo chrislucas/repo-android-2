@@ -18,7 +18,3 @@ abstract class TemplateProviderViewHolder(
         return find(viewRoot, viewType) ?: (emptyStateViewHolder ?: DefaultEmptyStateViewHolder(viewRoot))
     }
 }
-
-
-
-

@@ -53,4 +53,3 @@ fun AppCompatActivity.getPickVisualMediaRequestContract(max: Int, onSuccess: (Li
             onSuccess(uris)
         }
     }
-

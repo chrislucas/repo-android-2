@@ -27,17 +27,17 @@ override fun onCreate(savedInstanceState: Bundle?) {
     } ?: resources?.run {
         ConfigurationState(...)
     }
-    
+
     // 2️⃣ TAMBÉM recuperar de SharedPreferences (NOVO!)
     val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
     val savedFontScale = prefs.getFloat(PREF_FONT_SCALE, 1.0f)
-    
+
     // 3️⃣ Sincronizar se necessário
     if (savedFontScale != 1.0f && initConfigurationState?.fontScale != savedFontScale) {
         initConfigurationState = initConfigurationState?.copy(fontScale = savedFontScale)
         Timber.tag(TAG).d("onCreate: FontScale restaurado: $savedFontScale")
     }
-    
+
     super.onCreate(savedInstanceState)
     enableEdgeToEdge()
     // ... resto do código
@@ -133,7 +133,7 @@ if (savedFontScale != 1.0f && initConfigurationState?.fontScale != savedFontScal
     // Só atualiza se:
     // 1. FontScale salvo é diferente do padrão (1.0f)
     // 2. E é diferente do que está em initConfigurationState
-    
+
     initConfigurationState = initConfigurationState?.copy(fontScale = savedFontScale)
 }
 ```
@@ -179,4 +179,3 @@ Agora a estratégia de persistência é **totalmente consistente e redundante** 
 4. **`onRestoreInstanceState()`** - Valida com SharedPreferences
 
 O `fontScale` é recuperado e sincronizado em **3 pontos diferentes**, garantindo que **nunca seja perdido ou desatualizado**! 🎉
-

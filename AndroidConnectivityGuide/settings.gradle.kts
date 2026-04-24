@@ -24,4 +24,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "AndroidConnectivityGuide"
 include(":app")
- 

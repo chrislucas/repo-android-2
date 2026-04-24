@@ -145,4 +145,3 @@ class ThinkingInCompose : ComponentActivity() {
         }
     }
 }
-

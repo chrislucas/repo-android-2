@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "OptimizingContextualContentForAssitant"
 include(":app")
- 

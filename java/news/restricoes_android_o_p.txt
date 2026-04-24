@@ -21,6 +21,3 @@ https://developer.android.com/guide/components/broadcasts
 match intent with broadcast receiver
 http://onemikro2nd.blogspot.com/2013/09/darker-corners-of-android.html
 https://www.techotopia.com/index.php/Android_Broadcast_Intents_and_Broadcast_Receivers
-
-
-

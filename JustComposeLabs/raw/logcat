@@ -15,5 +15,3 @@ https://developer.android.com/studio/debug/logcat#special-queries
     - is:crash
     - is:stacktrace
 - name
-
-

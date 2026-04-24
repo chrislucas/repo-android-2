@@ -16,7 +16,7 @@ import com.composestuffs.tutorial.aboutflow.ui.theme.AndroidAllCodelabsTheme
 /*
     https://medium.com/@ahmadkazimi/all-you-need-to-know-about-kotlin-flow-part-1-1660ae471441
 
-    
+
         https://medium.com/@ahmadkazimi/all-you-need-to-know-about-kotlin-flow-part-3-8c549648317a
 
         State Flow - State Holder observable Flow

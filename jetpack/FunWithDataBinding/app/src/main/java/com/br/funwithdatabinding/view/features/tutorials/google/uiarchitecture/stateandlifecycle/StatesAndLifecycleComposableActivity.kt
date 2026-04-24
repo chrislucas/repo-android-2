@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.funwithdatabinding.view.features.tutorials.google.uiarchitecture.stateandlifecycle.ui.theme.FunWithDataBindingTheme
 /*
-    Lifecycle of composables 
+    Lifecycle of composables
     https://developer.android.com/develop/ui/compose/lifecycle
     - O ciclo de vida de uma funcao composableé mais simples que das views, activities e fragments
         Quando uma funcao composable necessita  interagir com recursos externos que tem um ciclo

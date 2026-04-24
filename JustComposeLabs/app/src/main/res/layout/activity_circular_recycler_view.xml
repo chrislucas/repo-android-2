@@ -11,4 +11,3 @@
     tools:itemCount="4"
     tools:context=".tutorial.google.view.recyclerviews.CircularRecyclerViewActivity"
     />
-

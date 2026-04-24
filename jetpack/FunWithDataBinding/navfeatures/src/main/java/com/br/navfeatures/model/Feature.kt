@@ -25,6 +25,3 @@ class Feature(
 enum class CategoryFeature {
     COMPOSE, VIEW_BASED
 }
-
-
-

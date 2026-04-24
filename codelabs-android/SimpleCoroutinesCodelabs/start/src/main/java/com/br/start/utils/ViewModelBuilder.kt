@@ -47,4 +47,3 @@ fun <T : ViewModel> getViewModelFactory(constructor: (Map<Class<Any>, Any>, Clas
         }
     }
 }
-

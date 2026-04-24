@@ -47,5 +47,3 @@ error message: androidx.compose.compiler.plugins.kotlin.IncompatibleComposeRunti
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.base/java.lang.Thread.run(Unknown Source)
-
-

@@ -206,7 +206,7 @@ UI atualiza automaticamente! ✅
 fun CommentScreen() {
     var comments by remember { mutableStateOf(initialComments) }
     var nextId by remember { mutableStateOf(9) }
-    
+
     val onAddComment: (Comment, String, String) -> Unit = { parent, author, content ->
         val newComment = Comment(
             id = nextId++,
@@ -219,7 +219,7 @@ fun CommentScreen() {
         // ⚠️ IMPORTANTE: Força recomposição
         comments = comments.toList()
     }
-    
+
     MaterialTheme {
         InfiniteScrollCommentTree(
             comments = comments,
@@ -333,19 +333,17 @@ onShowReply: (Comment) -> Unit
 
 ## 🎯 Resultado Final
 
-✅ **Dialog removido completamente**  
-✅ **BottomSheet nativa implementada**  
-✅ **Botão "Comentário" em destaque**  
-✅ **Título contextual dinâmico**  
-✅ **Comentário pai visível**  
-✅ **Atualização automática da UI**  
-✅ **Validação de campos**  
-✅ **Ajuste com teclado**  
-✅ **Animações suaves**  
-✅ **UX mobile otimizada**  
+✅ **Dialog removido completamente**
+✅ **BottomSheet nativa implementada**
+✅ **Botão "Comentário" em destaque**
+✅ **Título contextual dinâmico**
+✅ **Comentário pai visível**
+✅ **Atualização automática da UI**
+✅ **Validação de campos**
+✅ **Ajuste com teclado**
+✅ **Animações suaves**
+✅ **UX mobile otimizada**
 
 ---
 
 **✨ Implementação completa e funcional!**
-
-

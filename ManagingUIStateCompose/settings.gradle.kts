@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "ManagingUIStateCompose"
 include(":app")
- 

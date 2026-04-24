@@ -30,7 +30,7 @@ import kotlinx.coroutines.launch
     TODO
         - modificar essa activity para ser uma lista de botoes para acessar outras
         activities. Cada caso de erro deve gerar 2 activities, uma com o modo errado
-        e outra com o modo certo 
+        e outra com o modo certo
     https://medium.com/@riddhi.patel30281/10-common-mistakes-to-avoid-in-jetpack-compose-408276c056ba
 
     1 - Executar codigo non-compose  em composable function

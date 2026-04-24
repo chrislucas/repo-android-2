@@ -97,5 +97,3 @@ Caused by: androidx.compose.compiler.plugins.kotlin.IncompatibleComposeRuntimeVe
 	at androidx.compose.compiler.plugins.kotlin.ComposeIrGenerationExtension.generate(ComposeIrGenerationExtension.kt:63)
 	at org.jetbrains.kotlin.fir.pipeline.Fir2IrPipeline.applyIrGenerationExtensions(convertToIr.kt:578)
 	... 36 more
-
-

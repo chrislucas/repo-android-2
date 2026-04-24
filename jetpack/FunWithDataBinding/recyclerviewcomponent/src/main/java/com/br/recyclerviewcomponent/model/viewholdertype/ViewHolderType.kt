@@ -29,4 +29,3 @@ object IconTextViewType : ViewHolderType {
     override val type: Int
         get() = ICON_TEXT
 }
-

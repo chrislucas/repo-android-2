@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
   package="clipboard.xplorer.com.sample.clipboard">
-  
+
   <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -15,13 +15,13 @@
     <activity android:name=".SampleClipboardActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
-        
+
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
     <activity android:name="clipboard.xplorer.com.sample.phonestate.PhoneStateSample" />
     <activity android:name=".CopyAndPasteSample" />
-    
+
     <receiver
       android:name="clipboard.xplorer.com.sample.phonestate.MyPhoneCallReceiver"
       android:enabled="true"
@@ -33,7 +33,7 @@
         <action android:name="android.intent.action.NEW_OUTGOING_CALL" />
       </intent-filter>
     </receiver>
-    
+
     <service
       android:name="clipboard.xplorer.com.sample.phonestate.ImplConnectionService"
       android:label="@string/impl_connection_service"
@@ -48,7 +48,7 @@
   <uses-permission android:name="android.permission.READ_CALL_LOG" />
   <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
   <uses-permission android:name="android.permission.MANAGE_OWN_CALLS" />
-  
+
   <uses-permission
     android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
     tools:ignore="ProtectedPermissions" />

@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.br.masterconstraintlayout.ui.theme.MasterConstraintLayoutTheme
 
 /*
-    Build a responsive UI with ConstraintLayout   
+    Build a responsive UI with ConstraintLayout
     https://developer.android.com/develop/ui/views/layout/constraint-layout
  */
 class MainActivity : ComponentActivity() {

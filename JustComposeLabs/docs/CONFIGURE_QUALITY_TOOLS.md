@@ -4,7 +4,7 @@
 
 
 ### Funcionalides
-- KtLint é um linter para Kotlin que ajuda a manter um código limpo e 
+- KtLint é um linter para Kotlin que ajuda a manter um código limpo e
 consistente, seguindo as convenções de estilo do Kotlin.
   - Sem configuraçÕes: KtLint usa as regras de
     - [Kotlin Coding Conventions](https://kotlinlang.org/docs/coding-conventions.html)
@@ -13,7 +13,7 @@ consistente, seguindo as convenções de estilo do Kotlin.
     - Algumas regras permitem configurações adicionais e quando não fornecidos um valor padrão é usado
 - Disables Rules
   -  KTLint permitir habilitar e desabilittar regras
-  - Exemplo: para desabilitar a regra de indentação, 
+  - Exemplo: para desabilitar a regra de indentação,
   adicione o seguinte ao seu arquivo ".editorconfig"
     ```
     [*.kt]
@@ -118,7 +118,7 @@ plugins {
 ```
     // https://github.com/mrmans0n/compose-rules
     // https://mrmans0n.github.io/compose-rules/ktlint/
-    
+
     detektPlugins("io.nlopez.compose.rules:detekt:0.5.3") // Use the latest version
     detektPlugins("dev.detekt:detekt-rules-ktlint-wrapper:2.0.0-alpha.1")
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.6")

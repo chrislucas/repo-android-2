@@ -70,7 +70,7 @@ override fun attachBaseContext(newBase: Context?) {
     /**
      * ⚠️ IMPORTANTE: attachBaseContext é chamado ANTES de onCreate(),
      * então initConfigurationState SEMPRE será null aqui.
-     * 
+     *
      * Não há nada a fazer aqui. As configurações corretas serão
      * aplicadas em onCreate() após restaurar o estado.
      */
@@ -172,4 +172,3 @@ if (initConfigurationState != configurationState) {
 ```
 
 Depois que `onCreate()` restaura e aplica as mudanças, `initConfigurationState` fica IGUAL a `configurationState`, então o observer não dispara `recreate()` de novo. Sem loops infinitos! 🎉
-

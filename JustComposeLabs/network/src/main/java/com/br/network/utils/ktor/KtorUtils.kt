@@ -31,7 +31,7 @@ val httpClient = HttpClient(Android) {
          */
         gson()
     }
-    
+
     install(HttpTimeout) {
         requestTimeoutMillis = 15000L
         connectTimeoutMillis = 15000L

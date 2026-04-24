@@ -51,7 +51,7 @@ class SimpleTextAndroidViewKtTest {
 
     @Test
     fun `SimpleTextAndroidView with null string  if applicable  though current signature prevents it `() {
-        // Although the current signature is `String` (non-nullable), if it were `String?`, test how a null value is handled. 
+        // Although the current signature is `String` (non-nullable), if it were `String?`, test how a null value is handled.
         // This might involve checking for crashes or specific default behavior.
         // TODO implement test
     }
@@ -64,7 +64,7 @@ class SimpleTextAndroidViewKtTest {
 
     @Test
     fun `SimpleTextAndroidView text persistence across configuration changes`() {
-        // If the composable is part of a screen that undergoes configuration changes (e.g., screen rotation), 
+        // If the composable is part of a screen that undergoes configuration changes (e.g., screen rotation),
         // verify that the TextView retains the correct text value.
         // TODO implement test
     }

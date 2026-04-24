@@ -21,4 +21,3 @@ inline fun <T> fetch(fn: () -> T): Result<T> = try {
 } catch (e: Throwable) {
     Result.Failure(e)
 }
-

@@ -81,4 +81,3 @@ class SimpleViewModel: ViewModel() {
         }
     }
 }
-

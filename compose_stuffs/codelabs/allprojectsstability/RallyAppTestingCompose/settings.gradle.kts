@@ -24,4 +24,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "RallyAppTestingCompose"
 include(":app")
- 

@@ -72,6 +72,3 @@ class SkipNetworkInterceptor : Interceptor {
     private fun simulateNetworkDelay() = Thread.sleep(500L)
 
 }
-
-
-

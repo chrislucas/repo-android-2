@@ -1005,7 +1005,7 @@ public class PieChart extends ViewGroup {
         float l = (float) Math.sqrt(dx * dx + dy * dy);
 
         // decide if the scalar should be negative or positive by finding
-        // the dot product of the vector perpendicular to (x,y). 
+        // the dot product of the vector perpendicular to (x,y).
         float crossX = -y;
         float crossY = x;
 

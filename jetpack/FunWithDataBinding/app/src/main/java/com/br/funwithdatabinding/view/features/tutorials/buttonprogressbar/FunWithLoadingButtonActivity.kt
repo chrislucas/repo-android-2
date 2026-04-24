@@ -76,4 +76,3 @@ class LoadingButton @JvmOverloads constructor(
         progressBar.visibility = GONE
     }
 }
-

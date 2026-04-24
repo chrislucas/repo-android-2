@@ -11,12 +11,12 @@
 
 
     Exemplo
-        
+
         Chat Interfacae
             - Claude Desktop, LibreChat
         IDEs
             - Claude Code, Goose
-        
+
         [Chat, IDE] -> MCP <- [Data and file systens, Dev Tools, Productivity Tools]
 
 

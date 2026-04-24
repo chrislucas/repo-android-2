@@ -14,7 +14,7 @@ import com.br.funwithdatabinding.R
     Shadows
     https://robolectric.org/extending/
 
-    
+
  */
 class TestingTouchEventsInRobolectricActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

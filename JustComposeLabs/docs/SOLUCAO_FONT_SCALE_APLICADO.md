@@ -65,7 +65,7 @@ companion object {
 override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
     outState.putParcelable(SAVE_CONFIG_STATE, initConfigurationState)
-    
+
     // ✅ Salvar fontScale em SharedPreferences
     initConfigurationState?.let { state ->
         val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
@@ -83,14 +83,14 @@ override fun attachBaseContext(newBase: Context?) {
     // ✅ Ler fontScale de SharedPreferences
     val prefs = newBase?.getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
     val savedFontScale = prefs?.getFloat(PREF_FONT_SCALE, 1.0f) ?: 1.0f
-    
+
     // ✅ Aplicar ao contexto
     val contextWithFontScale = if (savedFontScale != 1.0f) {
         newBase?.adjustFontSize(savedFontScale)
     } else {
         newBase
     }
-    
+
     super.attachBaseContext(contextWithFontScale)
 }
 ```
@@ -166,4 +166,3 @@ Não há risco de "data suja" porque:
 1. `onSaveInstanceState()` atualiza o valor sempre
 2. `attachBaseContext()` lê o valor mais recente
 3. Após recriação bem-sucedida, o estado é sincronizado
-
