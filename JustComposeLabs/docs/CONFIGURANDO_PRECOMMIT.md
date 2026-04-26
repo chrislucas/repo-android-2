@@ -49,6 +49,12 @@ e não apenas nos arquivos modificados:
 pre-commit run --all-files
 ```
 
+pre commit fix trailing whitespace.
+fonte: https://share.google/aimode/WOd47ChGTUvNc0o4h
+```
+pre-commit run trailing-whitespace --all-files
+```
+
 Pular os hooks: Para realizar um commit ignorando os hooks (não recomendado):
 
 ```
@@ -69,6 +75,11 @@ Você pode adicionar outros ganchos (hooks) comuns no seu arquivo
 
 - Prettier
 
+
+## Run detekt using a Git pre-commit hook
+
+- https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
+- https://share.google/aimode/QVja62iosW7LD4d0U
 
 ## Referências
 

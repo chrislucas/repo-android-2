@@ -1,6 +1,5 @@
 package com.br.network
 
-import com.squareup.leakcanary.core.BuildConfig
 import okhttp3.JavaNetCookieJar
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -18,8 +18,18 @@ class DashedTriangleView @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
     private val paintDashedTriangle = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
-        /*
-
+        /**
+         * @see DashPathEffect
+         * construtor
+         *  - intervals: um array de floats que especifica o comprimento dos traços em pixels.
+         *  Elementos nas posicoes pares especificam  a largura dos trácos  e impares a largura dos espaços
+         *  , a quantidade de elementos do array deve ser par.
+         *      - Exemplo: Um array new float[] {10, 5} criará um traço de 10 pixels seguido por um espaço de 5 pixels.
+         *  - phase: (Deslocamento)
+         *      - Representa o deslocamento
+         *  fonte alternativa: https://share.google/aimode/5Xq4xnCbxn6ZX2qt3
+         *
+         *
          */
         pathEffect = DashPathEffect(floatArrayOf(90f, 30f), 0f)
     }

@@ -11,12 +11,12 @@ plugins {
 
         Migrate to built-in Kotlin
         https://developer.android.com/build/migrate-to-built-in-kotlin
-     */
-    //alias(libs.plugins.jetbrains.kotlin.android)
-    /*
+
         Compose Compiler Gradle plugin
         https://developer.android.com/develop/ui/compose/compiler
      */
+
+    // alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
     id("com.google.gms.google-services")
@@ -57,7 +57,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
 
@@ -151,10 +151,8 @@ dependencies {
      */
     implementation("androidx.palette:palette:1.0.0")
 
-
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
     implementation(libs.androidx.adaptive)
-
 
     // camera x
     implementation(libs.androidx.camera.core)
@@ -243,7 +241,6 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
     testImplementation(libs.robolectric)
 
-
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
     // custom design system based on Foundation)
@@ -267,7 +264,6 @@ dependencies {
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1
     implementation(libs.androidx.paging.runtime)
 
-
     // alternatively - without Android dependencies for tests
 
     // optional - RxJava2 support
@@ -282,10 +278,8 @@ dependencies {
     // optional - Jetpack Compose integration
     implementation(libs.androidx.paging.compose)
 
-
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
-
 
     // To use Kotlin Symbol Processing (KSP)
     ksp(libs.androidx.room.compiler)
@@ -318,7 +312,6 @@ dependencies {
     ksp("androidx.hilt:hilt-compiler:1.3.0")
     // When using Java.
     annotationProcessor("androidx.hilt:hilt-compiler:1.3.0")
-
 
     /*
         Getting started with WorkManager
@@ -365,7 +358,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     testImplementation(kotlin("test"))
 
-
     // https://github.com/mrmans0n/compose-rules
     // https://mrmans0n.github.io/compose-rules/ktlint/
     detektPlugins("io.nlopez.compose.rules:detekt:0.5.7") // Use the latest version
@@ -397,15 +389,14 @@ detekt {
 // Kotlin DSL
 tasks.withType<Detekt>().configureEach {
     reports {
-        //html.required.set(true)
-        //sarif.required.set(true)
-        //md.required.set(true)
+        // html.required.set(true)
+        // sarif.required.set(true)
+        // md.required.set(true)
 
         // Enable/Disable checkstyle report (default: true)
-        //checkstyle.required.set(true)
-        //checkstyle.outputLocation.set(file("build/reports/detekt.xml"))
+        // checkstyle.required.set(true)
+        // checkstyle.outputLocation.set(file("build/reports/detekt.xml"))
         // Enable/Disable HTML report (default: true)
-
 
         html.required.set(true)
         html.outputLocation.set(file("build/reports/detekt.html"))

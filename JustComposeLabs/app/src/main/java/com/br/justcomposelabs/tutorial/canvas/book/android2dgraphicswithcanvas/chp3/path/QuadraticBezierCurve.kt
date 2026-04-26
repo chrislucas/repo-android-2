@@ -9,6 +9,7 @@ import android.view.View
 
 /*
     https://share.google/aimode/XcJPiJkj55XKPuEQs
+    https://share.google/aimode/KwY1GSB79bMvfjor7
  */
 class QuadraticBezierCurveView @JvmOverloads constructor(
     ctx: Context,

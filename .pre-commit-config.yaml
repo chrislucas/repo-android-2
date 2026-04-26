@@ -1,9 +1,18 @@
 # .pre-commit-config.yaml
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.4.0  # Use a versão mais recente
+- repo: local
+  #rev: v1.23.8  # Use a versão estável mais recente
   hooks:
-  - id: trailing-whitespace    # Remove espaços em branco no final
+  - id: detekt
+    name: detekt check
+    description: Runs `detekt` on modified .kt files.
+    language: script
+    entry: detekt.sh
+    files: \.kt
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v6.0.0  # Use a versão mais recente
+  hooks:
+  - id: trailing-whitespace   # Remove espaços em branco no final
   - id: end-of-file-fixer     # Garante uma nova linha no final do arquivo
   - id: check-yaml            # Verifica a sintaxe de arquivos YAML
   - id: check-added-large-files # Impede o commit de arquivos muito grandes

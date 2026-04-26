@@ -11,6 +11,15 @@ import androidx.core.content.withStyledAttributes
 import com.br.justcomposelabs.R
 import kotlin.properties.Delegates
 
+/**
+ * @param ctx The Context the view is running in, through which it can
+ *        access the current theme, resources, etc.
+ * @param set The attributes of the XML tag that is inflating the view.
+ *
+ * @param defStyle  An attribute in the current theme that contains a
+ *        reference to a style resource that supplies default values for
+ *        the view. Can be 0 to not look for defaults.
+ */
 class TriangleFilledPathView @JvmOverloads constructor(
     ctx: Context,
     set: AttributeSet? = null,
@@ -37,7 +46,7 @@ class TriangleFilledPathView @JvmOverloads constructor(
             join = Paint.Join.entries[joinValue]
 
             strokeWidthValue = getFloat(
-                R.styleable.TriangleFilledPathView_triangleStrokeWidth,
+                R.styleable.TriangleFilledPathView_strokeWidthPaint,
                 12.0f
             )
         }

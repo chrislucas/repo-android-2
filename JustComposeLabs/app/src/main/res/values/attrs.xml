@@ -12,7 +12,6 @@
     <attr name="scaleEndY" format="float" />
     <attr name="scaleStrokeWidth" format="float" />
     <attr name="strokeWidthPaint" format="float" />
-    <attr name="triangleStrokeWidth" format="float" />
     <attr name="joinStyle" format="enum">
         <enum name="miter" value="0" />
         <enum name="round" value="1" />
@@ -83,8 +82,12 @@
     </declare-styleable>
 
     <declare-styleable name="PolygonView">
-        <attr name="sides" format="integer" />
+        <attr name="sides" format="integer" min="3" />
+        <attr name="scaleRadius" format="float" />
+        <attr name="lineColor" />
+        <attr name="scaleStrokeWidth" />
         <attr name="strokeWidthPaint" />
+        <attr name="joinStyle" />
     </declare-styleable>
 
     <declare-styleable name="TriangleFilledPathView">
@@ -98,7 +101,7 @@
         <attr name="scaleEndX" />
         <attr name="scaleEndY" />
         <attr name="scaleStrokeWidth" />
-        <attr name="triangleStrokeWidth" />
+        <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
     </declare-styleable>
 
@@ -147,12 +150,29 @@
         <attr name="joinStyle" />
     </declare-styleable>
 
-
     <declare-styleable name="DashedTriangleView">
         <attr name="lineColor" />
         <attr name="scaleStrokeWidth" />
         <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
+    </declare-styleable>
+
+    <declare-styleable name="HexagonView">
+        <attr name="lineColor" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="strokeWidthPaint" />
+        <attr name="joinStyle" />
+        <attr name="scaleRadius" />
+    </declare-styleable>
+
+
+    <declare-styleable name="DashedHexagonView">
+        <attr name="lineColor" />
+        <attr name="scaleStrokeWidth" />
+        <attr name="strokeWidthPaint" />
+        <attr name="joinStyle" />
+        <attr name="scaleRadius" />
+
     </declare-styleable>
 
 </resources>

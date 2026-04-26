@@ -7,7 +7,11 @@ import android.graphics.Path
 import android.util.AttributeSet
 import android.view.View
 
-class RationalQuadraticCurveView @JvmOverloads constructor(
+/*
+    https://share.google/aimode/y98Q1SlZxBRJDlHF6
+    https://share.google/aimode/KwY1GSB79bMvfjor7
+ */
+class RationalQuadraticBezierCurveView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
     defStyle: Int = 0

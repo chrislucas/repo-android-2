@@ -67,12 +67,16 @@ class TrianglePathJoinView @JvmOverloads constructor(
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-        linePaint.strokeWidth = min(w, h) * .1f
+        linePaint.strokeWidth = min(w, h) * TEN_PERCENT
         path.run {
             moveTo(w * .5f, h * .2f)
             lineTo(w * .8f, h * .8f)
             lineTo(w * .2f, h * .8f)
             close()
         }
+    }
+
+    companion object {
+        const val TEN_PERCENT = .1f
     }
 }
