@@ -27,7 +27,7 @@ cd "$PROJECT_DIR" || exit 1
 EXIT_CODE=$?
 
 # Volta para o diretório original
-cd "$START_DIR"
+cd "$START_DIR" || exit
 
 if [ $EXIT_CODE -ne 0 ]; then
   echo "***********************************************"
