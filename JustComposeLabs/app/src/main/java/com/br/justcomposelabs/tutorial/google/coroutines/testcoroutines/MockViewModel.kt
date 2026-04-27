@@ -14,7 +14,6 @@ import kotlinx.coroutines.launch
  */
 
 class MockViewModel : ViewModel() {
-
     private val mutableString = MutableStateFlow("")
 
     val data: StateFlow<String> = mutableString.asStateFlow()

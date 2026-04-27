@@ -23,9 +23,9 @@ fun AccountsBody(accounts: List<Account>) {
                 name = account.name,
                 number = account.number,
                 amount = account.balance,
-                color = account.color
+                color = account.color,
             )
-        }
+        },
     )
 }
 

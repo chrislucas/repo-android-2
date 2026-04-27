@@ -15,19 +15,22 @@ import androidx.compose.ui.unit.dp
 @Preview(showBackground = true)
 @Composable
 fun SimpleBrushBorder() {
-    val gradientBrush = Brush.horizontalGradient(
-        colors = listOf(Color.Blue, Color.Green, Color.Black, Color.Red),
-        startX = .0f,
-        endX = 500.0f,
-        tileMode = TileMode.Repeated
-    )
+    val gradientBrush =
+        Brush.horizontalGradient(
+            colors = listOf(Color.Blue, Color.Green, Color.Black, Color.Red),
+            startX = .0f,
+            endX = 500.0f,
+            tileMode = TileMode.Repeated,
+        )
 
     Text(
         text = "Content",
-        modifier = Modifier.border(
-            width = 2.dp,
-            brush = gradientBrush,
-            shape = CircleShape
-        ).padding(10.dp)
+        modifier =
+        Modifier
+            .border(
+                width = 2.dp,
+                brush = gradientBrush,
+                shape = CircleShape,
+            ).padding(10.dp),
     )
 }

@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color
 private fun ScrollToTopButton(onClick: () -> Unit = {}) = Unit
 
 @Composable
-private fun animateColorBetween(first: Color, second: Color): State<Color> {
-    return remember { mutableStateOf(first) }
-}
+private fun animateColorBetween(
+    first: Color,
+    second: Color,
+): State<Color> = remember { mutableStateOf(first) }

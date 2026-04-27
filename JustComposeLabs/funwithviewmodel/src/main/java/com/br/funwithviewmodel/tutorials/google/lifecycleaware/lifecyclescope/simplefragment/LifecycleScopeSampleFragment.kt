@@ -1,10 +1,10 @@
 package com.br.funwithviewmodel.tutorials.google.lifecycleaware.lifecyclescope.simplefragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.br.funwithviewmodel.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,13 +18,11 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 
-
 /*
     LifecycleScope
     https://developer.android.com/topic/libraries/architecture/coroutines#lifecyclescope
  */
 class LifecycleScopeSampleFragment : Fragment() {
-
     private var param1: String? = null
     private var param2: String? = null
 
@@ -37,14 +35,15 @@ class LifecycleScopeSampleFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?,
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(
             R.layout.fragment_lifecycle_scope_sample,
             container,
-            false
+            false,
         )
     }
 
@@ -59,12 +58,15 @@ class LifecycleScopeSampleFragment : Fragment() {
          */
 
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            LifecycleScopeSampleFragment().apply {
-                arguments = Bundle().apply {
+        fun newInstance(
+            param1: String,
+            param2: String,
+        ) = LifecycleScopeSampleFragment().apply {
+            arguments =
+                Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
-            }
+        }
     }
 }

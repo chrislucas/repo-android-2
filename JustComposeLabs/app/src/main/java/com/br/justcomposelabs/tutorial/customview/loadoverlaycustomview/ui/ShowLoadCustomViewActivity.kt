@@ -49,11 +49,12 @@ class ShowLoadCustomViewActivity : ComponentActivity() {
 fun OpaqueOverlay(modifier: Modifier = Modifier) {
     val lifecycleOwner = LocalLifecycleOwner.current
     val ctx = LocalContext.current
-    val customViewRef: LoadCustomViewOverlay = remember {
-        LoadCustomViewOverlay(ctx).also {
-            it.registerLifecycleOwner(lifecycleOwner)
+    val customViewRef: LoadCustomViewOverlay =
+        remember {
+            LoadCustomViewOverlay(ctx).also {
+                it.registerLifecycleOwner(lifecycleOwner)
+            }
         }
-    }
     val scope = rememberCoroutineScope()
     var isLoading by remember { mutableStateOf(false) }
 
@@ -61,14 +62,14 @@ fun OpaqueOverlay(modifier: Modifier = Modifier) {
         // Camada 1 (fundo): LoadCustomViewOverlay - preenche toda a tela
         AndroidView(
             modifier = Modifier.fillMaxSize(),
-            factory = { _ -> customViewRef }
+            factory = { _ -> customViewRef },
         )
 
         // Camada 2 (frente): Botão um pouco abaixo do centro
         Column(
             modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
         ) {
             Button(
                 onClick = {
@@ -80,7 +81,7 @@ fun OpaqueOverlay(modifier: Modifier = Modifier) {
                         isLoading = false
                     }
                 },
-                enabled = !isLoading
+                enabled = !isLoading,
             ) {
                 Text("Show Overlay")
             }

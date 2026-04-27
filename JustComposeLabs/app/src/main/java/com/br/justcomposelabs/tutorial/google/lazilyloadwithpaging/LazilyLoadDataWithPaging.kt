@@ -40,18 +40,21 @@ import androidx.paging.compose.itemKey
     while the actual message data is being fetched, enhancing the user experience.
  */
 
-data class Message(val author: String, val body: String)
+data class Message(
+    val author: String,
+    val body: String,
+)
 
 @Composable
 fun Messages(
     modifier: Modifier = Modifier,
-    pager: Pager<Int, Message>
+    pager: Pager<Int, Message>,
 ) {
     val lazyPagingItems = pager.flow.collectAsLazyPagingItems()
     LazyColumn(modifier) {
         items(
             lazyPagingItems.itemCount,
-            key = lazyPagingItems.itemKey { it.hashCode() }
+            key = lazyPagingItems.itemKey { it.hashCode() },
         ) { index ->
             val message = lazyPagingItems[index]
             if (message != null) {
@@ -68,12 +71,13 @@ fun Messages(
 fun MessagesPreview() {
     Messages(
         modifier = Modifier.fillMaxSize(),
-        pager = Pager(
+        pager =
+        Pager(
             config = PagingConfig(pageSize = 20),
             pagingSourceFactory = {
                 MockMessagePagingSource()
             },
-        )
+        ),
     )
 }
 
@@ -89,21 +93,19 @@ fun MessagesPreview() {
 private const val STARTING_PAGE_INDEX = 1
 
 class MockMessagePagingSource : PagingSource<Int, Message>() {
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Message> {
-        return LoadResult.Page(
-            data = buildList {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Message> =
+        LoadResult.Page(
+            data =
+            buildList {
                 repeat(30) {
                     add(Message("Author $it", "Body $it"))
                 }
             },
             prevKey = params.key,
-            nextKey = params.key?.plus(1) ?: STARTING_PAGE_INDEX.plus(1)
+            nextKey = params.key?.plus(1) ?: STARTING_PAGE_INDEX.plus(1),
         )
-    }
 
-    override fun getRefreshKey(state: PagingState<Int, Message>): Int? {
-        return state.anchorPosition
-    }
+    override fun getRefreshKey(state: PagingState<Int, Message>): Int? = state.anchorPosition
 }
 
 @Composable
@@ -111,7 +113,7 @@ private fun MessagePlaceholder(modifier: Modifier = Modifier) {
     Box(
         modifier
             .fillMaxWidth()
-            .height(48.dp)
+            .height(48.dp),
     ) {
         CircularProgressIndicator()
     }
@@ -120,14 +122,15 @@ private fun MessagePlaceholder(modifier: Modifier = Modifier) {
 @Composable
 private fun MessageRow(
     modifier: Modifier = Modifier,
-    message: Message
+    message: Message,
 ) {
     Card(modifier = modifier.padding(8.dp)) {
         Column(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(8.dp)
                 .fillMaxWidth(),
-            verticalArrangement = Arrangement.Center
+            verticalArrangement = Arrangement.Center,
         ) {
             Text(message.author)
             Text(message.body)

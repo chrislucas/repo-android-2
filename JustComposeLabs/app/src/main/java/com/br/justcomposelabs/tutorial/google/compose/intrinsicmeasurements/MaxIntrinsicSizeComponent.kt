@@ -53,7 +53,7 @@ https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements
 fun TwoTextsDesiredResultInstrinsicSizeComponent(
     modifier: Modifier = Modifier,
     first: String,
-    second: String
+    second: String,
 ) {
     /*
         example intrinsics Max compose
@@ -69,16 +69,17 @@ fun TwoTextsDesiredResultInstrinsicSizeComponent(
         maior tamanho
      */
     Row(
-        modifier = modifier
-            .systemBarsPadding()
-
+        modifier =
+        modifier
+            .systemBarsPadding(),
     ) {
         Text(
             text = first,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f) // vai encaixar o texto dentro do espaco disponivel de largura
                 .padding(start = 4.dp),
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
         )
 
         /*
@@ -87,17 +88,19 @@ fun TwoTextsDesiredResultInstrinsicSizeComponent(
          */
         VerticalDivider(
             color = Color.Black,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxHeight()
-                .width(1.dp)
+                .width(1.dp),
         )
 
         Text(
             text = second,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f) // vai encaixar o texto dentro do espaco disponivel de largura
                 .padding(end = 4.dp),
-            textAlign = TextAlign.End
+            textAlign = TextAlign.End,
         )
     }
 }
@@ -109,7 +112,7 @@ private fun TwoTextsDesiredResultInstrinsicSizeComponentPreview() {
         TwoTextsDesiredResultInstrinsicSizeComponent(
             modifier = Modifier.height(IntrinsicSize.Max),
             first = "This is a longer text that might wrap around several lines.",
-            second = "World"
+            second = "World",
         )
     }
 }
@@ -121,7 +124,7 @@ private fun TwoTextsDesiredResultMinInstrinsicSizeComponentPreview() {
         TwoTextsDesiredResultInstrinsicSizeComponent(
             modifier = Modifier.height(IntrinsicSize.Min),
             first = "This is a longer text that might wrap around several lines.",
-            second = "World"
+            second = "World",
         )
     }
 }

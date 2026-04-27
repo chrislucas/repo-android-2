@@ -7,7 +7,6 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.funwithfragments.R
 
-
 /*
     https://medium.com/lcw-digital/communicating-data-between-fragments-using-setfragmentresultlistener-837f5b852e98
  */

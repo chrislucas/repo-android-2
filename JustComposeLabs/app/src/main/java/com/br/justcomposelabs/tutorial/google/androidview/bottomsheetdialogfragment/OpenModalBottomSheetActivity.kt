@@ -35,7 +35,7 @@ class OpenModalBottomSheetActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     ButtonModalBottomSheet(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -68,19 +68,20 @@ fun GreetingPreview() {
 }
 
 class ComposeViewBottomSheet : BottomSheetDialogFragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return ComposeView(requireContext()).apply {
+        savedInstanceState: Bundle?,
+    ): View? =
+        ComposeView(requireContext()).apply {
             setContent {
                 Column(
-                    modifier = Modifier.fillMaxWidth()
+                    modifier =
+                    Modifier
+                        .fillMaxWidth()
                         .padding(16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                    verticalArrangement = Arrangement.spacedBy(16.dp),
                 ) {
                     Button({ dismiss() }) {
                         Text("dismiss")
@@ -88,7 +89,6 @@ class ComposeViewBottomSheet : BottomSheetDialogFragment() {
                 }
             }
         }
-    }
 
     companion object {
         const val TAG = "ComposeViewBottomSheet"

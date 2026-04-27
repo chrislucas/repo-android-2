@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
-
 /*
     Add KTX dependencies
     https://developer.android.com/topic/libraries/architecture/coroutines#dependencies
@@ -17,8 +16,9 @@ import kotlinx.coroutines.launch
     For LifecycleScope, use androidx.lifecycle:lifecycle-runtime-ktx:2.4.0 or higher.
     For liveData, use androidx.lifecycle:lifecycle-livedata-ktx:2.4.0 or higher.
  */
-class SampleViewModel(initFun: suspend () -> Unit) : ViewModel() {
-
+class SampleViewModel(
+    initFun: suspend () -> Unit,
+) : ViewModel() {
     /*
         Lifecycle-aware coroutine scopes
 

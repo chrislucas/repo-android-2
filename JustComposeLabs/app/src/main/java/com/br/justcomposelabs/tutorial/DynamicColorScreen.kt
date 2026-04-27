@@ -20,7 +20,7 @@ import com.br.justcomposelabs.utils.pallete.generatePalette
 @Composable
 fun DynamicColorScreen(
     modifier: Modifier = Modifier,
-    palette: Palette?
+    palette: Palette?,
 ) {
     palette?.let {
         val backgroundColor = it.vibrantSwatch?.rgb?.let(::Color) ?: Color.Gray
@@ -29,7 +29,7 @@ fun DynamicColorScreen(
         Column(modifier = modifier.background(backgroundColor)) {
             Text(
                 text = "Hello Dynamic Color!",
-                color = textColor
+                color = textColor,
             )
         }
     } ?: run {
@@ -51,9 +51,10 @@ fun DynamicColorScreenPreview() {
     val observablePalette = remember { mutableStateOf<Palette?>(null) }
 
     LaunchedEffect(Unit) {
-        observablePalette.value = generatePalette(
-            BitmapFactory.decodeResource(ctx, R.drawable.honeycomb)
-        )
+        observablePalette.value =
+            generatePalette(
+                BitmapFactory.decodeResource(ctx, R.drawable.honeycomb),
+            )
     }
 
     observablePalette.value?.let {

@@ -22,8 +22,9 @@ fun ModifierOrderMatters() {
         Text(
             text = "Hello World!",
             modifier =
-            Modifier.background(Color(0xFFD78BC8))
-                .padding(20.dp)
+            Modifier
+                .background(Color(0xFFD78BC8))
+                .padding(20.dp),
         )
 
         Text(
@@ -31,8 +32,7 @@ fun ModifierOrderMatters() {
             modifier =
             Modifier
                 .padding(20.dp)
-                .background(Color(0xFFD78BC8))
-
+                .background(Color(0xFFD78BC8)),
         )
 
         Text(
@@ -41,8 +41,7 @@ fun ModifierOrderMatters() {
             Modifier
                 .clickable {}
                 .padding(20.dp)
-                .background(Color(0xFFEEDEEA))
-
+                .background(Color(0xFFEEDEEA)),
         )
 
         Text(
@@ -52,7 +51,6 @@ fun ModifierOrderMatters() {
                 .padding(20.dp)
                 .clickable {}
                 .background(Color(0xFFEEDEEA)),
-
         )
     }
 }

@@ -14,11 +14,12 @@ import com.br.justcomposelabs.tutorial.google.compose.state.wheretohoiststate.Me
 @Preview(showBackground = true)
 @Composable
 fun ChatBubble(
-    message: Message = Message(
-        id = "1",
-        content = "Hello World",
-        timestamp = "${System.currentTimeMillis()}ms"
-    )
+    message: Message =
+        Message(
+            id = "1",
+            content = "Hello World",
+            timestamp = "${System.currentTimeMillis()}ms",
+        ),
 ) {
     /**
      * @see com.br.justcomposelabs.tutorial.google.compose.state.wheretohoiststate.ExpandableTextBox

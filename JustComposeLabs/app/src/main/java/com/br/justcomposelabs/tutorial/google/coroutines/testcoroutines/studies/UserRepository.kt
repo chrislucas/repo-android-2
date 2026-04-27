@@ -5,10 +5,14 @@ import kotlinx.coroutines.delay
 /*
     https://developer.android.com/kotlin/coroutines/test?authuser=1
  */
-data class User(val name: String, val email: String)
+data class User(
+    val name: String,
+    val email: String,
+)
 
 class UserRepository {
     private val users = mutableListOf<User>()
+
     suspend fun register(user: User) {
         delay(300L)
         users.add(user)

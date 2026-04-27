@@ -31,12 +31,13 @@ fun Start() {
 @Composable
 fun BindingDisposableEffect(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
-    callback: CallbackLocalLifecycleOwner
+    callback: CallbackLocalLifecycleOwner,
 ) {
     DisposableEffect(lifecycleOwner) {
-        val obs = LifecycleEventObserver { _, event ->
-            callback.onEvent(event)
-        }
+        val obs =
+            LifecycleEventObserver { _, event ->
+                callback.onEvent(event)
+            }
 
         lifecycleOwner.lifecycle.addObserver(obs)
 

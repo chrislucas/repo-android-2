@@ -61,18 +61,20 @@ https://developer.android.com/develop/ui/compose/layouts/intrinsic-measurements
 fun TwoTextsUndesiredResultComponent(
     modifier: Modifier = Modifier,
     first: String,
-    second: String
+    second: String,
 ) {
     Row(
-        modifier = modifier
-            .systemBarsPadding()
+        modifier =
+        modifier
+            .systemBarsPadding(),
     ) {
         Text(
             text = first,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .padding(start = 4.dp)
-                .wrapContentWidth(Alignment.Start)
+                .wrapContentWidth(Alignment.Start),
         )
 
         /*
@@ -85,17 +87,19 @@ fun TwoTextsUndesiredResultComponent(
          */
         VerticalDivider(
             color = Color.Black,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxHeight()
-                .width(1.dp)
+                .width(1.dp),
         )
 
         Text(
             text = second,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .padding(end = 4.dp)
-                .wrapContentWidth(Alignment.End)
+                .wrapContentWidth(Alignment.End),
         )
     }
 }
@@ -108,12 +112,15 @@ private fun TwoTextsUndesiredResultComponentPreview() {
     }
 }
 
-data class Content(val first: String, val second: String)
+data class Content(
+    val first: String,
+    val second: String,
+)
 
 @Composable
 private fun TwoTextsDesiredResultComponent(
     modifier: Modifier = Modifier,
-    content: Content
+    content: Content,
 ) {
     /*
        Para que o componente Divider preencha somente o espaco disponivel dado um tamano
@@ -139,31 +146,35 @@ private fun TwoTextsDesiredResultComponent(
 
      */
     Row(
-        modifier = modifier
+        modifier =
+        modifier
             .systemBarsPadding()
-            .height(IntrinsicSize.Min)
+            .height(IntrinsicSize.Min),
     ) {
         Text(
             text = content.first,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .padding(start = 4.dp)
-                .wrapContentWidth(Alignment.Start)
+                .wrapContentWidth(Alignment.Start),
         )
 
         VerticalDivider(
             color = Color.Black,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxHeight()
-                .width(1.dp)
+                .width(1.dp),
         )
 
         Text(
             text = content.second,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .padding(end = 4.dp)
-                .wrapContentWidth(Alignment.End)
+                .wrapContentWidth(Alignment.End),
         )
     }
 }
@@ -174,13 +185,13 @@ class ContentPreviewParameterProvider(
             Content("Hello", "World"),
             Content("This is a longer text that might wrap around several lines.", "Jetpack"),
             Content("Compose", "Labs"),
-        )
+        ),
 ) : PreviewParameterProvider<Content>
 
 @Preview(showBackground = true)
 @Composable
 private fun TwoTextsDesiredResultComponentPreview(
-    @PreviewParameter(ContentPreviewParameterProvider::class) content: Content
+    @PreviewParameter(ContentPreviewParameterProvider::class) content: Content,
 ) {
     JustComposeLabsTheme {
         TwoTextsDesiredResultComponent(content = content)

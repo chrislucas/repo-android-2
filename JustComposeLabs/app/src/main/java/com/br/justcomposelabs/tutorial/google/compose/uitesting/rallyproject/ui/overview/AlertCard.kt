@@ -37,18 +37,21 @@ fun AlertCard() {
     val alertMessage = "Heads up, you've used up 90% of your Shopping budget for this month."
     if (showDialog) {
         RallyAlertDialog(
-            rallyAlertDialogContext = RallyAlertDialogContext(
-                buttonConfirmContext = ButtonConfirmContext(
+            rallyAlertDialogContext =
+            RallyAlertDialogContext(
+                buttonConfirmContext =
+                ButtonConfirmContext(
                     onConfirm = { showDialog = false },
-                    confirmButtonText = "Confirm".uppercase(Locale.getDefault())
+                    confirmButtonText = "Confirm".uppercase(Locale.getDefault()),
                 ),
-                buttonDismissContext = ButtonDismissContext(
+                buttonDismissContext =
+                ButtonDismissContext(
                     onDismiss = { showDialog = false },
-                    dismissButtonText = "Dismiss".uppercase(Locale.getDefault())
+                    dismissButtonText = "Dismiss".uppercase(Locale.getDefault()),
                 ),
                 bodyText = alertMessage,
-                onTapOutside = {}
-            )
+                onTapOutside = {},
+            ),
         )
     }
 
@@ -80,10 +83,11 @@ fun AlertCard() {
         initialValue = 1.dp,
         targetValue = 8.dp,
         typeConverter = Dp.VectorConverter,
-        animationSpec = infiniteRepeatable(
+        animationSpec =
+        infiniteRepeatable(
             animation = tween(500),
-            repeatMode = RepeatMode.Reverse
-        )
+            repeatMode = RepeatMode.Reverse,
+        ),
     )
 
     /**
@@ -98,10 +102,11 @@ fun AlertCard() {
                 showDialog = true
             }
             RallyDivider(
-                modifier = Modifier.Companion.padding(
+                modifier =
+                Modifier.Companion.padding(
                     start = RallyDefaultPadding,
-                    end = RallyDefaultPadding
-                )
+                    end = RallyDefaultPadding,
+                ),
             )
             AlertItem(alertMessage)
         }
@@ -113,10 +118,11 @@ fun AlertCard() {
 fun AlertCardPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             OverviewBody()
         }
@@ -128,10 +134,11 @@ fun AlertCardPreview() {
 fun AlertCardOnlyPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             AlertCard()
         }

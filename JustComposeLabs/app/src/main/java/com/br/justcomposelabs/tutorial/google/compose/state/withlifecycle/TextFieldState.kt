@@ -57,19 +57,19 @@ fun TextComponentInternalState() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         if (content.isNotBlank()) {
             Text(
                 text = "Hello, $content!",
                 modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
             )
         }
         OutlinedTextField(
             value = content,
             onValueChange = setContent,
-            label = { Text("label") }
+            label = { Text("label") },
         )
     }
 }
@@ -82,7 +82,7 @@ fun TextComponentExternalState() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         if (uiState.isNotBlank()) {
             Text("Content: $uiState", style = TextStyle(fontSize = 23.sp))
@@ -95,7 +95,7 @@ fun TextComponentExternalState() {
             },
             label = {
                 Text("TextField")
-            }
+            },
         )
     }
 }

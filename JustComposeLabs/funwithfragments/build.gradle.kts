@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    //alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
 
     /*
         Compose Compiler Gradle plugin
@@ -28,7 +28,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -167,9 +167,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.lifecycle.process)
 
-
     // optional - Test helpers for LiveData
-    testImplementation(libs.androidx.core.testing )
+    testImplementation(libs.androidx.core.testing)
     // optional - Test helpers for Lifecycle runtime
     testImplementation(libs.androidx.lifecycle.runtime.testing)
 

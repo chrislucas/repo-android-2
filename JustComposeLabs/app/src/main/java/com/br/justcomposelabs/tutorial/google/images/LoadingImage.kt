@@ -19,7 +19,7 @@ private fun LoadImage() {
     Column(modifier = Modifier.fillMaxSize()) {
         Image(
             painter = painterResource(R.drawable.honeycomb),
-            contentDescription = null
+            contentDescription = null,
         )
     }
 }

@@ -22,9 +22,10 @@ import androidx.compose.ui.unit.dp
 @Composable
 private fun FlowRowSimpleUsageExample() {
     FlowRow(
-        modifier = Modifier
+        modifier =
+        Modifier
             .padding(8.dp)
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         ChipItem("Price: High to Low")
         ChipItem("Avg rating: 4+")
@@ -36,7 +37,10 @@ private fun FlowRowSimpleUsageExample() {
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ChipItem(text: String, onClick: () -> Unit = {}) {
+fun ChipItem(
+    text: String,
+    onClick: () -> Unit = {},
+) {
     FilterChip(
         modifier = Modifier.padding(end = 4.dp),
         onClick = onClick,
@@ -45,6 +49,6 @@ fun ChipItem(text: String, onClick: () -> Unit = {}) {
         label = {
             Text(text)
         },
-        selected = false
+        selected = false,
     )
 }

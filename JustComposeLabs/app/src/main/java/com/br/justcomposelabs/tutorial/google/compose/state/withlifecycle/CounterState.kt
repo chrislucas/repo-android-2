@@ -52,13 +52,14 @@ passado para o parametro minActiveState
  */
 
 class CounterState {
-    val counter = flow {
-        var count = 0
-        while (true) {
-            emit(count++)
-            delay(1000L)
+    val counter =
+        flow {
+            var count = 0
+            while (true) {
+                emit(count++)
+                delay(1000L)
+            }
         }
-    }
 }
 
 @Preview(showBackground = true)
@@ -94,38 +95,42 @@ fun CounterComponent() {
 
         onStopOrDispose {
             // do any needed clean up here
-            Toast.makeText(
-                ctx,
-                "LIFECYCLE_START_ON_STOP",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast
+                .makeText(
+                    ctx,
+                    "LIFECYCLE_START_ON_STOP",
+                    Toast.LENGTH_SHORT,
+                ).show()
         }
     }
 
     LifecycleResumeEffect(Unit) {
         // ON_RESUME code is executed here
-        Toast.makeText(
-            ctx,
-            "LIFECYCLE_RESUME_EFFECT",
-            Toast.LENGTH_SHORT
-        ).show()
+        Toast
+            .makeText(
+                ctx,
+                "LIFECYCLE_RESUME_EFFECT",
+                Toast.LENGTH_SHORT,
+            ).show()
 
         onPauseOrDispose {
             // do any needed clean up here
-            Toast.makeText(
-                ctx,
-                "LIFECYCLE_RESUME_ON_PAUSE",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast
+                .makeText(
+                    ctx,
+                    "LIFECYCLE_RESUME_ON_PAUSE",
+                    Toast.LENGTH_SHORT,
+                ).show()
         }
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .paddingEdgeToEdge()
             .navigationBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text("Counter: $count", style = TextStyle(fontSize = 23.sp))
     }

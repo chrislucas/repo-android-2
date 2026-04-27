@@ -35,16 +35,18 @@ fun ContactListWrong(
 fun ContactListCorrect(
     modifier: Modifier = Modifier,
     contacts: List<Contact>,
-    comparator: Comparator<Contact> = Comparator { first, second ->
-        first.name.compareTo(second.name)
-    },
+    comparator: Comparator<Contact> =
+        Comparator { first, second ->
+            first.name.compareTo(second.name)
+        },
 ) {
     /*
         Use remember to minimize expensive calculations
      */
-    val sortedContacts = remember(contacts, comparator) {
-        contacts.sortedWith(comparator)
-    }
+    val sortedContacts =
+        remember(contacts, comparator) {
+            contacts.sortedWith(comparator)
+        }
     LazyColumn(modifier) {
         items(sortedContacts) { contact ->
             Text("$contact")
@@ -52,23 +54,25 @@ fun ContactListCorrect(
     }
 }
 
-private val contacts = listOf(
-    Contact(name = "John Doe"),
-    Contact(name = "Jane Smith"),
-    Contact(name = "Peter Jones"),
-    Contact(name = "Erick Jones"),
-    Contact(name = "Ana Jones")
-)
+private val contacts =
+    listOf(
+        Contact(name = "John Doe"),
+        Contact(name = "Jane Smith"),
+        Contact(name = "Peter Jones"),
+        Contact(name = "Erick Jones"),
+        Contact(name = "Ana Jones"),
+    )
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun ContactListWrongPreview() {
     JustComposeLabsTheme {
         ContactListWrong(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .paddingEdgeToEdge(),
-            contacts = contacts
+            contacts = contacts,
         )
     }
 }
@@ -78,10 +82,11 @@ fun ContactListWrongPreview() {
 fun ContactListCorrectPreview() {
     JustComposeLabsTheme {
         ContactListCorrect(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .paddingEdgeToEdge(),
-            contacts = contacts
+            contacts = contacts,
         )
     }
 }

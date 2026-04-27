@@ -36,7 +36,6 @@ import kotlinx.coroutines.launch
  */
 
 class SimpleViewModel : ViewModel() {
-
     private val first = Color(0xff332334)
     private val second = Color(0xFF3F51B5)
 
@@ -57,7 +56,7 @@ class SimpleViewModel : ViewModel() {
 fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
     val color by animateColorAsState(
         targetValue = viewModel.color,
-        animationSpec = tween(durationMillis = 1000)
+        animationSpec = tween(durationMillis = 1000),
     )
 
     LaunchedEffect(Unit) {
@@ -66,10 +65,11 @@ fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(color),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         /**
          * @see com.br.justcomposelabs.tutorial.google.compose.text.style.TextDecoratedUnderline
@@ -77,12 +77,13 @@ fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
          */
         Text(
             text = "UnstableBackgroundInAnimation",
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.White,
                 fontSize = 23.sp,
                 fontStyle = FontStyle.Italic,
                 textDecoration = TextDecoration.Underline,
-                fontSynthesis = FontSynthesis.All
+                fontSynthesis = FontSynthesis.All,
             ),
             textAlign = TextAlign.Center,
         )
@@ -94,7 +95,7 @@ fun UnstableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
 fun StableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
     val color by animateColorAsState(
         targetValue = viewModel.color,
-        animationSpec = tween(durationMillis = 1000)
+        animationSpec = tween(durationMillis = 1000),
     )
 
     LaunchedEffect(Unit) {
@@ -103,21 +104,23 @@ fun StableBackgroundInAnimation(viewModel: SimpleViewModel = viewModel()) {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .drawBehind {
                 drawRect(color)
             },
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "StableBackgroundInAnimation",
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.White,
                 fontSize = 23.sp,
                 fontStyle = FontStyle.Italic,
                 textDecoration = TextDecoration.Underline,
-                fontSynthesis = FontSynthesis.All
+                fontSynthesis = FontSynthesis.All,
             ),
             textAlign = TextAlign.Center,
         )

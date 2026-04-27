@@ -4,7 +4,7 @@ import org.gradle.kotlin.dsl.withType
 
 plugins {
     alias(libs.plugins.android.library)
-    //alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.compose.compiler)
 
     id("io.gitlab.arturbosch.detekt")
@@ -27,7 +27,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -126,11 +126,9 @@ dependencies {
     // Optional - Integration with RxJava
     implementation(libs.androidx.runtime.rxjava2)
 
-
     // UI Tests
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.test.manifest)
-
 
     // dependencias para usar jetpackcompose
     // https://developer.android.com/develop/ui/compose/setup#kotlin_1

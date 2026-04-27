@@ -24,7 +24,6 @@ import coil3.compose.rememberAsyncImagePainter
     https://developer.android.com/develop/ui/compose/libraries#activity_result
  */
 
-
 @Preview(showBackground = true, name = "GetContentComponentPreview", showSystemUi = true)
 @Composable
 fun GetContentComponent(modifier: Modifier = Modifier) {
@@ -34,24 +33,27 @@ fun GetContentComponent(modifier: Modifier = Modifier) {
 
     var imageUri by remember { mutableStateOf<Uri?>(null) }
 
-    val launcher = rememberLauncherForActivityResult(
-        contract = ActivityResultContracts.GetContent()
-    ) { uri: Uri? ->
-        // Handle the returned Uri
-        imageUri = uri
-    }
+    val launcher =
+        rememberLauncherForActivityResult(
+            contract = ActivityResultContracts.GetContent(),
+        ) { uri: Uri? ->
+            // Handle the returned Uri
+            imageUri = uri
+        }
 
     Column(
-        modifier = modifier.fillMaxWidth()
-            .systemBarsPadding()
-            .navigationBarsPadding()
+        modifier =
+            modifier
+                .fillMaxWidth()
+                .systemBarsPadding()
+                .navigationBarsPadding(),
     ) {
         Button(onClick = { launcher.launch("image/*") }) {
             Text(text = "Load Image")
         }
         Image(
             painter = rememberAsyncImagePainter(imageUri),
-            contentDescription = "My Image"
+            contentDescription = "My Image",
         )
     }
 }

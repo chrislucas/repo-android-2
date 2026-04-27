@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 private fun AppCompatActivity.activityResultLauncher(startCamera: () -> Unit) {
     registerForActivityResult(
-        ActivityResultContracts.RequestMultiplePermissions()
+        ActivityResultContracts.RequestMultiplePermissions(),
     ) { permissions ->
         // Handle Permission granted/rejected
         var permissionGranted = true
@@ -24,11 +24,12 @@ private fun AppCompatActivity.activityResultLauncher(startCamera: () -> Unit) {
              */
         }
         if (!permissionGranted) {
-            Toast.makeText(
-                baseContext,
-                "Permission request denied",
-                Toast.LENGTH_SHORT
-            ).show()
+            Toast
+                .makeText(
+                    baseContext,
+                    "Permission request denied",
+                    Toast.LENGTH_SHORT,
+                ).show()
         } else {
             startCamera()
         }

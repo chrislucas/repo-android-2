@@ -39,28 +39,25 @@ fun TrySurface() {
         shape = RectangleShape,
         // The background color. Use Color.Transparent to have no color.
         color = MaterialTheme.colorScheme.surface,
-
         /*
             The preferred content color provided by this Surface to its children.
             Defaults to either the matching content color for color, or if color is not a color
             from the theme, this will keep the same value set above this Surface.
 
          */
-
         contentColor = contentColorFor(Color.LightGray),
-
         /*
             The size of the shadow below the surface. Note that It will not affect z index of the Surface. If you want to change the drawing order you can use Modifier.zIndex.
          */
         tonalElevation = 4.dp,
         shadowElevation = 4.dp,
-        border = BorderStroke(1.dp, Color.Black)
+        border = BorderStroke(1.dp, Color.Black),
     ) {
         Text(
             "Try Surface.",
             fontSize = TextUnit(32f, TextUnitType.Sp),
             modifier = Modifier.wrapContentHeight(),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }
@@ -79,13 +76,13 @@ private fun TryClickableSurface() {
             Controls the enabled state of the surface. When false, this surface will not be clickable
          */
         enabled = true,
-        interactionSource = interactionSource
+        interactionSource = interactionSource,
     ) {
         Text(
             "Try Clickable Surface.",
             fontSize = TextUnit(32f, TextUnitType.Sp),
             modifier = Modifier.wrapContentHeight(),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }

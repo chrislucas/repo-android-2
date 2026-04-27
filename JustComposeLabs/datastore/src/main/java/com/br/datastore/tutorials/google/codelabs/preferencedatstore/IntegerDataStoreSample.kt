@@ -16,12 +16,11 @@ import kotlinx.coroutines.flow.map
     https://developer.android.com/codelabs/android-preferences-datastore#1
  */
 
-
-
 const val COUNTER_INTEGER_DATA_STORE_NAME = "counter_integer_data_store"
 
-val Context.counterIntegerDataStore: DataStore<Preferences> by preferencesDataStore(name = COUNTER_INTEGER_DATA_STORE_NAME)
-
+val Context.counterIntegerDataStore: DataStore<Preferences> by preferencesDataStore(
+    name = COUNTER_INTEGER_DATA_STORE_NAME,
+)
 
 fun Context.counterDataStore(key: String): Flow<Int> {
     /*
@@ -37,6 +36,5 @@ suspend fun Context.incrementCounterIntegerDataStore(key: String) {
         val k = intPreferencesKey(key)
         val currentValue = data[k] ?: 0
         data[k] = currentValue + 1
-
     }
 }

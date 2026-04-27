@@ -17,6 +17,6 @@ fun DrawTriangleView() {
         update = { view ->
             view.invalidate()
         },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

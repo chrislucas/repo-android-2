@@ -7,37 +7,42 @@ import android.widget.FrameLayout
 import android.widget.ProgressBar
 import androidx.core.graphics.toColorInt
 
-class WrapperLoadView(private val parentView: ViewGroup) {
-
+class WrapperLoadView(
+    private val parentView: ViewGroup,
+) {
     private var container: FrameLayout?
     private var progressBar: ProgressBar?
 
     init {
-        progressBar = ProgressBar(parentView.context).apply {
-            val dimens = (SPINNER_SIZE_DP * context.resources.displayMetrics.density).toInt()
+        progressBar =
+            ProgressBar(parentView.context).apply {
+                val dimens = (SPINNER_SIZE_DP * context.resources.displayMetrics.density).toInt()
 
-            layoutParams = FrameLayout.LayoutParams(
-                dimens,
-                dimens,
-                Gravity.CENTER
-            )
+                layoutParams =
+                    FrameLayout.LayoutParams(
+                        dimens,
+                        dimens,
+                        Gravity.CENTER,
+                    )
 
-            isIndeterminate = true
-            visibility = View.GONE
-        }
+                isIndeterminate = true
+                visibility = View.GONE
+            }
 
-        container = FrameLayout(parentView.context).apply {
-            layoutParams = FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.MATCH_PARENT,
-                FrameLayout.LayoutParams.MATCH_PARENT
-            )
-            setBackgroundColor(DIM_BACKGROUND_COLOR.toColorInt())
-            elevation = OVERLAY_ELEVATION
-            isClickable = true
-            isFocusable = true
-            visibility = View.GONE
-            addView(progressBar)
-        }
+        container =
+            FrameLayout(parentView.context).apply {
+                layoutParams =
+                    FrameLayout.LayoutParams(
+                        FrameLayout.LayoutParams.MATCH_PARENT,
+                        FrameLayout.LayoutParams.MATCH_PARENT,
+                    )
+                setBackgroundColor(DIM_BACKGROUND_COLOR.toColorInt())
+                elevation = OVERLAY_ELEVATION
+                isClickable = true
+                isFocusable = true
+                visibility = View.GONE
+                addView(progressBar)
+            }
 
         parentView.addView(container)
     }

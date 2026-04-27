@@ -13,12 +13,13 @@ import kotlin.properties.Delegates
     https://share.google/aimode/u057dHXf2Tu9aJzrI
     https://share.google/aimode/FUeZkIOjOdv70kTPf
  */
-class RegularPolygonView @JvmOverloads constructor(
+class RegularPolygonView
+@JvmOverloads
+constructor(
     ctx: Context,
     attr: AttributeSet? = null,
-    defStyle: Int = 0
+    defStyle: Int = 0,
 ) : View(ctx, attr, defStyle) {
-
     var sides: Int by Delegates.notNull()
 
     private var join: Paint.Join by Delegates.notNull()
@@ -30,10 +31,11 @@ class RegularPolygonView @JvmOverloads constructor(
         context.withStyledAttributes(attr, R.styleable.RegularPolygonView) {
             sides = getInt(R.styleable.RegularPolygonView_sides, 3)
 
-            val joinStyleValue = getInt(
-                R.styleable.RegularPolygonView_joinStyle,
-                Paint.Join.ROUND.ordinal
-            )
+            val joinStyleValue =
+                getInt(
+                    R.styleable.RegularPolygonView_joinStyle,
+                    Paint.Join.ROUND.ordinal,
+                )
 
             join = Paint.Join.entries[joinStyleValue]
 
@@ -45,7 +47,12 @@ class RegularPolygonView @JvmOverloads constructor(
         super.onDraw(canvas)
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
     }
 }

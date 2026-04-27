@@ -15,11 +15,12 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 @Composable
 fun RowVerticalArrangement() {
-    val verticalArrangement = listOf(
-        Alignment.Top,
-        Alignment.CenterVertically,
-        Alignment.Bottom
-    )
+    val verticalArrangement =
+        listOf(
+            Alignment.Top,
+            Alignment.CenterVertically,
+            Alignment.Bottom,
+        )
     Column(modifier = Modifier.fillMaxWidth()) {
         Row {
             Button(onClick = {}) {

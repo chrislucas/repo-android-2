@@ -28,7 +28,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
  */
 class PersistentBottomSheetViewActivity : AppCompatActivity() {
-
     private val binding: PersistentActivityBottomSheetViewBinding by lazy {
         PersistentActivityBottomSheetViewBinding.inflate(layoutInflater)
     }
@@ -61,12 +60,18 @@ class PersistentBottomSheetViewActivity : AppCompatActivity() {
                     /*
                         https://developer.android.com/reference/com/google/android/material/bottomsheet/BottomSheetBehavior.BottomSheetCallback
                      */
-                    override fun onStateChanged(bottomSheet: View, state: Int) {
+                    override fun onStateChanged(
+                        bottomSheet: View,
+                        state: Int,
+                    ) {
                     }
 
-                    override fun onSlide(bottomSheet: View, slideOffset: Float) {
+                    override fun onSlide(
+                        bottomSheet: View,
+                        slideOffset: Float,
+                    ) {
                     }
-                }
+                },
             )
         }
     }

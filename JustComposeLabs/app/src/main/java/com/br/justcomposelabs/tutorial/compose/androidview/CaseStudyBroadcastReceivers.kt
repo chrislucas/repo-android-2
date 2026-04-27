@@ -33,7 +33,7 @@ import timber.log.Timber
 @Composable
 fun SystemBroadcastReceiver(
     systemActions: List<String>,
-    onSystemEvent: (intent: Intent?) -> Unit
+    onSystemEvent: (intent: Intent?) -> Unit,
 ) {
     val context = LocalContext.current
     /*
@@ -48,14 +48,19 @@ fun SystemBroadcastReceiver(
     val currentOnSystemEvent by rememberUpdatedState(onSystemEvent)
 
     DisposableEffect(context, systemActions) {
-        val intentFilter = IntentFilter().apply {
-            systemActions.forEach { addAction(it) }
-        }
-        val broadcast = object : BroadcastReceiver() {
-            override fun onReceive(ctx: Context?, intent: Intent?) {
-                currentOnSystemEvent(intent)
+        val intentFilter =
+            IntentFilter().apply {
+                systemActions.forEach { addAction(it) }
             }
-        }
+        val broadcast =
+            object : BroadcastReceiver() {
+                override fun onReceive(
+                    ctx: Context?,
+                    intent: Intent?,
+                ) {
+                    currentOnSystemEvent(intent)
+                }
+            }
         context.registerReceiver(broadcast, intentFilter)
         onDispose {
             context.unregisterReceiver(broadcast)
@@ -73,23 +78,25 @@ private fun ComponentAwareBatteryState() {
             Intent.ACTION_BATTERY_LOW,
             Intent.ACTION_BATTERY_OKAY,
             Intent.ACTION_POWER_CONNECTED,
-            Intent.ACTION_POWER_DISCONNECTED
+            Intent.ACTION_POWER_DISCONNECTED,
         ),
-        onSystemEvent = context::processIntentAction
+        onSystemEvent = context::processIntentAction,
     )
 
     Text(
-        modifier = Modifier
+        modifier =
+        Modifier
             .statusBarsPadding()
             .padding(3.dp)
             .fillMaxWidth(),
-        style = TextStyle(
+        style =
+        TextStyle(
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
-            color = Color.Black
+            color = Color.Black,
         ),
         textAlign = TextAlign.Center,
-        text = "Aguardando o estado da bateria ..."
+        text = "Aguardando o estado da bateria ...",
     )
 }
 
@@ -107,11 +114,12 @@ private fun Context.determineCurrentBatteryLevel(intent: Intent?) {
     val level = intent?.getIntExtra("level", -1) ?: -1
     val scale = intent?.getIntExtra("scale", -1) ?: -1
     val batteryPct = level * 100 / scale.toFloat()
-    Toast.makeText(
-        this,
-        "Battery level: $batteryPct%",
-        Toast.LENGTH_SHORT
-    ).show()
+    Toast
+        .makeText(
+            this,
+            "Battery level: $batteryPct%",
+            Toast.LENGTH_SHORT,
+        ).show()
 
     Timber.tag("battery_level").d("Battery level: $batteryPct%")
 }
@@ -125,7 +133,7 @@ private fun batteryStatus(intent: Intent?) {
 
     Timber.tag(BROADCAST_RECEIVER).d(
         "Charge Plug: $chargePlug\n" +
-            "USB Charge: $usbCharge\nAC Charge: $acCharge"
+            "USB Charge: $usbCharge\nAC Charge: $acCharge",
     )
 
     when (chargePlug) {
@@ -135,10 +143,11 @@ private fun batteryStatus(intent: Intent?) {
     }
 
     val status: Int = intent?.getIntExtra(BatteryManager.EXTRA_STATUS, -1) ?: -1
-    val isCharging: Boolean = status == BatteryManager.BATTERY_STATUS_CHARGING ||
-        status == BatteryManager.BATTERY_STATUS_FULL
+    val isCharging: Boolean =
+        status == BatteryManager.BATTERY_STATUS_CHARGING ||
+            status == BatteryManager.BATTERY_STATUS_FULL
     Timber.tag(BROADCAST_RECEIVER).d(
         "Intent: $intent\n" +
-            "Is Charging: $isCharging\nStatus: $status"
+            "Is Charging: $isCharging\nStatus: $status",
     )
 }

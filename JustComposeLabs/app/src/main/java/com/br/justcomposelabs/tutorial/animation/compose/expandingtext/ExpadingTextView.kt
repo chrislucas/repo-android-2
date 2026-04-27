@@ -33,14 +33,16 @@ import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 @Composable
 fun TextExpandable() {
     var expanded by remember { mutableStateOf(true) }
-    val w = if (expanded) {
-        200.dp
-    } else {
-        100.dp
-    }
+    val w =
+        if (expanded) {
+            200.dp
+        } else {
+            100.dp
+        }
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .paddingEdgeToEdge()
                 .border(2.dp, Color.Red, CutCornerShape(1.dp)),
@@ -48,18 +50,18 @@ fun TextExpandable() {
         ) {
             Text(
                 text = if (expanded) "Shrink" else "Expand",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .animateContentSize()
                     .padding(20.dp)
                     .border(
                         border = BorderStroke(2.dp, Color.Blue),
-                        shape = RoundedCornerShape(20)
-                    )
-                    .width(w)
+                        shape = RoundedCornerShape(20),
+                    ).width(w)
                     .clickable {
                         expanded = !expanded
                     },
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
             )
         }
     }

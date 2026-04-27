@@ -25,7 +25,7 @@ class DessertCodelabsWithViewModelActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     DessertClickerApp(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -36,14 +36,14 @@ class DessertCodelabsWithViewModelActivity : ComponentActivity() {
 @Composable
 fun DessertClickerApp(
     modifier: Modifier = Modifier,
-    viewModel: DessertViewModel = viewModel()
+    viewModel: DessertViewModel = viewModel(),
 ) {
     val uiState by viewModel.observeDessertUiState.collectAsState()
 
     DessertClickerApp(
         modifier = modifier,
         uiState = uiState,
-        onDessertClicked = viewModel::onDessertClicked
+        onDessertClicked = viewModel::onDessertClicked,
     )
 }
 
@@ -51,7 +51,7 @@ fun DessertClickerApp(
 private fun DessertClickerApp(
     modifier: Modifier = Modifier,
     uiState: DessertUiState,
-    onDessertClicked: () -> Unit
+    onDessertClicked: () -> Unit,
 ) {
 }
 

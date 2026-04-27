@@ -21,10 +21,10 @@ annotation class DarkNode
 fun GreetingPreviewII() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .paddingEdgeToEdge(),
-
         ) {
             Text(text = stringResource(R.string.greeting))
         }

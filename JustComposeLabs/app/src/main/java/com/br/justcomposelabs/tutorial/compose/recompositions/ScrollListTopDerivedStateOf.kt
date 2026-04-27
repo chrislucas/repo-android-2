@@ -59,32 +59,36 @@ fun ScrollToTopExample() {
     val coroutineScope = rememberCoroutineScope()
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         LazyColumn(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(.9f)
                 .fillMaxWidth(),
-            state = listState
+            state = listState,
         ) {
             items(100) {
                 Text(
                     "Item #$it",
                     modifier = Modifier.padding(16.dp),
-                    style = TextStyle(
+                    style =
+                    TextStyle(
                         fontSize = 23.sp,
-                        textAlign = TextAlign.Center
-                    )
+                        textAlign = TextAlign.Center,
+                    ),
                 )
             }
         }
 
         if (showButtonScrollTop) {
             Button(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .weight(.1f)
                     .padding(4.dp)
                     .fillMaxWidth(),
@@ -100,7 +104,7 @@ fun ScrollToTopExample() {
                         listState.animateScrollToItem(index = 0)
                     }
                 },
-                shape = RectangleShape
+                shape = RectangleShape,
             ) {
                 Text("Top")
             }
@@ -122,32 +126,36 @@ fun ScrollToSpecificPositionExample() {
     val coroutineScope = rememberCoroutineScope()
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         LazyColumn(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(.9f)
                 .fillMaxWidth(),
-            state = listState
+            state = listState,
         ) {
             items(100) {
                 Text(
                     "Item #$it",
                     modifier = Modifier.padding(16.dp),
-                    style = TextStyle(
+                    style =
+                    TextStyle(
                         fontSize = 23.sp,
-                        textAlign = TextAlign.Center
-                    )
+                        textAlign = TextAlign.Center,
+                    ),
                 )
             }
         }
 
         if (showButtonScrollTop) {
             Button(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .weight(.1f)
                     .padding(4.dp)
                     .fillMaxWidth(),
@@ -178,11 +186,11 @@ fun ScrollToSpecificPositionExample() {
 
                         listState.animateScrollToItem(
                             index = 20, // O índice que você quer centralizar
-                            scrollOffset = -centerOffset // Negativo para centralizar na tela
+                            scrollOffset = -centerOffset, // Negativo para centralizar na tela
                         )
                     }
                 },
-                shape = RectangleShape
+                shape = RectangleShape,
             ) {
                 Text("Top")
             }
@@ -202,21 +210,22 @@ fun HorizontalCenteredScroll() {
     }
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         LazyRow(
             state = listState,
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(8.dp),
-            contentPadding = PaddingValues(horizontal = 16.dp)
+            contentPadding = PaddingValues(horizontal = 16.dp),
         ) {
             items(50) { index ->
                 Card(
                     modifier = Modifier.size(width = 150.dp, height = 100.dp),
-                    colors = CardDefaults.cardColors(containerColor = Color.LightGray)
+                    colors = CardDefaults.cardColors(containerColor = Color.LightGray),
                 ) {
                     Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
                         Text("Item $index")
@@ -225,25 +234,31 @@ fun HorizontalCenteredScroll() {
             }
         }
 
-        val buttonSpringFloat = spring<Float>(
-            dampingRatio = Spring.DampingRatioNoBouncy,
-            stiffness = Spring.StiffnessMedium
-        )
-        val buttonSpringOffset = spring<IntOffset>(
-            dampingRatio = Spring.DampingRatioHighBouncy,
-            stiffness = Spring.StiffnessMedium
-        )
+        val buttonSpringFloat =
+            spring<Float>(
+                dampingRatio = Spring.DampingRatioNoBouncy,
+                stiffness = Spring.StiffnessMedium,
+            )
+        val buttonSpringOffset =
+            spring<IntOffset>(
+                dampingRatio = Spring.DampingRatioHighBouncy,
+                stiffness = Spring.StiffnessMedium,
+            )
 
         AnimatedVisibility(
             visible = showButtonScrollTop,
-            enter = fadeIn(buttonSpringFloat) + slideInVertically(
-                animationSpec = buttonSpringOffset,
-                initialOffsetY = { fullHeight -> -fullHeight }
-            ),
-            exit = fadeOut(buttonSpringFloat) + slideOutVertically(
-                animationSpec = buttonSpringOffset,
-                targetOffsetY = { fullHeight -> -fullHeight }
-            )
+            enter =
+            fadeIn(buttonSpringFloat) +
+                slideInVertically(
+                    animationSpec = buttonSpringOffset,
+                    initialOffsetY = { fullHeight -> -fullHeight },
+                ),
+            exit =
+            fadeOut(buttonSpringFloat) +
+                slideOutVertically(
+                    animationSpec = buttonSpringOffset,
+                    targetOffsetY = { fullHeight -> -fullHeight },
+                ),
         ) {
             Button(
                 onClick = {
@@ -261,15 +276,16 @@ fun HorizontalCenteredScroll() {
 
                         listState.animateScrollToItem(
                             index = 10,
-                            scrollOffset = -centerOffset
+                            scrollOffset = -centerOffset,
                         )
                     }
                 },
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth()
                     .padding(16.dp)
                     .align(Alignment.CenterHorizontally),
-                shape = RectangleShape
+                shape = RectangleShape,
             ) {
                 Text("Centralizar Item 10")
             }

@@ -28,7 +28,7 @@ import com.br.justcomposelabs.databinding.LayoutTextCenterSampleBindingComposeBi
 @Composable
 private fun AndroidViewBindingExamplePreview() {
     AndroidViewBinding(
-        LayoutTextCenterSampleBindingComposeBinding::inflate
+        LayoutTextCenterSampleBindingComposeBinding::inflate,
     ) {
         tvContent.textAlignment = View.TEXT_ALIGNMENT_CENTER
     }

@@ -30,20 +30,27 @@ fun DisplayTextContent(value: String) {
 }
 
 @Composable
-fun UpdateDisplayTextContent(value: String, update: (String) -> Unit) {
+fun UpdateDisplayTextContent(
+    value: String,
+    update: (String) -> Unit,
+) {
     Button(
         onClick = { update(value) },
-        shape = CircleShape
+        shape = CircleShape,
     ) {
         Text(value)
     }
 }
 
 @Composable
-fun UpdateDisplayTextContent(label: String, value: String, update: (String) -> Unit) {
+fun UpdateDisplayTextContent(
+    label: String,
+    value: String,
+    update: (String) -> Unit,
+) {
     Button(
         onClick = { update(value) },
-        shape = CircleShape
+        shape = CircleShape,
     ) {
         Text(label)
     }
@@ -58,7 +65,7 @@ fun DisplayScreen(contentStart: String) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         LogCompositions("DisplayScreenColumn", "DisplayScreenColumn")
 

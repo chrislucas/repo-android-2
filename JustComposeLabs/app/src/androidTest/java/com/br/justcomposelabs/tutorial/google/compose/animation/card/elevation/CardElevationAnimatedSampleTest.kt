@@ -22,7 +22,6 @@ import org.junit.Test
  * With hoisted state, asserts the toggle contract for `onIsElevatedChange` plus layout and click semantics.
  */
 class CardElevationAnimatedSampleTest {
-
     @get:Rule
     val composeTestRule = createComposeRule()
 

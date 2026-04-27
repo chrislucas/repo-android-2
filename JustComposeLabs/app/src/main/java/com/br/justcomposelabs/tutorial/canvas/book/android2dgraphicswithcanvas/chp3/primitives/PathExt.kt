@@ -12,12 +12,13 @@ fun Path.drawHexagon(
     cx: Float,
     cy: Float,
     radius: Float,
-    rotation: Float = (-Math.PI / 4).toFloat()
-): List<PointF> = run {
-    val points = mutableListOf<PointF>()
-    val sides = 6
-    // Divide 360° pelo número de lados
-    val angleStep = Math.PI * 2 / sides
+    rotation: Float = (-Math.PI / 4).toFloat(),
+): List<PointF> =
+    run {
+        val points = mutableListOf<PointF>()
+        val sides = 6
+        // Divide 360° pelo número de lados
+        val angleStep = Math.PI * 2 / sides
     /*
         Ajuste o "- Math.PI / 2" se quiser mudar a rotação inicial
         PI / 2 = 90 graus
@@ -47,49 +48,51 @@ fun Path.drawHexagon(
         https://share.google/aimode/Bwi35Q6WIWNuxqgju
      */
 
-    for (i in 0 until sides) {
-        val angle = i * angleStep + rotation
-        val x = (cx + radius * cos(angle)).toFloat()
-        val y = (cy + radius * sin(angle)).toFloat()
-        points += PointF(x, y)
-        if (i == 0) {
-            moveTo(x, y)
-        } else {
-            lineTo(x, y)
+        for (i in 0 until sides) {
+            val angle = i * angleStep + rotation
+            val x = (cx + radius * cos(angle)).toFloat()
+            val y = (cy + radius * sin(angle)).toFloat()
+            points += PointF(x, y)
+            if (i == 0) {
+                moveTo(x, y)
+            } else {
+                lineTo(x, y)
+            }
         }
+        close()
+        points.toList()
     }
-    close()
-    points.toList()
-}
 
 fun Path.drawRegularPolygon(
     cx: Float,
     cy: Float,
     radius: Float,
     sides: Int,
-    rotation: Float = (-Math.PI / 4).toFloat()
-): List<PointF> = if (sides < 3) {
-    emptyList()
-} else {
-    run {
-        val points = mutableListOf<PointF>()
-        val angleSteps = Math.PI * 2 / sides
-        for (i in 0 until sides) {
-            val angle = i * angleSteps + rotation
-            val x = (cx + radius * cos(angle)).toFloat()
-            val y = (cy + radius * sin(angle)).toFloat()
+    rotation: Float = (-Math.PI / 4).toFloat(),
+): List<PointF> =
+    if (sides < 3) {
+        emptyList()
+    } else {
+        run {
+            val points = mutableListOf<PointF>()
+            val angleSteps = Math.PI * 2 / sides
+            for (i in 0 until sides) {
+                val angle = i * angleSteps + rotation
+                val x = (cx + radius * cos(angle)).toFloat()
+                val y = (cy + radius * sin(angle)).toFloat()
+            }
+            points
         }
-        points
     }
-}
 
-fun Path.drawIrregularPolygon(points: List<PointF>) = run {
-    for ((i, p) in points.withIndex()) {
-        if (i == 0) {
-            moveTo(p.x, p.y)
-        } else {
-            lineTo(p.x, p.y)
+fun Path.drawIrregularPolygon(points: List<PointF>) =
+    run {
+        for ((i, p) in points.withIndex()) {
+            if (i == 0) {
+                moveTo(p.x, p.y)
+            } else {
+                lineTo(p.x, p.y)
+            }
         }
+        close()
     }
-    close()
-}

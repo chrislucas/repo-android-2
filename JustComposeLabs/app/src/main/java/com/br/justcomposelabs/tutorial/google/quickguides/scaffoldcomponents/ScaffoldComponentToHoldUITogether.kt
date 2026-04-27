@@ -53,20 +53,20 @@ fun ScaffoldComponentTopAppBar() {
     Scaffold(
         topBar = {
             TopAppBar(
-                colors = topAppBarColors(
+                colors =
+                topAppBarColors(
                     containerColor = colorScheme.primaryContainer,
                     titleContentColor = colorScheme.primary,
                 ),
                 title = {
                     Text("Top app bar")
-                }
+                },
             )
         },
         bottomBar = {
             BottomAppBar(
                 containerColor = colorScheme.primaryContainer,
                 contentColor = colorScheme.primary,
-
             ) {
                 Text("Bottom app bar")
             }
@@ -75,15 +75,16 @@ fun ScaffoldComponentTopAppBar() {
             FloatingActionButton(onClick = { presses++ }) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
-        }
+        },
     ) { innerPadding ->
         Column(
             modifier = Modifier.padding(innerPadding),
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(16.dp),
         ) {
             Text(
                 modifier = Modifier.padding(8.dp),
-                text = """
+                text =
+                """
                     This is an example of a scaffold. It uses the Scaffold composable's
                     parameters to create a screen with a simple top app bar, bottom app bar, and floating action button.
 

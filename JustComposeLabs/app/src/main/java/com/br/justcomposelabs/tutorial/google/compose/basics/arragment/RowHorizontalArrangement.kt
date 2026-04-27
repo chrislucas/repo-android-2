@@ -19,14 +19,15 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 @Composable
 fun RowHorizontalArrangement() {
-    val arrangements = listOf(
-        Arrangement.Start,
-        Arrangement.Center,
-        Arrangement.End,
-        Arrangement.SpaceBetween,
-        Arrangement.SpaceAround,
-        Arrangement.SpaceEvenly,
-    )
+    val arrangements =
+        listOf(
+            Arrangement.Start,
+            Arrangement.Center,
+            Arrangement.End,
+            Arrangement.SpaceBetween,
+            Arrangement.SpaceAround,
+            Arrangement.SpaceEvenly,
+        )
     Column(modifier = Modifier.fillMaxWidth()) {
         Row {
             Button(onClick = {}) {
@@ -65,14 +66,15 @@ fun RowArrangementRepeat() {
         Comparar performace de usar uma LazyColumn e um Repeat
      */
 
-    val arrangements = listOf(
-        Arrangement.Start,
-        Arrangement.Center,
-        Arrangement.End,
-        Arrangement.SpaceBetween,
-        Arrangement.SpaceAround,
-        Arrangement.SpaceEvenly,
-    )
+    val arrangements =
+        listOf(
+            Arrangement.Start,
+            Arrangement.Center,
+            Arrangement.End,
+            Arrangement.SpaceBetween,
+            Arrangement.SpaceAround,
+            Arrangement.SpaceEvenly,
+        )
     Column(modifier = Modifier.fillMaxWidth()) {
         Row {
             Button(onClick = {}) {

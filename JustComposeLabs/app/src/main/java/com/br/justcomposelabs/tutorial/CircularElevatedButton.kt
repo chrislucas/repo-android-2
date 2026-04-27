@@ -22,22 +22,27 @@ import androidx.compose.ui.unit.dp
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
 @Composable
-fun CircularElevatedButton(content: @Composable () -> Unit, onClick: () -> Unit = {}) {
+fun CircularElevatedButton(
+    content: @Composable () -> Unit,
+    onClick: () -> Unit = {},
+) {
     ElevatedButton(
         onClick,
         shape = CircleShape,
         modifier = Modifier.size(128.dp),
         contentPadding = PaddingValues(6.dp),
-        elevation = ButtonDefaults.elevatedButtonElevation(
+        elevation =
+        ButtonDefaults.elevatedButtonElevation(
             defaultElevation = 20.dp,
             pressedElevation = 2.dp,
             hoveredElevation = 10.dp,
-            focusedElevation = 10.dp
+            focusedElevation = 10.dp,
         ),
-        colors = ButtonDefaults.elevatedButtonColors(
+        colors =
+        ButtonDefaults.elevatedButtonColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer,
-            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
-        )
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
+        ),
     ) {
         content()
     }
@@ -48,11 +53,13 @@ fun CircularElevatedButton(content: @Composable () -> Unit, onClick: () -> Unit 
 private fun CircularElevatedButtonPreview() {
     JustComposeLabsTheme {
         Row(
-            modifier = Modifier.fillMaxSize()
+            modifier =
+            Modifier
+                .fillMaxSize()
                 .systemBarsPadding()
                 .statusBarsPadding(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
             CircularElevatedButton(content = {
                 Icon(Icons.Default.Add, contentDescription = "Add")

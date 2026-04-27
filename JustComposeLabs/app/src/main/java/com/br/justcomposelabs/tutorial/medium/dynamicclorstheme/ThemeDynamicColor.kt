@@ -12,6 +12,6 @@ import androidx.compose.runtime.Composable
 fun ThemeDynamicColor(
     darkTheme: Boolean = isSystemInDarkTheme(),
     dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
 }

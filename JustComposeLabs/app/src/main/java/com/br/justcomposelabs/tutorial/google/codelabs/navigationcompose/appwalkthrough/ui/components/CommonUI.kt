@@ -9,11 +9,14 @@ import com.br.justcomposelabs.R
 import com.br.justcomposelabs.utils.composable.ShowBackgroundOrNot
 
 @Composable
-fun FormattedPriceLabel(subtotal: String, modifier: Modifier = Modifier) {
+fun FormattedPriceLabel(
+    subtotal: String,
+    modifier: Modifier = Modifier,
+) {
     Text(
         modifier = modifier,
         text = stringResource(R.string.subtotal_price, subtotal),
-        style = MaterialTheme.typography.headlineSmall
+        style = MaterialTheme.typography.headlineSmall,
     )
 }
 

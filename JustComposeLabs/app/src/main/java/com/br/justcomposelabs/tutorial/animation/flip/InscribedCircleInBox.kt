@@ -35,45 +35,49 @@ fun InteractiveBoxWithCircle() {
     val currentColor by animateColorAsState(
         targetValue = if (isFlipped) targetColor else initialColor,
         animationSpec = tween(durationMillis = 500),
-        label = "colorAnimation"
+        label = "colorAnimation",
     )
 
     // State for managing the rotation animation
     val rotation by animateFloatAsState(
         targetValue = if (isFlipped) 180f else 0f,
         animationSpec = tween(durationMillis = 500, easing = LinearEasing),
-        label = "rotationAnimation"
+        label = "rotationAnimation",
     )
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .systemBarsPadding()
             .fillMaxSize()
             .background(Color(0xFFFDF8F8)) // The outer box
-            .clickable { isFlipped = !isFlipped }, // Add click listener to the whole box
-        contentAlignment = Alignment.Center
+            .clickable { isFlipped = !isFlipped },
+        // Add click listener to the whole box
+        contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(100.dp)
                 // Apply rotation animation using graphicsLayer
                 .graphicsLayer {
                     rotationY = rotation
                     // optional: add perspective for a better 3D effect
                     cameraDistance = 8f * density
-                }
-                .clip(CircleShape) // Draw a circle shape
-                .background(currentColor), // Apply the animated color
-            contentAlignment = Alignment.Center
+                }.clip(CircleShape) // Draw a circle shape
+                .background(currentColor),
+            // Apply the animated color
+            contentAlignment = Alignment.Center,
         ) {
             // Text to show the flip effect
             Text(
                 text = if (rotation <= 90f) "Front" else "Back",
                 color = Color.White,
                 // Ensure text on the "back" side is also flipped correctly
-                modifier = Modifier.graphicsLayer {
+                modifier =
+                Modifier.graphicsLayer {
                     rotationY = if (rotation <= 90f) 0f else 180f
-                }
+                },
             )
         }
     }

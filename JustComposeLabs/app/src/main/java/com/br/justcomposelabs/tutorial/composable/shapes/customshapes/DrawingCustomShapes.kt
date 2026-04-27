@@ -17,33 +17,36 @@ import androidx.compose.ui.unit.dp
     https://foso.github.io/Jetpack-Compose-Playground/cookbook/how_to_create_custom_shape/
  */
 
-private val triangle = GenericShape { size, _ ->
-    // 1)
-    moveTo(size.width / 2f, 0f)
+private val triangle =
+    GenericShape { size, _ ->
+        // 1)
+        moveTo(size.width / 2f, 0f)
 
-    // 2)
-    lineTo(size.width, size.height)
+        // 2)
+        lineTo(size.width, size.height)
 
-    // 3)
-    lineTo(0f, size.height)
-}
+        // 3)
+        lineTo(0f, size.height)
+    }
 
 @Preview(showBackground = false)
 @Composable
 fun TriangleShape() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .size(100.dp)
             .clip(triangle)
             .background(
-                brush = Brush.horizontalGradient(
+                brush =
+                Brush.horizontalGradient(
                     listOf(
                         Color(0xFFB174DE), // Indigo
                         Color(0xFF8F00FF), // Violet
                         Color(0xFFD79378), // Violet
-                        Color(0xFFDAAE9C) // Violet
-                    )
-                )
-            )
+                        Color(0xFFDAAE9C), // Violet
+                    ),
+                ),
+            ),
     )
 }

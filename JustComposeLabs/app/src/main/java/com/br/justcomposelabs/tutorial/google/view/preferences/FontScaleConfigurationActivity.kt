@@ -21,7 +21,6 @@ import timber.log.Timber
  * @see HandlerConfigurationChangesActivity
  */
 class FontScaleConfigurationActivity : AppCompatActivity() {
-
     private val binding: ActivityFontScaleConfigurationBinding by lazy {
         ActivityFontScaleConfigurationBinding.inflate(layoutInflater)
     }
@@ -57,7 +56,7 @@ class FontScaleConfigurationActivity : AppCompatActivity() {
 
             rangeSliderFontScale.addOnChangeListener { _, value, fromUser ->
                 Timber.tag(TAG_CHANGE_FONT_SCALE).d(
-                    "Message: [Value: $value, fromUser: $fromUser]"
+                    "Message: [Value: $value, fromUser: $fromUser]",
                 )
 
                 fontScale = value
@@ -70,15 +69,19 @@ class FontScaleConfigurationActivity : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context?) {
         val savedFontScale = getFontScaleFromPreferences(newBase)
-        val contextWithFontScale = if (savedFontScale != 1.0f) {
-            newBase?.adjustFontSize(savedFontScale)
-        } else {
-            newBase
-        }
+        val contextWithFontScale =
+            if (savedFontScale != 1.0f) {
+                newBase?.adjustFontSize(savedFontScale)
+            } else {
+                newBase
+            }
         super.attachBaseContext(contextWithFontScale)
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+    override fun onSaveInstanceState(
+        outState: Bundle,
+        outPersistentState: PersistableBundle,
+    ) {
         super.onSaveInstanceState(outState, outPersistentState)
         outState.putFloat(KEY_SAVE_FONT_SCALE_BUNDLE, fontScale)
 
@@ -89,7 +92,7 @@ class FontScaleConfigurationActivity : AppCompatActivity() {
         val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
         prefs.edit { putFloat(PREF_FONT_SCALE, fontScale) }
         Timber.tag(TAG_SAVE_FONT_SCALE_BUNDLE).d(
-            "FontScale salvo em SharedPreferences: $fontScale"
+            "FontScale salvo em SharedPreferences: $fontScale",
         )
     }
 
@@ -103,8 +106,8 @@ class FontScaleConfigurationActivity : AppCompatActivity() {
         syncFontScaleFromPreferences("onRestoreInstanceState")
     }
 
-    private fun restoreConfigurationStateFromBundle(bundle: Bundle?): Float? {
-        return bundle?.let {
+    private fun restoreConfigurationStateFromBundle(bundle: Bundle?): Float? =
+        bundle?.let {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 it.getFloat(SAVE_FONT_SCALE, 1.0f)
             } else {
@@ -112,12 +115,11 @@ class FontScaleConfigurationActivity : AppCompatActivity() {
                 it.getFloat(SAVE_FONT_SCALE)
             }
         }
-    }
 
-    private fun getFontScaleFromPreferences(context: Context?): Float {
-        return context?.getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+    private fun getFontScaleFromPreferences(context: Context?): Float =
+        context
+            ?.getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
             ?.getFloat(PREF_FONT_SCALE, 1.0f) ?: 1.0f
-    }
 
     private fun syncFontScaleFromPreferences(source: String) {
         val prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
@@ -127,7 +129,7 @@ class FontScaleConfigurationActivity : AppCompatActivity() {
         if (savedFontScale != 1.0f && fontScale != savedFontScale) {
             fontScale = savedFontScale
             Timber.tag(TAG_RESTORE_FONT_SCALE_BUNDLE).d(
-                "$source: FontScale restaurado de SharedPreferences: $savedFontScale"
+                "$source: FontScale restaurado de SharedPreferences: $savedFontScale",
             )
         }
     }

@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.update
  * @see com.br.justcomposelabs.tutorial.google.compose.state.HelloStateFlowViewModel
  */
 
-class DisplayTextViewModel() : ViewModel() {
+class DisplayTextViewModel : ViewModel() {
     private val mutableContent: MutableStateFlow<String> = MutableStateFlow("")
     val content: StateFlow<String> = mutableContent
 
@@ -43,7 +43,7 @@ fun DisplayAppendedTextComponent(viewModel: DisplayTextViewModel = viewModel()) 
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         DisplayTextContent(contentState)
         UpdateDisplayTextContent(value = "+", viewModel::onTapAppendContent)

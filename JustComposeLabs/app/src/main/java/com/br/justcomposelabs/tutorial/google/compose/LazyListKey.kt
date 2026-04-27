@@ -58,25 +58,27 @@ fun LazyListWithKey() {
         }
     }) { paddingValues ->
         Column(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(paddingValues)
                 .fillMaxWidth()
                 .navigationBarsPadding()
-                .systemBarsPadding()
+                .systemBarsPadding(),
         ) {
             Text(
                 "#$counter",
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.headlineLarge,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             )
 
             LazyColumn(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(paddingValues)
                     .fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
+                verticalArrangement = Arrangement.Center,
             ) {
                 items(elements, key = { it }) { element ->
                     ElementWithKey(element = element) {
@@ -92,7 +94,7 @@ fun LazyListWithKey() {
 @Composable
 fun ElementWithKey(
     element: String,
-    remove: (String) -> Unit
+    remove: (String) -> Unit,
 ) {
     var loading by rememberSaveable { mutableStateOf(false) }
 
@@ -122,18 +124,20 @@ fun ElementWithKey(
     }
 
     Card(
-        modifier = Modifier
+        modifier =
+        Modifier
             .width(256.dp)
             .height(128.dp)
             .padding(8.dp),
         elevation = CardDefaults.cardElevation(4.dp),
-        shape = RectangleShape
+        shape = RectangleShape,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(8.dp),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             if (loading) {
                 CircularProgressIndicator(
@@ -144,17 +148,19 @@ fun ElementWithKey(
             } else {
                 Text(
                     text = element,
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .fillMaxSize()
                         .clickable {
                             remove(element)
                         },
                     textAlign = TextAlign.Center,
-                    style = TextStyle(
+                    style =
+                    TextStyle(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                         fontSize = 32.sp,
-                        fontFamily = MaterialTheme.typography.bodyMedium.fontFamily
-                    )
+                        fontFamily = MaterialTheme.typography.bodyMedium.fontFamily,
+                    ),
                 )
             }
         }

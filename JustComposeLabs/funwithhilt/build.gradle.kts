@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    //alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
     /*
         Compose Compiler Gradle plugin
         https://developer.android.com/develop/ui/compose/compiler
@@ -30,7 +30,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -62,7 +62,6 @@ dependencies {
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation(libs.google.firebase.config)
     implementation(libs.google.firebase.analytics)
-
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -134,7 +133,6 @@ dependencies {
     // optional - Jetpack Compose integration
     implementation(libs.androidx.paging.compose)
 
-
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
     annotationProcessor(libs.androidx.room.ktx)
@@ -171,7 +169,6 @@ dependencies {
     // optional - Paging 3 Integration
     implementation(libs.androidx.room.paging)
 
-
     androidTestImplementation(platform(libs.androidx.compose.bom))
 
     val inkVersion = "1.0.0-alpha05"
@@ -183,9 +180,7 @@ dependencies {
     implementation("androidx.ink:ink-rendering:$inkVersion")
     implementation("androidx.ink:ink-strokes:$inkVersion")
 
-
     // FIM: paging jetpack compose
-
 
     implementation("androidx.hilt:hilt-work:1.3.0")
     // When using Kotlin.
@@ -202,12 +197,12 @@ dependencies {
     implementation(libs.androidx.work.multiprocess)
     implementation(libs.androidx.work.runtime)
     implementation(libs.androidx.work.runtime.ktx)
-    implementation(libs.androidx.work.rxjava2 )
+    implementation(libs.androidx.work.rxjava2)
     implementation(libs.androidx.work.testing)
 
     /*
     https://github.com/android/testing-samples
- */
+     */
 
     // Optional -- Robolectric environment
     testImplementation("androidx.test:core:1.7.0")

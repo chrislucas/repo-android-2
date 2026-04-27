@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-   // alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
 
     kotlin("plugin.serialization") version "2.0.21"
 }
@@ -21,7 +21,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -41,7 +41,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
-
 
     api(libs.retrofit)
     api(libs.converter.gson)
@@ -72,11 +71,9 @@ dependencies {
 
     implementation("io.ktor:ktor-serialization-kotlinx-json:3.4.2")
 
-
     api(libs.converter.gson)
     api(libs.logging.interceptor)
     api(libs.okhttp.urlconnection)
-
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

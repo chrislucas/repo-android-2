@@ -19,11 +19,12 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 @Composable
 fun ColumnHorizontalArrangement() {
-    val arrangements = listOf(
-        Alignment.Start,
-        Alignment.CenterHorizontally,
-        Alignment.End
-    )
+    val arrangements =
+        listOf(
+            Alignment.Start,
+            Alignment.CenterHorizontally,
+            Alignment.End,
+        )
 
     Row(modifier = Modifier.fillMaxHeight()) {
         Column {
@@ -41,7 +42,7 @@ fun ColumnHorizontalArrangement() {
         LazyRow {
             items(arrangements) { arrangement ->
                 Column(
-                    horizontalAlignment = arrangement
+                    horizontalAlignment = arrangement,
                 ) {
                     Button(onClick = {}) {
                         Text("A")

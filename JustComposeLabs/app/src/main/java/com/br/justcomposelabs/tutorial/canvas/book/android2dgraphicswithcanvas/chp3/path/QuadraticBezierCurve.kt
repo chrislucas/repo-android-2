@@ -11,17 +11,19 @@ import android.view.View
     https://share.google/aimode/XcJPiJkj55XKPuEQs
     https://share.google/aimode/KwY1GSB79bMvfjor7
  */
-class QuadraticBezierCurveView @JvmOverloads constructor(
+class QuadraticBezierCurveView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0
+    defStyle: Int = 0,
 ) : View(ctx, attrs, defStyle) {
-
     private val path = Path()
 
-    private val paintPath = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.rgb(123, 234, 45)
-    }
+    private val paintPath =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = Color.rgb(123, 234, 45)
+        }
 
     init {
     }

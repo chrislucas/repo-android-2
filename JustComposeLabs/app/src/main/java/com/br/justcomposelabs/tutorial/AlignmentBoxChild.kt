@@ -11,23 +11,24 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview(showBackground = true)
 @Composable
 fun AlignmentBoxChild() {
-    val alignments = listOf(
-        "Top Start" to Alignment.TopStart,
-        "Top Center" to Alignment.TopCenter,
-        "Top End" to Alignment.TopEnd,
-        "Top Start" to Alignment.CenterStart,
-        "Top" to Alignment.Center,
-        "Top End" to Alignment.CenterEnd,
-        "Bottom Stqrt" to Alignment.BottomStart,
-        "Bottom Center" to Alignment.BottomCenter,
-        "Bottom End" to Alignment.BottomEnd,
-    )
+    val alignments =
+        listOf(
+            "Top Start" to Alignment.TopStart,
+            "Top Center" to Alignment.TopCenter,
+            "Top End" to Alignment.TopEnd,
+            "Top Start" to Alignment.CenterStart,
+            "Top" to Alignment.Center,
+            "Top End" to Alignment.CenterEnd,
+            "Bottom Stqrt" to Alignment.BottomStart,
+            "Bottom Center" to Alignment.BottomCenter,
+            "Bottom End" to Alignment.BottomEnd,
+        )
 
     Box(modifier = Modifier.fillMaxSize()) {
         alignments.forEach { (content, alignment) ->
             Text(
                 content,
-                modifier = Modifier.align(alignment)
+                modifier = Modifier.align(alignment),
             )
         }
     }

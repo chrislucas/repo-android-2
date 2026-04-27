@@ -31,9 +31,10 @@ fun TopBarAppPreview(modifier: Modifier = Modifier) {
         https://developer.android.com/develop/ui/compose/quick-guides/content/display-top-app-bar
      */
 
-    val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior(
-        rememberTopAppBarState()
-    )
+    val scrollBehavior =
+        TopAppBarDefaults.enterAlwaysScrollBehavior(
+            rememberTopAppBarState(),
+        )
 
     Scaffold(
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
@@ -53,9 +54,9 @@ fun TopBarAppPreview(modifier: Modifier = Modifier) {
                     IconButton(onClick = {}) {
                         Icon(imageVector = Icons.Filled.Menu, "Menu")
                     }
-                }
+                },
             )
-        }
+        },
     ) { innerPadding ->
         ScrollContent(innerPadding)
     }
@@ -67,7 +68,7 @@ internal fun ScrollContent(innerPadding: PaddingValues) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = innerPadding,
-        verticalArrangement = Arrangement.spacedBy(8.dp)
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         items(range.count()) {
             Text(String.format(Locale.getDefault(), "Item %02d", it))

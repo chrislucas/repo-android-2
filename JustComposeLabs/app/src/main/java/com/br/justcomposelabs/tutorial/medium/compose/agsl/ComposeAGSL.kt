@@ -16,13 +16,15 @@ import com.br.justcomposelabs.utils.composable.paddingEdgeToEdge
 
 // ...
 
-val shaderSource = """
+val shaderSource =
+    """
     half4 main(float2 fragCoord) {
         return half4(1, 0, 0, 1);
     }
-""".trimIndent()
+    """.trimIndent()
 
-val glowButtonShader = """
+val glowButtonShader =
+    """
     uniform shader button;
     uniform float2 size;
     uniform float cornerRadius;
@@ -40,9 +42,10 @@ val glowButtonShader = """
         // The main function would use the SDF to determine the glow based on uniforms
         // and then mix it with the base button color or texture.
     }
-""".trimIndent()
+    """.trimIndent()
 
-val checkerboardShader = """
+val checkerboardShader =
+    """
     uniform half4 color1;
     uniform half4 color2;
 
@@ -56,7 +59,7 @@ val checkerboardShader = """
     half4 main(float2 fragCoord) {
         return checkerBoard(fragCoord);
     }
-""".trimIndent()
+    """.trimIndent()
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -66,19 +69,21 @@ fun AGSLExample() {
         val brush = remember { ShaderBrush(runtimeShader) }
 
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .paddingEdgeToEdge()
                 .fillMaxSize()
-                .background(brush) // Aplica o shader como background
+                .background(brush), // Aplica o shader como background
         ) {
             Text("Content")
         }
     } else {
         // Implementação alternativa para versões anteriores do Android
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
-                .background(Color.Gray)
+                .background(Color.Gray),
         )
     }
 }

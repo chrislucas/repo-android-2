@@ -104,7 +104,8 @@ import kotlinx.coroutines.launch
 fun PulseTextComponent() {
     var pulseRateMs by remember { mutableLongStateOf(1000L) }
     val alpha = remember { Animatable(1f) }
-    LaunchedEffect(pulseRateMs) { // Restart the effect when the pulse rate changes
+    LaunchedEffect(pulseRateMs) {
+        // Restart the effect when the pulse rate changes
         while (true) {
             delay(pulseRateMs) // Pulse the alpha every pulseRateMs to alert the user
             alpha.animateTo(0f)
@@ -113,14 +114,14 @@ fun PulseTextComponent() {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .statusBarsPadding()
             .fillMaxWidth()
             .height(IntrinsicSize.Min)
             .border(
-                BorderStroke(2.dp, Color.Red)
-            )
-            .graphicsLayer {
+                BorderStroke(2.dp, Color.Red),
+            ).graphicsLayer {
                 this.alpha = alpha.value
             },
         contentAlignment = Alignment.Center,
@@ -128,11 +129,12 @@ fun PulseTextComponent() {
         Text(
             "Pulse",
             textAlign = TextAlign.Center,
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.Red,
                 fontSize = 60.sp,
-                fontFamily = FontFamily.Cursive
-            )
+                fontFamily = FontFamily.Cursive,
+            ),
         )
     }
 }
@@ -142,7 +144,8 @@ fun PulseTextComponent() {
 fun PulseTextSideEffectComponent() {
     var pulseRateMs by remember { mutableLongStateOf(1000L) }
     val alpha = remember { Animatable(1f) }
-    LaunchedEffect(pulseRateMs) { // Restart the effect when the pulse rate changes
+    LaunchedEffect(pulseRateMs) {
+        // Restart the effect when the pulse rate changes
         while (true) {
             delay(pulseRateMs) // Pulse the alpha every pulseRateMs to alert the user
             alpha.animateTo(0f)
@@ -152,22 +155,23 @@ fun PulseTextSideEffectComponent() {
 
     SideEffect {
         // Update the pulse rate every 5 seconds to demonstrate restarting the effect}
-        pulseRateMs = if (pulseRateMs == 1000L) {
-            500L
-        } else {
-            1000L
-        }
+        pulseRateMs =
+            if (pulseRateMs == 1000L) {
+                500L
+            } else {
+                1000L
+            }
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .statusBarsPadding()
             .fillMaxWidth()
             .height(IntrinsicSize.Min)
             .border(
-                BorderStroke(2.dp, Color.Red)
-            )
-            .graphicsLayer {
+                BorderStroke(2.dp, Color.Red),
+            ).graphicsLayer {
                 this.alpha = alpha.value
             },
         contentAlignment = Alignment.Center,
@@ -175,11 +179,12 @@ fun PulseTextSideEffectComponent() {
         Text(
             "Pulse",
             textAlign = TextAlign.Center,
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.Red,
                 fontSize = 60.sp,
-                fontFamily = FontFamily.Cursive
-            )
+                fontFamily = FontFamily.Cursive,
+            ),
         )
     }
 }
@@ -195,16 +200,18 @@ fun SnackbarComponent(snackbarHostState: SnackbarHostState = remember { Snackbar
     // CoroutineScope vinculada ao lifecycle da composable
     val scope = rememberCoroutineScope()
     Scaffold(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .statusBarsPadding(),
         snackbarHost = {
             SnackbarHost(hostState = snackbarHostState)
-        }
+        },
     ) { contentPadding ->
         Column(
-            Modifier.padding(contentPadding)
-                .fillMaxWidth()
+            Modifier
+                .padding(contentPadding)
+                .fillMaxWidth(),
         ) {
             Button(
                 onClick = {
@@ -214,7 +221,7 @@ fun SnackbarComponent(snackbarHostState: SnackbarHostState = remember { Snackbar
                     }
                 },
                 modifier = Modifier.fillMaxWidth().padding(2.dp),
-                shape = RectangleShape
+                shape = RectangleShape,
             ) {
                 Text("Press me")
             }

@@ -17,7 +17,6 @@ import com.br.justcomposelabs.databinding.ActivityLocalBroadcastManagerBinding
     https://www.geeksforgeeks.org/android/how-to-use-localbroadcastmanager-in-android/
  */
 class LocalBroadcastManagerActivity : AppCompatActivity() {
-
     private val binding: ActivityLocalBroadcastManagerBinding by lazy {
         ActivityLocalBroadcastManagerBinding.inflate(layoutInflater)
     }
@@ -33,7 +32,7 @@ class LocalBroadcastManagerActivity : AppCompatActivity() {
         val ctx = this
         LocalBroadcastManager.getInstance(ctx).registerReceiver(
             broadcastReceiver,
-            IntentFilter(CustomBroadcastReceiver.INTENT_FILTER)
+            IntentFilter(CustomBroadcastReceiver.INTENT_FILTER),
         )
 
         binding.run {
@@ -45,13 +44,14 @@ class LocalBroadcastManagerActivity : AppCompatActivity() {
             }
 
             mockSendExtras.setOnClickListener {
-                val data = Intent(CustomBroadcastReceiver.INTENT_FILTER).apply {
-                    putExtras(
-                        Bundle().apply {
-                            putString(CustomBroadcastReceiver.EXTRA_STRING, "hello world local broadcast receiver")
-                        }
-                    )
-                }
+                val data =
+                    Intent(CustomBroadcastReceiver.INTENT_FILTER).apply {
+                        putExtras(
+                            Bundle().apply {
+                                putString(CustomBroadcastReceiver.EXTRA_STRING, "hello world local broadcast receiver")
+                            },
+                        )
+                    }
 
                 LocalBroadcastManager.getInstance(ctx).sendBroadcast(data)
             }
@@ -65,7 +65,10 @@ class LocalBroadcastManagerActivity : AppCompatActivity() {
 }
 
 class CustomBroadcastReceiver : BroadcastReceiver() {
-    override fun onReceive(context: Context?, intent: Intent?) {
+    override fun onReceive(
+        context: Context?,
+        intent: Intent?,
+    ) {
         intent?.extras?.let { bundle ->
             val message = bundle.getString(EXTRA_STRING) ?: "empty message"
             Log.i("EVENT_HANDLING", message)

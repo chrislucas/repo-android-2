@@ -47,23 +47,24 @@ fun RememberUpdateStateComponent(
             Timber.plant(tree) // This sends logs to Logcat
         }
 
-        val observer = LifecycleEventObserver { _, event ->
-            when (event) {
-                Lifecycle.Event.ON_START -> {
-                    currentOnStart()
-                    Timber.tag("disposable_effect").d("ON_START=$event")
-                }
+        val observer =
+            LifecycleEventObserver { _, event ->
+                when (event) {
+                    Lifecycle.Event.ON_START -> {
+                        currentOnStart()
+                        Timber.tag("disposable_effect").d("ON_START=$event")
+                    }
 
-                Lifecycle.Event.ON_STOP -> {
-                    currentOnStop()
-                    Timber.tag("disposable_effect").d("ON_STOP=$event")
-                }
+                    Lifecycle.Event.ON_STOP -> {
+                        currentOnStop()
+                        Timber.tag("disposable_effect").d("ON_STOP=$event")
+                    }
 
-                else -> {
-                    Timber.tag("disposable_effect").d("Event: $event")
+                    else -> {
+                        Timber.tag("disposable_effect").d("Event: $event")
+                    }
                 }
             }
-        }
 
         lifecycleOwner.lifecycle.addObserver(observer)
 
@@ -82,21 +83,23 @@ private fun RememberUpdateStateSamplePreview() {
     JustComposeLabsTheme {
         val ctx = LocalContext.current
         RememberUpdateStateComponent(onStart = {
-            Toast.makeText(
-                ctx,
-                "ON_START",
-                Toast.LENGTH_LONG
-            ).show()
+            Toast
+                .makeText(
+                    ctx,
+                    "ON_START",
+                    Toast.LENGTH_LONG,
+                ).show()
         }, onStop = {
             Timber.tag("disposable_effect").d("ON_STOP")
         }) {
             Button(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth()
                     .statusBarsPadding()
                     .padding(2.dp),
                 onClick = { Toast.makeText(ctx, "Click", Toast.LENGTH_LONG).show() },
-                shape = RectangleShape
+                shape = RectangleShape,
             ) {
                 Text("Click")
             }

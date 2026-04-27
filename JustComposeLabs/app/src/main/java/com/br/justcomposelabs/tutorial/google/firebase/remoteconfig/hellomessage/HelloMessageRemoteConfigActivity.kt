@@ -32,7 +32,7 @@ class HelloMessageRemoteConfigActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -45,7 +45,7 @@ fun Greeting(modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         Image(
             painter = painterResource(R.drawable.bakery_back),
-            contentDescription = null
+            contentDescription = null,
         )
 
         Text("Welcome")

@@ -9,7 +9,6 @@ import com.br.justcomposelabs.databinding.ActivityChangeOrientationBinding
 import timber.log.Timber
 
 class ChangeOrientationActivity : AppCompatActivity() {
-
     private val binding: ActivityChangeOrientationBinding by lazy {
         ActivityChangeOrientationBinding.inflate(layoutInflater)
     }
@@ -27,19 +26,23 @@ class ChangeOrientationActivity : AppCompatActivity() {
             }
 
             toggleButtonHandleOrientation.setOnClickListener {
-                requestedOrientation = if (toggleButtonHandleOrientation.isChecked) {
-                    android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-                } else {
-                    android.content.pm.ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
-                }
+                requestedOrientation =
+                    if (toggleButtonHandleOrientation.isChecked) {
+                        android.content.pm.ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                    } else {
+                        android.content.pm.ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
+                    }
 
-                Timber.tag("change_orientation")
+                Timber
+                    .tag("change_orientation")
                     .d(getOrientationName(resources.configuration.orientation))
             }
         }
     }
 
-    private fun getOrientationName(@Orientation orientation: Int): String =
+    private fun getOrientationName(
+        @Orientation orientation: Int,
+    ): String =
         when (orientation) {
             android.content.res.Configuration.ORIENTATION_LANDSCAPE -> return "LANDSCAPE"
             android.content.res.Configuration.ORIENTATION_PORTRAIT -> return "PORTRAIT"

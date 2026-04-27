@@ -17,8 +17,8 @@ plugins {
     id("com.google.firebase.crashlytics") version "3.0.7" apply false
     id("com.google.dagger.hilt.android") version "2.59.2" apply false
 
-    id("io.gitlab.arturbosch.detekt") version("1.23.6")
-    id("org.jlleitschuh.gradle.ktlint") version("12.1.0")
+    id("io.gitlab.arturbosch.detekt") version ("1.23.6")
+    id("org.jlleitschuh.gradle.ktlint") version ("12.1.0")
 }
 
 buildscript {

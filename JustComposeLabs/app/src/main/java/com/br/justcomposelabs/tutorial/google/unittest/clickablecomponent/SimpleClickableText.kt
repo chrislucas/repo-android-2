@@ -9,6 +9,6 @@ import androidx.compose.ui.Modifier
 fun ClickableTextExample(onClick: () -> Unit) {
     Text(
         text = "Click me!",
-        modifier = Modifier.clickable(onClick = onClick)
+        modifier = Modifier.clickable(onClick = onClick),
     )
 }

@@ -59,36 +59,41 @@ import kotlin.random.Random
 
  */
 
-data class ImageResourceUiState(val id: Int)
+data class ImageResourceUiState(
+    val id: Int,
+)
 
 class ImageResourceViewModel : ViewModel() {
-    private val resources = listOf(
-        R.drawable.kitkat,
-        R.drawable.dandelion_chocolate,
-        R.drawable.lollipop,
-        R.drawable.marshmallow,
-        R.drawable.nougat,
-        R.drawable.oreo,
-        R.drawable.rainbow,
-        R.drawable.gingerbread,
-        R.drawable.honeycomb,
-        R.drawable.jellybean,
-        R.drawable.rainbow,
-        R.drawable.feathertop,
-        R.drawable.hero,
-    )
+    private val resources =
+        listOf(
+            R.drawable.kitkat,
+            R.drawable.dandelion_chocolate,
+            R.drawable.lollipop,
+            R.drawable.marshmallow,
+            R.drawable.nougat,
+            R.drawable.oreo,
+            R.drawable.rainbow,
+            R.drawable.gingerbread,
+            R.drawable.honeycomb,
+            R.drawable.jellybean,
+            R.drawable.rainbow,
+            R.drawable.feathertop,
+            R.drawable.hero,
+        )
 
-    private val resourceId = flow {
-        while (true) {
-            val idx = Random.nextInt(resources.size)
-            emit(resources[idx])
-            delay(500000L)
+    private val resourceId =
+        flow {
+            while (true) {
+                val idx = Random.nextInt(resources.size)
+                emit(resources[idx])
+                delay(500000L)
+            }
         }
-    }
 
-    private val _uiState = MutableStateFlow(
-        ImageResourceUiState(resources[0])
-    )
+    private val _uiState =
+        MutableStateFlow(
+            ImageResourceUiState(resources[0]),
+        )
     val uiState: StateFlow<ImageResourceUiState> = _uiState.asStateFlow()
 
     init {
@@ -108,7 +113,8 @@ fun BackgroundBanner(viewModel: ImageResourceViewModel = viewModel()) {
     val backgroundResource by viewModel.uiState.collectAsStateWithLifecycle()
     val res = LocalResources.current
     val ctx = LocalContext.current
-    val (brush, name) = remember(keys = arrayOf(backgroundResource)) {
+    val (brush, name) =
+        remember(keys = arrayOf(backgroundResource)) {
         /*
            - O metodo remember aceita como parametros key ou keys e se qualquer uma dessas keys mudar, a
            proxima vez que a funcao sofrer recomposicao, remember invalida o cache e executa a funcao
@@ -128,30 +134,33 @@ fun BackgroundBanner(viewModel: ImageResourceViewModel = viewModel()) {
             Criei também uma viewmodel que emite uma nova data class com um novo ID para resource
             para provocar a mudanca no parametro keys passado para funcao remember.
          */
-        val drawable = ContextCompat.getDrawable(
-            ctx,
-            backgroundResource.id
-        )
+            val drawable =
+                ContextCompat.getDrawable(
+                    ctx,
+                    backgroundResource.id,
+                )
 
-        val bitmap = drawable?.toBitmap(
-            width = drawable.intrinsicWidth,
-            height = drawable.intrinsicHeight,
-            config = Bitmap.Config.ARGB_8888
-        ) ?: ImageBitmap.imageResource(res, R.drawable.feathertop).asAndroidBitmap()
+            val bitmap =
+                drawable?.toBitmap(
+                    width = drawable.intrinsicWidth,
+                    height = drawable.intrinsicHeight,
+                    config = Bitmap.Config.ARGB_8888,
+                ) ?: ImageBitmap.imageResource(res, R.drawable.feathertop).asAndroidBitmap()
 
-        val matrix = Matrix()
-        matrix.postTranslate(bitmap.width / 4f, bitmap.height / 4f)
-        val brush = ShaderBrush(
-            BitmapShader(
-                bitmap,
-                Shader.TileMode.MIRROR,
-                Shader.TileMode.MIRROR
-            ).apply {
-                setLocalMatrix(matrix)
-            }
-        )
-        brush to res.getResourceName(backgroundResource.id).substringAfterLast("/")
-    }
+            val matrix = Matrix()
+            matrix.postTranslate(bitmap.width / 4f, bitmap.height / 4f)
+            val brush =
+                ShaderBrush(
+                    BitmapShader(
+                        bitmap,
+                        Shader.TileMode.MIRROR,
+                        Shader.TileMode.MIRROR,
+                    ).apply {
+                        setLocalMatrix(matrix)
+                    },
+                )
+            brush to res.getResourceName(backgroundResource.id).substringAfterLast("/")
+        }
 
     val countingRecompositions = remember { mutableLongStateOf(0) }
     val callbackRecomposition = { value: Long ->
@@ -159,32 +168,35 @@ fun BackgroundBanner(viewModel: ImageResourceViewModel = viewModel()) {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(brush),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Resource name: $name.\nRecomposition:${countingRecompositions.longValue}",
             textAlign = TextAlign.Center,
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color(136, 162, 255, 255),
-                fontSize = 33.sp
+                fontSize = 33.sp,
             ),
-            modifier = Modifier
+            modifier =
+            Modifier
                 .border(
                     width = 2.dp,
                     color = Color(218, 76, 76, 255),
-                    shape = RoundedCornerShape(3.dp)
-                )
-                .recomposeHighlighter(turnOn = true, callback = callbackRecomposition)
+                    shape = RoundedCornerShape(3.dp),
+                ).recomposeHighlighter(turnOn = true, callback = callbackRecomposition),
         )
     }
 }
 
 @SuppressLint("ComposableNaming")
 @Composable
-private fun RememberImageResourceUiState(id: Int) = remember(id) {
+private fun RememberImageResourceUiState(id: Int) =
+    remember(id) {
     /*
         Expor uma funcao que cria uma instance que sobrevive a recomposicao é um pattern em
         Compose.
@@ -195,8 +207,8 @@ private fun RememberImageResourceUiState(id: Int) = remember(id) {
         - Compose usa o metodo equals para decidir se a chave mudou e assim invalidar o valor
         armazenado no cache
      */
-    ImageResourceUiState(id)
-}
+        ImageResourceUiState(id)
+    }
 
 /*
     Store state with keys beyond recomposition

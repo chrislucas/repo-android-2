@@ -27,15 +27,17 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
 @Composable
 fun FillingMaxSizeSolution() {
     Row(
-        modifier = Modifier
+        modifier =
+        Modifier
             .height(IntrinsicSize.Min)
-            .padding(WindowInsets.safeDrawing.asPaddingValues())
+            .padding(WindowInsets.safeDrawing.asPaddingValues()),
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .width(8.dp)
                 .fillMaxHeight()
-                .background(Color.Red)
+                .background(Color.Red),
         )
         Column {
             Text("Hello")

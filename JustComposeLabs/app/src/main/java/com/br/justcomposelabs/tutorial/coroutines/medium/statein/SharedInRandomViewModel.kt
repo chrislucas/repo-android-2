@@ -12,19 +12,19 @@ import kotlinx.coroutines.flow.shareIn
  */
 
 class SharedRandomNumberFlow : ViewModel() {
-    val sharedRandomNumberFlow = flow {
-        while (true) {
-            delay(1000)
-            emit((0..100).random())
-        }
-    }.shareIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed()
-    )
+    val sharedRandomNumberFlow =
+        flow {
+            while (true) {
+                delay(1000)
+                emit((0..100).random())
+            }
+        }.shareIn(
+            scope = viewModelScope,
+            started = SharingStarted.WhileSubscribed(),
+        )
 }
 
 class StateIn : ViewModel() {
-
     /*
         Criar um exemplo com a doc abaixo
         https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/state-in.html

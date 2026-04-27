@@ -10,7 +10,6 @@ import androidx.compose.runtime.remember
 
  */
 
-
 @Composable
 fun TimerScreen() {
     val time = remember { mutableStateOf(0) }

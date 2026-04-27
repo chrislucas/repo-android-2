@@ -10,5 +10,5 @@ data class AddEditTaskUiState(
     val isTaskCompleted: Boolean = false,
     val isLoading: Boolean = false,
     val userMessage: String? = null,
-    val isTaskSaved: Boolean = false
+    val isTaskSaved: Boolean = false,
 )

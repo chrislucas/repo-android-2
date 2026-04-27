@@ -10,5 +10,5 @@ class OrderUiState(
     /** Total price for the order */
     val price: String = "",
     /** Available pickup dates for the order*/
-    val pickupOptions: List<String> = listOf()
+    val pickupOptions: List<String> = listOf(),
 )

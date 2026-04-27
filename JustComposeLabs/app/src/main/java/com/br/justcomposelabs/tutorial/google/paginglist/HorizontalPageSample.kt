@@ -33,31 +33,33 @@ import androidx.compose.ui.unit.dp
     showSystemUi = false,
     showBackground = true,
     device = "spec:width=411dp,height=891dp",
-    name = "HorizontalPagerSample"
+    name = "HorizontalPagerSample",
 )
 @Composable
 fun HorizontalPagerSample(modifier: Modifier = Modifier) {
     Column(modifier) {
-        val pagerState = rememberPagerState(pageCount = {
-            10
-        })
+        val pagerState =
+            rememberPagerState(pageCount = {
+                10
+            })
 
         HorizontalPager(
             state = pagerState,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(.95f)
-                .fillMaxSize()
+                .fillMaxSize(),
         ) { page ->
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxSize()
                     .background(Color.LightGray),
                 contentAlignment = Alignment.Center,
-
             ) {
                 Text(
                     text = "Page: $page",
-                    fontSize = TextUnit(30f, TextUnitType.Sp)
+                    fontSize = TextUnit(30f, TextUnitType.Sp),
                 )
             }
         }
@@ -68,17 +70,18 @@ fun HorizontalPagerSample(modifier: Modifier = Modifier) {
                 .weight(.05f)
                 .fillMaxWidth()
                 .padding(bottom = 8.dp),
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
             repeat(pagerState.pageCount) { iteration ->
                 val color =
                     if (pagerState.currentPage == iteration) Color.DarkGray else Color.LightGray
                 Box(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .padding(2.dp)
                         .clip(CircleShape)
                         .background(color)
-                        .size(16.dp)
+                        .size(16.dp),
                 )
             }
         }

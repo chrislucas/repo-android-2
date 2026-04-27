@@ -19,7 +19,7 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 fun <T : ViewBinding> LoadMergeLayoutComponent(
     factory: (inflater: LayoutInflater, parent: ViewGroup) -> T,
     modifier: Modifier = Modifier,
-    update: T.() -> Unit = {}
+    update: T.() -> Unit = {},
 ) {
     /*
         Essa estratégia de ignorar o parâmetro attachToParent da factory serve para
@@ -34,7 +34,7 @@ fun <T : ViewBinding> LoadMergeLayoutComponent(
             factory(inflate, viewGroup)
         },
         modifier = modifier,
-        update
+        update,
     )
 }
 
@@ -42,12 +42,12 @@ fun <T : ViewBinding> LoadMergeLayoutComponent(
 fun <T : ViewBinding> LoadLayoutComponent(
     factory: (inflater: LayoutInflater, parent: ViewGroup, attachToParent: Boolean) -> T,
     modifier: Modifier = Modifier,
-    update: T.() -> Unit = {}
+    update: T.() -> Unit = {},
 ) {
     AndroidViewBinding(
         factory = factory,
         modifier = modifier,
-        update
+        update,
     )
 }
 
@@ -57,9 +57,10 @@ fun LoadMergeLayoutComponentPreview() {
     JustComposeLabsTheme {
         LoadMergeLayoutComponent(
             LayoutCustomViewOverlayBinding::inflate,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .navigationBarsPadding()
-                .systemBarsPadding()
+                .systemBarsPadding(),
         )
     }
 }
@@ -73,10 +74,11 @@ fun LoadLayoutComponentPreview() {
     JustComposeLabsTheme {
         LoadLayoutComponent(
             LayoutTextCenterSampleBindingComposeBinding::inflate,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .navigationBarsPadding()
-                .systemBarsPadding()
+                .systemBarsPadding(),
         ) {
             tvContent.textAlignment = View.TEXT_ALIGNMENT_CENTER
         }

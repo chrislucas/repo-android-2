@@ -16,11 +16,10 @@ import kotlinx.coroutines.withContext
     https://medium.com/@daniel.atitienei/how-to-use-palette-api-with-jetpack-compose-a7028143d3c2
  */
 
-suspend fun generatePalette(bitmap: Bitmap): Palette {
-    return withContext(Dispatchers.IO) {
+suspend fun generatePalette(bitmap: Bitmap): Palette =
+    withContext(Dispatchers.IO) {
         Palette.from(bitmap).generate()
     }
-}
 
 /*
 fun Pallete.getVibrantSwatch(): Int {

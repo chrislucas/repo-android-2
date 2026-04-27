@@ -29,7 +29,7 @@ fun <T> StatementBody(
     amounts: (T) -> Float,
     amountsTotal: Float,
     circleLabel: String,
-    rows: @Composable (T) -> Unit
+    rows: @Composable (T) -> Unit,
 ) {
     Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Box(Modifier.padding(16.dp)) {
@@ -41,18 +41,18 @@ fun <T> StatementBody(
                 Modifier
                     .height(300.dp)
                     .align(Alignment.Center)
-                    .fillMaxWidth()
+                    .fillMaxWidth(),
             )
             Column(modifier = Modifier.align(Alignment.Center)) {
                 Text(
                     text = circleLabel,
                     style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
                 )
                 Text(
                     text = formatAmount(amountsTotal),
                     style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
+                    modifier = Modifier.align(Alignment.CenterHorizontally),
                 )
             }
         }
@@ -82,9 +82,9 @@ fun StatementBodyPreview() {
                     name = account.name,
                     number = account.number,
                     amount = account.balance,
-                    color = account.color
+                    color = account.color,
                 )
-            }
+            },
         )
     }
 }

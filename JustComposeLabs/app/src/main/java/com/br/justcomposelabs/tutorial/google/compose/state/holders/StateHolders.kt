@@ -39,11 +39,13 @@ fun StateCounterByItSelf() {
     var count by remember { mutableIntStateOf(0) }
 
     Row(
-        modifier = Modifier.fillMaxSize()
+        modifier =
+        Modifier
+            .fillMaxSize()
             .systemBarsPadding()
             .navigationBarsPadding(),
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Center
+        horizontalArrangement = Arrangement.Center,
     ) {
         Button(onClick = { ++count }) {
             Text(text = "Increment")

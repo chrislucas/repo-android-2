@@ -13,16 +13,17 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun BottomSheetScaffoldComponent() {
-    val colors = remember {
-        listOf<Color>(
-            Color.Blue,
-            Color.Gray,
-            Color.Green,
-            Color.Magenta,
-            Color.Yellow,
-            Color.Cyan
-        )
-    }
+    val colors =
+        remember {
+            listOf<Color>(
+                Color.Blue,
+                Color.Gray,
+                Color.Green,
+                Color.Magenta,
+                Color.Yellow,
+                Color.Cyan,
+            )
+        }
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberBottomSheetScaffoldState()
 

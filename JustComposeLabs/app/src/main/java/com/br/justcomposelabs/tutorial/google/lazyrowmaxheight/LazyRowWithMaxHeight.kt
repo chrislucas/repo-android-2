@@ -28,25 +28,26 @@ import androidx.compose.ui.unit.dp
 data class MockContent(
     val first: String? = null,
     val second: String? = null,
-    val third: String? = null
+    val third: String? = null,
 )
 
-internal val items = listOf(
-    MockContent(first = null, second = "Second", third = "Third"),
-    MockContent(first = "First", second = null, third = null),
-    MockContent(first = "First", second = "Second", third = null),
-    MockContent(first = null, second = "Second", third = null),
-    MockContent(first = "first", second = null, third = null),
-    MockContent(first = "first", second = null, third = null),
-    MockContent(first = "first", second = "second", third = null),
-    MockContent(first = "first", second = null, third = "third"),
-    MockContent(first = "first", second = null, third = "third"),
-    MockContent(first = "first", second = null, third = "third"),
-    MockContent(first = null, second = null, third = "third"),
-    MockContent(first = "first", second = null, third = "third"),
-    MockContent(first = "first", second = null, third = null),
-    MockContent(first = "first", second = "second", third = "third"),
-)
+internal val items =
+    listOf(
+        MockContent(first = null, second = "Second", third = "Third"),
+        MockContent(first = "First", second = null, third = null),
+        MockContent(first = "First", second = "Second", third = null),
+        MockContent(first = null, second = "Second", third = null),
+        MockContent(first = "first", second = null, third = null),
+        MockContent(first = "first", second = null, third = null),
+        MockContent(first = "first", second = "second", third = null),
+        MockContent(first = "first", second = null, third = "third"),
+        MockContent(first = "first", second = null, third = "third"),
+        MockContent(first = "first", second = null, third = "third"),
+        MockContent(first = null, second = null, third = "third"),
+        MockContent(first = "first", second = null, third = "third"),
+        MockContent(first = "first", second = null, third = null),
+        MockContent(first = "first", second = "second", third = "third"),
+    )
 
 @Preview(showBackground = true)
 @Composable
@@ -58,7 +59,8 @@ fun LazyRowWithMaxHeight() {
     LazyRow {
         itemsIndexed(items) { index, item ->
             Card(
-                modifier = Modifier
+                modifier =
+                Modifier
                     // Measure the height of each card
                     .onGloballyPositioned { coordinates ->
                         val height = coordinates.size.height
@@ -67,10 +69,9 @@ fun LazyRowWithMaxHeight() {
                         if (currentMax > maxHeight.intValue) {
                             maxHeight.intValue = currentMax
                         }
-                    }
-                    .padding(2.dp)
+                    }.padding(2.dp)
                     .onSizeChanged { size ->
-                    }
+                    },
             ) {
                 // Content of the card
                 val (f, s, t) = item
@@ -96,7 +97,8 @@ fun LazyRowWithMaxHeightCalculateBefore() {
         LazyRow {
             itemsIndexed(items) { index, item ->
                 Card(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .onGloballyPositioned { coordinates ->
                             val height = coordinates.size.height
                             heights[index] = height
@@ -105,10 +107,9 @@ fun LazyRowWithMaxHeightCalculateBefore() {
                                 maxHeight.intValue = max
                                 measuringDone.value = true // Measurements complete
                             }
-                        }
-                        .padding(2.dp)
+                        }.padding(2.dp)
                         .onSizeChanged { size ->
-                        }
+                        },
                 ) {
                     TextCard(item)
                 }
@@ -117,10 +118,11 @@ fun LazyRowWithMaxHeightCalculateBefore() {
     } else {
         // Render LazyRow with fixed height equal to maxHeight
         LazyRow(
-            modifier = Modifier.height(
-                height = maxHeight.intValue.dp
+            modifier =
+            Modifier.height(
+                height = maxHeight.intValue.dp,
                 // with(LocalDensity.current) { maxHeight.intValue.toDp() }
-            )
+            ),
         ) {
             items(items) { item ->
                 Card(modifier = Modifier.padding(2.dp)) {

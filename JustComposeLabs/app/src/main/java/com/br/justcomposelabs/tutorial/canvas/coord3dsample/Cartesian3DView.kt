@@ -43,7 +43,7 @@ fun CartesianPlan3dAxis() {
                         rotX.animateTo(rotX.value + dragAmount.y * 0.01f)
                     }
                 }
-            }
+            },
     ) {
         val w = size.width
         val h = size.height
@@ -52,18 +52,23 @@ fun CartesianPlan3dAxis() {
         val axisLen = 300f
 
         // Pontos finais dos eixos
-        val axes = listOf(
-            floatArrayOf(axisLen, 0f, 0f), // X positiva
-            floatArrayOf(-axisLen, 0f, 0f), // X negativa
-            floatArrayOf(0f, axisLen, 0f), // Y positiva
-            floatArrayOf(0f, -axisLen, 0f), // Y negativa
-            floatArrayOf(0f, 0f, axisLen), // Z positiva
-            floatArrayOf(0f, 0f, -axisLen) // Z negativa
-        )
+        val axes =
+            listOf(
+                floatArrayOf(axisLen, 0f, 0f), // X positiva
+                floatArrayOf(-axisLen, 0f, 0f), // X negativa
+                floatArrayOf(0f, axisLen, 0f), // Y positiva
+                floatArrayOf(0f, -axisLen, 0f), // Y negativa
+                floatArrayOf(0f, 0f, axisLen), // Z positiva
+                floatArrayOf(0f, 0f, -axisLen), // Z negativa
+            )
         val colors = listOf(Color.Red, Color.Red, Color.Green, Color.Green, Color.Blue, Color.Blue)
 
         // Função de rotação no espaço 3D
-        fun rotatePoint3D(p: FloatArray, rx: Float, ry: Float): FloatArray {
+        fun rotatePoint3D(
+            p: FloatArray,
+            rx: Float,
+            ry: Float,
+        ): FloatArray {
             val (x, y, z) = p
             val y1 = y * cos(rx) - z * sin(rx)
             val z1 = y * sin(rx) + z * cos(rx)
@@ -98,12 +103,13 @@ fun CartesianPlan3dAxis() {
 
             // Preparar texto
             val labelOffset = 40f
-            val labelText = when (i) {
-                0 -> "X"
-                2 -> "Y"
-                4 -> "Z"
-                else -> ""
-            }
+            val labelText =
+                when (i) {
+                    0 -> "X"
+                    2 -> "Y"
+                    4 -> "Z"
+                    else -> ""
+                }
 
             val layoutResult = textMeasurer.measure(AnnotatedString(labelText), style = textStyle)
             val brush = SolidColor(color)
@@ -114,12 +120,12 @@ fun CartesianPlan3dAxis() {
                     drawText(
                         textLayoutResult = layoutResult,
                         brush = brush,
-                        topLeft = Offset(start2D.x - labelOffset, start2D.y)
+                        topLeft = Offset(start2D.x - labelOffset, start2D.y),
                     )
                     drawText(
                         textLayoutResult = layoutResult,
                         brush = brush,
-                        topLeft = Offset(end2D.x + labelOffset, end2D.y)
+                        topLeft = Offset(end2D.x + labelOffset, end2D.y),
                     )
                 }
 
@@ -127,12 +133,12 @@ fun CartesianPlan3dAxis() {
                     drawText(
                         textLayoutResult = layoutResult,
                         brush = brush,
-                        topLeft = Offset(start2D.x, start2D.y - labelOffset)
+                        topLeft = Offset(start2D.x, start2D.y - labelOffset),
                     )
                     drawText(
                         textLayoutResult = layoutResult,
                         brush = brush,
-                        topLeft = Offset(end2D.x, end2D.y + labelOffset)
+                        topLeft = Offset(end2D.x, end2D.y + labelOffset),
                     )
                 }
 
@@ -140,12 +146,12 @@ fun CartesianPlan3dAxis() {
                     drawText(
                         textLayoutResult = layoutResult,
                         brush = brush,
-                        topLeft = Offset(start2D.x, start2D.y + labelOffset)
+                        topLeft = Offset(start2D.x, start2D.y + labelOffset),
                     )
                     drawText(
                         textLayoutResult = layoutResult,
                         brush = brush,
-                        topLeft = Offset(end2D.x, end2D.y - labelOffset)
+                        topLeft = Offset(end2D.x, end2D.y - labelOffset),
                     )
                 }
             }

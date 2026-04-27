@@ -12,7 +12,6 @@ import android.os.IBinder
     https://github.com/android/codelab-while-in-use-location/blob/master/base/src/main/java/com/example/android/whileinuselocation/ForegroundOnlyLocationService.kt
  */
 class ForegroundOnlyLocationService : Service() {
-
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
     }

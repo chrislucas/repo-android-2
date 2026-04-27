@@ -13,9 +13,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import timber.log.Timber
 
 class SimpleBottomSheetDialogFragment(
-    private val lifecycleObserver: DefaultLifecycleObserver
+    private val lifecycleObserver: DefaultLifecycleObserver,
 ) : BottomSheetDialogFragment() {
-
     /*
         Lifecycle
         onCreate()
@@ -26,21 +25,18 @@ class SimpleBottomSheetDialogFragment(
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
-        return super.onCreateDialog(savedInstanceState)
-    }
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog = super.onCreateDialog(savedInstanceState)
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(
+        savedInstanceState: Bundle?,
+    ): View? =
+        inflater.inflate(
             R.layout.simple_bottom_sheet_dialog,
             container,
-            false
+            false,
         )
-    }
 
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)

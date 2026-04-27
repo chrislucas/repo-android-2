@@ -44,39 +44,40 @@ fun HelloScreenRx(helloStateRxViewModel: HelloStateRx3ava3ViewModel = viewModel(
     val name by helloStateRxViewModel.stateObservable.subscribeAsState("")
     HelloContentPresentationRxJava3(
         name,
-        helloStateRxViewModel::onDataChange
+        helloStateRxViewModel::onDataChange,
     )
 }
 
 @Composable
 private fun HelloContentPresentationRxJava3(
     value: String = "",
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
 ) {
     Surface(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .padding(10.dp),
         shape = MaterialTheme.shapes.medium,
-        tonalElevation = 1.dp
+        tonalElevation = 1.dp,
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Center
+            verticalArrangement = Center,
         ) {
             if (value.isNotBlank()) {
                 Text(
                     text = "Hello, $value!",
                     modifier = Modifier.padding(bottom = 8.dp),
-                    style = MaterialTheme.typography.headlineMedium
+                    style = MaterialTheme.typography.headlineMedium,
                 )
             }
 
             OutlinedTextField(
                 value = value,
                 onValueChange = onValueChange,
-                label = { Text("label") }
+                label = { Text("label") },
             )
         }
     }

@@ -34,12 +34,12 @@ fun PulsingCircle() {
 
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Canvas(modifier = Modifier.Companion.size(100.dp)) {
             drawCircle(
                 color = Color(0xFFB388FF),
-                radius = size.minDimension / 2 * scale.value
+                radius = size.minDimension / 2 * scale.value,
             )
         }
     }

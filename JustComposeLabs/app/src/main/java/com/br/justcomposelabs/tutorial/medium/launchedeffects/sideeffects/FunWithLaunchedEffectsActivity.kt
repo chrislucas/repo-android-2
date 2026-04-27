@@ -32,7 +32,7 @@ class FunWithLaunchedEffectsActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     PulseEffect(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -48,7 +48,8 @@ fun PulseEffect(modifier: Modifier = Modifier) {
      */
     var pulseRateMs by remember { mutableLongStateOf(3000L) }
     val alpha = remember { Animatable(1f) }
-    LaunchedEffect(pulseRateMs) { // Restart the effect when the pulse rate changes
+    LaunchedEffect(pulseRateMs) {
+        // Restart the effect when the pulse rate changes
         while (isActive) {
             delay(pulseRateMs) // Pulse the alpha every pulseRateMs to alert the user
             alpha.animateTo(0f)

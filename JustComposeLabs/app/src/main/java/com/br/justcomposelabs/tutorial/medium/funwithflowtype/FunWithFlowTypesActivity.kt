@@ -54,7 +54,7 @@ class FunWithFlowTypesActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     OIObservedByStateFlowViewModel(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -70,7 +70,7 @@ fun OIObservedByStateFlowViewModel(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
     stateFlowViewModel: StateFlowViewModel = StateFlowViewModel(),
     sharedFlowViewModel: SharedFlowViewModel = SharedFlowViewModel(),
-    liveDataViewModel: LiveDataViewModel = LiveDataViewModel()
+    liveDataViewModel: LiveDataViewModel = LiveDataViewModel(),
 ) {
     /*
         https://developer.android.com/develop/ui/compose/side-effects#disposableeffect
@@ -114,9 +114,10 @@ fun OIObservedByStateFlowViewModel(
      */
 
     DisposableEffect(lifecycleOwner) {
-        val observer = LifecycleEventObserver { _, event ->
-            callbackLifecycle(event)
-        }
+        val observer =
+            LifecycleEventObserver { _, event ->
+                callbackLifecycle(event)
+            }
 
         lifecycleOwner.lifecycle.addObserver(observer)
 
@@ -137,14 +138,14 @@ fun OIObservedByStateFlowViewModel(
 @Composable
 fun UpdateStateFlowViewModel(
     modifier: Modifier = Modifier,
-    stateFlowViewModel: StateFlowViewModel
+    stateFlowViewModel: StateFlowViewModel,
 ) {
     val collectStateFlow by stateFlowViewModel.message.collectAsState()
 
     Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = collectStateFlow)
         Button(onClick = {
@@ -156,7 +157,7 @@ fun UpdateStateFlowViewModel(
     }
 }
 
-class StateFlowViewModel() : ViewModel() {
+class StateFlowViewModel : ViewModel() {
     private val content = MutableStateFlow("Init State Flow ViewModel")
     val message: StateFlow<String> = content
 
@@ -168,8 +169,7 @@ class StateFlowViewModel() : ViewModel() {
 @Composable
 fun UpdateSharedFlowViewModel(
     modifier: Modifier,
-    sharedFlowViewModel: SharedFlowViewModel
-
+    sharedFlowViewModel: SharedFlowViewModel,
 ) {
     /*
         var stateSharedFlow by remember {
@@ -178,9 +178,10 @@ fun UpdateSharedFlowViewModel(
      */
 
     // outra maneira de iniciar uma mutableStateOf
-    val stateSharedFlow = remember {
-        mutableStateOf("Empty State Shared Flow")
-    }
+    val stateSharedFlow =
+        remember {
+            mutableStateOf("Empty State Shared Flow")
+        }
 
     LaunchedEffect(Unit) {
         sharedFlowViewModel.message.collectLatest { data ->
@@ -191,7 +192,7 @@ fun UpdateSharedFlowViewModel(
     Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = stateSharedFlow.value)
         Button(onClick = {
@@ -224,14 +225,14 @@ class SharedFlowViewModel : ViewModel() {
 @Composable
 fun UpdateLiveDataViewModel(
     modifier: Modifier,
-    liveDataViewModel: LiveDataViewModel
+    liveDataViewModel: LiveDataViewModel,
 ) {
     val observeLiveData by liveDataViewModel.message.observeAsState("Empty State LiveData")
 
     Column(
         modifier = modifier.fillMaxWidth(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Text(text = observeLiveData)
         Button(onClick = {

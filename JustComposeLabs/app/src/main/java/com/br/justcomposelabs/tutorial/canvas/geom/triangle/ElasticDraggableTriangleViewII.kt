@@ -12,25 +12,28 @@ import android.view.MotionEvent
 import android.view.View
 import kotlin.math.*
 
-class ElasticDraggableTriangleViewII @JvmOverloads constructor(
+class ElasticDraggableTriangleViewII
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
-
     // Paint objects for drawing
-    private val trianglePaint = Paint().apply {
-        color = Color.GREEN
-        style = Paint.Style.FILL_AND_STROKE
-        strokeWidth = 4f
-        isAntiAlias = true
-    }
+    private val trianglePaint =
+        Paint().apply {
+            color = Color.GREEN
+            style = Paint.Style.FILL_AND_STROKE
+            strokeWidth = 4f
+            isAntiAlias = true
+        }
 
-    private val pointPaint = Paint().apply {
-        color = Color.RED
-        style = Paint.Style.FILL
-        isAntiAlias = true
-    }
+    private val pointPaint =
+        Paint().apply {
+            color = Color.RED
+            style = Paint.Style.FILL
+            isAntiAlias = true
+        }
 
     // Vertices of the triangle
     private val vertices = arrayOf(PointF(300f, 300f), PointF(600f, 300f), PointF(450f, 600f))
@@ -66,6 +69,7 @@ class ElasticDraggableTriangleViewII @JvmOverloads constructor(
                     }
                 }
             }
+
             MotionEvent.ACTION_MOVE -> {
                 if (selectedVertexIndex != -1) {
                     // Move only the selected vertex
@@ -75,6 +79,7 @@ class ElasticDraggableTriangleViewII @JvmOverloads constructor(
                     return true
                 }
             }
+
             MotionEvent.ACTION_UP -> {
                 selectedVertexIndex = -1
             }
@@ -83,7 +88,10 @@ class ElasticDraggableTriangleViewII @JvmOverloads constructor(
     }
 
     // Helper function to compute distance between two points
-    private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float {
-        return sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
-    }
+    private fun distance(
+        x1: Float,
+        y1: Float,
+        x2: Float,
+        y2: Float,
+    ): Float = sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
 }

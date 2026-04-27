@@ -40,16 +40,19 @@ private fun AsyncImageComponent() {
             https://composables.com/docs/androidx.compose.material/material/components/Surface
          */
         Surface(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
-                .padding(12.dp)
+                .padding(12.dp),
         ) {
             Column(
                 verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
+                    model =
+                    ImageRequest
+                        .Builder(LocalContext.current)
                         .data(url)
                         .crossfade(true)
                         .build(),
@@ -62,7 +65,7 @@ private fun AsyncImageComponent() {
 
             AsyncImage(
                 model = url,
-                contentDescription = ""
+                contentDescription = "",
             )
         }
     }
@@ -74,19 +77,22 @@ private fun AsyncImageSvgComponent() {
     JustComposeLabsTheme {
         val ctx = LocalContext.current
         Surface(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
-                .padding(12.dp)
+                .padding(12.dp),
         ) {
             /*
 
 
              */
 
-            val imageLoader = ImageLoader.Builder(ctx)
-                .components {
-                    add(SvgDecoder.Factory())
-                }.build()
+            val imageLoader =
+                ImageLoader
+                    .Builder(ctx)
+                    .components {
+                        add(SvgDecoder.Factory())
+                    }.build()
 
             /*
                 https://coil-kt.github.io/coil/svgs/
@@ -95,7 +101,7 @@ private fun AsyncImageSvgComponent() {
             AsyncImage(
                 model = "https://coil-kt.github.io/coil/images/coil_logo_black.svg",
                 contentDescription = "",
-                imageLoader = imageLoader
+                imageLoader = imageLoader,
             )
         }
     }
@@ -104,10 +110,12 @@ private fun AsyncImageSvgComponent() {
 @Preview
 @Composable
 fun SingletonImageLoader() {
-    val s = setSingletonImageLoaderFactory { context ->
-        ImageLoader.Builder(context)
-            .components {
-                add(SvgDecoder.Factory())
-            }.build()
-    }
+    val s =
+        setSingletonImageLoaderFactory { context ->
+            ImageLoader
+                .Builder(context)
+                .components {
+                    add(SvgDecoder.Factory())
+                }.build()
+        }
 }

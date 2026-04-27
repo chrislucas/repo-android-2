@@ -34,13 +34,15 @@ import timber.log.Timber
 fun StartOrderScreen(
     quantityOptions: List<Pair<Int, Int>>,
     onNextButtonClicked: (Int) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     ComposableLifecycle { source, event ->
         when (event) {
             Lifecycle.Event.ON_PAUSE -> {
                 Timber.tag("ON_PAUSE").i("Source: $source")
-            } else -> {
+            }
+
+            else -> {
                 // nothing
             }
         }
@@ -48,58 +50,65 @@ fun StartOrderScreen(
 
     Column(
         modifier = modifier.layoutId("Column_Container"),
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .layoutId("Column_Presentation"),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(
-                dimensionResource(R.dimen.padding_small)
-            )
+            verticalArrangement =
+            Arrangement.spacedBy(
+                dimensionResource(R.dimen.padding_small),
+            ),
         ) {
             Spacer(
-                modifier = Modifier.height(
-                    dimensionResource(R.dimen.padding_small)
-                )
+                modifier =
+                Modifier.height(
+                    dimensionResource(R.dimen.padding_small),
+                ),
             )
 
             Image(
                 painter = painterResource(R.drawable.cupcake),
                 contentDescription = null,
-                modifier = Modifier.width(300.dp)
+                modifier = Modifier.width(300.dp),
             )
             Spacer(
-                modifier = Modifier.height(
-                    dimensionResource(R.dimen.padding_medium)
-                )
+                modifier =
+                Modifier.height(
+                    dimensionResource(R.dimen.padding_medium),
+                ),
             )
             Text(
                 text = stringResource(R.string.order_cupcakes),
-                style = MaterialTheme.typography.headlineSmall
+                style = MaterialTheme.typography.headlineSmall,
             )
             Spacer(
-                modifier = Modifier.height(
-                    dimensionResource(R.dimen.padding_small)
-                )
+                modifier =
+                Modifier.height(
+                    dimensionResource(R.dimen.padding_small),
+                ),
             )
         }
 
         Column(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .layoutId("Column_Container_Buttons"),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(
-                dimensionResource(R.dimen.padding_medium)
-            )
+            verticalArrangement =
+            Arrangement.spacedBy(
+                dimensionResource(R.dimen.padding_medium),
+            ),
         ) {
             quantityOptions.forEach { item ->
                 SelectQuantityButton(
                     labelResourceId = item.first,
                     onClick = { onNextButtonClicked(item.second) },
-                    modifier = Modifier.fillMaxWidth() // .widthIn(min = 250.dp)
+                    modifier = Modifier.fillMaxWidth(), // .widthIn(min = 250.dp)
                 )
             }
         }
@@ -110,7 +119,7 @@ fun StartOrderScreen(
 fun SelectQuantityButton(
     @StringRes labelResourceId: Int,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Button(onClick = onClick, modifier = modifier) {
         Text(stringResource(labelResourceId))
@@ -123,7 +132,7 @@ fun SelectQuantityButtonPreview() {
     SelectQuantityButton(
         labelResourceId = R.string.one_cupcake,
         onClick = {},
-        modifier = Modifier.widthIn(300.dp)
+        modifier = Modifier.widthIn(300.dp),
     )
 }
 
@@ -134,9 +143,10 @@ fun StartOrderScreenPreview() {
         StartOrderScreen(
             quantityOptions = DataSource.quantityOptions,
             onNextButtonClicked = {},
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
-                .padding(dimensionResource(R.dimen.padding_medium))
+                .padding(dimensionResource(R.dimen.padding_medium)),
         )
     }
 }

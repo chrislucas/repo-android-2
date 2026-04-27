@@ -39,7 +39,7 @@ fun AnimatedTextContent() {
         label = "visibility",
         transitionSpec = {
             fadeIn(animationSpec = tween(300)) togetherWith fadeOut(animationSpec = tween(300))
-        }
+        },
     ) { s ->
         Text("Target State: $s")
     }
@@ -61,7 +61,7 @@ fun AnimatedContentFadeDemo() {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         AnimatedContent(
             targetState = isFirstContent,
@@ -69,17 +69,17 @@ fun AnimatedContentFadeDemo() {
                 // Combine the enter and exit animations using the `with` infix function.
                 fadeIn(animationSpec = tween(300)) togetherWith fadeOut(animationSpec = tween(300))
             },
-            label = "AnimatedContent Fade"
+            label = "AnimatedContent Fade",
         ) { targetState ->
             if (targetState) {
                 Text(
                     text = "First Content",
-                    style = MaterialTheme.typography.headlineMedium
+                    style = MaterialTheme.typography.headlineMedium,
                 )
             } else {
                 Text(
                     text = "Second Content",
-                    style = MaterialTheme.typography.headlineMedium
+                    style = MaterialTheme.typography.headlineMedium,
                 )
             }
         }

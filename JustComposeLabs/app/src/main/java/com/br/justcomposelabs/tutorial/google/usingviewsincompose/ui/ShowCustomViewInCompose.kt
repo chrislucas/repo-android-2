@@ -30,13 +30,15 @@ fun AddCustomView(modifier: Modifier = Modifier) {
         },
         update = { view ->
             view.counterClick = selectedItem
-        }
+        },
     )
 }
 
-class CustomView @JvmOverloads constructor(
+class CustomView
+@JvmOverloads
+constructor(
     context: Context,
-    attrs: AttributeSet? = null
+    attrs: AttributeSet? = null,
 ) : View(context, attrs) {
     var counterClick = 0
 }

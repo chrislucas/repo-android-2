@@ -34,14 +34,14 @@ const val LANGUAGES = "LANGUAGES"
     showBackground = true,
     name = "Portuguese",
     group = LANGUAGES,
-    showSystemUi = false
+    showSystemUi = false,
 )
 @Preview(
     locale = "es",
     showBackground = true,
     name = "Spanish",
     group = LANGUAGES,
-    showSystemUi = false
+    showSystemUi = false,
 )
 @Preview(locale = "ko", showBackground = true, name = "Korean", group = LANGUAGES)
 @Preview(locale = "ar", showBackground = true, name = "Arabic", group = LANGUAGES)
@@ -52,17 +52,17 @@ const val FONT_SCALE = "FONT_SCALE"
 @Preview(
     fontScale = 0.85f,
     group = FONT_SCALE,
-    showBackground = true
+    showBackground = true,
 )
 @Preview(
     fontScale = 1f,
     group = FONT_SCALE,
-    showBackground = true
+    showBackground = true,
 )
 @Preview(
     fontScale = 3f,
     group = FONT_SCALE,
-    showBackground = true
+    showBackground = true,
 )
 annotation class FontScalePreviews
 
@@ -72,13 +72,13 @@ private const val DEVICES = "DEVICES"
     name = "Phone_PIXEL_2",
     group = DEVICES,
     device = Devices.PIXEL_2,
-    showSystemUi = true
+    showSystemUi = true,
 )
 @Preview(
     name = "Tablet_PIXEL_C",
     group = DEVICES,
     device = Devices.PIXEL_C,
-    showSystemUi = true
+    showSystemUi = true,
 )
 annotation class DevicePreviews
 
@@ -88,7 +88,8 @@ annotation class DevicePreviews
 fun Greeting() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .paddingEdgeToEdge(),
         ) {

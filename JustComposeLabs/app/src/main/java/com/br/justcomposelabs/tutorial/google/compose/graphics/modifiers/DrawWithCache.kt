@@ -49,14 +49,15 @@ fun RectGradient() {
                     )
                 onDrawBehind { drawRect(gradient) }
             },
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Hello World !!!",
-            style = TextStyle(
+            style =
+            TextStyle(
                 fontSize = 60.sp,
                 color = Color.White,
-                fontStyle = FontStyle.Italic
+                fontStyle = FontStyle.Italic,
             ),
             textAlign = TextAlign.Center,
         )
@@ -67,7 +68,8 @@ fun RectGradient() {
 @Composable
 fun SpacerGradient(size: Dp = 200.dp) {
     Spacer(
-        modifier = Modifier
+        modifier =
+        Modifier
             .size(size)
             .drawWithCache {
                 // Este objeto é criado apenas uma vez e armazenado em cache
@@ -76,6 +78,6 @@ fun SpacerGradient(size: Dp = 200.dp) {
                     // Este bloco é chamado em cada frame de desenho
                     drawRect(brush)
                 }
-            }
+            },
     )
 }

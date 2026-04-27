@@ -22,20 +22,21 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Composable
 internal fun AlertHeader(onClickSeeAll: () -> Unit) {
     Row(
-        modifier = Modifier.Companion
+        modifier =
+        Modifier.Companion
             .padding(RallyDefaultPadding)
             .fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
             text = "Alerts",
             style = MaterialTheme.typography.titleSmall,
-            modifier = Modifier.Companion.align(Alignment.Companion.CenterVertically)
+            modifier = Modifier.Companion.align(Alignment.Companion.CenterVertically),
         )
         TextButton(
             onClick = onClickSeeAll,
             contentPadding = PaddingValues(0.dp),
-            modifier = Modifier.Companion.align(Alignment.Companion.CenterVertically)
+            modifier = Modifier.Companion.align(Alignment.Companion.CenterVertically),
         ) {
             Text(
                 text = "SEE ALL",
@@ -50,10 +51,11 @@ internal fun AlertHeader(onClickSeeAll: () -> Unit) {
 fun AlertHeaderPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             AlertHeader(onClickSeeAll = {})
         }

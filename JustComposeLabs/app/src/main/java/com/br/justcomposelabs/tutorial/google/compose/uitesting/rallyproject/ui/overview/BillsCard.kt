@@ -26,13 +26,13 @@ fun BillsCard(onScreenChange: (RallyScreen) -> Unit) {
         onClickSeeAll = { onScreenChange(RallyScreen.Bills) },
         data = UserData.bills,
         colors = { it.color },
-        values = { it.amount }
+        values = { it.amount },
     ) { bill ->
         BillRow(
             name = bill.name,
             due = bill.due,
             amount = bill.amount,
-            color = bill.color
+            color = bill.color,
         )
     }
 }
@@ -42,10 +42,11 @@ fun BillsCard(onScreenChange: (RallyScreen) -> Unit) {
 fun BillsCardPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             BillsCard(onScreenChange = {})
         }

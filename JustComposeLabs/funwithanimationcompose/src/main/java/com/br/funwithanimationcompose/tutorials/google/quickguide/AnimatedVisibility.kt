@@ -30,38 +30,42 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun AnimatedVisibilityCompose() {
     Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color(red = 227, green = 75, blue = 75, alpha = 255)),
-        contentAlignment = Alignment.TopCenter
+        modifier =
+            Modifier
+                .fillMaxSize()
+                .background(Color(red = 227, green = 75, blue = 75, alpha = 255)),
+        contentAlignment = Alignment.TopCenter,
     ) {
         var visible by remember { mutableStateOf(true) }
 
         AnimatedVisibility(visible) {
             Box(
-                modifier = Modifier
-                    .size(200.dp)
-                    .clip(RoundedCornerShape(8.dp))
-                    .background(Color(red = 10, green = 141, blue = 255, alpha = 255)),
-
-                ) {
+                modifier =
+                    Modifier
+                        .size(200.dp)
+                        .clip(RoundedCornerShape(8.dp))
+                        .background(Color(red = 10, green = 141, blue = 255, alpha = 255)),
+            ) {
                 Box(
-                    modifier = Modifier
-                        .size(50.dp)
-                        .align(Alignment.Center)
-                        .background(Color(red = 84, green = 148, blue = 45, alpha = 255))
+                    modifier =
+                        Modifier
+                            .size(50.dp)
+                            .align(Alignment.Center)
+                            .background(Color(red = 84, green = 148, blue = 45, alpha = 255)),
                 )
             }
         }
 
         ElevatedButton(
-            modifier = Modifier
-                .align(Alignment.BottomCenter)
-                .padding(10.dp)
-                .fillMaxWidth()
-            , onClick = {
+            modifier =
+                Modifier
+                    .align(Alignment.BottomCenter)
+                    .padding(10.dp)
+                    .fillMaxWidth(),
+            onClick = {
                 visible = !visible
-            }) {
+            },
+        ) {
             Text(text = if (visible) "hide" else "show")
         }
     }

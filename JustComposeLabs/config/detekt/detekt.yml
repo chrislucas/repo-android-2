@@ -20,6 +20,9 @@ formatting:
   NoUnusedImports:
     active: true
     autoCorrect: true
+  NoWildcardImports:
+    active: false
+    autoCorrect: true
 
 style:
   MagicNumber:
@@ -29,10 +32,17 @@ style:
   UnusedPrivateMember:
     # Ignores unused private members annotated with @Preview
     ignoreAnnotated: ['Preview']
+    active: false
   NewLineAtEndOfFile:
     active: true
   UnusedImports:
     active: true
+    autoCorrect: true
+  UnusedPrivateProperty:
+    active: false
+  UnusedParameter:
+    active: false
+  WildcardImport:
     autoCorrect: true
 
 

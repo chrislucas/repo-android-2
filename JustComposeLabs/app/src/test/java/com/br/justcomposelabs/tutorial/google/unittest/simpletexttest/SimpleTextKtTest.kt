@@ -43,20 +43,19 @@ import org.robolectric.annotation.Config
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35])
 class SimpleTextKtTest {
-
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    //@OptIn(ExperimentalTestApi::class)
+    // @OptIn(ExperimentalTestApi::class)
     @Test
     fun `MyLayoutWithText displays both strings`() {
         // Verify that both the 'first' and 'second' strings are rendered by their respective Text composables.
         composeTestRule.setContent {
             MyLayoutWithText(first = "Hello", second = "World")
         }
-        //composeTestRule.onNodeWithText("Hello").isDisplayed()
+        // composeTestRule.onNodeWithText("Hello").isDisplayed()
         composeTestRule.onNodeWithText("Hello").assertExists()
-        //composeTestRule.onNodeWithText("World").isDisplayed()
+        // composeTestRule.onNodeWithText("World").isDisplayed()
         composeTestRule.onNodeWithText("World").assertExists()
         composeTestRule.onNodeWithText("Non Existent Text").assertDoesNotExist()
     }
@@ -130,5 +129,4 @@ class SimpleTextKtTest {
         // Verify that the @Preview annotated 'MyLayoutWithTextPreview' renders correctly with the default 'Hello' and 'World' strings within a MaterialTheme.
         // TODO implement test
     }
-
 }

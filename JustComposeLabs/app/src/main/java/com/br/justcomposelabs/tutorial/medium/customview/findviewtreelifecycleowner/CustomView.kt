@@ -19,13 +19,14 @@ import kotlin.getValue
     View.findViewTreeSavedStateRegistryOwner()
  */
 
-class CustomView @JvmOverloads constructor(
+class CustomView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
-    defStyleRes: Int = 0
+    defStyleRes: Int = 0,
 ) : View(context, attrs, defStyleAttr, defStyleRes) {
-
     private val viewModel: CustomViewModel? by lazy {
         findViewTreeViewModelStoreOwner()?.let { lifecycleOwner ->
             ViewModelProvider(lifecycleOwner)[CustomViewModel::class.java]
@@ -33,4 +34,4 @@ class CustomView @JvmOverloads constructor(
     }
 }
 
-class CustomViewModel() : ViewModel()
+class CustomViewModel : ViewModel()

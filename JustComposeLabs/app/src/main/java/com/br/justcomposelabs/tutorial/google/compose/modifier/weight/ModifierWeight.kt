@@ -20,34 +20,39 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Composable
 fun ModifierWeight(modifier: Modifier = Modifier) {
     Row(
-        modifier = modifier.fillMaxWidth()
-            .border(3.dp, Color.Black)
+        modifier =
+        modifier
+            .fillMaxWidth()
+            .border(3.dp, Color.Black),
     ) {
         Text(
             text = "weight 3f",
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(3f)
                 .background(Color.Red)
                 .border(2.dp, Color.Red),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
 
         Text(
             text = "weight 1f",
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .background(Color.Green)
                 .border(2.dp, Color.Green),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
 
         Text(
             text = "weight 2f",
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(2f)
                 .background(Color.Blue)
                 .border(2.dp, Color.Blue),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
         )
     }
 }

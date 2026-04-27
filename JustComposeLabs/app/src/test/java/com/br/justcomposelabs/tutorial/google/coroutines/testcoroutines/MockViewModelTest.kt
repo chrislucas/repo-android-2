@@ -26,12 +26,10 @@ import kotlin.test.assertEquals
 
 @ExperimentalCoroutinesApi
 class MockViewModelTest {
-
     private lateinit var viewModel: MockViewModel
 
     @get:Rule
     val mainDispatcherRule = MainDispatcherRule()
-
 
     @Before
     fun setup() {

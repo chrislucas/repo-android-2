@@ -22,8 +22,8 @@ import com.br.funwithhilt.codelabs.usinghilt.ui.theme.JustComposeLabsTheme
 /**
  *  https://developer.android.com/codelabs/android-hilt#1
 
-    Hilt application class
-        -
+ Hilt application class
+ -
  */
 class MainHiltCodelabsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class MainHiltCodelabsActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -43,16 +43,16 @@ class MainHiltCodelabsActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(modifier: Modifier = Modifier) {
-
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
-            text = stringResource(
-                id = R.string.hilt_codelabs_main_screen_message
-            )
+            text =
+                stringResource(
+                    id = R.string.hilt_codelabs_main_screen_message,
+                ),
         )
 
         Button(onClick = {}) { }

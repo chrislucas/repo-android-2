@@ -30,36 +30,36 @@ import com.br.funwithanimationcompose.codelabs.animatingelements.start.ui.theme.
     https://developer.android.com/develop/ui/compose/animation/quick-guide
  */
 
-
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun AnimatedVisibilityModifierAlpha() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-                .padding(
-                    WindowInsets.safeDrawing.asPaddingValues()
-                )
+            modifier =
+                Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+                    .padding(
+                        WindowInsets.safeDrawing.asPaddingValues(),
+                    ),
         ) {
             var visible by remember { mutableStateOf(true) }
 
             val animatedAlpha by animateFloatAsState(
                 targetValue = if (visible) 1.0f else 0f,
-                label = "alpha"
+                label = "alpha",
             )
 
             Box(
-                modifier = Modifier
-                    .size(200.dp)
-                    .graphicsLayer {
-                        alpha = animatedAlpha
-                    }
-                    .clip(RoundedCornerShape(8.dp))
-                    .background(Color(red = 10, green = 141, blue = 255, alpha = 255))
-                    .align(Alignment.TopCenter),
-                contentAlignment = Alignment.Center
+                modifier =
+                    Modifier
+                        .size(200.dp)
+                        .graphicsLayer {
+                            alpha = animatedAlpha
+                        }.clip(RoundedCornerShape(8.dp))
+                        .background(Color(red = 10, green = 141, blue = 255, alpha = 255))
+                        .align(Alignment.TopCenter),
+                contentAlignment = Alignment.Center,
             ) {
                 Text("Box")
             }
@@ -67,7 +67,7 @@ fun AnimatedVisibilityModifierAlpha() {
             Button(modifier = Modifier.align(Alignment.BottomCenter), onClick = {
                 visible = !visible
             }) {
-                Text( text = if (visible) "hide" else "show")
+                Text(text = if (visible) "hide" else "show")
             }
         }
     }

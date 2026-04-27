@@ -27,38 +27,43 @@ import androidx.compose.ui.unit.sp
 fun ExampleTextAnnotatedString() {
     val textMeasure = rememberTextMeasurer()
 
-    val rainbowColors = listOf(
-        Color.Red,
-        Color(0xFFFFA500), // Orange
-        Color.Yellow,
-        Color.Green,
-        Color.Blue,
-        Color(0xFF4B0082), // Indigo
-        Color(0xFF8F00FF) // Violet
-    )
+    val rainbowColors =
+        listOf(
+            Color.Red,
+            Color(0xFFFFA500), // Orange
+            Color.Yellow,
+            Color.Green,
+            Color.Blue,
+            Color(0xFF4B0082), // Indigo
+            Color(0xFF8F00FF), // Violet
+        )
 
-    val text = buildAnnotatedString {
-        withStyle(
-            style = SpanStyle(
-                color = Color.White,
-                fontSize = 22.sp,
-                fontStyle = FontStyle.Italic
-            )
-        ) {
-            append("Hello,")
+    val text =
+        buildAnnotatedString {
+            withStyle(
+                style =
+                SpanStyle(
+                    color = Color.White,
+                    fontSize = 22.sp,
+                    fontStyle = FontStyle.Italic,
+                ),
+            ) {
+                append("Hello,")
+            }
+            withStyle(
+                style =
+                SpanStyle(
+                    brush = Brush.horizontalGradient(colors = rainbowColors),
+                    fontSize = 28.sp,
+                    fontWeight = FontWeight.Bold,
+                ),
+            ) {
+                append("\nText on Canvas️")
+            }
         }
-        withStyle(
-            style = SpanStyle(
-                brush = Brush.horizontalGradient(colors = rainbowColors),
-                fontSize = 28.sp,
-                fontWeight = FontWeight.Bold
-            )
-        ) {
-            append("\nText on Canvas️")
-        }
-    }
     Canvas(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp),
         onDraw = {
@@ -66,8 +71,8 @@ fun ExampleTextAnnotatedString() {
             drawText(
                 textMeasurer = textMeasure,
                 text = text,
-                topLeft = Offset(10.dp.toPx(), 10.dp.toPx())
+                topLeft = Offset(10.dp.toPx(), 10.dp.toPx()),
             )
-        }
+        },
     )
 }

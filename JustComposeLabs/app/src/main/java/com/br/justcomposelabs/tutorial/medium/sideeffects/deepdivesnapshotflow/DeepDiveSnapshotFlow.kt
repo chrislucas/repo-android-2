@@ -40,49 +40,44 @@ import timber.log.Timber
  */
 
 class FlowIntViewModel : ViewModel() {
-
     /*
         https://share.google/aimode/Fx3i61Uu1Df2IjniO
      */
-    val distinctIntUntilChange = flow {
-        while (true) {
-            val number = (1..3).random()
-            emit(number)
-            Timber.tag("IntViewModelDistinct").d("Emitting number: $number")
-            delay(1000)
-        }
-    }.distinctUntilChanged()
+    val distinctIntUntilChange =
+        flow {
+            while (true) {
+                val number = (1..3).random()
+                emit(number)
+                Timber.tag("IntViewModelDistinct").d("Emitting number: $number")
+                delay(1000)
+            }
+        }.distinctUntilChanged()
 }
 
 @Composable
-fun DistinctIntUntilChangeScreen(
-    viewModel: FlowIntViewModel = viewModel()
-) {
+fun DistinctIntUntilChangeScreen(viewModel: FlowIntViewModel = viewModel()) {
     val distinctIntUntilChange by viewModel.distinctIntUntilChange.collectAsState(initial = 0)
     DistinctIntUntilChangeContent(distinctIntUntilChange = distinctIntUntilChange)
 }
 
 @Composable
-fun DistinctIntUntilChangeContent(
-    distinctIntUntilChange: Int
-) {
+fun DistinctIntUntilChangeContent(distinctIntUntilChange: Int) {
     DistinctMessage("DistinctIntUntilChangeContent recomposed with value: $distinctIntUntilChange")
 }
 
 @Composable
-fun DistinctMessage(
-    distinctIntUntilChange: String
-) {
+fun DistinctMessage(distinctIntUntilChange: String) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
             text = distinctIntUntilChange,
-            style = TextStyle(
+            style =
+            TextStyle(
                 fontSize = 24.sp,
                 textAlign = TextAlign.Center,
                 color = androidx.compose.ui.graphics.Color.Black,
                 fontFamily = androidx.compose.ui.text.font.FontFamily.SansSerif,
-                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
-            )
+                fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
+            ),
         )
     }
 }

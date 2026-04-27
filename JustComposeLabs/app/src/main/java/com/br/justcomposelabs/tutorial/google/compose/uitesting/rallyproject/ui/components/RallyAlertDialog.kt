@@ -21,19 +21,19 @@ import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.
 
 class ButtonConfirmContext(
     val onConfirm: () -> Unit,
-    val confirmButtonText: String
+    val confirmButtonText: String,
 )
 
 class ButtonDismissContext(
     val onDismiss: () -> Unit,
-    val dismissButtonText: String
+    val dismissButtonText: String,
 )
 
 class RallyAlertDialogContext(
     val buttonConfirmContext: ButtonConfirmContext,
     val buttonDismissContext: ButtonDismissContext,
     val bodyText: String,
-    val onTapOutside: () -> Unit
+    val onTapOutside: () -> Unit,
 )
 
 @Composable
@@ -48,13 +48,13 @@ fun RallyAlertDialog(rallyAlertDialogContext: RallyAlertDialogContext) {
             confirmButton = {
                 ConfirmDialogButton(
                     buttonConfirmContext.onConfirm,
-                    buttonConfirmContext.confirmButtonText
+                    buttonConfirmContext.confirmButtonText,
                 )
             },
             dismissButton = {
                 DismissDialogButton(
                     buttonDismissContext.onDismiss,
-                    buttonDismissContext.dismissButtonText
+                    buttonDismissContext.dismissButtonText,
                 )
             },
         )
@@ -64,18 +64,18 @@ fun RallyAlertDialog(rallyAlertDialogContext: RallyAlertDialogContext) {
 @Composable
 fun DismissDialogButton(
     onDismiss: () -> Unit,
-    buttonText: String
+    buttonText: String,
 ) {
     Column {
         HorizontalDivider(
             Modifier.padding(horizontal = 12.dp),
-            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f)
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f),
         )
         TextButton(
             onClick = onDismiss,
             shape = RectangleShape,
             contentPadding = PaddingValues(16.dp),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
             Text(buttonText)
         }
@@ -85,18 +85,18 @@ fun DismissDialogButton(
 @Composable
 fun ConfirmDialogButton(
     onConfirm: () -> Unit,
-    buttonText: String
+    buttonText: String,
 ) {
     Column {
         HorizontalDivider(
             Modifier.padding(horizontal = 12.dp),
-            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f)
+            color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f),
         )
         TextButton(
             onClick = onConfirm,
             shape = RectangleShape,
             contentPadding = PaddingValues(16.dp),
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
         ) {
             Text(buttonText)
         }
@@ -112,17 +112,19 @@ fun RallyAlertDialogPreview() {
     if (showDialog.value) {
         RallyAlertDialog(
             RallyAlertDialogContext(
-                buttonConfirmContext = ButtonConfirmContext(
+                buttonConfirmContext =
+                ButtonConfirmContext(
                     onConfirm = { showDialog.value = false },
-                    confirmButtonText = "Confirm"
+                    confirmButtonText = "Confirm",
                 ),
-                buttonDismissContext = ButtonDismissContext(
+                buttonDismissContext =
+                ButtonDismissContext(
                     onDismiss = { showDialog.value = false },
-                    dismissButtonText = "Dismiss"
+                    dismissButtonText = "Dismiss",
                 ),
                 bodyText = "Are you sure you want to proceed with this action? This operation cannot be undone.",
-                onTapOutside = { showDialog.value = false }
-            )
+                onTapOutside = { showDialog.value = false },
+            ),
         )
     }
 }
@@ -133,7 +135,7 @@ fun ConfirmDialogButtonPreview() {
     RallyDialogThemeOverlay {
         ConfirmDialogButton(
             onConfirm = {},
-            buttonText = "Confirm"
+            buttonText = "Confirm",
         )
     }
 }
@@ -144,7 +146,7 @@ fun DismissDialogButtonPreview() {
     RallyDialogThemeOverlay {
         DismissDialogButton(
             onDismiss = {},
-            buttonText = "Dismiss"
+            buttonText = "Dismiss",
         )
     }
 }

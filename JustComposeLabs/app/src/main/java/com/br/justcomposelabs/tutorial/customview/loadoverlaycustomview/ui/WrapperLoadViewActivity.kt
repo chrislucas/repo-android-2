@@ -51,18 +51,20 @@ fun LoadView(modifier: Modifier = Modifier) {
 
     // Obtém o rootView apenas se não estiver no Preview
     val currentView = LocalView.current
-    val rootViewGroup = remember(currentView) {
-        if (!currentView.isInEditMode) {
-            currentView.rootView as? ViewGroup
-        } else {
-            null
+    val rootViewGroup =
+        remember(currentView) {
+            if (!currentView.isInEditMode) {
+                currentView.rootView as? ViewGroup
+            } else {
+                null
+            }
         }
-    }
 
     // Cria o WrapperLoadView apenas uma vez e gerencia seu ciclo de vida
-    val wrapperLoadView = remember(rootViewGroup) {
-        rootViewGroup?.let { WrapperLoadView(it) }
-    }
+    val wrapperLoadView =
+        remember(rootViewGroup) {
+            rootViewGroup?.let { WrapperLoadView(it) }
+        }
 
     // Libera recursos quando o composable sai da composição
     DisposableEffect(wrapperLoadView) {
@@ -74,7 +76,7 @@ fun LoadView(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Button(
             onClick = {
@@ -86,7 +88,7 @@ fun LoadView(modifier: Modifier = Modifier) {
                     isLoading = false
                 }
             },
-            enabled = !isLoading
+            enabled = !isLoading,
         ) {
             Text("Show Overlay")
         }

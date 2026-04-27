@@ -18,14 +18,16 @@ fun TextPageContent() {
         Text(
             text = lorenIpsum(words = 200),
             modifier = Modifier.fillMaxSize(),
-            style = TextStyle(
+            style =
+            TextStyle(
                 fontSize = 12.sp,
-                textAlign = TextAlign.Justify
-            )
+                textAlign = TextAlign.Justify,
+            ),
         )
     }
 }
 
-fun lorenIpsum(separator: String = " ", words: Int): String {
-    return LoremIpsum(words).values.joinToString(separator)
-}
+fun lorenIpsum(
+    separator: String = " ",
+    words: Int,
+): String = LoremIpsum(words).values.joinToString(separator)

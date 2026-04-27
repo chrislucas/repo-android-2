@@ -8,7 +8,6 @@ import androidx.core.view.WindowInsetsCompat
 import com.br.justcomposelabs.databinding.ActivityAddAndRemoveValueAnimtionBinding
 
 class AddAndRemoveValueAnimationActivity : AppCompatActivity() {
-
     private val binding: ActivityAddAndRemoveValueAnimtionBinding by lazy {
         ActivityAddAndRemoveValueAnimtionBinding.inflate(layoutInflater)
     }
@@ -27,7 +26,7 @@ class AddAndRemoveValueAnimationActivity : AppCompatActivity() {
                     systemBars.left,
                     systemBars.top,
                     systemBars.right,
-                    systemBars.bottom
+                    systemBars.bottom,
                 )
                 insets
             }

@@ -13,20 +13,23 @@ import com.br.justcomposelabs.R
 import kotlin.math.min
 import kotlin.properties.Delegates
 
-class DashedHexagonView @JvmOverloads constructor(
+class DashedHexagonView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attrs, defStyleAttr) {
-
     private val path: Path = Path()
 
-    private val paintFill = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-    }
+    private val paintFill =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+        }
 
-    private val paintStroke = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.STROKE
-    }
+    private val paintStroke =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            style = Paint.Style.STROKE
+        }
 
     private var sideLength: Float = 0f
 
@@ -41,30 +44,35 @@ class DashedHexagonView @JvmOverloads constructor(
 
     init {
         context.withStyledAttributes(attrs, R.styleable.DashedHexagonView) {
-            scaleRadius = getFloat(R.styleable.DashedHexagonView_scaleRadius, 0.01f)
-                .coerceIn(0.01f, 0.1f)
+            scaleRadius =
+                getFloat(R.styleable.DashedHexagonView_scaleRadius, 0.01f)
+                    .coerceIn(0.01f, 0.1f)
 
-            val joinValueStyle = getInt(
-                R.styleable.DashedHexagonView_joinStyle,
-                Paint.Join.ROUND.ordinal
-            )
+            val joinValueStyle =
+                getInt(
+                    R.styleable.DashedHexagonView_joinStyle,
+                    Paint.Join.ROUND.ordinal,
+                )
 
             join = Paint.Join.entries[joinValueStyle]
 
-            strokeWidthValue = getFloat(
-                R.styleable.DashedHexagonView_scaleStrokeWidth,
-                0.0f
-            )
+            strokeWidthValue =
+                getFloat(
+                    R.styleable.DashedHexagonView_scaleStrokeWidth,
+                    0.0f,
+                )
 
-            scaleStrokeWidth = getFloat(
-                R.styleable.DashedTriangleView_scaleStrokeWidth,
-                ONE_PERCENT * 3
-            ).coerceIn(ONE_PERCENT, ONE_PERCENT * 10)
+            scaleStrokeWidth =
+                getFloat(
+                    R.styleable.DashedTriangleView_scaleStrokeWidth,
+                    ONE_PERCENT * 3,
+                ).coerceIn(ONE_PERCENT, ONE_PERCENT * 10)
 
-            scaleRadius = getFloat(
-                R.styleable.DashedHexagonView_scaleRadius,
-                ONE_PERCENT * 90
-            ).coerceIn(ONE_PERCENT * 10, HexagonView.ONE_PERCENT * 90)
+            scaleRadius =
+                getFloat(
+                    R.styleable.DashedHexagonView_scaleRadius,
+                    ONE_PERCENT * 90,
+                ).coerceIn(ONE_PERCENT * 10, HexagonView.ONE_PERCENT * 90)
         }
     }
 
@@ -79,16 +87,22 @@ class DashedHexagonView @JvmOverloads constructor(
         paintStroke.run {
             color = Color.rgb(0, 0, 0)
             strokeJoin = join
-            strokeWidth = if (strokeWidthValue > 0.0f) {
-                strokeWidthValue
-            } else {
-                minDimension * scaleStrokeWidth
-            }
+            strokeWidth =
+                if (strokeWidthValue > 0.0f) {
+                    strokeWidthValue
+                } else {
+                    minDimension * scaleStrokeWidth
+                }
             canvas.drawPath(path, this)
         }
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         val cx = w * ONE_PERCENT * 50
         val cy = h * ONE_PERCENT * 50

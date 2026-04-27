@@ -13,7 +13,7 @@ import androidx.navigation.compose.rememberNavController
 @Composable
 fun Route(
     modifier: Modifier = Modifier,
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
 ) {
     /*
         https://medium.com/@shivayogih25/jetpack-compose-deep-linking-type-safe-navigation-done-right-ed79da513c5b

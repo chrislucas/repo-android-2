@@ -17,14 +17,17 @@ import com.br.justcomposelabs.R
 
 @Preview(showBackground = true)
 @Composable
-fun GameStatus(modifier: Modifier = Modifier, score: Int = 0) {
+fun GameStatus(
+    modifier: Modifier = Modifier,
+    score: Int = 0,
+) {
     Card(
-        modifier = modifier
+        modifier = modifier,
     ) {
         Text(
             text = stringResource(R.string.score, score),
             style = typography.headlineMedium,
-            modifier = Modifier.padding(8.dp)
+            modifier = Modifier.padding(8.dp),
         )
     }
 }

@@ -21,10 +21,11 @@ import androidx.compose.runtime.saveable.rememberSaveable
 @Composable
 fun rememberLazyListSate(
     initialFistVisibleItemIndex: Int = 0,
-    initialFistVisibleItemScrollOffset: Int = 0
-): LazyListState = rememberSaveable(saver = LazyListState.Saver) {
-    LazyListState(
-        initialFistVisibleItemIndex,
-        initialFistVisibleItemScrollOffset
-    )
-}
+    initialFistVisibleItemScrollOffset: Int = 0,
+): LazyListState =
+    rememberSaveable(saver = LazyListState.Saver) {
+        LazyListState(
+            initialFistVisibleItemIndex,
+            initialFistVisibleItemScrollOffset,
+        )
+    }

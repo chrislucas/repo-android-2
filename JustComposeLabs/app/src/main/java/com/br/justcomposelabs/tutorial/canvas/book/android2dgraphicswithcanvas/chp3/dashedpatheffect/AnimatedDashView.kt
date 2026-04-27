@@ -7,8 +7,10 @@ import android.view.View
 /*
     https://share.google/aimode/G6e83E0SpRrUqvwps
  */
-class AnimatedDashView @JvmOverloads constructor(
+class AnimatedDashView
+@JvmOverloads
+constructor(
     ctx: Context,
     attr: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attr, defStyleAttr)

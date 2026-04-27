@@ -32,12 +32,12 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 fun ComposeDrawView(
     modifier: Modifier = Modifier,
     factory: (ctx: Context) -> View,
-    update: (View) -> Unit = {}
+    update: (View) -> Unit = {},
 ) {
     AndroidView(
         modifier = modifier,
         factory = factory,
-        update = update
+        update = update,
     )
 }
 
@@ -55,17 +55,18 @@ fun ComposeDrawViewDrawTextPreview() {
                 DrawText(it).apply {
                     content = "hello world My Friend, How are you doing ?"
                 }
-            }
+            },
         )
     }
 }
 
-class DrawText @JvmOverloads constructor(
+class DrawText
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attrs, defStyleAttr) {
-
     companion object {
         // Razão para calcular o tamanho da fonte baseado na largura do View
         private const val TEXT_SIZE_RATIO = 0.06f
@@ -75,11 +76,13 @@ class DrawText @JvmOverloads constructor(
     private var measuredViewHeight: Int = 0
 
     // Padding mínimo de 2dp em pixels
-    private val minPaddingPx: Int = TypedValue.applyDimension(
-        TypedValue.COMPLEX_UNIT_DIP,
-        2f,
-        resources.displayMetrics
-    ).toInt()
+    private val minPaddingPx: Int =
+        TypedValue
+            .applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                2f,
+                resources.displayMetrics,
+            ).toInt()
 
     // Largura fixa do StaticLayout em pixels
     private val staticLayoutFixedWidth: Int = 500
@@ -89,15 +92,15 @@ class DrawText @JvmOverloads constructor(
     private var cachedTextSize: Float = 0f
     private var _cachedStaticLayout: StaticLayout? = null
 
-    private fun createEmptyStaticLayout(): StaticLayout {
-        return StaticLayout.Builder.obtain(
-            "",
-            0,
-            0,
-            textPaint,
-            staticLayoutFixedWidth
-        ).build()
-    }
+    private fun createEmptyStaticLayout(): StaticLayout =
+        StaticLayout.Builder
+            .obtain(
+                "",
+                0,
+                0,
+                textPaint,
+                staticLayoutFixedWidth,
+            ).build()
 
     var content: String = "*"
         set(value) {
@@ -114,16 +117,18 @@ class DrawText @JvmOverloads constructor(
         }
 
     // TextPaint uma subclasse de Paint para desenhar texto
-    val textPaint = TextPaint(ANTI_ALIAS_FLAG).apply {
-        color = Color.BLACK
-        textAlign = Paint.Align.CENTER
-    }
+    val textPaint =
+        TextPaint(ANTI_ALIAS_FLAG).apply {
+            color = Color.BLACK
+            textAlign = Paint.Align.CENTER
+        }
 
     // Paint para o background - reutilizável
-    private val backgroundPaint = Paint().apply {
-        color = Color.LTGRAY
-        style = Paint.Style.FILL
-    }
+    private val backgroundPaint =
+        Paint().apply {
+            color = Color.LTGRAY
+            style = Paint.Style.FILL
+        }
 
     /**
      * Cria ou retorna o StaticLayout em cache
@@ -132,7 +137,7 @@ class DrawText @JvmOverloads constructor(
     private fun getOrCreateStaticLayout(
         textSize: Float,
         availableWidth: Int,
-        availableHeight: Int
+        availableHeight: Int,
     ): StaticLayout {
         // Criar displayText baseado na largura e altura disponível
         val displayText = "w: $availableWidth, h: $availableHeight, content: $content"
@@ -142,13 +147,15 @@ class DrawText @JvmOverloads constructor(
             textPaint.textSize = textSize
             cachedTextSize = textSize // ← Armazenar tamanho da fonte
             cachedDisplayText = displayText
-            _cachedStaticLayout = StaticLayout.Builder.obtain(
-                displayText,
-                0,
-                displayText.length,
-                textPaint,
-                staticLayoutFixedWidth // Usar largura fixa
-            ).build()
+            _cachedStaticLayout =
+                StaticLayout.Builder
+                    .obtain(
+                        displayText,
+                        0,
+                        displayText.length,
+                        textPaint,
+                        staticLayoutFixedWidth, // Usar largura fixa
+                    ).build()
         }
 
         // Retornar o StaticLayout em cache ou criar um vazio se não existir
@@ -177,13 +184,21 @@ class DrawText @JvmOverloads constructor(
         return desiredHeight
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         measuredViewWidth = w
         measuredViewHeight = h
     }
 
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+    override fun onMeasure(
+        widthMeasureSpec: Int,
+        heightMeasureSpec: Int,
+    ) {
         // Extrair modo de medição de largura (EXACTLY, AT_MOST ou UNSPECIFIED)
         // EXACTLY: tamanho exato foi definido pelo parent (ex: match_parent com tamanho fixo)
         // AT_MOST: tamanho máximo foi definido (ex: wrap_content)
@@ -204,34 +219,36 @@ class DrawText @JvmOverloads constructor(
         val heightSize = MeasureSpec.getSize(heightMeasureSpec)
 
         // Resolver a largura final baseado no modo recebido
-        val resolvedWidth = when (widthMode) {
-            // Se EXACTLY: usar o tamanho exato do parent
-            MeasureSpec.EXACTLY -> widthSize
+        val resolvedWidth =
+            when (widthMode) {
+                // Se EXACTLY: usar o tamanho exato do parent
+                MeasureSpec.EXACTLY -> widthSize
 
-            // Se AT_MOST: usar o mínimo entre o tamanho máximo do parent e nossa largura mínima sugerida
-            // coerceAtLeast(300): garantir largura mínima de 300px
-            MeasureSpec.AT_MOST -> minOf(widthSize, suggestedMinimumWidth.coerceAtLeast(300))
+                // Se AT_MOST: usar o mínimo entre o tamanho máximo do parent e nossa largura mínima sugerida
+                // coerceAtLeast(300): garantir largura mínima de 300px
+                MeasureSpec.AT_MOST -> minOf(widthSize, suggestedMinimumWidth.coerceAtLeast(300))
 
-            // Se UNSPECIFIED: usar apenas nossa largura mínima sugerida
-            else -> suggestedMinimumWidth.coerceAtLeast(300)
-        }
+                // Se UNSPECIFIED: usar apenas nossa largura mínima sugerida
+                else -> suggestedMinimumWidth.coerceAtLeast(300)
+            }
 
         // Calcular altura desejada baseado na largura resolvida
         // Esta função considera o conteúdo (texto) para determinar quanto de espaço é necessário
         val desiredHeight = getDesiredHeight(resolvedWidth)
 
         // Resolver a altura final baseado no modo recebido
-        val resolvedHeight = when (heightMode) {
-            // Se EXACTLY: usar o tamanho exato do parent
-            MeasureSpec.EXACTLY -> heightSize
+        val resolvedHeight =
+            when (heightMode) {
+                // Se EXACTLY: usar o tamanho exato do parent
+                MeasureSpec.EXACTLY -> heightSize
 
-            // Se AT_MOST: usar o mínimo entre o tamanho máximo do parent e nossa altura desejada
-            // Garante que não usamos mais espaço que o necessário para o conteúdo
-            MeasureSpec.AT_MOST -> minOf(heightSize, desiredHeight)
+                // Se AT_MOST: usar o mínimo entre o tamanho máximo do parent e nossa altura desejada
+                // Garante que não usamos mais espaço que o necessário para o conteúdo
+                MeasureSpec.AT_MOST -> minOf(heightSize, desiredHeight)
 
-            // Se UNSPECIFIED: usar apenas nossa altura desejada baseada no conteúdo
-            else -> desiredHeight
-        }
+                // Se UNSPECIFIED: usar apenas nossa altura desejada baseada no conteúdo
+                else -> desiredHeight
+            }
 
         // Comunicar ao Android o tamanho final deste View
         // Isto é obrigatório: o parent depende desta informação para posicionar este View
@@ -245,7 +262,7 @@ class DrawText @JvmOverloads constructor(
             0f,
             measuredViewWidth.toFloat(),
             measuredViewHeight.toFloat(),
-            backgroundPaint
+            backgroundPaint,
         )
 
         // Obter ou criar StaticLayout (com cache) usando o tamanho de fonte armazenado

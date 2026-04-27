@@ -57,11 +57,12 @@ fun NoCacheStateBoxTextView() {
      */
     val mutableStateField: MutableState<Int> = mutableIntStateOf(1)
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .clickable { mutableStateField.value += 1 }
             .fillMaxSize()
             .padding(3.dp),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(text = "Value: ${mutableStateField.value} | Ref: $mutableStateField")
     }
@@ -74,11 +75,12 @@ fun KeyCacheStateBoxTextView() {
     var state by remember(key) { mutableIntStateOf(1) }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .clickable { state += 1 }
             .fillMaxSize()
             .padding(3.dp),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(text = "Value: $state | Ref: $state| Ref Key: $key")
     }
@@ -90,14 +92,15 @@ fun StateBoxTextView() {
     val state: MutableState<Int> = remember { mutableIntStateOf(1) }
     Timber.tag("StateBoxTextView").d("Recomposition state: $state")
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .clickable { state.value += 1 }
             .fillMaxSize()
             .padding(3.dp),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
-            text = "Value: ${state.value} | Ref: $state"
+            text = "Value: ${state.value} | Ref: $state",
         )
     }
 }
@@ -113,15 +116,16 @@ fun StateSurfaceTextView() {
             - Podemos usar Box, Column, Row
      */
     Surface(
-        modifier = Modifier
+        modifier =
+        Modifier
             .clickable { state.value += 1 }
             .fillMaxSize()
             .padding(3.dp),
-        shape = RectangleShape
+        shape = RectangleShape,
     ) {
         Box(contentAlignment = Alignment.Center) {
             Text(
-                text = "Value: ${state.value} | Ref: $state"
+                text = "Value: ${state.value} | Ref: $state",
             )
         }
     }

@@ -16,8 +16,10 @@ import android.view.View
  *        reference to a style resource that supplies default values for
  *        the view. Can be 0 to not look for defaults.
  */
-class CornerPathEffectPolygonView @JvmOverloads constructor(
+class CornerPathEffectPolygonView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attrs, defStyleAttr)

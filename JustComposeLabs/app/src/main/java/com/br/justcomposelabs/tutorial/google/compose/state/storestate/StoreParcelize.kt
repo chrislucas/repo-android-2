@@ -14,11 +14,15 @@ import kotlinx.parcelize.Parcelize
  */
 
 @Parcelize
-data class City(val name: String, val country: String) : Parcelable
+data class City(
+    val name: String,
+    val country: String,
+) : Parcelable
 
 @Composable
 fun CityScreen(city: City) {
-    val selectedCity = rememberSaveable {
-        mutableStateOf(city)
-    }
+    val selectedCity =
+        rememberSaveable {
+            mutableStateOf(city)
+        }
 }

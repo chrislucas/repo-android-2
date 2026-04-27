@@ -34,7 +34,10 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
         (só quando você realmente garante o contrato)
  */
 
-data class User(val name: String, val age: Int)
+data class User(
+    val name: String,
+    val age: Int,
+)
 
 @Composable
 fun UnstableLambdas(users: List<User>) {
@@ -42,11 +45,12 @@ fun UnstableLambdas(users: List<User>) {
     LazyColumn {
         items(users) { user ->
             val onClick: () -> Unit = {
-                Toast.makeText(
-                    ctx,
-                    "Clicked on $user",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast
+                    .makeText(
+                        ctx,
+                        "Clicked on $user",
+                        Toast.LENGTH_LONG,
+                    ).show()
             }
             Button(onClick = onClick) {
                 Text(text = user.name)
@@ -55,11 +59,12 @@ fun UnstableLambdas(users: List<User>) {
     }
 }
 
-private val sampleUsers = listOf(
-    User("Alice", 25),
-    User("Bob", 30),
-    User("Charlie", 35)
-)
+private val sampleUsers =
+    listOf(
+        User("Alice", 25),
+        User("Bob", 30),
+        User("Charlie", 35),
+    )
 
 @Preview(showBackground = true)
 @Composable
@@ -90,15 +95,17 @@ fun StableLambdas(users: List<User>) {
          */
         items(users, key = { it.name }) { user ->
 
-            val onClick: () -> Unit = remember(user) {
-                {
-                    Toast.makeText(
-                        ctx,
-                        "Clicked on $user",
-                        Toast.LENGTH_LONG
-                    ).show()
+            val onClick: () -> Unit =
+                remember(user) {
+                    {
+                        Toast
+                            .makeText(
+                                ctx,
+                                "Clicked on $user",
+                                Toast.LENGTH_LONG,
+                            ).show()
+                    }
                 }
-            }
 
             Button(onClick = onClick) {
                 Text(text = user.name)

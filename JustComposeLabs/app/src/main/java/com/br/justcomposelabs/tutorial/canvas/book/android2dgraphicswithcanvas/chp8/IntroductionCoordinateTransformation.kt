@@ -20,58 +20,63 @@ import java.text.DecimalFormat
 
 class TransformationOperation(
     private val move: Pair<Float, Float> = 0f to 0f,
-    private val scale: Pair<Float, Float> = 1f to 1f
+    private val scale: Pair<Float, Float> = 1f to 1f,
 ) {
+    fun withMove(
+        moveX: Float,
+        moveY: Float,
+    ) = TransformationOperation(moveX to moveY, scale)
 
-    fun withMove(moveX: Float, moveY: Float) = TransformationOperation(moveX to moveY, scale)
+    fun withScale(
+        scaleX: Float,
+        scaleY: Float,
+    ) = TransformationOperation(move, scaleX to scaleY)
 
-    fun withScale(scaleX: Float, scaleY: Float) = TransformationOperation(move, scaleX to scaleY)
+    fun transformX(x: Float): Float = x * scale.first + move.first
 
-    fun transformX(x: Float): Float {
-        return x * scale.first + move.first
-    }
-
-    fun transformY(y: Float): Float {
-        return y * scale.second + move.second
-    }
+    fun transformY(y: Float): Float = y * scale.second + move.second
 }
 
-class TriangleView @JvmOverloads constructor(
+class TriangleView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
-
     private val paintTriangle: Paint
     private val paintPosition: Paint
 
     private val pointA = .2f to .2f
     private val pointB = .8f to .8f
     private val pointC = .8f to .2f
-    private var path = Path().apply {
-        moveTo(.2f, .2f)
-        lineTo(.8f, .8f)
-        lineTo(.8f, .2f)
-        close()
-    }
+    private var path =
+        Path().apply {
+            moveTo(.2f, .2f)
+            lineTo(.8f, .8f)
+            lineTo(.8f, .2f)
+            close()
+        }
 
     private var transformationOperation = TransformationOperation()
 
     init {
         setBackgroundColor(Color.WHITE)
-        paintTriangle = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = Color.BLACK
-            style = Paint.Style.STROKE
-            strokeWidth = 10f
-            strokeJoin = Paint.Join.ROUND
-        }
+        paintTriangle =
+            Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color = Color.BLACK
+                style = Paint.Style.STROKE
+                strokeWidth = 10f
+                strokeJoin = Paint.Join.ROUND
+            }
 
-        paintPosition = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-            color = Color.RED
-            style = Paint.Style.FILL
-            strokeWidth = 5f
-            textSize = 30f
-        }
+        paintPosition =
+            Paint(Paint.ANTI_ALIAS_FLAG).apply {
+                color = Color.RED
+                style = Paint.Style.FILL
+                strokeWidth = 5f
+                textSize = 30f
+            }
     }
 
     private val decimalFormat = DecimalFormat("#.00")
@@ -85,7 +90,7 @@ class TriangleView @JvmOverloads constructor(
             "A(${decimalFormat.format(ax)}, ${decimalFormat.format(ay)})",
             ax - 130f,
             ay + 40f,
-            paintPosition
+            paintPosition,
         )
 
         val (bx, by) = transformXY(pointB)
@@ -93,7 +98,7 @@ class TriangleView @JvmOverloads constructor(
             "B(${decimalFormat.format(bx)}, ${decimalFormat.format(by)})",
             bx - 130f,
             by - 20f,
-            paintPosition
+            paintPosition,
         )
 
         val (cx, cy) = transformXY(pointC)
@@ -101,34 +106,42 @@ class TriangleView @JvmOverloads constructor(
             "C(${decimalFormat.format(cx)}, ${decimalFormat.format(cy)})",
             cx - 130f,
             cy + 40f,
-            paintPosition
+            paintPosition,
         )
     }
 
-    override fun onSizeChanged(deviceWidth: Int, deviceHeight: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        deviceWidth: Int,
+        deviceHeight: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(deviceWidth, deviceHeight, oldw, oldh)
 
-        transformationOperation = if (deviceWidth > deviceHeight) {
-            transformationOperation.withMove(0.0f, deviceHeight.toFloat())
-                .withScale(deviceHeight.toFloat(), -deviceHeight.toFloat())
-        } else {
-            transformationOperation.withMove(0.0f, deviceHeight.toFloat())
-                .withScale(deviceWidth.toFloat(), -deviceWidth.toFloat())
-        }
+        transformationOperation =
+            if (deviceWidth > deviceHeight) {
+                transformationOperation
+                    .withMove(0.0f, deviceHeight.toFloat())
+                    .withScale(deviceHeight.toFloat(), -deviceHeight.toFloat())
+            } else {
+                transformationOperation
+                    .withMove(0.0f, deviceHeight.toFloat())
+                    .withScale(deviceWidth.toFloat(), -deviceWidth.toFloat())
+            }
 
         val (ax, ay) = transformXY(pointA)
         val (bx, by) = transformXY(pointB)
         val (cx, cy) = transformXY(pointC)
 
-        path = Path().apply {
-            moveTo(ax, ay)
-            lineTo(bx, by)
-            lineTo(cx, cy)
-            close()
-        }
+        path =
+            Path().apply {
+                moveTo(ax, ay)
+                lineTo(bx, by)
+                lineTo(cx, cy)
+                close()
+            }
     }
 
-    private fun transformXY(p: Pair<Float, Float>): Pair<Float, Float> {
-        return transformationOperation.transformX(p.first) to transformationOperation.transformY(p.second)
-    }
+    private fun transformXY(p: Pair<Float, Float>): Pair<Float, Float> =
+        transformationOperation.transformX(p.first) to transformationOperation.transformY(p.second)
 }

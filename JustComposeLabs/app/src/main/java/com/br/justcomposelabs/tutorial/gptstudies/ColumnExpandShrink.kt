@@ -16,38 +16,43 @@ fun ColumnExpandShrink() {
     val heightFraction by transition.animateFloat(
         initialValue = 0.3f,
         targetValue = 1f,
-        animationSpec = infiniteRepeatable(
+        animationSpec =
+        infiniteRepeatable(
             animation = tween(durationMillis = 2000, easing = LinearEasing),
-            repeatMode = RepeatMode.Reverse
-        )
+            repeatMode = RepeatMode.Reverse,
+        ),
     )
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(200.dp),
-        verticalArrangement = Arrangement.SpaceEvenly
+        verticalArrangement = Arrangement.SpaceEvenly,
     ) {
         // Elemento 1
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .height(20.dp * heightFraction)
-                .background(Color.Red)
+                .background(Color.Red),
         )
         // Elemento 2
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .height(20.dp * heightFraction)
-                .background(Color.Green)
+                .background(Color.Green),
         )
         // Elemento 3
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .height(20.dp * heightFraction)
-                .background(Color.Blue)
+                .background(Color.Blue),
         )
     }
 }

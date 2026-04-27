@@ -73,7 +73,7 @@ class TimerWithFlowTypesActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Clocks(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -81,10 +81,11 @@ class TimerWithFlowTypesActivity : ComponentActivity() {
     }
 }
 
-private val boxConstraints = Modifier
-    .fillMaxWidth()
-    .height(60.dp)
-    .border(BorderStroke(2.dp, Color.Red))
+private val boxConstraints =
+    Modifier
+        .fillMaxWidth()
+        .height(60.dp)
+        .border(BorderStroke(2.dp, Color.Red))
 
 @Composable
 fun Clocks(
@@ -125,9 +126,10 @@ fun Clocks(
     }
 
     DisposableEffect(lifecycleOwner) {
-        val observer = LifecycleEventObserver { _, event ->
-            callbackLifecycle(event)
-        }
+        val observer =
+            LifecycleEventObserver { _, event ->
+                callbackLifecycle(event)
+            }
 
         lifecycleOwner.lifecycle.addObserver(observer)
 
@@ -148,7 +150,7 @@ fun Clocks(
 @Composable
 private fun ClockStateFlow(
     modifier: Modifier = Modifier,
-    viewModel: ClockViewModelStateFlow
+    viewModel: ClockViewModelStateFlow,
 ) {
     val currentHour by viewModel.observableContent.collectAsState()
     /*
@@ -173,7 +175,7 @@ private fun ClockStateFlow(
         Text(
             currentHour,
             style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.align(Alignment.BottomCenter)
+            modifier = Modifier.align(Alignment.BottomCenter),
         )
     }
 }
@@ -181,11 +183,11 @@ private fun ClockStateFlow(
 @Composable
 fun BoxContainer(
     modifier: Modifier = Modifier,
-    content: @Composable BoxScope.() -> Unit
+    content: @Composable BoxScope.() -> Unit,
 ) {
     Box(
         modifier = modifier,
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         content()
     }
@@ -215,10 +217,10 @@ class ClockViewModelStateFlow : ViewModel() {
 @Composable
 private fun ClockLiveData(
     modifier: Modifier = Modifier,
-    viewModel: ClockViewModelLiveData = viewModel()
+    viewModel: ClockViewModelLiveData = viewModel(),
 ) {
     val currentHour by viewModel.observableContent.observeAsState(
-        SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
+        SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date()),
     )
 
     /*
@@ -230,16 +232,16 @@ private fun ClockLiveData(
      */
 
     BoxContainer(
-        boxConstraints
+        boxConstraints,
     ) {
         Text(
             "ClockLiveData",
-            Modifier.align(Alignment.TopCenter)
+            Modifier.align(Alignment.TopCenter),
         )
         Text(
             text = currentHour,
             style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.align(Alignment.BottomCenter)
+            modifier = Modifier.align(Alignment.BottomCenter),
         )
     }
 }
@@ -258,22 +260,24 @@ class ClockViewModelLiveData : ViewModel() {
         }
     }
 
-    private fun currentHour() = SimpleDateFormat(
-        "HH:mm:ss",
-        Locale.getDefault()
-    ).format(Date())
+    private fun currentHour() =
+        SimpleDateFormat(
+            "HH:mm:ss",
+            Locale.getDefault(),
+        ).format(Date())
 }
 
 @Composable
 private fun ClockSharedFlow(
     modifier: Modifier = Modifier,
-    viewModel: ClockViewModelSharedFlow = viewModel()
+    viewModel: ClockViewModelSharedFlow = viewModel(),
 ) {
-    val currentHour = remember {
-        mutableStateOf(
-            SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
-        )
-    }
+    val currentHour =
+        remember {
+            mutableStateOf(
+                SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date()),
+            )
+        }
 
     /*
         https://developer.android.com/develop/ui/compose/side-effects
@@ -300,13 +304,13 @@ private fun ClockSharedFlow(
     BoxContainer(boxConstraints) {
         Text(
             "ClockSharedFlow",
-            Modifier.align(Alignment.TopCenter)
+            Modifier.align(Alignment.TopCenter),
         )
 
         Text(
             currentHour.value,
             style = MaterialTheme.typography.headlineLarge,
-            modifier = Modifier.align(Alignment.BottomCenter)
+            modifier = Modifier.align(Alignment.BottomCenter),
         )
     }
 }
@@ -325,10 +329,11 @@ class ClockViewModelSharedFlow : ViewModel() {
         }
     }
 
-    private fun currentHour() = SimpleDateFormat(
-        "HH:mm:ss",
-        Locale.getDefault()
-    ).format(Date())
+    private fun currentHour() =
+        SimpleDateFormat(
+            "HH:mm:ss",
+            Locale.getDefault(),
+        ).format(Date())
 }
 
 @Preview(showBackground = true)

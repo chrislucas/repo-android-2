@@ -17,8 +17,10 @@ import android.view.View
  *        reference to a style resource that supplies default values for
  *        the view. Can be 0 to not look for defaults.
  */
-class AnimatedDashedPolygonView @JvmOverloads constructor(
+class AnimatedDashedPolygonView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr)

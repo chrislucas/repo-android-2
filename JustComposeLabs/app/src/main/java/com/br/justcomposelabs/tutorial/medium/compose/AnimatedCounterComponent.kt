@@ -42,18 +42,22 @@ fun AnimatedCounterComponent() {
     var counter by remember { mutableIntStateOf(0) }
     val offset = 200
 
-    val slideRight = slideIn(initialOffset = { IntOffset(offset, 0) }) + scaleIn() togetherWith
-        slideOut(targetOffset = { IntOffset(-offset, 0) }) + scaleOut()
+    val slideRight =
+        slideIn(initialOffset = { IntOffset(offset, 0) }) + scaleIn() togetherWith
+            slideOut(targetOffset = { IntOffset(-offset, 0) }) + scaleOut()
 
-    val slideLeft = slideIn(initialOffset = { IntOffset(-offset, 0) }) + scaleIn() togetherWith
-        slideOut(targetOffset = { IntOffset(offset, 0) }) + scaleOut()
+    val slideLeft =
+        slideIn(initialOffset = { IntOffset(-offset, 0) }) + scaleIn() togetherWith
+            slideOut(targetOffset = { IntOffset(offset, 0) }) + scaleOut()
 
     Column(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxWidth()
+        modifier =
+        Modifier
+            .fillMaxWidth()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         AnimatedContent(
             targetState = counter,
@@ -64,51 +68,55 @@ fun AnimatedCounterComponent() {
                     slideLeft
                 }
             },
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(16.dp)
-                .fillMaxWidth()
+                .fillMaxWidth(),
         ) { value ->
             Text(
                 text = "$value",
-                style = TextStyle(
+                style =
+                TextStyle(
                     fontSize = 32.sp,
                     fontWeight = FontWeight.Bold,
-                    fontStyle = FontStyle.Italic
-
+                    fontStyle = FontStyle.Italic,
                 ),
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             )
         }
 
         Button(
             onClick = { counter++ },
             shape = RectangleShape,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(top = 2.dp, bottom = 2.dp)
-                .size(size = 60.dp)
+                .size(size = 60.dp),
         ) {
             Text(
                 "+1",
-                style = TextStyle(
-                    fontSize = 32.sp
-                )
+                style =
+                TextStyle(
+                    fontSize = 32.sp,
+                ),
             )
         }
 
         Button(
             onClick = { counter-- },
             shape = RectangleShape,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(top = 2.dp, bottom = 2.dp)
-                .size(size = 60.dp)
-
+                .size(size = 60.dp),
         ) {
             Text(
                 "-1",
-                style = TextStyle(
-                    fontSize = 32.sp
-                )
+                style =
+                TextStyle(
+                    fontSize = 32.sp,
+                ),
             )
         }
     }

@@ -10,14 +10,15 @@ import androidx.compose.ui.unit.Dp
  - interface usada para personalizar medições e posicionamentos
  */
 
-fun Modifier.pad(size: Dp) = layout { measurable, constraints ->
-    // mede no filho
-    val placeable = measurable.measure(constraints)
-    // define dimensão, levando em consideração o espaçamento
-    val width = placeable.width + size.roundToPx() * 2
-    val height = placeable.height + size.roundToPx() * 2
-    // posiciona o
-    layout(width, height) {
-        placeable.place(size.roundToPx(), size.roundToPx())
+fun Modifier.pad(size: Dp) =
+    layout { measurable, constraints ->
+        // mede no filho
+        val placeable = measurable.measure(constraints)
+        // define dimensão, levando em consideração o espaçamento
+        val width = placeable.width + size.roundToPx() * 2
+        val height = placeable.height + size.roundToPx() * 2
+        // posiciona o
+        layout(width, height) {
+            placeable.place(size.roundToPx(), size.roundToPx())
+        }
     }
-}

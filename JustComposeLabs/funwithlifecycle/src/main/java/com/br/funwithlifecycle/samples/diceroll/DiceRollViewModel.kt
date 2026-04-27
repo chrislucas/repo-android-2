@@ -11,5 +11,4 @@ data class DiceUiState(
     val numberOfRolls: Int = 0,
 )
 
-class DiceRollViewModel: ViewModel() {
-}
+class DiceRollViewModel : ViewModel()

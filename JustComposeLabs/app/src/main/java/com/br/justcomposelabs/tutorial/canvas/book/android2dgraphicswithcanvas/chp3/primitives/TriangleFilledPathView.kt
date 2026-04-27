@@ -20,12 +20,13 @@ import kotlin.properties.Delegates
  *        reference to a style resource that supplies default values for
  *        the view. Can be 0 to not look for defaults.
  */
-class TriangleFilledPathView @JvmOverloads constructor(
+class TriangleFilledPathView
+@JvmOverloads
+constructor(
     ctx: Context,
     set: AttributeSet? = null,
-    defStyle: Int = 0
+    defStyle: Int = 0,
 ) : View(ctx, set, defStyle) {
-
     private val path: Path = Path()
 
     private val paintFill = Paint(Paint.ANTI_ALIAS_FLAG)
@@ -38,17 +39,19 @@ class TriangleFilledPathView @JvmOverloads constructor(
 
     init {
         context.withStyledAttributes(set, R.styleable.TriangleFilledPathView) {
-            val joinValue = getInt(
-                R.styleable.TriangleFilledPathView_joinStyle,
-                Paint.Join.MITER.ordinal
-            )
+            val joinValue =
+                getInt(
+                    R.styleable.TriangleFilledPathView_joinStyle,
+                    Paint.Join.MITER.ordinal,
+                )
 
             join = Paint.Join.entries[joinValue]
 
-            strokeWidthValue = getFloat(
-                R.styleable.TriangleFilledPathView_strokeWidthPaint,
-                12.0f
-            )
+            strokeWidthValue =
+                getFloat(
+                    R.styleable.TriangleFilledPathView_strokeWidthPaint,
+                    12.0f,
+                )
         }
     }
 
@@ -69,7 +72,12 @@ class TriangleFilledPathView @JvmOverloads constructor(
         }
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         path.run {
             moveTo(w * .5f, h * .2f)

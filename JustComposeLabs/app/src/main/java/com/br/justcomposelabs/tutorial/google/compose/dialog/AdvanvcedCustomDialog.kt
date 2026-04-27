@@ -40,7 +40,7 @@ fun ImageDialog() {
     var showDialog by remember { mutableStateOf(false) }
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Button(onClick = { showDialog = !showDialog }) {
             Text("Open Dialog")
@@ -52,14 +52,16 @@ fun ImageDialog() {
     if (showDialog) {
         Dialog(onDismissRequest = onDismiss) {
             Card(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth()
                     .height(375.dp)
                     .padding(16.dp),
-                shape = RoundedCornerShape(16.dp)
+                shape = RoundedCornerShape(16.dp),
             ) {
                 Column(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -68,8 +70,9 @@ fun ImageDialog() {
                         painter = painterResource(R.drawable.feathertop),
                         contentDescription = "",
                         contentScale = ContentScale.Fit,
-                        modifier = Modifier
-                            .height(160.dp)
+                        modifier =
+                        Modifier
+                            .height(160.dp),
                     )
 
                     Text(
@@ -77,7 +80,8 @@ fun ImageDialog() {
                         modifier = Modifier.padding(16.dp),
                     )
                     Row(
-                        modifier = Modifier
+                        modifier =
+                        Modifier
                             .fillMaxWidth(),
                         horizontalArrangement = Arrangement.Center,
                     ) {

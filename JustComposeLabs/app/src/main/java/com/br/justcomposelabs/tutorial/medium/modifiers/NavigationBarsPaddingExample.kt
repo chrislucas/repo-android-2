@@ -34,17 +34,19 @@ import com.br.justcomposelabs.tutorial.google.compose.modifier.custommodifier.cu
 @Composable
 fun BottomButton(modifier: Modifier = Modifier) {
     Box(
-        modifier = modifier
+        modifier =
+        modifier
             .fillMaxSize()
             .navigationBarsPadding()
             .statusBarsPadding()
             .imePadding()
-            .customShapedBackground(Color(0xFFB8A9DC), RectangleShape)
+            .customShapedBackground(Color(0xFFB8A9DC), RectangleShape),
     ) {
         Button(
             onClick = {},
-            modifier = modifier
-                .align(Alignment.BottomCenter)
+            modifier =
+            modifier
+                .align(Alignment.BottomCenter),
             // .padding(16.dp)
         ) {
             Text("navigationBarsPadding")

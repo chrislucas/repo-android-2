@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    //alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
 
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
@@ -24,7 +24,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -100,7 +100,6 @@ dependencies {
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
     implementation(libs.androidx.adaptive)
 
-
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.graphics.core)
     implementation(libs.androidx.graphics.path)
@@ -111,7 +110,6 @@ dependencies {
     implementation("io.coil-kt.coil3:coil-svg:3.4.0")
 
     implementation(libs.material)
-
 
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom))
@@ -171,7 +169,6 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.test.manifest)
     testImplementation(libs.robolectric)
-
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

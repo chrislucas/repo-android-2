@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
 
-
 /*
    https://developer.android.com/develop/ui/compose/components/scaffold
 
@@ -34,12 +33,9 @@ class ScaffoldTopBarSampleActivity : ComponentActivity() {
     }
 }
 
-
 @Composable
 private fun SimpleScaffoldTopbar(modifier: Modifier = Modifier) {
-
 }
-
 
 @Preview(showBackground = true)
 @Composable

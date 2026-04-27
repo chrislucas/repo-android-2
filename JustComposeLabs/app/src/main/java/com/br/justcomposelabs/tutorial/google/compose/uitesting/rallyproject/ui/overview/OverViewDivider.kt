@@ -21,14 +21,16 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 fun <T> OverViewDivider(
     data: List<T>,
     values: (T) -> Float,
-    colors: (T) -> Color
+    colors: (T) -> Color,
 ) {
     Row(Modifier.fillMaxWidth()) {
         data.forEach { item: T ->
             Spacer(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .weight(values(item))
-                    .height(1.dp).background(colors(item))
+                    .height(1.dp)
+                    .background(colors(item)),
             )
         }
     }
@@ -39,15 +41,16 @@ fun <T> OverViewDivider(
 fun OverViewDividerPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             OverViewDivider(
                 data = UserData.accounts,
                 values = { it.balance },
-                colors = { it.color }
+                colors = { it.color },
             )
         }
     }

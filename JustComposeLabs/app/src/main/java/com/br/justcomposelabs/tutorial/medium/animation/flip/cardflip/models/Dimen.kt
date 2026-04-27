@@ -36,6 +36,7 @@ object Dimen {
         object InstructionText {
             val lineHeight = 24.dp
         }
+
         object AstraCardsText {
             val textSize = 36.sp
         }

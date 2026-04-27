@@ -7,9 +7,10 @@ import retrofit2.http.Query
     https://medium.com/android-dev-br/paging-v3-jetpack-compose-2899a6877bef
  */
 interface RickAndMortyApi {
-
     @GET("api/character/")
-    suspend fun getCharactersByPage(@Query("page") page: Int)
+    suspend fun getCharactersByPage(
+        @Query("page") page: Int,
+    )
 
     @GET("api/location/")
     suspend fun getLocation()
@@ -18,4 +19,6 @@ interface RickAndMortyApi {
     suspend fun getEpisode()
 }
 
-data class Character(val name: String)
+data class Character(
+    val name: String,
+)

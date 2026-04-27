@@ -7,7 +7,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
-fun MyLayoutWithText(first: String, second: String) {
+fun MyLayoutWithText(
+    first: String,
+    second: String,
+) {
     Column {
         Text(text = first)
         Text(text = second)

@@ -8,13 +8,12 @@ import android.telephony.TelephonyManager
     Pesquisar por: SIM Card android api
  */
 
+fun Context.getSimOperatorName(): String? =
+    (getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager)?.simOperatorName
 
-fun Context.getSimOperatorName(): String? {
-    return (getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager)?.simOperatorName
-}
-
-
-data class SimCardInfo(private val context: Context) {
+data class SimCardInfo(
+    private val context: Context,
+) {
     val name: String? =
         (context.getSystemService(Context.TELEPHONY_SERVICE) as? TelephonyManager)?.simOperatorName
     val code: String? =
@@ -39,16 +38,15 @@ fun Context.simPhoneNumer() =
 
  */
 
-
 object SubscriptionInfoHelper {
-
     /*
         SubscriptionManager android example
      */
 
     fun showSubscriptionInfo(context: Context) {
-        val subscriptionManager = context
-            .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager?
+        val subscriptionManager =
+            context
+                .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE) as SubscriptionManager?
 /*
         subscriptionManager?.activeSubscriptionInfoList?.forEach { subscriptionInfo ->
 

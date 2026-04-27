@@ -23,8 +23,9 @@ import timber.log.Timber
     - Retorna
  */
 
-class FlowMessageDebounceViewModel(limit: Long) : ViewModel() {
-
+class FlowMessageDebounceViewModel(
+    limit: Long,
+) : ViewModel() {
     /*
         distinctUntilChanged
         https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/distinct-until-changed.html
@@ -33,19 +34,19 @@ class FlowMessageDebounceViewModel(limit: Long) : ViewModel() {
         https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/debounce.html
      */
     @OptIn(FlowPreview::class)
-    val distinctIntUntilChange = flow {
-        while (true) {
-            val number = (1..10).random()
-            val timeMillis = (1000..2000).random().toLong()
-            val message = "Emitting number: $number | Limit: ${limit}ms | TimeMillis: ${timeMillis}ms"
-            Timber.tag("IntViewModelDebounce").d(message)
-            delay(timeMillis)
-            emit(message)
-        }
-    }.debounce(limit)
+    val distinctIntUntilChange =
+        flow {
+            while (true) {
+                val number = (1..10).random()
+                val timeMillis = (1000..2000).random().toLong()
+                val message = "Emitting number: $number | Limit: ${limit}ms | TimeMillis: ${timeMillis}ms"
+                Timber.tag("IntViewModelDebounce").d(message)
+                delay(timeMillis)
+                emit(message)
+            }
+        }.debounce(limit)
 
     companion object {
-
         /*
             Pass custom parameters as CreationExtras
             https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-factories#creationextras_custom
@@ -53,30 +54,30 @@ class FlowMessageDebounceViewModel(limit: Long) : ViewModel() {
         val KEY_DEBOUNCE = object : CreationExtras.Key<Long> {}
 
         private val DEFAULT_DEBOUNCE_LIMIT = 1000L
-        val FACTORY = viewModelFactory {
-            initializer {
-                val limit = this[KEY_DEBOUNCE] ?: DEFAULT_DEBOUNCE_LIMIT
-                FlowMessageDebounceViewModel(limit)
+        val FACTORY =
+            viewModelFactory {
+                initializer {
+                    val limit = this[KEY_DEBOUNCE] ?: DEFAULT_DEBOUNCE_LIMIT
+                    FlowMessageDebounceViewModel(limit)
+                }
             }
-        }
     }
 }
 
 @Composable
 fun DebounceScreen(
-    viewModel: FlowMessageDebounceViewModel = viewModel(
-        factory = FlowMessageDebounceViewModel.FACTORY,
-        extras = MutableCreationExtras().apply { this[FlowMessageDebounceViewModel.KEY_DEBOUNCE] = 1500L }
-    )
+    viewModel: FlowMessageDebounceViewModel =
+        viewModel(
+            factory = FlowMessageDebounceViewModel.FACTORY,
+            extras = MutableCreationExtras().apply { this[FlowMessageDebounceViewModel.KEY_DEBOUNCE] = 1500L },
+        ),
 ) {
     val distinctIntUntilChange by viewModel.distinctIntUntilChange.collectAsState(initial = "*")
     DebounceContent(distinctIntUntilChange = distinctIntUntilChange)
 }
 
 @Composable
-fun DebounceContent(
-    distinctIntUntilChange: String
-) {
+fun DebounceContent(distinctIntUntilChange: String) {
     DistinctMessage(distinctIntUntilChange = "DebounceContent recomposed with value: $distinctIntUntilChange")
 }
 

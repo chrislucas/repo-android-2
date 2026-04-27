@@ -30,7 +30,7 @@ class RallyActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     RallyApp(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -51,10 +51,10 @@ fun RallyApp(modifier: Modifier = Modifier) {
             RallyTopAppBar(
                 allScreens = RallyScreen.entries,
                 onChangeScreen = onChangeScreen,
-                currentScreen = currentScreen
+                currentScreen = currentScreen,
             )
         },
-        modifier = modifier
+        modifier = modifier,
     ) { innerPadding ->
         Box(Modifier.padding(innerPadding)) {
             currentScreen.Content(onScreenChange = onChangeScreen)

@@ -10,33 +10,37 @@ import android.view.MotionEvent
 import android.view.View
 import kotlin.math.*
 
-class ElasticDraggableTriangleView @JvmOverloads constructor(
+class ElasticDraggableTriangleView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
-
     // Paint objects for drawing
-    private val trianglePaint = Paint().apply {
-        color = Color.GREEN
-        style = Paint.Style.FILL_AND_STROKE
-        strokeWidth = 4f
-        isAntiAlias = true
-    }
+    private val trianglePaint =
+        Paint().apply {
+            color = Color.GREEN
+            style = Paint.Style.FILL_AND_STROKE
+            strokeWidth = 4f
+            isAntiAlias = true
+        }
 
-    private val pointPaint = Paint().apply {
-        color = Color.RED
-        style = Paint.Style.FILL
-        isAntiAlias = true
-    }
+    private val pointPaint =
+        Paint().apply {
+            color = Color.RED
+            style = Paint.Style.FILL
+            isAntiAlias = true
+        }
 
     // Vertices of the triangle
     private val vertices = arrayOf(PointF(300f, 300f), PointF(600f, 300f), PointF(450f, 600f))
-    private val originalEdgeLengths = arrayOf(
-        distance(vertices[0], vertices[1]),
-        distance(vertices[1], vertices[2]),
-        distance(vertices[2], vertices[0])
-    )
+    private val originalEdgeLengths =
+        arrayOf(
+            distance(vertices[0], vertices[1]),
+            distance(vertices[1], vertices[2]),
+            distance(vertices[2], vertices[0]),
+        )
     private var selectedVertexIndex: Int = -1
     private val touchTolerance = 50f
     private val elasticStrength = 0.1f // Adjust this value to control the elasticity strength
@@ -70,6 +74,7 @@ class ElasticDraggableTriangleView @JvmOverloads constructor(
                     }
                 }
             }
+
             MotionEvent.ACTION_MOVE -> {
                 if (selectedVertexIndex != -1) {
                     // Move the selected vertex
@@ -83,6 +88,7 @@ class ElasticDraggableTriangleView @JvmOverloads constructor(
                     return true
                 }
             }
+
             MotionEvent.ACTION_UP -> {
                 selectedVertexIndex = -1
             }
@@ -91,14 +97,18 @@ class ElasticDraggableTriangleView @JvmOverloads constructor(
     }
 
     // Helper function to compute distance between two points
-    private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float {
-        return sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
-    }
+    private fun distance(
+        x1: Float,
+        y1: Float,
+        x2: Float,
+        y2: Float,
+    ): Float = sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
 
     // Helper function to compute distance between two PointF objects
-    private fun distance(p1: PointF, p2: PointF): Float {
-        return distance(p1.x, p1.y, p2.x, p2.y)
-    }
+    private fun distance(
+        p1: PointF,
+        p2: PointF,
+    ): Float = distance(p1.x, p1.y, p2.x, p2.y)
 
     // Apply elastic effect to the edges connected to the moved vertex
     private fun applyElasticEffect(movedVertexIndex: Int) {
@@ -113,7 +123,11 @@ class ElasticDraggableTriangleView @JvmOverloads constructor(
     }
 
     // Adjust the position of a vertex to maintain the original edge length
-    private fun adjustVertex(vertexIndex: Int, movedVertexIndex: Int, originalLength: Float) {
+    private fun adjustVertex(
+        vertexIndex: Int,
+        movedVertexIndex: Int,
+        originalLength: Float,
+    ) {
         val vertex = vertices[vertexIndex]
         val movedVertex = vertices[movedVertexIndex]
 

@@ -7,12 +7,9 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 
-
 class SimpleTextTest {
-
     @get:Rule
     val composeTestRule = createComposeRule()
-
 
     @OptIn(ExperimentalTestApi::class)
     @Test
@@ -25,5 +22,4 @@ class SimpleTextTest {
         composeTestRule.onNodeWithText("World").assertExists()
         composeTestRule.onNodeWithText("Non Existent Text").assertDoesNotExist()
     }
-
 }

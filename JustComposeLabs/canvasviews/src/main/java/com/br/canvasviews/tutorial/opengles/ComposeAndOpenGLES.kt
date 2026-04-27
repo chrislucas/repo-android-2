@@ -31,18 +31,18 @@ fun OpenGLView(modifier: Modifier = Modifier) {
                         override fun onSurfaceChanged(
                             gl: GL10?,
                             width: Int,
-                            height: Int
+                            height: Int,
                         ) {
                             TODO("Not yet implemented")
                         }
 
                         override fun onSurfaceCreated(
                             gl: GL10?,
-                            config: EGLConfig?
+                            config: EGLConfig?,
                         ) {
                             TODO("Not yet implemented")
                         }
-                    }
+                    },
                 )
             }
         },

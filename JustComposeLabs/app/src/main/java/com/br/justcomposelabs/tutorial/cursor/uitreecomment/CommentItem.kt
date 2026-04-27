@@ -42,23 +42,24 @@ fun CommentItem(
     onToggle: () -> Unit,
     onNavigate: (() -> Unit)? = null,
     onReply: () -> Unit,
-    reachedMaxLevel: Boolean = false
+    reachedMaxLevel: Boolean = false,
 ) {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
-            .padding(start = (level * 16).dp, top = 4.dp, bottom = 4.dp)
+            .padding(start = (level * 16).dp, top = 4.dp, bottom = 4.dp),
     ) {
         Row(
             modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             CommentExpandIcon(
                 hasReplies = comment.replies.isNotEmpty(),
                 isExpanded = isExpanded,
                 reachedMaxLevel = reachedMaxLevel,
                 onToggle = onToggle,
-                onNavigate = onNavigate
+                onNavigate = onNavigate,
             )
 
             CommentCard(
@@ -66,7 +67,7 @@ fun CommentItem(
                 level = level,
                 reachedMaxLevel = reachedMaxLevel,
                 onReply = onReply,
-                onNavigate = onNavigate
+                onNavigate = onNavigate,
             )
         }
     }
@@ -79,7 +80,7 @@ private fun CommentExpandIcon(
     isExpanded: Boolean,
     reachedMaxLevel: Boolean,
     onToggle: () -> Unit,
-    onNavigate: (() -> Unit)?
+    onNavigate: (() -> Unit)?,
 ) {
     when {
         hasReplies && reachedMaxLevel -> {
@@ -87,7 +88,7 @@ private fun CommentExpandIcon(
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "Ver respostas",
-                    modifier = Modifier.padding(4.dp)
+                    modifier = Modifier.padding(4.dp),
                 )
             }
         }
@@ -99,7 +100,7 @@ private fun CommentExpandIcon(
             IconButton(onClick = onToggle) {
                 Icon(
                     imageVector = iconVector,
-                    contentDescription = iconDescription
+                    contentDescription = iconDescription,
                 )
             }
         }
@@ -117,24 +118,26 @@ private fun CommentCard(
     level: Int,
     reachedMaxLevel: Boolean,
     onReply: () -> Unit,
-    onNavigate: (() -> Unit)?
+    onNavigate: (() -> Unit)?,
 ) {
-    val cardColor = if (level == 0) {
-        MaterialTheme.colorScheme.primaryContainer
-    } else {
-        MaterialTheme.colorScheme.surface
-    }
+    val cardColor =
+        if (level == 0) {
+            MaterialTheme.colorScheme.primaryContainer
+        } else {
+            MaterialTheme.colorScheme.surface
+        }
 
     Card(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth(),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
-        colors = CardDefaults.cardColors(containerColor = cardColor)
+        colors = CardDefaults.cardColors(containerColor = cardColor),
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
             CommentHeader(
                 author = comment.author,
-                content = comment.content
+                content = comment.content,
             )
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -143,7 +146,7 @@ private fun CommentCard(
                 comment = comment,
                 reachedMaxLevel = reachedMaxLevel,
                 onReply = onReply,
-                onNavigate = onNavigate
+                onNavigate = onNavigate,
             )
 
             if (reachedMaxLevel) {
@@ -157,19 +160,19 @@ private fun CommentCard(
 @Composable
 private fun CommentHeader(
     author: String,
-    content: String
+    content: String,
 ) {
     Column {
         Text(
             text = author,
             style = MaterialTheme.typography.labelMedium,
             color = MaterialTheme.colorScheme.primary,
-            fontWeight = FontWeight.Bold
+            fontWeight = FontWeight.Bold,
         )
         Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = content,
-            style = MaterialTheme.typography.bodyMedium
+            style = MaterialTheme.typography.bodyMedium,
         )
     }
 }
@@ -180,19 +183,19 @@ private fun CommentActions(
     comment: Comment,
     reachedMaxLevel: Boolean,
     onReply: () -> Unit,
-    onNavigate: (() -> Unit)?
+    onNavigate: (() -> Unit)?,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.spacedBy(4.dp),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         ReplyButton(onClick = onReply)
 
         CommentMetadata(
             comment = comment,
             reachedMaxLevel = reachedMaxLevel,
-            onNavigate = onNavigate
+            onNavigate = onNavigate,
         )
     }
 }
@@ -202,27 +205,29 @@ private fun CommentActions(
 private fun ReplyButton(onClick: () -> Unit) {
     TextButton(
         onClick = onClick,
-        modifier = Modifier
+        modifier =
+        Modifier
             .border(
                 1.dp,
                 MaterialTheme.colorScheme.primary,
-                RoundedCornerShape(6.dp)
+                RoundedCornerShape(6.dp),
             ),
-        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp) // Reduz padding interno
+        contentPadding = PaddingValues(horizontal = 8.dp, vertical = 4.dp), // Reduz padding interno
     ) {
         Icon(
             imageVector = Icons.Filled.Add,
             contentDescription = "Comentário",
             tint = MaterialTheme.colorScheme.primary,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(end = 2.dp)
-                .size(16.dp) // Reduz tamanho do ícone
+                .size(16.dp), // Reduz tamanho do ícone
         )
         Text(
             "Comentar",
             color = MaterialTheme.colorScheme.primary,
             fontWeight = FontWeight.Bold,
-            style = MaterialTheme.typography.labelMedium // Fonte menor
+            style = MaterialTheme.typography.labelMedium, // Fonte menor
         )
     }
 }
@@ -232,11 +237,11 @@ private fun ReplyButton(onClick: () -> Unit) {
 private fun CommentMetadata(
     comment: Comment,
     reachedMaxLevel: Boolean,
-    onNavigate: (() -> Unit)?
+    onNavigate: (() -> Unit)?,
 ) {
     Row(
         horizontalArrangement = Arrangement.spacedBy(3.dp),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         if (comment.replies.isNotEmpty()) {
             ReplyCount(count = comment.replies.size)
@@ -244,7 +249,7 @@ private fun CommentMetadata(
             if (onNavigate != null) {
                 NavigateButton(
                     reachedMaxLevel = reachedMaxLevel,
-                    onClick = onNavigate
+                    onClick = onNavigate,
                 )
             }
         }
@@ -259,7 +264,7 @@ private fun ReplyCount(count: Int) {
     Text(
         text = "$count $replyText",
         style = MaterialTheme.typography.labelSmall,
-        color = Color.Gray
+        color = Color.Gray,
     )
 }
 
@@ -267,22 +272,23 @@ private fun ReplyCount(count: Int) {
 @Composable
 private fun NavigateButton(
     reachedMaxLevel: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     TextButton(onClick = onClick) {
         val content = if (reachedMaxLevel) "Respostas →" else "Thread →"
-        val textColor = if (reachedMaxLevel) {
-            MaterialTheme.colorScheme.primary
-        } else {
-            MaterialTheme.colorScheme.onSurface
-        }
+        val textColor =
+            if (reachedMaxLevel) {
+                MaterialTheme.colorScheme.primary
+            } else {
+                MaterialTheme.colorScheme.onSurface
+            }
         val textFontWeight = if (reachedMaxLevel) FontWeight.Bold else FontWeight.Normal
 
         Text(
             text = content,
             style = MaterialTheme.typography.labelSmall,
             fontWeight = textFontWeight,
-            color = textColor
+            color = textColor,
         )
     }
 }
@@ -294,24 +300,24 @@ private fun MaxLevelWarning() {
     Surface(
         modifier = Modifier.fillMaxWidth(),
         color = MaterialTheme.colorScheme.secondaryContainer,
-        shape = RoundedCornerShape(8.dp)
+        shape = RoundedCornerShape(8.dp),
     ) {
         Row(
             modifier = Modifier.padding(8.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
             Icon(
                 imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                 contentDescription = null,
                 tint = MaterialTheme.colorScheme.onSecondaryContainer,
-                modifier = Modifier.padding(end = 8.dp)
+                modifier = Modifier.padding(end = 8.dp),
             )
             Text(
                 "Clique em 'Ver respostas' para continuar a thread",
                 style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.onSecondaryContainer,
-                fontWeight = FontWeight.Medium
+                fontWeight = FontWeight.Medium,
             )
         }
     }
@@ -325,21 +331,23 @@ private fun MaxLevelWarning() {
 fun PreviewCommentItem() {
     MaterialTheme {
         CommentItem(
-            comment = Comment(
+            comment =
+            Comment(
                 id = 1,
                 author = "João Silva",
                 content = "Este é um comentário de exemplo com texto suficiente para testar o layout e verificar como fica a exibição.",
-                replies = mutableListOf(
+                replies =
+                mutableListOf(
                     Comment(id = 2, author = "Maria", content = "Resposta 1"),
-                    Comment(id = 3, author = "Pedro", content = "Resposta 2")
-                )
+                    Comment(id = 3, author = "Pedro", content = "Resposta 2"),
+                ),
             ),
             level = 0,
             isExpanded = false,
             onToggle = {},
             onNavigate = {},
             onReply = {},
-            reachedMaxLevel = false
+            reachedMaxLevel = false,
         )
     }
 }
@@ -350,20 +358,22 @@ fun PreviewCommentItem() {
 fun PreviewCommentItemExpanded() {
     MaterialTheme {
         CommentItem(
-            comment = Comment(
+            comment =
+            Comment(
                 id = 1,
                 author = "João Silva",
                 content = "Comentário expandido",
-                replies = mutableListOf(
-                    Comment(id = 2, author = "Maria", content = "Resposta")
-                )
+                replies =
+                mutableListOf(
+                    Comment(id = 2, author = "Maria", content = "Resposta"),
+                ),
             ),
             level = 0,
             isExpanded = true,
             onToggle = {},
             onNavigate = {},
             onReply = {},
-            reachedMaxLevel = false
+            reachedMaxLevel = false,
         )
     }
 }
@@ -374,20 +384,22 @@ fun PreviewCommentItemExpanded() {
 fun PreviewCommentItemMaxLevel() {
     MaterialTheme {
         CommentItem(
-            comment = Comment(
+            comment =
+            Comment(
                 id = 1,
                 author = "João Silva",
                 content = "Comentário no nível máximo. Deve mostrar aviso de navegação.",
-                replies = mutableListOf(
-                    Comment(id = 2, author = "Maria", content = "Resposta oculta")
-                )
+                replies =
+                mutableListOf(
+                    Comment(id = 2, author = "Maria", content = "Resposta oculta"),
+                ),
             ),
             level = 2,
             isExpanded = false,
             onToggle = {},
             onNavigate = {},
             onReply = {},
-            reachedMaxLevel = true
+            reachedMaxLevel = true,
         )
     }
 }
@@ -398,17 +410,18 @@ fun PreviewCommentItemMaxLevel() {
 fun PreviewCommentItemNoReplies() {
     MaterialTheme {
         CommentItem(
-            comment = Comment(
+            comment =
+            Comment(
                 id = 1,
                 author = "Ana Costa",
                 content = "Comentário sem respostas",
-                replies = mutableListOf()
+                replies = mutableListOf(),
             ),
             level = 1,
             isExpanded = false,
             onToggle = {},
             onNavigate = null,
-            onReply = {}
+            onReply = {},
         )
     }
 }
@@ -424,7 +437,7 @@ fun PreviewCommentExpandIcon() {
                 isExpanded = false,
                 reachedMaxLevel = false,
                 onToggle = {},
-                onNavigate = {}
+                onNavigate = {},
             )
         }
     }
@@ -441,7 +454,7 @@ fun PreviewCommentExpandIconMaxLevel() {
                 isExpanded = false,
                 reachedMaxLevel = true,
                 onToggle = {},
-                onNavigate = {}
+                onNavigate = {},
             )
         }
     }
@@ -455,7 +468,7 @@ fun PreviewCommentHeader() {
         Surface(modifier = Modifier.padding(16.dp)) {
             CommentHeader(
                 author = "Maria Oliveira",
-                content = "Este é o conteúdo do comentário que pode ser bem longo e ocupar várias linhas para demonstrar como o layout se comporta."
+                content = "Este é o conteúdo do comentário que pode ser bem longo e ocupar várias linhas para demonstrar como o layout se comporta.",
             )
         }
     }
@@ -479,7 +492,7 @@ fun PreviewReplyCount() {
     MaterialTheme {
         Column(
             modifier = Modifier.padding(16.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+            verticalArrangement = Arrangement.spacedBy(8.dp),
         ) {
             ReplyCount(count = 1)
             ReplyCount(count = 5)
@@ -496,7 +509,7 @@ fun PreviewNavigateButton() {
         Box(modifier = Modifier.padding(16.dp)) {
             NavigateButton(
                 reachedMaxLevel = false,
-                onClick = {}
+                onClick = {},
             )
         }
     }
@@ -510,7 +523,7 @@ fun PreviewNavigateButtonMaxLevel() {
         Box(modifier = Modifier.padding(16.dp)) {
             NavigateButton(
                 reachedMaxLevel = true,
-                onClick = {}
+                onClick = {},
             )
         }
     }
@@ -534,18 +547,20 @@ fun PreviewCommentActions() {
     MaterialTheme {
         Surface(modifier = Modifier.padding(16.dp)) {
             CommentActions(
-                comment = Comment(
+                comment =
+                Comment(
                     id = 1,
                     author = "João",
                     content = "Comentário",
-                    replies = mutableListOf(
+                    replies =
+                    mutableListOf(
                         Comment(id = 2, author = "Maria", content = "R1"),
-                        Comment(id = 3, author = "Pedro", content = "R2")
-                    )
+                        Comment(id = 3, author = "Pedro", content = "R2"),
+                    ),
                 ),
                 reachedMaxLevel = false,
                 onReply = {},
-                onNavigate = {}
+                onNavigate = {},
             )
         }
     }
@@ -558,18 +573,20 @@ fun PreviewCommentMetadata() {
     MaterialTheme {
         Box(modifier = Modifier.padding(16.dp)) {
             CommentMetadata(
-                comment = Comment(
+                comment =
+                Comment(
                     id = 1,
                     author = "João",
                     content = "Teste",
-                    replies = mutableListOf(
+                    replies =
+                    mutableListOf(
                         Comment(id = 2, author = "Maria", content = "R1"),
                         Comment(id = 3, author = "Pedro", content = "R2"),
-                        Comment(id = 4, author = "Ana", content = "R3")
-                    )
+                        Comment(id = 4, author = "Ana", content = "R3"),
+                    ),
                 ),
                 reachedMaxLevel = false,
-                onNavigate = {}
+                onNavigate = {},
             )
         }
     }

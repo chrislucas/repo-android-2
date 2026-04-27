@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.br.justcomposelabs.R
+
 /*
     https://www.geeksforgeeks.org/kotlin/material-design-components-sliders-in-android/
  */

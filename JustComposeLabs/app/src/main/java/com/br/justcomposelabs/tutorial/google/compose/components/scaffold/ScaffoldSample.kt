@@ -39,9 +39,10 @@ import androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun SimpleDrawerScaffoldComponent() {
     val bgColor = Color(0xFF1976D2)
-    val scaffoldState = rememberScaffoldState(
-        rememberDrawerState(DrawerValue.Open)
-    )
+    val scaffoldState =
+        rememberScaffoldState(
+            rememberDrawerState(DrawerValue.Open),
+        )
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = {},
@@ -51,7 +52,7 @@ fun SimpleDrawerScaffoldComponent() {
                 IconButton(onClick = {}) {
                     Icon(
                         imageVector = Icons.Filled.Add,
-                        contentDescription = "Add"
+                        contentDescription = "Add",
                     )
                 }
             }
@@ -62,13 +63,13 @@ fun SimpleDrawerScaffoldComponent() {
         content = { paddingValues ->
             Text(
                 "Body Content",
-                modifier = Modifier.padding(paddingValues)
+                modifier = Modifier.padding(paddingValues),
             )
         },
         bottomBar = {
             BottomAppBar(backgroundColor = bgColor) {
                 Text("BottomAppBar")
             }
-        }
+        },
     )
 }

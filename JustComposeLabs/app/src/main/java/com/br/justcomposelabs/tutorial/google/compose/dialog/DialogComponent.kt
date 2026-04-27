@@ -46,7 +46,7 @@ fun SimpleAlertDialogComponent(
     onConfirm: () -> Unit,
     dialogTitle: String,
     dialogText: String,
-    icon: ImageVector
+    icon: ImageVector,
 ) {
     AlertDialog(
         modifier = Modifier.systemBarsPadding(),
@@ -69,7 +69,7 @@ fun SimpleAlertDialogComponent(
             TextButton(onClick = onDismissRequest) {
                 Text("calcel")
             }
-        }
+        },
     )
 }
 
@@ -79,7 +79,7 @@ fun ButtonFire() {
     var showDialog by remember { mutableStateOf(false) }
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Button(onClick = { showDialog = !showDialog }) {
             Text("Open Dialog")
@@ -95,7 +95,7 @@ fun ButtonFire() {
             },
             dialogTitle = "Confirm Action",
             dialogText = "Are you sure you want to delete this item? This action cannot be undone.",
-            icon = Icons.Filled.Info
+            icon = Icons.Filled.Info,
         )
     }
 }
@@ -112,7 +112,7 @@ fun SimpleAlertDialogComponentPreview() {
             onConfirm = { showDialog.value = false },
             dialogTitle = "Confirm Action",
             dialogText = "Are you sure you want to delete this item? This action cannot be undone.",
-            icon = Icons.Filled.Info
+            icon = Icons.Filled.Info,
         )
     }
 }

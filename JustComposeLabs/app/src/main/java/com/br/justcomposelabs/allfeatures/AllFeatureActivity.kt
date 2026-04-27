@@ -43,8 +43,7 @@ class AllFeatureActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     AllFeatures(
-
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -55,7 +54,7 @@ class AllFeatureActivity : ComponentActivity() {
 @Composable
 fun AllFeatures(
     modifier: Modifier = Modifier,
-    features: List<String> = listOf()
+    features: List<String> = listOf(),
 ) {
     LazyVerticalStaggeredGrid(
         columns = StaggeredGridCells.Adaptive(200.dp),
@@ -68,7 +67,7 @@ fun AllFeatures(
                 }
             }
         },
-        modifier = modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize(),
     )
 }
 
@@ -80,11 +79,12 @@ fun AllFeatures(
 @Composable
 fun AllFeaturesPreview() {
     JustComposeLabsTheme {
-        val features = buildList {
-            repeat(200) {
-                add("Feature $it")
+        val features =
+            buildList {
+                repeat(200) {
+                    add("Feature $it")
+                }
             }
-        }
         AllFeatures(Modifier.fillMaxSize(), features)
     }
 }

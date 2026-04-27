@@ -1,7 +1,7 @@
 
 plugins {
     alias(libs.plugins.android.library)
-    //alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
 
     alias(libs.plugins.compose.compiler)
     id("com.google.devtools.ksp")
@@ -26,7 +26,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -50,7 +50,6 @@ dependencies {
 
     // https://developer.android.com/develop/ui/compose/layouts/adaptive/list-detail
     implementation(libs.androidx.adaptive)
-
 
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
@@ -109,7 +108,6 @@ dependencies {
     debugImplementation(libs.ui.test.manifest)
     testImplementation(libs.robolectric)
 
-
     // Optional - Included automatically by material, only add when you need
     // the icons but not the material library (e.g. when using Material3 or a
     // custom design system based on Foundation)
@@ -133,7 +131,6 @@ dependencies {
     // https://developer.android.com/jetpack/androidx/releases/paging?authuser=1
     implementation(libs.androidx.paging.runtime)
 
-
     // alternatively - without Android dependencies for tests
 
     // optional - RxJava2 support
@@ -148,10 +145,8 @@ dependencies {
     // optional - Jetpack Compose integration
     implementation(libs.androidx.paging.compose)
 
-
     implementation(libs.androidx.room.runtime)
     annotationProcessor(libs.androidx.room.compiler)
-
 
     // To use Kotlin Symbol Processing (KSP)
     ksp(libs.androidx.room.compiler)
@@ -177,12 +172,10 @@ dependencies {
     implementation(libs.androidx.camera.mlkit.vision)
     implementation(libs.androidx.camera.extensions)
 
-
     // optional - Paging 3 Integration
     implementation(libs.androidx.room.paging)
 
     androidTestImplementation(platform(libs.androidx.compose.bom))
-
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

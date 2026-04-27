@@ -67,14 +67,13 @@ fun BottomAppBarPreview() {
                     FloatingActionButton(
                         onClick = {},
                         containerColor = BottomAppBarDefaults.bottomAppBarFabColor,
-                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation()
+                        elevation = FloatingActionButtonDefaults.bottomAppBarFabElevation(),
                     ) {
                         Icon(imageVector = Icons.Filled.Add, "Add")
                     }
-                }
+                },
             )
         },
-
     ) { innerPadding ->
         Text(modifier = Modifier.padding(innerPadding), text = "Bottom app bar")
     }

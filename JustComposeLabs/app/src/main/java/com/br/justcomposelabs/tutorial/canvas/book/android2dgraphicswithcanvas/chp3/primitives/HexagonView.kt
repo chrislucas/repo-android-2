@@ -21,10 +21,12 @@ import kotlin.properties.Delegates
  *        reference to a style resource that supplies default values for
  *        the view. Can be 0 to not look for defaults.
  */
-class HexagonView @JvmOverloads constructor(
+class HexagonView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attrs, defStyleAttr) {
     private val path: Path = Path()
 
@@ -42,25 +44,28 @@ class HexagonView @JvmOverloads constructor(
 
     init {
         context.withStyledAttributes(attrs, R.styleable.HexagonView) {
-            val joinStyleValue = getInt(
-                R.styleable.HexagonView_joinStyle,
-                Paint.Join.ROUND.ordinal
-            )
+            val joinStyleValue =
+                getInt(
+                    R.styleable.HexagonView_joinStyle,
+                    Paint.Join.ROUND.ordinal,
+                )
 
             join = Paint.Join.entries[joinStyleValue]
             strokeWidthValue = getFloat(R.styleable.HexagonView_strokeWidthPaint, 0.0f)
-            scaleStrokeWidth = getFloat(
-                R.styleable.HexagonView_scaleStrokeWidth,
-                ONE_PERCENT * 3
-            ).coerceIn(
-                ONE_PERCENT,
-                ONE_PERCENT * 10
-            )
+            scaleStrokeWidth =
+                getFloat(
+                    R.styleable.HexagonView_scaleStrokeWidth,
+                    ONE_PERCENT * 3,
+                ).coerceIn(
+                    ONE_PERCENT,
+                    ONE_PERCENT * 10,
+                )
 
-            scaleRadius = getFloat(
-                R.styleable.HexagonView_scaleRadius,
-                ONE_PERCENT * 90
-            ).coerceIn(ONE_PERCENT * 10, ONE_PERCENT * 90)
+            scaleRadius =
+                getFloat(
+                    R.styleable.HexagonView_scaleRadius,
+                    ONE_PERCENT * 90,
+                ).coerceIn(ONE_PERCENT * 10, ONE_PERCENT * 90)
         }
     }
 
@@ -77,16 +82,22 @@ class HexagonView @JvmOverloads constructor(
             style = Paint.Style.STROKE
             color = Color.rgb(0, 0, 0)
             strokeJoin = join
-            strokeWidth = if (strokeWidthValue > 0.0f) {
-                strokeWidthValue
-            } else {
-                minDimension * scaleStrokeWidth
-            }
+            strokeWidth =
+                if (strokeWidthValue > 0.0f) {
+                    strokeWidthValue
+                } else {
+                    minDimension * scaleStrokeWidth
+                }
             canvas.drawPath(path, this)
         }
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         /**
          * Para desenhar um rehagono regular, o metodo mais preciso é calcular os seis vertices

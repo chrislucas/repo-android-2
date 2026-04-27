@@ -24,13 +24,13 @@ import com.br.justcomposelabs.R
 fun ColoredText(color: Color = Color(0xFFB388FF)) {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             stringResource(R.string.chocolate),
             style = TextStyle(fontSize = 30.sp),
             fontFamily = FontFamily.Cursive,
-            color = color
+            color = color,
         )
     }
 }
@@ -40,18 +40,19 @@ fun ColoredText(color: Color = Color(0xFFB388FF)) {
 fun StyleText(color: Color = Color(0xFFB388FF)) {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             stringResource(R.string.chocolate),
-            style = TextStyle(
+            style =
+            TextStyle(
                 fontSize = 30.sp,
                 fontFamily = FontFamily.Cursive,
                 color = color,
                 fontSynthesis = FontSynthesis.Style,
                 letterSpacing = 4.sp,
-                background = Color(0xFFFFFF8D)
-            )
+                background = Color(0xFFFFFF8D),
+            ),
         )
     }
 }

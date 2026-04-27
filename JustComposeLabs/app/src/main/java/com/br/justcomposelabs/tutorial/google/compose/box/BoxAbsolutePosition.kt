@@ -16,7 +16,7 @@ fun BoxWithOffset() {
         Text(
             "Offset Text",
             // Moves the text 10dp to the right and 20dp down from the top-left corner
-            modifier = Modifier.offset(x = 10.dp, y = 20.dp)
+            modifier = Modifier.offset(x = 10.dp, y = 20.dp),
         )
     }
 }

@@ -24,18 +24,19 @@ fun GroupChipComponent(words: List<String> = emptyList()) {
     var selectedChip by remember(key1 = words) { mutableStateOf(words.first()) }
 
     FlowRow(
-        modifier = Modifier
+        modifier =
+        Modifier
             .padding(8.dp)
             .systemBarsPadding()
             .navigationBarsPadding(),
         Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(4.dp)
+        verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
         words.forEach { word ->
             FilterChip(selected = selectedChip == word, onClick = { selectedChip = word }) {
                 Text(
                     text = word,
-                    style = TextStyle()
+                    style = TextStyle(),
                 )
             }
         }
@@ -52,7 +53,8 @@ fun GroupChipComponent(words: List<String> = emptyList()) {
 @Composable
 private fun GroupChipComponentPreview() {
     GroupChipComponent(
-        words = listOf(
+        words =
+        listOf(
             "Android",
             "Compose",
             "Kotlin",
@@ -63,7 +65,7 @@ private fun GroupChipComponentPreview() {
             "Development",
             "Clean Architecture",
             "MVI",
-            "MVVM"
-        )
+            "MVVM",
+        ),
     )
 }

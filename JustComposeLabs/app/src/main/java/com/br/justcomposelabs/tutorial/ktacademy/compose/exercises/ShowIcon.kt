@@ -18,14 +18,16 @@ import androidx.compose.ui.unit.dp
 fun ShowIcon() {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Image(
             imageVector = MilkIcon,
             contentDescription = "Milk",
-            modifier = Modifier.padding(20.dp)
+            modifier =
+            Modifier
+                .padding(20.dp)
                 .clip(CircleShape)
-                .size(200.dp)
+                .size(200.dp),
         )
     }
 }

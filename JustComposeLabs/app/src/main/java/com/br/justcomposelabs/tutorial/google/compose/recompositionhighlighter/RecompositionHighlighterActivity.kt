@@ -55,7 +55,7 @@ class RecompositionHighlighterActivity : ComponentActivity() {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     CounterRecomposition(
-                        modifier = Modifier.padding(innerPadding)
+                        modifier = Modifier.padding(innerPadding),
                     )
                 }
             }
@@ -68,11 +68,12 @@ fun CounterRecomposition(modifier: Modifier = Modifier) {
     var counter by remember { mutableIntStateOf(0) }
     var counterRecomposition by remember { mutableLongStateOf(0) }
     Column(
-        modifier = modifier
+        modifier =
+        modifier
             .fillMaxSize()
             .padding(16.dp),
         horizontalAlignment = CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Button(onClick = { counter++ }) {
             Text("Click to recompose")
@@ -80,9 +81,10 @@ fun CounterRecomposition(modifier: Modifier = Modifier) {
 
         Text(
             "Count Click: $counter, Counter Recompoition: $counterRecomposition",
-            modifier = Modifier.recomposeHighlighter { counter ->
+            modifier =
+            Modifier.recomposeHighlighter { counter ->
                 counterRecomposition = counter
-            }
+            },
         )
     }
 }
@@ -101,13 +103,12 @@ fun CounterRecomposition(modifier: Modifier = Modifier) {
 @Stable
 fun Modifier.recomposeHighlighter(
     turnOn: Boolean = true,
-    callback: (Long) -> Unit = {}
-): Modifier =
-    this.then(RecomposeHighlighterElement(turnOn, callback))
+    callback: (Long) -> Unit = {},
+): Modifier = this.then(RecomposeHighlighterElement(turnOn, callback))
 
 private class RecomposeHighlighterElement(
     val turnOn: Boolean,
-    private val callback: (Long) -> Unit = {}
+    private val callback: (Long) -> Unit = {},
 ) : ModifierNodeElement<RecomposeHighlighterModifier>() {
     /*
 
@@ -130,9 +131,9 @@ private class RecomposeHighlighterElement(
 }
 
 private class RecomposeHighlighterModifier(
-    private val turnOn: Boolean
-) : Modifier.Node(), DrawModifierNode {
-
+    private val turnOn: Boolean,
+) : Modifier.Node(),
+    DrawModifierNode {
     private var timerJob: Job? = null
 
     override val shouldAutoInvalidate: Boolean = false
@@ -184,12 +185,13 @@ private class RecomposeHighlighterModifier(
         }
 
         timerJob?.cancel()
-        timerJob = coroutineScope.launch {
-            delay(3000)
-            totalCompositions = 0
-            valueTotalComposition.longValue = totalCompositions
-            Timber.d("RecompositionHighlighter - restartTimer")
-        }
+        timerJob =
+            coroutineScope.launch {
+                delay(3000)
+                totalCompositions = 0
+                valueTotalComposition.longValue = totalCompositions
+                Timber.d("RecompositionHighlighter - restartTimer")
+            }
     }
 
     override fun ContentDrawScope.draw() {
@@ -210,20 +212,27 @@ private class RecomposeHighlighterModifier(
                 return
             }
 
-            val (color: Color, strokeWidthPx: Float) = when (totalCompositions) {
-                1L -> Color.Blue to 1f.dp.toPx()
-                2L -> Color.Green to 2f.dp.toPx()
-                else -> {
-                    val start = Color.Yellow.copy(alpha = 0.8f)
-                    val stop = Color.Red.copy(alpha = 0.5f)
-                    val fraction = min(1f, (totalCompositions - 1).toFloat() / 100f)
+            val (color: Color, strokeWidthPx: Float) =
+                when (totalCompositions) {
+                    1L -> {
+                        Color.Blue to 1f.dp.toPx()
+                    }
 
-                    val interpolatedColor = lerp(start = start, stop = stop, fraction = fraction)
+                    2L -> {
+                        Color.Green to 2f.dp.toPx()
+                    }
 
-                    Timber.d("RecompositionHighlighter - color $interpolatedColor")
-                    interpolatedColor to totalCompositions.toInt().dp.toPx()
+                    else -> {
+                        val start = Color.Yellow.copy(alpha = 0.8f)
+                        val stop = Color.Red.copy(alpha = 0.5f)
+                        val fraction = min(1f, (totalCompositions - 1).toFloat() / 100f)
+
+                        val interpolatedColor = lerp(start = start, stop = stop, fraction = fraction)
+
+                        Timber.d("RecompositionHighlighter - color $interpolatedColor")
+                        interpolatedColor to totalCompositions.toInt().dp.toPx()
+                    }
                 }
-            }
 
             val halfStroke = strokeWidthPx / 2
             val topLeft = Offset(halfStroke, halfStroke)
@@ -238,7 +247,7 @@ private class RecomposeHighlighterModifier(
                 brush = SolidColor(color),
                 topLeft = rectTopLeft,
                 size = size,
-                style = style
+                style = style,
             )
         }
     }

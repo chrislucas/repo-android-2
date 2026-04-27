@@ -36,7 +36,7 @@ import com.br.justcomposelabs.R
 class Artist(
     val image: ImageBitmap = ImageBitmap(100, 100),
     val name: String = "",
-    val lastSeenOnline: String = "1 minuto atrás"
+    val lastSeenOnline: String = "1 minuto atrás",
 )
 
 @Preview(showBackground = true)
@@ -47,32 +47,34 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
     Column {
         ProfileLayout(
             modifier = Modifier.background(color = Color(0xFFE7BFBF)),
-            artist = artist
+            artist = artist,
         )
 
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.background(
-                color = Color(0xFFB388FF)
-            )
+            modifier =
+            Modifier.background(
+                color = Color(0xFFB388FF),
+            ),
         ) {
             Box {
                 Image(
                     bitmap = artist.image,
                     contentDescription = "Artist image",
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .clip(shape = CircleShape)
                         .size(40.dp, 40.dp)
-                        .border(1.dp, color = Color.Black, shape = CircleShape)
+                        .border(1.dp, color = Color.Black, shape = CircleShape),
                 )
 
                 Icon(
                     Icons.Filled.Check,
                     contentDescription = "Check mark",
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .align(Alignment.BottomEnd)
-                        .padding(start = 23.dp, top = 22.dp)
-
+                        .padding(start = 23.dp, top = 22.dp),
                 )
             }
 
@@ -91,7 +93,7 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
                 Modifier
                     .clickable(onClick = { })
                     .padding(padding)
-                    .wrapContentSize()
+                    .wrapContentSize(),
             ) {
                 Text(artist.name)
                 Text(artist.lastSeenOnline)
@@ -100,18 +102,19 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
 
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.background(
-                color = Color(0xFF80D8FF)
-            )
+            modifier =
+            Modifier.background(
+                color = Color(0xFF80D8FF),
+            ),
         ) {
             Image(
                 bitmap = artist.image,
                 contentDescription = "Artist image",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .clip(shape = CircleShape)
                     .size(40.dp, 40.dp)
-                    .border(1.dp, color = Color.Black, shape = CircleShape)
-
+                    .border(1.dp, color = Color.Black, shape = CircleShape),
             )/*
                 Ja a seguinte ordem
 
@@ -126,7 +129,7 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
                 Modifier
                     .padding(padding)
                     .clickable(onClick = {})
-                    .wrapContentSize()
+                    .wrapContentSize(),
             ) {
                 Text(artist.name)
                 Text(artist.lastSeenOnline)
@@ -142,7 +145,10 @@ fun OrderMatters1(artist: Artist = Artist(name = "Chris")) {
 
 @Preview()
 @Composable
-fun ProfileLayout(modifier: Modifier = Modifier, artist: Artist = Artist()) {
+fun ProfileLayout(
+    modifier: Modifier = Modifier,
+    artist: Artist = Artist(),
+) {
     val padding = 16.dp
 
     Row(verticalAlignment = Alignment.CenterVertically, modifier = modifier) {
@@ -150,19 +156,19 @@ fun ProfileLayout(modifier: Modifier = Modifier, artist: Artist = Artist()) {
             Image(
                 painter = painterResource(id = R.drawable.hero),
                 contentDescription = "Artist image",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .clip(shape = CircleShape)
                     .size(40.dp, 40.dp)
-                    .border(1.dp, color = Color.Black, shape = CircleShape)
-
+                    .border(1.dp, color = Color.Black, shape = CircleShape),
             )
             Icon(
                 Icons.Filled.Check,
                 contentDescription = "Check mark",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .align(Alignment.BottomEnd)
-                    .padding(start = 23.dp, top = 22.dp)
-
+                    .padding(start = 23.dp, top = 22.dp),
             )
         }
 
@@ -170,7 +176,7 @@ fun ProfileLayout(modifier: Modifier = Modifier, artist: Artist = Artist()) {
             Modifier
                 .clickable(onClick = { })
                 .padding(padding)
-                .wrapContentSize()
+                .wrapContentSize(),
         ) {
             Text(artist.name)
             Text(artist.lastSeenOnline)
@@ -189,14 +195,15 @@ fun ArtistAvatar(artist: Artist = Artist()) {
         Image(
             bitmap = artist.image,
             contentDescription = "Artist image",
-            modifier = Modifier.clip(shape = CircleShape)
+            modifier = Modifier.clip(shape = CircleShape),
         )
         Icon(
             imageVector = Icons.Filled.Check,
             contentDescription = "Check mark",
-            modifier = Modifier
+            modifier =
+            Modifier
                 .align(Alignment.BottomEnd)
-                .padding(start = 30.dp, top = 25.dp)
+                .padding(start = 30.dp, top = 25.dp),
         )
     }
 }

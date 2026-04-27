@@ -10,6 +10,7 @@ import okhttp3.OkHttpClient
  */
 
 fun Context.cachedOkHttp(cacheSize: Long = 10 * 1024 * 1024) =
-    OkHttpClient.Builder()
+    OkHttpClient
+        .Builder()
         .cache(Cache(cacheDir, cacheSize))
         .build()

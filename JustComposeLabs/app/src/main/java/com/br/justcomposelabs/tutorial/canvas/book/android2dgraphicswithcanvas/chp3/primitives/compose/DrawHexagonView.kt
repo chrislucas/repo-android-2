@@ -13,6 +13,6 @@ fun DrawHexagonView() {
     AndroidView(
         factory = { context -> HexagonView(context) },
         update = { it.invalidate() },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

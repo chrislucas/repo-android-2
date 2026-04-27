@@ -38,7 +38,10 @@ import kotlinx.coroutines.delay
  */
 
 @Composable
-fun AutoAdvancePager(pageItems: List<Color>, modifier: Modifier = Modifier) {
+fun AutoAdvancePager(
+    pageItems: List<Color>,
+    modifier: Modifier = Modifier,
+) {
     Box(modifier = Modifier.fillMaxSize()) {
         val pagerState = rememberPagerState(pageCount = { pageItems.size })
         val pagerIsDragged by pagerState.interactionSource.collectIsDraggedAsState()
@@ -60,21 +63,22 @@ fun AutoAdvancePager(pageItems: List<Color>, modifier: Modifier = Modifier) {
         }
 
         HorizontalPager(
-            state = pagerState
+            state = pagerState,
         ) { page ->
             Text(
                 text = "Page: $page",
                 textAlign = TextAlign.Center,
-                modifier = modifier.fillMaxSize()
+                modifier =
+                modifier
+                    .fillMaxSize()
                     .background(pageItems[page])
                     .clickable(
                         interactionSource = pageInteractionSource,
-                        indication = LocalIndication.current
+                        indication = LocalIndication.current,
                     ) {
                         // Handle page click
-                    }
-                    .wrapContentSize(align = Alignment.Center),
-                fontSize = TextUnit(20f, TextUnitType.Sp)
+                    }.wrapContentSize(align = Alignment.Center),
+                fontSize = TextUnit(20f, TextUnitType.Sp),
             )
         }
 
@@ -83,24 +87,30 @@ fun AutoAdvancePager(pageItems: List<Color>, modifier: Modifier = Modifier) {
 }
 
 @Composable
-fun PagerIndicator(pageCount: Int, currentPageIndex: Int, modifier: Modifier = Modifier) {
+fun PagerIndicator(
+    pageCount: Int,
+    currentPageIndex: Int,
+    modifier: Modifier = Modifier,
+) {
     Box(modifier = Modifier.fillMaxSize()) {
         Row(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .wrapContentHeight()
                 .fillMaxWidth()
                 .align(Alignment.BottomCenter)
                 .padding(bottom = 8.dp),
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
             repeat(pageCount) { iteration ->
                 val color = if (currentPageIndex == iteration) Color.DarkGray else Color.LightGray
                 Box(
-                    modifier = modifier
+                    modifier =
+                    modifier
                         .padding(2.dp)
                         .clip(CircleShape)
                         .background(color)
-                        .size(16.dp)
+                        .size(16.dp),
                 )
             }
         }

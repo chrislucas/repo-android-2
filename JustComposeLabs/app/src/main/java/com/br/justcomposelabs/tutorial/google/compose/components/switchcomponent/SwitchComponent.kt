@@ -23,11 +23,11 @@ fun BasicSwitch() {
 
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Switch(
             checked = checked,
-            onCheckedChange = { checked = it }
+            onCheckedChange = { checked = it },
         )
     }
 }

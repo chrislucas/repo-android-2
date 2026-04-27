@@ -13,6 +13,6 @@ fun DrawDashedHexagonView() {
     AndroidView(
         factory = { context -> DashedHexagonView(context) },
         update = { it.invalidate() },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

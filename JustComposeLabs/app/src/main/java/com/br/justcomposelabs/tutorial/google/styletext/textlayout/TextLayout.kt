@@ -25,7 +25,7 @@ fun LongText() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text("hello ".repeat(50), maxLines = 2)
     }
@@ -37,12 +37,12 @@ fun EllipsisText() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             "hello ".repeat(50),
             maxLines = 2,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }
@@ -53,13 +53,13 @@ fun MiddleEllipsisText() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             "hello ".repeat(50),
             modifier = Modifier.width(200.dp),
             maxLines = 1,
-            overflow = TextOverflow.MiddleEllipsis
+            overflow = TextOverflow.MiddleEllipsis,
         )
     }
 }
@@ -70,13 +70,13 @@ fun StartEllipsisText() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             "hello ".repeat(50),
             modifier = Modifier.width(100.dp),
             maxLines = 1,
-            overflow = TextOverflow.StartEllipsis
+            overflow = TextOverflow.StartEllipsis,
         )
     }
 }
@@ -87,19 +87,20 @@ fun ClipText() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             text = "This is a very long text that will be clipped if it exceeds the container's width.",
-            modifier = Modifier
+            modifier =
+            Modifier
                 .width(200.dp)
                 .border(
                     1.dp,
                     Color(0xFF8B77B6),
-                    RectangleShape
+                    RectangleShape,
                 ),
             maxLines = 1,
-            overflow = TextOverflow.Clip
+            overflow = TextOverflow.Clip,
         )
     }
 }

@@ -14,57 +14,54 @@ import kotlin.apply
 import kotlin.jvm.java
 
 object ProviderEndpointClient {
-
     inline fun <reified T> createService(
         url: String,
         converterFactory: Converter.Factory = GsonConverterFactory.create(),
-        createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient
-    ): T {
-        return Retrofit.Builder()
+        createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient,
+    ): T =
+        Retrofit
+            .Builder()
             .baseUrl(url)
             .client(createOkHttpClient())
             .addConverterFactory(converterFactory)
             .build()
             .create(T::class.java)
-    }
 
     inline fun <reified T> createCompatRxJava2Service(
         url: String,
         converterFactory: Converter.Factory = GsonConverterFactory.create(),
-        createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient
-    ): T {
-        return Retrofit.Builder()
+        createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient,
+    ): T =
+        Retrofit
+            .Builder()
             .baseUrl(url)
             .client(createOkHttpClient())
             .addConverterFactory(converterFactory)
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
             .create(T::class.java)
-    }
-
 
     inline fun <reified T> createReactiveService(
         url: String,
         converterFactory: Converter.Factory = GsonConverterFactory.create(),
-        createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient
-    ): T {
-        return Retrofit.Builder()
+        createOkHttpClient: () -> OkHttpClient = ::createOkHttpClient,
+    ): T =
+        Retrofit
+            .Builder()
             .baseUrl(url)
             .client(createOkHttpClient())
             .addConverterFactory(converterFactory)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .build()
             .create(T::class.java)
-    }
 
-    fun createClientHandlerCookie(): OkHttpClient {
-        return createOkHttpClientBuilderHandlerCookie().build()
-    }
+    fun createClientHandlerCookie(): OkHttpClient = createOkHttpClientBuilderHandlerCookie().build()
 
     fun createOkHttpClientBuilderHandlerCookie(): OkHttpClient.Builder {
         val cookieHandler = CookieManager()
         val builder = OkHttpClient.Builder()
-        builder.cookieJar(JavaNetCookieJar(cookieHandler))
+        builder
+            .cookieJar(JavaNetCookieJar(cookieHandler))
             .connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(10, TimeUnit.SECONDS)
             .readTimeout(30, TimeUnit.SECONDS)
@@ -74,23 +71,23 @@ object ProviderEndpointClient {
         return builder
     }
 
-    fun createOkHttpClient(): OkHttpClient {
-        return OkHttpClient.Builder().apply {
-            val logging = HttpLoggingInterceptor()
-            if (BuildConfig.DEBUG) {
-                logging.setLevel(HttpLoggingInterceptor.Level.BODY)
-                addInterceptor(logging)
-            }
-        }.build()
-    }
+    fun createOkHttpClient(): OkHttpClient =
+        OkHttpClient
+            .Builder()
+            .apply {
+                val logging = HttpLoggingInterceptor()
+                if (BuildConfig.DEBUG) {
+                    logging.setLevel(HttpLoggingInterceptor.Level.BODY)
+                    addInterceptor(logging)
+                }
+            }.build()
 
-    fun createOkHttpClientBuilder(): OkHttpClient.Builder {
-        return OkHttpClient.Builder().apply {
+    fun createOkHttpClientBuilder(): OkHttpClient.Builder =
+        OkHttpClient.Builder().apply {
             if (BuildConfig.DEBUG) {
                 val logging = HttpLoggingInterceptor()
                 logging.setLevel(HttpLoggingInterceptor.Level.BODY)
                 addInterceptor(logging)
             }
         }
-    }
 }

@@ -32,14 +32,14 @@ fun FragmentScreen(
     modifier: Modifier = Modifier,
     clazz: Class<out Fragment>,
     arguments: Bundle,
-    callback: (Fragment) -> Unit
+    callback: (Fragment) -> Unit,
 ) {
     Column(modifier = modifier) {
         Text("Above Content Fragment")
 
         AndroidFragment(
             clazz = clazz,
-            arguments = arguments
+            arguments = arguments,
         ) { fragment ->
             callback(fragment)
         }
@@ -53,11 +53,12 @@ fun FragmentScreen(
 fun FragmentScreenExample() {
     JustComposeLabsTheme {
         FragmentScreen(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .statusBarsPadding()
                 .systemBarsPadding(),
             clazz = InteroperabilityComposeFragment::class.java,
-            arguments = Bundle.EMPTY
+            arguments = Bundle.EMPTY,
         ) { fragment ->
         }
     }

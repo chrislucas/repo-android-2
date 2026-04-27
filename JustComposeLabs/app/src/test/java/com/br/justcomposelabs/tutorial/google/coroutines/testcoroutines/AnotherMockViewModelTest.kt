@@ -15,10 +15,8 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-
 @OptIn(ExperimentalCoroutinesApi::class)
 class AnotherMockViewModelTest {
-
     private val viewModel = AnotherMockViewModel()
 
     @Before
@@ -38,10 +36,10 @@ class AnotherMockViewModelTest {
         Dispatchers.resetMain()
     }
 
-
     @Test
-    fun `given a ViewModel when call register Then it state should change from false to true`() = runTest {
-        assertFalse { viewModel.state.value }
+    fun `given a ViewModel when call register Then it state should change from false to true`() =
+        runTest {
+            assertFalse { viewModel.state.value }
         /*
             A funcao register lanca uma coroutines e finaliza imediatamente, o teste
             nao vai conseguir validar o estado da variavel state pq o metodo test nao espera a exeucao
@@ -52,14 +50,14 @@ class AnotherMockViewModelTest {
                 - podemos passar uma instancia de StandardTestDispatcher como argumento de runTest
 
          */
-        viewModel.register()
+            viewModel.register()
         /*
             Essa fnucao executa a coroutine que ainda nao foi executada
             Se tivermos mais de uma coroutine lancada, precisamos chamar esse metodo
             a quantidade de vezes necessarias para executar todas elas
          */
-        runCurrent()
-        assertTrue { viewModel.state.value }
+            runCurrent()
+            assertTrue { viewModel.state.value }
         /*
             O metodo register possui uma exeucao de um delay para simular uma operacao demorada,
             a funcao runCurrent executa a corouutine que foi lancada mais nao executada, mas
@@ -68,14 +66,14 @@ class AnotherMockViewModelTest {
             A funcao advanceUntilIdle adianta/pula essa execucao para nao ter que esperar para executar
             a assercao
          */
-        advanceUntilIdle()
-        assertFalse { viewModel.state.value }
-    }
-
+            advanceUntilIdle()
+            assertFalse { viewModel.state.value }
+        }
 
     @Test
-    fun `given a ViewModel when call register and advanced the time Then it state should change from false to true`() = runTest {
-        assertFalse { viewModel.state.value }
+    fun `given a ViewModel when call register and advanced the time Then it state should change from false to true`() =
+        runTest {
+            assertFalse { viewModel.state.value }
         /*
             A funcao register lanca uma coroutines e finaliza imediatamente, o teste
             nao vai conseguir validar o estado da variavel state pq o metodo test nao espera a exeucao
@@ -86,14 +84,14 @@ class AnotherMockViewModelTest {
                 - podemos passar uma instancia de StandardTestDispatcher como argumento de runTest
 
          */
-        viewModel.register()
+            viewModel.register()
         /*
             Essa fnucao executa a coroutine que ainda nao foi executada
             Se tivermos mais de uma coroutine lancada, precisamos chamar esse metodo
             a quantidade de vezes necessarias para executar todas elas
          */
-        runCurrent()
-        assertTrue { viewModel.state.value }
+            runCurrent()
+            assertTrue { viewModel.state.value }
         /*
             O metodo register possui uma exeucao de um delay para simular uma operacao demorada,
             a funcao runCurrent executa a corouutine que foi lancada mais nao executada, mas
@@ -102,8 +100,7 @@ class AnotherMockViewModelTest {
             A funcao advanceUntilIdle adianta/pula essa execucao para nao ter que esperar para executar
             a assercao
          */
-        advanceTimeBy(1000L)
-        assertFalse { viewModel.state.value }
-    }
-
+            advanceTimeBy(1000L)
+            assertFalse { viewModel.state.value }
+        }
 }

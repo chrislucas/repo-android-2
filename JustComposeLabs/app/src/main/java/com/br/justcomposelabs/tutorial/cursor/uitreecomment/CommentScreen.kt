@@ -18,7 +18,7 @@ fun CommentScreen() {
             comments = comments,
             onAddComment = { parent, author, content ->
                 viewModel.addComment(parent, author, content)
-            }
+            },
         )
     }
 }

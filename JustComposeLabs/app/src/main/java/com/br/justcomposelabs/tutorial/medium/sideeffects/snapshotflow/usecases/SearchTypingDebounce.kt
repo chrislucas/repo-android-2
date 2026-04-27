@@ -58,12 +58,12 @@ interface SpellCheckerCallback {
 
 data class SpellCheckResult(
     val offset: Int,
-    val suggestions: List<String>
+    val suggestions: List<String>,
 )
 
 data class SpellCheckResultWithoutSuggestion(
     val offset: Int,
-    val length: Int
+    val length: Int,
 ) {
     val realLength: Int
         get() = offset + length
@@ -72,21 +72,22 @@ data class SpellCheckResultWithoutSuggestion(
 class SpellCheckerImpl(
     context: Context,
     private val onResultWithSuggestion: (List<SpellCheckResult>) -> Unit,
-    private val onResultWithoutSuggestion: (List<SpellCheckResultWithoutSuggestion>) -> Unit
-) : SpellCheckerSession.SpellCheckerSessionListener, SpellCheckerCallback {
-
+    private val onResultWithoutSuggestion: (List<SpellCheckResultWithoutSuggestion>) -> Unit,
+) : SpellCheckerSession.SpellCheckerSessionListener,
+    SpellCheckerCallback {
     /*
         https://share.google/aimode/kfe6Kr9elM6jwiWP1
      */
 
     private val textServiceManager =
         context.getSystemService(Context.TEXT_SERVICES_MANAGER_SERVICE) as TextServicesManager
-    private val spellCheckerSession: SpellCheckerSession? = textServiceManager.newSpellCheckerSession(
-        null,
-        null,
-        this,
-        true
-    )
+    private val spellCheckerSession: SpellCheckerSession? =
+        textServiceManager.newSpellCheckerSession(
+            null,
+            null,
+            this,
+            true,
+        )
 
     // Handler para garantir que os callbacks voltem para a Main Thread
     private val mainHandler = Handler(Looper.getMainLooper())
@@ -109,14 +110,16 @@ class SpellCheckerImpl(
                     val flags = suggestionsInfo.suggestionsAttributes
 
                     // 2. FILTRO IMPORTANTE: Verifica se a API realmente identificou como erro
-                    val isTypo = (flags and SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO) != 0 ||
-                        (flags and SuggestionsInfo.RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS) != 0
+                    val isTypo =
+                        (flags and SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO) != 0 ||
+                            (flags and SuggestionsInfo.RESULT_ATTR_HAS_RECOMMENDED_SUGGESTIONS) != 0
 
                     if (isTypo) {
                         if (suggestionsInfo.suggestionsCount > 0) {
-                            val suggestions = (0 until suggestionsInfo.suggestionsCount).mapNotNull { index ->
-                                suggestionsInfo.getSuggestionAt(index)
-                            }
+                            val suggestions =
+                                (0 until suggestionsInfo.suggestionsCount).mapNotNull { index ->
+                                    suggestionsInfo.getSuggestionAt(index)
+                                }
                             errorsWithSuggestions.add(SpellCheckResult(info.getOffsetAt(i), suggestions))
                         } else {
                             val offset = info.getOffsetAt(i)
@@ -142,9 +145,10 @@ class SpellCheckerImpl(
                 val isType = (info.suggestionsAttributes and SuggestionsInfo.RESULT_ATTR_LOOKS_LIKE_TYPO) != 0
 
                 if (isType) {
-                    val suggestions = (0 until info.suggestionsCount).mapNotNull { index ->
-                        info.getSuggestionAt(index)
-                    }
+                    val suggestions =
+                        (0 until info.suggestionsCount).mapNotNull { index ->
+                            info.getSuggestionAt(index)
+                        }
                     errorsWithSuggestions.add(SpellCheckResult(-1, suggestions))
                 }
             }
@@ -158,9 +162,8 @@ class SpellCheckerImpl(
 
 class SearchViewModel(
     private val callback: SpellCheckerCallback,
-    private val contextDispatcher: CoroutineDispatcher = Dispatchers.Main
+    private val contextDispatcher: CoroutineDispatcher = Dispatchers.Main,
 ) : ViewModel() {
-
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
 
@@ -205,14 +208,12 @@ class SearchViewModel(
     }
 
     companion object {
-
-        fun create(callback: SpellCheckerCallback): ViewModelProvider.Factory {
-            return viewModelFactory {
+        fun create(callback: SpellCheckerCallback): ViewModelProvider.Factory =
+            viewModelFactory {
                 initializer {
                     SearchViewModel(callback)
                 }
             }
-        }
     }
 }
 
@@ -220,23 +221,25 @@ class SearchViewModel(
 @OptIn(FlowPreview::class)
 @Composable
 fun SearchScreen(
-    viewModel: SearchViewModel = viewModel(
-        factory = SearchViewModel.create(
-            SpellCheckerImpl(
-                context = LocalContext.current,
-                onResultWithSuggestion = { results ->
-                    Timber.tag("SpellChecker").d(
-                        "Errors with suggestions: $results"
-                    )
-                },
-                onResultWithoutSuggestion = { results ->
-                    Timber.tag("SpellChecker").d(
-                        "Errors without suggestions: $results"
-                    )
-                }
-            )
-        )
-    )
+    viewModel: SearchViewModel =
+        viewModel(
+            factory =
+            SearchViewModel.create(
+                SpellCheckerImpl(
+                    context = LocalContext.current,
+                    onResultWithSuggestion = { results ->
+                        Timber.tag("SpellChecker").d(
+                            "Errors with suggestions: $results",
+                        )
+                    },
+                    onResultWithoutSuggestion = { results ->
+                        Timber.tag("SpellChecker").d(
+                            "Errors without suggestions: $results",
+                        )
+                    },
+                ),
+            ),
+        ),
 ) {
     val searchQuery by viewModel.searchQuery.collectAsStateWithLifecycle()
 
@@ -257,36 +260,42 @@ fun SearchScreen(
 
     SearchContent(
         currentQuery = searchQuery,
-        onQueryChange = viewModel::onSearchQueryChanged
+        onQueryChange = viewModel::onSearchQueryChanged,
     )
 }
 
 @Composable
-fun SearchContent(currentQuery: String, onQueryChange: (String) -> Unit) {
+fun SearchContent(
+    currentQuery: String,
+    onQueryChange: (String) -> Unit,
+) {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .statusBarsPadding()
             .navigationBarsPadding()
             .systemBarsPadding()
             .padding(6.dp)
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             text = "Query=$currentQuery",
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(bottom = 8.dp)
                 .fillMaxWidth(),
-            style = MaterialTheme.typography.headlineMedium
+            style = MaterialTheme.typography.headlineMedium,
         )
         TextField(
             value = currentQuery,
             onValueChange = onQueryChange,
             label = { Text("Search") },
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(bottom = 8.dp)
-                .fillMaxWidth()
+                .fillMaxWidth(),
         )
     }
 }

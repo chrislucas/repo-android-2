@@ -12,24 +12,25 @@ import com.br.justcomposelabs.tutorial.google.compose.uitesting.rallyproject.ui.
 
 enum class RallyScreen(
     val icon: ImageVector,
-    private val body: @Composable ((RallyScreen) -> Unit) -> Unit
+    private val body: @Composable ((RallyScreen) -> Unit) -> Unit,
 ) {
     Overview(
         icon = Icons.Filled.PieChart,
         body = { onScreenChange ->
             OverviewBody(onScreenChange)
-        }
+        },
     ),
 
     Accounts(
         icon = Icons.Filled.AttachMoney,
-        body = { AccountsBody(UserData.accounts) }
+        body = { AccountsBody(UserData.accounts) },
     ),
 
     Bills(
         icon = Icons.Filled.AttachMoney,
-        body = { BillsBody(UserData.bills) }
-    );
+        body = { BillsBody(UserData.bills) },
+    ),
+    ;
 
     @Composable
     fun Content(onScreenChange: (RallyScreen) -> Unit) {

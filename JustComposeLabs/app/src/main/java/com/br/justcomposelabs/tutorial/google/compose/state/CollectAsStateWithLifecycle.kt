@@ -39,26 +39,30 @@ class ClockViewModelFlow : ViewModel() {
     /**
      * @see com.br.justcomposelabs.tutorial.medium.timerflowtype.TimerWithFlowTypesActivity
      */
-    val clock = flow {
-        while (true) {
-            emit(currentHour())
-            delay(1000L)
+    val clock =
+        flow {
+            while (true) {
+                emit(currentHour())
+                delay(1000L)
+            }
         }
-    }
 
     private fun currentHour() = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
 }
 
-data class ClockUiState(val currentTime: String = "--:--:--")
+data class ClockUiState(
+    val currentTime: String = "--:--:--",
+)
 
 class ClockViewModelFlowImproved : ViewModel() {
     // Assuming 'clock' is a Flow<String> that emits the time
-    private val clock: Flow<String> = flow {
-        while (true) {
-            emit(currentHour())
-            delay(1000L)
+    private val clock: Flow<String> =
+        flow {
+            while (true) {
+                emit(currentHour())
+                delay(1000L)
+            }
         }
-    }
 
     private val _uiState = MutableStateFlow(ClockUiState())
     val uiState: StateFlow<ClockUiState> = _uiState.asStateFlow()
@@ -91,7 +95,7 @@ private fun ClockScreenPreview() {
 @Composable
 fun ClockScreenImproved(viewModel: ClockViewModelFlowImproved = viewModel()) {
     val currentHour by viewModel.uiState.collectAsStateWithLifecycle(
-        ClockUiState()
+        ClockUiState(),
     )
     /**
      * @see com.br.justcomposelabs.tutorial.google.compose.basics.lifecycle
@@ -123,19 +127,20 @@ private fun ClockScreenImprovedPreview() {
 @Composable
 fun ClockCard(currentHour: String = "--:--:--") {
     Surface(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .padding(10.dp),
         shape = MaterialTheme.shapes.medium,
-        tonalElevation = 1.dp
+        tonalElevation = 1.dp,
     ) {
         Box(
             modifier = Modifier.padding(16.dp),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             Text(
                 text = currentHour,
-                style = MaterialTheme.typography.headlineLarge
+                style = MaterialTheme.typography.headlineLarge,
             )
         }
     }

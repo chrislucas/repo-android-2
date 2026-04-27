@@ -63,7 +63,7 @@ fun AnimatedBox() {
     val alpha: Float by animateFloatAsState(
         targetValue = if (isVisible.value) 1f else 0f,
         animationSpec = tween(durationMillis = 1000),
-        label = "alphaAnimation"
+        label = "alphaAnimation",
     )
 
     LaunchedEffect(isVisible) {
@@ -73,17 +73,18 @@ fun AnimatedBox() {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(100.dp)
                 .alpha(alpha),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             Text(
                 "Hello!",
-                fontSize = TextUnit(34f, TextUnitType.Sp)
+                fontSize = TextUnit(34f, TextUnitType.Sp),
             )
         }
 

@@ -13,13 +13,14 @@ import kotlinx.coroutines.flow.flow
     It is primarily used to prevent "double-clicks" or rapid event bursts in UI programming
  */
 
-fun <T> Flow<T>.throttleFirst(windowDuration: Long): Flow<T> = flow {
-    var lastEmissionTime = 0L
-    collect { value ->
-        val currentTime = System.currentTimeMillis()
-        if (currentTime - lastEmissionTime >= windowDuration) {
-            lastEmissionTime = currentTime
-            emit(value)
+fun <T> Flow<T>.throttleFirst(windowDuration: Long): Flow<T> =
+    flow {
+        var lastEmissionTime = 0L
+        collect { value ->
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastEmissionTime >= windowDuration) {
+                lastEmissionTime = currentTime
+                emit(value)
+            }
         }
     }
-}

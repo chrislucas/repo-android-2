@@ -24,25 +24,27 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Composable
 internal fun AlertItem(message: String) {
     Row(
-        modifier = Modifier.Companion
+        modifier =
+        Modifier.Companion
             .padding(RallyDefaultPadding)
             // Regard the whole row as one semantics node. This way each row will receive focus as
             // a whole and the focus bounds will be around the whole row content. The semantics
             // properties of the descendants will be merged. If we'd use clearAndSetSemantics instead,
             // we'd have to define the semantics properties explicitly.
             .semantics(mergeDescendants = true) {},
-        horizontalArrangement = Arrangement.SpaceBetween
+        horizontalArrangement = Arrangement.SpaceBetween,
     ) {
         Text(
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier.Companion.weight(1f),
-            text = message
+            text = message,
         )
         IconButton(
             onClick = {},
-            modifier = Modifier.Companion
+            modifier =
+            Modifier.Companion
                 .align(Alignment.Companion.Top)
-                .clearAndSetSemantics {}
+                .clearAndSetSemantics {},
         ) {
             Icon(Icons.AutoMirrored.Filled.Sort, contentDescription = null)
         }
@@ -54,13 +56,14 @@ internal fun AlertItem(message: String) {
 fun AlertItemPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             AlertItem(
-                message = "Heads up, you've used up 90% of your Shopping budget for this month."
+                message = "Heads up, you've used up 90% of your Shopping budget for this month.",
             )
         }
     }

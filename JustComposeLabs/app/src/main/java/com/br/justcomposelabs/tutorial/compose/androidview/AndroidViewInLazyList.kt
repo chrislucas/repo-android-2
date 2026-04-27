@@ -29,7 +29,7 @@ fun AndroidViewBindingInLazyList() {
                 modifier = Modifier,
                 update = {
                     tvSampleText.text = "$it"
-                }
+                },
             )
         }
     }
@@ -49,7 +49,8 @@ fun AndroidViewInLazyList() {
     LazyColumn(modifier = Modifier.statusBarsPadding()) {
         items(10) { count ->
             AndroidView(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(2.dp)
                     .fillMaxWidth()
                     .wrapContentHeight(),
@@ -61,7 +62,7 @@ fun AndroidViewInLazyList() {
                 },
                 onReset = {
                     it.content = ""
-                }
+                },
             )
         }
     }

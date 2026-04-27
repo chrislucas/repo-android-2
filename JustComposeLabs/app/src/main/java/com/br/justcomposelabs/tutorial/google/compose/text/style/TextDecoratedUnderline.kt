@@ -26,19 +26,21 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun TextDecoratedUnderline() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(Color.Black),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Text with Underline Decoration",
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.White,
                 fontSize = 23.sp,
                 fontStyle = FontStyle.Italic,
                 textDecoration = TextDecoration.Underline,
-                fontSynthesis = FontSynthesis.All
+                fontSynthesis = FontSynthesis.All,
             ),
             textAlign = TextAlign.Center,
         )
@@ -49,42 +51,47 @@ fun TextDecoratedUnderline() {
 @Composable
 fun TextDecoratedUnderlineSpecificWords() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(Color.Black),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
-            text = buildAnnotatedString {
+            text =
+            buildAnnotatedString {
                 withStyle(
-                    style = SpanStyle(
+                    style =
+                    SpanStyle(
                         color = Color.White,
                         fontSize = 23.sp,
                         fontStyle = FontStyle.Italic,
-                    )
+                    ),
                 ) {
                     append("Text with ")
                 }
                 withStyle(
-                    style = SpanStyle(
+                    style =
+                    SpanStyle(
                         color = Color.White,
                         fontSize = 23.sp,
                         fontStyle = FontStyle.Italic,
                         textDecoration = TextDecoration.Underline,
-                        fontSynthesis = FontSynthesis.All
-                    )
+                        fontSynthesis = FontSynthesis.All,
+                    ),
                 ) {
                     append("Underline Decoration")
                 }
                 withStyle(
-                    style = SpanStyle(
+                    style =
+                    SpanStyle(
                         color = Color.White,
                         fontSize = 23.sp,
                         fontStyle = FontStyle.Italic,
-                    )
+                    ),
                 ) {
                     append(
-                        "on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped."
+                        "on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped.",
                     )
                 }
             },
@@ -92,7 +99,7 @@ fun TextDecoratedUnderlineSpecificWords() {
             lineHeight = 30.sp,
             minLines = 1,
             maxLines = 4,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }
@@ -101,24 +108,26 @@ fun TextDecoratedUnderlineSpecificWords() {
 @Composable
 fun TextDecoratedUnderlineWithOverflow() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(Color.Black),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Text with Underline Decoration and Overflow Handling. This text is intentionally long to demonstrate how the Text composable handles overflow when the text exceeds the available space. The text should be truncated with an ellipsis at the end.",
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.White,
                 fontSize = 23.sp,
                 fontStyle = FontStyle.Italic,
                 textDecoration = TextDecoration.Underline,
-                fontSynthesis = FontSynthesis.All
+                fontSynthesis = FontSynthesis.All,
             ),
             textAlign = TextAlign.Center,
             lineHeight = 30.sp,
             maxLines = 3,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }
@@ -127,24 +136,27 @@ fun TextDecoratedUnderlineWithOverflow() {
 @Composable
 fun TextCombiningDecorationUnderAndLineThrough() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(Color.Black),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Text with Underline and LineThrough Decoration",
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.White,
                 fontSize = 23.sp,
                 fontStyle = FontStyle.Italic,
-                textDecoration = TextDecoration.combine(
+                textDecoration =
+                TextDecoration.combine(
                     listOf(
                         TextDecoration.Underline,
-                        TextDecoration.LineThrough
-                    )
+                        TextDecoration.LineThrough,
+                    ),
                 ),
-                fontSynthesis = FontSynthesis.All
+                fontSynthesis = FontSynthesis.All,
             ),
             textAlign = TextAlign.Center,
         )
@@ -155,47 +167,53 @@ fun TextCombiningDecorationUnderAndLineThrough() {
 @Composable
 fun TextCombiningDecorationUnderAndLineThroughSpecificWords() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(Color.Black),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
-            text = buildAnnotatedString {
+            text =
+            buildAnnotatedString {
                 withStyle(
-                    style = SpanStyle(
+                    style =
+                    SpanStyle(
                         color = Color.White,
                         fontSize = 23.sp,
                         fontStyle = FontStyle.Italic,
-                    )
+                    ),
                 ) {
                     append("Text with ")
                 }
                 withStyle(
-                    style = SpanStyle(
+                    style =
+                    SpanStyle(
                         color = Color.White,
                         fontSize = 23.sp,
                         fontStyle = FontStyle.Italic,
-                        textDecoration = TextDecoration.combine(
+                        textDecoration =
+                        TextDecoration.combine(
                             listOf(
                                 TextDecoration.Underline,
-                                TextDecoration.LineThrough
-                            )
+                                TextDecoration.LineThrough,
+                            ),
                         ),
-                        fontSynthesis = FontSynthesis.All
-                    )
+                        fontSynthesis = FontSynthesis.All,
+                    ),
                 ) {
                     append("Underline and LineThrough Decoration")
                 }
                 withStyle(
-                    style = SpanStyle(
+                    style =
+                    SpanStyle(
                         color = Color.White,
                         fontSize = 23.sp,
                         fontStyle = FontStyle.Italic,
-                    )
+                    ),
                 ) {
                     append(
-                        "on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped."
+                        "on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped.",
                     )
                 }
             },
@@ -203,7 +221,7 @@ fun TextCombiningDecorationUnderAndLineThroughSpecificWords() {
             lineHeight = 30.sp,
             minLines = 1,
             maxLines = 4,
-            overflow = TextOverflow.Ellipsis
+            overflow = TextOverflow.Ellipsis,
         )
     }
 }
@@ -212,14 +230,16 @@ fun TextCombiningDecorationUnderAndLineThroughSpecificWords() {
 @Composable
 fun TextDashedStyledUnderline() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .background(Color.Black),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Text with Dashed Underline Decoration",
-            style = TextStyle(
+            style =
+            TextStyle(
                 color = Color.White,
                 fontSize = 23.sp,
                 fontStyle = FontStyle.Italic,
@@ -227,10 +247,10 @@ fun TextDashedStyledUnderline() {
                     // Dashed underline is not directly supported,
                     but you can customize it with a custom TextDecoration implementation if needed.
                  */
-
             ),
             textAlign = TextAlign.Center,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .drawBehind {
                     val strokeWidth = 4f
                     val dashLength = 10f
@@ -242,11 +262,11 @@ fun TextDashedStyledUnderline() {
                             color = Color.White,
                             start = Offset(currentLength, size.height),
                             end = Offset(currentLength + dashLength, size.height),
-                            strokeWidth = strokeWidth
+                            strokeWidth = strokeWidth,
                         )
                         currentLength += totalLength
                     }
-                }
+                },
         )
     }
 }

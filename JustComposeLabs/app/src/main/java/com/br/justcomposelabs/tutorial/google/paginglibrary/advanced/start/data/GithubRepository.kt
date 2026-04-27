@@ -11,8 +11,7 @@ private const val GITHUB_STARTING_PAGE_INDEX = 1
 /**
  * Repository class that works with local and remote data sources.
  */
-class GithubRepository() {
-
+class GithubRepository {
     companion object {
         const val NETWORK_PAGE_SIZE = 30
     }

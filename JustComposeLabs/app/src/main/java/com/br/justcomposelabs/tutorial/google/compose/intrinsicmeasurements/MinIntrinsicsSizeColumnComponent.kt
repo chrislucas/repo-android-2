@@ -18,15 +18,16 @@ import androidx.compose.ui.unit.dp
 fun MinIntrinsicColumnSizeUndesiredResultComponent(
     modifier: Modifier = Modifier,
     first: String,
-    second: String
+    second: String,
 ) {
     Column(modifier.systemBarsPadding()) {
         Text(
             first,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .padding(start = 4.dp),
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
         )
         /*
         VerticalDivider(
@@ -39,10 +40,11 @@ fun MinIntrinsicColumnSizeUndesiredResultComponent(
          */
         Text(
             second,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .padding(end = 4.dp),
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Start,
         )
     }
 }

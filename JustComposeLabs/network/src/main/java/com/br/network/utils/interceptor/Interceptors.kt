@@ -8,11 +8,12 @@ import okhttp3.Request
 import okhttp3.Response
 import java.util.concurrent.TimeUnit
 
-
 /*
     https://stackoverflow.com/questions/63130930/retrofit-interface-how-to-add-cookies-to-store-data
  */
-class RequestInterceptor(private val callback: (Request) -> Unit) : Interceptor {
+class RequestInterceptor(
+    private val callback: (Request) -> Unit,
+) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val builder: Request.Builder = chain.request().newBuilder()
         val original: Request = chain.request()
@@ -21,7 +22,9 @@ class RequestInterceptor(private val callback: (Request) -> Unit) : Interceptor 
     }
 }
 
-class ResponseInterceptor(private val callback: (Response) -> Unit) : Interceptor {
+class ResponseInterceptor(
+    private val callback: (Response) -> Unit,
+) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalResponse: Response = chain.proceed(chain.request())
         callback(originalResponse)
@@ -33,18 +36,24 @@ class ResponseInterceptor(private val callback: (Response) -> Unit) : Intercepto
     caching responses retrofit
  */
 
-val cacheInterceptor = Interceptor { chain ->
-    val response = chain.proceed(chain.request())
-    val cacheControl = CacheControl.Builder()
-        .maxAge(5, TimeUnit.MINUTES)
-        .build()
+val cacheInterceptor =
+    Interceptor { chain ->
+        val response = chain.proceed(chain.request())
+        val cacheControl =
+            CacheControl
+                .Builder()
+                .maxAge(5, TimeUnit.MINUTES)
+                .build()
 
-    response.newBuilder()
-        .header("Cache-Control", cacheControl.toString())
-        .build()
-}
+        response
+            .newBuilder()
+            .header("Cache-Control", cacheControl.toString())
+            .build()
+    }
 
-val okHttpClient = OkHttpClient.Builder()
-    .addNetworkInterceptor(cacheInterceptor)
-    //.cache(Cache())
-    .build()
+val okHttpClient =
+    OkHttpClient
+        .Builder()
+        .addNetworkInterceptor(cacheInterceptor)
+        // .cache(Cache())
+        .build()

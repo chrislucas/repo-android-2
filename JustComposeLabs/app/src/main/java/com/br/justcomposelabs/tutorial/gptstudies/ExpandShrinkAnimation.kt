@@ -17,36 +17,41 @@ fun ExpandShrinkAnimation() {
     val scale by infiniteTransition.animateFloat(
         initialValue = 1f,
         targetValue = 2f,
-        animationSpec = infiniteRepeatable(
+        animationSpec =
+        infiniteRepeatable(
             animation = tween(durationMillis = 2000, easing = LinearEasing),
-            repeatMode = RepeatMode.Reverse
-        )
+            repeatMode = RepeatMode.Reverse,
+        ),
     )
 
     // Use the animated scale inside a Column
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .padding(16.dp)
-            .size(100.dp * scale)
+            .size(100.dp * scale),
     ) {
         // Inside the Column, place a Row that also scales
         Row(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .padding(8.dp),
             horizontalArrangement = Arrangement.Center,
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .size(20.dp * scale)
-                    .background(MaterialTheme.colorScheme.primary)
+                    .background(MaterialTheme.colorScheme.primary),
             )
             Spacer(modifier = Modifier.width(8.dp))
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .size(20.dp * scale)
-                    .background(MaterialTheme.colorScheme.secondary)
+                    .background(MaterialTheme.colorScheme.secondary),
             )
         }
     }

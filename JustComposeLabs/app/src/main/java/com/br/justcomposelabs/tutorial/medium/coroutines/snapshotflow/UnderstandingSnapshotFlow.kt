@@ -24,7 +24,9 @@ interface SearchRepository {
     fun performSearch(query: String)
 }
 
-class QueryViewModel(private val searchRepository: SearchRepository) : ViewModel() {
+class QueryViewModel(
+    private val searchRepository: SearchRepository,
+) : ViewModel() {
     val observableQueryState = MutableStateFlow("")
 
     val queryState: StateFlow<String> = observableQueryState

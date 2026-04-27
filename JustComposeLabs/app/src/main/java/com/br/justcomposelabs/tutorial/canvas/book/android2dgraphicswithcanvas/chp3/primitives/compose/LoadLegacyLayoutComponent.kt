@@ -14,7 +14,10 @@ import com.br.justcomposelabs.R
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
 @Composable
-fun LoadLegacyLayoutComponent(@LayoutRes layoutId: Int, modifier: Modifier) {
+fun LoadLegacyLayoutComponent(
+    @LayoutRes layoutId: Int,
+    modifier: Modifier,
+) {
     AndroidView(
         factory = { context ->
             /*
@@ -26,7 +29,7 @@ fun LoadLegacyLayoutComponent(@LayoutRes layoutId: Int, modifier: Modifier) {
         update = {
             it.invalidate()
         },
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
@@ -36,9 +39,10 @@ private fun LoadLegacyLayoutComponentPreview() {
     JustComposeLabsTheme {
         LoadLegacyLayoutComponent(
             R.layout.layout_custom_view_overlay,
-            Modifier.fillMaxSize()
+            Modifier
+                .fillMaxSize()
                 .navigationBarsPadding()
-                .systemBarsPadding()
+                .systemBarsPadding(),
         )
     }
 }

@@ -20,7 +20,7 @@ fun BillsBody(bills: List<Bill>) {
         circleLabel = stringResource(R.string.due),
         rows = { bill ->
             BillRow(bill.name, bill.due, bill.amount, bill.color)
-        }
+        },
     )
 }
 

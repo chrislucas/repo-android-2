@@ -12,17 +12,19 @@ import android.view.View
     https://share.google/aimode/XcJPiJkj55XKPuEQs
     https://share.google/aimode/KwY1GSB79bMvfjor7
  */
-class CubicBezierCurveView @JvmOverloads constructor(
+class CubicBezierCurveView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0
+    defStyle: Int = 0,
 ) : View(ctx, attrs, defStyle) {
-
     private val path = Path()
 
-    private val paintPath = Paint().apply {
-        color = Color.rgb(120, 10, 120)
-    }
+    private val paintPath =
+        Paint().apply {
+            color = Color.rgb(120, 10, 120)
+        }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
@@ -34,13 +36,18 @@ class CubicBezierCurveView @JvmOverloads constructor(
                 400f,
                 900f, // x2, y2: Segundo ponto de controle
                 600f,
-                500f // x3, y3: Ponto final
+                500f, // x3, y3: Ponto final
             )
             canvas.drawPath(path, paintPath)
         }
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
     }
 }

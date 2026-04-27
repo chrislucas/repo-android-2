@@ -31,14 +31,19 @@ import java.text.DecimalFormat
  * A row representing the basic information of an Account.
  */
 @Composable
-internal fun AccountRow(name: String, number: Int, amount: Float, color: Color) {
+internal fun AccountRow(
+    name: String,
+    number: Int,
+    amount: Float,
+    color: Color,
+) {
     val subtitle = "${stringResource(R.string.account_redacted)}${AccountDecimalFormat.format(number)}"
     BaseRow(
         color = color,
         title = name,
         subtitle = subtitle,
         amount = amount,
-        negative = false
+        negative = false,
     )
 }
 
@@ -46,13 +51,18 @@ internal fun AccountRow(name: String, number: Int, amount: Float, color: Color) 
  * A row representing the basic information of a Bill.
  */
 @Composable
-fun BillRow(name: String, due: String, amount: Float, color: Color) {
+fun BillRow(
+    name: String,
+    due: String,
+    amount: Float,
+    color: Color,
+) {
     BaseRow(
         color = color,
         title = name,
         subtitle = "Due $due",
         amount = amount,
-        negative = true
+        negative = true,
     )
 }
 
@@ -62,23 +72,24 @@ private fun BaseRow(
     title: String,
     subtitle: String,
     amount: Float,
-    negative: Boolean
+    negative: Boolean,
 ) {
     val dollarSign = if (negative) "–$ " else "$ "
     val formattedAmount = formatAmount(amount)
     Row(
-        modifier = Modifier
+        modifier =
+        Modifier
             .height(68.dp)
             .clearAndSetSemantics {
                 contentDescription =
                     "$title account ending in ${subtitle.takeLast(4)}, current balance $dollarSign$formattedAmount"
             },
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         val typography = MaterialTheme.typography
         AccountIndicator(
             color = color,
-            modifier = Modifier
+            modifier = Modifier,
         )
         Spacer(Modifier.width(12.dp))
         Column(Modifier) {
@@ -87,17 +98,17 @@ private fun BaseRow(
         }
         Spacer(Modifier.weight(1f))
         Row(
-            horizontalArrangement = Arrangement.SpaceBetween
+            horizontalArrangement = Arrangement.SpaceBetween,
         ) {
             Text(
                 text = dollarSign,
                 style = typography.headlineSmall,
-                modifier = Modifier.align(Alignment.CenterVertically)
+                modifier = Modifier.align(Alignment.CenterVertically),
             )
             Text(
                 text = formattedAmount,
                 style = typography.headlineSmall,
-                modifier = Modifier.align(Alignment.CenterVertically)
+                modifier = Modifier.align(Alignment.CenterVertically),
             )
         }
         Spacer(Modifier.width(16.dp))
@@ -105,10 +116,11 @@ private fun BaseRow(
         Icon(
             imageVector = Icons.Filled.ChevronRight,
             contentDescription = null,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(end = 12.dp)
                 .size(24.dp),
-            tint = Color.Gray
+            tint = Color.Gray,
         )
     }
     RallyDivider()
@@ -118,11 +130,14 @@ private fun BaseRow(
  * A vertical colored line that is used in a [BaseRow] to differentiate accounts.
  */
 @Composable
-private fun AccountIndicator(color: Color, modifier: Modifier = Modifier) {
+private fun AccountIndicator(
+    color: Color,
+    modifier: Modifier = Modifier,
+) {
     Spacer(
         modifier
             .size(4.dp, 36.dp)
-            .background(color = color)
+            .background(color = color),
     )
 }
 
@@ -153,7 +168,7 @@ fun AccountRowPreview() {
         name = "Checking",
         number = 1234,
         amount = 2500.25f,
-        color = Color(0xFF1F6B26)
+        color = Color(0xFF1F6B26),
     )
 }
 
@@ -164,7 +179,7 @@ fun BillRowPreview() {
         name = "Electric Bill",
         due = "Jan 29",
         amount = 115.50f,
-        color = Color(0xFF6DB6D6)
+        color = Color(0xFF6DB6D6),
     )
 }
 

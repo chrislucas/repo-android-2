@@ -28,13 +28,13 @@ internal fun AccountsCard(onScreenChange: (RallyScreen) -> Unit) {
         },
         data = UserData.accounts,
         colors = { it.color },
-        values = { it.balance }
+        values = { it.balance },
     ) { account ->
         AccountRow(
             name = account.name,
             number = account.number,
             amount = account.balance,
-            color = account.color
+            color = account.color,
         )
     }
 }
@@ -44,10 +44,11 @@ internal fun AccountsCard(onScreenChange: (RallyScreen) -> Unit) {
 fun AccountsCardPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             AccountsCard(onScreenChange = {})
         }

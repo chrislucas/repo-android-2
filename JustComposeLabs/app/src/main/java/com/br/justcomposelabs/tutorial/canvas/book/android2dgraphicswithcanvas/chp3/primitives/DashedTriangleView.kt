@@ -11,28 +11,31 @@ import android.view.View
 import com.br.justcomposelabs.R
 import kotlin.properties.Delegates
 
-class DashedTriangleView @JvmOverloads constructor(
+class DashedTriangleView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
-    private val paintDashedTriangle = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        style = Paint.Style.STROKE
-        /**
-         * @see DashPathEffect
-         * construtor
-         *  - intervals: um array de floats que especifica o comprimento dos traços em pixels.
-         *  Elementos nas posicoes pares especificam  a largura dos trácos  e impares a largura dos espaços
-         *  , a quantidade de elementos do array deve ser par.
-         *      - Exemplo: Um array new float[] {10, 5} criará um traço de 10 pixels seguido por um espaço de 5 pixels.
-         *  - phase: (Deslocamento)
-         *      - Representa o deslocamento
-         *  fonte alternativa: https://share.google/aimode/5Xq4xnCbxn6ZX2qt3
-         *
-         *
-         */
-        pathEffect = DashPathEffect(floatArrayOf(90f, 30f), 0f)
-    }
+    private val paintDashedTriangle =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            style = Paint.Style.STROKE
+            /**
+             * @see DashPathEffect
+             * construtor
+             *  - intervals: um array de floats que especifica o comprimento dos traços em pixels.
+             *  Elementos nas posicoes pares especificam  a largura dos trácos  e impares a largura dos espaços
+             *  , a quantidade de elementos do array deve ser par.
+             *      - Exemplo: Um array new float[] {10, 5} criará um traço de 10 pixels seguido por um espaço de 5 pixels.
+             *  - phase: (Deslocamento)
+             *      - Representa o deslocamento
+             *  fonte alternativa: https://share.google/aimode/5Xq4xnCbxn6ZX2qt3
+             *
+             *
+             */
+            pathEffect = DashPathEffect(floatArrayOf(90f, 30f), 0f)
+        }
 
     private val path = Path()
     private var scaleStrokeWidth: Float by Delegates.notNull()
@@ -45,27 +48,31 @@ class DashedTriangleView @JvmOverloads constructor(
 
     init {
         context.obtainStyledAttributes(attrs, R.styleable.DashedTriangleView).apply {
-            scaleStrokeWidth = getFloat(
-                R.styleable.DashedTriangleView_scaleStrokeWidth,
-                0.01f
-            )
-
-            join = Paint.Join.entries[
-                getInt(
-                    R.styleable.DashedTriangleView_joinStyle,
-                    Paint.Join.ROUND.ordinal
+            scaleStrokeWidth =
+                getFloat(
+                    R.styleable.DashedTriangleView_scaleStrokeWidth,
+                    0.01f,
                 )
-            ]
 
-            strokeWidthValue = getFloat(
-                R.styleable.DashedTriangleView_strokeWidthPaint,
-                15.0f
-            )
+            join =
+                Paint.Join.entries[
+                    getInt(
+                        R.styleable.DashedTriangleView_joinStyle,
+                        Paint.Join.ROUND.ordinal,
+                    ),
+                ]
 
-            lineColor = getColor(
-                R.styleable.DashedTriangleView_lineColor,
-                Color.rgb(130, 230, 110)
-            )
+            strokeWidthValue =
+                getFloat(
+                    R.styleable.DashedTriangleView_strokeWidthPaint,
+                    15.0f,
+                )
+
+            lineColor =
+                getColor(
+                    R.styleable.DashedTriangleView_lineColor,
+                    Color.rgb(130, 230, 110),
+                )
 
             recycle()
         }
@@ -76,7 +83,12 @@ class DashedTriangleView @JvmOverloads constructor(
         canvas.drawPath(path, paintDashedTriangle)
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
 
         paintDashedTriangle.run {

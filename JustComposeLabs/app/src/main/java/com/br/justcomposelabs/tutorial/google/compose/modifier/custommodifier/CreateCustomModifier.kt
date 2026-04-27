@@ -53,9 +53,12 @@ fun Modifier.customRoundedBackground(color: Color) =
         .background(color)
 
 @Composable
-fun Modifier.customShapedBackground(color: Color, shape: Shape) =
-    this.clip(shape)
-        .background(color)
+fun Modifier.customShapedBackground(
+    color: Color,
+    shape: Shape,
+) = this
+    .clip(shape)
+    .background(color)
 
 /*
     Create a custom modifier using a composable modifier factory
@@ -73,15 +76,16 @@ fun Modifier.fade(enable: Boolean): Modifier {
 @Composable
 private fun BoxFade() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .fade(true)
             .background(Color(255, 209, 128, 255)),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             text = "Central Text",
-            fontSize = TextUnit(24f, TextUnitType.Sp)
+            fontSize = TextUnit(24f, TextUnitType.Sp),
         )
     }
 }

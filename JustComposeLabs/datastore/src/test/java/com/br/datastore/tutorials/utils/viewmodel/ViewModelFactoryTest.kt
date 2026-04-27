@@ -3,7 +3,6 @@ package com.br.datastore.tutorials.utils.viewmodel
 import org.junit.Test
 
 class ViewModelFactoryTest {
-
     @Test
     fun `Create ViewModel with default constructor`() {
         // When argsToValues is empty, verify that the ViewModel is created using its no-argument constructor. [9]
@@ -87,5 +86,4 @@ class ViewModelFactoryTest {
         // Verify that the factory correctly maps argument types and values to the constructor parameters based on the order in the provided map. Note: Map iteration order is not guaranteed, so this might be tricky.
         // TODO implement test
     }
-
 }

@@ -13,7 +13,7 @@ import androidx.compose.ui.tooling.preview.Preview
 fun BoxWithIndividualAlignment() {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center // Default alignment (ignored by aligned children)
+        contentAlignment = Alignment.Center, // Default alignment (ignored by aligned children)
     ) {
         // This text uses the TopStart alignment
         Text("Top Start", Modifier.align(Alignment.TopStart))

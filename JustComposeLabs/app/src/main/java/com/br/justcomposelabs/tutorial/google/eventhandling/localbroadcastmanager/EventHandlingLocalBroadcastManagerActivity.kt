@@ -17,7 +17,6 @@ import timber.log.Timber
     https://kalpeshchandora12.medium.com/event-handling-with-localbroadcastmanager-android-b62ae5759b5e
  */
 class EventHandlingLocalBroadcastManagerActivity : AppCompatActivity() {
-
     private val broadcastEvent: BroadcastEvent by lazy {
         BroadcastEvent(this) { intent ->
             intent?.extras?.let { bundle ->
@@ -43,15 +42,16 @@ class EventHandlingLocalBroadcastManagerActivity : AppCompatActivity() {
                     systemBars.left,
                     systemBars.top,
                     systemBars.right,
-                    systemBars.bottom
+                    systemBars.bottom,
                 )
                 insets
             }
 
             mockSendExtras.setOnClickListener {
-                val bundle = Bundle().apply {
-                    putString(EXTRA_STRING, "hello world local broadcast receiver")
-                }
+                val bundle =
+                    Bundle().apply {
+                        putString(EXTRA_STRING, "hello world local broadcast receiver")
+                    }
                 broadcastEvent.sendEvent(ctx, bundle)
             }
         }
@@ -67,33 +67,44 @@ class EventHandlingLocalBroadcastManagerActivity : AppCompatActivity() {
     }
 }
 
-abstract class EventBroadcastManager(private val block: (Intent?) -> Unit) : BroadcastReceiver() {
-    override fun onReceive(context: Context?, intent: Intent?) {
+abstract class EventBroadcastManager(
+    private val block: (Intent?) -> Unit,
+) : BroadcastReceiver() {
+    override fun onReceive(
+        context: Context?,
+        intent: Intent?,
+    ) {
         context?.let { block(intent) }
     }
 }
 
-class BroadcastEvent(private val context: Context, block: (Intent?) -> Unit) :
-    EventBroadcastManager(block) {
+class BroadcastEvent(
+    private val context: Context,
+    block: (Intent?) -> Unit,
+) : EventBroadcastManager(block) {
     init {
         LocalBroadcastManager.getInstance(context).registerReceiver(
             this,
-            IntentFilter(ACTION)
+            IntentFilter(ACTION),
         )
     }
 
-    fun sendEvent(context: Context, bundle: Bundle) {
-        val data = Intent(ACTION).apply {
-            putExtra(EVENT_MOCK, "mock")
-            putExtras(bundle)
-        }
+    fun sendEvent(
+        context: Context,
+        bundle: Bundle,
+    ) {
+        val data =
+            Intent(ACTION).apply {
+                putExtra(EVENT_MOCK, "mock")
+                putExtras(bundle)
+            }
 
         LocalBroadcastManager.getInstance(context).sendBroadcast(data)
     }
 
     fun dispose() {
         LocalBroadcastManager.getInstance(context).unregisterReceiver(
-            this
+            this,
         )
 
         Timber.tag("EVENT_HANDLING").i("dispose")

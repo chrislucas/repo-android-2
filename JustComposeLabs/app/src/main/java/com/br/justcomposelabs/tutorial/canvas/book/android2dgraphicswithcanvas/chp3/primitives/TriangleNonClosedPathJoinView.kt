@@ -30,28 +30,31 @@ import kotlin.properties.Delegates
  * - Um arco preenchido que conecta 2 linhas, criando uma curva arredondada
  */
 
-class TriangleNonClosedPathJoinView @JvmOverloads constructor(
+class TriangleNonClosedPathJoinView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attrs, defStyleAttr) {
-
     private var joinStyle: Paint.Join by Delegates.notNull()
 
-    private val linePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = "#FF003432".toColorInt()
-        style = Paint.Style.STROKE
-        strokeCap = Cap.ROUND
-    }
+    private val linePaint =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = "#FF003432".toColorInt()
+            style = Paint.Style.STROKE
+            strokeCap = Cap.ROUND
+        }
 
     private val path = Path()
 
     init {
         context.withStyledAttributes(attrs, R.styleable.TriangleNonClosedPathJoinView) {
-            val joinStyleValue = getInt(
-                R.styleable.TriangleNonClosedPathJoinView_joinStyle,
-                Paint.Join.ROUND.ordinal
-            )
+            val joinStyleValue =
+                getInt(
+                    R.styleable.TriangleNonClosedPathJoinView_joinStyle,
+                    Paint.Join.ROUND.ordinal,
+                )
             joinStyle = Paint.Join.entries[joinStyleValue]
         }
 
@@ -65,7 +68,12 @@ class TriangleNonClosedPathJoinView @JvmOverloads constructor(
         canvas.drawPath(path, linePaint)
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         linePaint.strokeWidth = min(w, h) * .1f
         path.run {

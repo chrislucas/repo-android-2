@@ -13,6 +13,6 @@ fun DrawDashedTriangleView() {
     AndroidView(
         factory = { ctx -> DashedTriangleView(ctx) },
         update = { it.invalidate() },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

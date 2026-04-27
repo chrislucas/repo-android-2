@@ -18,9 +18,10 @@ import androidx.annotation.IntDef
  */
 fun Context.adjustFontSize(scale: Float): Context {
     // ✅ CORREÇÃO: Criar uma NOVA Configuration em vez de modificar a existente
-    val newConfiguration = Configuration(resources.configuration).apply {
-        fontScale = scale
-    }
+    val newConfiguration =
+        Configuration(resources.configuration).apply {
+            fontScale = scale
+        }
     return createConfigurationContext(newConfiguration)
 }
 
@@ -28,17 +29,20 @@ fun Context.adjustFontSize(scale: Float): Context {
     value = [
         Configuration.ORIENTATION_UNDEFINED,
         Configuration.ORIENTATION_PORTRAIT,
-        Configuration.ORIENTATION_LANDSCAPE
-    ]
+        Configuration.ORIENTATION_LANDSCAPE,
+    ],
 )
 @Retention(AnnotationRetention.SOURCE)
 annotation class Orientation
 
-fun Context.adjustOrientation(@Orientation orientation: Int): Context {
+fun Context.adjustOrientation(
+    @Orientation orientation: Int,
+): Context {
     // ✅ CORREÇÃO: Criar uma NOVA Configuration em vez de modificar a existente
-    val newConfiguration = Configuration(resources.configuration).apply {
-        this.orientation = orientation
-    }
+    val newConfiguration =
+        Configuration(resources.configuration).apply {
+            this.orientation = orientation
+        }
     return createConfigurationContext(newConfiguration)
 }
 
@@ -47,9 +51,10 @@ fun Context.adjustOrientation(@Orientation orientation: Int): Context {
  */
 fun Context.adjustScreenSize(screenSize: Int): Context {
     // ✅ CORREÇÃO: Criar uma NOVA Configuration em vez de modificar a existente
-    val newConfiguration = Configuration(resources.configuration).apply {
-        screenLayout = screenSize
-    }
+    val newConfiguration =
+        Configuration(resources.configuration).apply {
+            screenLayout = screenSize
+        }
     return createConfigurationContext(newConfiguration)
 }
 
@@ -57,16 +62,19 @@ fun Context.adjustScreenSize(screenSize: Int): Context {
     value = [
         Configuration.KEYBOARD_UNDEFINED,
         Configuration.KEYBOARDHIDDEN_YES,
-        Configuration.KEYBOARDHIDDEN_NO
-    ]
+        Configuration.KEYBOARDHIDDEN_NO,
+    ],
 )
 @Retention(AnnotationRetention.SOURCE)
 annotation class KeyboardHiddenState
 
-fun Context.adjustKeyboardHiddenState(@KeyboardHiddenState keyboardHiddenState: Int): Context {
+fun Context.adjustKeyboardHiddenState(
+    @KeyboardHiddenState keyboardHiddenState: Int,
+): Context {
     // ✅ CORREÇÃO: Criar uma NOVA Configuration em vez de modificar a existente
-    val newConfiguration = Configuration(resources.configuration).apply {
-        keyboardHidden = keyboardHiddenState
-    }
+    val newConfiguration =
+        Configuration(resources.configuration).apply {
+            keyboardHidden = keyboardHiddenState
+        }
     return createConfigurationContext(newConfiguration)
 }

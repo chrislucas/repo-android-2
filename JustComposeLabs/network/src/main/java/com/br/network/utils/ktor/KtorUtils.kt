@@ -15,7 +15,8 @@ import io.ktor.serialization.gson.gson
 import kotlinx.io.IOException
 import kotlinx.serialization.SerializationException
 
-val httpClient = HttpClient(Android) {
+val httpClient =
+    HttpClient(Android) {
     /*
         Client engine
         https://ktor.io/docs/client-engines.html
@@ -24,33 +25,40 @@ val httpClient = HttpClient(Android) {
         https://ktor.io/docs/client-serialization.html
 
      */
-    install(ContentNegotiation) {
+        install(ContentNegotiation) {
         /*
             Configure a serializer
             https://ktor.io/docs/client-serialization.html#configure_serializer
          */
-        gson()
-    }
+            gson()
+        }
 
-    install(HttpTimeout) {
-        requestTimeoutMillis = 15000L
-        connectTimeoutMillis = 15000L
+        install(HttpTimeout) {
+            requestTimeoutMillis = 15000L
+            connectTimeoutMillis = 15000L
+        }
     }
-}
 
 /*
     https://stackoverflow.com/questions/54679592/handling-exception-in-httpclient-ktor/71801998#71801998
  */
 
 sealed class ApiResponse<out T, out E> {
-    data class Success<T>(val data: T) : ApiResponse<T, Nothing>()
+    data class Success<T>(
+        val data: T,
+    ) : ApiResponse<T, Nothing>()
+
     sealed class Error<E> : ApiResponse<Nothing, E>() {
-        data class HttpError<E>(val code: Int, val errorBody: E?) : Error<E>()
+        data class HttpError<E>(
+            val code: Int,
+            val errorBody: E?,
+        ) : Error<E>()
+
         object NetworkError : Error<Nothing>()
+
         object SerializationError : Error<Nothing>()
     }
 }
-
 
 suspend inline fun <reified T, reified E> HttpClient.safeRequest(
     block: HttpRequestBuilder.() -> Unit,

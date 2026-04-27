@@ -5,7 +5,7 @@ import androidx.compose.runtime.Composable
 @Composable
 fun SimpleThemeSwitcher(
     darkTheme: Boolean,
-    onThemeChange: (Boolean) -> Unit
+    onThemeChange: (Boolean) -> Unit,
 ) {
 }
 

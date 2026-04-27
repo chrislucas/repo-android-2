@@ -17,7 +17,6 @@ import kotlin.test.assertEquals
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class AnotherMockViewModelVersionIITest {
-
     @get:Rule
     private val mainCoroutineRule = MainDispatcherRule()
 
@@ -35,12 +34,13 @@ class AnotherMockViewModelVersionIITest {
     }
 
     @Test
-    fun `test`() = runTest {
-        assertEquals("", viewModel.data.value)
-        viewModel.fetchData()
-        runCurrent()
-        assertEquals("loading...", viewModel.data.value)
-        advanceUntilIdle()
-        assertEquals("loaded.", viewModel.data.value)
-    }
+    fun `test`() =
+        runTest {
+            assertEquals("", viewModel.data.value)
+            viewModel.fetchData()
+            runCurrent()
+            assertEquals("loading...", viewModel.data.value)
+            advanceUntilIdle()
+            assertEquals("loaded.", viewModel.data.value)
+        }
 }

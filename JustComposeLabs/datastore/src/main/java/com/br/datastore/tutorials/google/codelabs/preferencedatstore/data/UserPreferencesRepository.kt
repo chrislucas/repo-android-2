@@ -43,25 +43,25 @@ enum class SortOrder {
     None,
     BY_DEADLINE,
     BY_PRIORITY,
-    BY_DEADLINE_AND_PRIORITY
+    BY_DEADLINE_AND_PRIORITY,
 }
 
 private const val USER_PREFERENCES_NAME = "user_preferences"
 private const val SORT_ORDER_KEY = "sort_order"
 
+interface UserRepository
 
-interface UserRepository {
-
-}
 /*
     Classe que mantem as preferencias do usuário.
  */
-class UserPreferencesRepository private constructor(context: Context) {
-    private val sharedPreference = context.applicationContext.getSharedPreferences(
-        USER_PREFERENCES_NAME,
-        Context.MODE_PRIVATE
-    )
-
+class UserPreferencesRepository private constructor(
+    context: Context,
+) {
+    private val sharedPreference =
+        context.applicationContext.getSharedPreferences(
+            USER_PREFERENCES_NAME,
+            Context.MODE_PRIVATE,
+        )
 
     private val sortOrder: SortOrder
         get() {
@@ -77,6 +77,6 @@ class UserPreferencesRepository private constructor(context: Context) {
 /*
     https://github.com/android/codelab-android-datastore/blob/preferences_datastore/app/src/main/java/com/codelab/android/datastore/data/UserPreferencesRepository.kt
  */
-class UserDataStoreRepository (private val dataStore: DataStore<Preferences>) {
-
-}
+class UserDataStoreRepository(
+    private val dataStore: DataStore<Preferences>,
+)

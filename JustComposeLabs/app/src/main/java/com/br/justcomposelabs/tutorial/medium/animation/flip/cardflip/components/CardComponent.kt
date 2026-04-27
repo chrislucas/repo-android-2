@@ -7,6 +7,6 @@ import com.br.justcomposelabs.tutorial.medium.animation.flip.cardflip.models.Car
 @Composable
 fun CardFaceDisplay(
     modifier: Modifier = Modifier,
-    cardFace: CardFace?
+    cardFace: CardFace?,
 ) {
 }

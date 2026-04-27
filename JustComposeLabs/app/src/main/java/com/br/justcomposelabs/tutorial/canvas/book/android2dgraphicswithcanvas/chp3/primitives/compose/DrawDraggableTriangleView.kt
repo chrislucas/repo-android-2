@@ -20,9 +20,10 @@ fun DrawDraggableTriangleView() {
             // Update the view if needed
             view.invalidate() // Redraw the view if necessary
         },
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     )
 }

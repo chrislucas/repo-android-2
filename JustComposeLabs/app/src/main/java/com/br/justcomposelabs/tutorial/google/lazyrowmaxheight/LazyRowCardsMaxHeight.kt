@@ -46,19 +46,18 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Composable
 fun LazyRowWithUniformCardHeight(
     modifier: Modifier = Modifier,
-    cardDataList: List<MockContent>
+    cardDataList: List<MockContent>,
 ) { // cardDataList represents your data for each card
     var maxHeightPx by remember { mutableIntStateOf(1) }
     val density = LocalDensity.current
     LazyRow(modifier) {
         items(cardDataList) { cardData ->
             Card(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .onGloballyPositioned { coordinates ->
                         maxHeightPx = maxOf(maxHeightPx, coordinates.size.height)
-                    }
-                    .padding(2.dp)
-
+                    }.padding(2.dp),
                 // .height(with(density) { maxHeightPx.toDp() }) // Apply the maximum height
             ) {
                 // Your card content goes here, using 'cardData'

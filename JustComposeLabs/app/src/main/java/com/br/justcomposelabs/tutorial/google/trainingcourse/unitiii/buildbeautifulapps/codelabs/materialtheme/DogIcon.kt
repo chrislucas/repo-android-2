@@ -20,6 +20,6 @@ import androidx.compose.ui.Modifier
 @Composable
 fun DogIcon(
     @DrawableRes dogIcon: Int,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
 }

@@ -10,33 +10,37 @@ import android.view.MotionEvent
 import android.view.View
 import kotlin.math.*
 
-class DraggableTriangleView @JvmOverloads constructor(
+class DraggableTriangleView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
-
     // Paint objects for drawing
-    private val trianglePaint = Paint().apply {
-        color = Color.GREEN
-        style = Paint.Style.FILL_AND_STROKE
-        strokeWidth = 4f
-        isAntiAlias = true
-    }
+    private val trianglePaint =
+        Paint().apply {
+            color = Color.GREEN
+            style = Paint.Style.FILL_AND_STROKE
+            strokeWidth = 4f
+            isAntiAlias = true
+        }
 
-    private val pointPaint = Paint().apply {
-        color = Color.RED
-        style = Paint.Style.FILL
-        isAntiAlias = true
-        textSize = 30f
-    }
+    private val pointPaint =
+        Paint().apply {
+            color = Color.RED
+            style = Paint.Style.FILL
+            isAntiAlias = true
+            textSize = 30f
+        }
 
     // Vertices of the triangle
-    private val vertices = arrayOf(
-        PointF(300f, 300f),
-        PointF(600f, 300f),
-        PointF(450f, 600f)
-    )
+    private val vertices =
+        arrayOf(
+            PointF(300f, 300f),
+            PointF(600f, 300f),
+            PointF(450f, 600f),
+        )
     private var selectedVertexIndex: Int = -1
     private val touchTolerance = 50f
 
@@ -100,7 +104,10 @@ class DraggableTriangleView @JvmOverloads constructor(
     }
 
     // Helper function to compute distance between two points
-    private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float {
-        return sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
-    }
+    private fun distance(
+        x1: Float,
+        y1: Float,
+        x2: Float,
+        y2: Float,
+    ): Float = sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
 }

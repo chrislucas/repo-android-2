@@ -43,10 +43,11 @@ fun CardElevationAnimated(
 ) {
     val elevation by animateDpAsState(
         targetValue = if (isElevated) 32.dp else 2.dp,
-        label = "CardElevationAnimation"
+        label = "CardElevationAnimation",
     )
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
             .border(border = BorderStroke(1.dp, Color.Black))
@@ -57,24 +58,27 @@ fun CardElevationAnimated(
         Card(
             onClick = { onIsElevatedChange(!isElevated) },
             elevation = CardDefaults.cardElevation(defaultElevation = elevation),
-            colors = CardDefaults.cardColors(
+            colors =
+            CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
                 contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
             ),
-            modifier = Modifier
-                .size(width = 240.dp, height = 100.dp)
+            modifier =
+            Modifier
+                .size(width = 240.dp, height = 100.dp),
         ) {
             Box(
                 modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.Center,
             ) {
                 Text(
                     "Card content!",
-                    style = TextStyle(
+                    style =
+                    TextStyle(
                         fontSize = 23.sp,
                         color = MaterialTheme.colorScheme.onPrimaryContainer,
-                        textAlign = TextAlign.Center
-                    )
+                        textAlign = TextAlign.Center,
+                    ),
                 )
             }
         }
@@ -95,52 +99,60 @@ fun CardElevationAnimatedPreview() {
 @Composable
 fun OutlinedCardExample() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
             .navigationBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         OutlinedCard(
-            colors = CardDefaults.cardColors(
+            colors =
+            CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.surface,
             ),
             border = BorderStroke(1.dp, Color.Black),
-            modifier = Modifier
-                .width(width = 240.dp)
+            modifier =
+            Modifier
+                .width(width = 240.dp),
             // .height(IntrinsicSize.Min)
         ) {
             Text(
                 text = "Outlined",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(6.dp),
                 textAlign = TextAlign.Center,
             )
 
             Text(
                 text = "Outlined",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(6.dp),
                 textAlign = TextAlign.Center,
             )
 
             Text(
                 text = "Outlined",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(6.dp),
                 textAlign = TextAlign.Center,
             )
 
             Text(
                 text = "Outlined",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(6.dp),
                 textAlign = TextAlign.Center,
             )
 
             Text(
                 text = "Outlined",
-                modifier = Modifier
+                modifier =
+                Modifier
                     .padding(6.dp),
                 textAlign = TextAlign.Center,
             )

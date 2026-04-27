@@ -23,12 +23,13 @@ import timber.log.Timber
     https://developer.android.com/develop/ui/views/layout/custom-views/create-view
     https://medium.com/@Zielony/guide-to-android-custom-views-attributes-ab28de3e54b7
  */
-class LoadCustomViewOverlay @JvmOverloads constructor(
+class LoadCustomViewOverlay
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : FrameLayout(context, attrs, defStyleAttr) {
-
     private val textLoading: TextView
     private val progressBar: ProgressBar
 
@@ -38,7 +39,7 @@ class LoadCustomViewOverlay @JvmOverloads constructor(
         LayoutInflater.from(context).inflate(
             R.layout.layout_custom_view_overlay,
             this,
-            true
+            true,
         )
 
         textLoading = rootView.findViewById(R.id.text_centered)
@@ -63,23 +64,23 @@ class LoadCustomViewOverlay @JvmOverloads constructor(
         https://proandroiddev.com/make-your-custom-view-lifecycle-aware-its-a-piece-of-cake-90b7c0498686
      */
 
-    private val lifecycleObserver = object : DefaultLifecycleObserver {
+    private val lifecycleObserver =
+        object : DefaultLifecycleObserver {
+            override fun onResume(owner: LifecycleOwner) {
+                super.onResume(owner)
+                Timber.tag("lifecycleObserver").d("onResume")
+            }
 
-        override fun onResume(owner: LifecycleOwner) {
-            super.onResume(owner)
-            Timber.tag("lifecycleObserver").d("onResume")
-        }
+            override fun onPause(owner: LifecycleOwner) {
+                super.onPause(owner)
+                Timber.tag("lifecycleObserver").d("onPause")
+            }
 
-        override fun onPause(owner: LifecycleOwner) {
-            super.onPause(owner)
-            Timber.tag("lifecycleObserver").d("onPause")
+            override fun onDestroy(owner: LifecycleOwner) {
+                super.onDestroy(owner)
+                Timber.tag("lifecycleObserver").d("onDestroy")
+            }
         }
-
-        override fun onDestroy(owner: LifecycleOwner) {
-            super.onDestroy(owner)
-            Timber.tag("lifecycleObserver").d("onDestroy")
-        }
-    }
 
     fun registerLifecycleOwner(lifecycleOwner: LifecycleOwner) {
         lifecycleOwner.lifecycle.addObserver(lifecycleObserver)

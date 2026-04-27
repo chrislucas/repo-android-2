@@ -57,20 +57,22 @@ fun ConfigurationDeviceInfoComponent() {
     val config = LocalResources.current.configuration
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     ) {
         Text(
             modifier = Modifier.fillMaxWidth(),
             text = "Locales",
             textAlign = TextAlign.Center,
-            style = TextStyle(
+            style =
+            TextStyle(
                 fontSize = 23.sp,
                 fontWeight = FontWeight.Bold,
-                fontStyle = FontStyle.Italic
-            )
+                fontStyle = FontStyle.Italic,
+            ),
         )
 
         LazyColumn {
@@ -90,64 +92,67 @@ fun ConfigurationDeviceInfoComponent() {
             modifier = Modifier.fillMaxWidth(),
             text = "Screen Info",
             textAlign = TextAlign.Center,
-            style = TextStyle(
+            style =
+            TextStyle(
                 fontSize = 23.sp,
                 fontWeight = FontWeight.Bold,
-                fontStyle = FontStyle.Italic
-            )
+                fontStyle = FontStyle.Italic,
+            ),
         )
         config.run {
             Text(
                 text = "Font Scale: $fontScale",
-                modifier = Modifier.padding(bottom = 4.dp)
+                modifier = Modifier.padding(bottom = 4.dp),
             )
 
             Text(
                 text = "Screen Height: $screenHeightDp dp",
-                modifier = Modifier.padding(bottom = 4.dp)
+                modifier = Modifier.padding(bottom = 4.dp),
             )
 
             Text(
                 text = "Density DPI: ${this.densityDpi}",
-                modifier = Modifier.padding(bottom = 4.dp)
+                modifier = Modifier.padding(bottom = 4.dp),
             )
 
             Text(
                 text = "Screen Width: $screenWidthDp dp",
-                modifier = Modifier.padding(bottom = 4.dp)
+                modifier = Modifier.padding(bottom = 4.dp),
             )
 
-            val orientationConfigured = when (orientation) {
-                Configuration.ORIENTATION_LANDSCAPE -> "Landscape"
-                Configuration.ORIENTATION_PORTRAIT -> "Portrait"
-                else -> "Undefined"
-            }
+            val orientationConfigured =
+                when (orientation) {
+                    Configuration.ORIENTATION_LANDSCAPE -> "Landscape"
+                    Configuration.ORIENTATION_PORTRAIT -> "Portrait"
+                    else -> "Undefined"
+                }
 
             Text(
                 text = "Orientation: $orientationConfigured",
-                modifier = Modifier.padding(bottom = 4.dp)
+                modifier = Modifier.padding(bottom = 4.dp),
             )
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
                 Text(
                     text = "Font Weight Adjustment: ${this.fontWeightAdjustment}",
-                    modifier = Modifier.padding(bottom = 4.dp)
+                    modifier = Modifier.padding(bottom = 4.dp),
                 )
 
-                val colorModeConfigured = when (colorMode) {
-                    Configuration.COLOR_MODE_WIDE_COLOR_GAMUT_YES -> "Wide Color Gamut"
-                    Configuration.COLOR_MODE_HDR_YES -> "HDR"
-                    COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED -> "Wide Color Gamut Undefined"
-                    else -> "Undefined"
-                }
+                val colorModeConfigured =
+                    when (colorMode) {
+                        Configuration.COLOR_MODE_WIDE_COLOR_GAMUT_YES -> "Wide Color Gamut"
+                        Configuration.COLOR_MODE_HDR_YES -> "HDR"
+                        COLOR_MODE_WIDE_COLOR_GAMUT_UNDEFINED -> "Wide Color Gamut Undefined"
+                        else -> "Undefined"
+                    }
                 Text(
                     text = "Color Mode: $colorModeConfigured | $colorMode",
-                    modifier = Modifier.padding(bottom = 4.dp)
+                    modifier = Modifier.padding(bottom = 4.dp),
                 )
 
                 Text(
                     text = "Is Screen Wide Color Gamut: $isScreenWideColorGamut",
-                    modifier = Modifier.padding(bottom = 4.dp)
+                    modifier = Modifier.padding(bottom = 4.dp),
                 )
             }
         }

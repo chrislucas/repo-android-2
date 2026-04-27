@@ -34,9 +34,8 @@ import kotlinx.coroutines.withContext
     sem afetar outras coroutines dentro do mesmo ViewModel.
  */
 open class ScopedBaseViewModel(
-     private val customScope: CoroutineScope  = CoroutineScope(Dispatchers.Main)
-): ViewModel() {
-
+    private val customScope: CoroutineScope = CoroutineScope(Dispatchers.Main),
+) : ViewModel() {
     // SupervisorJob garante que uma falha em uma courouitne nao cancele o scope inteiro
     private val viewModelJob = SupervisorJob()
 
@@ -50,9 +49,8 @@ open class ScopedBaseViewModel(
     }
 }
 
-class SimpleScopedViewModel: ScopedBaseViewModel() {
-
-     fun execution() {
+class SimpleScopedViewModel : ScopedBaseViewModel() {
+    fun execution() {
         mCustomScope.launch {
             // Lógica da coroutine aqui
             withContext(Dispatchers.IO) {
@@ -62,16 +60,14 @@ class SimpleScopedViewModel: ScopedBaseViewModel() {
     }
 }
 
-
 /*
     Alternativas e melhores praticas
 
     Default ViewModelScope: O viewModelScope padrao ja genrecia automaticamente
     o metodo onCleared*() e eh recomendado para a maioria dos casos
  */
-class SimpleViewModel: ViewModel() {
-
-     fun execution() {
+class SimpleViewModel : ViewModel() {
+    fun execution() {
         // Usando ViewModelScope padrao
         viewModelScope.launch {
             // Lógica da coroutine aqui

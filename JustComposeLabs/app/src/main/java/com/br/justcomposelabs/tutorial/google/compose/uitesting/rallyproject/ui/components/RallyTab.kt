@@ -41,30 +41,34 @@ internal fun RallyTab(
     text: String,
     icon: ImageVector,
     onSelected: () -> Unit,
-    selected: Boolean
+    selected: Boolean,
 ) {
     val color = MaterialTheme.colorScheme.onSurface
-    val durationMillis = if (selected) {
-        TabFadeInAnimationDuration
-    } else {
-        TabFadeOutAnimationDuration
-    }
+    val durationMillis =
+        if (selected) {
+            TabFadeInAnimationDuration
+        } else {
+            TabFadeOutAnimationDuration
+        }
 
-    val animSpec = remember {
-        tween<Color>(
-            durationMillis = durationMillis,
-            easing = LinearEasing,
-            delayMillis = TabFadeInAnimationDelay
-        )
-    }
+    val animSpec =
+        remember {
+            tween<Color>(
+                durationMillis = durationMillis,
+                easing = LinearEasing,
+                delayMillis = TabFadeInAnimationDelay,
+            )
+        }
 
     val tabColor by animateColorAsState(
         targetValue = if (selected) color else color.copy(alpha = InactiveTabOpacity),
-        animationSpec = animSpec
+        animationSpec = animSpec,
     )
 
     Row(
-        modifier = Modifier.padding(16.dp)
+        modifier =
+        Modifier
+            .padding(16.dp)
             .animateContentSize()
             .height(TabHeight)
             .selectable(
@@ -78,8 +82,8 @@ internal fun RallyTab(
                     https://developer.android.com/reference/kotlin/androidx/compose/ui/semantics/Role
 
                  */
-                role = Role.Tab
-            )
+                role = Role.Tab,
+            ),
     ) {
         Icon(imageVector = icon, contentDescription = null, tint = tabColor)
         if (selected) {
@@ -94,16 +98,17 @@ internal fun RallyTab(
 fun RallyTabSelectedPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             RallyTab(
                 text = "Overview",
                 icon = Icons.Filled.PieChart,
                 onSelected = {},
-                selected = true
+                selected = true,
             )
         }
     }
@@ -114,16 +119,17 @@ fun RallyTabSelectedPreview() {
 fun RallyTabUnselectedPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             RallyTab(
                 text = "Overview",
                 icon = Icons.Filled.PieChart,
                 onSelected = {},
-                selected = false
+                selected = false,
             )
         }
     }

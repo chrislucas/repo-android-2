@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class DessertViewModel : ViewModel() {
-
     private val dessertUiState = MutableStateFlow(DessertUiState())
     val observeDessertUiState: StateFlow<DessertUiState> = dessertUiState.asStateFlow()
 
@@ -22,7 +21,7 @@ class DessertViewModel : ViewModel() {
                 revenue = uiState.revenue + uiState.currentDessertPrice,
                 dessertsSold = dessertsSold,
                 currentDessertImageId = desserts[nextDessertIndex].imageId,
-                currentDessertPrice = desserts[nextDessertIndex].price
+                currentDessertPrice = desserts[nextDessertIndex].price,
             )
         }
     }
@@ -54,5 +53,5 @@ data class DessertUiState(
     val dessertsSold: Int = 0,
     val revenue: Int = 0,
     val currentDessertPrice: Int = desserts[currentDessertIndex].price,
-    @param:DrawableRes val currentDessertImageId: Int = desserts[currentDessertIndex].imageId
+    @param:DrawableRes val currentDessertImageId: Int = desserts[currentDessertIndex].imageId,
 )

@@ -40,34 +40,38 @@ fun ElevatedButtonComponent() {
     val isPressed by interactionSource.collectIsPressedAsState()
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .statusBarsPadding()
             .systemBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         ElevatedButton(
             modifier = Modifier.size(128.dp),
             onClick = {
-                Toast.makeText(
-                    ctx,
-                    "Elevated Button Clicked",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast
+                    .makeText(
+                        ctx,
+                        "Elevated Button Clicked",
+                        Toast.LENGTH_SHORT,
+                    ).show()
             },
             contentPadding = PaddingValues(6.dp),
-            elevation = ButtonDefaults.elevatedButtonElevation(
+            elevation =
+            ButtonDefaults.elevatedButtonElevation(
                 defaultElevation = 20.dp,
                 pressedElevation = 2.dp,
                 hoveredElevation = 10.dp,
-                focusedElevation = 10.dp
+                focusedElevation = 10.dp,
             ),
-            colors = ButtonDefaults.elevatedButtonColors(
+            colors =
+            ButtonDefaults.elevatedButtonColors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
             ),
             border = BorderStroke(1.dp, Color(0xFF673AB7)),
-            interactionSource = interactionSource
+            interactionSource = interactionSource,
         ) {
             Text(text = "Elevated Button")
         }
@@ -83,46 +87,51 @@ fun ElevatedButtonBrushedComponent() {
     val isPressed by interactionSource.collectIsPressedAsState()
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .statusBarsPadding()
             .systemBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         ElevatedButton(
             modifier = Modifier.size(128.dp),
             onClick = {
-                Toast.makeText(
-                    ctx,
-                    "Elevated Button Clicked",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast
+                    .makeText(
+                        ctx,
+                        "Elevated Button Clicked",
+                        Toast.LENGTH_SHORT,
+                    ).show()
             },
             contentPadding = PaddingValues(6.dp),
-            elevation = ButtonDefaults.elevatedButtonElevation(
+            elevation =
+            ButtonDefaults.elevatedButtonElevation(
                 defaultElevation = 20.dp,
                 pressedElevation = 2.dp,
                 hoveredElevation = 10.dp,
-                focusedElevation = 10.dp
+                focusedElevation = 10.dp,
             ),
-            colors = ButtonDefaults.elevatedButtonColors(
+            colors =
+            ButtonDefaults.elevatedButtonColors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
             ),
-            border = BorderStroke(
+            border =
+            BorderStroke(
                 1.dp,
                 Brush.horizontalGradient(
                     listOf(
                         Color(0xFF673AB7),
-                        Color(0xFFBE708B)
-                    )
-                )
+                        Color(0xFFBE708B),
+                    ),
+                ),
             ),
-            interactionSource = interactionSource
+            interactionSource = interactionSource,
         ) {
             Text(
                 text = "Elevated Button",
-                color = if (isPressed) Color(0xFFBE708B) else Color(0xFF673AB7)
+                color = if (isPressed) Color(0xFFBE708B) else Color(0xFF673AB7),
             )
         }
     }
@@ -135,53 +144,61 @@ fun ElevatedButtonTextBrushedComponent() {
 
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
-    val gradient = listOf(
-        Color(0xFF673AB7),
-        Color(0xFFBE708B)
-    )
+    val gradient =
+        listOf(
+            Color(0xFF673AB7),
+            Color(0xFFBE708B),
+        )
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .statusBarsPadding()
             .systemBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         ElevatedButton(
             modifier = Modifier.size(128.dp),
             onClick = {
-                Toast.makeText(
-                    ctx,
-                    "Elevated Button Clicked",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast
+                    .makeText(
+                        ctx,
+                        "Elevated Button Clicked",
+                        Toast.LENGTH_SHORT,
+                    ).show()
             },
             contentPadding = PaddingValues(6.dp),
-            elevation = ButtonDefaults.elevatedButtonElevation(
+            elevation =
+            ButtonDefaults.elevatedButtonElevation(
                 defaultElevation = 20.dp,
                 pressedElevation = 2.dp,
                 hoveredElevation = 10.dp,
-                focusedElevation = 10.dp
+                focusedElevation = 10.dp,
             ),
-            colors = ButtonDefaults.elevatedButtonColors(
+            colors =
+            ButtonDefaults.elevatedButtonColors(
                 containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+                contentColor = MaterialTheme.colorScheme.onPrimaryContainer,
             ),
-            border = BorderStroke(
+            border =
+            BorderStroke(
                 1.dp,
                 Brush.horizontalGradient(
-                    if (isPressed) gradient.reversed() else gradient
-                )
+                    if (isPressed) gradient.reversed() else gradient,
+                ),
             ),
-            interactionSource = interactionSource
+            interactionSource = interactionSource,
         ) {
             Text(
                 text = "Elevated Button",
-                style = TextStyle(
-                    brush = Brush.horizontalGradient(
-                        if (isPressed) gradient.reversed() else gradient
-                    )
-                )
+                style =
+                TextStyle(
+                    brush =
+                    Brush.horizontalGradient(
+                        if (isPressed) gradient.reversed() else gradient,
+                    ),
+                ),
             )
         }
     }

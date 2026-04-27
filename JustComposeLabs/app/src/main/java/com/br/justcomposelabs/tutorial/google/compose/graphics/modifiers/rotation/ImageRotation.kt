@@ -21,17 +21,20 @@ import com.br.justcomposelabs.R
 @Composable
 fun RotatedImageComponent() {
     Box(
-        modifier = Modifier.fillMaxSize()
+        modifier =
+        Modifier
+            .fillMaxSize()
             .statusBarsPadding()
             .systemBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Image(
             painterResource(id = R.drawable.cupcake),
             contentDescription = "cupcale",
-            modifier = Modifier.graphicsLayer {
+            modifier =
+            Modifier.graphicsLayer {
                 rotationZ = 45f
-            }
+            },
         )
     }
 }

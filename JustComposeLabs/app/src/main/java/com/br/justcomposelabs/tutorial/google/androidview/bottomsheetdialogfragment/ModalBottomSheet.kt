@@ -14,14 +14,11 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
     https://m2.material.io/components/sheets-bottom/android#using-bottom-sheets
  */
 class ModalBottomSheet : BottomSheetDialogFragment() {
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
+        savedInstanceState: Bundle?,
+    ): View? = super.onCreateView(inflater, container, savedInstanceState)
 
     companion object {
         const val TAG = "ModalBottomSheet"

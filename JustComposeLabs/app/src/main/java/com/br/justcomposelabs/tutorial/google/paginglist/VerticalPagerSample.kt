@@ -12,13 +12,14 @@ import androidx.compose.ui.tooling.preview.Preview
     showSystemUi = false,
     showBackground = true,
     device = "spec:width=411dp,height=891dp",
-    name = "VerticalPagerSample"
+    name = "VerticalPagerSample",
 )
 @Composable
 fun VerticalPagerSample(modifier: Modifier = Modifier) {
-    val pagerState = rememberPagerState(pageCount = {
-        10
-    })
+    val pagerState =
+        rememberPagerState(pageCount = {
+            10
+        })
 
     VerticalPager(state = pagerState) { page ->
         Text(text = "Page: $page", modifier = Modifier.fillMaxWidth())

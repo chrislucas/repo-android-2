@@ -34,7 +34,7 @@ fun <T> OverviewScreenCard(
     values: (T) -> Float,
     colors: (T) -> Color,
     data: List<T>,
-    row: @Composable (T) -> Unit
+    row: @Composable (T) -> Unit,
 ) {
     Card {
         Column {
@@ -57,10 +57,11 @@ fun <T> OverviewScreenCard(
 fun OverviewScreenCardPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             val amount = UserData.accounts.sumOf { it.balance.toDouble() }.toFloat()
             OverviewScreenCard(
@@ -75,9 +76,9 @@ fun OverviewScreenCardPreview() {
                         name = account.name,
                         number = account.number,
                         amount = account.balance,
-                        color = account.color
+                        color = account.color,
                     )
-                }
+                },
             )
         }
     }

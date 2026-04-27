@@ -15,14 +15,15 @@ import androidx.compose.ui.tooling.preview.Preview
 @Preview
 @Composable
 fun ColumnVerticalArrangement() {
-    val arrangements = listOf(
-        Arrangement.Top,
-        Arrangement.Center,
-        Arrangement.Bottom,
-        Arrangement.SpaceBetween,
-        Arrangement.SpaceAround,
-        Arrangement.SpaceEvenly,
-    )
+    val arrangements =
+        listOf(
+            Arrangement.Top,
+            Arrangement.Center,
+            Arrangement.Bottom,
+            Arrangement.SpaceBetween,
+            Arrangement.SpaceAround,
+            Arrangement.SpaceEvenly,
+        )
 
     Row(modifier = Modifier.Companion.fillMaxHeight()) {
         Column {
@@ -40,7 +41,7 @@ fun ColumnVerticalArrangement() {
         LazyRow {
             items(arrangements) { arrangement ->
                 Column(
-                    verticalArrangement = arrangement
+                    verticalArrangement = arrangement,
                 ) {
                     Button(onClick = {}) {
                         Text("A")

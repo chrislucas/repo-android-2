@@ -32,12 +32,13 @@ fun AnimatedColorExample() {
     var isToggled by remember { mutableStateOf(false) }
 
     val animatedColor by animateColorAsState(
-        targetValue = if (isToggled) {
+        targetValue =
+        if (isToggled) {
             Color.Red
         } else {
             Color.Green
         },
-        label = "animatedColor"
+        label = "animatedColor",
     )
 
     Column(
@@ -45,14 +46,15 @@ fun AnimatedColorExample() {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .fillMaxSize()
-                .background(animatedColor)
+                .background(animatedColor),
         )
         Button(
             onClick = {},
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
         ) {
             Text(text = "Toggle Color")
         }

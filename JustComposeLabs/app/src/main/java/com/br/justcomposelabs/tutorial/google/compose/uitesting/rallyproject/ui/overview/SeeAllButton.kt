@@ -20,9 +20,10 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 fun SeeAllButton(onClick: () -> Unit) {
     TextButton(
         onClick = onClick,
-        modifier = Modifier.Companion
+        modifier =
+        Modifier.Companion
             .height(44.dp)
-            .fillMaxWidth()
+            .fillMaxWidth(),
     ) {
         Text(stringResource(R.string.see_all))
     }
@@ -33,10 +34,11 @@ fun SeeAllButton(onClick: () -> Unit) {
 fun SeeAllButtonPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             SeeAllButton(onClick = {})
         }

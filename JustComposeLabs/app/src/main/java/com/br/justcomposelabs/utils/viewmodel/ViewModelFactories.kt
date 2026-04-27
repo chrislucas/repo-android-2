@@ -11,13 +11,13 @@ import androidx.lifecycle.viewmodel.CreationExtras
  */
 
 object ViewModelFactories {
-
     fun modernFactory(): ViewModelProvider.Factory {
         // https://developer.android.com/topic/libraries/architecture/viewmodel/viewmodel-factories
         return object : ViewModelProvider.Factory {
-            override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
-                return super.create(modelClass, extras)
-            }
+            override fun <T : ViewModel> create(
+                modelClass: Class<T>,
+                extras: CreationExtras,
+            ): T = super.create(modelClass, extras)
         }
     }
 
@@ -28,8 +28,6 @@ object ViewModelFactories {
     fun <V : ViewModel> create(
         viewModelStore: ViewModelStore,
         factory: ViewModelProvider.Factory,
-        ref: Class<V>
-    ): V {
-        return ViewModelProvider(viewModelStore, factory).get(ref)
-    }
+        ref: Class<V>,
+    ): V = ViewModelProvider(viewModelStore, factory).get(ref)
 }

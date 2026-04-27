@@ -17,10 +17,12 @@ import androidx.compose.ui.unit.dp
 fun VerticallyCenteredText() {
     Text(
         text = "Vertically Centered Text",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth() // Fill the width of the parent
             .height(100.dp) // Give it a fixed height
-            .wrapContentHeight(align = Alignment.CenterVertically), // Vertically center the content
+            .wrapContentHeight(align = Alignment.CenterVertically),
+        // Vertically center the content
         // textAlign = TextAlign.Center // Horizontally center the content
     )
 }
@@ -30,11 +32,12 @@ fun VerticallyCenteredText() {
 fun CenterHorizontallyText() {
     Text(
         text = "Vertically Centered Text",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth() // Fill the width of the parent
             .height(100.dp) // Give it a fixed height
-            .wrapContentWidth(align = Alignment.CenterHorizontally), // Vertically center the content
-
+            .wrapContentWidth(align = Alignment.CenterHorizontally),
+        // Vertically center the content
     )
 }
 
@@ -43,10 +46,11 @@ fun CenterHorizontallyText() {
 fun WrapContentSizeCenterText() {
     Text(
         text = "Centered Text",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .wrapContentSize(align = Alignment.Center)
+            .wrapContentSize(align = Alignment.Center),
     )
 }
 
@@ -55,10 +59,11 @@ fun WrapContentSizeCenterText() {
 fun WrapContentSizeCenterStartText() {
     Text(
         text = "Centered Text",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .wrapContentSize(align = Alignment.CenterStart)
+            .wrapContentSize(align = Alignment.CenterStart),
     )
 }
 
@@ -67,10 +72,11 @@ fun WrapContentSizeCenterStartText() {
 fun WrapContentSizeCenterEndText() {
     Text(
         text = "Centered Text",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .wrapContentSize(align = Alignment.CenterEnd)
+            .wrapContentSize(align = Alignment.CenterEnd),
     )
 }
 
@@ -79,10 +85,11 @@ fun WrapContentSizeCenterEndText() {
 fun WrapContentSizeTopStartText() {
     Text(
         text = "Top Start",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .wrapContentSize(align = Alignment.TopStart)
+            .wrapContentSize(align = Alignment.TopStart),
     )
 }
 
@@ -91,10 +98,11 @@ fun WrapContentSizeTopStartText() {
 fun WrapContentSizeTopEndText() {
     Text(
         text = "Top End",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .wrapContentSize(align = Alignment.TopEnd)
+            .wrapContentSize(align = Alignment.TopEnd),
     )
 }
 
@@ -103,9 +111,10 @@ fun WrapContentSizeTopEndText() {
 fun WrapContentSizeTopCenterText() {
     Text(
         text = "Top End",
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
-            .wrapContentSize(align = Alignment.TopCenter)
+            .wrapContentSize(align = Alignment.TopCenter),
     )
 }

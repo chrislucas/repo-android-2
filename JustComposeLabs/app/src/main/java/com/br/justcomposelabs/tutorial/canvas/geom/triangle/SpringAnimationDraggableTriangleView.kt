@@ -12,25 +12,28 @@ import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
 import kotlin.math.*
 
-class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
+class SpringAnimationDraggableTriangleView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
-
     // Paint objects for drawing
-    private val trianglePaint = Paint().apply {
-        color = Color.GREEN
-        style = Paint.Style.FILL_AND_STROKE
-        strokeWidth = 4f
-        isAntiAlias = true
-    }
+    private val trianglePaint =
+        Paint().apply {
+            color = Color.GREEN
+            style = Paint.Style.FILL_AND_STROKE
+            strokeWidth = 4f
+            isAntiAlias = true
+        }
 
-    private val pointPaint = Paint().apply {
-        color = Color.RED
-        style = Paint.Style.FILL
-        isAntiAlias = true
-    }
+    private val pointPaint =
+        Paint().apply {
+            color = Color.RED
+            style = Paint.Style.FILL
+            isAntiAlias = true
+        }
 
     // Vertices of the triangle
     private val vertices = arrayOf(PointF(300f, 300f), PointF(600f, 300f), PointF(450f, 600f))
@@ -38,22 +41,24 @@ class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
     private val touchTolerance = 50f
 
     // Spring animations for each vertex
-    private val springAnimations = arrayOf(
-        SpringAnimation(this, SpringAnimation.TRANSLATION_X),
-        SpringAnimation(this, SpringAnimation.TRANSLATION_Y),
-        SpringAnimation(this, SpringAnimation.TRANSLATION_X),
-        SpringAnimation(this, SpringAnimation.TRANSLATION_Y),
-        SpringAnimation(this, SpringAnimation.TRANSLATION_X),
-        SpringAnimation(this, SpringAnimation.TRANSLATION_Y)
-    )
+    private val springAnimations =
+        arrayOf(
+            SpringAnimation(this, SpringAnimation.TRANSLATION_X),
+            SpringAnimation(this, SpringAnimation.TRANSLATION_Y),
+            SpringAnimation(this, SpringAnimation.TRANSLATION_X),
+            SpringAnimation(this, SpringAnimation.TRANSLATION_Y),
+            SpringAnimation(this, SpringAnimation.TRANSLATION_X),
+            SpringAnimation(this, SpringAnimation.TRANSLATION_Y),
+        )
 
     init {
         // Configure spring force for each vertex
         for (i in 0 until 6) {
-            val spring = SpringForce().apply {
-                dampingRatio = SpringForce.DAMPING_RATIO_MEDIUM_BOUNCY
-                stiffness = SpringForce.STIFFNESS_MEDIUM
-            }
+            val spring =
+                SpringForce().apply {
+                    dampingRatio = SpringForce.DAMPING_RATIO_MEDIUM_BOUNCY
+                    stiffness = SpringForce.STIFFNESS_MEDIUM
+                }
             springAnimations[i].spring = spring
         }
     }
@@ -87,6 +92,7 @@ class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
                     }
                 }
             }
+
             MotionEvent.ACTION_MOVE -> {
                 if (selectedVertexIndex != -1) {
                     // Move the selected vertex
@@ -100,6 +106,7 @@ class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
                     return true
                 }
             }
+
             MotionEvent.ACTION_UP -> {
                 selectedVertexIndex = -1
             }
@@ -108,9 +115,12 @@ class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
     }
 
     // Helper function to compute distance between two points
-    private fun distance(x1: Float, y1: Float, x2: Float, y2: Float): Float {
-        return sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
-    }
+    private fun distance(
+        x1: Float,
+        y1: Float,
+        x2: Float,
+        y2: Float,
+    ): Float = sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
 
     // Apply spring force to the adjacent vertices
     private fun applySpringForce(movedVertexIndex: Int) {
@@ -125,7 +135,10 @@ class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
     }
 
     // Apply spring force to a vertex
-    private fun applySpringToVertex(vertexIndex: Int, movedVertexIndex: Int) {
+    private fun applySpringToVertex(
+        vertexIndex: Int,
+        movedVertexIndex: Int,
+    ) {
         val vertex = vertices[vertexIndex]
         val movedVertex = vertices[movedVertexIndex]
 

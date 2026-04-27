@@ -26,13 +26,13 @@ import kotlinx.coroutines.flow.update
 @Immutable
 data class ItemUi(
     val id: String,
-    val title: String
+    val title: String,
 )
 
 @Immutable
 data class UiState(
     val items: PersistentList<ItemUi> = persistentListOf(),
-    val isLoading: Boolean = false
+    val isLoading: Boolean = false,
 )
 
 class MyViewModel : ViewModel() {
@@ -44,15 +44,16 @@ class MyViewModel : ViewModel() {
     }
 
     private fun loadItems() {
-        val apiItems = listOf(
-            ItemUi("1", "Compose"),
-            ItemUi("2", "PersistentList")
-        )
+        val apiItems =
+            listOf(
+                ItemUi("1", "Compose"),
+                ItemUi("2", "PersistentList"),
+            )
 
         _uiState.update { current ->
             current.copy(
                 items = apiItems.toPersistentList(),
-                isLoading = false
+                isLoading = false,
             )
         }
     }
@@ -80,10 +81,11 @@ fun PersistScreen(viewModel: MyViewModel = viewModel()) {
 @Composable
 private fun PersistItems(state: UiState) {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         if (state.isLoading) {
             Text("Carregando...")
@@ -91,7 +93,7 @@ private fun PersistItems(state: UiState) {
             LazyColumn {
                 items(
                     state.items,
-                    { item -> item.hashCode().toLong() }
+                    { item -> item.hashCode().toLong() },
                 ) { item ->
                     Text(item.title)
                 }

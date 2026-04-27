@@ -15,9 +15,10 @@ fun DrawQuadraticBezierCurve() {
     AndroidView(
         factory = { ctx -> QuadraticBezierCurveView(ctx) },
         update = { it.invalidate() },
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     )
 }

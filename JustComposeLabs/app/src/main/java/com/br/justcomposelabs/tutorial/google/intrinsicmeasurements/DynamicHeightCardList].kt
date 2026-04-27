@@ -20,27 +20,31 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 
-data class MyCardData(val title: String, val description: String)
+data class MyCardData(
+    val title: String,
+    val description: String,
+)
 
 @Composable
 fun DynamicHeightCardList(dataList: List<MyCardData>) {
     LazyRow(
-        modifier = Modifier
+        modifier =
+        Modifier
             .padding(WindowInsets.safeDrawing.asPaddingValues())
-            .fillMaxHeight()
+            .fillMaxHeight(),
     ) {
         items(dataList) { cardData ->
             Card(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth()
                     .padding(8.dp)
-                    .defaultMinSize(minHeight = 150.dp)
+                    .defaultMinSize(minHeight = 150.dp),
             ) {
                 Column(
                     modifier = Modifier.padding(16.dp),
                     verticalArrangement = Arrangement.Center,
-                    horizontalAlignment = Alignment.CenterHorizontally
-
+                    horizontalAlignment = Alignment.CenterHorizontally,
                 ) {
                     Text(text = cardData.title)
                     Text(text = cardData.description)
@@ -53,17 +57,18 @@ fun DynamicHeightCardList(dataList: List<MyCardData>) {
 @Preview(showBackground = true)
 @Composable
 private fun DynamicHeightCardListPreview() {
-    val dataList = listOf(
-        MyCardData(
-            "Card 1",
-            "Long text that exceeds the card's height.\n" +
-                "this is the fourth card.\nAdding more text to see how it looks."
-        ),
-        MyCardData("Card 2", "This is the second card."),
-        MyCardData("Card 3", "This is the thrid card."),
-        MyCardData("Card 4", "This is the fourth card."),
-        MyCardData("Card 5", "This is the fifth card.")
-    )
+    val dataList =
+        listOf(
+            MyCardData(
+                "Card 1",
+                "Long text that exceeds the card's height.\n" +
+                    "this is the fourth card.\nAdding more text to see how it looks.",
+            ),
+            MyCardData("Card 2", "This is the second card."),
+            MyCardData("Card 3", "This is the thrid card."),
+            MyCardData("Card 4", "This is the fourth card."),
+            MyCardData("Card 5", "This is the fifth card."),
+        )
 
     JustComposeLabsTheme {
         DynamicHeightCardList(dataList = dataList)

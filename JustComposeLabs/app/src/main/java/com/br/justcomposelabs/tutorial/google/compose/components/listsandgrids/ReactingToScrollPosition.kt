@@ -13,21 +13,22 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
     https://developer.android.com/develop/ui/compose/lists#react-to-scroll-position
  */
 
-class MessagePreviewParameterProvider : CollectionPreviewParameterProvider<Message>(
-    listOf(
-        Message(1, "A", "B"),
-        Message(2, "A", "B"),
-        Message(3, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
-        Message(4, "A", "B"),
+class MessagePreviewParameterProvider :
+    CollectionPreviewParameterProvider<Message>(
+        listOf(
+            Message(1, "A", "B"),
+            Message(2, "A", "B"),
+            Message(3, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+            Message(4, "A", "B"),
+        ),
     )
-)
 
 @Composable
 fun MessageList(messages: List<Message>) {
@@ -59,7 +60,7 @@ fun PreviewMessageList() {
                 Message(4, "A", "B"),
                 Message(4, "A", "B"),
                 Message(4, "A", "B"),
-            )
+            ),
         )
     }
 }

@@ -5,7 +5,6 @@ import android.os.StrictMode
 import timber.log.Timber
 
 class CustomApplication : Application() {
-
     override fun onCreate() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
@@ -19,22 +18,24 @@ class CustomApplication : Application() {
 
             // 1. Thread Policy: Detecta rede/disco na UI Thread
             StrictMode.setThreadPolicy(
-                StrictMode.ThreadPolicy.Builder()
+                StrictMode.ThreadPolicy
+                    .Builder()
                     .detectAll() // Detecta leituras, escritas e rede
                     .penaltyLog() // Loga no Logcat
                     // .penaltyFlashScreen() // Pisca a tela para avisar
-                    .build()
+                    .build(),
             )
 
             // 2. VM Policy: Detecta vazamentos de memória (Activities, Closables)
             StrictMode.setVmPolicy(
-                StrictMode.VmPolicy.Builder()
+                StrictMode.VmPolicy
+                    .Builder()
                     // .detectLeakedSqlLiteObjects()
                     // .detectLeakedClosableObjects() // Helps catch unclosed streams, a common I/O oversight
                     // .detectActivityLeaks()
                     .detectAll()
                     .penaltyLog()
-                    .build()
+                    .build(),
             )
         }
 

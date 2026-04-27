@@ -34,12 +34,13 @@ fun AnimatedCircularElevatedSurface(onClick: () -> Unit = {}) {
 
     val elevation by animateDpAsState(
         targetValue = if (isPressed) 2.dp else 20.dp,
-        label = "ElevationAnimation"
+        label = "ElevationAnimation",
     )
 
     Surface(
         onClick = onClick,
-        modifier = Modifier
+        modifier =
+        Modifier
             .systemBarsPadding()
             .statusBarsPadding()
             .size(128.dp),
@@ -53,7 +54,7 @@ fun AnimatedCircularElevatedSurface(onClick: () -> Unit = {}) {
             Icon(
                 Icons.Default.Favorite,
                 contentDescription = "Favorite",
-                tint = MaterialTheme.colorScheme.onPrimary
+                tint = MaterialTheme.colorScheme.onPrimary,
             )
         }
     }
@@ -67,14 +68,15 @@ fun AnimatedCircularElevatedSurfacePreview() {
         Row(
             modifier = Modifier.fillMaxSize(),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.Center
+            horizontalArrangement = Arrangement.Center,
         ) {
             AnimatedCircularElevatedSurface {
-                Toast.makeText(
-                    ctx,
-                    "Surface Clicked",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast
+                    .makeText(
+                        ctx,
+                        "Surface Clicked",
+                        Toast.LENGTH_SHORT,
+                    ).show()
             }
         }
     }

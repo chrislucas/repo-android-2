@@ -17,15 +17,17 @@ fun AutoResizeText() {
     JustComposeLabsTheme {
         BasicText(
             "text",
-            style = TextStyle(
-                fontSize = 12.sp
+            style =
+            TextStyle(
+                fontSize = 12.sp,
             ),
-            autoSize = TextAutoSize.StepBased(
+            autoSize =
+            TextAutoSize.StepBased(
                 minFontSize = 12.sp,
                 maxFontSize = 24.sp,
-                stepSize = 1.sp
+                stepSize = 1.sp,
             ),
-            maxLines = 1
+            maxLines = 1,
         )
     }
 }

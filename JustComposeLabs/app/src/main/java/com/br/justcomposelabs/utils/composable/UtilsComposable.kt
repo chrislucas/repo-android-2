@@ -25,8 +25,7 @@ import timber.log.Timber
 annotation class ShowBackgroundOrNot
 
 @Composable
-fun Modifier.paddingEdgeToEdge() =
-    padding(WindowInsets.safeDrawing.asPaddingValues())
+fun Modifier.paddingEdgeToEdge() = padding(WindowInsets.safeDrawing.asPaddingValues())
 
 /*
     https://stackoverflow.com/questions/71239101/how-to-listen-for-lifecycle-in-jetpack-compose
@@ -41,7 +40,7 @@ fun Modifier.paddingEdgeToEdge() =
 @Composable
 fun ComposableLifecycle(
     lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current,
-    onEvent: (LifecycleOwner, Lifecycle.Event) -> Unit
+    onEvent: (LifecycleOwner, Lifecycle.Event) -> Unit,
 ) {
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver(onEvent)
@@ -55,7 +54,10 @@ fun ComposableLifecycle(
 }
 
 @Composable
-fun LogCompositions(tag: String, msg: String) {
+fun LogCompositions(
+    tag: String,
+    msg: String,
+) {
     /*
         o que ocorre ao usar rememberSaveable
 

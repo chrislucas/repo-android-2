@@ -47,17 +47,18 @@ import androidx.compose.ui.tooling.preview.Preview
 data class Message(
     var id: String = "",
     var content: String = "",
-    var timestamp: String = ""
+    var timestamp: String = "",
 )
 
 @Preview(showBackground = true)
 @Composable
 fun ExpandableTextBox(
-    message: Message = Message(
-        id = "1",
-        content = "Hello World",
-        timestamp = "${System.currentTimeMillis()}ms"
-    )
+    message: Message =
+        Message(
+            id = "1",
+            content = "Hello World",
+            timestamp = "${System.currentTimeMillis()}ms",
+        ),
 ) {
     /**
      * @see
@@ -77,7 +78,7 @@ fun ExpandableTextBox(
     Column(modifier = Modifier.fillMaxSize().systemBarsPadding()) {
         Text(
             text = AnnotatedString(message.content),
-            modifier = Modifier.clickable { showDetails = !showDetails }
+            modifier = Modifier.clickable { showDetails = !showDetails },
         )
 
         if (showDetails) {

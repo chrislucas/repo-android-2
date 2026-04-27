@@ -21,12 +21,12 @@ import com.br.justcomposelabs.R
 fun ResourceText() {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Text(
             stringResource(R.string.chocolate),
             style = TextStyle(fontSize = 30.sp),
-            fontFamily = FontFamily.Cursive
+            fontFamily = FontFamily.Cursive,
         )
     }
 }

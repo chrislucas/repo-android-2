@@ -13,6 +13,6 @@ fun DrawTriangleFilledPath() {
     AndroidView(
         factory = { TriangleFilledPathView(it) },
         update = { it.invalidate() },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

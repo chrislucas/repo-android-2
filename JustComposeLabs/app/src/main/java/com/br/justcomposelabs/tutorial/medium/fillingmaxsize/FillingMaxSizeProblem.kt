@@ -25,8 +25,9 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Composable
 fun FillingMaxSizeProblem() {
     Row(
-        modifier = Modifier
-            .padding(WindowInsets.safeDrawing.asPaddingValues())
+        modifier =
+        Modifier
+            .padding(WindowInsets.safeDrawing.asPaddingValues()),
     ) {
         /*
             Porque o resultado de usar fillMaxHeight na Box é de criar uma box
@@ -35,10 +36,11 @@ fun FillingMaxSizeProblem() {
             Segundo a doc
          */
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .width(8.dp)
                 .fillMaxHeight()
-                .background(Color.Red)
+                .background(Color.Red),
         )
         Column {
             Text("Hello")

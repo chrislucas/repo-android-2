@@ -18,15 +18,16 @@ import androidx.compose.ui.unit.dp
 @Preview(showBackground = true)
 @Composable
 fun CircleGradient() {
-    val brush = Brush.horizontalGradient(
-        listOf(Color.Red, Color.Blue)
-    )
+    val brush =
+        Brush.horizontalGradient(
+            listOf(Color.Red, Color.Blue),
+        )
     Column {
         Canvas(
             modifier = Modifier.size(200.dp),
             onDraw = {
                 drawCircle(brush)
-            }
+            },
         )
 
         /**
@@ -37,7 +38,7 @@ fun CircleGradient() {
             value = 0f,
             onValueChange = {
             },
-            valueRange = 0f..1f
+            valueRange = 0f..1f,
         )
     }
 }

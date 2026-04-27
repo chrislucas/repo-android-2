@@ -19,7 +19,7 @@ fun SimpleTextAndroidView(value: String) {
         },
         update = { view ->
             view.text = value
-        }
+        },
     )
 }
 

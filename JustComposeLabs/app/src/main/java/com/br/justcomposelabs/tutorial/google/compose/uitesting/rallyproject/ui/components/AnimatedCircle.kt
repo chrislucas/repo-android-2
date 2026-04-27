@@ -31,12 +31,13 @@ private enum class AnimatedCircleProgress { START, END }
 fun AnimatedCircle(
     proportions: List<Float>,
     colors: List<Color>,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
-    val currentState = remember {
-        MutableTransitionState(AnimatedCircleProgress.START)
-            .apply { targetState = AnimatedCircleProgress.END }
-    }
+    val currentState =
+        remember {
+            MutableTransitionState(AnimatedCircleProgress.START)
+                .apply { targetState = AnimatedCircleProgress.END }
+        }
     val stroke = with(LocalDensity.current) { Stroke(5.dp.toPx()) }
     val transition = rememberTransition(currentState)
     val angleOffset by transition.animateFloat(
@@ -44,9 +45,9 @@ fun AnimatedCircle(
             tween(
                 delayMillis = 500,
                 durationMillis = 900,
-                easing = LinearOutSlowInEasing
+                easing = LinearOutSlowInEasing,
             )
-        }
+        },
     ) { progress ->
         if (progress == AnimatedCircleProgress.START) {
             0f
@@ -59,9 +60,9 @@ fun AnimatedCircle(
             tween(
                 delayMillis = 500,
                 durationMillis = 900,
-                easing = CubicBezierEasing(0f, 0.75f, 0.35f, 0.85f)
+                easing = CubicBezierEasing(0f, 0.75f, 0.35f, 0.85f),
             )
-        }
+        },
     ) { progress ->
         if (progress == AnimatedCircleProgress.START) {
             0f
@@ -73,10 +74,11 @@ fun AnimatedCircle(
     Canvas(modifier) {
         val innerRadius = (size.minDimension - stroke.width) / 2
         val halfSize = size / 2.0f
-        val topLeft = Offset(
-            halfSize.width - innerRadius,
-            halfSize.height - innerRadius
-        )
+        val topLeft =
+            Offset(
+                halfSize.width - innerRadius,
+                halfSize.height - innerRadius,
+            )
         val size = Size(innerRadius * 2, innerRadius * 2)
         var startAngle = shift - 90f
         proportions.forEachIndexed { index, proportion ->
@@ -88,7 +90,7 @@ fun AnimatedCircle(
                 topLeft = topLeft,
                 size = size,
                 useCenter = false,
-                style = stroke
+                style = stroke,
             )
             startAngle += sweep
         }
@@ -99,16 +101,18 @@ fun AnimatedCircle(
 @Composable
 fun AnimatedCirclePreview() {
     val proportions = listOf(0.25f, 0.25f, 0.25f, 0.25f)
-    val colors = listOf(
-        Color(0xFF1F6B26),
-        Color(0xFF6DB6D6),
-        Color(0xFF8B5A3C),
-        Color(0xFFB55D60)
-    )
+    val colors =
+        listOf(
+            Color(0xFF1F6B26),
+            Color(0xFF6DB6D6),
+            Color(0xFF8B5A3C),
+            Color(0xFFB55D60),
+        )
     AnimatedCircle(
         proportions = proportions,
         colors = colors,
-        modifier = Modifier
-            .size(200.dp)
+        modifier =
+        Modifier
+            .size(200.dp),
     )
 }

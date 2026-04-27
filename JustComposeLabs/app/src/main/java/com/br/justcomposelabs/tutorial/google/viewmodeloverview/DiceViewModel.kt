@@ -72,7 +72,6 @@ import androidx.lifecycle.ViewModel
  */
 
 class DiceViewModel : ViewModel() {
-
     override fun onCleared() {
         super.onCleared()
     }

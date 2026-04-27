@@ -18,13 +18,12 @@ import kotlin.coroutines.CoroutineContext
 fun <V : ViewModel> createViewModel(
     viewModelStore: ViewModelStore,
     factory: ViewModelProvider.Factory,
-    clazz: Class<V>
+    clazz: Class<V>,
 ): V = ViewModelProvider(viewModelStore, factory)[clazz]
-
 
 data class ConstructorArg(
     val type: Class<*>,
-    val values: List<Any?>
+    val values: List<Any?>,
 ) {
     init {
         require(values.isNotEmpty()) { "ConstructorArg requires at least one value." }
@@ -33,22 +32,23 @@ data class ConstructorArg(
 
 class ViewModelFactory(
     private val constructorArgs: List<ConstructorArg> = emptyList(),
-    private val creators: Map<Class<out ViewModel>, (CreationExtras) -> ViewModel> = emptyMap()
+    private val creators: Map<Class<out ViewModel>, (CreationExtras) -> ViewModel> = emptyMap(),
 ) : ViewModelProvider.Factory {
-
     /**
-     * @see  androidx.lifecycle.viewmodel.ViewModelInitializer
-     * @see  androidx.lifecycle.ViewModelProvider.Factory.Companion
+     * @see androidx.lifecycle.viewmodel.ViewModelInitializer
+     * @see androidx.lifecycle.ViewModelProvider.Factory.Companion
      * https://developer.android.com/reference/androidx/lifecycle/viewmodel/ViewModelInitializer
      */
 
     constructor(vararg constructorArgs: ConstructorArg) : this(constructorArgs.toList(), emptyMap())
 
-    override fun <T : ViewModel> create(modelClass: Class<T>): T =
-        create(modelClass, CreationExtras.Empty)
+    override fun <T : ViewModel> create(modelClass: Class<T>): T = create(modelClass, CreationExtras.Empty)
 
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>, extras: CreationExtras): T {
+    override fun <T : ViewModel> create(
+        modelClass: Class<T>,
+        extras: CreationExtras,
+    ): T {
         findCreator(modelClass)?.let { creator ->
             return creator(extras) as T
         }
@@ -69,9 +69,10 @@ class ViewModelFactory(
 
     private fun <T : ViewModel> findCreator(modelClass: Class<T>): ((CreationExtras) -> ViewModel)? {
         creators[modelClass]?.let { return it }
-        return creators.entries.firstOrNull { (registeredClass, _) ->
-            modelClass.isAssignableFrom(registeredClass)
-        }?.value
+        return creators.entries
+            .firstOrNull { (registeredClass, _) ->
+                modelClass.isAssignableFrom(registeredClass)
+            }?.value
     }
 
     private fun expandConstructorArgs(): Pair<Array<Class<*>>, Array<Any?>> {
@@ -83,31 +84,33 @@ class ViewModelFactory(
     private fun <T : ViewModel> buildCreationError(
         modelClass: Class<T>,
         parameterTypes: Array<Class<*>>,
-        error: ReflectiveOperationException
+        error: ReflectiveOperationException,
     ): IllegalArgumentException {
-        val providedSignature = if (parameterTypes.isEmpty()) {
-            "()"
-        } else {
-            parameterTypes.joinToString(prefix = "(", postfix = ")") { it.simpleName }
-        }
-        val availableSignatures = modelClass.declaredConstructors.joinToString { constructor ->
-            constructor.parameterTypes.joinToString(prefix = "(", postfix = ")") { it.simpleName }
-        }
+        val providedSignature =
+            if (parameterTypes.isEmpty()) {
+                "()"
+            } else {
+                parameterTypes.joinToString(prefix = "(", postfix = ")") { it.simpleName }
+            }
+        val availableSignatures =
+            modelClass.declaredConstructors.joinToString { constructor ->
+                constructor.parameterTypes.joinToString(prefix = "(", postfix = ")") { it.simpleName }
+            }
         return IllegalArgumentException(
             "Unable to create ${modelClass.name} with signature $providedSignature. " +
                 "Available constructors: $availableSignatures",
-            error
+            error,
         )
     }
 
     companion object {
-        inline fun <reified T> arg(vararg values: T): ConstructorArg =
-            ConstructorArg(T::class.java, values.toList())
+        inline fun <reified T> arg(vararg values: T): ConstructorArg = ConstructorArg(T::class.java, values.toList())
     }
 }
 
-
-abstract class BaseViewModel : ViewModel(), CoroutineScope {
+abstract class BaseViewModel :
+    ViewModel(),
+    CoroutineScope {
     private val viewModelSupervisorJob = SupervisorJob()
     override val coroutineContext: CoroutineContext = Dispatchers.Main + viewModelSupervisorJob
 
@@ -117,22 +120,20 @@ abstract class BaseViewModel : ViewModel(), CoroutineScope {
     }
 }
 
-
 abstract class BaseViewModelHandlerException(
-    private val handler: (CoroutineContext, Throwable) -> Unit = { c, t -> }
-) :
-    ViewModel() {
-
+    private val handler: (CoroutineContext, Throwable) -> Unit = { c, t -> },
+) : ViewModel() {
     private val viewModelSupervisorJob = SupervisorJob()
 
     private val mutableStateCoroutineException = MutableStateFlow<Throwable?>(null)
 
     val stateCoroutineException = mutableStateCoroutineException.asStateFlow()
 
-    private val exceptionHandler = CoroutineExceptionHandler { c, t ->
-        handler(c, t)
-        mutableStateCoroutineException.value = t
-    }
+    private val exceptionHandler =
+        CoroutineExceptionHandler { c, t ->
+            handler(c, t)
+            mutableStateCoroutineException.value = t
+        }
 
     private val scope = CoroutineScope(Dispatchers.Main + Job() + exceptionHandler)
 
@@ -143,7 +144,6 @@ abstract class BaseViewModelHandlerException(
         scope.cancel()
         scopeWithSupervisedJob.coroutineContext.cancelChildren()
     }
-
 }
 
 /*

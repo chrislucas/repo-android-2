@@ -58,20 +58,21 @@ class WalkThroughActivity : ComponentActivity() {
 private fun CupCakeContainerUI(
     modifier: Modifier = Modifier,
     viewModel: OrderViewModel = viewModel(),
-    navController: NavHostController = rememberNavController()
+    navController: NavHostController = rememberNavController(),
 ) {
     // get current back stack entry
     val backStackEntry by navController.currentBackStackEntryAsState()
     // get the name of the current screen
-    val currentScreen = CupCakeScreen.valueOf(
-        backStackEntry?.destination?.route ?: CupCakeScreen.Start.name
-    )
+    val currentScreen =
+        CupCakeScreen.valueOf(
+            backStackEntry?.destination?.route ?: CupCakeScreen.Start.name,
+        )
 
     CupcakeAppScaffold(
         currentScreen,
         canNavigateBack = navController.previousBackStackEntry != null,
         navigateUp = { navController.navigateUp() },
-        modifier = modifier
+        modifier = modifier,
     ) { innerModifier ->
 
         val uiState by viewModel.uiState.collectAsState()
@@ -79,7 +80,8 @@ private fun CupCakeContainerUI(
         NavHost(
             navController = navController,
             startDestination = CupCakeScreen.Start.name,
-            modifier = innerModifier
+            modifier =
+            innerModifier
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState()),
             contentAlignment = Alignment.TopStart,

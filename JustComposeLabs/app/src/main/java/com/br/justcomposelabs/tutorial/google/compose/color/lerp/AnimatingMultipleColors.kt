@@ -41,11 +41,12 @@ fun UpdateTransitionColorExample() {
     val startColor = Color(0xFF68ACE0)
     val endColor = Color(0xFFA7FFEB)
 
-    val interpolatedColor = lerp(
-        startColor,
-        endColor,
-        sliderPosition
-    )
+    val interpolatedColor =
+        lerp(
+            startColor,
+            endColor,
+            sliderPosition,
+        )
 
     val animatedColor by transition.animateColor(label = "box_color") { state ->
         when (state) {
@@ -64,12 +65,13 @@ fun UpdateTransitionColorExample() {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(animatedSize.width.dp, animatedSize.height.dp)
-                .background(animatedColor)
+                .background(animatedColor),
         )
 
         Button(onClick = {
@@ -83,7 +85,7 @@ fun UpdateTransitionColorExample() {
             value = sliderPosition,
             onValueChange = { sliderPosition = it },
             valueRange = 0f..1f,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
         )
     }
 }

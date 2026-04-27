@@ -26,7 +26,6 @@ class AndroidUiBottomSheetActivity : AppCompatActivity() {
 }
 
 class AndroidUiBottomSheetBottomSheetDialogFragment : BottomSheetDialogFragment() {
-
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
     }

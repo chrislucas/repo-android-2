@@ -23,11 +23,12 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun CanvasDrawScope() {
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
             .navigationBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Canvas(modifier = Modifier.size(128.dp)) {
             // DrawScope.() -> Unit function

@@ -17,14 +17,15 @@ import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-val AGSL_SHADER = """
+val AGSL_SHADER =
+    """
     uniform float2 uResolution;
     uniform float uTime;
     half4 main(float2 fragCoord) {
         float2 uv = fragCoord / uResolution.xy;
         return half4(uv.x, uv.y, 0.5 + 0.5 * sin(uTime), 1.0);
     }
-""".trimIndent()
+    """.trimIndent()
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Preview(showBackground = true)
@@ -33,17 +34,19 @@ fun BoxShaderAGSL() {
     val shader = remember { RuntimeShader(AGSL_SHADER) }
     val brush = ShaderBrush(shader)
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .systemBarsPadding()
             .navigationBarsPadding()
             .fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier = Modifier.size(200.dp).drawBehind {
+            modifier =
+            Modifier.size(200.dp).drawBehind {
                 shader.setFloatUniform("uResolution", size.width, size.height)
                 drawRect(brush)
-            }
+            },
         )
     }
 }

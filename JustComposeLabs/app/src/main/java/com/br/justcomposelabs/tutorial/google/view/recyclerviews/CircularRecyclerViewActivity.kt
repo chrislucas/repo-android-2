@@ -24,15 +24,16 @@ class CircularRecyclerViewActivity : AppCompatActivity() {
                 insets
             }
 
-            circularRecyclerView.adapter = CircularAdapter(
-                (1..5).toList(),
-                { parentGroup: ViewGroup, viewType: Int ->
-                    CircularDefaultViewHolder(parentGroup)
-                },
-                { c: CircularDefaultViewHolder, data: Int ->
-                    c.setContent("$data")
-                }
-            )
+            circularRecyclerView.adapter =
+                CircularAdapter(
+                    (1..5).toList(),
+                    { parentGroup: ViewGroup, viewType: Int ->
+                        CircularDefaultViewHolder(parentGroup)
+                    },
+                    { c: CircularDefaultViewHolder, data: Int ->
+                        c.setContent("$data")
+                    },
+                )
         }
     }
 }

@@ -16,7 +16,7 @@ fun DrawShapeRect() {
         val canvasQuadrantSize = size / 2F
         drawRect(
             color = Color.Magenta,
-            size = canvasQuadrantSize
+            size = canvasQuadrantSize,
         )
     }
 }

@@ -13,6 +13,6 @@ fun DrawRegularPolygon() {
     AndroidView(
         factory = { ctx -> RegularPolygonView(ctx) },
         update = { it.invalidate() },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

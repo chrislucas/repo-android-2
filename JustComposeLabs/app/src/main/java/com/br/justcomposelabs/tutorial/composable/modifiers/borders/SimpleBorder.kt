@@ -18,6 +18,6 @@ import androidx.compose.ui.unit.dp
 fun BorderSample() {
     Text(
         "Text with  square border",
-        modifier = Modifier.border(4.dp, Color.Magenta).padding(10.dp)
+        modifier = Modifier.border(4.dp, Color.Magenta).padding(10.dp),
     )
 }

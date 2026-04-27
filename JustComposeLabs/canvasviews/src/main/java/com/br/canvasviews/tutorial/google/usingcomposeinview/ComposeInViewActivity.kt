@@ -47,9 +47,10 @@ import kotlin.math.tan
  * Extensões para calcular funções trigonométricas usando graus.
  */
 
-
 fun asinDegrees(radians: Double): Double = Math.toDegrees(asin(radians))
+
 fun acosDegrees(radians: Double): Double = Math.toDegrees(acos(radians))
+
 fun aTanDegrees(radians: Double): Double = Math.toDegrees(atan(radians))
 
 /*
@@ -99,46 +100,49 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
 
     // Configuração do Paint para os labels dos eixos
     // Reutilizado para evitar alocações dentro do DrawScope
-    val labelAxisPaint = remember {
-        Paint().apply {
-            textSize = LABEL_TEXT_SIZE
-            color = android.graphics.Color.BLACK
-            textAlign = Paint.Align.CENTER
+    val labelAxisPaint =
+        remember {
+            Paint().apply {
+                textSize = LABEL_TEXT_SIZE
+                color = android.graphics.Color.BLACK
+                textAlign = Paint.Align.CENTER
+            }
         }
-    }
 
     Box(
         modifier = modifier,
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Box(
-                modifier = Modifier
-                    .size(sizeDp)
-                    .border(1.dp, color = Color.Black)
-                    .pointerInput(Unit) {
-                        detectDragGestures { change, _ ->
-                            val touchPoint = change.position
+                modifier =
+                    Modifier
+                        .size(sizeDp)
+                        .border(1.dp, color = Color.Black)
+                        .pointerInput(Unit) {
+                            detectDragGestures { change, _ ->
+                                val touchPoint = change.position
                             /*
                                 Calcula o ângulo baseado na posição do toque relativa ao centro
                                 atan2(dy, dx) retorna o arco tangente de y/x em radianos (-PI a PI)
                              */
 
-                            val dx = touchPoint.x - circleCenter.x
-                            val dy = touchPoint.y - circleCenter.y
-                            // Invertemos o dy para que o ângulo cresça no sentido anti-horário
-                            // Já que no Canvas do Android o Y cresce para baixo.
-                            val newAngle = atan2(-dy, dx)
+                                val dx = touchPoint.x - circleCenter.x
+                                val dy = touchPoint.y - circleCenter.y
+                                // Invertemos o dy para que o ângulo cresça no sentido anti-horário
+                                // Já que no Canvas do Android o Y cresce para baixo.
+                                val newAngle = atan2(-dy, dx)
 
-                            // Normaliza o ângulo para o intervalo [0, 2*PI]
-                            radians = if (newAngle < 0) {
-                                newAngle + (2 * Math.PI).toFloat()
-                            } else {
-                                newAngle
+                                // Normaliza o ângulo para o intervalo [0, 2*PI]
+                                radians =
+                                    if (newAngle < 0) {
+                                        newAngle + (2 * Math.PI).toFloat()
+                                    } else {
+                                        newAngle
+                                    }
                             }
-                        }
-                    },
-                contentAlignment = Alignment.Center
+                        },
+                contentAlignment = Alignment.Center,
             ) {
                 Canvas(modifier = Modifier.fillMaxSize()) {
                     // 1. Desenhar Eixos X e Y (Tracejados)
@@ -149,7 +153,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         start = Offset(0f, circleCenter.y),
                         end = Offset(sizePx, circleCenter.y),
                         strokeWidth = AXIS_STROKE_WIDTH,
-                        pathEffect = dashPathEffect
+                        pathEffect = dashPathEffect,
                     )
 
                     drawLine(
@@ -157,7 +161,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         start = Offset(circleCenter.x, 0f),
                         end = Offset(circleCenter.x, sizePx),
                         strokeWidth = AXIS_STROKE_WIDTH,
-                        pathEffect = dashPathEffect
+                        pathEffect = dashPathEffect,
                     )
 
                     // 2. Desenhar Labels "X" e "Y" usando nativeCanvas
@@ -165,14 +169,14 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         "X",
                         sizePx - LABEL_X_OFFSET,
                         circleCenter.y - LABEL_Y_OFFSET,
-                        labelAxisPaint
+                        labelAxisPaint,
                     )
 
                     drawContext.canvas.nativeCanvas.drawText(
                         "Y",
                         circleCenter.x + LABEL_Y_OFFSET,
                         AXIS_LABEL_TOP_PADDING,
-                        labelAxisPaint
+                        labelAxisPaint,
                     )
 
                     // 3. Desenhar o Círculo Unitário (em verde)
@@ -180,22 +184,23 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         color = Color.Green,
                         radius = radius,
                         style = Stroke(width = UNIT_CIRCLE_STROKE_WIDTH),
-                        center = circleCenter
+                        center = circleCenter,
                     )
 
                     // 4. Calcular o ponto atual na circunferência
                     // x = cx + r * cos(θ)
                     // y = cy - r * sin(θ)  <-- Subtraímos para sentido anti-horário no Canvas (Y para baixo)
-                    val pointOnCircle = Offset(
-                        x = circleCenter.x + radius * cos(radians),
-                        y = circleCenter.y - radius * sin(radians)
-                    )
+                    val pointOnCircle =
+                        Offset(
+                            x = circleCenter.x + radius * cos(radians),
+                            y = circleCenter.y - radius * sin(radians),
+                        )
 
                     // 5. Desenhar o ponto (indicador)
                     drawCircle(
                         color = Color.Red,
                         radius = INDICATOR_POINT_RADIUS,
-                        center = pointOnCircle
+                        center = pointOnCircle,
                     )
 
                     // 6. Desenhar Cosseno (Linha Azul)
@@ -206,7 +211,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         start = pointOnCircle,
                         end = cosineEnd,
                         strokeWidth = GRAPHIC_LINE_STROKE_WIDTH,
-                        pathEffect = dashPathEffect
+                        pathEffect = dashPathEffect,
                     )
 
                     drawLine(
@@ -224,7 +229,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         start = pointOnCircle,
                         end = sineEnd,
                         strokeWidth = GRAPHIC_LINE_STROKE_WIDTH,
-                        pathEffect = dashPathEffect
+                        pathEffect = dashPathEffect,
                     )
 
                     drawLine(
@@ -246,7 +251,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                             start = pointOnCircle,
                             end = tangentEnd,
                             strokeWidth = GRAPHIC_LINE_STROKE_WIDTH,
-                            pathEffect = dashPathEffect
+                            pathEffect = dashPathEffect,
                         )
                     }
                 }
@@ -259,7 +264,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier.fillMaxWidth(),
             ) {
                 Text(text = "Graus: %.1f°".format(angleDeg))
                 Text(text = "Radianos: %.1f°".format(radians))
@@ -267,15 +272,16 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                 Row(modifier = Modifier.fillMaxWidth()) {
                     Column(
                         modifier = Modifier.weight(.5f),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         Text("Trigonometria")
                         val sineVal = sin(radians)
                         val cosineVal = cos(radians)
-                        val tangentVal = tan(radians).takeIf {
-                            // Limita exibição de valores extremos
-                            abs(it) < TANGENT_DISPLAY_LIMIT
-                        }
+                        val tangentVal =
+                            tan(radians).takeIf {
+                                // Limita exibição de valores extremos
+                                abs(it) < TANGENT_DISPLAY_LIMIT
+                            }
                         Text(text = "Seno: %.3f".format(sineVal), color = Color.Red)
                         Text(text = "Cosseno: %.3f".format(cosineVal), color = Color.Blue)
                         Text(text = "Tangente: %.3f".format(tangentVal ?: Double.NaN), color = Color.Magenta)
@@ -283,15 +289,16 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
 
                     Column(
                         modifier = Modifier.weight(.5f),
-                        horizontalAlignment = Alignment.CenterHorizontally
+                        horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
                         Text("Inversas (Graus)")
                         val aSineDegreesVal = asinDegrees(radians.toDouble())
                         val aCosineDegreesVal = acosDegrees(radians.toDouble())
-                        val aTangentDegreesVal = aTanDegrees(radians.toDouble()).takeIf {
-                            // Limita exibição de valores extremos
-                            abs(it) < TANGENT_DISPLAY_LIMIT * 10 // Limite maior para graus
-                        }
+                        val aTangentDegreesVal =
+                            aTanDegrees(radians.toDouble()).takeIf {
+                                // Limita exibição de valores extremos
+                                abs(it) < TANGENT_DISPLAY_LIMIT * 10 // Limite maior para graus
+                            }
                         Text(text = "Asen: %.1f°".format(aSineDegreesVal), color = Color.Red)
                         Text(text = "Acos: %.1f°".format(aCosineDegreesVal), color = Color.Blue)
                         Text(text = "Atan: %.1f°".format(aTangentDegreesVal ?: Double.NaN), color = Color.Magenta)

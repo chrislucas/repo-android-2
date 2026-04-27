@@ -38,21 +38,22 @@ import androidx.compose.ui.unit.dp
 fun ReplyBottomSheetContent(
     parentComment: Comment,
     onDismiss: () -> Unit,
-    onAddComment: (String, String) -> Unit
+    onAddComment: (String, String) -> Unit,
 ) {
     var author by remember { mutableStateOf("") }
     var content by remember { mutableStateOf("") }
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp, vertical = 8.dp)
             .imePadding(),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+        verticalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         BottomSheetHeader(
             parentAuthor = parentComment.author,
-            onDismiss = onDismiss
+            onDismiss = onDismiss,
         )
 
         CommentContextCard(comment = parentComment)
@@ -61,7 +62,7 @@ fun ReplyBottomSheetContent(
             author = author,
             onAuthorChange = { author = it },
             content = content,
-            onContentChange = { content = it }
+            onContentChange = { content = it },
         )
 
         SendReplyButton(
@@ -70,7 +71,7 @@ fun ReplyBottomSheetContent(
                 if (author.isNotBlank() && content.isNotBlank()) {
                     onAddComment(author, content)
                 }
-            }
+            },
         )
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -81,11 +82,11 @@ fun ReplyBottomSheetContent(
 @Composable
 private fun BottomSheetHeader(
     parentAuthor: String,
-    onDismiss: () -> Unit
+    onDismiss: () -> Unit,
 ) {
     Row(
         modifier = Modifier.fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically
+        verticalAlignment = Alignment.CenterVertically,
     ) {
         Text(
             text = "Respondendo a ${parentAuthor.truncate(14)}",
@@ -94,13 +95,13 @@ private fun BottomSheetHeader(
             color = MaterialTheme.colorScheme.primary,
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
-            modifier = Modifier.weight(1f, fill = false)
+            modifier = Modifier.weight(1f, fill = false),
         )
 
         IconButton(onClick = onDismiss) {
             Icon(
                 imageVector = Icons.Filled.Close,
-                contentDescription = "Fechar"
+                contentDescription = "Fechar",
             )
         }
     }
@@ -111,24 +112,25 @@ private fun BottomSheetHeader(
 private fun CommentContextCard(comment: Comment) {
     Card(
         modifier = Modifier.fillMaxWidth(),
-        colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant
-        )
+        colors =
+        CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant,
+        ),
     ) {
         Column(
-            modifier = Modifier.padding(12.dp)
+            modifier = Modifier.padding(12.dp),
         ) {
             Text(
                 text = comment.author,
                 style = MaterialTheme.typography.labelMedium,
                 color = MaterialTheme.colorScheme.primary,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
             )
             Spacer(modifier = Modifier.height(4.dp))
             Text(
                 text = comment.content,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
         }
     }
@@ -140,7 +142,7 @@ private fun ReplyFormFields(
     author: String,
     onAuthorChange: (String) -> Unit,
     content: String,
-    onContentChange: (String) -> Unit
+    onContentChange: (String) -> Unit,
 ) {
     Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
         OutlinedTextField(
@@ -149,7 +151,7 @@ private fun ReplyFormFields(
             label = { Text("Seu nome") },
             placeholder = { Text("Digite seu nome") },
             modifier = Modifier.fillMaxWidth(),
-            singleLine = true
+            singleLine = true,
         )
 
         OutlinedTextField(
@@ -157,10 +159,11 @@ private fun ReplyFormFields(
             onValueChange = onContentChange,
             label = { Text("Seu comentário") },
             placeholder = { Text("Digite sua resposta...") },
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .height(150.dp),
-            maxLines = 6
+            maxLines = 6,
         )
     }
 }
@@ -169,18 +172,19 @@ private fun ReplyFormFields(
 @Composable
 private fun SendReplyButton(
     enabled: Boolean,
-    onClick: () -> Unit
+    onClick: () -> Unit,
 ) {
     Button(
         onClick = onClick,
         enabled = enabled,
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
-            .height(56.dp)
+            .height(56.dp),
     ) {
         Icon(
             imageVector = Icons.AutoMirrored.Filled.Send,
-            contentDescription = null
+            contentDescription = null,
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text("Enviar Resposta", style = MaterialTheme.typography.titleMedium)
@@ -196,7 +200,7 @@ fun PreviewBottomSheetHeader() {
     MaterialTheme {
         BottomSheetHeader(
             parentAuthor = "Maria Oliveira Santos",
-            onDismiss = {}
+            onDismiss = {},
         )
     }
 }
@@ -208,11 +212,12 @@ fun PreviewCommentContextCard() {
     MaterialTheme {
         Box(modifier = Modifier.padding(16.dp)) {
             CommentContextCard(
-                comment = Comment(
+                comment =
+                Comment(
                     id = 1,
                     author = "João Silva",
-                    content = "Este é o comentário pai ao qual você está respondendo. Pode conter bastante texto para demonstrar o layout."
-                )
+                    content = "Este é o comentário pai ao qual você está respondendo. Pode conter bastante texto para demonstrar o layout.",
+                ),
             )
         }
     }
@@ -228,7 +233,7 @@ fun PreviewReplyFormFields() {
                 author = "Meu Nome",
                 onAuthorChange = {},
                 content = "Este é meu comentário de exemplo...",
-                onContentChange = {}
+                onContentChange = {},
             )
         }
     }
@@ -242,7 +247,7 @@ fun PreviewSendReplyButtonEnabled() {
         Box(modifier = Modifier.padding(16.dp)) {
             SendReplyButton(
                 enabled = true,
-                onClick = {}
+                onClick = {},
             )
         }
     }
@@ -256,7 +261,7 @@ fun PreviewSendReplyButtonDisabled() {
         Box(modifier = Modifier.padding(16.dp)) {
             SendReplyButton(
                 enabled = false,
-                onClick = {}
+                onClick = {},
             )
         }
     }
@@ -268,13 +273,14 @@ fun PreviewSendReplyButtonDisabled() {
 fun PreviewReplyBottomSheetContent() {
     MaterialTheme {
         ReplyBottomSheetContent(
-            parentComment = Comment(
+            parentComment =
+            Comment(
                 id = 1,
                 author = "João Silva",
-                content = "Este é um comentário muito interessante sobre desenvolvimento Android com Jetpack Compose."
+                content = "Este é um comentário muito interessante sobre desenvolvimento Android com Jetpack Compose.",
             ),
             onDismiss = {},
-            onAddComment = { _, _ -> }
+            onAddComment = { _, _ -> },
         )
     }
 }

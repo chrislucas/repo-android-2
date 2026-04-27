@@ -17,9 +17,10 @@ fun LineSegmentPathView() {
             LineSegmentPathView(context)
         },
         update = { view -> view.invalidate() },
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     )
 }

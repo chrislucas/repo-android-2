@@ -15,6 +15,6 @@ fun DrawRationalQuadraticCurveComponent() {
             RationalQuadraticBezierCurveView(it)
         },
         update = { it.invalidate() },
-        modifier = Modifier.fillMaxSizePadding()
+        modifier = Modifier.fillMaxSizePadding(),
     )
 }

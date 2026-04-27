@@ -30,30 +30,34 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun RectangleShapeBox() {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
-            .wrapContentSize(Alignment.Center)
+            .wrapContentSize(Alignment.Center),
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(100.dp)
                 .clip(RectangleShape)
                 .background(
-                    brush = Brush.horizontalGradient(
+                    brush =
+                    Brush.horizontalGradient(
                         listOf(
                             Color(0xFFB174DE), // Indigo
-                            Color(0xFF8F00FF) // Violet
-                        )
-                    )
-                )
+                            Color(0xFF8F00FF), // Violet
+                        ),
+                    ),
+                ),
         ) {
             Text(
                 "Rectangle Shape Box",
                 textAlign = TextAlign.Center,
                 color = Color.White,
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxSize()
-                    .wrapContentSize(Alignment.Center)
+                    .wrapContentSize(Alignment.Center),
             )
         }
     }
@@ -63,30 +67,34 @@ fun RectangleShapeBox() {
 @Composable
 fun CircleShapeBox() {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .wrapContentSize(Alignment.Center),
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(100.dp)
                 .clip(CircleShape)
                 .background(
-                    brush = Brush.horizontalGradient(
+                    brush =
+                    Brush.horizontalGradient(
                         listOf(
                             Color(0xFFB174DE), // Indigo
-                            Color(0xFF8F00FF) // Violet
-                        )
-                    )
-                )
+                            Color(0xFF8F00FF), // Violet
+                        ),
+                    ),
+                ),
         ) {
             Text(
                 "Circle Shape Box",
                 textAlign = TextAlign.Center,
                 color = Color.White,
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxSize()
-                    .wrapContentSize(Alignment.Center)
+                    .wrapContentSize(Alignment.Center),
             )
         }
     }
@@ -96,30 +104,34 @@ fun CircleShapeBox() {
 @Composable
 fun RoundedCornerBox() {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .wrapContentSize(Alignment.Center),
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(100.dp)
                 .clip(RoundedCornerShape(10.dp))
                 .background(
-                    brush = Brush.horizontalGradient(
+                    brush =
+                    Brush.horizontalGradient(
                         listOf(
                             Color(0xFFB174DE), // Indigo
-                            Color(0xFF8F00FF) // Violet
-                        )
-                    )
-                )
+                            Color(0xFF8F00FF), // Violet
+                        ),
+                    ),
+                ),
         ) {
             Text(
                 "Rounded Corner Shape Box",
                 textAlign = TextAlign.Center,
                 color = Color.White,
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxSize()
-                    .wrapContentSize(Alignment.Center)
+                    .wrapContentSize(Alignment.Center),
             )
         }
     }

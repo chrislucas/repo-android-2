@@ -92,7 +92,7 @@ fun StateTextField() {
             Text(
                 text = "Hello, $name!",
                 modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
             )
         }
 
@@ -100,7 +100,7 @@ fun StateTextField() {
             value = name,
             onValueChange = { name = it },
             label = { Text("label") },
-            singleLine = true
+            singleLine = true,
         )
     }
 }
@@ -130,14 +130,14 @@ fun StateTextFieldRemember() {
             Text(
                 text = "Hello, $name!",
                 modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
             )
         }
 
         OutlinedTextField(
             value = name,
             onValueChange = { setName(it) },
-            label = { Text("label") }
+            label = { Text("label") },
         )
     }
 }
@@ -145,7 +145,7 @@ fun StateTextFieldRemember() {
 @Preview(
     showBackground = true,
     showSystemUi = true,
-    name = "MutableStateTextFieldRemember"
+    name = "MutableStateTextFieldRemember",
 )
 @Composable
 fun MutableStateTextFieldRemember() {
@@ -155,7 +155,7 @@ fun MutableStateTextFieldRemember() {
             Text(
                 text = "Hello, ${state.value}!",
                 modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
             )
 
             /**
@@ -189,7 +189,8 @@ fun MutableStateTextFieldRemember() {
                  */
                 DisposableEffect(Unit) {
                     onDispose {
-                        Timber.tag("COMPOSE_DISPOSE_EFFECT")
+                        Timber
+                            .tag("COMPOSE_DISPOSE_EFFECT")
                             .d("on dispose with value ${state.value}")
                     }
                 }
@@ -199,7 +200,7 @@ fun MutableStateTextFieldRemember() {
         OutlinedTextField(
             value = state.value,
             onValueChange = { state.value = it },
-            label = { Text("label") }
+            label = { Text("label") },
         )
     }
 }
@@ -207,7 +208,7 @@ fun MutableStateTextFieldRemember() {
 @Preview(
     showBackground = true,
     showSystemUi = true,
-    name = "MutableStateByDelegateTextFieldRemember"
+    name = "MutableStateByDelegateTextFieldRemember",
 )
 @Composable
 fun MutableStateByDelegateTextFieldRemember() {
@@ -217,14 +218,14 @@ fun MutableStateByDelegateTextFieldRemember() {
             Text(
                 text = "Hello, $name!",
                 modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
             )
         }
 
         OutlinedTextField(
             value = name,
             onValueChange = { name = it },
-            label = { Text("label") }
+            label = { Text("label") },
         )
     }
 }
@@ -416,7 +417,10 @@ fun HelloScreen(helloLiveDataViewModel: HelloLiveDataViewModel = viewModel()) {
 }
 
 @Composable
-internal fun HelloContent(name: String = "", onNameChange: (String) -> Unit) {
+internal fun HelloContent(
+    name: String = "",
+    onNameChange: (String) -> Unit,
+) {
     /*
         Manter o gerenciamento de estado dentro da funcao composable faz com que ela
         seja dificil de ser reutilizada, dificil de testa-la unitariamente.e a mantem
@@ -434,9 +438,10 @@ internal fun HelloContent(name: String = "", onNameChange: (String) -> Unit) {
      * TODO testar essa funcao
      */
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
         // .padding(16.dp)
         // .recomposeHighlighter(false)
     ) {
@@ -444,14 +449,14 @@ internal fun HelloContent(name: String = "", onNameChange: (String) -> Unit) {
             Text(
                 text = "Hello, $name!",
                 modifier = Modifier.padding(bottom = 8.dp),
-                style = MaterialTheme.typography.headlineMedium
+                style = MaterialTheme.typography.headlineMedium,
             )
         }
 
         OutlinedTextField(
             value = name,
             onValueChange = onNameChange,
-            label = { Text("label") }
+            label = { Text("label") },
         )
     }
 }

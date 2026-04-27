@@ -51,29 +51,30 @@ class TextFieldStateViewModel : ViewModel() {
 
 sealed class StatusTextValidation {
     object Success : StatusTextValidation()
+
     object Error : StatusTextValidation()
+
     object Warning : StatusTextValidation()
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun StatefulOutlinedTextFieldErrorSupport(
-    modifier: Modifier = Modifier,
-
-) {
+fun StatefulOutlinedTextFieldErrorSupport(modifier: Modifier = Modifier) {
     var content by remember { mutableStateOf("") }
 
     var isError by remember { mutableStateOf(false) }
 
     Column(
-        modifier = modifier
+        modifier =
+        modifier
             .statusBarsPadding()
             .paddingEdgeToEdge()
             .navigationBarsPadding()
-            .fillMaxSize()
+            .fillMaxSize(),
     ) {
         OutlinedTextField(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .padding(start = 2.dp, end = 2.dp),
             value = content,
@@ -108,12 +109,12 @@ fun StatefulOutlinedTextFieldErrorSupport(
                     Icon(
                         Icons.Filled.Warning,
                         "error",
-                        tint = MaterialTheme.colorScheme.error
+                        tint = MaterialTheme.colorScheme.error,
                     )
                 }
             },
             singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text)
+            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
         )
     }
 }
@@ -131,14 +132,15 @@ fun StatefulOutlinedTextFieldErrorSupport(
 @Composable
 fun StatelessOutlinedTextFieldErrorSupport(
     modifier: Modifier = Modifier,
-    viewModel: TextFieldStateViewModel = viewModel()
+    viewModel: TextFieldStateViewModel = viewModel(),
 ) {
     Column(
-        modifier = modifier
+        modifier =
+        modifier
             .statusBarsPadding()
             .paddingEdgeToEdge()
             .navigationBarsPadding()
-            .fillMaxSize()
+            .fillMaxSize(),
     ) {
         Text("Ola, mundo!")
     }
@@ -149,13 +151,16 @@ interface ValidationText {
 }
 
 @JvmInline
-value class NonEmptyText private constructor(val content: String) {
+value class NonEmptyText private constructor(
+    val content: String,
+) {
     companion object {
-        fun of(content: String) = if (valid(content)) {
-            NonEmptyText(content)
-        } else {
-            null
-        }
+        fun of(content: String) =
+            if (valid(content)) {
+                NonEmptyText(content)
+            } else {
+                null
+            }
 
         private fun valid(content: String) = content.isNotEmpty() && content.isNotBlank()
     }
@@ -165,8 +170,9 @@ value class NonEmptyText private constructor(val content: String) {
     Checar se a palavra nao é uma palavra proibida
  */
 @JvmInline
-value class NonForbidden private constructor(val word: String) {
-
+value class NonForbidden private constructor(
+    val word: String,
+) {
     companion object {
         fun of(word: String) = NonForbidden(word)
     }

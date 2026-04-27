@@ -47,16 +47,17 @@ fun BottomSheetPreview() {
                         showBottomSheet = false
                     },
                     sheetState = sheetState,
-                    modifier = Modifier.padding(paddingValues)
+                    modifier = Modifier.padding(paddingValues),
                 ) {
                     Button(onClick = {
-                        scope.launch {
-                            sheetState.hide()
-                        }.invokeOnCompletion {
-                            if (!sheetState.isVisible) {
-                                showBottomSheet = false
+                        scope
+                            .launch {
+                                sheetState.hide()
+                            }.invokeOnCompletion {
+                                if (!sheetState.isVisible) {
+                                    showBottomSheet = false
+                                }
                             }
-                        }
                     }) {
                         Text(text = "Hide bottom sheet")
                     }

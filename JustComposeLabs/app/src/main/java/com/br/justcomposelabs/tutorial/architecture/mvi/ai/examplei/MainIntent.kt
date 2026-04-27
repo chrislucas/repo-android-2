@@ -20,7 +20,10 @@ class MockRepository : RepositoryPlainText {
 
 sealed class MainIntent {
     object LoadData : MainIntent()
-    data class ItemClocked(val itemId: String) : MainIntent()
+
+    data class ItemClocked(
+        val itemId: String,
+    ) : MainIntent()
 }
 
 /*
@@ -30,7 +33,7 @@ sealed class MainIntent {
 data class MainViewState(
     val isLoading: Boolean = false,
     val data: List<String> = emptyList(),
-    val error: String? = null
+    val error: String? = null,
 )
 
-class MainViewModel()
+class MainViewModel

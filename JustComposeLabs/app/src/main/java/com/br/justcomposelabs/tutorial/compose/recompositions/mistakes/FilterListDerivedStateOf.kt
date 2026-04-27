@@ -92,33 +92,37 @@ fun FilterListStructuralEqualityPolicy() {
     }
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         TextField(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .padding(4.dp),
             value = searchQuery,
             onValueChange = { searchQuery = it },
-            label = { Text("Busque por 'A'") }
+            label = { Text("Busque por 'A'") },
         )
 
         LazyColumn(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
-                .padding(4.dp)
+                .padding(4.dp),
         ) {
             Timber.tag("derived_state_lazy_col").d("Inside Lazy Column")
 
             items(filteredNames, key = { it.hashCode() }) { name ->
                 Text(
                     "Nome: $name",
-                    style = TextStyle(
-                        fontSize = 23.sp
-                    )
+                    style =
+                    TextStyle(
+                        fontSize = 23.sp,
+                    ),
                 )
                 Timber.tag("derived_state_list").d("Renderiza Item: $name")
             }
@@ -143,24 +147,27 @@ fun FilterListNeverEqualPolicy() {
     }
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         TextField(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .padding(4.dp),
             value = searchQuery,
             onValueChange = { searchQuery = it },
-            label = { Text("Busque por 'A'") }
+            label = { Text("Busque por 'A'") },
         )
 
         LazyColumn(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
-                .padding(4.dp)
+                .padding(4.dp),
         ) {
             /*
                 Com a politica de comparacao/igualdade errada a Lista é sempre atualizada conforme
@@ -173,9 +180,10 @@ fun FilterListNeverEqualPolicy() {
             items(filteredNames, key = { it.hashCode() }) { name ->
                 Text(
                     "Nome: $name",
-                    style = TextStyle(
-                        fontSize = 23.sp
-                    )
+                    style =
+                    TextStyle(
+                        fontSize = 23.sp,
+                    ),
                 )
                 Timber.tag("derived_state_list").d("Renderiza Item: $name")
             }
@@ -202,33 +210,37 @@ fun FilterList() {
     }
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         TextField(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .padding(4.dp),
             value = searchQuery,
             onValueChange = { searchQuery = it },
-            label = { Text("Busque por 'A'") }
+            label = { Text("Busque por 'A'") },
         )
 
         LazyColumn(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
-                .padding(4.dp)
+                .padding(4.dp),
         ) {
             Timber.tag("derived_state_lazy_col").d("Inside Lazy Column")
 
             items(filteredNames, key = { it.hashCode() }) { name ->
                 Text(
                     "Nome: $name",
-                    style = TextStyle(
-                        fontSize = 23.sp
-                    )
+                    style =
+                    TextStyle(
+                        fontSize = 23.sp,
+                    ),
                 )
                 Timber.tag("derived_state_list").d("Renderiza Item: $name")
             }

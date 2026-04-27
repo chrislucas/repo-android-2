@@ -37,9 +37,8 @@ interface UserEventListener<UserEvent> {
 }
 
 abstract class BaseViewModelExample<UserEvent, UIEvent>(
-    private val userEventListener: UserEventListener<UserEvent>
+    private val userEventListener: UserEventListener<UserEvent>,
 ) : ViewModel() {
-
     /*
         Uma discusso com a IA do porque
             - private val stateUiEvent: SharedFlow<UIEvent> = uiEvent nao é o suficiente para garantir que
@@ -125,10 +124,11 @@ abstract class BaseViewModelExample<UserEvent, UIEvent>(
         https://medium.com/@mortitech/sharein-vs-statein-in-kotlin-flows-when-to-use-each-1a19bd187553
         https://medium.com/androiddevelopers/things-to-know-about-flows-sharein-and-statein-operators-20e6ccb2bc74
      */
-    fun <T> Flow<T>.toScopedCall(default: T) = flowOn(Dispatchers.IO)
-        .stateIn(
-            scope = viewModelScope,
-            started = WhileSubscribed(5_000),
-            initialValue = default
-        )
+    fun <T> Flow<T>.toScopedCall(default: T) =
+        flowOn(Dispatchers.IO)
+            .stateIn(
+                scope = viewModelScope,
+                started = WhileSubscribed(5_000),
+                initialValue = default,
+            )
 }

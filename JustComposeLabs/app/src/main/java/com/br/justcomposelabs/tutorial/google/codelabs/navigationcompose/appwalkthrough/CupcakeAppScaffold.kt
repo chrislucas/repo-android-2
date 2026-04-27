@@ -25,20 +25,20 @@ fun CupcakeAppScaffold(
     canNavigateBack: Boolean,
     navigateUp: () -> Unit,
     modifier: Modifier = Modifier,
-    content: @Composable (Modifier) -> Unit
+    content: @Composable (Modifier) -> Unit,
 ) {
     Scaffold(
         topBar = {
             CupCakeAppTopAppBar(
                 currentScreen = currentScreen,
                 canNavigateBack = canNavigateBack,
-                navigateUp = navigateUp
+                navigateUp = navigateUp,
             )
         },
         bottomBar = {
             BottomAppBar {
             }
-        }
+        },
     ) { innerPadding ->
         content(modifier.padding(innerPadding))
     }
@@ -50,12 +50,13 @@ fun CupCakeAppTopAppBar(
     currentScreen: CupCakeScreen,
     modifier: Modifier = Modifier,
     canNavigateBack: Boolean,
-    navigateUp: () -> Unit
+    navigateUp: () -> Unit,
 ) {
     TopAppBar(
         title = { Text(stringResource(currentScreen.title)) },
-        colors = TopAppBarDefaults.mediumTopAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer
+        colors =
+        TopAppBarDefaults.mediumTopAppBarColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
         ),
         modifier = modifier,
         navigationIcon = {
@@ -63,11 +64,11 @@ fun CupCakeAppTopAppBar(
                 IconButton(onClick = navigateUp) {
                     Icon(
                         imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                        contentDescription = stringResource(R.string.back_button)
+                        contentDescription = stringResource(R.string.back_button),
                     )
                 }
             }
-        }
+        },
     )
 }
 
@@ -79,7 +80,7 @@ private fun CupcakeAppScaffoldPreview() {
         currentScreen = CupCakeScreen.Start,
         canNavigateBack = false,
         navigateUp = {},
-        content = {}
+        content = {},
     )
 }
 
@@ -89,6 +90,6 @@ fun CupCakeAppTopAppBarPreview() {
     CupCakeAppTopAppBar(
         currentScreen = CupCakeScreen.Start,
         canNavigateBack = false,
-        navigateUp = {}
+        navigateUp = {},
     )
 }

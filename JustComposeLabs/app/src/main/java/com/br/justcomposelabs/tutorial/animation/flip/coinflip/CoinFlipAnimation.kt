@@ -52,7 +52,7 @@ fun CoinFlipAnimation() {
     val rY by animateFloatAsState(
         targetValue = if (isFlipping) 360f else 0f,
         animationSpec = tween(durationMillis = 500, easing = LinearEasing),
-        label = "rotationY"
+        label = "rotationY",
     )
 
     LaunchedEffect(rY) {
@@ -95,7 +95,7 @@ fun ClickableTimedFlippingBox() {
     val animatedColor by animateColorAsState(
         targetValue = if (isClicked) Color.Blue else Color.Red,
         animationSpec = tween(durationMillis = 400),
-        label = "colorAnimation"
+        label = "colorAnimation",
     )
 
     // Ação de clique
@@ -107,19 +107,21 @@ fun ClickableTimedFlippingBox() {
                 val randomDirection = Random.nextBoolean()
                 // Define o número de rotações completas em 10 segundos
                 val rotationsPerSide = 15f
-                val targetRotation = if (randomDirection) {
-                    rotationY.value + (360f * rotationsPerSide) // Sentido horário
-                } else {
-                    rotationY.value - (360f * rotationsPerSide) // Sentido anti-horário
-                }
+                val targetRotation =
+                    if (randomDirection) {
+                        rotationY.value + (360f * rotationsPerSide) // Sentido horário
+                    } else {
+                        rotationY.value - (360f * rotationsPerSide) // Sentido anti-horário
+                    }
 
                 // Inicia a animação de rotação com duração de 10 segundos (10000ms) e easing suave
                 rotationY.animateTo(
                     targetValue = targetRotation,
-                    animationSpec = tween(
+                    animationSpec =
+                    tween(
                         durationMillis = 10000,
-                        easing = FastOutSlowInEasing // Começa rápido e desacelera no final
-                    )
+                        easing = FastOutSlowInEasing, // Começa rápido e desacelera no final
+                    ),
                 )
 
                 // Define isClicked de volta para falso após a conclusão da animação (10s depois)
@@ -129,7 +131,8 @@ fun ClickableTimedFlippingBox() {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .size(200.dp)
             .systemBarsPadding()
             .navigationBarsPadding()
@@ -138,24 +141,25 @@ fun ClickableTimedFlippingBox() {
                 // Aplica a rotação animada ao redor do eixo Y
                 this.rotationY = rotationY.value
                 cameraDistance = 8 * density
-            }
-            .clickable(onClick = onClick)
+            }.clickable(onClick = onClick)
             .padding(16.dp),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Card(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxSize()
                 .aspectRatio(1f),
             shape = RoundedCornerShape(16.dp),
-            colors = CardDefaults.cardColors(containerColor = animatedColor)
+            colors = CardDefaults.cardColors(containerColor = animatedColor),
         ) {
             Box(
                 modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.Center,
             ) {
                 Box(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .size(50.dp)
                         .clip(CircleShape)
                         .graphicsLayer {
@@ -192,22 +196,24 @@ fun CoinTossFlippingBox() {
                 // A moeda deve girar por várias voltas e parar em 0 (True) ou 180 (False).
                 // Adicionamos um grande número de voltas para a animação parecer realista.
                 val numberOfSpins = 15 // 15 voltas completas
-                val targetDegrees = if (finalResultIsBlue) {
-                    // Parar na face 0 graus (True)
-                    360f * numberOfSpins
-                } else {
-                    // Parar na face 180 graus (False)
-                    (360f * numberOfSpins) + 180f
-                }
+                val targetDegrees =
+                    if (finalResultIsBlue) {
+                        // Parar na face 0 graus (True)
+                        360f * numberOfSpins
+                    } else {
+                        // Parar na face 180 graus (False)
+                        (360f * numberOfSpins) + 180f
+                    }
 
                 // 3. Animar para o destino por 10 segundos com easing de desaceleração
                 rY.animateTo(
                     targetValue = targetDegrees,
-                    animationSpec = tween(
+                    animationSpec =
+                    tween(
                         durationMillis = 10000, // 10 segundos
                         // Este easing imita o atrito, começando rápido e parando suavemente
-                        easing = FastOutSlowInEasing
-                    )
+                        easing = FastOutSlowInEasing,
+                    ),
                 )
 
                 // 4. Resetar o estado de giro após 10 segundos
@@ -217,16 +223,16 @@ fun CoinTossFlippingBox() {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .size(200.dp)
             .graphicsLayer {
                 this.rotationY = rY.value
                 // Adiciona perspectiva para melhor efeito 3D
                 cameraDistance = 8 * density
-            }
-            .clickable(onClick = onClick, enabled = !isSpinning)
+            }.clickable(onClick = onClick, enabled = !isSpinning)
             .padding(16.dp),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         // Face da frente (True side)
         FlipCardFace(color = sideFaceTrue, text = "TRUE")
@@ -247,24 +253,28 @@ fun CoinTossFlippingBox() {
 }
 
 @Composable
-fun FlipCardFace(color: Color, text: String) {
+fun FlipCardFace(
+    color: Color,
+    text: String,
+) {
     Card(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .aspectRatio(1f),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = color)
+        colors = CardDefaults.cardColors(containerColor = color),
     ) {
         Box(
             modifier = Modifier.fillMaxSize(),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             // O círculo interno foi removido para focar na funcionalidade de duas faces
             Text(
                 text = text,
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.White
+                color = Color.White,
             )
         }
     }

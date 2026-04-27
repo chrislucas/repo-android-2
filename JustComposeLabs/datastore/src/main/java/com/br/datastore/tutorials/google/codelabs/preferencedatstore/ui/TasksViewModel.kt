@@ -11,13 +11,11 @@ import com.br.datastore.tutorials.google.codelabs.preferencedatstore.data.UserPr
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.combine
 
-
 data class TaskUiModel(
     val tasks: List<Task>,
     val showCompleted: Boolean,
     val sortOrder: SortOrder,
 )
-
 
 /*
     https://developer.android.com/codelabs/android-preferences-datastore#2
@@ -27,7 +25,6 @@ class TasksSharedPreferenceViewModel(
     repository: TasksRepository,
     private val userPreferencesRepository: UserPreferencesRepository,
 ) : ViewModel() {
-
     /*
         Armazena o ultimo valor de showCompleted
      */
@@ -38,50 +35,42 @@ class TasksSharedPreferenceViewModel(
      */
     private val sorOrderStateFlow = userPreferencesRepository.stateFlowSortOrder
 
-
-    private val taskUiModelFlow = combine(
-        repository.tasks,
-        showCompletedFlow,
-        sorOrderStateFlow
-    ) { tasks: List<Task>, showCompleted: Boolean, sortOrder: SortOrder ->
-    }
-
+    private val taskUiModelFlow =
+        combine(
+            repository.tasks,
+            showCompletedFlow,
+            sorOrderStateFlow,
+        ) { tasks: List<Task>, showCompleted: Boolean, sortOrder: SortOrder ->
+        }
 }
-
 
 class TasksSharedPreferenceViewModelFactory(
     private val tasksRepository: TasksRepository,
-    private val userPreferencesRepository: UserPreferencesRepository
+    private val userPreferencesRepository: UserPreferencesRepository,
 ) : ViewModelProvider.Factory {
-
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return if (modelClass.isAssignableFrom(TasksSharedPreferenceViewModel::class.java)) {
-             TasksSharedPreferenceViewModel(tasksRepository, userPreferencesRepository) as T
+    override fun <T : ViewModel> create(modelClass: Class<T>): T =
+        if (modelClass.isAssignableFrom(TasksSharedPreferenceViewModel::class.java)) {
+            TasksSharedPreferenceViewModel(tasksRepository, userPreferencesRepository) as T
         } else {
             throw IllegalArgumentException("Unknown ViewModel class")
         }
-    }
 }
-
 
 class TasksDataStoreViewModel(
     repository: TasksRepository,
-    private val userDataStoreRepository: UserDataStoreRepository
-) : ViewModel() {
-}
+    private val userDataStoreRepository: UserDataStoreRepository,
+) : ViewModel()
 
 class TasksDataStoreViewModelFactory(
     private val tasksRepository: TasksRepository,
-    private val userDataStoreRepository: UserDataStoreRepository
-): ViewModelProvider.Factory {
-
+    private val userDataStoreRepository: UserDataStoreRepository,
+) : ViewModelProvider.Factory {
     @Suppress("UNCHECKED_CAST")
-    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return if (modelClass.isAssignableFrom(TasksDataStoreViewModel::class.java)) {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T =
+        if (modelClass.isAssignableFrom(TasksDataStoreViewModel::class.java)) {
             TasksDataStoreViewModel(tasksRepository, userDataStoreRepository) as T
         } else {
             throw IllegalArgumentException("Unknown ViewModel class")
         }
-    }
 }

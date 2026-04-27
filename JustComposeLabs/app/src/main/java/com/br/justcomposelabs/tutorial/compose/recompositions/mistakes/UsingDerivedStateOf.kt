@@ -42,9 +42,10 @@ fun DisplayResult(count: State<Int>) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(
             "Count: ${count.value}",
-            style = TextStyle(
-                fontSize = 23.sp
-            )
+            style =
+            TextStyle(
+                fontSize = 23.sp,
+            ),
         )
     }
 }

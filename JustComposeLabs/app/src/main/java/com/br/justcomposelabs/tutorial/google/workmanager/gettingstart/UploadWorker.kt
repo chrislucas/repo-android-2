@@ -17,9 +17,10 @@ interface Uploader {
     fun upload(): ListenableWorker.Result
 }
 
-class UploadWorker(ctx: Context, private val uploader: Uploader, workerParams: WorkerParameters) :
-    Worker(ctx, workerParams) {
-    override fun doWork(): Result {
-        return uploader.upload()
-    }
+class UploadWorker(
+    ctx: Context,
+    private val uploader: Uploader,
+    workerParams: WorkerParameters,
+) : Worker(ctx, workerParams) {
+    override fun doWork(): Result = uploader.upload()
 }

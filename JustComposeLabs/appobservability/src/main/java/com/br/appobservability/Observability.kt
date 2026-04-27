@@ -7,5 +7,4 @@ package com.br.appobservability
         - https://github.com/DataDog/dd-sdk-android
     - firebase-crashlytics
  */
-object Observability {
-}
+object Observability

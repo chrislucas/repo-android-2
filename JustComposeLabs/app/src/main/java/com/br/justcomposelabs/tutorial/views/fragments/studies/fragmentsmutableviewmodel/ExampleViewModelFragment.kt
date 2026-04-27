@@ -17,11 +17,10 @@ import kotlinx.coroutines.launch
 
 data class MyUiState(
     val message: String = "Hello from ViewModel!",
-    val counter: Int = 0
+    val counter: Int = 0,
 )
 
 class ExampleViewModelFragment : Fragment() {
-
     private var mBinding: FragmentExampleViewModelBinding? = null
     private val binding get() = mBinding!!
 
@@ -38,13 +37,16 @@ class ExampleViewModelFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         mBinding = FragmentExampleViewModelBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun onViewCreated(
+        view: View,
+        savedInstanceState: Bundle?,
+    ) {
         super.onViewCreated(view, savedInstanceState)
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.uiState.collect { uiState ->

@@ -19,17 +19,19 @@ import kotlin.properties.Delegates
 
  */
 
-class LineSegmentPathView @JvmOverloads constructor(
+class LineSegmentPathView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(ctx, attrs, defStyleAttr) {
-
-    private val linePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = "#FF003432".toColorInt()
-        style = Paint.Style.STROKE
-        strokeCap = Cap.ROUND
-    }
+    private val linePaint =
+        Paint(Paint.ANTI_ALIAS_FLAG).apply {
+            color = "#FF003432".toColorInt()
+            style = Paint.Style.STROKE
+            strokeCap = Cap.ROUND
+        }
 
     private val pathLine = Path()
 
@@ -64,7 +66,12 @@ class LineSegmentPathView @JvmOverloads constructor(
         canvas.drawPath(pathLine, linePaint)
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         linePaint.strokeWidth = min(w, h) * scaleStrokeWidth // Set stroke width to 1% of the smaller dimension
         start = w * scaleStartX to h * scaleStartY

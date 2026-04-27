@@ -66,9 +66,10 @@ class SizeAnimationViewModel : ViewModel() {
                 - talvez visibilidade
 
      */
-    private val springSpecState = MutableStateFlow(
-        SpringSpecState(visibilityThreshold = Dp.VisibilityThreshold)
-    )
+    private val springSpecState =
+        MutableStateFlow(
+            SpringSpecState(visibilityThreshold = Dp.VisibilityThreshold),
+        )
 
     val observerSpringSpecState: StateFlow<SpringSpecState<Dp>> =
         springSpecState.asStateFlow()
@@ -130,10 +131,11 @@ data class SpringSpecState<T>(
 fun CustomizeAnimation(viewModel: SizeAnimationViewModel = viewModel()) {
     val size by animateDpAsState(
         targetValue = if (viewModel.expanded) 200.dp else 100.dp,
-        animationSpec = spring(
+        animationSpec =
+        spring(
             dampingRatio = Spring.DampingRatioLowBouncy,
-            stiffness = Spring.StiffnessLow
-        )
+            stiffness = Spring.StiffnessLow,
+        ),
     )
 
     LaunchedEffect(Unit) {
@@ -141,31 +143,34 @@ fun CustomizeAnimation(viewModel: SizeAnimationViewModel = viewModel()) {
     }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
             .systemBarsPadding()
             .border(
                 border = BorderStroke(2.dp, Color.Black),
-                shape = RectangleShape
+                shape = RectangleShape,
             ),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .size(size)
                 .border(border = BorderStroke(2.dp, Color.Black))
                 .drawBehind {
                     drawRect(Color(0xFFE91E63))
                 },
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             Text(
                 "inner",
-                style = TextStyle(
+                style =
+                TextStyle(
                     fontSize = 18.sp,
                     color = Color.White,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
                 ),
             )
         }
@@ -206,36 +211,43 @@ fun FadeAnimationScreen(viewModel: FadeViewModel = viewModel()) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         AnimatedVisibility(
             visible = isVisible,
             // Personalizando o fadeIn com spring
-            enter = fadeIn(
-                animationSpec = spring(
+            enter =
+            fadeIn(
+                animationSpec =
+                spring(
                     dampingRatio = Spring.DampingRatioLowBouncy,
-                    stiffness = Spring.StiffnessVeryLow
-                )
-            ) + scaleIn(
-                initialScale = .5f, // inicia com metade do tamanho
-                animationSpec = spring(
-                    dampingRatio = Spring.DampingRatioMediumBouncy,
-                    stiffness = Spring.StiffnessLow
-                )
-            ),
+                    stiffness = Spring.StiffnessVeryLow,
+                ),
+            ) +
+                scaleIn(
+                    initialScale = .5f, // inicia com metade do tamanho
+                    animationSpec =
+                    spring(
+                        dampingRatio = Spring.DampingRatioMediumBouncy,
+                        stiffness = Spring.StiffnessLow,
+                    ),
+                ),
             // Personalizando o fadeOut com spring
-            exit = fadeOut(
-                animationSpec = spring(stiffness = Spring.StiffnessLow)
-            ) + scaleOut(
-                targetScale = .5f, // Diminui para metade antes de sumir
-                animationSpec = spring(stiffness = Spring.StiffnessLow)
-            )
+            exit =
+            fadeOut(
+                animationSpec = spring(stiffness = Spring.StiffnessLow),
+            ) +
+                scaleOut(
+                    targetScale = .5f, // Diminui para metade antes de sumir
+                    animationSpec = spring(stiffness = Spring.StiffnessLow),
+                ),
         ) {
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .size(150.dp)
                     .background(Color.Magenta, RoundedCornerShape(16.dp)),
-                contentAlignment = Alignment.Center
+                contentAlignment = Alignment.Center,
             ) {
                 Text("Olá Spring!", color = Color.White)
             }

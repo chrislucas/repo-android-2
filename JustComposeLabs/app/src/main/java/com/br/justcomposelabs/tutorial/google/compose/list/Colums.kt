@@ -30,12 +30,13 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun FakeItemsPreview() {
     LazyColumn(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .padding(3.dp)
             .background(Color(0xFFB388FF)),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         item {
             FakeItemCard("1")
@@ -56,18 +57,19 @@ private fun FakeItemCard(content: String) {
     Card(
         shape = RoundedCornerShape(2.dp),
         elevation = CardDefaults.cardElevation(2.dp),
-        modifier = Modifier
+        modifier =
+        Modifier
             .padding(4.dp)
             .fillMaxSize(),
     ) {
         Box(
             contentAlignment = Alignment.Center,
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.fillMaxSize(),
         ) {
             Text(
                 text = content,
                 fontSize = 12.sp,
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
             )
         }
     }

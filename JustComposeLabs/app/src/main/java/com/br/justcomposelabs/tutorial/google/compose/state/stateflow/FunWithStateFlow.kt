@@ -20,7 +20,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
-class StateFlowSampleViewModel() : ViewModel() {
+class StateFlowSampleViewModel : ViewModel() {
     /*
         https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/-state-flow/
      */
@@ -54,18 +54,16 @@ class StateFlowSampleViewModel() : ViewModel() {
 
 @Preview(showSystemUi = true)
 @Composable
-fun ButtonUpdateStateFlow(
-    viewModel: StateFlowSampleViewModel = StateFlowSampleViewModel()
-) {
+fun ButtonUpdateStateFlow(viewModel: StateFlowSampleViewModel = StateFlowSampleViewModel()) {
     val counter = viewModel.counter.collectAsState()
 
     Column(
         modifier =
-        Modifier.fillMaxSize()
+        Modifier
+            .fillMaxSize()
             .border(2.dp, Color.Red),
-
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Button(onClick = { viewModel.incrementCounter() }) {
             Text("Increment: ${counter.value}")

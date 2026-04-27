@@ -39,7 +39,7 @@ import kotlinx.coroutines.launch
 fun InfiniteScrollCommentTree(
     comments: List<Comment>,
     modifier: Modifier = Modifier,
-    onAddComment: (Comment, String, String) -> Unit = { _, _, _ -> }
+    onAddComment: (Comment, String, String) -> Unit = { _, _, _ -> },
 ) {
     var expandedComments by remember { mutableStateOf(setOf<Int>()) }
     var focusedCommentId by remember { mutableStateOf<Int?>(null) }
@@ -49,11 +49,12 @@ fun InfiniteScrollCommentTree(
     val scope = rememberCoroutineScope()
 
     val toggleComment: (Comment) -> Unit = { comment ->
-        expandedComments = if (expandedComments.contains(comment.id)) {
-            expandedComments - comment.id
-        } else {
-            expandedComments + comment.id
-        }
+        expandedComments =
+            if (expandedComments.contains(comment.id)) {
+                expandedComments - comment.id
+            } else {
+                expandedComments + comment.id
+            }
     }
 
     val navigateToComment: (Int) -> Unit = { commentId ->
@@ -78,10 +79,11 @@ fun InfiniteScrollCommentTree(
     }
 
     Column(
-        modifier = modifier
+        modifier =
+        modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     ) {
         // Barra de navegação
         if (focusedCommentId != null) {
@@ -96,7 +98,7 @@ fun InfiniteScrollCommentTree(
             onToggleComment = toggleComment,
             onNavigateToComment = navigateToComment,
             onShowReply = showReplyBottomSheet,
-            modifier = Modifier.weight(1f)
+            modifier = Modifier.weight(1f),
         )
 
         // BottomSheet para adicionar comentário
@@ -104,7 +106,7 @@ fun InfiniteScrollCommentTree(
             ModalBottomSheet(
                 onDismissRequest = hideReplyBottomSheet,
                 sheetState = sheetState,
-                dragHandle = { BottomSheetDefaults.DragHandle() }
+                dragHandle = { BottomSheetDefaults.DragHandle() },
             ) {
                 ReplyBottomSheetContent(
                     parentComment = showingReplyTo!!,
@@ -112,7 +114,7 @@ fun InfiniteScrollCommentTree(
                     onAddComment = { author, content ->
                         onAddComment(showingReplyTo!!, author, content)
                         hideReplyBottomSheet()
-                    }
+                    },
                 )
             }
         }
@@ -125,25 +127,26 @@ fun NavigationBar(onBack: () -> Unit) {
     Surface(
         modifier = Modifier.fillMaxWidth(),
         shadowElevation = 4.dp,
-        color = MaterialTheme.colorScheme.primaryContainer
+        color = MaterialTheme.colorScheme.primaryContainer,
     ) {
         Row(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 .padding(8.dp),
-            verticalAlignment = Alignment.CenterVertically
+            verticalAlignment = Alignment.CenterVertically,
         ) {
             IconButton(onClick = onBack) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Filled.ArrowBack,
                     contentDescription = "Voltar",
-                    tint = MaterialTheme.colorScheme.onPrimaryContainer
+                    tint = MaterialTheme.colorScheme.onPrimaryContainer,
                 )
             }
             Text(
                 text = "Navegando em comentário",
                 style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.onPrimaryContainer
+                color = MaterialTheme.colorScheme.onPrimaryContainer,
             )
         }
     }
@@ -158,23 +161,24 @@ fun ScrollableCommentList(
     onToggleComment: (Comment) -> Unit,
     onNavigateToComment: (Int) -> Unit,
     onShowReply: (Comment) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     val listState = rememberLazyListState()
 
     // Se há um comentário focado, mostra apenas ele e seu contexto
-    val displayComments = remember(comments, focusedCommentId) {
-        if (focusedCommentId != null) {
-            val focusedComment = findCommentInList(comments, focusedCommentId)
-            if (focusedComment != null) listOf(focusedComment) else comments
-        } else {
-            comments
+    val displayComments =
+        remember(comments, focusedCommentId) {
+            if (focusedCommentId != null) {
+                val focusedComment = findCommentInList(comments, focusedCommentId)
+                if (focusedComment != null) listOf(focusedComment) else comments
+            } else {
+                comments
+            }
         }
-    }
 
     LazyColumn(
         state = listState,
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth(),
     ) {
         displayComments.forEach { comment ->
             renderCommentTree(
@@ -183,7 +187,7 @@ fun ScrollableCommentList(
                 expandedComments = expandedComments,
                 onToggleComment = onToggleComment,
                 onNavigateToComment = onNavigateToComment,
-                onShowReply = onShowReply
+                onShowReply = onShowReply,
             )
         }
     }
@@ -198,7 +202,7 @@ fun LazyListScope.renderCommentTree(
     onToggleComment: (Comment) -> Unit,
     onNavigateToComment: (Int) -> Unit,
     onShowReply: (Comment) -> Unit,
-    maxLevel: Int = 2 // Máximo 3 níveis (0, 1, 2)
+    maxLevel: Int = 2, // Máximo 3 níveis (0, 1, 2)
 ) {
     val isExpanded = expandedComments.contains(comment.id)
     val hasReplies = comment.replies.isNotEmpty()
@@ -210,13 +214,14 @@ fun LazyListScope.renderCommentTree(
             level = level,
             isExpanded = isExpanded,
             onToggle = { onToggleComment(comment) },
-            onNavigate = if (hasReplies) {
+            onNavigate =
+            if (hasReplies) {
                 { onNavigateToComment(comment.id) }
             } else {
                 null
             },
             onReply = { onShowReply(comment) },
-            reachedMaxLevel = reachedMaxLevel && hasReplies
+            reachedMaxLevel = reachedMaxLevel && hasReplies,
         )
     }
 
@@ -231,7 +236,7 @@ fun LazyListScope.renderCommentTree(
                 onToggleComment = onToggleComment,
                 onNavigateToComment = onNavigateToComment,
                 onShowReply = onShowReply,
-                maxLevel = maxLevel
+                maxLevel = maxLevel,
             )
         }
     }
@@ -252,40 +257,43 @@ fun PreviewNavigationBar() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun PreviewInfiniteScrollCommentTree() {
-    val sampleComments = listOf(
-        Comment(
-            id = 1,
-            author = "Usuário 1",
-            content = "Comentário de nível 1",
-            replies = mutableListOf(
-                Comment(
-                    id = 2,
-                    author = "Usuário 2",
-                    content = "Resposta de nível 2",
-                    parentId = 1,
-                    replies = mutableListOf(
-                        Comment(
-                            id = 3,
-                            author = "Usuário 3",
-                            content = "Resposta de nível 3",
-                            parentId = 2
-                        )
-                    )
-                )
-            )
-        ),
-        Comment(
-            id = 4,
-            author = "Usuário 4",
-            content = "Outro comentário",
-            replies = mutableListOf()
+    val sampleComments =
+        listOf(
+            Comment(
+                id = 1,
+                author = "Usuário 1",
+                content = "Comentário de nível 1",
+                replies =
+                mutableListOf(
+                    Comment(
+                        id = 2,
+                        author = "Usuário 2",
+                        content = "Resposta de nível 2",
+                        parentId = 1,
+                        replies =
+                        mutableListOf(
+                            Comment(
+                                id = 3,
+                                author = "Usuário 3",
+                                content = "Resposta de nível 3",
+                                parentId = 2,
+                            ),
+                        ),
+                    ),
+                ),
+            ),
+            Comment(
+                id = 4,
+                author = "Usuário 4",
+                content = "Outro comentário",
+                replies = mutableListOf(),
+            ),
         )
-    )
 
     MaterialTheme {
         InfiniteScrollCommentTree(
             comments = sampleComments,
-            onAddComment = { _, _, _ -> }
+            onAddComment = { _, _, _ -> },
         )
     }
 }

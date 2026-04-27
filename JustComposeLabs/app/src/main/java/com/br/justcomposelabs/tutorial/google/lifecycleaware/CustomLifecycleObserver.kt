@@ -20,9 +20,8 @@ enum class CallbackLifecycleObserver {
 }
 
 class CustomLifecycleObserver(
-    private val callback: (CallbackLifecycleObserver, LifecycleOwner) -> Unit
+    private val callback: (CallbackLifecycleObserver, LifecycleOwner) -> Unit,
 ) : DefaultLifecycleObserver {
-
     override fun onCreate(owner: LifecycleOwner) {
         super.onCreate(owner)
         callback(CallbackLifecycleObserver.ON_CREATE, owner)

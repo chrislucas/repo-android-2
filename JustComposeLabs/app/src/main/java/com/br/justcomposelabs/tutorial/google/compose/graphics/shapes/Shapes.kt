@@ -19,63 +19,72 @@ import androidx.graphics.shapes.toPath
     https://developer.android.com/develop/ui/compose/graphics/draw/shapes
  */
 
-val hexagonShape = Modifier.drawWithCache {
-    val shape = RoundedPolygon(
-        numVertices = 6,
-        radius = size.minDimension / 2f,
-        centerX = size.width / 2f,
-        centerY = size.height / 2f,
-    )
-    val roundedPolygonPath = shape.toPath().asComposePath()
-    onDrawBehind {
-        drawPath(
-            path = roundedPolygonPath,
-            color = Color(0xFF673AB7)
-        )
-    }
-}.fillMaxSize()
+val hexagonShape =
+    Modifier
+        .drawWithCache {
+            val shape =
+                RoundedPolygon(
+                    numVertices = 6,
+                    radius = size.minDimension / 2f,
+                    centerX = size.width / 2f,
+                    centerY = size.height / 2f,
+                )
+            val roundedPolygonPath = shape.toPath().asComposePath()
+            onDrawBehind {
+                drawPath(
+                    path = roundedPolygonPath,
+                    color = Color(0xFF673AB7),
+                )
+            }
+        }.fillMaxSize()
 
-val triangleShape = Modifier.drawWithCache {
-    val shape = RoundedPolygon(
-        numVertices = 3,
-        radius = size.minDimension / 2f,
-        centerX = size.width / 2f,
-        centerY = size.height / 2f,
-    )
-    val roundedPolygonPath = shape.toPath().asComposePath()
-    onDrawBehind {
-        rotate(degrees = 30f) {
-            drawPath(
-                path = roundedPolygonPath,
-                color = Color(0xFF673AB7)
-            )
-        }
-    }
-}.fillMaxSize()
+val triangleShape =
+    Modifier
+        .drawWithCache {
+            val shape =
+                RoundedPolygon(
+                    numVertices = 3,
+                    radius = size.minDimension / 2f,
+                    centerX = size.width / 2f,
+                    centerY = size.height / 2f,
+                )
+            val roundedPolygonPath = shape.toPath().asComposePath()
+            onDrawBehind {
+                rotate(degrees = 30f) {
+                    drawPath(
+                        path = roundedPolygonPath,
+                        color = Color(0xFF673AB7),
+                    )
+                }
+            }
+        }.fillMaxSize()
 
-val shape = Modifier.drawWithCache {
-    val shape = RoundedPolygon(
-        numVertices = 3,
-        radius = size.minDimension / 2f,
-        centerX = size.width / 2f,
-        centerY = size.height / 2f,
-    )
-    val roundedPolygonPath = shape.toPath().asComposePath()
-    onDrawBehind {
+val shape =
+    Modifier
+        .drawWithCache {
+            val shape =
+                RoundedPolygon(
+                    numVertices = 3,
+                    radius = size.minDimension / 2f,
+                    centerX = size.width / 2f,
+                    centerY = size.height / 2f,
+                )
+            val roundedPolygonPath = shape.toPath().asComposePath()
+            onDrawBehind {
 
-        drawPath(
-            path = roundedPolygonPath,
-            color = Color(0xFF673AB7)
-        )
+                drawPath(
+                    path = roundedPolygonPath,
+                    color = Color(0xFF673AB7),
+                )
 
-        rotate(degrees = 180f) {
-            drawPath(
-                path = roundedPolygonPath,
-                color = Color(0xFF673AB7)
-            )
-        }
-    }
-}.fillMaxSize()
+                rotate(degrees = 180f) {
+                    drawPath(
+                        path = roundedPolygonPath,
+                        color = Color(0xFF673AB7),
+                    )
+                }
+            }
+        }.fillMaxSize()
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
@@ -85,9 +94,11 @@ fun HexagonBox() {
      */
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier =
+        Modifier
+            .fillMaxSize()
             .systemBarsPadding()
-            .statusBarsPadding()
+            .statusBarsPadding(),
     ) {
         Box(modifier = hexagonShape) {
             // Content of the box
@@ -103,9 +114,11 @@ fun TriangleBox() {
      */
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier =
+        Modifier
+            .fillMaxSize()
             .systemBarsPadding()
-            .statusBarsPadding()
+            .statusBarsPadding(),
     ) {
         Box(modifier = triangleShape) {
             // Content of the box
@@ -121,9 +134,11 @@ fun ShapeRotatedBox() {
      */
 
     Column(
-        modifier = Modifier.fillMaxSize()
+        modifier =
+        Modifier
+            .fillMaxSize()
             .systemBarsPadding()
-            .statusBarsPadding()
+            .statusBarsPadding(),
     ) {
         Box(modifier = shape) {
             // Content of the box

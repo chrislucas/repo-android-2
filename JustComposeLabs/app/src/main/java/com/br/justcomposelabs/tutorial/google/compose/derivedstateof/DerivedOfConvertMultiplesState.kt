@@ -61,10 +61,15 @@ import kotlinx.coroutines.launch
  * @see com.br.justcomposelabs.tutorial.google.lazilyloadwithpaging.MessagesPreview
  */
 
-data class Message(val content: String)
+data class Message(
+    val content: String,
+)
 
 @Composable
-fun MessageList(modifier: Modifier = Modifier, messages: List<Message>) {
+fun MessageList(
+    modifier: Modifier = Modifier,
+    messages: List<Message>,
+) {
     Box(modifier) {
         val listState = rememberLazyListState()
 
@@ -113,10 +118,11 @@ fun ScrollTopButton(onClick: suspend () -> Unit) {
 fun MessageListPreview() {
     MessageList(
         modifier = Modifier.systemBarsPadding().navigationBarsPadding(),
-        messages = buildList(100) {
+        messages =
+        buildList(100) {
             for (i in 1..100) {
                 add(Message("Message $i"))
             }
-        }
+        },
     )
 }

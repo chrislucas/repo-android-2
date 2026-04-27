@@ -49,7 +49,7 @@ fun MinimalDialog() {
     var showDialog by remember { mutableStateOf(false) }
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Button(onClick = { showDialog = !showDialog }) {
             androidx.compose.material3.Text("Open Dialog")
@@ -59,17 +59,20 @@ fun MinimalDialog() {
     if (showDialog) {
         Dialog(
             onDismissRequest = { showDialog = !showDialog },
-            properties = DialogProperties()
+            properties = DialogProperties(),
         ) {
             Card(
-                modifier = Modifier.fillMaxWidth()
+                modifier =
+                Modifier
+                    .fillMaxWidth()
                     .height(200.dp)
                     .width(16.dp),
-                shape = RoundedCornerShape(16.dp)
+                shape = RoundedCornerShape(16.dp),
             ) {
                 Text(
                     text = "This is a minimal dialog",
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .fillMaxSize()
                         .wrapContentSize(Alignment.Center),
                     textAlign = TextAlign.Center,

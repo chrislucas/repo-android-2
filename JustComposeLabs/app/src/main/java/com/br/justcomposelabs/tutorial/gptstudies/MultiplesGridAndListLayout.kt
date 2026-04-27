@@ -20,7 +20,9 @@ import androidx.compose.ui.unit.dp
  */
 // Enum para definir os tipos de layout
 enum class LayoutType {
-    LIST, GRID_FIXED, GRID_FLEXIBLE
+    LIST,
+    GRID_FIXED,
+    GRID_FLEXIBLE,
 }
 
 // Componente principal
@@ -38,16 +40,17 @@ fun LayoutDemo() {
                     expanded = false
                 },
                 expanded = expanded,
-                onExpandChange = { expanded = it }
+                onExpandChange = { expanded = it },
             )
-        }
+        },
     ) { innerPadding ->
         LayoutContent(
             items = items,
             layoutType = selectedLayout,
-            modifier = Modifier
+            modifier =
+            Modifier
                 .padding(innerPadding)
-                .fillMaxSize()
+                .fillMaxSize(),
         )
     }
 }
@@ -58,7 +61,7 @@ fun LayoutDemo() {
 fun LayoutTopBar(
     onLayoutChange: (LayoutType) -> Unit,
     expanded: Boolean,
-    onExpandChange: (Boolean) -> Unit
+    onExpandChange: (Boolean) -> Unit,
 ) {
     TopAppBar(title = { Text("Layout Menu Demo") }, actions = {
         Box {
@@ -82,7 +85,11 @@ fun LayoutTopBar(
 
 // Componente que decide qual layout exibir
 @Composable
-fun LayoutContent(items: List<String>, layoutType: LayoutType, modifier: Modifier = Modifier) {
+fun LayoutContent(
+    items: List<String>,
+    layoutType: LayoutType,
+    modifier: Modifier = Modifier,
+) {
     when (layoutType) {
         LayoutType.LIST -> ListLayout(items, modifier)
         LayoutType.GRID_FIXED -> GridFixedLayout(items, modifier)
@@ -92,7 +99,10 @@ fun LayoutContent(items: List<String>, layoutType: LayoutType, modifier: Modifie
 
 // Lista simples usando Material3
 @Composable
-fun ListLayout(items: List<String>, modifier: Modifier = Modifier) {
+fun ListLayout(
+    items: List<String>,
+    modifier: Modifier = Modifier,
+) {
     LazyColumn(modifier = modifier, contentPadding = PaddingValues(8.dp)) {
         items(items.size) { index ->
             ListItemCard(items[index])
@@ -102,11 +112,14 @@ fun ListLayout(items: List<String>, modifier: Modifier = Modifier) {
 
 // Grid com duas colunas fixas
 @Composable
-fun GridFixedLayout(items: List<String>, modifier: Modifier = Modifier) {
+fun GridFixedLayout(
+    items: List<String>,
+    modifier: Modifier = Modifier,
+) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = modifier,
-        contentPadding = PaddingValues(8.dp)
+        contentPadding = PaddingValues(8.dp),
     ) {
         items(items.size) { index ->
             GridItemCard(items[index])
@@ -116,11 +129,14 @@ fun GridFixedLayout(items: List<String>, modifier: Modifier = Modifier) {
 
 // Grid com colunas adaptativas
 @Composable
-fun GridFlexibleLayout(items: List<String>, modifier: Modifier = Modifier) {
+fun GridFlexibleLayout(
+    items: List<String>,
+    modifier: Modifier = Modifier,
+) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(120.dp),
         modifier = modifier,
-        contentPadding = PaddingValues(8.dp)
+        contentPadding = PaddingValues(8.dp),
     ) {
         items(items.size) { index ->
             GridItemCard(items[index])
@@ -132,15 +148,16 @@ fun GridFlexibleLayout(items: List<String>, modifier: Modifier = Modifier) {
 @Composable
 fun ListItemCard(text: String) {
     ElevatedCard(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .padding(4.dp)
             .clickable { /* ação ao clicar */ },
-        elevation = CardDefaults.elevatedCardElevation(4.dp)
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
     ) {
         Box(
             modifier = Modifier.padding(16.dp),
-            contentAlignment = Alignment.CenterStart
+            contentAlignment = Alignment.CenterStart,
         ) {
             Text(text)
         }
@@ -153,14 +170,15 @@ fun GridItemCard(text: String) {
     val ctx = LocalContext.current
 
     ElevatedCard(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .height(100.dp)
             .padding(4.dp)
             .clickable {
                 Toast.makeText(ctx, text, Toast.LENGTH_SHORT).show()
             },
-        elevation = CardDefaults.elevatedCardElevation(4.dp)
+        elevation = CardDefaults.elevatedCardElevation(4.dp),
     ) {
         Box(contentAlignment = Alignment.Center) {
             Text(text)

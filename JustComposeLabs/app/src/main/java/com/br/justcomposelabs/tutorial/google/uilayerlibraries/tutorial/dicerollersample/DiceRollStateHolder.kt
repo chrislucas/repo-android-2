@@ -15,7 +15,7 @@ import kotlinx.coroutines.flow.update
 data class DiceRollUiState(
     val firstDiceValue: Int? = null,
     val secondDiceValue: Int? = null,
-    val numberOfRolls: Int = 0
+    val numberOfRolls: Int = 0,
 )
 
 interface RandomProvider {
@@ -23,9 +23,8 @@ interface RandomProvider {
 }
 
 class DiceRollStateHolder(
-    private val randomProvider: RandomProvider
+    private val randomProvider: RandomProvider,
 ) {
-
     private val _uiState = MutableStateFlow(DiceRollUiState())
 
     /*
@@ -49,7 +48,7 @@ class DiceRollStateHolder(
             currentState.copy(
                 firstDiceValue = randomProvider.nextInt(1..6),
                 secondDiceValue = randomProvider.nextInt(1..6),
-                numberOfRolls = currentState.numberOfRolls + 1
+                numberOfRolls = currentState.numberOfRolls + 1,
             )
         }
     }

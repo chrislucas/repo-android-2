@@ -18,10 +18,11 @@ fun DrawTrianglePathView() {
             TrianglePathJoinView(ctx)
         },
         update = { view -> view.invalidate() },
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     )
 }
 
@@ -33,9 +34,10 @@ fun DrawTriangleNonClosedPathView() {
             TriangleNonClosedPathJoinView(ctx)
         },
         update = { view -> view.invalidate() },
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .navigationBarsPadding()
+            .navigationBarsPadding(),
     )
 }

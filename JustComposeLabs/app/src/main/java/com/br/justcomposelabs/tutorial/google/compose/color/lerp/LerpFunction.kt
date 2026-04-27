@@ -38,22 +38,24 @@ fun LerpColorExample() {
     var sliderPosition by remember { mutableFloatStateOf(0f) }
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
-            .padding(6.dp)
+            .padding(6.dp),
     ) {
-        val interpolatedColor = lerp(
-            start,
-            end,
-            sliderPosition
-        )
+        val interpolatedColor =
+            lerp(
+                start,
+                end,
+                sliderPosition,
+            )
 
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .weight(1f)
                 .fillMaxSize()
-                .background(interpolatedColor)
-
+                .background(interpolatedColor),
         ) {
             interpolatedColor.run {
                 val red = red * 255
@@ -73,7 +75,7 @@ fun LerpColorExample() {
                 Text(
                     "RGB($red, $green, $blue)\n$redHex$greenHex$blueHex",
                     textAlign = TextAlign.Center,
-                    modifier = Modifier.align(Alignment.Center)
+                    modifier = Modifier.align(Alignment.Center),
                 )
             }
         }
@@ -82,10 +84,9 @@ fun LerpColorExample() {
             value = sliderPosition,
             onValueChange = { sliderPosition = it },
             valueRange = 0f..1f,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
         )
     }
 }
 
-fun toHex(value: Int): String =
-    String.format("%s%s", Integer.toHexString(value / 16), Integer.toHexString(value % 16))
+fun toHex(value: Int): String = String.format("%s%s", Integer.toHexString(value / 16), Integer.toHexString(value % 16))

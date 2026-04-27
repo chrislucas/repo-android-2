@@ -9,8 +9,7 @@ import kotlinx.coroutines.flow.StateFlow
  * @see com.br.justcomposelabs.tutorial.medium.funwithflowtype.FunWithFlowTypesActivity
  https://nameisjayant.medium.com/kotlin-stateflow-explained-2c4a102b0595
  */
-class DummyViewModel() : ViewModel() {
-
+class DummyViewModel : ViewModel() {
     private val state: MutableStateFlow<String> = MutableStateFlow("Init Value")
     val stateObservable: StateFlow<String> = state // state.asStateFlow()
 }

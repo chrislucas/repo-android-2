@@ -24,7 +24,7 @@ class FragmentScreenComposeActivity : ComponentActivity() {
                     FragmentScreen(
                         modifier = Modifier.padding(innerPadding),
                         clazz = InteroperabilityComposeFragment::class.java,
-                        arguments = Bundle.EMPTY
+                        arguments = Bundle.EMPTY,
                     ) { fragment ->
                     }
                 }

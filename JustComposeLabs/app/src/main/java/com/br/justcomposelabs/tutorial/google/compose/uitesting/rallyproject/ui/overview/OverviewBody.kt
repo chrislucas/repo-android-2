@@ -20,9 +20,10 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
 @Composable
 fun OverviewBody(onScreenChange: (RallyScreen) -> Unit = {}) {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .padding(16.dp)
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState()),
     ) {
         AlertCard()
         Spacer(Modifier.height(RallyDefaultPadding))
@@ -37,10 +38,11 @@ fun OverviewBody(onScreenChange: (RallyScreen) -> Unit = {}) {
 fun OverviewBodyPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             OverviewBody(onScreenChange = {})
         }

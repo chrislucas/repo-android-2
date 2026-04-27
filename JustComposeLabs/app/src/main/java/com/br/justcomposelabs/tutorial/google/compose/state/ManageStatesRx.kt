@@ -53,32 +53,33 @@ fun HelloScreenRx(helloStateRxViewModel: HelloStateRxViewModel = viewModel()) {
 @Composable
 private fun HelloContentPresentation(
     value: String = "",
-    onValueChange: (String) -> Unit
+    onValueChange: (String) -> Unit,
 ) {
     Surface(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
             .padding(10.dp),
         shape = MaterialTheme.shapes.medium,
-        tonalElevation = 1.dp
+        tonalElevation = 1.dp,
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Center
+            verticalArrangement = Center,
         ) {
             if (value.isNotBlank()) {
                 Text(
                     text = "Hello, $value!",
                     modifier = Modifier.padding(bottom = 8.dp),
-                    style = MaterialTheme.typography.headlineMedium
+                    style = MaterialTheme.typography.headlineMedium,
                 )
             }
 
             OutlinedTextField(
                 value = value,
                 onValueChange = onValueChange,
-                label = { Text("label") }
+                label = { Text("label") },
             )
         }
     }

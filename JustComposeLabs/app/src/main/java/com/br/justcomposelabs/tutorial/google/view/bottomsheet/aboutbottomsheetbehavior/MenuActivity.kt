@@ -26,9 +26,10 @@ class MenuActivity : AppCompatActivity() {
             }
 
             btnModalFragment.setOnClickListener {
-                val bottomSheetFragment = SimpleBottomSheetDialogFragment(
-                    DefaultBottomSheetDialogFragment()
-                )
+                val bottomSheetFragment =
+                    SimpleBottomSheetDialogFragment(
+                        DefaultBottomSheetDialogFragment(),
+                    )
                 bottomSheetFragment.show(supportFragmentManager, bottomSheetFragment.tag)
             }
 
@@ -36,8 +37,8 @@ class MenuActivity : AppCompatActivity() {
                 startActivity(
                     Intent(
                         this@MenuActivity,
-                        PersistentBottomSheetViewActivity::class.java
-                    )
+                        PersistentBottomSheetViewActivity::class.java,
+                    ),
                 )
             }
 

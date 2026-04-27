@@ -33,18 +33,21 @@ import com.br.justcomposelabs.tutorial.google.compose.preview.largedataset.UserP
 
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
-fun UserInfo(@PreviewParameter(UserPreviewParameterProvider::class, 3) user: User) {
-    val modifier = Modifier
-        .fillMaxSize()
-        .systemBarsPadding()
-        .navigationBarsPadding()
-        .statusBarsPadding()
+fun UserInfo(
+    @PreviewParameter(UserPreviewParameterProvider::class, 3) user: User,
+) {
+    val modifier =
+        Modifier
+            .fillMaxSize()
+            .systemBarsPadding()
+            .navigationBarsPadding()
+            .statusBarsPadding()
 
     Box(modifier = modifier, contentAlignment = Alignment.Center) {
         Text(
             text = user.name,
             textAlign = TextAlign.Center,
-            fontSize = 45.sp
+            fontSize = 45.sp,
         )
     }
 }

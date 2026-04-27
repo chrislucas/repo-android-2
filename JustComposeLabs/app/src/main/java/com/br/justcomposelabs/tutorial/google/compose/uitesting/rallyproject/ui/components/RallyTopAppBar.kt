@@ -22,7 +22,7 @@ internal val TabHeight = 56.dp
 fun RallyTopAppBar(
     allScreens: List<RallyScreen>,
     onChangeScreen: (RallyScreen) -> Unit,
-    currentScreen: RallyScreen
+    currentScreen: RallyScreen,
 ) {
     Surface(modifier = Modifier.height(TabHeight).fillMaxWidth()) {
         Row(modifier = Modifier.selectableGroup()) {
@@ -31,7 +31,7 @@ fun RallyTopAppBar(
                     text = screen.name,
                     icon = screen.icon,
                     onSelected = { onChangeScreen(screen) },
-                    selected = currentScreen == screen
+                    selected = currentScreen == screen,
                 )
             }
         }
@@ -43,15 +43,16 @@ fun RallyTopAppBar(
 fun RallyTopAppBarPreview() {
     JustComposeLabsTheme {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .systemBarsPadding()
                 .statusBarsPadding()
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             RallyTopAppBar(
                 allScreens = RallyScreen.entries.toList(),
                 onChangeScreen = {},
-                currentScreen = RallyScreen.Overview
+                currentScreen = RallyScreen.Overview,
             )
         }
     }

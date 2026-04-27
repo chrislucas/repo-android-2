@@ -34,13 +34,14 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
 @Composable
 fun FillMaxSizeLazyRow(
     modifier: Modifier = Modifier,
-    messages: List<Pair<String?, String?>>
+    messages: List<Pair<String?, String?>>,
 ) {
     LazyRow(
-        modifier = modifier
+        modifier =
+        modifier
             .fillMaxSize()
             .padding(WindowInsets.safeDrawing.asPaddingValues()),
-        horizontalArrangement = Arrangement.spacedBy(16.dp)
+        horizontalArrangement = Arrangement.spacedBy(16.dp),
     ) {
         items(messages.size) {
             MessageCard(message = messages[it])
@@ -49,18 +50,23 @@ fun FillMaxSizeLazyRow(
 }
 
 @Composable
-fun MessageCard(message: Pair<String?, String?>, height: Dp = 123.dp) {
+fun MessageCard(
+    message: Pair<String?, String?>,
+    height: Dp = 123.dp,
+) {
     val ctx = LocalContext.current
     Card(
-        modifier = Modifier
+        modifier =
+        Modifier
             .height(IntrinsicSize.Min)
             .width(130.dp)
             .clickable {
-                Toast.makeText(
-                    ctx,
-                    "Clicked",
-                    Toast.LENGTH_SHORT
-                ).show()
+                Toast
+                    .makeText(
+                        ctx,
+                        "Clicked",
+                        Toast.LENGTH_SHORT,
+                    ).show()
             },
         shape = RoundedCornerShape(6.dp),
         elevation = CardDefaults.cardElevation(16.dp),
@@ -68,15 +74,16 @@ fun MessageCard(message: Pair<String?, String?>, height: Dp = 123.dp) {
         val (first, second) = message
         Row(modifier = Modifier.width(IntrinsicSize.Min)) {
             Box(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .width(8.dp)
                     .fillMaxHeight()
-                    .background(Color.Red)
+                    .background(Color.Red),
             )
             Column(
                 modifier = Modifier.fillMaxHeight(),
                 verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 first?.let {
                     it
@@ -96,11 +103,12 @@ fun MessageCard(message: Pair<String?, String?>, height: Dp = 123.dp) {
 private fun FillMaxSizeLazyRowPreview() {
     JustComposeLabsTheme {
         FillMaxSizeLazyRow(
-            messages = listOf(
+            messages =
+            listOf(
                 "Hello" to "World",
                 "Hello" to null,
-                null to "World"
-            )
+                null to "World",
+            ),
         )
     }
 }

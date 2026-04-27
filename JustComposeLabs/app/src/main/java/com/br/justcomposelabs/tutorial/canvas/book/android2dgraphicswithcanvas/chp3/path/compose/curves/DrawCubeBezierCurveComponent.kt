@@ -17,9 +17,10 @@ fun DrawCubeBezierCurveComponent() {
             CubicBezierCurveView(ctx)
         },
         update = { it.invalidate() },
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     )
 }

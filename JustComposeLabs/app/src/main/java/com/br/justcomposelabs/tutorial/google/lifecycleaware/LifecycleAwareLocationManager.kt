@@ -12,9 +12,9 @@ import androidx.lifecycle.LifecycleOwner
 
 class LifecycleAwareLocationManager(
     private val context: Context,
-    private val listener: (Location) -> Unit
-) : DefaultLifecycleObserver, LocationListener {
-
+    private val listener: (Location) -> Unit,
+) : DefaultLifecycleObserver,
+    LocationListener {
     private var locationManager: LocationManager? = null
 
     override fun onCreate(owner: LifecycleOwner) {
@@ -25,8 +25,8 @@ class LifecycleAwareLocationManager(
     @RequiresPermission(
         anyOf = [
             Manifest.permission.ACCESS_FINE_LOCATION,
-            Manifest.permission.ACCESS_COARSE_LOCATION
-        ]
+            Manifest.permission.ACCESS_COARSE_LOCATION,
+        ],
     )
     override fun onStart(owner: LifecycleOwner) {
         super.onStart(owner)
@@ -36,7 +36,7 @@ class LifecycleAwareLocationManager(
                 LocationManager.GPS_PROVIDER,
                 5000, // minTime (ms)
                 10f, // minDistance (m)
-                this
+                this,
             )
         } catch (e: SecurityException) {
             // Handle permission not granted
@@ -60,7 +60,13 @@ class LifecycleAwareLocationManager(
     }
 
     // Implement other LocationListener methods if needed
-    override fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
+    override fun onStatusChanged(
+        provider: String?,
+        status: Int,
+        extras: Bundle?,
+    ) {}
+
     override fun onProviderEnabled(provider: String) {}
+
     override fun onProviderDisabled(provider: String) {}
 }

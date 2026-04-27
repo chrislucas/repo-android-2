@@ -11,12 +11,13 @@ import android.view.View
     https://share.google/aimode/y98Q1SlZxBRJDlHF6
     https://share.google/aimode/KwY1GSB79bMvfjor7
  */
-class RationalQuadraticBezierCurveView @JvmOverloads constructor(
+class RationalQuadraticBezierCurveView
+@JvmOverloads
+constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
-    defStyle: Int = 0
+    defStyle: Int = 0,
 ) : View(ctx, attrs, defStyle) {
-
     private val path = Path()
 
     private val paintPath = Paint(Paint.ANTI_ALIAS_FLAG).apply {}
@@ -28,7 +29,12 @@ class RationalQuadraticBezierCurveView @JvmOverloads constructor(
         super.onDraw(canvas)
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
     }
 }

@@ -14,31 +14,35 @@ import com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.d
 import kotlin.math.min
 import kotlin.properties.Delegates
 
-class LineView @JvmOverloads constructor(
+class LineView
+@JvmOverloads
+constructor(
     context: Context,
     attrs: AttributeSet? = null,
-    defStyleAttr: Int = 0
+    defStyleAttr: Int = 0,
 ) : View(context, attrs, defStyleAttr) {
+    private val linePaint =
+        Paint().apply {
+            color = Color.RED
+            style = Paint.Style.STROKE
+            isAntiAlias = true
+            strokeCap = Cap.ROUND
+        }
 
-    private val linePaint = Paint().apply {
-        color = Color.RED
-        style = Paint.Style.STROKE
-        isAntiAlias = true
-        strokeCap = Cap.ROUND
-    }
+    private var textPaint =
+        Paint().apply {
+            color = Color.BLUE
+            textSize = 50f
+            isAntiAlias = true
+        }
 
-    private var textPaint = Paint().apply {
-        color = Color.BLUE
-        textSize = 50f
-        isAntiAlias = true
-    }
-
-    private val textDimensionPaint = Paint().apply {
-        color = Color.BLACK
-        textSize = 50f
-        isAntiAlias = true
-        typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
-    }
+    private val textDimensionPaint =
+        Paint().apply {
+            color = Color.BLACK
+            textSize = 50f
+            isAntiAlias = true
+            typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
+        }
 
     private var start: Pair<Float, Float> by Delegates.notNull()
     private var end: Pair<Float, Float> by Delegates.notNull()
@@ -78,24 +82,29 @@ class LineView @JvmOverloads constructor(
         startY: Float,
         endX: Float,
         endY: Float,
-        canvas: Canvas
+        canvas: Canvas,
     ) {
         canvas.drawText(
             "Start: (${startX.toInt()}, ${startY.toInt()})",
             startX + 50f,
             startY + 40f,
-            textPaint
+            textPaint,
         )
 
         canvas.drawText(
             "End: (${endX.toInt()}, ${endY.toInt()})",
             endX - 450f,
             endY - 10f,
-            textPaint
+            textPaint,
         )
     }
 
-    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+    override fun onSizeChanged(
+        w: Int,
+        h: Int,
+        oldw: Int,
+        oldh: Int,
+    ) {
         super.onSizeChanged(w, h, oldw, oldh)
         // Update the end point to be the bottom right corner of the view
         // end = w.toFloat() to h.toFloat()

@@ -129,23 +129,27 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
       - https://medium.com/androiddevelopers/jetpack-compose-stability-explained-79c10db270c8
  */
 
-data class Contact(val name: String, val number: String)
+data class Contact(
+    val name: String,
+    val number: String,
+)
 
 // https://developer.android.com/develop/ui/compose/tooling/previews#preview-data
 class ContactParameterProvider : PreviewParameterProvider<Contact> {
     override val values: Sequence<Contact>
-        get() = sequenceOf(
-            Contact(name = "John", number = "1122223344"),
-            Contact(name = "Mary", number = "23111118888"),
-            Contact(name = "Fabian", number = "222224434"),
-        )
+        get() =
+            sequenceOf(
+                Contact(name = "John", number = "1122223344"),
+                Contact(name = "Mary", number = "23111118888"),
+                Contact(name = "Fabian", number = "222224434"),
+            )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ContactRow(
     @PreviewParameter(ContactParameterProvider::class) contact: Contact,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     var selected by remember { mutableStateOf(true) }
 
@@ -161,20 +165,20 @@ fun ContactRow(
 fun ToggleButton(
     modifier: Modifier = Modifier,
     selected: Boolean,
-    onToggled: (Boolean) -> Unit
+    onToggled: (Boolean) -> Unit,
 ) {
     var checked by remember { mutableStateOf(selected) }
     Switch(
         modifier = modifier,
         checked = checked,
-        onCheckedChange = onToggled
+        onCheckedChange = onToggled,
     )
 }
 
 @Composable
 fun ContactDetails(
     modifier: Modifier = Modifier,
-    contact: Contact
+    contact: Contact,
 ) {
     Column(modifier = modifier) {
         Text(text = "Name: ${contact.name}")

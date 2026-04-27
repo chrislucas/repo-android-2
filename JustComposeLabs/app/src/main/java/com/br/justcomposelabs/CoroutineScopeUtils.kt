@@ -11,9 +11,8 @@ import kotlin.coroutines.EmptyCoroutineContext
 
 class GenericScope(
     private val scope: CoroutineScope = CoroutineScope(EmptyCoroutineContext),
-    private val execute: suspend () -> Unit
+    private val execute: suspend () -> Unit,
 ) {
-
     /*
         https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines/-coroutine-scope/
 
@@ -56,7 +55,8 @@ class GenericScope(
         scope.cancel()
     }
 
-    fun run() = scope.launch {
-        execute.invoke()
-    }
+    fun run() =
+        scope.launch {
+            execute.invoke()
+        }
 }

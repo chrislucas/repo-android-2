@@ -27,7 +27,8 @@ suspend fun fetchData(): String {
 fun ParentComposable() {
     var data by remember { mutableStateOf<String?>(null) }
 
-    LaunchedEffect(Unit) { // 'Unit' means the effect will run once when the Composable enters Composition
+    LaunchedEffect(Unit) {
+        // 'Unit' means the effect will run once when the Composable enters Composition
         data = fetchData()
     }
 
@@ -39,12 +40,12 @@ fun ChildComposable(data: String) {
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+        verticalArrangement = Arrangement.Center,
     ) {
         Text(
             data,
             textAlign = TextAlign.Center,
-            fontSize = 30.sp
+            fontSize = 30.sp,
         )
     }
 }

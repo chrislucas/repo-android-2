@@ -12,7 +12,6 @@ import kotlin.intArrayOf
 @RunWith(RobolectricTestRunner::class)
 @Config(sdk = [35])
 class SimpleTextAndroidViewKtTest {
-
     @get:Rule
     val composeTestRule = createComposeRule()
 
@@ -92,5 +91,4 @@ class SimpleTextAndroidViewKtTest {
         // Verify that the `update` block is executed with the new value when the `value` parameter changes and the composable recomposes.
         // TODO implement test
     }
-
 }

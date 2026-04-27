@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.android.library)
-    //alias(libs.plugins.jetbrains.kotlin.android)
+    // alias(libs.plugins.jetbrains.kotlin.android)
 }
 
 android {
@@ -22,7 +22,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -30,7 +30,6 @@ android {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
-
 }
 
 configurations.all {
@@ -59,7 +58,6 @@ dependencies {
     implementation("com.google.mlkit:genai-summarization:1.0.0-beta1")
 
     implementation("com.google.mlkit:face-mesh-detection:16.0.0-beta3")
-
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

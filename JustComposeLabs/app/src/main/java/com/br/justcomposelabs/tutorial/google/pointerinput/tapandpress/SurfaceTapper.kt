@@ -19,7 +19,7 @@ private fun ClickableSurfaceView() {
         Surface {
             Text(
                 "Clickable SurfaceView",
-                modifier = Modifier.padding(12.dp)
+                modifier = Modifier.padding(12.dp),
             )
         }
     }

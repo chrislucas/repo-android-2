@@ -4,12 +4,11 @@ import com.google.gson.Gson
 import retrofit2.Response
 
 object SafeServiceCall {
-
     inline fun <T, reified E> callService(
         call: () -> Response<T>,
-        onError: (Throwable?) -> E
-    ): Resource<T, E> {
-        return try {
+        onError: (Throwable?) -> E,
+    ): Resource<T, E> =
+        try {
             val response = call()
             if (response.isSuccessful) {
                 response.body()?.let { Resource.success(it) } ?: Resource.failure(onError(null))
@@ -20,5 +19,4 @@ object SafeServiceCall {
         } catch (e: Exception) {
             Resource.failure(onError(e))
         }
-    }
 }

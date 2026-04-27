@@ -40,40 +40,47 @@ import androidx.compose.ui.unit.sp
     Veja o exemplo abaixo
  */
 
-data class User(val name: String)
+data class User(
+    val name: String,
+)
 
 class UserPreviewParameterProvider : PreviewParameterProvider<User> {
-    override val values = sequenceOf(
-        User("Elise"),
-        User("Frank"),
-        User("Julia"),
-        User("Mark"),
-        User("Sam"),
-        User("Sophie")
-    )
+    override val values =
+        sequenceOf(
+            User("Elise"),
+            User("Frank"),
+            User("Julia"),
+            User("Mark"),
+            User("Sam"),
+            User("Sophie"),
+        )
 }
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun UserProfilePreview(
-    @PreviewParameter(UserPreviewParameterProvider::class, 2) user: User
+    @PreviewParameter(UserPreviewParameterProvider::class, 2) user: User,
 ) {
-    val modifier = Modifier
-        .fillMaxWidth()
-        .systemBarsPadding()
-        .navigationBarsPadding()
-        .statusBarsPadding()
+    val modifier =
+        Modifier
+            .fillMaxWidth()
+            .systemBarsPadding()
+            .navigationBarsPadding()
+            .statusBarsPadding()
 
     UserProfile(modifier, user)
 }
 
 @Composable
-fun UserProfile(modifier: Modifier = Modifier, user: User) {
+fun UserProfile(
+    modifier: Modifier = Modifier,
+    user: User,
+) {
     Box(modifier = modifier, contentAlignment = Alignment.Center) {
         Text(
             text = user.name,
             textAlign = TextAlign.Center,
-            fontSize = 20.sp
+            fontSize = 20.sp,
         )
     }
 }

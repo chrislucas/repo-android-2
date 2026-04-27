@@ -11,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 
 @Composable
-fun Modifier.fillMaxSizePadding() = this.fillMaxSize()
-    .systemBarsPadding()
-    .navigationBarsPadding()
-    .padding(WindowInsets.safeDrawing.asPaddingValues())
+fun Modifier.fillMaxSizePadding() =
+    this
+        .fillMaxSize()
+        .systemBarsPadding()
+        .navigationBarsPadding()
+        .padding(WindowInsets.safeDrawing.asPaddingValues())

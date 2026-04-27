@@ -16,7 +16,7 @@ fun StackLayout(
     modifier: Modifier = Modifier,
     flipcard: Card?,
     leftStack: @Composable () -> Unit,
-    rightStack: @Composable () -> Unit
+    rightStack: @Composable () -> Unit,
 ) {
     Row(modifier = modifier, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
     }

@@ -20,7 +20,7 @@ import com.google.firebase.crashlytics.crashlytics
 fun ButtonForceCrash() {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Button(onClick = { throw IllegalStateException("Test Crash") }) {
             Text("Test Crashlytics")
@@ -33,7 +33,7 @@ fun ButtonForceCrash() {
 fun ButtonThrowNoFatalException() {
     Box(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         /*
             Relatar exceções não fatais
@@ -46,13 +46,11 @@ fun ButtonThrowNoFatalException() {
                 } catch (e: Exception) {
                     Firebase.crashlytics.recordException(e)
                 }
-            }
+            },
         ) {
             Text("Test Crashlytics")
         }
     }
 }
 
-private fun tryExec() {
-    throw IllegalStateException("No Fatal Exception Crash")
-}
+private fun tryExec(): Unit = throw IllegalStateException("No Fatal Exception Crash")

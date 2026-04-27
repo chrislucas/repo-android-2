@@ -13,7 +13,6 @@ import com.br.justcomposelabs.databinding.ActivityTextCounterAnimationBinding
     Pesquisa: ValueAnimator text counter
  */
 class TextCounterAnimationActivity : AppCompatActivity() {
-
     private val binding: ActivityTextCounterAnimationBinding by lazy {
         ActivityTextCounterAnimationBinding.inflate(layoutInflater)
     }
@@ -22,13 +21,14 @@ class TextCounterAnimationActivity : AppCompatActivity() {
 
     private val countAnimationInt = ValueAnimator.ofInt(0, 100)
 
-    private val timeInterpolation = TimeInterpolator { input ->
+    private val timeInterpolation =
+        TimeInterpolator { input ->
         /*
             https://developer.android.com/reference/android/animation/TimeInterpolator
          */
 
-        0.1f * input
-    }
+            0.1f * input
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,7 @@ class TextCounterAnimationActivity : AppCompatActivity() {
                     systemBars.left,
                     systemBars.top,
                     systemBars.right,
-                    systemBars.bottom
+                    systemBars.bottom,
                 )
                 insets
             }

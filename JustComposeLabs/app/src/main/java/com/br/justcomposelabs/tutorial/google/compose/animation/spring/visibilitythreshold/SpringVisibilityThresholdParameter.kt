@@ -85,15 +85,17 @@ fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel()) {
      */
 
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .navigationBarsPadding()
             .systemBarsPadding(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         Box(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
                 /*
                      fixa o tamanho desse componente mesmo quando ele desaparecer com a
@@ -101,33 +103,40 @@ fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel()) {
                  */
                 .height(180.dp),
             // .requiredHeight(intrinsicSize = IntrinsicSize.Min),
-            contentAlignment = Alignment.Center
+            contentAlignment = Alignment.Center,
         ) {
             this@Column.AnimatedVisibility(
                 visible = isVisible,
-                enter = fadeIn() + scaleIn(
-                    initialScale = 0.5f,
-                    animationSpec = spring(
-                        dampingRatio = Spring.DampingRatioHighBouncy,
-                        stiffness = Spring.StiffnessLow,
-                        // Define que quando a escala chegar a 0.1 unidades do alvo, ela para.
-                        // Isso evita que a mola fique "tremendo" infinitamente em escalas minúsculas.
-                        visibilityThreshold = threshold
-                    )
-                ),
-                exit = fadeOut() + scaleOut(
-                    targetScale = 0.5f,
-                    animationSpec = spring(
-                        stiffness = Spring.StiffnessLow,
-                        visibilityThreshold = threshold
-                    )
-                )
+                enter =
+                fadeIn() +
+                    scaleIn(
+                        initialScale = 0.5f,
+                        animationSpec =
+                        spring(
+                            dampingRatio = Spring.DampingRatioHighBouncy,
+                            stiffness = Spring.StiffnessLow,
+                            // Define que quando a escala chegar a 0.1 unidades do alvo, ela para.
+                            // Isso evita que a mola fique "tremendo" infinitamente em escalas minúsculas.
+                            visibilityThreshold = threshold,
+                        ),
+                    ),
+                exit =
+                fadeOut() +
+                    scaleOut(
+                        targetScale = 0.5f,
+                        animationSpec =
+                        spring(
+                            stiffness = Spring.StiffnessLow,
+                            visibilityThreshold = threshold,
+                        ),
+                    ),
             ) {
                 Box(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .size(150.dp)
                         .background(Color.Yellow, CircleShape),
-                    contentAlignment = Alignment.Center
+                    contentAlignment = Alignment.Center,
                 ) {
                     Text("Threshold", color = Color.Black)
                 }
@@ -136,20 +145,21 @@ fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel()) {
 
         // Controles
         Card(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .fillMaxWidth()
-                .padding(16.dp)
+                .padding(16.dp),
         ) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Text("Visibility Threshold: ${"%.2f".format(threshold)}")
                 Slider(
                     value = threshold,
                     onValueChange = { viewModel.updateVisibilityThreshold(it) },
-                    valueRange = 0.01f..0.9f
+                    valueRange = 0.01f..0.9f,
                 )
                 Text(
                     text = "Valores altos fazem a mola parar mais cedo (corte seco).",
-                    style = MaterialTheme.typography.bodySmall
+                    style = MaterialTheme.typography.bodySmall,
                 )
             }
         }

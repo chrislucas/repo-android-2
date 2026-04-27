@@ -29,7 +29,6 @@ import kotlinx.parcelize.Parcelize
 import timber.log.Timber
 
 class HandlerConfigurationChangesActivity : AppCompatActivity() {
-
     /*
         Criar um layout que seja possível mudar em tempo de execução
             - escala da fonte
@@ -50,16 +49,17 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
     private var initConfigurationState: ConfigurationState? = null
 
     private val viewModel: ConfigurationViewModel by lazy {
-        initConfigurationState = if (initConfigurationState == null) {
-            resources?.run {
-                ConfigurationState(
-                    fontScale = configuration.fontScale,
-                    orientation = configuration.orientation
-                )
+        initConfigurationState =
+            if (initConfigurationState == null) {
+                resources?.run {
+                    ConfigurationState(
+                        fontScale = configuration.fontScale,
+                        orientation = configuration.orientation,
+                    )
+                }
+            } else {
+                initConfigurationState
             }
-        } else {
-            initConfigurationState
-        }
 
         ConfigurationViewModel(initConfigurationState!!)
     }
@@ -97,17 +97,17 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
      * ✅ Método privado para recuperar fontScale de SharedPreferences
      * Usado em attachBaseContext() para aplicar a escala ao contexto
      */
-    private fun getFontScaleFromPreferences(context: Context?): Float {
-        return context?.getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
+    private fun getFontScaleFromPreferences(context: Context?): Float =
+        context
+            ?.getSharedPreferences(PREFS_NAME, MODE_PRIVATE)
             ?.getFloat(PREF_FONT_SCALE, 1.0f) ?: 1.0f
-    }
 
     /**
      * ✅ Método privado para restaurar ConfigurationState do Bundle
      * Elimina duplicação entre onCreate() e onRestoreInstanceState()
      */
-    private fun restoreConfigurationStateFromBundle(bundle: Bundle?): ConfigurationState? {
-        return bundle?.let {
+    private fun restoreConfigurationStateFromBundle(bundle: Bundle?): ConfigurationState? =
+        bundle?.let {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 it.getParcelable(SAVE_CONFIG_STATE, ConfigurationState::class.java)
             } else {
@@ -115,7 +115,6 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
                 it.getParcelable(SAVE_CONFIG_STATE)
             }
         }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         /**
@@ -126,7 +125,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
             ?: resources?.run {
                 ConfigurationState(
                     fontScale = configuration.fontScale,
-                    orientation = configuration.orientation
+                    orientation = configuration.orientation,
                 )
             }
 
@@ -143,11 +142,12 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
          */
         initConfigurationState?.let { state ->
             // Aplicar orientação da tela
-            requestedOrientation = if (state.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
-            } else {
-                ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
-            }
+            requestedOrientation =
+                if (state.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+                    ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                } else {
+                    ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
+                }
         }
 
         binding.run {
@@ -172,7 +172,7 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
 
             rangeSliderFontScale.addOnChangeListener { _, value, fromUser ->
                 Timber.tag(TAG_CHANGE_FONT_SCALE).d(
-                    "Message: [Value: $value, fromUser: $fromUser]"
+                    "Message: [Value: $value, fromUser: $fromUser]",
                 )
                 viewModel.updateFontScale(value)
             }
@@ -181,12 +181,12 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
             initConfigurationState?.let { state ->
                 if (state.orientation == Configuration.ORIENTATION_LANDSCAPE) {
                     toggleButtonHandleOrientationScreenLabel.setText(
-                        R.string.toggle_button_handle_orientation_screen_landscape
+                        R.string.toggle_button_handle_orientation_screen_landscape,
                     )
                     toggleButtonHandleOrientationScreen.isChecked = true
                 } else {
                     toggleButtonHandleOrientationScreenLabel.setText(
-                        R.string.toggle_button_handle_orientation_screen_portrait
+                        R.string.toggle_button_handle_orientation_screen_portrait,
                     )
                     toggleButtonHandleOrientationScreen.isChecked = false
                 }
@@ -196,17 +196,18 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
             }
 
             toggleButtonHandleOrientationScreen.setOnClickListener {
-                val orientation = if (toggleButtonHandleOrientationScreen.isChecked) {
-                    toggleButtonHandleOrientationScreenLabel.setText(
-                        R.string.toggle_button_handle_orientation_screen_landscape
-                    )
-                    Configuration.ORIENTATION_LANDSCAPE
-                } else {
-                    toggleButtonHandleOrientationScreenLabel.setText(
-                        R.string.toggle_button_handle_orientation_screen_portrait
-                    )
-                    Configuration.ORIENTATION_PORTRAIT
-                }
+                val orientation =
+                    if (toggleButtonHandleOrientationScreen.isChecked) {
+                        toggleButtonHandleOrientationScreenLabel.setText(
+                            R.string.toggle_button_handle_orientation_screen_landscape,
+                        )
+                        Configuration.ORIENTATION_LANDSCAPE
+                    } else {
+                        toggleButtonHandleOrientationScreenLabel.setText(
+                            R.string.toggle_button_handle_orientation_screen_portrait,
+                        )
+                        Configuration.ORIENTATION_PORTRAIT
+                    }
                 viewModel.updateOrientationScreen(orientation)
             }
 
@@ -252,11 +253,12 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
         Timber.tag(TAG).d("attachBaseContext: FontScale lido = $savedFontScale")
 
         // ✅ Aplicar fontScale ao contexto
-        val contextWithFontScale = if (savedFontScale != 1.0f) {
-            newBase?.adjustFontSize(savedFontScale)
-        } else {
-            newBase
-        }
+        val contextWithFontScale =
+            if (savedFontScale != 1.0f) {
+                newBase?.adjustFontSize(savedFontScale)
+            } else {
+                newBase
+            }
         super.attachBaseContext(contextWithFontScale)
     }
 
@@ -302,11 +304,12 @@ class HandlerConfigurationChangesActivity : AppCompatActivity() {
 @Parcelize
 data class ConfigurationState(
     val fontScale: Float,
-    @param:Orientation val orientation: Int
+    @param:Orientation val orientation: Int,
 ) : Parcelable
 
-class ConfigurationViewModel(initConfigurationState: ConfigurationState) : ViewModel() {
-
+class ConfigurationViewModel(
+    initConfigurationState: ConfigurationState,
+) : ViewModel() {
     private val mutableConfigurationState = MutableStateFlow(initConfigurationState)
 
     val configurationState: StateFlow<ConfigurationState> = mutableConfigurationState.asStateFlow()
@@ -316,7 +319,9 @@ class ConfigurationViewModel(initConfigurationState: ConfigurationState) : ViewM
             mutableConfigurationState.value.copy(fontScale = fontScale)
     }
 
-    fun updateOrientationScreen(@Orientation orientation: Int) {
+    fun updateOrientationScreen(
+        @Orientation orientation: Int,
+    ) {
         mutableConfigurationState.value =
             mutableConfigurationState.value.copy(orientation = orientation)
     }

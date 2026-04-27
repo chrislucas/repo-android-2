@@ -45,15 +45,16 @@ fun ComposeLifecycle() {
      */
     val count = remember { mutableIntStateOf(0) }
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxWidth()
-            .systemBarsPadding()
+            .systemBarsPadding(),
     ) {
         Button(onClick = { count.intValue++ }) {
             Text(
                 "Count: ${count.intValue}",
                 style = TextStyle(),
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
             )
         }
 
@@ -63,7 +64,8 @@ fun ComposeLifecycle() {
             }
             DisposableEffect(Unit) {
                 onDispose {
-                    Timber.tag("COMPOSE_DISPOSE_EFFECT")
+                    Timber
+                        .tag("COMPOSE_DISPOSE_EFFECT")
                         .d("on dispose with value ${count.intValue}")
                 }
             }
@@ -71,7 +73,7 @@ fun ComposeLifecycle() {
             Text(
                 text = "You have clicked the button: ${count.intValue}",
                 modifier = Modifier.testTag("side_effect_text"),
-                textAlign = TextAlign.Center
+                textAlign = TextAlign.Center,
             )
         }
     }

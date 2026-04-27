@@ -23,20 +23,24 @@ import timber.log.Timber
 class CircularAdapter<T, V : RecyclerView.ViewHolder>(
     private val dataSet: List<T>,
     private val viewHolderFactory: (ViewGroup, viewType: Int) -> V,
-    private val viewHolderBind: (V, T) -> Unit
+    private val viewHolderBind: (V, T) -> Unit,
 ) : RecyclerView.Adapter<V>() {
+    private var virtualSizeAdapter =
+        if (dataSet.isNotEmpty()) {
+            10
+        } else {
+            0
+        }
 
-    private var virtualSizeAdapter = if (dataSet.isNotEmpty()) {
-        10
-    } else {
-        0
-    }
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int,
+    ): V = viewHolderFactory(parent, viewType)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): V {
-        return viewHolderFactory(parent, viewType)
-    }
-
-    override fun onBindViewHolder(holder: V, position: Int) {
+    override fun onBindViewHolder(
+        holder: V,
+        position: Int,
+    ) {
         if (dataSet.isNotEmpty()) {
             Timber.d("position: $position, virtualSizeAdapter: $virtualSizeAdapter")
             viewHolderBind(holder, dataSet[position % dataSet.size])
@@ -50,12 +54,15 @@ class CircularAdapter<T, V : RecyclerView.ViewHolder>(
     }
 }
 
-class CircularDefaultViewHolder(view: ViewGroup) : RecyclerView.ViewHolder(
-    SampleCardForSampleRecyclerViewBinding.inflate(
-        LayoutInflater.from(view.context),
-        view,
-        false
-    ).root
+class CircularDefaultViewHolder(
+    view: ViewGroup,
+) : RecyclerView.ViewHolder(
+    SampleCardForSampleRecyclerViewBinding
+        .inflate(
+            LayoutInflater.from(view.context),
+            view,
+            false,
+        ).root,
 ) {
     private val bind = SampleCardForSampleRecyclerViewBinding.bind(itemView)
 
@@ -68,7 +75,11 @@ class CircularScrollListener : RecyclerView.OnScrollListener() {
     /*
         https://medium.com/better-programming/what-goes-around-comes-around-1aae51da0f29
      */
-    override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+    override fun onScrolled(
+        recyclerView: RecyclerView,
+        dx: Int,
+        dy: Int,
+    ) {
         super.onScrolled(recyclerView, dx, dy)
         val firstItemVisible = (recyclerView.layoutManager as LinearLayoutManager).findFirstVisibleItemPosition()
         if (firstItemVisible > 0 && firstItemVisible % CircularAdapter.VIRTUAL_LIMIT == 0) {

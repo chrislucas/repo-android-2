@@ -49,7 +49,7 @@ fun Modifier.customScrollState(
     trackColor: Color = Color.LightGray,
     trackWidth: Dp = 8.dp,
     rememberThumbColor: (Color) -> Color,
-    rememberTrackColor: (Color) -> Color
+    rememberTrackColor: (Color) -> Color,
 ) = this.drawWithCache {
     // Cache the paint objects for performance
 
@@ -61,7 +61,7 @@ fun Modifier.customScrollState(
         drawRect(
             color = rememberTrackColor(trackColor),
             topLeft = Offset(contentSize.width - trackWidth.toPx(), 0f),
-            size = Size(trackWidth.toPx(), contentSize.height)
+            size = Size(trackWidth.toPx(), contentSize.height),
         )
 
         // Calculate scroll thumb properties
@@ -77,13 +77,14 @@ fun Modifier.customScrollState(
             val visibleTop = scrollState.firstVisibleItemIndex
 
             // Calculate thumb's top position
-            val thumbTop = (visibleTop * (viewportHeight / totalItems.toFloat())) +
-                (scrollOffset * (viewportHeight / contentHeight.toFloat()))
+            val thumbTop =
+                (visibleTop * (viewportHeight / totalItems.toFloat())) +
+                    (scrollOffset * (viewportHeight / contentHeight.toFloat()))
 
             drawRect(
                 color = rememberThumbColor(thumbColor),
                 topLeft = Offset(contentSize.width - trackWidth.toPx(), thumbTop),
-                size = Size(trackWidth.toPx(), thumbHeight)
+                size = Size(trackWidth.toPx(), thumbHeight),
             )
         }
     }
@@ -93,22 +94,24 @@ fun Modifier.customScrollState(
 @Composable
 fun SimpleScrollBox() {
     Column(
-        modifier = Modifier
+        modifier =
+        Modifier
             .background(Color.LightGray)
             .size(100.dp)
-            .verticalScroll(rememberScrollState())
-
+            .verticalScroll(rememberScrollState()),
     ) {
         repeat(10) {
             Card(
-                modifier = Modifier
+                modifier =
+                Modifier
                     .fillMaxWidth()
-                    .padding(8.dp)
+                    .padding(8.dp),
             ) {
                 Text(
                     "Item $it",
-                    modifier = Modifier
-                        .padding(8.dp)
+                    modifier =
+                    Modifier
+                        .padding(8.dp),
                 )
             }
         }
@@ -130,70 +133,78 @@ fun ScrollBoxes() {
         scrollState.animateScrollTo(100)
     }
 
-    val drawWithCache = Modifier.drawWithCache {
-        val maxScroll = scrollState.maxValue
-        val currentScroll = scrollState.value
-        val scrollBarHeight = size.height * (size.height / (maxScroll + size.height))
-        val scrollBarWidth = size.width * (size.width / (maxScroll + size.width))
-        val scrollBarY = currentScroll.toFloat() / maxScroll * (size.height - scrollBarHeight)
+    val drawWithCache =
+        Modifier.drawWithCache {
+            val maxScroll = scrollState.maxValue
+            val currentScroll = scrollState.value
+            val scrollBarHeight = size.height * (size.height / (maxScroll + size.height))
+            val scrollBarWidth = size.width * (size.width / (maxScroll + size.width))
+            val scrollBarY = currentScroll.toFloat() / maxScroll * (size.height - scrollBarHeight)
 
-        Timber.tag("SCROLL_STATE")
-            .i("HWY: $scrollBarHeight, $scrollBarWidth, $scrollBarY")
+            Timber
+                .tag("SCROLL_STATE")
+                .i("HWY: $scrollBarHeight, $scrollBarWidth, $scrollBarY")
 
-        Timber.tag("SCROLL_STATE_DP")
-            .i("HWY DP: ${scrollBarHeight.toDp()}, ${scrollBarWidth.toDp()}, $scrollBarY")
+            Timber
+                .tag("SCROLL_STATE_DP")
+                .i("HWY DP: ${scrollBarHeight.toDp()}, ${scrollBarWidth.toDp()}, $scrollBarY")
 
-        Timber.tag("SCROLL_STATE_PX")
-            .i(
-                "HWY DP: ${scrollBarHeight.toDp().toPx()}, ${
-                    scrollBarWidth.toDp().toPx()
-                }, $scrollBarY"
-            )
+            Timber
+                .tag("SCROLL_STATE_PX")
+                .i(
+                    "HWY DP: ${scrollBarHeight.toDp().toPx()}, ${
+                        scrollBarWidth.toDp().toPx()
+                    }, $scrollBarY",
+                )
 
-        Timber.tag("SCROLL_STATE_SP")
-            .i(
-                "HWY DP: ${scrollBarHeight.toSp()}, ${
-                    scrollBarWidth.toSp()
-                }, ${scrollBarY.toSp()}"
-            )
+            Timber
+                .tag("SCROLL_STATE_SP")
+                .i(
+                    "HWY DP: ${scrollBarHeight.toSp()}, ${
+                        scrollBarWidth.toSp()
+                    }, ${scrollBarY.toSp()}",
+                )
 
-        val scrollBarWidthPx = scrollBarWidth.toDp().toPx()
+            val scrollBarWidthPx = scrollBarWidth.toDp().toPx()
 
-        Timber.tag("S_STATE_BOX_SIZE")
-            .i(
-                "${Size(scrollBarWidthPx, scrollBarHeight)}"
-            )
+            Timber
+                .tag("S_STATE_BOX_SIZE")
+                .i(
+                    "${Size(scrollBarWidthPx, scrollBarHeight)}",
+                )
 
-        onDrawBehind {
-            // draw a Scrollbar
-            drawRect(
-                color = Color.LightGray,
-                topLeft = Offset(size.width - scrollBarWidthPx, 0f),
-                size = Size(scrollBarWidthPx, scrollBarHeight)
-            )
+            onDrawBehind {
+                // draw a Scrollbar
+                drawRect(
+                    color = Color.LightGray,
+                    topLeft = Offset(size.width - scrollBarWidthPx, 0f),
+                    size = Size(scrollBarWidthPx, scrollBarHeight),
+                )
 
-            // Desenha a scrollbar thumb
-            drawRect(
-                color = Color.DarkGray,
-                topLeft = Offset(size.width - scrollBarWidthPx, scrollBarY),
-                size = Size(scrollBarWidthPx, scrollBarHeight)
-            )
+                // Desenha a scrollbar thumb
+                drawRect(
+                    color = Color.DarkGray,
+                    topLeft = Offset(size.width - scrollBarWidthPx, scrollBarY),
+                    size = Size(scrollBarWidthPx, scrollBarHeight),
+                )
+            }
         }
-    }
 
     Box(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .statusBarsPadding()
             .systemBarsPadding(),
-        contentAlignment = Alignment.Center
+        contentAlignment = Alignment.Center,
     ) {
         Column(
-            modifier = Modifier
+            modifier =
+            Modifier
                 .background(Color.LightGray)
                 .verticalScroll(scrollState)
                 .size(100.dp)
-                .then(drawWithCache)
+                .then(drawWithCache),
         ) {
             repeat(25) {
                 /*
@@ -211,9 +222,10 @@ fun ScrollBoxes() {
 
                 Text(
                     "Item $it",
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .background(Color.LightGray)
-                        .padding(8.dp)
+                        .padding(8.dp),
                 )
             }
         }

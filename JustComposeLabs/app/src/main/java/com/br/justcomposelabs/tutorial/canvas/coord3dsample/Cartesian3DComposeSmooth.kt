@@ -32,7 +32,8 @@ fun Cartesian3DComposeSmooth() {
 
     // Canvas com deteção de gestos de arrasto
     Canvas(
-        modifier = Modifier
+        modifier =
+        Modifier
             .fillMaxSize()
             .pointerInput(Unit) {
                 detectDragGestures { change, dragAmount ->
@@ -49,7 +50,7 @@ fun Cartesian3DComposeSmooth() {
                         rotationY = rotationYAnim.value
                     }
                 }
-            }
+            },
     ) {
         val width = size.width
         val height = size.height
@@ -59,14 +60,15 @@ fun Cartesian3DComposeSmooth() {
         val spaceSize = 300f // Tamanho do eixo
 
         // Pontos finais dos eixos 3D
-        val axes = listOf(
-            floatArrayOf(spaceSize, 0f, 0f), // X positivo
-            floatArrayOf(-spaceSize, 0f, 0f), // X negativo
-            floatArrayOf(0f, spaceSize, 0f), // Y positivo
-            floatArrayOf(0f, -spaceSize, 0f), // Y negativo
-            floatArrayOf(0f, 0f, spaceSize), // Z positivo
-            floatArrayOf(0f, 0f, -spaceSize) // Z negativo
-        )
+        val axes =
+            listOf(
+                floatArrayOf(spaceSize, 0f, 0f), // X positivo
+                floatArrayOf(-spaceSize, 0f, 0f), // X negativo
+                floatArrayOf(0f, spaceSize, 0f), // Y positivo
+                floatArrayOf(0f, -spaceSize, 0f), // Y negativo
+                floatArrayOf(0f, 0f, spaceSize), // Z positivo
+                floatArrayOf(0f, 0f, -spaceSize), // Z negativo
+            )
         val colors = listOf(Color.Red, Color.Red, Color.Green, Color.Green, Color.Blue, Color.Blue)
 
         // Desenhando os eixos
@@ -87,7 +89,7 @@ fun Cartesian3DComposeSmooth() {
                 color = colors[i],
                 start = start2D,
                 end = end2D,
-                strokeWidth = 4f
+                strokeWidth = 4f,
             )
         }
     }
@@ -100,7 +102,11 @@ fun Cartesian3DComposeSmooth() {
  * @param rotY Ângulo de rotação ao redor do eixo Y, em radianos
  * @return O ponto rotacionado como FloatArray(x, y, z)
  */
-fun rotatePoint(point: FloatArray, rotX: Float, rotY: Float): FloatArray {
+fun rotatePoint(
+    point: FloatArray,
+    rotX: Float,
+    rotY: Float,
+): FloatArray {
     val (x, y, z) = point
 
     // Rotação em torno do eixo X
@@ -131,7 +137,7 @@ fun projectPoint(
     screenHeight: Float,
     centerX: Float,
     centerY: Float,
-    distance: Float = 500f // profundidade da câmera
+    distance: Float = 500f, // profundidade da câmera
 ): Offset {
     val (x, y, z) = point3D
 

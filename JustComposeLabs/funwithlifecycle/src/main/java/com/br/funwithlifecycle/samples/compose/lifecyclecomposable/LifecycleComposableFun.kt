@@ -7,7 +7,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.rememberLifecycleOwner
 
-
 /*
     https://developer.android.com/jetpack/androidx/releases/lifecycle
 
@@ -30,16 +29,16 @@ fun LifecycleAwareComponent() {
         bibliotecas como navigation 3
      */
 
-
     /*
         Esse lifecycle e automaticamente levado para o estado DESTROYED quando ele deixa a composition
         e seu maxLifecycle atinge o maximo do lifeycle que foi definido, no caso abaixo RESUMED,
         ou o atinge o estado do lifecycle de seu componente pai/parent
      */
-    val lifecycleOwner = rememberLifecycleOwner(
-        maxLifecycle = Lifecycle.State.RESUMED,
-        parent = LocalLifecycleOwner.current
-    )
+    val lifecycleOwner =
+        rememberLifecycleOwner(
+            maxLifecycle = Lifecycle.State.RESUMED,
+            parent = LocalLifecycleOwner.current,
+        )
 
     CompositionLocalProvider(LocalLifecycleOwner provides lifecycleOwner) {
         val childLifecycleOwner = LocalLifecycleOwner.current

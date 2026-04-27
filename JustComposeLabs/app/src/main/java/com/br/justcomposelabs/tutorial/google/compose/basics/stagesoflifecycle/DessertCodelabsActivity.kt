@@ -39,13 +39,14 @@ class DessertCodelabsActivity : ComponentActivity() {
         setContent {
             JustComposeLabsTheme {
                 Scaffold(
-                    modifier = Modifier
+                    modifier =
+                    Modifier
                         .fillMaxSize()
-                        .statusBarsPadding()
+                        .statusBarsPadding(),
                 ) { innerPadding ->
                     Layout(
                         modifier = Modifier.padding(innerPadding),
-                        desserts = Datasource.desserts
+                        desserts = Datasource.desserts,
                     )
                 }
             }
@@ -55,7 +56,7 @@ class DessertCodelabsActivity : ComponentActivity() {
 
 private fun determineDessertToShow(
     desserts: List<Dessert>,
-    dessertsSold: Int
+    dessertsSold: Int,
 ): Dessert {
     /*
         var dessertToShow = desserts.first()
@@ -71,29 +72,38 @@ private fun determineDessertToShow(
     return desserts.maxBy { it.startProductionAmount >= dessertsSold }
 }
 
-private fun shareSoldDessertsInformation(context: Context, dessertSold: Int, revenue: Int) {
-    val intent = Intent().apply {
-        this.action = Intent.ACTION_SEND
-        putExtra(
-            Intent.EXTRA_TEXT,
-            context.getString(R.string.share_text, dessertSold, revenue)
-        )
-        type = "text/plain"
-    }
+private fun shareSoldDessertsInformation(
+    context: Context,
+    dessertSold: Int,
+    revenue: Int,
+) {
+    val intent =
+        Intent().apply {
+            this.action = Intent.ACTION_SEND
+            putExtra(
+                Intent.EXTRA_TEXT,
+                context.getString(R.string.share_text, dessertSold, revenue),
+            )
+            type = "text/plain"
+        }
 
     try {
         context.startActivity(intent)
     } catch (e: ActivityNotFoundException) {
-        Toast.makeText(
-            context,
-            context.getString(R.string.sharing_not_available),
-            Toast.LENGTH_LONG
-        ).show()
+        Toast
+            .makeText(
+                context,
+                context.getString(R.string.sharing_not_available),
+                Toast.LENGTH_LONG,
+            ).show()
     }
 }
 
 @Composable
-fun Layout(modifier: Modifier = Modifier, desserts: List<Dessert>) {
+fun Layout(
+    modifier: Modifier = Modifier,
+    desserts: List<Dessert>,
+) {
     ComposableLifecycle { s, e ->
         /*
             what is lifecycle in android
@@ -152,14 +162,14 @@ fun Layout(modifier: Modifier = Modifier, desserts: List<Dessert>) {
             DessertClickerAppBar(modifier = Modifier.fillMaxWidth()) {
                 shareSoldDessertsInformation(context, dessertsSold, revenue)
             }
-        }
+        },
     ) { paddingValues ->
         DessertClickerScreen(
             modifier = Modifier.padding(paddingValues),
             revenue = revenue,
             dessertsSold = dessertsSold,
             dessertImageId = currentDessertImageId,
-            onDessertClicked = {}
+            onDessertClicked = {},
         )
     }
 }
@@ -167,7 +177,7 @@ fun Layout(modifier: Modifier = Modifier, desserts: List<Dessert>) {
 @Composable
 private fun DessertClickerAppBar(
     modifier: Modifier = Modifier,
-    onShareButtonClicked: () -> Unit
+    onShareButtonClicked: () -> Unit,
 ) {
     Row(modifier = modifier) {
     }
