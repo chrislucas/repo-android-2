@@ -21,9 +21,7 @@ import kotlin.properties.Delegates
  *        reference to a style resource that supplies default values for
  *        the view. Can be 0 to not look for defaults.
  */
-class HexagonView
-@JvmOverloads
-constructor(
+class HexagonView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -52,20 +50,18 @@ constructor(
 
             join = Paint.Join.entries[joinStyleValue]
             strokeWidthValue = getFloat(R.styleable.HexagonView_strokeWidthPaint, 0.0f)
-            scaleStrokeWidth =
-                getFloat(
-                    R.styleable.HexagonView_scaleStrokeWidth,
-                    ONE_PERCENT * 3,
-                ).coerceIn(
-                    ONE_PERCENT,
-                    ONE_PERCENT * 10,
-                )
+            scaleStrokeWidth = getFloat(
+                R.styleable.HexagonView_scaleStrokeWidth,
+                ONE_PERCENT * 3,
+            ).coerceIn(
+                ONE_PERCENT,
+                ONE_PERCENT * 10,
+            )
 
-            scaleRadius =
-                getFloat(
-                    R.styleable.HexagonView_scaleRadius,
-                    ONE_PERCENT * 90,
-                ).coerceIn(ONE_PERCENT * 10, ONE_PERCENT * 90)
+            scaleRadius = getFloat(
+                R.styleable.HexagonView_scaleRadius,
+                ONE_PERCENT * 90,
+            ).coerceIn(ONE_PERCENT * 10, ONE_PERCENT * 90)
         }
     }
 
@@ -82,12 +78,11 @@ constructor(
             style = Paint.Style.STROKE
             color = Color.rgb(0, 0, 0)
             strokeJoin = join
-            strokeWidth =
-                if (strokeWidthValue > 0.0f) {
-                    strokeWidthValue
-                } else {
-                    minDimension * scaleStrokeWidth
-                }
+            strokeWidth = if (strokeWidthValue > 0.0f) {
+                strokeWidthValue
+            } else {
+                minDimension * scaleStrokeWidth
+            }
             canvas.drawPath(path, this)
         }
     }
@@ -103,7 +98,6 @@ constructor(
          * Para desenhar um rehagono regular, o metodo mais preciso é calcular os seis vertices
          * usando trigonometria básica
          */
-
         val cx = w * ONE_PERCENT * 50
         val cy = h * ONE_PERCENT * 50
         minDimension = min(w, h)
@@ -112,6 +106,6 @@ constructor(
     }
 
     companion object {
-        const val ONE_PERCENT = .01f
+        private const val ONE_PERCENT = .01f
     }
 }

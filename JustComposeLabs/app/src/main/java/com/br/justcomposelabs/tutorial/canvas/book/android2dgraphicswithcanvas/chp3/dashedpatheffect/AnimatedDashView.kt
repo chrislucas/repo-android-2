@@ -13,4 +13,8 @@ constructor(
     ctx: Context,
     attr: AttributeSet? = null,
     defStyleAttr: Int = 0,
-) : View(ctx, attr, defStyleAttr)
+) : View(ctx, attr, defStyleAttr) {
+    companion object {
+        const val ONE_PERCENT = .01f
+    }
+}

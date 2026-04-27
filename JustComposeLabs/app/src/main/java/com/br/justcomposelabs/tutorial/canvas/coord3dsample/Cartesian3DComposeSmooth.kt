@@ -6,7 +6,12 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableFloatStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -16,7 +21,11 @@ import kotlinx.coroutines.launch
 import kotlin.math.cos
 import kotlin.math.sin
 
-@Preview(showBackground = true, showSystemUi = false, uiMode = UI_MODE_NIGHT_YES)
+@Preview(
+    showBackground = true,
+    showSystemUi = false,
+    uiMode = UI_MODE_NIGHT_YES
+)
 @Composable
 fun Cartesian3DComposeSmooth() {
     // Controle de rotação com animação suave
@@ -27,30 +36,30 @@ fun Cartesian3DComposeSmooth() {
     var rotationX by remember { mutableFloatStateOf(0f) }
     var rotationY by remember { mutableFloatStateOf(0f) }
 
-    // Escopo da corrotina para animações
+    // Escopo da coroutine para animações
     val scope = rememberCoroutineScope()
 
     // Canvas com deteção de gestos de arrasto
     Canvas(
         modifier =
-        Modifier
-            .fillMaxSize()
-            .pointerInput(Unit) {
-                detectDragGestures { change, dragAmount ->
-                    change.consume()
+            Modifier
+                .fillMaxSize()
+                .pointerInput(Unit) {
+                    detectDragGestures { change, dragAmount ->
+                        change.consume()
 
-                    val targetX = rotationX + dragAmount.y * 0.01f
-                    val targetY = rotationY + dragAmount.x * 0.01f
+                        val targetX = rotationX + dragAmount.y * 0.01f
+                        val targetY = rotationY + dragAmount.x * 0.01f
 
-                    // Anima a rotação suavemente usando o escopo da corrotina
-                    scope.launch {
-                        rotationXAnim.animateTo(targetX, animationSpec = tween(durationMillis = 300))
-                        rotationYAnim.animateTo(targetY, animationSpec = tween(durationMillis = 300))
-                        rotationX = rotationXAnim.value
-                        rotationY = rotationYAnim.value
+                        // Anima a rotação usando suavemente o escopo da coroutines
+                        scope.launch {
+                            rotationXAnim.animateTo(targetX, animationSpec = tween(durationMillis = 300))
+                            rotationYAnim.animateTo(targetY, animationSpec = tween(durationMillis = 300))
+                            rotationX = rotationXAnim.value
+                            rotationY = rotationYAnim.value
+                        }
                     }
-                }
-            },
+                },
     ) {
         val width = size.width
         val height = size.height
@@ -141,10 +150,10 @@ fun projectPoint(
 ): Offset {
     val (x, y, z) = point3D
 
-    // Calcula o fator de escala com perspectiva
+    // Calcula o fator de escala com perspective
     val scale = distance / (distance + z)
 
-    // Aplica escala ao ponto (projeção perspectiva)
+    // Aplica escala ao ponto (projeção perspetiva)
     val projectedX = centerX + x * scale
     val projectedY = centerY + y * scale
 

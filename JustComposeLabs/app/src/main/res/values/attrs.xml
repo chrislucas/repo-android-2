@@ -83,6 +83,7 @@
 
     <declare-styleable name="RegularPolygonView">
         <attr name="sides" format="integer" min="3" />
+        <attr name="rotationDegree" format="float" />
         <attr name="scaleRadius" format="float" />
         <attr name="lineColor" />
         <attr name="scaleStrokeWidth" />
@@ -103,6 +104,7 @@
         <attr name="scaleStrokeWidth" />
         <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
+        <attr name="rotationDegree" />
     </declare-styleable>
 
     <declare-styleable name="QuadraticBezierCurveView">
@@ -155,6 +157,8 @@
         <attr name="scaleStrokeWidth" />
         <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
+        <attr name="rotationDegree" />
+
     </declare-styleable>
 
     <declare-styleable name="HexagonView">
@@ -163,6 +167,7 @@
         <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
         <attr name="scaleRadius" />
+        <attr name="rotationDegree" />
     </declare-styleable>
 
 
@@ -172,7 +177,7 @@
         <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
         <attr name="scaleRadius" />
-
+        <attr name="rotationDegree" />
     </declare-styleable>
 
 </resources>

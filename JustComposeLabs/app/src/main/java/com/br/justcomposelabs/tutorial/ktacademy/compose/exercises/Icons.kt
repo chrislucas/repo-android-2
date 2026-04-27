@@ -13,8 +13,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.*
-import androidx.compose.ui.graphics.vector.*
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.StrokeJoin
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
@@ -259,13 +264,25 @@ val SomeLogoIcon: ImageVector by lazy {
             ) {
                 moveTo(80f, 90f)
                 lineTo(120f, 90f)
-                arcToRelative(10f, 10f, 0f, false, true, 10f, 10f)
+                arcToRelative(
+                    10f, 10f, 0f,
+                    isMoreThanHalf = false, isPositiveArc = true, dx1 = 10f, dy1 = 10f
+                )
                 lineTo(130f, 140f)
-                arcToRelative(10f, 10f, 0f, false, true, -10f, 10f)
+                arcToRelative(
+                    10f, 10f, 0f,
+                    isMoreThanHalf = false, isPositiveArc = true, dx1 = -10f, dy1 = 10f
+                )
                 lineTo(80f, 150f)
-                arcToRelative(10f, 10f, 0f, false, true, -10f, -10f)
+                arcToRelative(
+                    10f, 10f, 0f,
+                    isMoreThanHalf = false, isPositiveArc = true, dx1 = -10f, dy1 = -10f
+                )
                 lineTo(70f, 100f)
-                arcToRelative(10f, 10f, 0f, false, true, 10f, -10f)
+                arcToRelative(
+                    10f, 10f, 0f,
+                    isMoreThanHalf = false, isPositiveArc = true, dx1 = 10f, dy1 = -10f
+                )
                 close()
             }
 
@@ -831,8 +848,7 @@ fun IconPreview() {
             Image(
                 imageVector = icon,
                 contentDescription = "Truck Icon",
-                modifier =
-                Modifier
+                modifier = Modifier
                     .size(100.dp)
                     .padding(8.dp),
             )

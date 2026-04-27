@@ -72,7 +72,7 @@ constructor(
                 getFloat(
                     R.styleable.DashedHexagonView_scaleRadius,
                     ONE_PERCENT * 90,
-                ).coerceIn(ONE_PERCENT * 10, HexagonView.ONE_PERCENT * 90)
+                ).coerceIn(ONE_PERCENT * 10, ONE_PERCENT * 90)
         }
     }
 

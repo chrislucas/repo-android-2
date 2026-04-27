@@ -35,7 +35,10 @@ fun TrySurface() {
     Surface(
         // Modifier to be applied to the layout corresponding to the surface
         modifier = Modifier.fillMaxSize(),
-        // Defines the surface's shape as well its shadow. A shadow is only displayed if the elevation is greater than zero.
+        /*
+            Defines the surface's shape as well its shadow.
+            A shadow is only displayed if the elevation is greater than zero./
+         */
         shape = RectangleShape,
         // The background color. Use Color.Transparent to have no color.
         color = MaterialTheme.colorScheme.surface,

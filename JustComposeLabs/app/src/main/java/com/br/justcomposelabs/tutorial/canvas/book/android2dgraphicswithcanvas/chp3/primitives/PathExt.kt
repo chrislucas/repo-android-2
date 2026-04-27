@@ -12,7 +12,7 @@ fun Path.drawHexagon(
     cx: Float,
     cy: Float,
     radius: Float,
-    rotation: Float = (-Math.PI / 4).toFloat(),
+    rotation: Float = -Math.PI.toFloat(), // poderia rotacionar 90 graud PI / 2
 ): List<PointF> =
     run {
         val points = mutableListOf<PointF>()
@@ -41,13 +41,26 @@ fun Path.drawHexagon(
                     deve ser 0.
 
         # Por que Math.PI / 2 muda a posição do polígono?
-            - No sistema de coordenadas do Android, 0 radianos começa na posição
-            "3 hpras"
+            - No sistema de coordenadas do Android, 0 grau começa na posição
+            "3 hpras", o eixo X positivo a direita (primeiro quadrante do plano cartesiano)
+
+            - Ao subtrair PI/2 ou 90 graus, rotacionamos o ponto inicial para esquerda,
+            no sentido anti-horário
+
+            - Motivo técnico
+                - Se o ângulo for 0, o primeiro ângulo é calculado a direita x = raio + cx, y = raio + cy
+                - -PI/2 move o primeiro ponto para o topo da reta Y, indo em sentido anti-horário
+            - Visualizando no Plano Cartesiano:
+                - 0 rad: Lado direito (Leste).
+                - π/2 (90°): Base (Sul) — Lembre-se que no Android o Y cresce para baixo.
+                - π (180°): Lado esquerdo (Oeste).
+                - 3π/2 ou -π/2 (-90°): Topo (Norte).
+
+
         # Uso de seno e cosseno para encontrar os pontos x e y a partir do ponto central
             -
         https://share.google/aimode/Bwi35Q6WIWNuxqgju
      */
-
         for (i in 0 until sides) {
             val angle = i * angleStep + rotation
             val x = (cx + radius * cos(angle)).toFloat()
@@ -80,7 +93,14 @@ fun Path.drawRegularPolygon(
                 val angle = i * angleSteps + rotation
                 val x = (cx + radius * cos(angle)).toFloat()
                 val y = (cy + radius * sin(angle)).toFloat()
+                if (i == 0) {
+                    moveTo(x, y)
+                } else {
+                    lineTo(x, y)
+                }
+                points += PointF(x, y)
             }
+            close()
             points
         }
     }

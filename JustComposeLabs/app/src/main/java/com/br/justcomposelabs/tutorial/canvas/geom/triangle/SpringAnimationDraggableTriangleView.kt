@@ -88,7 +88,6 @@ constructor(
                 for (i in vertices.indices) {
                     if (distance(event.x, event.y, vertices[i].x, vertices[i].y) < touchTolerance) {
                         selectedVertexIndex = i
-                        return true
                     }
                 }
             }
@@ -103,12 +102,12 @@ constructor(
                     applySpringForce(selectedVertexIndex)
 
                     invalidate()
-                    return true
                 }
             }
 
             MotionEvent.ACTION_UP -> {
                 selectedVertexIndex = -1
+                performClick()
             }
         }
         return true

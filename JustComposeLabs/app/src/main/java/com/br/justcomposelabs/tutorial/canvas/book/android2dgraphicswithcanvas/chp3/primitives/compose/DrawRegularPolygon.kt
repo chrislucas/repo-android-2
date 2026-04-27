@@ -11,8 +11,13 @@ import com.br.justcomposelabs.utils.composable.fillMaxSizePadding
 @Composable
 fun DrawRegularPolygon() {
     AndroidView(
-        factory = { ctx -> RegularPolygonView(ctx) },
-        update = { it.invalidate() },
+        factory = { ctx ->
+            RegularPolygonView(ctx)
+        },
+        update = {
+            it.sides = 12
+            it.invalidate()
+        },
         modifier = Modifier.fillMaxSizePadding(),
     )
 }
