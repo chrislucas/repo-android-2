@@ -97,7 +97,7 @@ class HexagonView @JvmOverloads constructor(
         val cy = h * ONE_PERCENT * 50
         minDimension = min(w, h)
         val radius = minDimension * ONE_PERCENT * 50 * scaleRadius
-        path.drawHexagon(cx, cy, radius)
+        path.drawHexagon(cx, cy, radius, 0.0f)
     }
 
     companion object {

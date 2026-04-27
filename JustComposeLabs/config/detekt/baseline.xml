@@ -2,299 +2,33 @@
 <SmellBaseline>
   <ManuallySuppressedIssues/>
   <CurrentIssues>
-    <ID>ArgumentListWrapping:FlowDebounce.kt$( factory = FlowMessageDebounceViewModel.FACTORY, extras = MutableCreationExtras().apply { this[FlowMessageDebounceViewModel.KEY_DEBOUNCE] = 1500L })</ID>
-    <ID>ArgumentListWrapping:SearchTypingDebounce.kt$SpellCheckerImpl$( null, null, this, true )</ID>
-    <ID>CommentWrapping:OrderOfModifiersMatters.kt$/* Ja a seguinte ordem Modifier .padding(padding) .clickable(onClick = {}) .wrapContentSize() A area de padding nao é clicavel */</ID>
-    <ID>EmptyDefaultConstructor:AnotherMockViewModelVersionII.kt$AnotherMockViewModelVersionII$()</ID>
-    <ID>EmptyDefaultConstructor:AppendContentComponent.kt$DisplayTextViewModel$()</ID>
-    <ID>EmptyDefaultConstructor:CustomView.kt$CustomViewModel$()</ID>
-    <ID>EmptyDefaultConstructor:DummyViewModel.kt$DummyViewModel$()</ID>
-    <ID>EmptyDefaultConstructor:FunWithFlowTypesActivity.kt$StateFlowViewModel$()</ID>
-    <ID>EmptyDefaultConstructor:FunWithStateFlow.kt$StateFlowSampleViewModel$()</ID>
-    <ID>EmptyDefaultConstructor:GithubRepository.kt$GithubRepository$()</ID>
-    <ID>EmptyDefaultConstructor:MainIntent.kt$MainViewModel$()</ID>
-    <ID>EmptyElseBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity${ }</ID>
-    <ID>EmptyFunctionBlock:CardComponent.kt${ }</ID>
-    <ID>EmptyFunctionBlock:DessertCodelabsWithViewModelActivity.kt${ }</ID>
-    <ID>EmptyFunctionBlock:DiceRollerActivity.kt${ }</ID>
-    <ID>EmptyFunctionBlock:DogIcon.kt${ }</ID>
-    <ID>EmptyFunctionBlock:FragmentScreenComposeActivity.kt${ }</ID>
-    <ID>EmptyFunctionBlock:HandlingInteractionsState.kt${ }</ID>
-    <ID>EmptyFunctionBlock:ImageTranslationComponent.kt${ }</ID>
-    <ID>EmptyFunctionBlock:ImmutableCollections.kt${ }</ID>
-    <ID>EmptyFunctionBlock:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager${}</ID>
-    <ID>EmptyFunctionBlock:MinIntrinsicsSizeColumnComponent.kt${ }</ID>
-    <ID>EmptyFunctionBlock:NetworkBoundResource.kt${}</ID>
-    <ID>EmptyFunctionBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity.&lt;no name provided&gt;${ }</ID>
-    <ID>EmptyFunctionBlock:ShowcaseCard.kt${ }</ID>
-    <ID>EmptyFunctionBlock:SnackBarComponentII.kt${ }</ID>
-    <ID>EmptyFunctionBlock:StackComponent.kt${ }</ID>
-    <ID>EmptyFunctionBlock:ThemeDynamicColor.kt${ }</ID>
-    <ID>EmptyFunctionBlock:ThemeSwitcher.kt${ }</ID>
-    <ID>EmptyFunctionBlock:WalkThroughActivity.kt${ }</ID>
-    <ID>EmptyIfBlock:PersistentBottomSheetViewActivity.kt$PersistentBottomSheetViewActivity${ }</ID>
-    <ID>EqualsAlwaysReturnsTrueOrFalse:RecompositionHighlighterActivity.kt$RecomposeHighlighterElement$override fun equals(other: Any?): Boolean</ID>
-    <ID>Filename:BasicGuideGra[hicsLayer.kt$com.br.justcomposelabs.tutorial.google.compose.graphicslayer.BasicGuideGra[hicsLayer.kt</ID>
-    <ID>Filename:CoroutineScopeUtils.kt$com.br.justcomposelabs.CoroutineScopeUtils.kt</ID>
-    <ID>Filename:DiceRoll.kt$com.br.justcomposelabs.tutorial.google.compose.state.production.diceroll.DiceRoll.kt</ID>
-    <ID>Filename:DynamicHeightCardList].kt$com.br.justcomposelabs.tutorial.google.intrinsicmeasurements.DynamicHeightCardList].kt</ID>
-    <ID>Filename:EditTask.kt$com.br.justcomposelabs.tutorial.google.compose.state.production.edittask.EditTask.kt</ID>
-    <ID>Filename:FilterWhileTyping.kt$com.br.justcomposelabs.tutorial.google.filterwhiletyping.FilterWhileTyping.kt</ID>
-    <ID>Filename:FlowSample.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.sample.FlowSample.kt</ID>
-    <ID>Filename:OwnLifecycle.kt$com.br.justcomposelabs.tutorial.google.lifecycle.handlerlifecycle.OwnLifecycle.kt</ID>
-    <ID>Filename:ParcelizeSample.kt$com.br.justcomposelabs.tutorial.google.parcelize.ParcelizeSample.kt</ID>
-    <ID>Filename:ThrottleFirstExample.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.throttle.ThrottleFirstExample.kt</ID>
-    <ID>FinalNewline:FlowSample.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.sample.FlowSample.kt</ID>
-    <ID>FinalNewline:GestureScrollTop.kt$com.br.justcomposelabs.tutorial.medium.sideeffects.snapshotflow.usecases.GestureScrollTop.kt</ID>
-    <ID>FinalNewline:HandlingBackpressure.kt$com.br.justcomposelabs.tutorial.coroutines.medium.handlingbackpressure.HandlingBackpressure.kt</ID>
-    <ID>FinalNewline:OneShotEventToast.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.sharedflow.oneshotevent.OneShotEventToast.kt</ID>
-    <ID>FinalNewline:ThrottleFirst.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.ThrottleFirst.kt</ID>
-    <ID>FinalNewline:ThrottleFirstExample.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.throttle.ThrottleFirstExample.kt</ID>
-    <ID>FinalNewline:ViewModelInternals.kt$com.br.justcomposelabs.tutorial.ViewModelInternals.kt</ID>
-    <ID>ForbiddenComment:CustomizeAnimation.kt$SizeAnimationViewModel$/* TODO: usar esse estado para criar uma interface com controles que possam modificar seus valores - Use algum componente de seleção com as opçoes de mudanca de: - dampingRatio - stiffness - talvez visibilidade */</ID>
-    <ID>ForbiddenComment:DynamicColorScreen.kt$/* TODO: Preview nao ta aparecendo */</ID>
-    <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$// TODO: Rename parameter arguments, choose names that match</ID>
-    <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment$// TODO: Rename and change types of parameters</ID>
-    <ID>ForbiddenComment:InteroperabilityComposeFragment.kt$InteroperabilityComposeFragment.Companion$// TODO: Rename and change types and number of parameters</ID>
-    <ID>ForbiddenComment:SearchTypingDebounce.kt$SearchViewModel$/* TODO: Implementar uma função de busca real que usa a api de Spell Check https://developer.android.com/develop/ui/views/touch-and-input/spell-checker-framework GenAI Proofreading API https://developers.google.com/ml-kit/genai/proofreading/android */</ID>
-    <ID>ForbiddenComment:WhereToHoistState.kt$Message$* TODO: Estudar esse assunto * https://developer.android.com/develop/ui/compose/state-hoisting#classes-as-state-owner * - UI Logic - Quando a logica de UI precisa ler ou rescrever um estado, devmos restringir esse estado para a UI. - Podemos fazer isso elevando o estado para um "nível correto" em uma composable function - Podemos fazer isso em uma classe especifica para manter estados - plain state holder class (https://developer.android.com/topic/architecture/ui-layer/stateholders#ui-logic) Composables as state owner - https://developer.android.com/develop/ui/compose/state-hoisting#composables-as-state-owner - Se estamos lidando com logica de estado simples, a documentacao nos diz que nao ha problemas. Podemos deixar o controle do estado internamente para composable ou "iça-lo / hoist" se for requisido No state hoisting needed - https://developer.android.com/develop/ui/compose/state-hoisting#no-state-hoisting - Hoisting state nem sempre é requirido. O estado pode ser mantido internamente nos casos que nenhuma outra composable necessite controla-lo.</ID>
-    <ID>ImplicitDefaultLocale:LerpFunction.kt$String.format("%s%s", Integer.toHexString(value / 16), Integer.toHexString(value % 16))</ID>
-    <ID>ImportOrdering:DeepDiveSnapshotFlow.kt$import androidx.compose.foundation.layout.Box import androidx.compose.foundation.layout.fillMaxSize import androidx.compose.material3.Text import androidx.compose.runtime.Composable import androidx.compose.runtime.collectAsState import androidx.compose.runtime.getValue import androidx.compose.ui.Alignment import androidx.compose.ui.Modifier import androidx.compose.ui.text.TextStyle import androidx.compose.ui.text.style.TextAlign import androidx.compose.ui.unit.sp import androidx.lifecycle.ViewModel import androidx.lifecycle.viewmodel.compose.viewModel import androidx.compose.ui.tooling.preview.Preview import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme import kotlinx.coroutines.delay import kotlinx.coroutines.flow.distinctUntilChanged import kotlinx.coroutines.flow.flow import timber.log.Timber</ID>
-    <ID>Indentation:GestureScrollTop.kt$ </ID>
-    <ID>LongMethod:AdvanvcedCustomDialog.kt$@Preview(showBackground = true) @Composable fun ImageDialog()</ID>
-    <ID>LongMethod:AnimatedCircle.kt$@Composable fun AnimatedCircle( proportions: List&lt;Float&gt;, colors: List&lt;Color&gt;, modifier: Modifier = Modifier )</ID>
-    <ID>LongMethod:AnimatedCounterComponent.kt$@Preview(showBackground = true) @Composable fun AnimatedCounterComponent()</ID>
-    <ID>LongMethod:Cartesian3DView.kt$@Preview(showBackground = true, showSystemUi = false) @Composable fun CartesianPlan3dAxis()</ID>
-    <ID>LongMethod:CoinFlipAnimation.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ClickableTimedFlippingBox()</ID>
-    <ID>LongMethod:CommentTree.kt$@OptIn(ExperimentalMaterial3Api::class) @Composable fun InfiniteScrollCommentTree( comments: List&lt;Comment&gt;, modifier: Modifier = Modifier, onAddComment: (Comment, String, String) -&gt; Unit = { _, _, _ -&gt; } )</ID>
-    <ID>LongMethod:CommentViewModel.kt$CommentViewModel$private fun initializeSampleComments()</ID>
-    <ID>LongMethod:HandleConfigurationChanges.kt$@Preview(showSystemUi = true) @Composable fun ConfigurationDeviceInfoComponent()</ID>
-    <ID>LongMethod:HandlerConfigurationChangesActivity.kt$HandlerConfigurationChangesActivity$override fun onCreate(savedInstanceState: Bundle?)</ID>
-    <ID>LongMethod:OrderOfModifiersMatters.kt$@Preview(showBackground = true) @Composable fun OrderMatters1(artist: Artist = Artist(name = "Chris"))</ID>
-    <ID>LongMethod:ScrollIndicatorModifiers.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ScrollBoxes()</ID>
-    <ID>LongMethod:ScrollListTopDerivedStateOf.kt$@Preview(showSystemUi = true, showBackground = true) @Composable fun HorizontalCenteredScroll()</ID>
-    <ID>LongMethod:SelectOptionScreen.kt$@Composable fun SelectOptionScreen( modifier: Modifier = Modifier, subtotal: String, options: List&lt;String&gt;, onSelectionChanged: (String) -&gt; Unit = {}, onCancelButtonClicked: () -&gt; Unit = {}, onNextButtonClicked: () -&gt; Unit = {} )</ID>
-    <ID>LongMethod:SpringVisibilityThresholdParameter.kt$@Preview(showBackground = true, showSystemUi = true) @Composable fun ThresholdAnimationScreen(viewModel: FadeViewModel = viewModel())</ID>
-    <ID>LongMethod:StartOrderScreen.kt$@Composable fun StartOrderScreen( quantityOptions: List&lt;Pair&lt;Int, Int&gt;&gt;, onNextButtonClicked: (Int) -&gt; Unit, modifier: Modifier = Modifier )</ID>
-    <ID>LongParameterList:Cartesian3DComposeSmooth.kt$( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f // profundidade da câmera )</ID>
-    <ID>LongParameterList:CommentItem.kt$( comment: Comment, level: Int, isExpanded: Boolean, onToggle: () -&gt; Unit, onNavigate: (() -&gt; Unit)? = null, onReply: () -&gt; Unit, reachedMaxLevel: Boolean = false )</ID>
-    <ID>LongParameterList:CommentItem.kt$( comment: Comment, level: Int, reachedMaxLevel: Boolean, onReply: () -&gt; Unit, onNavigate: (() -&gt; Unit)? )</ID>
-    <ID>LongParameterList:CommentItem.kt$( hasReplies: Boolean, isExpanded: Boolean, reachedMaxLevel: Boolean, onToggle: () -&gt; Unit, onNavigate: (() -&gt; Unit)? )</ID>
-    <ID>LongParameterList:CommentTree.kt$( comment: Comment, level: Int, expandedComments: Set&lt;Int&gt;, onToggleComment: (Comment) -&gt; Unit, onNavigateToComment: (Int) -&gt; Unit, onShowReply: (Comment) -&gt; Unit, maxLevel: Int = 2 // Máximo 3 níveis (0, 1, 2) )</ID>
-    <ID>LongParameterList:CommentTree.kt$( comments: List&lt;Comment&gt;, focusedCommentId: Int?, expandedComments: Set&lt;Int&gt;, onToggleComment: (Comment) -&gt; Unit, onNavigateToComment: (Int) -&gt; Unit, onShowReply: (Comment) -&gt; Unit, modifier: Modifier = Modifier )</ID>
-    <ID>LongParameterList:CommonUI.kt$( color: Color, title: String, subtitle: String, amount: Float, negative: Boolean )</ID>
-    <ID>LongParameterList:CupcakeAppScaffold.kt$( currentScreen: CupCakeScreen, canNavigateBack: Boolean, navigateUp: () -&gt; Unit, modifier: Modifier = Modifier, content: @Composable (Modifier) -&gt; Unit )</ID>
-    <ID>LongParameterList:DessertCodelabsActivity.kt$( modifier: Modifier = Modifier, revenue: Int, dessertsSold: Int, @DrawableRes dessertImageId: Int, onDessertClicked: () -&gt; Unit, )</ID>
-    <ID>LongParameterList:DialogComponent.kt$( onDismissRequest: () -&gt; Unit, onConfirm: () -&gt; Unit, dialogTitle: String, dialogText: String, icon: ImageVector )</ID>
-    <ID>LongParameterList:FunWithFlowTypesActivity.kt$( modifier: Modifier = Modifier, lifecycleOwner: LifecycleOwner = LocalLifecycleOwner.current, stateFlowViewModel: StateFlowViewModel = StateFlowViewModel(), sharedFlowViewModel: SharedFlowViewModel = SharedFlowViewModel(), liveDataViewModel: LiveDataViewModel = LiveDataViewModel() )</ID>
-    <ID>LongParameterList:OverviewScreenCard.kt$( title: String, amount: Float, onClickSeeAll: () -&gt; Unit, values: (T) -&gt; Float, colors: (T) -&gt; Color, data: List&lt;T&gt;, row: @Composable (T) -&gt; Unit )</ID>
-    <ID>LongParameterList:ScrollIndicatorModifiers.kt$( scrollState: LazyListState, thumbColor: Color = Color.DarkGray, trackColor: Color = Color.LightGray, trackWidth: Dp = 8.dp, rememberThumbColor: (Color) -&gt; Color, rememberTrackColor: (Color) -&gt; Color )</ID>
-    <ID>LongParameterList:SelectOptionScreen.kt$( modifier: Modifier = Modifier, subtotal: String, options: List&lt;String&gt;, onSelectionChanged: (String) -&gt; Unit = {}, onCancelButtonClicked: () -&gt; Unit = {}, onNextButtonClicked: () -&gt; Unit = {} )</ID>
-    <ID>LongParameterList:StatementBody.kt$( items: List&lt;T&gt;, colors: (T) -&gt; Color, amounts: (T) -&gt; Float, amountsTotal: Float, circleLabel: String, rows: @Composable (T) -&gt; Unit )</ID>
-    <ID>MatchingDeclarationName:AdvancedStateAndSideEffects.kt$UiUnsafeState : ViewModel</ID>
-    <ID>MatchingDeclarationName:AppendContentComponent.kt$DisplayTextViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:CoroutineScopeUtils.kt$GenericScope</ID>
-    <ID>MatchingDeclarationName:DeepDiveSnapshotFlow.kt$FlowIntViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:DerivedOfConvertMultiplesState.kt$Message</ID>
-    <ID>MatchingDeclarationName:DiceRoll.kt$DiceUiState</ID>
-    <ID>MatchingDeclarationName:DrawBehindBetterThanBackgroundInAnimation.kt$SimpleViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:DynamicHeightCardList].kt$MyCardData</ID>
-    <ID>MatchingDeclarationName:EditTask.kt$AddEditTaskUiState</ID>
-    <ID>MatchingDeclarationName:FilterWhileTyping.kt$FilterTextViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:FlowDebounce.kt$FlowMessageDebounceViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:FlowSample.kt$FlowSampleViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:FunWithStateFlow.kt$StateFlowSampleViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:LazyRowWithMaxHeight.kt$MockContent</ID>
-    <ID>MatchingDeclarationName:ManageStateRxJava3.kt$HelloStateRx3ava3ViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:ManageStatesRx.kt$HelloStateRxViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:MultiplesGridAndListLayout.kt$LayoutType</ID>
-    <ID>MatchingDeclarationName:MultplesPreviewsII.kt$DarkNode</ID>
-    <ID>MatchingDeclarationName:OrderOfModifiersMatters.kt$Artist</ID>
-    <ID>MatchingDeclarationName:OwnLifecycle.kt$MyLocationListener : DefaultLifecycleObserver</ID>
-    <ID>MatchingDeclarationName:ParcelizeSample.kt$User : Parcelable</ID>
-    <ID>MatchingDeclarationName:ReactingToScrollPosition.kt$MessagePreviewParameterProvider : CollectionPreviewParameterProvider</ID>
-    <ID>MatchingDeclarationName:StoreParcelize.kt$City : Parcelable</ID>
-    <ID>MatchingDeclarationName:TextFieldState.kt$TextState</ID>
-    <ID>MatchingDeclarationName:ThrottleFirstExample.kt$ThrottleFirstViewModel : ViewModel</ID>
-    <ID>MatchingDeclarationName:TypesSaverRestoringState.kt$User</ID>
-    <ID>MatchingDeclarationName:UnstableLambdas.kt$User</ID>
-    <ID>MatchingDeclarationName:UtilsComposable.kt$ShowBackgroundOrNot</ID>
-    <ID>MatchingDeclarationName:WhereToHoistState.kt$Message</ID>
-    <ID>MaxLineLength:CommentItem.kt$content = "Este é o conteúdo do comentário que pode ser bem longo e ocupar várias linhas para demonstrar como o layout se comporta."</ID>
-    <ID>MaxLineLength:CommentItem.kt$content = "Este é um comentário de exemplo com texto suficiente para testar o layout e verificar como fica a exibição."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Concordo! E com @PreviewParameter fica ainda melhor para testar diferentes estados."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "E os componentes adaptam automaticamente! Surface, Card, tudo muda de forma consistente."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Exato! StateFlow para lógica de negócio, State para UI local. Separação clara!"</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Excelente dica! E não se esqueça de usar key() no items do LazyColumn."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "LazyColumn funciona perfeitamente! É equivalente ao RecyclerView em performance."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Nível 5 de profundidade! Compose torna isso tudo possível de visualizar facilmente."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Sim! Especialmente para tablets e foldables. Essencial hoje em dia."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Sim! Estou usando há 6 meses. A produtividade aumentou muito, especialmente com previews."</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Use remember e derivedStateOf para otimizar recomposições. Faz muita diferença!"</ID>
-    <ID>MaxLineLength:CommentViewModel.kt$CommentViewModel$content = "Você usa @PreviewScreenSizes também? Ajuda muito com responsividade."</ID>
-    <ID>MaxLineLength:DiceViewModel.kt$/* https://developer.android.com/topic/libraries/architecture/viewmodel - View Model class é uma estrutura que manter estado de logica de negocio ou de um componente UI a nivel de tela - Podemos expor estado de uma UI atraves de um componente observador como LiveData, Flow, StateFlow e encappsular uma logica de negocio relacionada a View - Beneficios de uma ViewModel - A alternativa para uma ViewModel é usar uma plain class que mantem o estado de um dado que exibimos na tela. Isso começa a ficar complicado quando navegamos entre activities ou entre os destinos num grafo de navegacao. - Usar uma classe que nao a ViewModel para isso nos força a ter que utilizar algum mecanismo de armazenamento dessa classe, seja onSaveInstanceState da View ou rememberSaveable do compose. - A ViewModel fornece uma API para persistir dados que resolve o problema - Pontos chave - Permite persistir dados para UI State - Prove um espaço onde podemos implementar Lógica separado da UI - Persistence (https://developer.android.com/topic/libraries/architecture/viewmodel#persistence) - - Ciclo de vida de uma ViewModel esta vinculado ao de um activity ou fragment ? - Sim, uma viewmodel persiste enquanto o componente ao qual esta ligado nao fo destruido permanentemente, como um activity que é destruida ou um fragment removido - A Vinculacao - O ciclo de vida de uma viewmodel é gerenciado por ViewModelStoreOwner https://developer.android.com/topic/libraries/architecture/viewmodel#scope - Escopo (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#scope) - - O ciclo de vida de um ViewModel (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#lifecycle) - O Ciclo de vida de uma viewmodel está diretamente vinculada ao escopo dela. - Ela permanece em memoria ate que o ViewModelStoreOwner definido como escopo dela desapareça - Isso pode ocorrer nos seguintes contextos - Uma activity que finaliza - Um fragment que é removido - Uma entrada de uma navegacao, quando ela é removida da backstack (NavComponent) - Isso faz da ViewModel uma otima opcao para armazenar dados quando ocorre uma mudanca de configuracao https://developer.android.com/topic/architecture/ui-layer/stateholders -------------- lifecycleowner independent compose https://www.linkedin.com/feed/update/urn:li:activity:7366888898473517058/ ------------------------------------------ what is lifecycle in android ? - lifecycle define e gerencia o estado dos componentes em android, tais como: Activity ou Fragment. - Essa gerencia ocorre desde a criacao do componente ate sua destruicao - Android forncece callbacks methods para interceptar esses estados - Como desenvolvedores, podemos utilizr esses callback methods para adicionar algum comportamento ou gerenciar recursos, manipular eventos como navegacao do usuario ou interrupcoes do sistema de forma harmoniosa. */</ID>
-    <ID>MaxLineLength:DraggableTriangleView.kt$DraggableTriangleView$/* DraggableTriangleView#onTouchEvent should call DraggableTriangleView#performClick when a click is detected Toggle info (⌘F1) view#ontouchevent should call view#performclick accessibility https://developer.android.com/guide/topics/ui/accessibility/custom-views */</ID>
-    <ID>MaxLineLength:ImageCoil.kt$ImageContextProvider$"https://www.gstatic.com/devrel-devsite/prod/v9de0f443992d54ad799f913d3a82969ff613e39ab9e3e056983c556b3c2ef1f8/android/images/lockup.png"</ID>
-    <ID>MaxLineLength:IntegrateLifecycleWithCompose.kt$/* https://developer.android.com/topic/libraries/architecture/compose Warning: You cannot use this to listen for Lifecycle.Event.ON_DESTROY since composition ends before this signal is sent. */</ID>
-    <ID>MaxLineLength:ReplyBottomSheet.kt$content = "Este é o comentário pai ao qual você está respondendo. Pode conter bastante texto para demonstrar o layout."</ID>
-    <ID>MaxLineLength:Surface.kt$/* The size of the shadow below the surface. Note that It will not affect z index of the Surface. If you want to change the drawing order you can use Modifier.zIndex. */</ID>
-    <ID>MaxLineLength:Surface.kt$// Defines the surface's shape as well its shadow. A shadow is only displayed if the elevation is greater than zero.</ID>
-    <ID>MaxLineLength:TextDecoratedUnderline.kt$"on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped."</ID>
-    <ID>MaxLineLength:TextDecoratedUnderline.kt$text = "Text with Underline Decoration and Overflow Handling. This text is intentionally long to demonstrate how the Text composable handles overflow when the text exceeds the available space. The text should be truncated with an ellipsis at the end."</ID>
-    <ID>MaxLineLength:UsingDerivedStateOf.kt$/* https://www.linkedin.com/feed/update/urn:li:activity:7447659533109497856/ derivedStateOf: convert one or multiple state objects into another state - https://developer.android.com/develop/ui/compose/side-effects#derivedstateof - Em compose, recomposicoes ocorrem cada vez que um objeto de Estado observavel ou um parâmetro de entrada de uma função composable muda. - Um objeto de estado ou dados de entrada podem mudar com mais frequencia do que a UI realmente necessita ser atualizada, isso causa recomposições desnecessarias - Em casos que os inputs mudem mais do que a UI necessita ser atualizada devemos usar derivedStateOf(https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#derivedStateOf(kotlin.Function0)) */</ID>
-    <ID>MaxLineLength:WindowInsets.kt$/* https://developer.android.com/develop/ui/compose/system/insets Compose and Window Insets https://developer.android.com/develop/ui/compose/system/insets https://developer.android.com/develop/ui/compose/system/insets-ui Compose layout adjust layout below edges Adjusting a Jetpack Compose layout "below edges" typically refers to handling window insets to ensure content is not obscured by system UI elements like the status bar, navigation bar, or display cutouts, especially when implementing an edge-to-edge design. Key concepts for adjusting layouts below edges: Window Insets: These represent areas of the screen that are occupied by system UI. Compose provides APIs to access and utilize these insets to adjust your layout. WindowInsets.safeDrawing: Represents the area where interactive elements should be placed to avoid overlapping with system UI. WindowInsets.systemBars: Represents the space occupied by the status bar and navigation bar. WindowInsets.displayCutout: Represents the area of display cutouts (notches, punch-holes). Applying Insets: Padding Modifiers: The most common way to adjust for insets is by applying padding modifiers using the WindowInsets values. For example, Modifier.padding(WindowInsets.safeDrawing.asPaddingValues()) applies padding around the entire content to avoid system UI. Inset Size Modifiers: For more fine-grained control, you can use modifiers like Modifier.windowInsetsPadding() or Modifier.windowInsetsEnd() to apply padding or size adjustments based on specific inset types. Edge-to-Edge Design: When designing edge-to-edge, your app draws behind the system bars and display cutouts. This requires careful handling of insets to prevent content from being hidden. On Android 15 (API level 35) and higher, edge-to-edge is enforced when targeting SDK 35, requiring apps to handle insets. The Scaffold component from Material 3 can simplify handling insets for common UI structures. */</ID>
-    <ID>MaximumLineLength:CommentItem.kt$ </ID>
-    <ID>MaximumLineLength:CommentViewModel.kt$CommentViewModel$ </ID>
-    <ID>MaximumLineLength:ImageCoil.kt$ImageContextProvider$ </ID>
-    <ID>MaximumLineLength:ReplyBottomSheet.kt$ </ID>
-    <ID>MaximumLineLength:TextDecoratedUnderline.kt$ </ID>
-    <ID>MayBeConst:FlowDebounce.kt$FlowMessageDebounceViewModel.Companion$private val DEFAULT_DEBOUNCE_LIMIT = 1000L</ID>
-    <ID>MemberNameEqualsClassName:SharedInRandomViewModel.kt$SharedRandomNumberFlow$val sharedRandomNumberFlow = flow { while (true) { delay(1000) emit((0..100).random()) } }.shareIn( scope = viewModelScope, started = SharingStarted.WhileSubscribed() )</ID>
-    <ID>NestedBlockDepth:SearchTypingDebounce.kt$SpellCheckerImpl$override fun onGetSentenceSuggestions(results: Array&lt;out SentenceSuggestionsInfo?&gt;?)</ID>
-    <ID>NoBlankLineBeforeRbrace:FlowSample.kt$FlowSampleViewModel$ </ID>
-    <ID>NoBlankLineBeforeRbrace:ThrottleFirstExample.kt$ThrottleFirstViewModel$ </ID>
-    <ID>NoConsecutiveBlankLines:DeepDiveSnapshotFlow.kt$ </ID>
-    <ID>NoConsecutiveBlankLines:FlowDebounce.kt$ </ID>
-    <ID>NoConsecutiveBlankLines:LazyListKey.kt$ </ID>
-    <ID>NoConsecutiveBlankLines:SearchTypingDebounce.kt$ </ID>
-    <ID>NoConsecutiveBlankLines:SearchTypingDebounce.kt$SearchViewModel$ </ID>
-    <ID>NoConsecutiveBlankLines:SearchTypingDebounce.kt$SpellCheckerImpl$ </ID>
-    <ID>NoConsecutiveBlankLines:ThrottleFirst.kt$ </ID>
-    <ID>NoConsecutiveBlankLines:ThrottleViewModel.kt$ </ID>
-    <ID>NoEmptyClassBody:ThrottleViewModel.kt$ThrottleViewModel${ }</ID>
-    <ID>NoEmptyFirstLineInMethodBlock:SearchTypingDebounce.kt$SpellCheckerImpl$ </ID>
-    <ID>NoUnusedImports:FlowDebounce.kt$com.br.justcomposelabs.tutorial.coroutines.kdoc.flow.debounce.FlowDebounce.kt</ID>
-    <ID>NoUnusedImports:SearchTypingDebounce.kt$com.br.justcomposelabs.tutorial.medium.sideeffects.snapshotflow.usecases.SearchTypingDebounce.kt</ID>
-    <ID>NoWildcardImports:Cartesian3DCompose.kt$import androidx.compose.runtime.*</ID>
-    <ID>NoWildcardImports:Cartesian3DComposeSmooth.kt$import androidx.compose.runtime.*</ID>
-    <ID>NoWildcardImports:Cartesian3DView.kt$import androidx.compose.runtime.*</ID>
-    <ID>NoWildcardImports:ColumnExpandShrink.kt$import androidx.compose.animation.core.*</ID>
-    <ID>NoWildcardImports:ColumnExpandShrink.kt$import androidx.compose.foundation.layout.*</ID>
-    <ID>NoWildcardImports:ColumnExpandShrink.kt$import androidx.compose.runtime.*</ID>
-    <ID>NoWildcardImports:DraggableTriangleView.kt$import kotlin.math.*</ID>
-    <ID>NoWildcardImports:ElasticDraggableTriangleView.kt$import kotlin.math.*</ID>
-    <ID>NoWildcardImports:ElasticDraggableTriangleViewII.kt$import kotlin.math.*</ID>
-    <ID>NoWildcardImports:ElasticDraggableTriangleViewIII.kt$import kotlin.math.*</ID>
-    <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.animation.core.*</ID>
-    <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.foundation.layout.*</ID>
-    <ID>NoWildcardImports:ExpandShrinkAnimation.kt$import androidx.compose.runtime.*</ID>
-    <ID>NoWildcardImports:Icons.kt$import androidx.compose.ui.graphics.*</ID>
-    <ID>NoWildcardImports:Icons.kt$import androidx.compose.ui.graphics.vector.*</ID>
-    <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.foundation.layout.*</ID>
-    <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.material3.*</ID>
-    <ID>NoWildcardImports:MultiplesGridAndListLayout.kt$import androidx.compose.runtime.*</ID>
-    <ID>NoWildcardImports:ShowLoadCustomViewActivity.kt$import androidx.appcompat.app.AppCompatDelegate.*</ID>
-    <ID>NoWildcardImports:SpringAnimationDraggableTriangleView.kt$import kotlin.math.*</ID>
-    <ID>PrintStackTrace:LifecycleAwareLocationManager.kt$LifecycleAwareLocationManager$e</ID>
-    <ID>ReturnCount:Comment.kt$Comment$fun findComment(commentId: Int): Comment?</ID>
-    <ID>ReturnCount:DraggableTriangleView.kt$DraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
-    <ID>ReturnCount:ElasticDraggableTriangleView.kt$ElasticDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
-    <ID>ReturnCount:ElasticDraggableTriangleViewII.kt$ElasticDraggableTriangleViewII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
-    <ID>ReturnCount:ElasticDraggableTriangleViewIII.kt$ElasticDraggableTriangleViewIII$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
-    <ID>ReturnCount:SpringAnimationDraggableTriangleView.kt$SpringAnimationDraggableTriangleView$override fun onTouchEvent(event: MotionEvent): Boolean</ID>
-    <ID>SpacingAroundColon:FlowSample.kt$FlowSampleViewModel$:</ID>
-    <ID>SpacingAroundColon:ThrottleFirstExample.kt$ThrottleFirstViewModel$:</ID>
-    <ID>SpreadOperator:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$(*dependency)</ID>
-    <ID>SwallowedException:DessertCodelabsActivity.kt$e: ActivityNotFoundException</ID>
-    <ID>TooGenericExceptionCaught:ForceCrash.kt$e: Exception</ID>
-    <ID>TopLevelPropertyNaming:AnimatedCircle.kt$private const val DividerLengthInDegrees = 1.8f</ID>
-    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val InactiveTabOpacity = 0.60f</ID>
-    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeInAnimationDelay = 100</ID>
-    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeInAnimationDuration = 150</ID>
-    <ID>TopLevelPropertyNaming:RallyTab.kt$private const val TabFadeOutAnimationDuration = 100</ID>
-    <ID>UnusedParameter:CardComponent.kt$cardFace: CardFace?</ID>
-    <ID>UnusedParameter:CardComponent.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:CardFlipActivity.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:Cartesian3DComposeSmooth.kt$screenHeight: Float</ID>
-    <ID>UnusedParameter:Cartesian3DComposeSmooth.kt$screenWidth: Float</ID>
-    <ID>UnusedParameter:ChatBubble.kt$message: Message = Message( id = "1", content = "Hello World", timestamp = "${System.currentTimeMillis()}ms" )</ID>
-    <ID>UnusedParameter:Composables.kt$onClick: () -&gt; Unit = {}</ID>
-    <ID>UnusedParameter:Composables.kt$second: Color</ID>
-    <ID>UnusedParameter:DessertCodelabsActivity.kt$@DrawableRes dessertImageId: Int</ID>
-    <ID>UnusedParameter:DessertCodelabsActivity.kt$dessertsSold: Int</ID>
-    <ID>UnusedParameter:DessertCodelabsActivity.kt$onDessertClicked: () -&gt; Unit</ID>
-    <ID>UnusedParameter:DessertCodelabsActivity.kt$onShareButtonClicked: () -&gt; Unit</ID>
-    <ID>UnusedParameter:DessertCodelabsActivity.kt$revenue: Int</ID>
-    <ID>UnusedParameter:DessertCodelabsWithViewModelActivity.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:DessertCodelabsWithViewModelActivity.kt$onDessertClicked: () -&gt; Unit</ID>
-    <ID>UnusedParameter:DessertCodelabsWithViewModelActivity.kt$uiState: DessertUiState</ID>
-    <ID>UnusedParameter:DiceRollerActivity.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:DogIcon.kt$@DrawableRes dogIcon: Int</ID>
-    <ID>UnusedParameter:DogIcon.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:FunWithLaunchedEffectsActivity.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:MediumTopAppBar.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:RouteNavigation.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:RouteNavigation.kt$navController: NavHostController = rememberNavController()</ID>
-    <ID>UnusedParameter:ShowcaseCard.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:StackComponent.kt$flipcard: Card?</ID>
-    <ID>UnusedParameter:StackComponent.kt$leftStack: @Composable () -&gt; Unit</ID>
-    <ID>UnusedParameter:StackComponent.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:StackComponent.kt$rightStack: @Composable () -&gt; Unit</ID>
-    <ID>UnusedParameter:ThemeDynamicColor.kt$content: @Composable () -&gt; Unit</ID>
-    <ID>UnusedParameter:ThemeDynamicColor.kt$darkTheme: Boolean = isSystemInDarkTheme()</ID>
-    <ID>UnusedParameter:ThemeDynamicColor.kt$dynamicColor: Boolean = true</ID>
-    <ID>UnusedParameter:ThemeSwitcher.kt$darkTheme: Boolean</ID>
-    <ID>UnusedParameter:ThemeSwitcher.kt$onThemeChange: (Boolean) -&gt; Unit</ID>
-    <ID>UnusedParameter:TimerWithFlowTypesActivity.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedParameter:VerticalPagerSample.kt$modifier: Modifier = Modifier</ID>
-    <ID>UnusedPrivateMember:CommonUI.kt$@ShowBackgroundOrNot @Composable private fun FormattedPriceLabelPreview()</ID>
-    <ID>UnusedPrivateMember:Composables.kt$@Composable private fun ScrollToTopButton(onClick: () -&gt; Unit = {})</ID>
-    <ID>UnusedPrivateMember:Composables.kt$@Composable private fun animateColorBetween(first: Color, second: Color): State&lt;Color&gt;</ID>
-    <ID>UnusedPrivateMember:DessertCodelabsActivity.kt$private fun determineDessertToShow( desserts: List&lt;Dessert&gt;, dessertsSold: Int ): Dessert</ID>
-    <ID>UnusedPrivateMember:FunWithLaunchedEffectsActivity.kt$@Composable private fun TimerScreen()</ID>
-    <ID>UnusedPrivateMember:PermissionsCameraX.kt$private fun AppCompatActivity.activityResultLauncher(startCamera: () -&gt; Unit)</ID>
-    <ID>UnusedPrivateMember:RememberKeyRetrigger.kt$@SuppressLint("ComposableNaming") @Composable private fun RememberImageResourceUiState(id: Int)</ID>
-    <ID>UnusedPrivateMember:SelectOptionScreen.kt$@ShowBackgroundOrNot @Composable private fun SelectOptionPreview()</ID>
-    <ID>UnusedPrivateMember:ViewModelDependencyFactory.kt$ViewModelDependencyFactory$private fun &lt;T : ViewModel&gt; test( modelClass: Class&lt;T&gt;, dependency: Array&lt;Class&lt;*&gt;&gt;, eachDependency: List&lt;List&lt;*&gt;&gt; ): T</ID>
-    <ID>UnusedPrivateMember:WalkThroughActivity.kt$private fun cancelOrderAndNavigateToStart()</ID>
-    <ID>UnusedPrivateProperty:AnimatingMultipleColors.kt$val interpolatedColor = lerp( startColor, endColor, sliderPosition )</ID>
-    <ID>UnusedPrivateProperty:AsyncImageCoil.kt$val s = setSingletonImageLoaderFactory { context -&gt; ImageLoader.Builder(context) .components { add(SvgDecoder.Factory()) }.build() }</ID>
-    <ID>UnusedPrivateProperty:BaseViewModelExample.kt$BaseViewModelExample$private val sharedFlowUiEvent: SharedFlow&lt;UIEvent&gt; = mutableSharedFlowUIEvent.asSharedFlow()</ID>
-    <ID>UnusedPrivateProperty:BottomSheetScaffold.kt$val colors = remember { listOf&lt;Color&gt;( Color.Blue, Color.Gray, Color.Green, Color.Magenta, Color.Yellow, Color.Cyan ) }</ID>
-    <ID>UnusedPrivateProperty:BottomSheetScaffold.kt$val scope = rememberCoroutineScope()</ID>
-    <ID>UnusedPrivateProperty:BottomSheetScaffoldMaterial3.kt$val colors = remember { listOf( Color.Blue, Color.Gray, Color.Green, Color.Magenta, Color.Yellow, Color.Cyan ) }</ID>
-    <ID>UnusedPrivateProperty:BottomSheetScaffoldMaterial3.kt$val scope = rememberCoroutineScope()</ID>
-    <ID>UnusedPrivateProperty:CoinFlipAnimation.kt$val sideFaceFalse = Color.Red</ID>
-    <ID>UnusedPrivateProperty:CustomView.kt$CustomView$private val viewModel: CustomViewModel? by lazy { findViewTreeViewModelStoreOwner()?.let { lifecycleOwner -&gt; ViewModelProvider(lifecycleOwner)[CustomViewModel::class.java] } }</ID>
-    <ID>UnusedPrivateProperty:DessertCodelabsActivity.kt$val direction = LocalLayoutDirection.current</ID>
-    <ID>UnusedPrivateProperty:DessertCodelabsActivity.kt$var currentDessertPrice by rememberSaveable { mutableIntStateOf(desserts[currentDessertIndex].price) }</ID>
-    <ID>UnusedPrivateProperty:GithubRepository.kt$// GitHub page API is 1 based: https://developer.github.com/v3/#pagination private const val GITHUB_STARTING_PAGE_INDEX = 1</ID>
-    <ID>UnusedPrivateProperty:IntegrateWithCompose.kt$val currentLifecycleState by stateFlow.collectAsState()</ID>
-    <ID>UnusedPrivateProperty:LazyRowCardsMaxHeight.kt$val density = LocalDensity.current</ID>
-    <ID>UnusedPrivateProperty:MockPerformanceData.kt$NoteRow$note: Any</ID>
-    <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val callback: (Location) -&gt; Unit</ID>
-    <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val context: Context</ID>
-    <ID>UnusedPrivateProperty:OwnLifecycle.kt$MyLocationListener$private val lifecycle: Lifecycle</ID>
-    <ID>UnusedPrivateProperty:ParcelizeRestoringState.kt$val selectedCity = rememberSaveable { mutableStateOf(City("São Paulo", "Brazil")) }</ID>
-    <ID>UnusedPrivateProperty:SideEffectsActivity.kt$SideEffectsActivity$val paddingModifier = Modifier.padding(innerPadding)</ID>
-    <ID>UnusedPrivateProperty:SideEffectsActivity.kt$val alpha = remember { Animatable(1f) }</ID>
-    <ID>UnusedPrivateProperty:SideEffectsActivity.kt$var pulseRateMs by remember { mutableStateOf(500L) }</ID>
-    <ID>UnusedPrivateProperty:SnackBarComponent.kt$val snackBarStateHost = remember { SnackbarHostState() }</ID>
-    <ID>UnusedPrivateProperty:StoreByMapServer.kt$val selectedCity = rememberSaveable(stateSaver = CitySaver) { mutableStateOf(city) }</ID>
-    <ID>UnusedPrivateProperty:StoreByMapServer.kt$val selectedCityII = rememberSaveable(stateSaver = CityListSaver) { mutableStateOf(city) }</ID>
-    <ID>UnusedPrivateProperty:StoreParcelize.kt$val selectedCity = rememberSaveable { mutableStateOf(city) }</ID>
-    <ID>UnusedPrivateProperty:TextCounterAnimationActivity.kt$TextCounterAnimationActivity$private val timeInterpolation = TimeInterpolator { input -&gt; /* https://developer.android.com/reference/android/animation/TimeInterpolator */ 0.1f * input }</ID>
-    <ID>UseCheckOrError:ForceCrash.kt$throw IllegalStateException("No Fatal Exception Crash")</ID>
-    <ID>UtilityClassWithPublicConstructor:GithubRepository.kt$GithubRepository</ID>
-    <ID>WildcardImport:Cartesian3DCompose.kt$import androidx.compose.runtime.*</ID>
-    <ID>WildcardImport:Cartesian3DComposeSmooth.kt$import androidx.compose.runtime.*</ID>
-    <ID>WildcardImport:Cartesian3DView.kt$import androidx.compose.runtime.*</ID>
-    <ID>WildcardImport:ColumnExpandShrink.kt$import androidx.compose.animation.core.*</ID>
-    <ID>WildcardImport:ColumnExpandShrink.kt$import androidx.compose.foundation.layout.*</ID>
-    <ID>WildcardImport:ColumnExpandShrink.kt$import androidx.compose.runtime.*</ID>
-    <ID>WildcardImport:DraggableTriangleView.kt$import kotlin.math.*</ID>
-    <ID>WildcardImport:ElasticDraggableTriangleView.kt$import kotlin.math.*</ID>
-    <ID>WildcardImport:ElasticDraggableTriangleViewII.kt$import kotlin.math.*</ID>
-    <ID>WildcardImport:ElasticDraggableTriangleViewIII.kt$import kotlin.math.*</ID>
-    <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.animation.core.*</ID>
-    <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.foundation.layout.*</ID>
-    <ID>WildcardImport:ExpandShrinkAnimation.kt$import androidx.compose.runtime.*</ID>
-    <ID>WildcardImport:Icons.kt$import androidx.compose.ui.graphics.*</ID>
-    <ID>WildcardImport:Icons.kt$import androidx.compose.ui.graphics.vector.*</ID>
-    <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.foundation.layout.*</ID>
-    <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.material3.*</ID>
-    <ID>WildcardImport:MultiplesGridAndListLayout.kt$import androidx.compose.runtime.*</ID>
-    <ID>WildcardImport:ShowLoadCustomViewActivity.kt$import androidx.appcompat.app.AppCompatDelegate.*</ID>
-    <ID>WildcardImport:SpringAnimationDraggableTriangleView.kt$import kotlin.math.*</ID>
+    <ID>AnnotationSpacing:ViewExtensions.kt$@RequiresApi(Build.VERSION_CODES.UPSIDE_DOWN_CAKE)</ID>
+    <ID>ArgumentListWrapping:ViewExtensions.kt$( TypedValue.COMPLEX_UNIT_DIP, pixelValue, resources.displayMetrics )</ID>
+    <ID>ArgumentListWrapping:ViewExtensions.kt$( TypedValue.COMPLEX_UNIT_SP, pixelValue, resources.displayMetrics )</ID>
+    <ID>BlockCommentInitialStarAlignment:Cartesian3DView.kt$Cartesian3DView$/* Deprecated val scale = resources.displayMetrics.scaledDensity // Converter 23sp para pixels textSizePx = 15f * scale */</ID>
+    <ID>EmptyFunctionBlock:ComposeAndOpenGLES.kt$&lt;no name provided&gt;${ }</ID>
+    <ID>Indentation:ComposeInViewActivity.kt$ </ID>
+    <ID>LongMethod:Cartesian3DView.kt$Cartesian3DView$override fun onDraw(canvas: Canvas)</ID>
+    <ID>LongMethod:ComposeInViewActivity.kt$@Composable fun InteractiveUnitCircle(modifier: Modifier = Modifier)</ID>
+    <ID>LongParameterList:Cartesian3DView.kt$Cartesian3DView$( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f )</ID>
+    <ID>NoBlankLineBeforeRbrace:ComposeAndOpenGLES.kt$&lt;no name provided&gt;$ </ID>
+    <ID>NoConsecutiveBlankLines:Cartesian3DView.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ComposeAndOpenGLES.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ComposeInViewActivity.kt$ </ID>
+    <ID>NoConsecutiveBlankLines:ViewExtensions.kt$ </ID>
+    <ID>NoEmptyClassBody:CustomGLSurfaceView.kt$CustomGLSurfaceView${ }</ID>
+    <ID>NoMultipleSpaces:Cartesian3DView.kt$Cartesian3DView$ </ID>
+    <ID>NoUnusedImports:ComposeInViewActivity.kt$com.br.canvasviews.tutorial.google.usingcomposeinview.ComposeInViewActivity.kt</ID>
+    <ID>NoUnusedImports:ViewExtensions.kt$com.br.canvasviews.ViewExtensions.kt</ID>
+    <ID>ParameterListWrapping:Cartesian3DView.kt$Cartesian3DView$( context: Context, attrs: AttributeSet? = null )</ID>
+    <ID>UnusedImports:ComposeInViewActivity.kt$import androidx.compose.foundation.layout.fillMaxWidth</ID>
+    <ID>UnusedImports:ComposeInViewActivity.kt$import androidx.compose.foundation.layout.padding</ID>
+    <ID>UnusedImports:ComposeInViewActivity.kt$import androidx.core.view.ViewCompat</ID>
+    <ID>UnusedImports:ComposeInViewActivity.kt$import androidx.core.view.WindowInsetsCompat</ID>
+    <ID>UnusedImports:ComposeInViewActivity.kt$import com.br.canvasviews.R</ID>
+    <ID>UnusedImports:ComposeInViewActivity.kt$import kotlin.math.sqrt</ID>
+    <ID>UnusedImports:ViewExtensions.kt$import android.util.DisplayMetrics</ID>
+    <ID>UnusedParameter:Cartesian3DView.kt$Cartesian3DView$screenHeight: Float</ID>
+    <ID>UnusedParameter:Cartesian3DView.kt$Cartesian3DView$screenWidth: Float</ID>
   </CurrentIssues>
 </SmellBaseline>

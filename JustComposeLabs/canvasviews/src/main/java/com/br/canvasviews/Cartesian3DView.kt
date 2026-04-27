@@ -13,9 +13,9 @@ import android.view.View
 import kotlin.math.cos
 import kotlin.math.sin
 
-
 class Cartesian3DView @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null
+    context: Context,
+    attrs: AttributeSet? = null
 ) : View(context, attrs) {
 
     private val textSizePx: Float
@@ -42,7 +42,7 @@ class Cartesian3DView @JvmOverloads constructor(
             val scale = resources.displayMetrics.scaledDensity
             // Converter 23sp para pixels
             textSizePx = 15f * scale
-        */
+         */
         textSizePx = TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_SP, 20f, resources.displayMetrics
         )
@@ -95,12 +95,12 @@ class Cartesian3DView @JvmOverloads constructor(
         val spaceSize = 300f
 
         val axes = listOf(
-            floatArrayOf(spaceSize, 0f, 0f),    // X positivo
-            floatArrayOf(-spaceSize, 0f, 0f),   // X negativo
-            floatArrayOf(0f, spaceSize, 0f),    // Y positivo
-            floatArrayOf(0f, -spaceSize, 0f),   // Y negativo
-            floatArrayOf(0f, 0f, spaceSize),    // Z positivo
-            floatArrayOf(0f, 0f, -spaceSize)    // Z negativo
+            floatArrayOf(spaceSize, 0f, 0f), // X positivo
+            floatArrayOf(-spaceSize, 0f, 0f), // X negativo
+            floatArrayOf(0f, spaceSize, 0f), // Y positivo
+            floatArrayOf(0f, -spaceSize, 0f), // Y negativo
+            floatArrayOf(0f, 0f, spaceSize), // Z positivo
+            floatArrayOf(0f, 0f, -spaceSize) // Z negativo
         )
 
         val colors = listOf(Color.RED, Color.RED, Color.GREEN, Color.GREEN, Color.BLUE, Color.BLUE)

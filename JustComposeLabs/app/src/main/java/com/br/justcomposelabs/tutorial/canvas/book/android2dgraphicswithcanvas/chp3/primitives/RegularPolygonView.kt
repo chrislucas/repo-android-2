@@ -13,7 +13,7 @@ import kotlin.properties.Delegates
     https://share.google/aimode/u057dHXf2Tu9aJzrI
     https://share.google/aimode/FUeZkIOjOdv70kTPf
  */
-class PolygonView @JvmOverloads constructor(
+class RegularPolygonView @JvmOverloads constructor(
     ctx: Context,
     attr: AttributeSet? = null,
     defStyle: Int = 0
@@ -27,17 +27,17 @@ class PolygonView @JvmOverloads constructor(
     private var scaleRadius: Float by Delegates.notNull()
 
     init {
-        context.withStyledAttributes(attr, R.styleable.PolygonView) {
-            sides = getInt(R.styleable.PolygonView_sides, 3)
+        context.withStyledAttributes(attr, R.styleable.RegularPolygonView) {
+            sides = getInt(R.styleable.RegularPolygonView_sides, 3)
 
             val joinStyleValue = getInt(
-                R.styleable.PolygonView_joinStyle,
+                R.styleable.RegularPolygonView_joinStyle,
                 Paint.Join.ROUND.ordinal
             )
 
             join = Paint.Join.entries[joinStyleValue]
 
-            scaleRadius = getFloat(R.styleable.PolygonView_scaleRadius, .01f)
+            scaleRadius = getFloat(R.styleable.RegularPolygonView_scaleRadius, .01f)
         }
     }
 

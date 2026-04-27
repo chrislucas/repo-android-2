@@ -17,7 +17,6 @@ import javax.microedition.khronos.opengles.GL10
     https://stackoverflow.com/questions/78796021/how-to-render-opengl-alongside-jetpack-compose-ui-without-covering-other-element
  */
 
-
 @Composable
 fun OpenGLView(modifier: Modifier = Modifier) {
     AndroidView(
@@ -27,7 +26,6 @@ fun OpenGLView(modifier: Modifier = Modifier) {
                 setRenderer(
                     object : GLSurfaceView.Renderer {
                         override fun onDrawFrame(gl: GL10?) {
-
                         }
 
                         override fun onSurfaceChanged(
@@ -44,7 +42,6 @@ fun OpenGLView(modifier: Modifier = Modifier) {
                         ) {
                             TODO("Not yet implemented")
                         }
-
                     }
                 )
             }

@@ -81,6 +81,10 @@ Você pode adicionar outros ganchos (hooks) comuns no seu arquivo
 - https://detekt.dev/docs/gettingstarted/git-pre-commit-hook/
 - https://share.google/aimode/QVja62iosW7LD4d0U
 
+
+## how to put detekt on pre commit
+- https://share.google/aimode/QVja62iosW7LD4d0U
+
 ## Referências
 
 - https://pre-commit.com/

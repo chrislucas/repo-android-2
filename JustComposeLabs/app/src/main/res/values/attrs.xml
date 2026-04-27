@@ -81,7 +81,7 @@
         <attr name="joinStyle" />
     </declare-styleable>
 
-    <declare-styleable name="PolygonView">
+    <declare-styleable name="RegularPolygonView">
         <attr name="sides" format="integer" min="3" />
         <attr name="scaleRadius" format="float" />
         <attr name="lineColor" />

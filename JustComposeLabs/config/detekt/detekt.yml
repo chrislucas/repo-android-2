@@ -15,8 +15,11 @@ formatting:
     active: true
     autoCorrect: true
   NoConsecutiveBlankLines:
-      active: true
-      autoCorrect: true
+    active: true
+    autoCorrect: true
+  NoUnusedImports:
+    active: true
+    autoCorrect: true
 
 style:
   MagicNumber:
@@ -27,7 +30,10 @@ style:
     # Ignores unused private members annotated with @Preview
     ignoreAnnotated: ['Preview']
   NewLineAtEndOfFile:
-      active: true
+    active: true
+  UnusedImports:
+    active: true
+    autoCorrect: true
 
 
 # configure ktlint and detekt android compose project
