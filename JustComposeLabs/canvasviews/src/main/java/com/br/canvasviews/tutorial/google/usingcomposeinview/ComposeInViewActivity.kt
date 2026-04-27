@@ -122,10 +122,10 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         .pointerInput(Unit) {
                             detectDragGestures { change, _ ->
                                 val touchPoint = change.position
-                            /*
-                                Calcula o ângulo baseado na posição do toque relativa ao centro
-                                atan2(dy, dx) retorna o arco tangente de y/x em radianos (-PI a PI)
-                             */
+                                /*
+                                    Calcula o ângulo baseado na posição do toque relativa ao centro
+                                    atan2(dy, dx) retorna o arco tangente de y/x em radianos (-PI a PI)
+                                 */
 
                                 val dx = touchPoint.x - circleCenter.x
                                 val dy = touchPoint.y - circleCenter.y
@@ -198,9 +198,17 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
 
                     // 5. Desenhar o ponto (indicador)
                     drawCircle(
-                        color = Color.Red,
+                        color = Color.Black,
                         radius = INDICATOR_POINT_RADIUS,
                         center = pointOnCircle,
+                    )
+
+                    drawLine(
+                        color = Color.Black,
+                        start = Offset(circleCenter.x, circleCenter.y),
+                        end = pointOnCircle,
+                        strokeWidth = GRAPHIC_LINE_STROKE_WIDTH,
+                        pathEffect = dashPathEffect,
                     )
 
                     // 6. Desenhar Cosseno (Linha Azul)
@@ -239,19 +247,65 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         strokeWidth = GRAPHIC_LINE_STROKE_WIDTH,
                     )
 
-                    // 8. Desenhar Reta Tangente (Linha Magenta)
-                    // A tangente intersecta o eixo X no ponto (cx + r/cos(θ), cy)
-                    // Evitamos divisão por zero próximo a 90° e 270°
+                    // 8. Desenhar Reta Tangente Vertical e Segmento da Tangente
+                    // A reta tangente geométrica tradicional é a reta vertical x = cx + r (onde x=1 no círculo unitário)
+                    val tangentX = circleCenter.x + radius
+
+                    // Desenhar a linha vertical guia da tangente
+                    drawLine(
+                        color = Color.Yellow,
+                        start = Offset(tangentX, 0f),
+                        end = Offset(tangentX, sizePx),
+                        strokeWidth = AXIS_STROKE_WIDTH,
+                        pathEffect = dashPathEffect,
+                    )
+
+                    /**
+                     * CÁLCULO DA TANGENTE:
+                     * A tangente de um ângulo θ é definida matematicamente como tan(θ) = sin(θ) / cos(θ).
+                     *
+                     * POR QUE USAR O COSSENO (cosA)?
+                     * 1. Definição: Como tan = sin/cos, a tangente só existe quando o cosseno é diferente de zero.
+                     * 2. Indeterminação: Quando o ângulo é 90° ou 270°, o cosseno é 0, o que resultaria em uma 
+                     *    divisão por zero (tangente infinita). Geometricamente, nesses ângulos, a reta que passa 
+                     *    pelo centro e pelo ponto no círculo é paralela à reta tangente vertical (x=1), 
+                     *    nunca a intersectando.
+                     * 3. Estabilidade: Usamos TANGENT_EPSILON para evitar cálculos instáveis próximos a esses ângulos.
+                     */
                     val cosA = cos(radians)
                     if (abs(cosA) > TANGENT_EPSILON) {
-                        val tangentEndX = circleCenter.x + radius / cosA
-                        val tangentEnd = Offset(tangentEndX, circleCenter.y)
+                        val tangentValue = tan(radians)
+                        // A altura da tangente no Canvas (Y cresce para baixo)
+                        // Geometricamente, a distância vertical do eixo X até o ponto de intersecção na reta x=1 
+                        // é proporcional à tangente: y = r * tan(θ).
+                        // y = cy - r * tan(θ)
+                        val tangentY = circleCenter.y - radius * tangentValue
+
+                        // Limitar o desenho para não sair absurdamente da tela
+                        val safeTangentY = tangentY.coerceIn(-sizePx, sizePx * 2)
+
+                        // Desenhar o traço da tangente (Linha Magenta sobre a reta vertical)
                         drawLine(
                             color = Color.Magenta,
-                            start = pointOnCircle,
-                            end = tangentEnd,
+                            start = Offset(tangentX, circleCenter.y),
+                            end = Offset(tangentX, safeTangentY),
+                            strokeWidth = GRAPHIC_LINE_STROKE_WIDTH * 2,
+                        )
+
+                        // Desenhar o ponto na reta tangente
+                        drawCircle(
+                            color = Color.Magenta,
+                            radius = INDICATOR_POINT_RADIUS,
+                            center = Offset(tangentX, safeTangentY)
+                        )
+
+                        // Opcional: Desenhar linha ligando o centro ao ponto da tangente (Secante)
+                        drawLine(
+                            color = Color.Magenta,
+                            start = circleCenter,
+                            end = Offset(tangentX, safeTangentY),
                             strokeWidth = GRAPHIC_LINE_STROKE_WIDTH,
-                            pathEffect = dashPathEffect,
+                            pathEffect = dashPathEffect
                         )
                     }
                 }
@@ -277,11 +331,16 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         Text("Trigonometria")
                         val sineVal = sin(radians)
                         val cosineVal = cos(radians)
-                        val tangentVal =
-                            tan(radians).takeIf {
-                                // Limita exibição de valores extremos
-                                abs(it) < TANGENT_DISPLAY_LIMIT
-                            }
+
+                        /**
+                         * A tangente é calculada como sin/cos. 
+                         * Se o cosseno for muito próximo de zero (ângulo de 90° ou 270°), 
+                         * o valor tende ao infinito e a divisão se torna matematicamente indefinida.
+                         */
+                        val tangentVal = tan(radians).takeIf {
+                            // Limita exibição de valores extremos para evitar problemas de UI
+                            abs(it) < TANGENT_DISPLAY_LIMIT
+                        }
                         Text(text = "Seno: %.3f".format(sineVal), color = Color.Red)
                         Text(text = "Cosseno: %.3f".format(cosineVal), color = Color.Blue)
                         Text(text = "Tangente: %.3f".format(tangentVal ?: Double.NaN), color = Color.Magenta)
@@ -291,17 +350,25 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         modifier = Modifier.weight(.5f),
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
+                        val sineVal = sin(radians)
+                        val cosineVal = cos(radians)
+                        val tangentVal = tan(radians)
+
                         Text("Inversas (Graus)")
-                        val aSineDegreesVal = asinDegrees(radians.toDouble())
-                        val aCosineDegreesVal = acosDegrees(radians.toDouble())
+                        // As funções arco (asin, acos, atan) recebem o VALOR (seno, cosseno, tangente)
+                        // e retornam o ângulo correspondente em radianos.
+                        // Note que os resultados seguem os domínios padrão:
+                        // Asin: [-90°, 90°], Acos: [0°, 180°], Atan: (-90°, 90°)
+                        val aSineDegreesVal = asinDegrees(sineVal.toDouble())
+                        val aCosineDegreesVal = acosDegrees(cosineVal.toDouble())
                         val aTangentDegreesVal =
-                            aTanDegrees(radians.toDouble()).takeIf {
-                                // Limita exibição de valores extremos
-                                abs(it) < TANGENT_DISPLAY_LIMIT * 10 // Limite maior para graus
+                            aTanDegrees(tangentVal.toDouble()).takeIf {
+                                // Limita exibição de valores extremos baseando-se na tangente original
+                                abs(tangentVal) < TANGENT_DISPLAY_LIMIT
                             }
-                        Text(text = "Asen: %.1f°".format(aSineDegreesVal), color = Color.Red)
-                        Text(text = "Acos: %.1f°".format(aCosineDegreesVal), color = Color.Blue)
-                        Text(text = "Atan: %.1f°".format(aTangentDegreesVal ?: Double.NaN), color = Color.Magenta)
+                        Text(text = "Asin(sen): %.1f°".format(aSineDegreesVal), color = Color.Red)
+                        Text(text = "Acos(cos): %.1f°".format(aCosineDegreesVal), color = Color.Blue)
+                        Text(text = "Atan(tan): %.1f°".format(aTangentDegreesVal ?: Double.NaN), color = Color.Magenta)
                     }
                 }
             }
