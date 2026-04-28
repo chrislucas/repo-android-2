@@ -1,6 +1,7 @@
 package com.br.justcomposelabs.tutorial.google.compose.accessibility.semantics
 
 /*
+    TODO estudar ACESSIBILIDADE
     https://developer.android.com/develop/ui/compose/accessibility/semantics
 
     - "Information about the meaning and role of a component in Compose is called semantics,"

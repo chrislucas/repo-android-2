@@ -5,6 +5,7 @@
     <ID>EmptyFunctionBlock:ComposeAndOpenGLES.kt$&lt;no name provided&gt;${ }</ID>
     <ID>LongMethod:Cartesian3DView.kt$Cartesian3DView$override fun onDraw(canvas: Canvas)</ID>
     <ID>LongMethod:ComposeInViewActivity.kt$@Composable fun InteractiveUnitCircle(modifier: Modifier = Modifier)</ID>
-    <ID>LongParameterList:Cartesian3DView.kt$Cartesian3DView$( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f )</ID>
+    <ID>LongParameterList:Cartesian3DView.kt$Cartesian3DView$( point3D: FloatArray, screenWidth: Float, screenHeight: Float, centerX: Float, centerY: Float, distance: Float = 500f, )</ID>
+    <ID>MaxLineLength:ComposeInViewActivity.kt$// A reta tangente geométrica tradicional é a reta vertical x = cx + r (onde x=1 no círculo unitário)</ID>
   </CurrentIssues>
 </SmellBaseline>

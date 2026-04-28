@@ -6,19 +6,19 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="DistinctIntUntilChangeScreenPreview">
+      <SelectionState runConfigName="DrawRegularPolygon">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="DebounceScreenPreview">
+      <SelectionState runConfigName="DrawHexagonView">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="SearchScreen">
+      <SelectionState runConfigName="Cartesian3DCompose">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="InteractiveUnitCirclePreview">
+      <SelectionState runConfigName="CartesianPlan3dAxis">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

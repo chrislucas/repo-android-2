@@ -265,23 +265,43 @@ val SomeLogoIcon: ImageVector by lazy {
                 moveTo(80f, 90f)
                 lineTo(120f, 90f)
                 arcToRelative(
-                    10f, 10f, 0f,
-                    isMoreThanHalf = false, isPositiveArc = true, dx1 = 10f, dy1 = 10f
+                    10f,
+                    10f,
+                    0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 10f,
+                    dy1 = 10f
                 )
                 lineTo(130f, 140f)
                 arcToRelative(
-                    10f, 10f, 0f,
-                    isMoreThanHalf = false, isPositiveArc = true, dx1 = -10f, dy1 = 10f
+                    10f,
+                    10f,
+                    0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -10f,
+                    dy1 = 10f
                 )
                 lineTo(80f, 150f)
                 arcToRelative(
-                    10f, 10f, 0f,
-                    isMoreThanHalf = false, isPositiveArc = true, dx1 = -10f, dy1 = -10f
+                    10f,
+                    10f,
+                    0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = -10f,
+                    dy1 = -10f
                 )
                 lineTo(70f, 100f)
                 arcToRelative(
-                    10f, 10f, 0f,
-                    isMoreThanHalf = false, isPositiveArc = true, dx1 = 10f, dy1 = -10f
+                    10f,
+                    10f,
+                    0f,
+                    isMoreThanHalf = false,
+                    isPositiveArc = true,
+                    dx1 = 10f,
+                    dy1 = -10f
                 )
                 close()
             }

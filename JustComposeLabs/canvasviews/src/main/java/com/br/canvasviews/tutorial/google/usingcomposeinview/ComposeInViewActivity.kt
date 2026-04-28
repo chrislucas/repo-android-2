@@ -116,32 +116,32 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Box(
                 modifier =
-                    Modifier
-                        .size(sizeDp)
-                        .border(1.dp, color = Color.Black)
-                        .pointerInput(Unit) {
-                            detectDragGestures { change, _ ->
-                                val touchPoint = change.position
+                Modifier
+                    .size(sizeDp)
+                    .border(1.dp, color = Color.Black)
+                    .pointerInput(Unit) {
+                        detectDragGestures { change, _ ->
+                            val touchPoint = change.position
                                 /*
                                     Calcula o ângulo baseado na posição do toque relativa ao centro
                                     atan2(dy, dx) retorna o arco tangente de y/x em radianos (-PI a PI)
                                  */
 
-                                val dx = touchPoint.x - circleCenter.x
-                                val dy = touchPoint.y - circleCenter.y
-                                // Invertemos o dy para que o ângulo cresça no sentido anti-horário
-                                // Já que no Canvas do Android o Y cresce para baixo.
-                                val newAngle = atan2(-dy, dx)
+                            val dx = touchPoint.x - circleCenter.x
+                            val dy = touchPoint.y - circleCenter.y
+                            // Invertemos o dy para que o ângulo cresça no sentido anti-horário
+                            // Já que no Canvas do Android o Y cresce para baixo.
+                            val newAngle = atan2(-dy, dx)
 
-                                // Normaliza o ângulo para o intervalo [0, 2*PI]
-                                radians =
-                                    if (newAngle < 0) {
-                                        newAngle + (2 * Math.PI).toFloat()
-                                    } else {
-                                        newAngle
-                                    }
-                            }
-                        },
+                            // Normaliza o ângulo para o intervalo [0, 2*PI]
+                            radians =
+                                if (newAngle < 0) {
+                                    newAngle + (2 * Math.PI).toFloat()
+                                } else {
+                                    newAngle
+                                }
+                        }
+                    },
                 contentAlignment = Alignment.Center,
             ) {
                 Canvas(modifier = Modifier.fillMaxSize()) {
@@ -266,9 +266,9 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                      *
                      * POR QUE USAR O COSSENO (cosA)?
                      * 1. Definição: Como tan = sin/cos, a tangente só existe quando o cosseno é diferente de zero.
-                     * 2. Indeterminação: Quando o ângulo é 90° ou 270°, o cosseno é 0, o que resultaria em uma 
-                     *    divisão por zero (tangente infinita). Geometricamente, nesses ângulos, a reta que passa 
-                     *    pelo centro e pelo ponto no círculo é paralela à reta tangente vertical (x=1), 
+                     * 2. Indeterminação: Quando o ângulo é 90° ou 270°, o cosseno é 0, o que resultaria em uma
+                     *    divisão por zero (tangente infinita). Geometricamente, nesses ângulos, a reta que passa
+                     *    pelo centro e pelo ponto no círculo é paralela à reta tangente vertical (x=1),
                      *    nunca a intersectando.
                      * 3. Estabilidade: Usamos TANGENT_EPSILON para evitar cálculos instáveis próximos a esses ângulos.
                      */
@@ -276,7 +276,7 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                     if (abs(cosA) > TANGENT_EPSILON) {
                         val tangentValue = tan(radians)
                         // A altura da tangente no Canvas (Y cresce para baixo)
-                        // Geometricamente, a distância vertical do eixo X até o ponto de intersecção na reta x=1 
+                        // Geometricamente, a distância vertical do eixo X até o ponto de intersecção na reta x=1
                         // é proporcional à tangente: y = r * tan(θ).
                         // y = cy - r * tan(θ)
                         val tangentY = circleCenter.y - radius * tangentValue
@@ -333,8 +333,8 @@ fun InteractiveUnitCircle(modifier: Modifier = Modifier) {
                         val cosineVal = cos(radians)
 
                         /**
-                         * A tangente é calculada como sin/cos. 
-                         * Se o cosseno for muito próximo de zero (ângulo de 90° ou 270°), 
+                         * A tangente é calculada como sin/cos.
+                         * Se o cosseno for muito próximo de zero (ângulo de 90° ou 270°),
                          * o valor tende ao infinito e a divisão se torna matematicamente indefinida.
                          */
                         val tangentVal = tan(radians).takeIf {

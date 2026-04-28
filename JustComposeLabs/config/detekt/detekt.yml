@@ -62,7 +62,7 @@ complexity:
     ignoreAnnotatedFunctions: ['Preview']
   LongParameterList:
     # Increase the threshold for parameter count, common in Composable functions
-    functionThreshold: 5
+    functionThreshold: 6
     constructorThreshold: 6
   CyclomaticComplexMethod:
     threshold: 15 # rever essa regra

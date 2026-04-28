@@ -21,7 +21,6 @@ import com.br.justcomposelabs.utils.composable.fillMaxSizePadding
 import kotlin.math.cos
 import kotlin.math.sin
 
-
 private const val HALF = 0.5f
 
 @Preview(
@@ -40,18 +39,18 @@ fun Cartesian3DCompose() {
     ) {
         Canvas(
             modifier =
-                Modifier
-                    .fillMaxSize()
-                    .pointerInput(Unit) {
-                        detectDragGestures { change, dragAmount ->
-                            change.consume()
-                            // Access coordinates directly to avoid potential value class access issues in some environments
-                            val dx = dragAmount.x
-                            val dy = dragAmount.y
-                            rotationX += dy * 0.01f
-                            rotationY += dx * 0.01f
-                        }
-                    },
+            Modifier
+                .fillMaxSize()
+                .pointerInput(Unit) {
+                    detectDragGestures { change, dragAmount ->
+                        change.consume()
+                        // Access coordinates directly to avoid potential value class access issues in some environments
+                        val dx = dragAmount.x
+                        val dy = dragAmount.y
+                        rotationX += dy * 0.01f
+                        rotationY += dx * 0.01f
+                    }
+                },
         ) {
             val canvasWidth = size.width
             val canvasHeight = size.height
@@ -77,15 +76,15 @@ fun Cartesian3DCompose() {
                     val px = point[0]
                     val py = point[1]
                     val pz = point[2]
-                    
+
                     // Rotação X
                     val ry1 = py * cos(rotationX) - pz * sin(rotationX)
                     val rz1 = py * sin(rotationX) + pz * cos(rotationX)
-                    
+
                     // Rotação Y
                     val rx2 = px * cos(rotationY) + rz1 * sin(rotationY)
                     val rz2 = (-px * sin(rotationY)) + (rz1 * cos(rotationY))
-                    
+
                     floatArrayOf(rx2, ry1, rz2)
                 }
 

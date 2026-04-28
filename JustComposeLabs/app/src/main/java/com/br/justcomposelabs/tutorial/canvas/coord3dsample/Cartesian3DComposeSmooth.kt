@@ -42,24 +42,24 @@ fun Cartesian3DComposeSmooth() {
     // Canvas com deteção de gestos de arrasto
     Canvas(
         modifier =
-            Modifier
-                .fillMaxSize()
-                .pointerInput(Unit) {
-                    detectDragGestures { change, dragAmount ->
-                        change.consume()
+        Modifier
+            .fillMaxSize()
+            .pointerInput(Unit) {
+                detectDragGestures { change, dragAmount ->
+                    change.consume()
 
-                        val targetX = rotationX + dragAmount.y * 0.01f
-                        val targetY = rotationY + dragAmount.x * 0.01f
+                    val targetX = rotationX + dragAmount.y * 0.01f
+                    val targetY = rotationY + dragAmount.x * 0.01f
 
-                        // Anima a rotação usando suavemente o escopo da coroutines
-                        scope.launch {
-                            rotationXAnim.animateTo(targetX, animationSpec = tween(durationMillis = 300))
-                            rotationYAnim.animateTo(targetY, animationSpec = tween(durationMillis = 300))
-                            rotationX = rotationXAnim.value
-                            rotationY = rotationYAnim.value
-                        }
+                    // Anima a rotação usando suavemente o escopo da coroutines
+                    scope.launch {
+                        rotationXAnim.animateTo(targetX, animationSpec = tween(durationMillis = 300))
+                        rotationYAnim.animateTo(targetY, animationSpec = tween(durationMillis = 300))
+                        rotationX = rotationXAnim.value
+                        rotationY = rotationYAnim.value
                     }
-                },
+                }
+            },
     ) {
         val width = size.width
         val height = size.height
@@ -90,8 +90,8 @@ fun Cartesian3DComposeSmooth() {
             val endRot = rotatePoint(endXYZ, rotationX, rotationY)
 
             // Projeção 3D para 2D
-            val start2D = projectPoint(startRot, size.width, size.height, centerX, centerY)
-            val end2D = projectPoint(endRot, size.width, size.height, centerX, centerY)
+            val start2D = projectPoint(startRot, centerX, centerY)
+            val end2D = projectPoint(endRot, centerX, centerY)
 
             // Desenho do eixo
             drawLine(
@@ -133,8 +133,6 @@ fun rotatePoint(
  * projectPoint projeta um ponto 3D para uma coordenada 2D na tela.
  * Usa uma projeção em perspectiva básica, considerando uma distância da câmera.
  * @param point3D O ponto 3D como FloatArray(x, y, z)
- * @param screenWidth Largura da tela (ou canvas)
- * @param screenHeight Altura da tela (ou canvas)
  * @param centerX Ponto central X na tela
  * @param centerY Ponto central Y na tela
  * @param distance Distância da câmera até o plano de projeção (padrão 500f)
@@ -142,8 +140,6 @@ fun rotatePoint(
  */
 fun projectPoint(
     point3D: FloatArray,
-    screenWidth: Float,
-    screenHeight: Float,
     centerX: Float,
     centerY: Float,
     distance: Float = 500f, // profundidade da câmera

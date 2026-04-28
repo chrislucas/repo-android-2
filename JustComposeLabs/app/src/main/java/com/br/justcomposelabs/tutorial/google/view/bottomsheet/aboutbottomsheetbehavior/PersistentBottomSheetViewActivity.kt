@@ -13,11 +13,11 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
     https://medium.com/swlh/bottomsheetdialogfragment-made-simpler-b32fa8e20928
     https://droidbyme.medium.com/android-bottom-sheet-7e9cfcec6427
 
-    - O que é BottomSheet modal ?
+    - O que é BottomSheet modal?
         - A ideia é colocar o usuario num "modo" diferente e, o usuárop pde trocar
         para o "modo" anterior. Em android usa-se Dialogs como base para as modais
 
-    - O que é a Persistent BottomSheet ?
+    - O que é a Persistent BottomSheet?
         -
 
     Difference Between Modal and Persistent Bottom Sheet in Android
@@ -49,11 +49,7 @@ class PersistentBottomSheetViewActivity : AppCompatActivity() {
             toolbar.setNavigationOnClickListener { }
 
             val sheetBehavior = BottomSheetBehavior.from(simpleBottomSheetDialogLayout.bottomSheet)
-            mainContentBottomSheet.btnBottomSheet.setOnClickListener {
-                if (sheetBehavior.state != BottomSheetBehavior.STATE_EXPANDED) {
-                } else {
-                }
-            }
+            mainContentBottomSheet.btnBottomSheet.setOnClickListener {}
 
             sheetBehavior.addBottomSheetCallback(
                 object : BottomSheetBehavior.BottomSheetCallback() {
