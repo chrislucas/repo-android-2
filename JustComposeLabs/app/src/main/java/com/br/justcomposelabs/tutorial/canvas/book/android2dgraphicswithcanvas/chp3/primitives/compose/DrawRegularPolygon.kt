@@ -15,7 +15,7 @@ fun DrawRegularPolygon() {
             RegularPolygonView(ctx)
         },
         update = {
-            it.sides = 12
+            it.sides = 20
             it.invalidate()
         },
         modifier = Modifier.fillMaxSizePadding(),

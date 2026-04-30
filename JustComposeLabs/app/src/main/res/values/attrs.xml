@@ -89,6 +89,8 @@
         <attr name="scaleStrokeWidth" />
         <attr name="strokeWidthPaint" />
         <attr name="joinStyle" />
+        <attr name="showSidesOnCenter" format="boolean" />
+        <attr name="showSidesOnEdge" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="TriangleFilledPathView">

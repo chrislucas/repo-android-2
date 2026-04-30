@@ -315,7 +315,17 @@
             android:exported="false" />
         <activity
             android:name=".tutorial.google.view.bottomsheet.aboutbottomsheetbehavior.PersistentBottomSheetViewActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data
+                    android:host="openpersistentbottomsheet"
+                    android:scheme="dpl"
+                    />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".tutorial.google.androidview.bottomsheetdialogfragment.OpenModalBottomSheetActivity"
             android:exported="true"
@@ -323,13 +333,12 @@
             android:theme="@style/Theme.JustComposeLabsCanvas">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data
                     android:host="openmodalbottomsheetactivity"
-                    android:scheme="dpl" />
+                    android:scheme="dpl"
+                    />
             </intent-filter>
         </activity>
         <activity

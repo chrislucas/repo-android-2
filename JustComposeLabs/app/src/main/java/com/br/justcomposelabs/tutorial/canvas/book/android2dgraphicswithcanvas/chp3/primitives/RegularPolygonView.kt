@@ -5,9 +5,14 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
+import android.graphics.PointF
+import android.graphics.RectF
+import android.os.Build
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.withStyledAttributes
+import androidx.core.graphics.component1
+import androidx.core.graphics.component2
 import com.br.justcomposelabs.R
 import kotlin.math.min
 import kotlin.properties.Delegates
@@ -35,11 +40,22 @@ constructor(
 
     private var minDimension: Int by Delegates.notNull()
 
+    private var showSidesOnCenter: Boolean by Delegates.notNull()
+    private var showSidesOnEdge: Boolean by Delegates.notNull()
+
+    private var centerRegularPolygon: PointF by Delegates.notNull()
+
     private val path = Path()
 
     private val paintFill = Paint(Paint.ANTI_ALIAS_FLAG)
 
     private val paintStroke = Paint(Paint.ANTI_ALIAS_FLAG)
+
+    private val paintDrawTextSides = Paint(Paint.ANTI_ALIAS_FLAG)
+
+    private val polygonLimits = RectF()
+
+    private var points: List<PointF> by Delegates.notNull()
 
     init {
         context.withStyledAttributes(attr, R.styleable.RegularPolygonView) {
@@ -80,15 +96,47 @@ constructor(
                 (-Math.PI).toFloat(),
                 Math.PI.toFloat(),
             )
+
+            showSidesOnCenter = getBoolean(
+                R.styleable.RegularPolygonView_showSidesOnCenter,
+                true
+            )
+
+            showSidesOnEdge = getBoolean(
+                R.styleable.RegularPolygonView_showSidesOnCenter,
+                true
+            )
         }
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+
         paintFill.run {
             style = Paint.Style.FILL
             color = Color.rgb(255, 153, 123)
             canvas.drawPath(path, this)
+
+            if (showSidesOnCenter) {
+                paintDrawTextSides.textSize = 180f
+                paintDrawTextSides.color = Color.BLACK
+                paintDrawTextSides.textAlign = Paint.Align.CENTER
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.BAKLAVA) {
+                    path.computeBounds(polygonLimits)
+                } else {
+                    path.computeBounds(polygonLimits, true)
+                }
+                val offsetY = (paintDrawTextSides.ascent() - paintDrawTextSides.descent()) * .5f
+                val centerY = polygonLimits.centerY() - offsetY
+                canvas.drawText("$sides", polygonLimits.centerX(), centerY, paintDrawTextSides)
+            }
+
+            if (showSidesOnEdge) {
+                paintDrawTextSides.textSize = 60f
+                paintDrawTextSides.textAlign = Paint.Align.CENTER
+                canvas.drawTextOnPolygonEdge(points, paintDrawTextSides) { "${it + 1}" }
+            }
         }
 
         paintStroke.run {
@@ -111,14 +159,21 @@ constructor(
         oldh: Int,
     ) {
         super.onSizeChanged(w, h, oldw, oldh)
-        val cx = w * ONE_PERCENT * 50
-        val cy = h * ONE_PERCENT * 50
+        centerRegularPolygon = PointF(w * .5f, h * .5f)
         minDimension = min(w, h)
-        val radius = minDimension * ONE_PERCENT * 50 * scaleRadius
-        path.drawRegularPolygon(cx, cy, radius, sides, rotationDegree)
+        val radius = minDimension * ONE_PERCENT * FIFTY * scaleRadius
+
+        /*
+            Ponto central do polígono com uma proporção de 50% da largura
+            e altura da tela
+         */
+        val cx = w * ONE_PERCENT * FIFTY
+        val cy = h * ONE_PERCENT * FIFTY
+        points = path.drawRegularPolygon(cx, cy, radius, sides, rotationDegree)
     }
 
     companion object {
         private const val ONE_PERCENT = .01f
+        private const val FIFTY = 50
     }
 }
