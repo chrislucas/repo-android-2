@@ -21,7 +21,7 @@ class DraggableTriangleActivity : ComponentActivity() {
         setContent {
             JustComposeLabsTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    DraggableTriangleView(
+                    SpringAnimationDraggableTriangleComponent(
                         modifier = Modifier.padding(innerPadding),
                     )
                 }
@@ -31,16 +31,20 @@ class DraggableTriangleActivity : ComponentActivity() {
 }
 
 @Composable
-fun DraggableTriangleView(modifier: Modifier = Modifier) {
-    AndroidView(modifier = modifier, factory = { context ->
-        SpringAnimationDraggableTriangleView(context)
-    })
+fun SpringAnimationDraggableTriangleComponent(modifier: Modifier = Modifier) {
+    AndroidView(
+        modifier = modifier,
+        factory = { context ->
+            SpringAnimationDraggableTriangleView(context)
+        },
+        update = { it.invalidate() }
+    )
 }
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun DraggableTriangleViewPreview() {
     JustComposeLabsTheme {
-        DraggableTriangleView(Modifier.fillMaxWidth())
+        SpringAnimationDraggableTriangleComponent(Modifier.fillMaxWidth())
     }
 }

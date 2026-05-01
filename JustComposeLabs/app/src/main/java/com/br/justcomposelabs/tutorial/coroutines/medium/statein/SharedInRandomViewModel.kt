@@ -6,16 +6,17 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.shareIn
+import kotlin.time.Duration.Companion.milliseconds
 
 /*
     https://medium.com/@mortitech/sharein-vs-statein-in-kotlin-flows-when-to-use-each-1a19bd187553
  */
 
-class SharedRandomNumberFlow : ViewModel() {
+class SharedRandomNumberFlowView : ViewModel() {
     val sharedRandomNumberFlow =
         flow {
             while (true) {
-                delay(1000)
+                delay(1000.milliseconds)
                 emit((0..100).random())
             }
         }.shareIn(

@@ -17,6 +17,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
+import kotlin.time.Duration.Companion.milliseconds
 
 /*
     https://kotlinlang.org/api/kotlinx.coroutines/kotlinx-coroutines-core/kotlinx.coroutines.flow/debounce.html
@@ -41,10 +42,10 @@ class FlowMessageDebounceViewModel(
                 val timeMillis = (1000..2000).random().toLong()
                 val message = "Emitting number: $number | Limit: ${limit}ms | TimeMillis: ${timeMillis}ms"
                 Timber.tag("IntViewModelDebounce").d(message)
-                delay(timeMillis)
+                delay(timeMillis.milliseconds)
                 emit(message)
             }
-        }.debounce(limit)
+        }.debounce(limit.milliseconds)
 
     companion object {
         /*
@@ -53,7 +54,7 @@ class FlowMessageDebounceViewModel(
          */
         val KEY_DEBOUNCE = object : CreationExtras.Key<Long> {}
 
-        private val DEFAULT_DEBOUNCE_LIMIT = 1000L
+        private const val DEFAULT_DEBOUNCE_LIMIT = 1000L
         val FACTORY =
             viewModelFactory {
                 initializer {

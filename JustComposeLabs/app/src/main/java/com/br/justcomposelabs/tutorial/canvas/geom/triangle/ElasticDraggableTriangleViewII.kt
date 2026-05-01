@@ -12,9 +12,7 @@ import android.view.MotionEvent
 import android.view.View
 import kotlin.math.*
 
-class ElasticDraggableTriangleViewII
-@JvmOverloads
-constructor(
+class ElasticDraggableTriangleViewII @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,

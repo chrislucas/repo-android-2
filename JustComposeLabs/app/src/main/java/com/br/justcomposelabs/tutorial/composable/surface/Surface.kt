@@ -50,7 +50,8 @@ fun TrySurface() {
          */
         contentColor = contentColorFor(Color.LightGray),
         /*
-            The size of the shadow below the surface. Note that It will not affect z index of the Surface. If you want to change the drawing order you can use Modifier.zIndex.
+            The size of the shadow below the surface. Note that It will not affect z index of the Surface.
+            If you want to change the drawing order you can use Modifier.zIndex.
          */
         tonalElevation = 4.dp,
         shadowElevation = 4.dp,

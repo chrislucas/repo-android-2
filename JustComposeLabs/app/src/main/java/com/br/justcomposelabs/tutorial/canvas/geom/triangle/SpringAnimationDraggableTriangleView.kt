@@ -10,11 +10,10 @@ import android.view.MotionEvent
 import android.view.View
 import androidx.dynamicanimation.animation.SpringAnimation
 import androidx.dynamicanimation.animation.SpringForce
-import kotlin.math.*
+import kotlin.math.pow
+import kotlin.math.sqrt
 
-class SpringAnimationDraggableTriangleView
-@JvmOverloads
-constructor(
+class SpringAnimationDraggableTriangleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -79,6 +78,11 @@ constructor(
             val coordText = "X: ${vertex.x.toInt()} Y: ${vertex.y.toInt()}"
             canvas.drawText(coordText, vertex.x + 25f, vertex.y, pointPaint)
         }
+    }
+
+    override fun performClick(): Boolean {
+        super.performClick()
+        return true
     }
 
     override fun onTouchEvent(event: MotionEvent): Boolean {

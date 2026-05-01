@@ -19,6 +19,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.distinctUntilChanged
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
+import kotlin.time.Duration.Companion.milliseconds
 
 /*
     Master the Bridge: A Deep Dive into Jetpack Compose snapshotFlow
@@ -26,7 +27,7 @@ import timber.log.Timber
 
     - snapshotFlow é uma função que permite converter Compose State<T> em um cold Kotlin Flow<T>
 
-    - Aspecto chave do sbaoshotFlow
+    - Aspecto chave do snapshotFlow
          - Reactive Bridge: Observa/Rasteia qualquer Compose State (MutableSateOf, LazyListtState, etc),
         fazendo a leitura.
          - Auto-Distinct: Similar ao Flow.distinctUntilChanged(),
@@ -49,7 +50,7 @@ class FlowIntViewModel : ViewModel() {
                 val number = (1..3).random()
                 emit(number)
                 Timber.tag("IntViewModelDistinct").d("Emitting number: $number")
-                delay(1000)
+                delay(1000.milliseconds)
             }
         }.distinctUntilChanged()
 }

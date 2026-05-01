@@ -91,7 +91,8 @@ fun TextDecoratedUnderlineSpecificWords() {
                     ),
                 ) {
                     append(
-                        "on specific parts. Testing min and max lines parameters to see how it behaves when the text is too long and needs to be truncated or wrapped.",
+                        "on specific parts. Testing min and max lines parameters to see how it behaves " +
+                            "when the text is too long and needs to be truncated or wrapped.",
                     )
                 }
             },

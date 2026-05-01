@@ -21,9 +21,7 @@ import kotlin.properties.Delegates
     https://share.google/aimode/u057dHXf2Tu9aJzrI
     https://share.google/aimode/FUeZkIOjOdv70kTPf
  */
-class RegularPolygonView
-@JvmOverloads
-constructor(
+class RegularPolygonView @JvmOverloads constructor(
     ctx: Context,
     attr: AttributeSet? = null,
     defStyle: Int = 0,

@@ -8,7 +8,11 @@ import android.graphics.PointF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import kotlin.math.*
+import kotlin.math.atan2
+import kotlin.math.cos
+import kotlin.math.pow
+import kotlin.math.sin
+import kotlin.math.sqrt
 
 class ElasticDraggableTriangleViewIII
 @JvmOverloads
@@ -63,6 +67,11 @@ constructor(
         }
     }
 
+    override fun performClick(): Boolean {
+        super.performClick()
+        return true
+    }
+
     override fun onTouchEvent(event: MotionEvent): Boolean {
         when (event.action) {
             MotionEvent.ACTION_DOWN -> {
@@ -70,7 +79,6 @@ constructor(
                 for (i in vertices.indices) {
                     if (distance(event.x, event.y, vertices[i].x, vertices[i].y) < touchTolerance) {
                         selectedVertexIndex = i
-                        return true
                     }
                 }
             }
@@ -85,14 +93,17 @@ constructor(
                     applyElasticEffect(selectedVertexIndex)
 
                     invalidate()
-                    return true
                 }
             }
 
             MotionEvent.ACTION_UP -> {
+                if (selectedVertexIndex != -1) {
+                    performClick()
+                }
                 selectedVertexIndex = -1
             }
         }
+
         return true
     }
 

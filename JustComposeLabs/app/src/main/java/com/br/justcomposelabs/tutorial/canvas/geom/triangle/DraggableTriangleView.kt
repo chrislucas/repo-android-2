@@ -8,11 +8,10 @@ import android.graphics.PointF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import kotlin.math.*
+import kotlin.math.pow
+import kotlin.math.sqrt
 
-class DraggableTriangleView
-@JvmOverloads
-constructor(
+class DraggableTriangleView @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,
@@ -57,8 +56,8 @@ constructor(
         // Draw vertices as circles and their coordinate labels
         for (vertex in vertices) {
             canvas.drawCircle(vertex.x, vertex.y, 20f, pointPaint)
-            val coordText = "X: ${vertex.x.toInt()} Y: ${vertex.y.toInt()}"
-            canvas.drawText(coordText, vertex.x + 25f, vertex.y, pointPaint)
+            val text = "X: ${vertex.x.toInt()} Y: ${vertex.y.toInt()}"
+            canvas.drawText(text, vertex.x + 25f, vertex.y, pointPaint)
         }
     }
 

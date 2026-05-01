@@ -39,7 +39,8 @@ import androidx.lifecycle.ViewModel
         - Escopo (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#scope)
             -
 
-        - O ciclo de vida de um ViewModel (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#lifecycle)
+        - O ciclo de vida de um ViewModel
+        (https://developer.android.com/topic/libraries/architecture/viewmodel?hl=pt-br#lifecycle)
             - O Ciclo de vida de uma viewmodel está diretamente vinculada ao escopo dela.
             - Ela permanece em memoria ate que o ViewModelStoreOwner definido como escopo dela
             desapareça

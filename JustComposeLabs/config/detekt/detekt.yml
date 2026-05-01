@@ -90,6 +90,9 @@ naming:
   FunctionNaming:
     # Allows PascalCase for functions annotated with @Composable
     ignoreAnnotated: [ 'Composable' ]
+  MatchingDeclarationName:
+    active: false
+
 potential-bugs:
   UnnecessarySafeCall:
     active: true # Disable if you have specific patterns for safe calls that may be necessary

@@ -30,7 +30,8 @@ import timber.log.Timber
         ser atualizada, isso causa recomposições desnecessarias
 
         - Em casos que os inputs mudem mais do que a UI necessita ser atualizada devemos usar
-        derivedStateOf(https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#derivedStateOf(kotlin.Function0))
+        derivedStateOf
+https://developer.android.com/reference/kotlin/androidx/compose/runtime/package-summary#derivedStateOf(kotlin.Function0)
 
  */
 

@@ -6,19 +6,23 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="Cartesian3DCompose">
+      <SelectionState runConfigName="CircleColorVerticalGradientLayout">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="CartesianPlan3dAxis">
+      <SelectionState runConfigName="VerticalGradientComponentPreview">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="UiUnsafeStateV">
+      <SelectionState runConfigName="ColumnExpandShrinkPreview">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="Cartesian3DComposeSmooth">
+      <SelectionState runConfigName="LayoutDemo">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="ElasticDraggableTrianglePreviewIII">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

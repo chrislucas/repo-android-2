@@ -1,9 +1,6 @@
 package com.br.justcomposelabs.tutorial.canvas.book.android2dgraphicswithcanvas.geom
 
-import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
-import androidx.compose.animation.core.animateOffsetAsState
-import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.gestures.detectDragGestures
@@ -42,13 +39,6 @@ fun FlashlightLayout(
 
     var pointerOffset by remember { mutableStateOf(Offset.Zero) }
     var isTouching by remember { mutableStateOf(false) }
-
-    // Anima a posição para um movimento suave (suaviza o rastro do dedo)
-    val animatedOffset by animateOffsetAsState(
-        targetValue = pointerOffset,
-        animationSpec = spring(stiffness = Spring.StiffnessLow),
-        label = "flashlightOffset"
-    )
 
     // Anima o raio da lanterna (cresce quando toca, some quando solta)
     val radius by animateFloatAsState(
@@ -92,14 +82,31 @@ fun FlashlightLayout(
                                         )
                                     )
                                 }
+                        - Aqui desenhamos um retângulo escuro que cobre a tela
+                        toda e com a cor preta para esconder o conteúdo passado
+                        por argumento
+
+                        - O Brush é usado para desenhar um gradiente de cores por uma lista. A última
+                        cor da lista é a cor usada para desenhar a forma
+                            - no exemplo abaixo o centro Brush:
+                                - é definido no valor 0.0f e terá a cor transparent
+                                - ao chegar a 30% mantém transparente
+                                - depois disso gradativamente vai ficando escuro, até um
+                                preto com um alpha de 85%, quanto mais perto do 1 mais escuro
+                            - 0.0f é o centro, 1.0f é o limite do raio definido
+                            - Efeito de preenchimento
+                                - Como o drawRect cobre a tela toda, o gradiente, após atingir o ponto 1.0f,
+                                continua a preencher o restante do retângulo com a última cor definida (o preto translúcido).
 
                  */
+
                 drawRect(
                     Brush.radialGradient(
+                        // 0.0f é o centro, 1.0f é o limite do raio definido
                         colorStops = arrayOf(
                             0.0f to Color.Transparent,
                             0.3f to Color.Transparent, // Mantém o centro totalmente limpo até 30% do raio
-                            1.0f to Color.Black.copy(alpha = 0.9f), // Esfumaça até chegar no preto 85% opaco
+                            1.0f to Color.Black.copy(alpha = 0.85f), // Esfumaça até chegar no preto 85% opaco
                         ), // Transição suave
                         center = pointerOffset,
                         radius = radius
