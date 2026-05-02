@@ -20,5 +20,5 @@ fun DrawScope.withBrush(
     createBrush: DrawScope.(fraction: Float) -> Brush,
     drawOnCanvas: DrawScope.(Brush) -> Unit
 ) {
-    drawOnCanvas(createBrush( startFraction))
+    drawOnCanvas(createBrush(startFraction))
 }

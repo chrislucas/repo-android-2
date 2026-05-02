@@ -147,7 +147,6 @@ private fun VerticalGradientComponentPreview() {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 private fun RadialGradientComponentPreview() {
@@ -202,13 +201,13 @@ private fun RadialGradientComponentPreview() {
     }
 }
 
-
 @Preview(showBackground = true)
 @Composable
 private fun RadialGradientComponentPairPreview() {
     JustComposeLabsTheme {
         val onDraw: DrawScope.(Float) -> Unit = { fraction ->
-            withBrush(fraction,
+            withBrush(
+                fraction,
                 createBrush = { f ->
                     Brush.radialGradient(
                         colorStops = arrayOf(

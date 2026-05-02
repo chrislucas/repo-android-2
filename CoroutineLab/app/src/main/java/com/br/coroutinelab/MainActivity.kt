@@ -15,6 +15,19 @@ import com.br.coroutinelab.ui.theme.CoroutineLabTheme
 
 /*
     https://developer.android.com/kotlin/coroutines/coroutines-adv
+
+    - TODO: Criar um showcase com os exemplos de coroutine
+        - Cada slide terá um componente com um exemplo de uso de um recurso da biblioteca de coroutine
+            - Criar um menu de categorias
+                - Flow
+                    - StateFlow
+                    - SharedFlow
+                - Channel
+                - Dispatcher
+        - Olhar o projeto JustComposeLabs
+            - Migrar os exemplos do pacote: com.br.justcomposelabs.tutorial.coroutines.
+
+
  */
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
