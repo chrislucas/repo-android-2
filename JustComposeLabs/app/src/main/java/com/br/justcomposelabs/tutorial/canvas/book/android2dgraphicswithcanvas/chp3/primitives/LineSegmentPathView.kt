@@ -19,9 +19,7 @@ import kotlin.properties.Delegates
 
  */
 
-class LineSegmentPathView
-@JvmOverloads
-constructor(
+class LineSegmentPathView @JvmOverloads constructor(
     ctx: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0,

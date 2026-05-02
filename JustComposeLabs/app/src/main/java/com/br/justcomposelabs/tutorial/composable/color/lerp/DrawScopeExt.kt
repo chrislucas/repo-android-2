@@ -5,12 +5,20 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 
-fun DrawScope.drawOnCanvas(
+fun DrawScope.withBrush(
     startColor: Color,
     endColor: Color,
     @FloatRange startFraction: Float,
     createBrush: DrawScope.(startColor: Color, endColor: Color, fraction: Float) -> Brush,
-    onCanvas: DrawScope.(Brush) -> Unit
+    drawOnCanvas: DrawScope.(Brush) -> Unit
 ) {
-    onCanvas(createBrush(startColor, endColor, startFraction))
+    drawOnCanvas(createBrush(startColor, endColor, startFraction))
+}
+
+fun DrawScope.withBrush(
+    @FloatRange startFraction: Float,
+    createBrush: DrawScope.(fraction: Float) -> Brush,
+    drawOnCanvas: DrawScope.(Brush) -> Unit
+) {
+    drawOnCanvas(createBrush( startFraction))
 }

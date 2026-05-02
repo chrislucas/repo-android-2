@@ -24,8 +24,8 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
 
 @Composable
 fun GradientComponent(
-    onDraw: DrawScope.() -> Unit,
-    createComponent: @Composable (DrawScope.() -> Unit) -> Unit
+    onDraw: DrawScope.(Float) -> Unit,
+    createComponent: @Composable (onDraw: DrawScope.() -> Unit) -> Unit
 ) {
     var fraction by remember { mutableFloatStateOf(.5f) }
 
@@ -36,32 +36,34 @@ fun GradientComponent(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        createComponent(onDraw)
+        createComponent {
+            onDraw(fraction)
+        }
         GradientComponentControl(fraction) { value -> fraction = value }
     }
 }
 
 @Composable
 @Preview(showBackground = true)
-fun HorizontalGradientComponentPreview() {
+private fun HorizontalGradientComponentPreview() {
     JustComposeLabsTheme {
-        val draw: DrawScope.() -> Unit = {
-            drawOnCanvas(
+        val draw: DrawScope.(Float) -> Unit = { fraction ->
+            withBrush(
                 Color.Blue,
                 Color.Green,
-                0.5f,
-                createBrush = { start, end, fraction ->
+                fraction,
+                createBrush = { start, end, f ->
                     val width = size.width
                     val intermediateColor = lerp(
                         start,
                         end,
-                        fraction
+                        f
                     )
 
                     Brush.horizontalGradient(
                         colors = listOf(start, intermediateColor),
                         startX = 0f,
-                        endX = width * fraction.coerceAtLeast(0.01f)
+                        endX = width * f.coerceAtLeast(0.01f)
                     )
                 }
             ) { brush ->
@@ -95,25 +97,25 @@ fun HorizontalGradientComponentPreview() {
 
 @Composable
 @Preview(showBackground = true)
-fun VerticalGradientComponentPreview() {
+private fun VerticalGradientComponentPreview() {
     JustComposeLabsTheme {
-        val draw: DrawScope.() -> Unit = {
-            drawOnCanvas(
+        val draw: DrawScope.(Float) -> Unit = { fraction ->
+            withBrush(
                 Color.Blue,
                 Color.Green,
-                0.5f,
-                createBrush = { start, end, fraction ->
+                fraction,
+                createBrush = { start, end, f ->
                     val height = size.height
                     val intermediateColor = lerp(
                         start,
                         end,
-                        fraction
+                        f
                     )
 
                     Brush.verticalGradient(
                         colors = listOf(start, intermediateColor),
                         startY = 0f,
-                        endY = height * fraction.coerceAtLeast(0.01f)
+                        endY = height * f.coerceAtLeast(0.01f)
                     )
                 }
             ) { brush ->
@@ -142,5 +144,110 @@ fun VerticalGradientComponentPreview() {
         }
 
         GradientComponent(onDraw = draw, createComponent = component)
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+private fun RadialGradientComponentPreview() {
+    JustComposeLabsTheme {
+        val onDraw: DrawScope.(Float) -> Unit = { fraction ->
+            withBrush(
+                Color.Blue,
+                Color.Green,
+                fraction,
+                createBrush = { start, end, f ->
+                    val intermediateColor = lerp(
+                        start,
+                        end,
+                        f
+                    )
+
+                    Brush.radialGradient(
+                        colors = listOf(start, intermediateColor),
+                        center = Offset(
+                            size.width * f.coerceAtLeast(0.01f),
+                            size.height * f.coerceAtLeast(0.01f)
+                        ),
+                        radius = minOf(size.width, size.height) / 2.0f
+                    )
+                }
+            ) { brush ->
+                drawCircle(
+                    brush = brush,
+                    center = Offset(size.width / 2f, size.height / 2f),
+                    radius = minOf(size.width, size.height) / 2.0f
+                )
+
+                drawCircle(
+                    color = Color.Black,
+                    center = Offset(size.width / 2f, size.height / 2f),
+                    radius = minOf(size.width, size.height) / 2.0f,
+                    style = Stroke(15.0f)
+                )
+            }
+        }
+
+        val component: @Composable (DrawScope.() -> Unit) -> Unit = {
+            CanvasLayout(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                it
+            )
+        }
+
+        GradientComponent(onDraw = onDraw, createComponent = component)
+    }
+}
+
+
+@Preview(showBackground = true)
+@Composable
+private fun RadialGradientComponentPairPreview() {
+    JustComposeLabsTheme {
+        val onDraw: DrawScope.(Float) -> Unit = { fraction ->
+            withBrush(fraction,
+                createBrush = { f ->
+                    Brush.radialGradient(
+                        colorStops = arrayOf(
+                            0.0f to Color.Red,
+                            0.3f to Color.Green,
+                            1.0f to Color.Blue,
+                        ),
+                        center = Offset(
+                            size.width * f.coerceAtLeast(0.01f),
+                            size.height * f.coerceAtLeast(0.01f)
+                        ),
+                        radius = minOf(size.width, size.height) / 2.0f
+                    )
+                }
+            ) { brush ->
+                drawCircle(
+                    brush = brush,
+                    center = Offset(size.width / 2f, size.height / 2f),
+                    radius = minOf(size.width, size.height) / 2.0f
+                )
+
+                drawCircle(
+                    color = Color.Black,
+                    center = Offset(size.width / 2f, size.height / 2f),
+                    radius = minOf(size.width, size.height) / 2.0f,
+                    style = Stroke(15.0f)
+                )
+            }
+        }
+
+        val component: @Composable (DrawScope.() -> Unit) -> Unit = {
+            CanvasLayout(
+                Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp),
+                it
+            )
+        }
+
+        GradientComponent(onDraw = onDraw, createComponent = component)
     }
 }

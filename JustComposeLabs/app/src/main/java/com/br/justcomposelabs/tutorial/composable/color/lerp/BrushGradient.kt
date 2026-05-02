@@ -31,7 +31,8 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
     - Brush é um Compose que descreve como objetos sao desenhados na tela
         - Determina a cor pintada na área de desenho
         - Existem alguns Brushes built-in uteis para desenho
-            - LinearGradient
+            - LinearGradient, RadialGradient ou SolidColor brush
+    - Brush pode ser usado com
  */
 
 @Preview(showBackground = true)
@@ -173,7 +174,7 @@ fun CanvasLayoutPreview() {
                 .padding(8.dp),
 
             onDraw = {
-                drawOnCanvas(
+                withBrush(
                     Color.Blue,
                     Color.Green,
                     0.5f,
