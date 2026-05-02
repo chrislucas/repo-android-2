@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.composable.color.lerp
+package com.br.justcomposelabs.tutorial.composable.color.interpolation
 
 /*
     https://composables.com/docs/androidx.compose.ui/ui-graphics/functions/lerp

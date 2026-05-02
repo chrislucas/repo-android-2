@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.composable.color.lerp
+package com.br.justcomposelabs.tutorial.composable.color.interpolation
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.Arrangement
@@ -33,6 +33,9 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
         - Existem alguns Brushes built-in uteis para desenho
             - LinearGradient, RadialGradient ou SolidColor brush
     - Brush pode ser usado com
+        - Modifier.background()
+        - TextStyle
+        - DrawScope
  */
 
 @Preview(showBackground = true)

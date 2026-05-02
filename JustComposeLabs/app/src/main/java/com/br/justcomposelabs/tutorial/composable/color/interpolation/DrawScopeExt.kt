@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.composable.color.lerp
+package com.br.justcomposelabs.tutorial.composable.color.interpolation
 
 import androidx.annotation.FloatRange
 import androidx.compose.ui.graphics.Brush

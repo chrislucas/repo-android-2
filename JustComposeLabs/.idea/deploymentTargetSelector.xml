@@ -6,10 +6,6 @@
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>
-      <SelectionState runConfigName="ColumnExpandShrinkPreview">
-        <option name="selectionMode" value="DROPDOWN" />
-        <DialogSelection />
-      </SelectionState>
       <SelectionState runConfigName="LayoutDemo">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
@@ -23,6 +19,10 @@
         <DialogSelection />
       </SelectionState>
       <SelectionState runConfigName="RadialGradientComponentPairPreview">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DialogSelection />
+      </SelectionState>
+      <SelectionState runConfigName="HorizontalGradientComponentPreview">
         <option name="selectionMode" value="DROPDOWN" />
         <DialogSelection />
       </SelectionState>

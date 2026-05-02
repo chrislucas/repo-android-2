@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.composable.color.lerp
+package com.br.justcomposelabs.tutorial.composable.color.interpolation
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,7 +24,7 @@ import com.br.scaffoldttopbarsample.ui.theme.JustComposeLabsTheme
 
 @Composable
 fun GradientComponent(
-    onDraw: DrawScope.(Float) -> Unit,
+    controlGradientBrush: DrawScope.(fraction: Float) -> Unit,
     createComponent: @Composable (onDraw: DrawScope.() -> Unit) -> Unit
 ) {
     var fraction by remember { mutableFloatStateOf(.5f) }
@@ -37,7 +37,7 @@ fun GradientComponent(
         verticalArrangement = Arrangement.Center
     ) {
         createComponent {
-            onDraw(fraction)
+            controlGradientBrush(fraction)
         }
         GradientComponentControl(fraction) { value -> fraction = value }
     }
@@ -47,7 +47,7 @@ fun GradientComponent(
 @Preview(showBackground = true)
 private fun HorizontalGradientComponentPreview() {
     JustComposeLabsTheme {
-        val draw: DrawScope.(Float) -> Unit = { fraction ->
+        val controlGradientBrush: DrawScope.(Float) -> Unit = { fraction ->
             withBrush(
                 Color.Blue,
                 Color.Green,
@@ -91,7 +91,7 @@ private fun HorizontalGradientComponentPreview() {
             )
         }
 
-        GradientComponent(onDraw = draw, createComponent = component)
+        GradientComponent(controlGradientBrush = controlGradientBrush, createComponent = component)
     }
 }
 
@@ -143,7 +143,7 @@ private fun VerticalGradientComponentPreview() {
             )
         }
 
-        GradientComponent(onDraw = draw, createComponent = component)
+        GradientComponent(controlGradientBrush = draw, createComponent = component)
     }
 }
 
@@ -198,7 +198,7 @@ private fun RadialGradientComponentPreview() {
             )
         }
 
-        GradientComponent(onDraw = onDraw, createComponent = component)
+        GradientComponent(controlGradientBrush = onDraw, createComponent = component)
     }
 }
 
@@ -248,6 +248,6 @@ private fun RadialGradientComponentPairPreview() {
             )
         }
 
-        GradientComponent(onDraw = onDraw, createComponent = component)
+        GradientComponent(controlGradientBrush = onDraw, createComponent = component)
     }
 }
