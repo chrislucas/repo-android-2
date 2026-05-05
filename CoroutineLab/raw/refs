@@ -12,3 +12,6 @@ https://developer.android.com/develop/background-work/background-tasks/persisten
 Pesquisar por
 - Example ViewModel and shared state flow
 - real example Shared State Flow android
+
+
+channel for one-shot-event instead SharedFlow

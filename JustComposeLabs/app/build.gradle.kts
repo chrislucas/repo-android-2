@@ -122,10 +122,9 @@ dependencies {
     implementation(libs.androidx.fragment.compose)
     implementation(libs.androidx.legacy.support.v4)
     implementation(libs.androidx.lifecycle.livedata.ktx)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     implementation(platform(libs.androidx.compose.bom))
-    implementation("androidx.paging:paging-compose:3.4.2")
+    implementation(libs.androidx.paging.compose)
 
     implementation(libs.androidx.compose.foundation.layout)
     implementation(libs.ads.mobile.sdk)
@@ -254,6 +253,7 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     // Optional - Integration with ViewModels
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
     // Optional - Integration with LiveData
     implementation(libs.androidx.runtime.livedata)
     // Optional - Integration with RxJava

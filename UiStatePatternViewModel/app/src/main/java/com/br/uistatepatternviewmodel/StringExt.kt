@@ -21,6 +21,6 @@ fun getRandomPhrase(length: Int, separate: String) : String =
 
 
 /*
-    TODO estudar lite tensorflow para criar um modelo que gera frases aleatórias de tamano X
+    TODO estudar lite tensorflow para criar um modelo que gera frases aleatórias de tamanho X
     para usar de teste
  */

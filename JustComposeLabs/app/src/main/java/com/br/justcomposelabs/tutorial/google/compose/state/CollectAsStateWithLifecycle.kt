@@ -30,6 +30,7 @@ import timber.log.Timber
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import kotlin.time.Duration.Companion.milliseconds
 
 /*
     https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.Flow).collectAsStateWithLifecycle(kotlin.Any,androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext)
@@ -43,7 +44,7 @@ class ClockViewModelFlow : ViewModel() {
         flow {
             while (true) {
                 emit(currentHour())
-                delay(1000L)
+                delay(1000L.milliseconds)
             }
         }
 
@@ -60,7 +61,7 @@ class ClockViewModelFlowImproved : ViewModel() {
         flow {
             while (true) {
                 emit(currentHour())
-                delay(1000L)
+                delay(1000.milliseconds)
             }
         }
 
