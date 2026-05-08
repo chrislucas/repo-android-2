@@ -90,10 +90,22 @@ fun NewsScreen(
         collectasstate vs collectasstatewithlifecycle
 
         - Documentacao:
-            - Flow: collectAsState() - https://developer.android.com/develop/ui/compose/state
-                - CollectAsState é similar ao CollectAsStateWithLife, coleta valores de um Flow
-                e transforma
+            - Flow:
+                - collectAsState() - https://developer.android.com/develop/ui/compose/state
+                    - CollectAsState é similar ao CollectAsStateWithLife, coleta valores de um Flow
+                    e transforma num Compose State
+                - collectAsStateWithLifecycle()
+                    - coleta valores a partir de um Flow com consciencia do ciclo de vida.. Permite
+                    que o app conserve recursos. Essa funcao recupera o ultimo valor emitdo a partir
+                    de um Compose State
 
+            - A saber sobre Compose State:
+                - https://developer.android.com/reference/kotlin/androidx/compose/runtime/State
+                - Um objeto parametrizável (T value) que armazena o valor de maneira genérica e permite
+                que durante a execucacao de uma composable, esse valor (atributo value) possa ser lido.
+
+                - Durante a execucao de uma funcao composable ele fará com que o RecomposeScope atual
+                seja inscrito para receber uma notificacao de alteracao do valor armazenado
      */
     val isLoading by viewModel.stateIsLoading.collectAsStateWithLifecycle()
     val news by viewModel.stateNews.collectAsStateWithLifecycle()
@@ -104,5 +116,3 @@ fun NewsScreen(
         NewsComponent(news = news)
     }
 }
-
-

@@ -20,7 +20,7 @@ fun fetchRandomImageLorenPicsum(
 ) = "https://picsum.photos/seed/$seed/$width/$height"
 
 @Composable
-fun rememberFetchRandomImageLorenPicsum(
+fun rememberFetchRandomImageLorenPicSum(
     seed: Int = range.random(),
     width: Int = 300,
     height: Int = width,

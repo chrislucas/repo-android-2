@@ -1,0 +1,51 @@
+https://share.google/aimode/6FDwNPZDRgYRYz534
+-
+https://share.google/aimode/Fhz2QP0n0FBKzH5cO
+- RecomposeScope
+    -  RecomposeScope representa a menor unidade de codigo rastreável que pode ser
+    recomposta independentemente
+
+    - Permite que o Compose atualize partes especificas da UI de forma eficiente
+
+- Principais aspectos
+    - Granularidade: Escopos sao criados para funcoes composables que leem estados, permitindo
+    atualizaçoes somente onde necessário
+
+    - Funcionamento: Quando um estado é alterado, o RecomposeScope que leu esse valor (inscrevendo-se
+    no objeto mutável observável) é invalidado e agendado para uma nova recomposicao
+
+    - Limitações: Funções inline como Column, Row e Box geralmente nao criam novos escopos
+
+    - Performance:  Usar remember e derivedStateOf ajuda a otimizar o que é redesenhado dentro
+    dum escopo
+
+ Resumindo: RecomposeScope é a base da recomposição inteligente, garante que o compose saiba
+ onde iniciar e terminar uma atualização na UI
+
+
+como estabilizar lambdas em listas para evitar que todos os itens recomponham quando apenas um muda?
+
+Para estabilizar lambdas em listas e evitar que todos os items recomponham desnecessariamente,
+o objetivo é garantir que a instancia da funcao (objeto lambda), nao seja recriada a cada ciclo de
+renderização.
+
+Se o compose recebe uma nova instancia de lambda para cada item, ele asume que o parametro mudou
+e forca a recomposicao da lista toda
+
+     - Strong skipping: Desde kotlin 2.0.20 strong skipping está ativado por padrao. Ele faz
+     com que o compilador de compose envlva automaticamente suas lambdas num remember, mesmo
+     que elas capturem valores instaveis. Isso resolve a maioria dos problemas de instabilidades
+     de lambdas
+
+     - Referências de funcoes de ViewModel sao gerelamente tratadas como estaveis pelo Compose
+
+     - Sempre usar parâmetro key em LazyColumn
+
+     - rememberUpdatedState para valores que mudam muito
+
+
+
+
+Hey. What is a RecomposeScope mentioned in the fol...
+https://slack-chats.kotlinlang.org/t/513534/hey-what-is-a-recomposescope-mentioned-in-the-following-para
+

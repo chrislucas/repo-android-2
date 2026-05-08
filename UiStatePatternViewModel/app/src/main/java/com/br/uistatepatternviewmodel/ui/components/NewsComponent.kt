@@ -67,14 +67,18 @@ fun NewsComponent(
         Unit
     }
 
+    val callback = if (canIGoTopTop) {
+        scrollTo
+    } else {
+        {}
+    }
+
     val stateList by remember {
         derivedStateOf {
             StateList(
                 shouldLoadMore,
                 canIGoTopTop,
-                onClick = if (canIGoTopTop) scrollTo else {
-                    {}
-                }
+                onClick = callback
             )
         }
     }
@@ -102,33 +106,68 @@ fun NewsComponent(
                 state = listState,
                 modifier = Modifier.fillMaxWidth()
             ) {
-                items(news) { newsItem ->
-                    key(newsItem.title) {
-                        Card(
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(top = 8.dp, bottom = 8.dp)
-                        ) {
-                            Column(modifier = Modifier.padding(16.dp)) {
-                                Text(
-                                    text = newsItem.title,
-                                    style = TextStyle(
-                                        fontSize = MaterialTheme.typography.headlineSmall.fontSize,
-                                        fontStyle = MaterialTheme.typography.headlineSmall.fontStyle,
-                                        fontWeight = MaterialTheme.typography.headlineSmall.fontWeight
-                                    ),
-                                    maxLines = 1
-                                )
-                                Text(
-                                    text = newsItem.description,
-                                    style = TextStyle(
-                                        fontSize = MaterialTheme.typography.bodyMedium.fontSize,
-                                        fontStyle = MaterialTheme.typography.bodyMedium.fontStyle,
-                                        fontWeight = MaterialTheme.typography.bodyMedium.fontWeight
-                                    ),
-                                    maxLines = 10
-                                )
-                            }
+                items(news, key = { it.title}) { newsItem ->
+                    /*
+                        - função composable key:
+                          - A função composable key e a função/lambda key
+                            passada por parâmetro para items tem como objetivo
+                            identificar items de forma única e evitar recomposicoes
+                            ou recriações desnecessárias, porém elas operam em contextos
+                            diferentes.
+
+                         - A função key é uma ferramenta geral do Compose
+                            - Escopo: Ela informa ao Compose que o conteúdo dentro do bloco
+                            key está vinculado äquela chave
+
+                            - Limitacao na LazyList: Ela ajuda o Compose a identificar
+                            que a key está vinculada ao conteúdo do bloco, mas nao ajuda
+                            o LazyListScope, o item da lista continua sem uma chave explicita
+
+                            - Caso de uso: Ideal em loops dentro de column
+
+                        - keys como parâmetro da função items:
+                            - quando passamos uma funcao para o parâmetro key do LazuListScope,
+                            estamos fornecendo essa informacao diretamente para o gerenciador
+                            da LazyList
+
+                            - Eficiencia em Scroll: LazyColumn usa essa chave para rastrear
+                            a posicao do item mesmo que a ela mude, isso evita que o Compose
+                            perca a posicao do scroll
+
+                            - Preserva estado: Se um item sair da tela e voltar, o LazyColumn consegue recuperar
+                            o estado
+
+                            - Desempenho: A chave é processada no nível da composicao da lista,
+                            antes mesmo de decidir se o conteúdo do item precisa ser emitido.
+
+                     */
+
+                    // key(newsItem.title) {}
+
+                    Card(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(top = 8.dp, bottom = 8.dp)
+                    ) {
+                        Column(modifier = Modifier.padding(16.dp)) {
+                            Text(
+                                text = newsItem.title,
+                                style = TextStyle(
+                                    fontSize = MaterialTheme.typography.headlineSmall.fontSize,
+                                    fontStyle = MaterialTheme.typography.headlineSmall.fontStyle,
+                                    fontWeight = MaterialTheme.typography.headlineSmall.fontWeight
+                                ),
+                                maxLines = 1
+                            )
+                            Text(
+                                text = newsItem.description,
+                                style = TextStyle(
+                                    fontSize = MaterialTheme.typography.bodyMedium.fontSize,
+                                    fontStyle = MaterialTheme.typography.bodyMedium.fontStyle,
+                                    fontWeight = MaterialTheme.typography.bodyMedium.fontWeight
+                                ),
+                                maxLines = 10
+                            )
                         }
                     }
                 }
@@ -159,6 +198,10 @@ fun NewsComponentPreview() {
         News(
             title = "Preview #3",
             description = "Another example item to show list rendering and spacing."
+        ),
+        News(
+            title = "Preview #3",
+            description = "Copy Another example item to show list rendering and spacing."
         )
     )
 

@@ -1,12 +1,19 @@
 package com.br.justcomposelabs.tutorial.google.compose.derivedstateof
 
+import android.R
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.derivedStateOf
@@ -14,7 +21,13 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.launch
 
 /*
@@ -75,7 +88,29 @@ fun MessageList(
 
         LazyColumn(state = listState) {
             items(messages.size) { index ->
-                Text(messages[index].content)
+                Card(
+                    modifier = Modifier
+                        .padding(4.dp)
+                        .fillMaxWidth()
+                        .height(100.dp),
+                    shape = RoundedCornerShape(6.dp),
+                    border = BorderStroke(
+                        1.dp,
+                        Brush.horizontalGradient(
+                            listOf(Color.Blue, Color.Green)
+                        )
+                    ),
+                ) {
+                    Text(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(2.dp),
+                        text = messages[index].content,
+                        style = TextStyle(
+                            textAlign = TextAlign.Center
+                        )
+                    )
+                }
             }
         }
 
@@ -117,12 +152,14 @@ fun ScrollTopButton(onClick: suspend () -> Unit) {
 @Composable
 fun MessageListPreview() {
     MessageList(
-        modifier = Modifier.systemBarsPadding().navigationBarsPadding(),
+        modifier = Modifier
+            .systemBarsPadding()
+            .navigationBarsPadding(),
         messages =
-        buildList(100) {
-            for (i in 1..100) {
-                add(Message("Message $i"))
-            }
-        },
+            buildList(100) {
+                for (i in 1..100) {
+                    add(Message("Message $i"))
+                }
+            },
     )
 }

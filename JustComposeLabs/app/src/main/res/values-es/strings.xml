@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">JustComposeLabs</string>
+    <string name="splashscreen">Splashscreen Compose</string>
+    <string name="homescreen">HomeScreen Compose</string>
+    <string name="profilescreen">ProfileScreen Compose</string>
     <string name="title_activity_all_feature">AllFeatureActivity</string>
     <string name="title_activity_using_view_in_compose">UsingViewInComposeActivity</string>
     <string name="title_activity_simple_search_bar_compose">SimpleSearchBarComposeActivity</string>

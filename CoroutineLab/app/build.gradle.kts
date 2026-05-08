@@ -51,6 +51,8 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable:0.4.0")
+
     val workVersion = "2.11.1"
 
     // (Java only)

@@ -33,13 +33,13 @@ A estrutura atual demonstra uma adesão robusta aos padrões modernos de Jetpack
 
 ### 4. Debate: A Implementação do Scroll e Lambdas de Estado
 
-O ponto central de discussão é o uso do `StateList` e do callback `onScroll` para comunicar o estado da lista. 
+O ponto central de discussão é o uso do `StateList` e do callback `onScroll` para comunicar o estado da lista.
 
 **Análise técnica:**
 Atualmente, o `NewsComponent` cria internamente um `LazyListState` e "exporta" seus dados calculados (através de `derivedStateOf`) para o pai. O pai, por sua vez, captura esses dados e os armazena em estados locais (`showButton`, `callback`).
 
 **Essa é a melhor abordagem?**
-Provavelmente não. O "incômodo" de reenviar funções lambda ocorre porque estamos tentando fazer o caminho inverso: o filho está dizendo ao pai o que o pai deve fazer quando o botão (que está no pai) for clicado. 
+Provavelmente não. O "incômodo" de reenviar funções lambda ocorre porque estamos tentando fazer o caminho inverso: o filho está dizendo ao pai o que o pai deve fazer quando o botão (que está no pai) for clicado.
 
 **Uma abordagem mais simples:**
 Em Compose, o ideal é o **State Hoisting**. Se o `UiStatePatternNewsScreen` criasse o `LazyListState` e o passasse para o `NewsComponent`, o pai teria acesso direto ao índice do primeiro item visível e poderia disparar a animação de scroll diretamente, sem precisar que o filho gerasse uma lambda `onClick` e a enviasse de volta.
@@ -50,9 +50,9 @@ Para simplificar a implementação mantendo o comportamento atual, propõe-se:
 
 1.  **Hoisting do LazyListState:** Elevar o `rememberLazyListState()` para o `UiStatePatternNewsScreen`.
 2.  **Cálculos na Screen:** Mover as variáveis `showButton` e `shouldLoadMore` para dentro da Screen, utilizando `derivedStateOf` diretamente sobre o `listState` elevado.
-3.  **Remover `StateList` e `onScroll`:** O `NewsComponent` passaria a receber apenas a lista de notícias e, opcionalmente, o `listState`. 
+3.  **Remover `StateList` e `onScroll`:** O `NewsComponent` passaria a receber apenas a lista de notícias e, opcionalmente, o `listState`.
 4.  **Ação Direta:** O `FloatingActionButton` chamaria diretamente `coroutineScope.launch { listState.animateScrollToItem(0) }`, eliminando a necessidade de armazenar uma lambda em um `mutableStateOf`.
 5.  **Gatilho de Carregamento:** O carregamento de mais notícias seria disparado por um `LaunchedEffect` na Screen que observa o `shouldLoadMore`, mantendo a lógica de rede/paginação próxima ao ViewModel.
 
-**Conclusão:** 
+**Conclusão:**
 As modificações recentes melhoraram a robustez do estado (Sealed Interfaces), mas a lógica de interação entre Screen e List Component ainda pode ser significativamente simplificada através de um State Hoisting mais agressivo, eliminando o fluxo circular de dados e funções.
