@@ -175,6 +175,7 @@ dependencies {
 
     implementation(libs.material)
     implementation(libs.timber)
+    implementation(libs.kotlinx.serialization.json)
 
     // Import the BoM for the Firebase platform
     implementation(platform(libs.firebase.bom))

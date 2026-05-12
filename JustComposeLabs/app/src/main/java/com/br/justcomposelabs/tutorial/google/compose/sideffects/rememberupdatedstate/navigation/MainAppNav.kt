@@ -19,6 +19,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -27,8 +28,10 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.br.justcomposelabs.R
 
-/*
-    rememberUpdatedState: reference a value in an effect that shouldn't restart if the value changes
+/**
+ * rememberUpdatedState: reference a value in an effect that shouldn't restart if the value changes
+ * @see com.br.justcomposelabs.tutorial.google.compose.sideffects.rememberupdatedstate.RememberUpdateStateComponent
+ *
  */
 
 
@@ -46,14 +49,30 @@ fun MainApp(
     /*
         https://share.google/aimode/4viYLPaBSCVtGwJIf
         - navController.currentBackStackEntryAsState()
-            - Estado observavel global do controle de navegacao. Serve para UI reagir a mudancas
+            - Estado observável global do controle de navegação. Serve para UI reagir a mudanças
             de tela, para bottomNavigation ser selecionada e se a TopBar mostra o botão de voltar
 
      */
     val backStackEntry by navController.currentBackStackEntryAsState()
 
+    // backStackEntry?.toRoute<NavRoute>()?.title ?: R.string.splashscreen
+
     val titleCurrentScreen = stringResource(
-        backStackEntry?.toRoute<NavRoute>()?.title ?: R.string.splashscreen
+        when {
+            backStackEntry?.destination?.hasRoute<NavRoute.SplashScreenRoute>() == true -> {
+                backStackEntry?.toRoute<NavRoute.SplashScreenRoute>()?.title ?: R.string.splashscreen
+            }
+
+            backStackEntry?.destination?.hasRoute<NavRoute.HomeScreenRoute>() == true -> {
+                backStackEntry?.toRoute<NavRoute.HomeScreenRoute>()?.title ?: R.string.homescreen
+            }
+
+            backStackEntry?.destination?.hasRoute<NavRoute.ProfileScreenRoute>() == true -> {
+                backStackEntry?.toRoute<NavRoute.ProfileScreenRoute>()?.title ?: R.string.profilescreen
+            }
+
+            else -> R.string.splashscreen
+        }
     )
 
     Scaffold(
@@ -101,7 +120,13 @@ fun MainApp(
                 }
             }
 
-            composable<NavRoute.ProfileScreenRoute> { scopedBackStackEntry ->
+            composable<NavRoute.ProfileScreenRoute>(
+                /*
+                    Step 5: (Advanced) Handling Custom Types
+                    https://developer.android.com/guide/navigation/type-safe-destinations#step_5_advanced_handling_custom_types
+                 */
+                typeMap = NavRoute.typeMap
+            ) { scopedBackStackEntry ->
                 /*
                     Qual a diferença de usar
 
@@ -112,7 +137,7 @@ fun MainApp(
                     específico. Usado para extrair os argumentos passados para
                     a tela.
 
-                    - esse parâmetro também representa a instância que foi passada para tela e
+                    - Esse parâmetro também representa a instância que foi passada para tela e
                     está na pilha, é possível ter mais de uma instância da mesma tela com dados
                     diferentes, exemplo Profile(name="X") e Profile(name="Y")
 

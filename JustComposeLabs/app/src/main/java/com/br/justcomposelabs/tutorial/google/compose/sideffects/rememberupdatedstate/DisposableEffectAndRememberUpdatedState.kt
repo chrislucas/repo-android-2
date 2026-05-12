@@ -35,6 +35,11 @@ fun RememberUpdateStateComponent(
     onStop: () -> Unit,
     content: @Composable () -> Unit,
 ) {
+    /*
+        rememberUpdatedState: reference a value in an effect that shouldn't restart if the value changes
+        - https://developer.android.com/develop/ui/compose/side-effects#rememberupdatedstate
+            -
+     */
     val currentOnStart by rememberUpdatedState(onStart)
     val currentOnStop by rememberUpdatedState(onStop)
 

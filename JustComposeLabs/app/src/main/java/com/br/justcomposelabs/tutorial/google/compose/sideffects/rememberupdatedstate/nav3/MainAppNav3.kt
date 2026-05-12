@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 
 /*
     Exemplo com navigation 3 para comparar
-    - basse
+    - base
     - https://github.com/android/nav3-recipes/blob/main/app/src/main/java/com/example/nav3recipes/basic/BasicActivity.kt
 
     Leituras obrigatórias

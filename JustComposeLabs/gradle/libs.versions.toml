@@ -2,7 +2,7 @@
 
 activityKtx = "1.13.0"
 adapterRxjava2 = "3.0.0"
-agp = "9.2.0"
+agp = "9.2.1"
 appcompatVersion = "1.7.1"
 cameraCamera2 = "1.6.0"
 cameraCore = "1.6.0"
@@ -39,6 +39,7 @@ espressoCore = "3.7.0"
 kotlinxCoroutinesAndroid = "1.10.2"
 kotlinxCoroutinesCore = "1.10.2"
 kotlinxCoroutinesTest = "1.10.2"
+kotlinxSerializationJson = "1.11.0"
 ktorClientAndroid = "3.4.2"
 ktorClientContentNegotiation = "3.4.2"
 ktorClientCore = "3.4.2"
@@ -219,6 +220,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "kotlinxCoroutinesTest" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktorClientAndroid" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktorClientContentNegotiation" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktorClientCore" }

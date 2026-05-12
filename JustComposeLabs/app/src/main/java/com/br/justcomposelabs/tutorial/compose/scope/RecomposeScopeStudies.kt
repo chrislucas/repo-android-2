@@ -51,12 +51,12 @@ import timber.log.Timber
 @Composable
 fun MainScreen() {
     /*
-        RecomposeScope na prática: https://share.google/aimode/Fhz2QP0n0FBKzH5cO
+        RecomposeScope, na prática: https://share.google/aimode/Fhz2QP0n0FBKzH5cO
         - Escopo Isolado
         - Recomposicao Direcionada
         - Skipping
 
-        - Funcoes como Column e Row sao inline portanto elas nao criam um novo RecomposeScope. Se ler-mos um
+        - Funcoes como Column e Row são inline, portanto elas não criam um RecomposeScope. Se lermos um
         estado dentro duma Column, o escopo invalidado será da função pai
      */
 
@@ -88,7 +88,7 @@ fun TextComponent(message: String) {
 @Composable
 fun OptimizeMainScreenComponent(provide: () -> Int) {
     /*
-        adiar a leitura de um estado usando lambdas para otimizar ainda mais esses escopos
+        adiar a leitura de um estado ao usar lambdas para otimizar ainda mais esses escopos
         - https://share.google/aimode/MDSFf9K7lWbVjWigD
             - Adiar a leitura dum estado usando lambdas é uma técnica poderosa de reduzir carga de trabalho
             do RecomposeScope
