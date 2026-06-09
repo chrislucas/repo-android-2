@@ -99,6 +99,19 @@ configurations.all {
         force(libs.androidx.junit)
     }
 }
+/*
+    https://developer.android.com/develop/ui/compose/performance/stability/diagnose
+
+    https://www.linkedin.com/posts/joselaine-aparecida-dos-santos_compose-internals-18-ugcPost-7465002816399466497-rDLr/
+
+    parametros que o compose compiler adiciona a funcoes Composable
+    $$composer - Contexto de execucao, que sabe onde a função está na arvore
+    $changed - bitmask de 3 bit
+ */
+composeCompiler {
+    reportsDestination = layout.buildDirectory.dir("compose_compiler")
+    metricsDestination = layout.buildDirectory.dir("compose_compiler")
+}
 
 dependencies {
     implementation(project(":referencelinbraries"))

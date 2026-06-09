@@ -35,7 +35,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.zIndex
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewModelScope
@@ -71,7 +70,7 @@ class NewsActivity : ComponentActivity() {
     }
 }
 
-class NewsViewModelUiStatePattern : ViewModel() {
+class NewsUiStatePatternViewModel : ViewModel() {
 
     /*
         Aqui poderia e talvez faça mais sentido uma sealed class
@@ -148,14 +147,14 @@ class NewsViewModelUiStatePattern : ViewModel() {
 @Composable
 fun UiStatePatternNewsScreen(
     modifier: Modifier = Modifier,
-    viewModel: NewsViewModelUiStatePattern = viewModel()
+    viewModel: NewsUiStatePatternViewModel = viewModel()
 ) {
     val uiState by viewModel.uiState.collectAsStateWithLifecycle()
     val ctx = LocalContext.current
     LaunchedEffect(Unit) {
         viewModel.uiEffect.collect { effect ->
             when (effect) {
-                is NewsViewModelUiStatePattern.NewsUiEffect.FetchNews -> {
+                is NewsUiStatePatternViewModel.NewsUiEffect.FetchNews -> {
                     Toast.makeText(
                         ctx,
                         "Updating News",
@@ -163,7 +162,7 @@ fun UiStatePatternNewsScreen(
                     ).show()
                 }
 
-                is NewsViewModelUiStatePattern.NewsUiEffect.FinishFetchNews -> {
+                is NewsUiStatePatternViewModel.NewsUiEffect.FinishFetchNews -> {
                     Log.d("FETCH_NEWS", "finish")
                 }
             }
@@ -197,7 +196,7 @@ fun UiStatePatternNewsScreen(
     ) { paddingValues ->
         Box(modifier = modifier.padding(paddingValues)) {
             when (uiState) {
-                is NewsViewModelUiStatePattern.NewsUIState.Loading -> {
+                is NewsUiStatePatternViewModel.NewsUIState.Loading -> {
                     LoadingOverlayLayout()
                     NewsComponent(
                         news = uiState.news,
@@ -205,14 +204,14 @@ fun UiStatePatternNewsScreen(
                     )
                 }
 
-                is NewsViewModelUiStatePattern.NewsUIState.ShowNews -> {
+                is NewsUiStatePatternViewModel.NewsUIState.ShowNews -> {
                     NewsComponent(
                         news = uiState.news,
                         onScroll = onScroll,
                     )
                 }
 
-                is NewsViewModelUiStatePattern.NewsUIState.Idle -> {
+                is NewsUiStatePatternViewModel.NewsUIState.Idle -> {
                     EmptyStateComponent()
                 }
             }

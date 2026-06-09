@@ -1,6 +1,9 @@
 package com.br.justcomposelabs.utils
 
+import kotlin.random.Random
+
 private val ALPHANUMERIC_CHARS = (('a'..'z') + ('A'..'Z') + ('0'..'9')).toList()
+private val ALPHA_CHARS = (('a'..'z') + ('A'..'Z')).toList()
 
 /**
  * Generates a random alphanumeric string of the specified length.
@@ -11,6 +14,30 @@ fun generateRandomString(length: Int): String {
         .map { ALPHANUMERIC_CHARS.random() }
         .joinToString(separator = "")
 }
+
+
+fun generateListRandomString(quantity: Int, rangeRandomLength: IntRange = 3 .. 10) = buildList {
+    require(quantity >= 0) { "Quantity must be non-negative" }
+    require(rangeRandomLength.first >= 3 && rangeRandomLength.last <= 10) {
+        "String length must be between 3 and 10"
+    }
+    repeat(quantity) {
+        add(generateRandomString(rangeRandomLength.random()))
+    }
+}
+
+fun takeRandomString(quantity: Int, rangeRandomLength: IntRange = 3 .. 10) = generateSequence {
+    require(quantity >= 0) { "Quantity must be non-negative" }
+    require(rangeRandomLength.first >= 3 && rangeRandomLength.last <= 10) {
+        "String length must be between 3 and 10"
+    }
+    buildString {
+        repeat(Random.nextInt(rangeRandomLength.first, rangeRandomLength.last)) {
+            append(ALPHA_CHARS.random())
+        }
+    }
+}.take(quantity).toList()
+
 
 /**
  * Generates a specified count of random strings, joined by a separator.

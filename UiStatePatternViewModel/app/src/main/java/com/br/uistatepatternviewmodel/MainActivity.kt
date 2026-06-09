@@ -46,6 +46,10 @@ class MainActivity : ComponentActivity() {
 }
 
 class NewsViewModelSeparateProperties : ViewModel() {
+    /**
+     * @see NewsUiStatePatternViewModel
+     * - A solução para não ter multiplos mutableStateFlow
+     */
     private val mutableStateNews: MutableStateFlow<List<News>> = MutableStateFlow(emptyList())
     val stateNews: StateFlow<List<News>> = mutableStateNews.asStateFlow()
 
