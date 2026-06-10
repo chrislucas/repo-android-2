@@ -32,7 +32,36 @@ import java.util.Date
 import java.util.Locale
 import kotlin.time.Duration.Companion.milliseconds
 
+/**
+ * Explicação sobre Coleta de Estado no Jetpack Compose:
+ *
+ * 1. collectAsStateWithLifecycle():
+ *    - O QUE É: Converte um Flow em State do Compose de forma ciente do ciclo de vida (Lifecycle-aware).
+ *    - QUANDO USAR: É a **recomendação padrão** para desenvolvimento Android.
+ *    - POR QUE: Ela interrompe a coleta do Flow automaticamente quando o app entra em segundo plano
+ *      (especificamente quando o Lifecycle cai abaixo do estado definido, por padrão STARTED) e retoma
+ *      quando o app volta para o primeiro plano. Isso economiza recursos (CPU/Bateria) ao evitar
+ *      processamento desnecessário quando a UI não está visível.
+ *    - DEPENDÊNCIA: `androidx.lifecycle:lifecycle-runtime-compose`.
+ *
+ * 2. collectAsState():
+ *    - O QUE É: Função básica do Compose para converter Flows em State.
+ *    - QUANDO USAR: Em projetos Kotlin Multiplatform (KMP) ou em partes da UI onde o ciclo de vida
+ *      do Android não é um fator crítico (ex: testes simples ou lógica puramente de UI).
+ *    - LIMITAÇÃO: No Android, ela continua coletando do Flow enquanto o Composable estiver na
+ *      árvore de composição, mesmo que o usuário não esteja vendo o app, o que pode gastar recursos.
+ *
+ * 3. observeAsState() (para LiveData):
+ *    - O QUE É: Converte LiveData em State.
+ *    - QUANDO USAR: Em projetos legados ou que ainda utilizam LiveData na camada de ViewModel.
+ *
+ * 4. subscribeAsState() (para RxJava):
+ *    - O QUE É: Converte fluxos RxJava em State.
+ *    - QUANDO USAR: Se o projeto utiliza RxJava para reatividade na camada de dados/negócios.
+ */
+
 /*
+    Link oficial:
     https://developer.android.com/reference/kotlin/androidx/lifecycle/compose/package-summary#(kotlinx.coroutines.flow.Flow).collectAsStateWithLifecycle(kotlin.Any,androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle.State,kotlin.coroutines.CoroutineContext)
  */
 

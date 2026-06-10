@@ -75,8 +75,7 @@ fun HomeScreen(
             }
         ) { valuesPadding ->
             LazyColumn(
-                modifier =
-                    Modifier.padding(valuesPadding)
+                modifier = Modifier.padding(valuesPadding)
             ) {
                 items(mockedProfiles, key = { it }) { profile ->
                     Card(

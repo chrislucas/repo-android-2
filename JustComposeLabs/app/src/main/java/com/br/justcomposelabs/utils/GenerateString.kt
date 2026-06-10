@@ -52,7 +52,7 @@ fun generateRandomStrings(
     require(stringLengthRange.first >= 1) {
         "Minimum string length must be at least 1"
     }
-    
+
     return buildList {
         repeat(count) {
             add(generateRandomString(stringLengthRange.random()))
