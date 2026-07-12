@@ -25,11 +25,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.unit.dp
 import com.br.justcomposelabs.utils.composable.fillMaxSizePadding
 import com.br.justcomposelabs.utils.generateRandomStrings
-import kotlin.random.Random
 import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.launch
-
+import kotlin.random.Random
 
 val mockedProfiles: ImmutableList<Profile> = buildList {
     repeat(100) {
@@ -46,7 +45,6 @@ val mockedProfiles: ImmutableList<Profile> = buildList {
 fun HomeScreen(
     onNavigationToProfile: (Profile) -> Unit = { Profile("", 0) }
 ) {
-
     val listState = rememberLazyListState()
 
     val canIGoToTop by remember {

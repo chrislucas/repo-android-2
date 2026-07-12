@@ -8,11 +8,8 @@ import androidx.compose.runtime.Composable
  */
 @Composable
 fun NoLeadingZeroesValueBased() {
-
 }
-
 
 @Composable
 fun NoLeadingZeroesStateBased() {
-
 }

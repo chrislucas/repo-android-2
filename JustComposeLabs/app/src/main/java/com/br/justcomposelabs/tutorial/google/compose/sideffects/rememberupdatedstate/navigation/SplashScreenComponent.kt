@@ -26,16 +26,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.R
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
+import kotlinx.coroutines.delay
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
-import kotlinx.coroutines.delay
 
 private val OvershootInterpolator = Easing { fraction ->
     val tension = 2f
     val t = fraction - 1f
     t * t * ((tension + 1f) * t + tension) + 1f
 }
-
 
 private val springAnimationSpec = spring(
     dampingRatio = Spring.DampingRatioMediumBouncy,

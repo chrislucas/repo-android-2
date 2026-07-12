@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.google.images
+package com.br.justcomposelabs.tutorial.google.images.resources
 
 /*
     TODO

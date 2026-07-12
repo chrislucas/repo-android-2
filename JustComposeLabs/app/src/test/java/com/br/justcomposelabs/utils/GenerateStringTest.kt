@@ -52,10 +52,10 @@ class GenerateStringTest {
         val minLength = 5
         val maxLength = 15
         val range = minLength..maxLength
-        
+
         val result = generateRandomStrings(count = count, stringLengthRange = range)
         val splitResult = result.split(", ") // Default separator
-        
+
         assertEquals(count, splitResult.size)
         splitResult.forEach { str ->
             assertTrue("String length ${str.length} should be within range $range", str.length in range)
@@ -67,10 +67,10 @@ class GenerateStringTest {
         val count = 5
         val length = 7
         val range = length..length
-        
+
         val result = generateRandomStrings(count, stringLengthRange = range)
         val splitResult = result.split(", ")
-        
+
         splitResult.forEach { str ->
             assertEquals(length, str.length)
         }

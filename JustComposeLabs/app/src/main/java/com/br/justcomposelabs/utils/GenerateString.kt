@@ -15,8 +15,7 @@ fun generateRandomString(length: Int): String {
         .joinToString(separator = "")
 }
 
-
-fun generateListRandomString(quantity: Int, rangeRandomLength: IntRange = 3 .. 10) = buildList {
+fun generateListRandomString(quantity: Int, rangeRandomLength: IntRange = 3..10) = buildList {
     require(quantity >= 0) { "Quantity must be non-negative" }
     require(rangeRandomLength.first >= 3 && rangeRandomLength.last <= 10) {
         "String length must be between 3 and 10"
@@ -26,7 +25,7 @@ fun generateListRandomString(quantity: Int, rangeRandomLength: IntRange = 3 .. 1
     }
 }
 
-fun takeRandomString(quantity: Int, rangeRandomLength: IntRange = 3 .. 10) = generateSequence {
+fun takeRandomString(quantity: Int, rangeRandomLength: IntRange = 3..10) = generateSequence {
     require(quantity >= 0) { "Quantity must be non-negative" }
     require(rangeRandomLength.first >= 3 && rangeRandomLength.last <= 10) {
         "String length must be between 3 and 10"
@@ -37,7 +36,6 @@ fun takeRandomString(quantity: Int, rangeRandomLength: IntRange = 3 .. 10) = gen
         }
     }
 }.take(quantity).toList()
-
 
 /**
  * Generates a specified count of random strings, joined by a separator.

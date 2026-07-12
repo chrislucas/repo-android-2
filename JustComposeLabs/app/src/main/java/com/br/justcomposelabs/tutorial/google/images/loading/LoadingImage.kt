@@ -1,4 +1,4 @@
-package com.br.justcomposelabs.tutorial.google.images
+package com.br.justcomposelabs.tutorial.google.images.loading
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column

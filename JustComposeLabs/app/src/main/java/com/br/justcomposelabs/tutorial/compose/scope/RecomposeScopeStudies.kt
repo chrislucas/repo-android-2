@@ -1,11 +1,8 @@
 package com.br.justcomposelabs.tutorial.compose.scope
 
-import android.util.Log
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.offset
-import androidx.compose.material3.ButtonElevation
 import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -46,7 +43,6 @@ import timber.log.Timber
         - https://developer.android.com/develop/ui/compose/mental-model#skips
  */
 
-
 @Preview(showBackground = true)
 @Composable
 fun MainScreen() {
@@ -77,13 +73,11 @@ fun MainScreen() {
     }
 }
 
-
 @Composable
 fun TextComponent(message: String) {
     Timber.tag("TEXT_COMPONENT").d(message)
     Text(message)
 }
-
 
 @Composable
 fun OptimizeMainScreenComponent(provide: () -> Int) {
@@ -114,9 +108,6 @@ fun OptimizeMainScreenComponentPreview() {
         }
     }
 }
-
-
-
 
 /*
     https://medium.com/@riz_maulana/how-does-compose-determine-which-block-of-code-to-recompose-3bf6bd4dad1e

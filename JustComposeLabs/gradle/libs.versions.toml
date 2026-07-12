@@ -50,7 +50,7 @@ lifecycleLivedataKtx = "2.10.0"
 lifecycleRuntime = "2.10.0"
 lifecycleRuntimeKtx = "2.10.0"
 activityCompose = "1.13.0"
-composeBom = "2026.04.01"
+composeBom = "2026.06.00"
 appcompat = "1.7.1"
 lifecycleViewmodel = "2.10.0"
 lifecycleViewmodelCompose = "2.10.0"
@@ -89,19 +89,22 @@ junitJupiter = "5.13.3"
 timber = "5.0.1"
 tracingPerfetto = "1.0.1"
 tracingPerfettoBinary = "1.0.1"
-webkit = "1.15.0"
+detekt = "1.23.8"
+ktlint = "12.1.1"
+webkit = "1.16.0"
 workVersion = "2.11.2"
 material3Version = "1.3.2"
-uiTestJunit4 = "1.11.0"
-junitJunitJupiter = "6.0.3"
+uiTestJunit4 = "1.11.3"
+junitJunitJupiter = "6.1.1"
 secretsGradlePlugin = "2.0.1"
 androidxMaterial3 = "1.4.0"
 navigationFragmentKtx = "2.9.8"
 navigationUiKtx = "2.9.8"
 fragmentCompose = "1.8.9"
 legacySupportV4 = "1.0.0"
-foundationLayout = "1.11.0"
-adsMobileSdk = "1.0.1"
+foundationLayout = "1.11.4"
+foundation = "1.12.0-beta02"
+adsMobileSdk = "1.2.1"
 
 
 [libraries]
@@ -158,7 +161,7 @@ androidx-espresso-accessibility = { module = "androidx.test.espresso:espresso-ac
 androidx-espresso-contrib = { module = "androidx.test.espresso:espresso-contrib", version.ref = "espressoVersion" }
 androidx-espresso-intents = { module = "androidx.test.espresso:espresso-intents", version.ref = "espressoVersion" }
 androidx-espresso-web = { module = "androidx.test.espresso:espresso-web", version.ref = "espressoVersion" }
-androidx-foundation = { module = "androidx.compose.foundation:foundation" }
+androidx-foundation = { module = "androidx.compose.foundation:foundation", version.ref = "foundation"}
 androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
 androidx-glance-appwidget = { module = "androidx.glance:glance-appwidget", version.ref = "glanceAppwidget" }
 androidx-glance-material = { module = "androidx.glance:glance-material", version.ref = "glanceMaterial" }
@@ -259,6 +262,9 @@ androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support
 androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "foundationLayout" }
 ads-mobile-sdk = { group = "com.google.android.libraries.ads.mobile.sdk", name = "ads-mobile-sdk", version.ref = "adsMobileSdk" }
 
+detekt-gradlePlugin = { module = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin", version.ref = "detekt" }
+ktlint-gradlePlugin = { module = "org.jlleitschuh.gradle:ktlint-gradle", version.ref = "ktlint" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
@@ -269,3 +275,5 @@ android-library = { id = "com.android.library", version.ref = "agp" }
 # https://developer.android.com/kotlin/multiplatform/plugin
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }

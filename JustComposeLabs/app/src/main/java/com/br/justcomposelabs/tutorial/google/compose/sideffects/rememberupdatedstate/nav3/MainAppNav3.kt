@@ -12,8 +12,6 @@ import androidx.compose.runtime.Composable
     https://android-developers.googleblog.com/2025/11/jetpack-navigation-3-is-stable.html
  */
 
-
 @Composable
 fun MainApp() {
-
 }

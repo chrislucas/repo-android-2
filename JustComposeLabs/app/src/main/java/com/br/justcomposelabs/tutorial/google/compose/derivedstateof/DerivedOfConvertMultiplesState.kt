@@ -154,10 +154,10 @@ fun MessageListPreview() {
             .systemBarsPadding()
             .navigationBarsPadding(),
         messages =
-            buildList(100) {
-                for (i in 1..100) {
-                    add(Message("Message $i"))
-                }
-            },
+        buildList(100) {
+            for (i in 1..100) {
+                add(Message("Message $i"))
+            }
+        },
     )
 }

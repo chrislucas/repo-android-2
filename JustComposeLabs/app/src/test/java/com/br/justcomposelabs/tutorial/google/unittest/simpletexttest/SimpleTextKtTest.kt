@@ -1,11 +1,9 @@
 package com.br.justcomposelabs.tutorial.google.unittest.simpletexttest
 
-import androidx.compose.ui.test.ExperimentalTestApi
 import androidx.compose.ui.test.isDisplayed
 import androidx.compose.ui.test.isNotDisplayed
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.runComposeUiTest
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith

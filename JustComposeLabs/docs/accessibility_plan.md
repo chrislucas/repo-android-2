@@ -99,7 +99,7 @@ Canvas(
             // Trata o círculo como um slider para o TalkBack
             progressBarRangeInfo = ProgressBarRangeInfo(angleDeg.toFloat(), 0f..360f)
             stateDescription = "${angleDeg.toInt()} graus"
-            
+
             // Permite ajustar o valor via gestos de acessibilidade (swipe up/down)
             setProgress { targetValue ->
                 radians = Math.toRadians(targetValue.toDouble()).toFloat()

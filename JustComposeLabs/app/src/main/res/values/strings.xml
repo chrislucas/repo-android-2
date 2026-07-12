@@ -180,6 +180,7 @@
     <string name="decrease_font_scale">Diminuir escala de fonte</string>
     <string name="toggle_button_handle_orientation_screen_portrait">Portrait</string>
     <string name="toggle_button_handle_orientation_screen_landscape">Landscape</string>
+    <string name="title_activity_movable_content_of_sample">MovableContentOfSampleActivity</string>
     <!-- ends codelabs Como testar no Jetpack Compose -->
 
 </resources>

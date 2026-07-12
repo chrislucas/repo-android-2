@@ -1,0 +1,7 @@
+Comandos pre-commits uteis
+
+pre-commit run end-of-file-fixer --all-files
+
+pre-commit clean
+pre-commit install --hook-type pre-commit
+pre-commit run --all-files   # teste manual

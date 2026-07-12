@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".CustomApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -21,7 +22,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".CustomApplication"
         android:theme="@style/Theme.JustComposeLabsCanvas">
         <activity
             android:name=".tutorial.google.view.materialdesign.studies.owl.OwlActivity"
@@ -318,12 +318,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="openpersistentbottomsheet"
-                    android:scheme="dpl"
-                    />
+                    android:scheme="dpl" />
             </intent-filter>
         </activity>
         <activity
@@ -333,12 +334,13 @@
             android:theme="@style/Theme.JustComposeLabsCanvas">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="openmodalbottomsheetactivity"
-                    android:scheme="dpl"
-                    />
+                    android:scheme="dpl" />
             </intent-filter>
         </activity>
         <activity
@@ -542,6 +544,13 @@
             android:name=".tutorial.google.lifecycle.receiveupdatelocation.base.ForegroundOnlyLocationService"
             android:enabled="true"
             android:exported="true" />
+
+        <activity
+            android:name=".tutorial.composable.functions.activities.MovableContentOfSampleActivity"
+            android:exported="true"
+            android:label="@string/title_activity_movable_content_of_sample"
+            android:theme="@style/Theme.JustComposeLabsCanvas"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

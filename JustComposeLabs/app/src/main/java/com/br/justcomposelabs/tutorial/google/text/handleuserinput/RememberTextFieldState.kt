@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.utils.composable.fillMaxSizePadding
 
-
 @Preview(showBackground = true)
 @Composable
 fun RememberTextFieldState() {

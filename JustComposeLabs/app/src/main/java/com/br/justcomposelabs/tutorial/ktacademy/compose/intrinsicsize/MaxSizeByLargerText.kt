@@ -16,11 +16,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.tooling.preview.Preview
 import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
-
 
 /*
     Como fazer com que uma lista de componentes que envolvem um Text
@@ -29,7 +28,7 @@ import com.br.justcomposelabs.ui.theme.JustComposeLabsTheme
     - Modifier.width(IntrinsicSize.Max) no componente "pai"
         - No Caso abaixo no componente Column
     - Modifier.fillMaxWidth() no componente filho
-    
+
     - Por que isso funciona?
         - width(IntrinsicSize.Max) significa pegar o máximo de espaço que o
         componente mais largo precisa
@@ -41,12 +40,12 @@ internal fun MaxBoxComponent() {
     Box(modifier = Modifier, contentAlignment = Alignment.Center) {
         Column(
             modifier = Modifier
-            // 1. Margem externa (afasta a Column de outros elementos)
-            .padding(10.dp)
-            .clip(RoundedCornerShape(10.dp)) // 2. Corta o que vier depois (background)
-            .background(Color.LightGray)     // 3. Pinta a área clipada
-            // 4. Padding interno (afasta o conteúdo das bordas cinzas)
-            .padding(10.dp)
+                // 1. Margem externa (afasta a Column de outros elementos)
+                .padding(10.dp)
+                .clip(RoundedCornerShape(10.dp)) // 2. Corta o que vier depois (background)
+                .background(Color.LightGray) // 3. Pinta a área clipada
+                // 4. Padding interno (afasta o conteúdo das bordas cinzas)
+                .padding(10.dp)
                 /*
                     usar o IntrinsicSize.Min faz com que o container
                     pai utilize o espaço mínimo, baseado no componente
@@ -63,7 +62,6 @@ internal fun MaxBoxComponent() {
     }
 }
 
-
 @Composable
 internal fun MinBoxComponent() {
     Box(modifier = Modifier, contentAlignment = Alignment.Center) {
@@ -72,7 +70,7 @@ internal fun MinBoxComponent() {
                 // 1. Margem externa (afasta a Column de outros elementos)
                 .padding(10.dp)
                 .clip(RoundedCornerShape(10.dp)) // 2. Corta o que vier depois (background)
-                .background(Color.LightGray)     // 3. Pinta a área clipada
+                .background(Color.LightGray) // 3. Pinta a área clipada
                 // 4. Padding interno (afasta o conteúdo das bordas cinzas)
                 .padding(10.dp)
                 /*
@@ -91,7 +89,6 @@ internal fun MinBoxComponent() {
     }
 }
 
-
 @Composable
 internal fun DecoratedTextComponent(text: String, modifier: Modifier = Modifier) {
     Text(
@@ -106,7 +103,7 @@ internal fun DecoratedTextComponent(text: String, modifier: Modifier = Modifier)
             // 1. Espaçamento entre os itens da lista (Margem)
             .padding(10.dp)
             .clip(RoundedCornerShape(10.dp)) // 2. Arredonda os cantos do fundo cinza escuro
-            .background(Color.DarkGray)     // 3. Cor de fundo do texto
+            .background(Color.DarkGray) // 3. Cor de fundo do texto
             // 4. Espaçamento entre o texto e a borda cinza (Padding)
             .padding(10.dp)
     )

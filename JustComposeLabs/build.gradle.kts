@@ -7,18 +7,15 @@ plugins {
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.compose.compiler) apply false
 
-    id("com.google.gms.google-services") version "4.4.4" apply false
+    id("com.google.gms.google-services") version "4.5.0" apply false
     id("com.google.devtools.ksp") version "2.3.6" apply false
 
     // https://infinum.com/blog/automated-gradle-dependency-updates/
-    id("com.github.ben-manes.versions") version "0.53.0"
+    id("com.github.ben-manes.versions") version "0.54.0"
     id("nl.littlerobots.version-catalog-update") version "1.1.0"
     // Add the dependency for the Crashlytics Gradle plugin
     id("com.google.firebase.crashlytics") version "3.0.7" apply false
-    id("com.google.dagger.hilt.android") version "2.59.2" apply false
-
-    id("io.gitlab.arturbosch.detekt") version ("1.23.6")
-    id("org.jlleitschuh.gradle.ktlint") version ("12.1.0")
+    id("com.google.dagger.hilt.android") version "2.60.1" apply false
 }
 
 buildscript {
@@ -65,9 +62,10 @@ buildscript {
  */
 
 tasks.register<Exec>("updcat") {
+    description = "Executes a custom command-line command."
     /*
-        https://infinum.com/blog/automated-gradle-dependency-updates/
-     */
+       https://infinum.com/blog/automated-gradle-dependency-updates/
+    */
     executable("./gradlew versionCatalogUpdate")
 
     val outputStream = ByteArrayOutputStream()
